@@ -210,6 +210,252 @@ const SFX = {
 // ── Question bank ──────────────────────────────────────────────────────────
 const QB = {
   economics: [
+   {
+    yr: 2019,
+    q: 'A demand which gives rise to the reverse of the law of demand is __________',
+    o: ['Derived demand', 'Joint demand', 'Abnormal demand', 'Composite demand'],
+    a: 2,
+    e: 'Abnormal (Giffen) demand curves slope upward — as price rises, quantity demanded also rises, directly reversing the normal law of demand.',
+    full: 'The law of demand states that as price rises, quantity demanded falls. An abnormal demand curve slopes upward from left to right — the more expensive it gets, the more people want it. Classic examples include Giffen goods (e.g., inferior staple foods like garri where a price rise leaves consumers too poor to afford substitutes, so they buy even more of it) and Veblen goods (luxury items sought precisely because they are expensive, like designer handbags).\n\nDerived demand is demand for a factor because of demand for its product (e.g., bricklayers demanded because houses are demanded). Joint demand is when two goods are demanded together (e.g., cars and fuel). Composite demand is when one good is demanded for several uses.\n\nNone of those reverse the law of demand — only abnormal demand does.',
+    h: 'Which type of demand has an upward-sloping demand curve?',
+  },
+
+  {
+    yr: 2019,
+    q: 'If two commodities are unrelated, a change in the price of one will __________',
+    o: [
+      'Have effect on the quantity demanded of the other',
+      'Have no effect on the quantity demanded of the other',
+      'Increase the quantity demanded of the other',
+      'Decrease the quantity demanded of the other',
+    ],
+    a: 1,
+    e: 'Unrelated (independent) goods have a cross-price elasticity of zero — a price change in one does not affect demand for the other.',
+    full: 'Cross-price elasticity of demand measures how the quantity demanded of one good responds to a price change in another good.\n\n• Substitutes (e.g., Pepsi & Coke): positive cross-price elasticity — price of one rises, demand for the other rises.\n• Complements (e.g., cars & fuel): negative cross-price elasticity — price of one rises, demand for the other falls.\n• Independent/Unrelated goods (e.g., refrigerators & bicycles): zero cross-price elasticity — a change in the price of one has absolutely no effect on demand for the other.\n\nSo if rice and pencils are unrelated, a change in the price of rice will not affect how many pencils people buy.',
+    h: 'Cross-price elasticity of zero = what relationship between goods?',
+  },
+
+  {
+    yr: 2019,
+    q: 'Given price falls from ₦8 to ₦6 and quantity demanded rises from 10 to 12, the price elasticity of demand is _______',
+    o: ['-1.25', '0.62', '1.25', '1'],
+    a: 2,
+    e: 'PED = (% ΔQd) / (% ΔP) = (20% / -25%) = -1.25. Since PED is expressed as a positive number, the answer is 1.25.',
+    full: 'Price Elasticity of Demand (PED) formula:\n\nPED = (% change in Quantity Demanded) ÷ (% change in Price)\n\nStep 1 — % change in price:\n(6 − 8) / 8 × 100 = −25%\n\nStep 2 — % change in quantity demanded:\n(12 − 10) / 10 × 100 = +20%\n\nStep 3 — PED:\n20% ÷ (−25%) = −1.25\n\nBy convention, PED is always expressed as a positive value (we drop the negative sign), so PED = 1.25.\n\nSince |PED| > 1, demand is elastic — consumers are quite responsive to the price change.',
+    h: 'Calculate PED: P drops 8→6, Qd rises 10→12.',
+  },
+
+  {
+    yr: 2019,
+    q: 'In a perfect competition, the market price is determined by _______',
+    o: ['The government', 'The producer', 'The consumer', 'The market supply and demand junctions'],
+    a: 3,
+    e: 'In perfect competition, no single buyer or seller can influence price. Price is set purely by the intersection of market-wide supply and demand.',
+    full: 'Perfect competition has many buyers and many sellers, homogeneous products, free entry and exit, and perfect information. Because no individual firm or consumer is large enough to move the market, each firm is a "price taker."\n\nThe equilibrium price is set where market supply meets market demand (supply-demand junction). Firms sell at that price and can sell as much as they want at it — but cannot charge more (they would lose all customers) or less (they would make a loss).\n\nThis is different from monopoly (price set by the firm) or administered prices (set by government).',
+    h: 'Who sets price in perfect competition?',
+  },
+
+  {
+    yr: 2019,
+    q: 'In the short run, the monopoly makes _______',
+    o: ['Normal profit', 'Abnormal profit', 'Loss', 'Sales'],
+    a: 1,
+    e: 'A monopolist can restrict output and charge above average cost in the short run, earning abnormal (supernormal) profit because barriers to entry prevent competitors from eroding it.',
+    full: 'In perfect competition, abnormal profits attract new entrants, which drives price down to average cost (normal profit) in the long run. A monopolist, however, is protected by barriers to entry — so competitors cannot enter and compete away those profits.\n\nIn the short run, the monopolist sets price where MR = MC, then charges the highest price consumers will pay for that output (from the demand curve). Since price > average cost, the firm earns abnormal (supernormal) profit.\n\nNote: In the long run, the monopolist can STILL earn abnormal profit (unlike perfect competition) because barriers protect it. But the question asks about the short run specifically, and the answer is still abnormal profit.',
+    h: 'What profit does a monopolist earn in the short run?',
+  },
+
+  {
+    yr: 2019,
+    q: 'The demand curve facing the monopolist in the foreign market is __________',
+    o: ['Elastic', 'Inelastic', 'Perfectly elastic', 'Unitary'],
+    a: 0,
+    e: 'In the foreign market the monopolist competes with other sellers of similar goods, so consumers can switch if the price rises — making demand elastic.',
+    full: 'Price discrimination between domestic and foreign markets is a classic monopoly strategy. The key is the elasticity of demand in each market:\n\n• Domestic market: The monopolist faces no close competition, so consumers have fewer alternatives. Demand is inelastic — even if price rises, consumers still buy.\n• Foreign market: The monopolist competes against other international sellers offering similar products. Consumers can easily switch to a cheaper alternative. Demand is elastic.\n\nBecause of this difference, the monopolist charges a HIGHER price in the domestic (inelastic) market and a LOWER price in the foreign (elastic) market — this is third-degree price discrimination.',
+    h: 'Why is the monopolist\'s foreign market demand elastic?',
+  },
+
+  {
+    yr: 2019,
+    q: 'Supply is ________',
+    o: ['A stock', 'A flow', 'Constant', 'A table'],
+    a: 1,
+    e: 'Supply is a flow concept — it refers to quantities offered for sale per unit of time (e.g., per week), not a fixed stock held at a point in time.',
+    full: 'Economists distinguish between stocks and flows:\n\n• Stock: a quantity measured at a specific point in time (e.g., water in a tank, population size, money supply).\n• Flow: a quantity measured over a period of time (e.g., income per month, production per year, water flowing per minute).\n\nSupply is a FLOW — it refers to the quantity of a good or service that producers are willing and able to offer for sale at various prices over a specific period of time. The time dimension is essential: you might supply 500 units per week, not just 500 units in a timeless sense.\n\nWealth, on the other hand, is a stock — it is measured at a point in time.',
+    h: 'Is supply a stock or a flow concept?',
+  },
+
+  {
+    yr: 2019,
+    q: 'A rise in the supply of a commodity causes __________',
+    o: [
+      'An increase in equilibrium price and decrease in equilibrium quantity',
+      'An increase in both equilibrium price and quantity',
+      'A decrease in equilibrium price and an increase in equilibrium quantity',
+      'A decrease in both equilibrium price and quantity',
+    ],
+    a: 2,
+    e: 'When supply increases (shifts right), the supply curve intersects demand at a lower price and higher quantity — so price falls and quantity rises.',
+    full: 'Using a standard supply-demand diagram:\n\n• Original equilibrium: price P₁, quantity Q₁.\n• Supply increases → supply curve shifts to the RIGHT.\n• At the original price P₁, there is now excess supply (surplus).\n• Sellers compete by lowering prices.\n• Consumers respond by buying more.\n• New equilibrium: lower price P₂, higher quantity Q₂.\n\nReal-world example: a bumper harvest of tomatoes shifts supply right → tomato prices fall, and more tomatoes are bought and sold.',
+    h: 'Supply increases → what happens to price and quantity?',
+  },
+
+  {
+    yr: 2019,
+    q: 'The method obtained by adding all the rewards of factors of production in national income is __________',
+    o: ['Income approach', 'Expenditure approach', 'Value added method', 'Output approach'],
+    a: 0,
+    e: 'The income approach sums all factor rewards: wages, rent, interest, and profit (W + R + I + P) to arrive at national income.',
+    full: 'There are three methods of calculating National Income (GDP):\n\n1. Income Approach (Factor Income Method): Add up all incomes earned by the factors of production:\n   • Wages & Salaries (Labour)\n   • Rent (Land)\n   • Interest (Capital)\n   • Profit (Entrepreneurship)\n   Formula: NI = W + R + I + P\n\n2. Expenditure Approach: Add up all spending in the economy:\n   GDP = C + I + G + (X − M)\n\n3. Output/Value Added Approach: Sum the value added at each stage of production across all industries.\n\nAll three should theoretically give the same result.',
+    h: 'Which national income method sums wages + rent + interest + profit?',
+  },
+
+  {
+    yr: 2019,
+    q: 'An economy in which the whole income is not consumed is referred to as ______',
+    o: ['Frugal economy', 'Spendthrift economy', 'Capitalist economy', 'Mixed economy'],
+    a: 0,
+    e: 'A frugal economy is one where income is divided between consumption and saving (Y = C + S), meaning not all income is spent.',
+    full: 'The term "frugal economy" describes an economy where households do not spend all their income — some is saved. The equation is:\n\nY = C + S  (Income = Consumption + Saving)\n\nor equivalently from the investment side:\n\nY = C + I  (Income = Consumption + Investment)\n\nThis is the opposite of a "spendthrift economy" where all income is consumed (Y = C, S = 0). In a frugal economy, saving funds investment, which drives economic growth. Think of it as an economy with a positive savings rate — like many East Asian economies historically.',
+    h: 'What do you call an economy where not all income is consumed?',
+  },
+
+  // ── 2022 ──────────────────────────────────────────────────────────────────
+  {
+    yr: 2022,
+    q: 'If the Central Bank increases its bank rate, __________',
+    o: [
+      'Many banks will shut down their operations',
+      'Customers will borrow more from banks',
+      'The supply of money may be reduced',
+      'Interest charges by banks will fall',
+    ],
+    a: 2,
+    e: 'A higher bank rate means commercial banks pay more to borrow from the Central Bank. They pass this on as higher lending rates, discouraging borrowing and reducing money supply.',
+    full: 'The bank rate (also called the discount rate or monetary policy rate) is the interest rate at which commercial banks borrow from the Central Bank.\n\nWhen the Central Bank RAISES the bank rate:\n• Commercial banks\' cost of borrowing from the CB rises.\n• They raise their own lending rates to customers.\n• Borrowing becomes more expensive → fewer loans are taken.\n• Less new money is created through lending → money supply FALLS.\n• This is contractionary monetary policy, used to fight inflation.\n\nWhen the CB LOWERS the bank rate:\n• Cheaper borrowing → more loans → more money created → money supply rises.\n• This is expansionary monetary policy, used to stimulate the economy.',
+    h: 'Raising the bank rate → what happens to money supply?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Commercial banks are different from development banks in that the latter __________',
+    o: [
+      'Lend on a short-term basis',
+      'Pay interest on current accounts only',
+      'Are mostly joint-stock companies',
+      'Do not deal in foreign currencies',
+    ],
+    a: 3,
+    e: 'Development banks focus on long-term project financing for economic development and do not typically engage in foreign exchange dealings like commercial banks do.',
+    full: 'Commercial Banks vs Development Banks:\n\nCommercial Banks:\n• Accept deposits (savings, current accounts)\n• Provide short-term loans and overdrafts\n• Deal in foreign currencies (forex)\n• Mostly private/joint-stock companies (e.g., GTBank, Access Bank)\n• Profit-motivated\n\nDevelopment Banks:\n• Provide long-term loans for industrial, agricultural, and infrastructure projects\n• Do NOT typically deal in foreign currencies\n• Often government-owned or backed (e.g., Bank of Industry, NACRDB in Nigeria)\n• Development/social objectives, not purely profit-driven\n\nSo the key distinguishing feature here is that development banks do NOT deal in foreign currencies.',
+    h: 'Key difference: development banks vs commercial banks regarding forex?',
+  },
+
+  {
+    yr: 2022,
+    q: 'The use of the bank rate, cash ratio, and open market operations constitute __________',
+    o: ['Fiscal policy', 'Monetary policy', 'Import policy', 'Export policy'],
+    a: 1,
+    e: 'Bank rate, cash ratio, and open market operations are all tools the Central Bank uses to control money supply and credit — this is monetary policy.',
+    full: 'Monetary Policy is the use of money supply and interest rate tools by the Central Bank to control inflation, stimulate growth, or stabilize the economy. Key tools include:\n\n1. Bank Rate (MPR in Nigeria): The rate at which commercial banks borrow from the CBN. Raising it → credit becomes expensive → less borrowing → money supply falls.\n\n2. Cash Reserve Ratio (CRR): The % of deposits banks must keep with the CBN. Raising CRR → banks can lend less → money supply falls.\n\n3. Open Market Operations (OMO): CBN buying or selling government securities. Selling securities → money moves from banks to CBN → money supply falls.\n\nFiscal policy, on the other hand, involves government taxation and spending decisions.',
+    h: 'Bank rate + cash ratio + OMO = which type of policy?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Fiscal policy measures imply a change in __________',
+    o: [
+      'Only taxation to control aggregate demand',
+      'Bank rate to influence lending',
+      'Only government expenditure to regulate an economy',
+      'Government revenue and expenditure to regulate an economy',
+    ],
+    a: 3,
+    e: 'Fiscal policy involves deliberate changes in BOTH government revenue (taxation) and government expenditure to influence economic activity.',
+    full: 'Fiscal Policy is the use of government spending and taxation to influence the economy.\n\n• Expansionary Fiscal Policy: Government increases spending AND/OR reduces taxes → boosts aggregate demand → stimulates growth. Used during recessions.\n• Contractionary Fiscal Policy: Government reduces spending AND/OR increases taxes → reduces aggregate demand → controls inflation.\n\nKey: Fiscal policy involves BOTH revenue (taxes) and expenditure — not just one or the other. Changing only taxes or only spending would still be fiscal policy, but the broadest definition covers both instruments working together.\n\nThis is different from monetary policy (handled by the Central Bank using bank rates, OMO, etc.).',
+    h: 'Fiscal policy = changes in what?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Economic problems arise in all societies because __________',
+    o: [
+      'Resources are mismanaged by leaders',
+      'There is no proper planning',
+      'Resources are not in adequate supply',
+      'The services of economists are not employed',
+    ],
+    a: 2,
+    e: 'The fundamental economic problem is scarcity — human wants are unlimited but resources (land, labour, capital) available to satisfy them are limited.',
+    full: 'The basic economic problem is SCARCITY. This means:\n\n• Human wants are unlimited (we always want more food, better health, more education, more entertainment...)\n• BUT the resources (factors of production — land, labour, capital, and entrepreneurship) available to produce goods and services are LIMITED.\n\nBecause of scarcity, every society — whether capitalist, socialist, or mixed — must make choices about:\n1. What to produce?\n2. How to produce it?\n3. For whom to produce it?\n\nThis is not a problem of poor leadership or planning (though those can make things worse). Even the richest country faces scarcity. The problem is inherent in nature itself.',
+    h: 'What is the root cause of all economic problems?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Which of the following is NOT emphasized in a production possibility curve?',
+    o: [
+      'Scarcity of resources',
+      'Economic development',
+      'Inefficiency in the use of resources',
+      'Unemployment of labour',
+    ],
+    a: 1,
+    e: 'The PPC shows scarcity (you cannot go beyond it), opportunity cost (trade-offs along it), and inefficiency/unemployment (points inside it) — but not economic development, which requires the curve itself to shift outward.',
+    full: 'The Production Possibility Curve (PPC) or Frontier (PPF) illustrates:\n\n• Points ON the curve: Full employment and efficient use of all resources (attainable, efficient).\n• Points INSIDE the curve: Resources are unemployed or inefficiently used (attainable, inefficient — so it shows unemployment and inefficiency).\n• Points OUTSIDE the curve: Currently unattainable with existing resources — highlights SCARCITY.\n• Moving along the curve: Shows opportunity cost — producing more of one good means producing less of another.\n\nWhat the PPC does NOT show is economic DEVELOPMENT. Development (growth) would be shown by an OUTWARD SHIFT of the entire PPC — when a country acquires more resources or better technology. The static PPC itself doesn\'t illustrate development.',
+    h: 'What concept is NOT shown by the static PPC?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Producers operating in a free market economy are more efficient as a result of __________',
+    o: [
+      'The existence of competition',
+      'The very few number of participants',
+      'The commitment of the shareholders',
+      'Government regulation of their activities',
+    ],
+    a: 0,
+    e: 'Competition forces firms to minimize costs, innovate, and improve quality to survive — driving productive and allocative efficiency in a free market.',
+    full: 'In a free market economy, the driving force of efficiency is COMPETITION. Here\'s why:\n\n• If your costs are too high, a competitor will undercut your price and steal your customers → you are forced to find cheaper production methods (productive efficiency).\n• If you produce the wrong goods, consumers buy elsewhere → competition signals what people actually want (allocative efficiency).\n• If you fail to innovate, rivals with better products will take market share → competition incentivizes innovation.\n\nGovernment regulation can sometimes improve efficiency (e.g., breaking up monopolies) but can also reduce it (red tape). The free market argument is that competition itself, without heavy regulation, naturally drives producers to be efficient.',
+    h: 'Why are free market producers efficient?',
+  },
+
+  {
+    yr: 2022,
+    q: 'In a pie chart, a city\'s population is represented by 45°. If the country has a population of 10 million, the city\'s population is __________',
+    o: ['0.0045 million', '4.5 million', '1.25 million', '16 million'],
+    a: 2,
+    e: '45° out of 360° = 45/360 = 1/8. 1/8 × 10 million = 1.25 million.',
+    full: 'In a pie chart, the full circle = 360°, representing 100% (or the total population of 10 million).\n\nThe city is represented by 45°.\n\nFraction of total = 45 ÷ 360 = 0.125 = 1/8\n\nCity population = 1/8 × 10,000,000 = 1,250,000 = 1.25 million\n\nQuick check of the other options:\n• 4.5 million would be 162° (almost half the pie — clearly too large for 45°)\n• 0.0045 million is less than 5,000 people — far too small\n• 16 million exceeds the total country population — impossible',
+    h: 'Pie chart: 45° out of 360° of 10 million = what city population?',
+  },
+
+  {
+    yr: 2022,
+    q: 'A downward-sloping demand curve means that __________',
+    o: [
+      'Total revenue declines as price is lowered',
+      'Demand falls as output increases',
+      'Demand falls as output falls',
+      'Price must be lowered to sell more',
+    ],
+    a: 3,
+    e: 'The downward slope means as price falls, quantity demanded rises — i.e., to sell more units, the seller must lower the price.',
+    full: 'The law of demand states: as price falls, quantity demanded rises (all else equal) — and vice versa. This gives us a downward-sloping demand curve.\n\nReading the graph:\n• As you move DOWN the curve (price decreases), you move RIGHT (quantity increases).\n• So to sell MORE units, the producer must LOWER the price.\n\nWhy do the other options fail?\n• "Total revenue declines as price is lowered" — not necessarily true; TR can rise or fall depending on elasticity.\n• "Demand falls as output increases" — this confuses the demand curve with supply-side thinking.\n• "Demand falls as output falls" — this misreads the direction of the relationship.',
+    h: 'What does a downward-sloping demand curve tell sellers?',
+  },
+
+  {
+    yr: 2022,
+    q: 'If the price of commodity X rises and consumers shift to commodity Y, then commodities X and Y are __________',
+    o: ['Substitutes', 'Complements', 'Inferior goods', 'Bought together'],
+    a: 0,
+    e: 'When a price rise in X causes consumers to switch to Y, X and Y satisfy the same need — they are substitutes with a positive cross-price elasticity.',
+    full: 'Cross-price elasticity of demand (XED) tells us the relationship between two goods:\n\n• Substitutes: XED > 0 (positive). A rise in price of X → demand for Y rises. Consumers switch from the more expensive X to the cheaper substitute Y. Examples: butter & margarine, Coca-Cola & Pepsi, tea & coffee.\n\n• Complements: XED < 0 (negative). A rise in price of X → demand for Y falls, because they are used together. Examples: cars & petrol, printers & ink cartridges.\n\n• Independent goods: XED = 0. Price of X has no effect on demand for Y.\n\nHere, when X gets expensive, people move to Y — classic substitute behaviour.',
+    h: 'If price of X rises and demand for Y rises, the goods are ___?',
+  },
+    
     {
       yr: 2024,
       q: 'If wage rate is less than the average revenue product, the firm earns ___',
