@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import logo from './assets/elite-scholars-cbt-logo.png';
 
 // ── Config — edit these freely ─────────────────────────────────────────────
 const ROUND_SIZE = 20; // questions per quiz round
@@ -3473,23 +3474,19 @@ function Splash({ onDone }) {
           }}
         />
       ))}
-      <div
-        style={{
-          width: 120,
-          height: 120,
-          borderRadius: '50%',
-          background: `linear-gradient(135deg,${GOLD},${DGOLD})`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 48,
-          boxShadow: '0 0 40px rgba(212,175,55,.5)',
-          animation: 'pulse 2s infinite',
-          zIndex: 1,
-        }}
-      >
-        🎓
-      </div>
+      <img
+  src={logo}
+  alt="Elite Scholars CBT Logo"
+  style={{
+    width: 120,
+    height: 120,
+    borderRadius: '50%',
+    objectFit: 'cover',
+    boxShadow: '0 0 40px rgba(212,175,55,.5)',
+    animation: 'pulse 2s infinite',
+    zIndex: 1,
+  }}
+/>
       <div style={{ textAlign: 'center', zIndex: 1 }}>
         <div
           style={{
