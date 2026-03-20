@@ -3496,7 +3496,7 @@ function Splash({ onDone }) {
             lineHeight: 1.1,
           }}
         >
-          Edu<span style={{ color: GOLD }}>Play</span> CBT
+          Elite<span style={{ color: GOLD }}>Scholars</span> CBT
         </div>
         <div
           style={{ fontSize: 12, color: 'rgba(255,255,255,.6)', marginTop: 6 }}
@@ -3649,15 +3649,6 @@ function Onboard({ onDone }) {
         >
           Let's Go →
         </button>
-        <div
-          style={{
-            fontSize: 11,
-            color: 'rgba(255,255,255,.28)',
-            textAlign: 'center',
-          }}
-        >
-          No spam. Just your JAMB progress.
-        </div>
       </div>
     </div>
   );
