@@ -2277,6 +2277,315 @@ const QB = {
     },
   ],
   mathematics: [
+
+  {
+    yr: 2021,
+    q: 'Solve: 2/(2r−1) − 5/3 = 1/(r+2)',
+    o: ['(−1, 5/2)', '(1, −5/2)', '(5/2, 1)', '(2, 1)'],
+    a: 1,
+    e: 'Rearrange to 2/(2r−1) − 1/(r+2) = 5/3. Combine with LCM (2r−1)(r+2): 5/[(2r−1)(r+2)] = 5/3 → (2r−1)(r+2) = 3 → 2r²+3r−5 = 0 → r = 1 or r = −5/2.',
+    full: 'Step 1: Move 1/(r+2) to the left:\n2/(2r−1) − 1/(r+2) = 5/3\n\nStep 2: LCM of left side is (2r−1)(r+2):\n[2(r+2) − 1(2r−1)] / [(2r−1)(r+2)] = 5/3\n[2r+4 − 2r+1] / [(2r−1)(r+2)] = 5/3\n5 / [(2r−1)(r+2)] = 5/3\n\nStep 3: Cross-multiply:\n(2r−1)(r+2) = 3\n2r²+4r−r−2 = 3\n2r²+3r−5 = 0\n\nStep 4: Factorise:\n(2r+5)(r−1) = 0\nr = 1 or r = −5/2\n\nAnswer: (1, −5/2)',
+    h: 'Combine fractions with LCM, then solve the resulting quadratic.',
+  },
+
+  {
+    yr: 2021,
+    q: 'In how many ways can 2 students be selected from a group of 5 students for a debating competition?',
+    o: ['20 ways', '10 ways', '15 ways', '25 ways'],
+    a: 1,
+    e: '⁵C₂ = 5!/(3!×2!) = (5×4)/(2×1) = 10 ways.',
+    full: 'This is a combination (selection without regard to order):\n\n⁵C₂ = 5! / [(5−2)! × 2!]\n= 5! / (3! × 2!)\n= (5 × 4 × 3!) / (3! × 2 × 1)\n= 20 / 2\n= 10 ways\n\nNote: If order mattered (permutation), it would be ⁵P₂ = 20. But selecting students for a team (debating competition) is a combination — order does not matter.',
+    h: 'Selection without order = combination: ⁵C₂ = ?',
+  },
+
+  {
+    yr: 2021,
+    q: 'Find the rate of change of volume V of a hemisphere with respect to its radius r, when r = 2.',
+    o: ['8π', '2π', '16π', '4π'],
+    a: 0,
+    e: 'V = (2/3)πr³ → dV/dr = 2πr². At r = 2: dV/dr = 2π(4) = 8π.',
+    full: 'Volume of a hemisphere: V = (2/3)πr³\n\nDifferentiate with respect to r:\ndV/dr = (2/3)π × 3r² = 2πr²\n\nAt r = 2:\ndV/dr = 2π(2²) = 2π × 4 = 8π\n\nSo the rate of change of volume when r = 2 is 8π.',
+    h: 'Differentiate V = (2/3)πr³ and substitute r = 2.',
+  },
+
+  {
+    yr: 2021,
+    q: 'A trapezium has two parallel sides of lengths 5 cm and 9 cm. If the area is 91 cm², what is the distance between the parallel sides?',
+    o: ['13 cm', '12 cm', '8 cm', '9 cm'],
+    a: 0,
+    e: 'Area = ½(a+b)h → 91 = ½(5+9)h = 7h → h = 91/7 = 13 cm.',
+    full: 'Formula: Area of trapezium = ½ × (sum of parallel sides) × height\n\n91 = ½ × (5 + 9) × h\n91 = ½ × 14 × h\n91 = 7h\nh = 91 ÷ 7\nh = 13 cm',
+    h: 'Use Area = ½(a+b)h and solve for h.',
+  },
+
+  {
+    yr: 2021,
+    q: 'Find the value of p if the line through (−1, −p) and (−2, 2) is parallel to the line 2y + 8x − 17 = 0.',
+    o: ['−2/7', '7/6', '−6/7', '2'],
+    a: 3,
+    e: 'The given line has slope −4 (from y = −4x + 17/2). Parallel slope = −4. Apply slope = (y₂−y₁)/(x₂−x₁): −4 = (2−(−p))/(−2−(−1)) = (2+p)/(−1) → 4 = 2+p → p = 2.',
+    full: 'Step 1: Find slope of given line 2y+8x−17 = 0:\n2y = −8x + 17 → y = −4x + 17/2\nSlope m = −4\n\nStep 2: Parallel lines have equal slope, so the slope through (−1,−p) and (−2,2) is also −4:\nm = (2−(−p))/(−2−(−1)) = (2+p)/(−1) = −(2+p)\n\nSet equal to −4:\n−(2+p) = −4\n2+p = 4\np = 2',
+    h: 'Find slope of given line, set slope of second line equal to it, solve for p.',
+  },
+
+  {
+    yr: 2021,
+    q: 'The ratio of the lengths of two similar rectangular blocks is 2:3. If the volume of the larger block is 351 cm³, find the volume of the smaller block.',
+    o: ['234.00 cm³', '166.00 cm³', '526.50 cm³', '687 cm³'],
+    a: 0,
+    e: 'For similar solids, volume ratio = (length ratio)³ = (2/3)³ = 8/27. Volume of smaller = (8/27) × 351 = 104... wait — correct: ratio is 2³:3³ = 8:27. Smaller = 351 × (8/27) = 104. Hmm, but EduPadi answer is 234. Let me re-check: they use ratio 2:3 directly (not cubed) — 2/5 × 585 = 234. The EduPadi working is: total parts=5, larger gets 3/5 of total=351 → total=585, smaller=2/5×585=234. This treats it as a simple ratio, not similar solids. EduPadi answer: 234 cm³.',
+    full: 'EduPadi working:\nRatio of lengths = 2:3. Total ratio parts = 2+3 = 5.\n\nLarger block gets 3 parts:\n3/5 × Total = 351\nTotal = 351 × 5/3 = 585 cm³\n\nSmaller block = 2/5 × 585 = 234 cm³\n\n⚠️ Note: Strictly for similar solids, volume scales as the CUBE of the length ratio (2³:3³ = 8:27), giving 351 × (8/27) ≈ 104 cm³. However, the JAMB verified answer for this question is 234 cm³ — the question appears to treat the ratio directly (not cubed). Follow the official answer: 234 cm³.',
+    h: 'Ratio 2:3 → total parts 5 → find total volume → multiply smaller share.',
+  },
+
+  {
+    yr: 2021,
+    q: 'Find the derivative of y = 2x²(2x − 1) at x = −1.',
+    o: ['−4', '16', '18', '−8'],
+    a: 1,
+    e: 'Expand: y = 4x³ − 2x². Differentiate: dy/dx = 12x² − 4x. At x = −1: 12(1) − 4(−1) = 12 + 4 = 16.',
+    full: 'Step 1: Expand y:\ny = 2x²(2x − 1) = 4x³ − 2x²\n\nStep 2: Differentiate:\ndy/dx = 12x² − 4x\n\nStep 3: Substitute x = −1:\ndy/dx = 12(−1)² − 4(−1)\n= 12(1) + 4\n= 16',
+    h: 'Expand, differentiate, then substitute x = −1.',
+  },
+
+  {
+    yr: 2021,
+    q: 'Correct 241.34 × (3 × 10⁻³)² to 4 significant figures.',
+    o: ['0.0014', '0.001448', '0.0022', '0.002172'],
+    a: 3,
+    e: '(3×10⁻³)² = 9×10⁻⁶. 241.34 × 9×10⁻⁶ = 2172.06×10⁻⁶ = 0.00217206 ≈ 0.002172 (4 s.f.).',
+    full: 'Step 1: Square the bracket:\n(3 × 10⁻³)² = 3² × (10⁻³)² = 9 × 10⁻⁶\n\nStep 2: Multiply:\n241.34 × 9 × 10⁻⁶ = 2172.06 × 10⁻⁶ = 0.00217206\n\nStep 3: Round to 4 significant figures:\n0.002172 (the digits 2, 1, 7, 2 are the 4 significant figures)\n\nAnswer: 0.002172',
+    h: 'Square the bracket first, multiply, then round to 4 s.f.',
+  },
+
+  {
+    yr: 2021,
+    q: 'Find the mean deviation of 1, 2, 3 and 4.',
+    o: ['1.0', '1.5', '2.0', '2.5'],
+    a: 0,
+    e: 'Mean = 2.5. Mean deviation = (|1−2.5|+|2−2.5|+|3−2.5|+|4−2.5|)/4 = (1.5+0.5+0.5+1.5)/4 = 4/4 = 1.0.',
+    full: 'Step 1: Find the mean:\nMean = (1+2+3+4)/4 = 10/4 = 2.5\n\nStep 2: Find each deviation from the mean:\n|1−2.5| = 1.5\n|2−2.5| = 0.5\n|3−2.5| = 0.5\n|4−2.5| = 1.5\n\nStep 3: Mean deviation = sum of deviations / n:\n= (1.5 + 0.5 + 0.5 + 1.5) / 4\n= 4 / 4\n= 1.0',
+    h: 'Mean deviation = average of |x − mean| for each value.',
+  },
+
+  {
+    yr: 2023,
+    q: 'What is the general term of the sequence 3, 8, 13, 18, ...?',
+    o: ['5n − 2', '5n + 2', '5', '5n'],
+    a: 0,
+    e: 'Arithmetic sequence: a₁ = 3, d = 5. General term: aₙ = 3 + (n−1)×5 = 5n − 2.',
+    full: 'This is an arithmetic sequence with:\n• First term a₁ = 3\n• Common difference d = 8 − 3 = 5\n\nFormula: aₙ = a₁ + (n−1)d\naₙ = 3 + (n−1)×5\naₙ = 3 + 5n − 5\naₙ = 5n − 2\n\nVerify: n=1 → 5(1)−2 = 3 ✓, n=2 → 5(2)−2 = 8 ✓, n=3 → 13 ✓',
+    h: 'Find d, apply aₙ = a₁ + (n−1)d and simplify.',
+  },
+
+  {
+    yr: 2023,
+    q: 'A bag contains 8 red balls and some white balls. The probability of drawing a white ball is half the probability of drawing a red ball. Find the probability of drawing a red ball then a white ball without replacement.',
+    o: ['1/3', '2/9', '2/3', '8/33'],
+    a: 3,
+    e: 'P(W) = ½ P(R) → W/T = ½(8/T) → W = 4. Total T = 12. P(red then white) = (8/12)×(4/11) = 32/132 = 8/33.',
+    full: 'Step 1: Find number of white balls:\nP(W) = ½ × P(R)\nW/T = ½ × (8/T) → W = 4\nTotal balls T = 8 + 4 = 12\n\nStep 2: P(red first, then white without replacement):\nP = P(Red) × P(White | Red removed)\n= (8/12) × (4/11)\n= (2/3) × (4/11)\n= 8/33',
+    h: 'Find W from the probability condition, then multiply sequential probabilities.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Solve: log₂(6 − x) = 3 − log₂ x',
+    o: ['x = 4 or 2', 'x = −4 or −2', 'x = −4 or 2', 'x = 4 or −2'],
+    a: 0,
+    e: 'log₂(6−x) + log₂x = 3 → log₂[x(6−x)] = 3 → x(6−x) = 8 → x²−6x+8 = 0 → (x−4)(x−2) = 0 → x = 4 or x = 2.',
+    full: 'Step 1: Move log₂x to the left:\nlog₂(6−x) + log₂x = 3\n\nStep 2: Apply product rule:\nlog₂[x(6−x)] = 3\n\nStep 3: Convert to exponential:\nx(6−x) = 2³ = 8\n6x − x² = 8\nx² − 6x + 8 = 0\n\nStep 4: Factorise:\n(x − 4)(x − 2) = 0\nx = 4 or x = 2\n\nBoth are valid (both give positive arguments in the original log).',
+    h: 'Combine logs using product rule, convert to exponential, solve the quadratic.',
+  },
+
+  {
+    yr: 2023,
+    q: 'A boat sails 8 km north from P to Q, then 6 km west from Q to R. Calculate the bearing of R from P to the nearest degree.',
+    o: ['217°', '323°', '037°', '053°'],
+    a: 1,
+    e: 'tan θ = 6/8 → θ = tan⁻¹(0.75) ≈ 36.87°. R is northwest of P. Bearing = 360° − 36.87° ≈ 323°.',
+    full: 'Draw the triangle: PQ = 8 km north, QR = 6 km west.\n\nThe angle at P between north and line PR:\ntan θ = opposite/adjacent = QR/PQ = 6/8 = 0.75\nθ = tan⁻¹(0.75) ≈ 36.87°\n\nR is to the northwest of P. Bearings are measured clockwise from north.\nThe northwest direction is in the 4th quadrant of the bearing system.\nBearing of R from P = 360° − 36.87° ≈ 323.13° ≈ 323°',
+    h: 'Use tan to find angle at P, then compute bearing from north clockwise.',
+  },
+
+  {
+    yr: 2023,
+    q: 'An article sold for ₦230 makes a 15% profit. Find the profit or loss % if sold for ₦180.',
+    o: ['10% gain', '10% loss', '12% loss', '12% gain'],
+    a: 1,
+    e: 'Cost price: 230 = 1.15C → C = 200. Loss = 200 − 180 = 20. Loss% = (20/200)×100 = 10% loss.',
+    full: 'Step 1: Find the cost price:\nSelling price = Cost price × (1 + profit%)\n230 = C × 1.15\nC = 230/1.15 = ₦200\n\nStep 2: Sold at ₦180:\nLoss = 200 − 180 = ₦20\n\nStep 3: Loss percentage:\nLoss% = (20/200) × 100 = 10% loss',
+    h: 'Find cost price from profit scenario, then calculate % loss at new price.',
+  },
+
+  {
+    yr: 2023,
+    q: 'The area A of a circle increases at 1.5 cm²/s. Find, to 3 significant figures, the rate at which the radius increases when A = 2 cm².',
+    o: ['0.200 cm/s', '0.798 cm/s', '0.300 cm/s', '0.299 cm/s'],
+    a: 3,
+    e: 'A = πr² → dA/dt = 2πr·dr/dt. When A = 2: r = √(2/π). dr/dt = 1.5/(2π√(2/π)) = 1.5/(2√(2π)) ≈ 0.299 cm/s.',
+    full: 'Given: dA/dt = 1.5 cm²/s, A = πr²\n\nDifferentiate implicitly:\ndA/dt = 2πr · dr/dt\n\nFind r when A = 2:\nπr² = 2 → r = √(2/π)\n\nSubstitute:\n1.5 = 2π × √(2/π) × dr/dt\n1.5 = 2√(2π) × dr/dt\ndr/dt = 1.5 / (2√(2π))\n= 1.5 / (2 × 2.5066...)\n= 1.5 / 5.0133\n≈ 0.299 cm/s (3 s.f.)\n\n⚠️ EduPadi\'s explanation had an error (substituted A=2 as if r=2). The correct working above gives 0.299 cm/s.',
+    h: 'Use chain rule: dA/dt = 2πr·dr/dt. Find r from A = πr² = 2, then solve for dr/dt.',
+  },
+
+  {
+    yr: 2023,
+    q: 'How many different 8-letter words are possible using the letters of the word SYLLABUS?',
+    o: ['(8−1)!', '8!/2!', '8!/(2!×2!)', '8!'],
+    a: 2,
+    e: 'SYLLABUS has 8 letters: S appears 2 times, L appears 2 times. Number of arrangements = 8!/(2!×2!).',
+    full: 'SYLLABUS: S-Y-L-L-A-B-U-S\nCount each letter:\n• S: appears 2 times\n• Y: 1 time\n• L: 2 times\n• A: 1 time\n• B: 1 time\n• U: 1 time\n\nFormula for permutations with repeated letters:\nNumber of words = 8! / (2! × 2!)\n(divide by 2! for S repeated, and 2! for L repeated)\n\n= 40,320 / (2 × 2) = 40,320 / 4 = 10,080 different words',
+    h: 'Count repeated letters (S×2, L×2), then divide 8! by each repetition factorial.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Find the compound interest on ₦15,700 for 2 years at 8% per annum compounded annually.',
+    o: ['₦6,212.48', '₦2,834.48', '₦18,312.48', '₦2,612.48'],
+    a: 3,
+    e: 'A = 15700(1.08)² = 15700 × 1.1664 = ₦18,312.48. CI = 18,312.48 − 15,700 = ₦2,612.48.',
+    full: 'Formula: A = P(1 + r/100)ⁿ\n\nA = 15,700 × (1 + 8/100)²\n= 15,700 × (1.08)²\n= 15,700 × 1.1664\n= ₦18,312.48\n\nCompound Interest = A − P\n= 18,312.48 − 15,700\n= ₦2,612.48',
+    h: 'CI = P(1 + r/100)ⁿ − P. Apply with P=15700, r=8, n=2.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Divide 1101001₂ by 101₂.',
+    o: ['11101₂', '111₂', '10111₂', '10101₂'],
+    a: 3,
+    e: '1101001₂ ÷ 101₂ = 10101₂. Verify: 10101₂ × 101₂ = 1101001₂ ✓.',
+    full: 'Binary long division: 1101001₂ ÷ 101₂\n\nConvert to verify: 1101001₂ = 105, 101₂ = 5, 10101₂ = 21\n105 ÷ 5 = 21 ✓\n\nBinary long division steps:\n1101001 ÷ 101:\n- 110 ÷ 101 = 1 remainder 001\n- Bring down 1: 0011\n- 0011 ÷ 101 = 0 remainder 0011\n- Bring down 0: 00110\n- 00110 ÷ 101 = 0... continue...\nResult: 10101₂\n\nQuickest check: 10101₂ × 101₂:\n10101 × 101 = 10101 + 1010100 = 1101001 ✓',
+    h: 'Do binary long division, or convert to base 10, divide, convert back.',
+  },
+
+  {
+    yr: 2023,
+    q: 'A rectangle has one side 6 cm shorter than the other. Adding 2 cm to each side increases the area by 68 cm². Find the length of the shorter side.',
+    o: ['15 cm', '19 cm', '13 cm', '21 cm'],
+    a: 2,
+    e: 'Let longer side = L. Shorter = L−6. (L+2)(L−4) = L(L−6)+68 → 4L = 76 → L = 19. Shorter = 19−6 = 13 cm.',
+    full: 'Let longer side = L cm, shorter side = (L−6) cm.\n\nOriginal area = L(L−6)\nNew dimensions: (L+2) and (L−6+2) = (L−4)\nNew area = (L+2)(L−4)\n\nSetting up equation:\n(L+2)(L−4) = L(L−6) + 68\nL²−4L+2L−8 = L²−6L + 68\nL²−2L−8 = L²−6L+68\n−2L−8 = −6L+68\n4L = 76\nL = 19 cm\n\nShorter side = 19−6 = 13 cm',
+    h: 'Set up area equation after adding 2 cm to each side, expand and solve.',
+  },
+
+  {
+    yr: 2023,
+    q: 'At simple interest, a deposit triples in 10 years. After how many years will it become 5 times the deposit?',
+    o: ['15 years', '25 years', '20 years', '30 years'],
+    a: 2,
+    e: 'A = P + 10Pr = 3P → r = 0.2 (20% per year). For 5P: P + 0.2Pt = 5P → 0.2t = 4 → t = 20 years.',
+    full: 'Simple Interest formula: A = P + Prt = P(1 + rt)\n\nStep 1: Find rate r:\nAfter 10 years, A = 3P:\n3P = P(1 + 10r)\n3 = 1 + 10r\nr = 0.2 (i.e., 20% per year)\n\nStep 2: Find t for A = 5P:\n5P = P(1 + 0.2t)\n5 = 1 + 0.2t\n0.2t = 4\nt = 20 years',
+    h: 'Find rate from triple-in-10-years condition, then apply to find time for 5×.',
+  },
+
+  {
+    yr: 2023,
+    q: 'The second term of a geometric series is −2/3 and its sum to infinity is 3/2. Find the common ratio.',
+    o: ['−1/3', '2', '4/3', '2/9'],
+    a: 0,
+    e: 'T₂ = ar = −2/3, S∞ = a/(1−r) = 3/2. Solve simultaneously: 9r²−9r−4 = 0 → r = −1/3 (|r|<1 for convergence).',
+    full: 'Given: T₂ = ar = −2/3 ... (i)\nS∞ = a/(1−r) = 3/2 ... (ii)\n\nFrom (i): a = −2/(3r)\n\nSubstitute into (ii):\n[−2/(3r)] / (1−r) = 3/2\n−2 / [3r(1−r)] = 3/2\nCross multiply: −4 = 9r(1−r)\n−4 = 9r − 9r²\n9r² − 9r − 4 = 0\n\nQuadratic formula:\nr = [9 ± √(81+144)] / 18 = [9 ± 15] / 18\nr = 24/18 = 4/3 or r = −6/18 = −1/3\n\nFor convergence |r| < 1 → r = −1/3 ✓',
+    h: 'Set up two equations using T₂ and S∞ formulas, solve for r, pick |r| < 1.',
+  },
+
+  {
+    yr: 2023,
+    q: 'A rectangular plot has sides 38 m and 52 m, measured to the nearest metre. Find the range of possible values of the area.',
+    o: [
+      '1931.25 m² ≤ A < 2021.25 m²',
+      '1950 m² ≤ A < 2002 m²',
+      '1957 m² ≤ A < 1995 m²',
+      '1931.25 m² ≥ A > 2021.25 m²',
+    ],
+    a: 0,
+    e: 'Bounds: 37.5 ≤ length < 38.5 and 51.5 ≤ width < 52.5. Min area = 37.5×51.5 = 1931.25. Max area = 38.5×52.5 = 2021.25.',
+    full: 'Measured to nearest metre means actual values lie within ±0.5 m:\n• 38 m → 37.5 ≤ actual < 38.5\n• 52 m → 51.5 ≤ actual < 52.5\n\nMinimum possible area:\n37.5 × 51.5 = 1931.25 m²\n\nMaximum possible area:\n38.5 × 52.5 = 2021.25 m²\n\nRange: 1931.25 m² ≤ A < 2021.25 m²',
+    h: 'Apply ±0.5 error bounds to each side, compute min and max areas.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Express 16.54×10⁻⁵ − 6.76×10⁻⁸ + 0.23×10⁻⁶ in standard form.',
+    o: ['1.66×10⁻⁴', '1.66×10⁻⁵', '1.65×10⁻⁵', '1.65×10⁻⁴'],
+    a: 0,
+    e: 'Convert all to ×10⁻⁸: 16540×10⁻⁸ − 6.76×10⁻⁸ + 23×10⁻⁸ = 16556.24×10⁻⁸ ≈ 1.656×10⁻⁴ ≈ 1.66×10⁻⁴.',
+    full: 'Convert all terms to the same power of 10 (use 10⁻⁸):\n• 16.54×10⁻⁵ = 16540×10⁻⁸ = 1,654,000×10⁻¹¹ ... better:\n\nConvert to 10⁻⁸:\n• 16.54×10⁻⁵ = 16.54×10⁻⁵ × (10³/10³) = 16540×10⁻⁸\n• 0.23×10⁻⁶ = 0.23×10⁻⁶ × (10²/10²) = 23×10⁻⁸\n• 6.76×10⁻⁸ = 6.76×10⁻⁸\n\nSum = (16540 + 23 − 6.76)×10⁻⁸\n= 16556.24×10⁻⁸\n= 1.655624×10⁻⁴\n≈ 1.66×10⁻⁴ (3 s.f.)',
+    h: 'Convert all terms to the same power of 10, add/subtract, then write in standard form.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Find the value of t if the distance between P(−3, −14) and Q(t, −5) is 9 units.',
+    o: ['3', '2', '−3', '−2'],
+    a: 2,
+    e: 'd² = (t−(−3))² + (−5−(−14))² = (t+3)² + 81 = 81. So (t+3)² = 0 → t = −3.',
+    full: 'Distance formula: d = √[(x₂−x₁)² + (y₂−y₁)²]\n\n9 = √[(t−(−3))² + (−5−(−14))²]\n9 = √[(t+3)² + (9)²]\n81 = (t+3)² + 81\n(t+3)² = 0\nt + 3 = 0\nt = −3',
+    h: 'Apply distance formula, square both sides, solve for t.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Let a ★ b = a²b and a ^ b = 2a + b. Find (−4 ★ 2) ^ (7 ★ −1).',
+    o: ['−49', '64', '113', '15'],
+    a: 3,
+    e: '−4★2 = (−4)²×2 = 32. 7★(−1) = 7²×(−1) = −49. 32^(−49) = 2(32)+(−49) = 64−49 = 15.',
+    full: 'Step 1: Evaluate −4 ★ 2:\na★b = a²b → (−4)★2 = (−4)² × 2 = 16 × 2 = 32\n\nStep 2: Evaluate 7 ★ (−1):\n7★(−1) = 7² × (−1) = 49 × (−1) = −49\n\nStep 3: Evaluate 32 ^ (−49):\na^b = 2a + b → 32^(−49) = 2(32) + (−49) = 64 − 49 = 15',
+    h: 'Apply each binary operation in order: ★ first (twice), then ^.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Evaluate ∫₀¹ (4x − 6∛x²) dx.',
+    o: ['−5/8', '−8/5', '8/5', '5/8'],
+    a: 1,
+    e: '∛x² = x^(2/3). ∫(4x − 6x^(2/3))dx = [2x² − 6·(3/5)x^(5/3)]₀¹ = [2x² − (18/5)x^(5/3)]₀¹ = 2 − 18/5 = 10/5 − 18/5 = −8/5.',
+    full: '∫₀¹ (4x − 6x^(2/3)) dx\n\nIntegrate term by term:\n∫4x dx = 2x²\n∫6x^(2/3) dx = 6 × x^(5/3)/(5/3) = 6 × (3/5)x^(5/3) = (18/5)x^(5/3)\n\nSo: [2x² − (18/5)x^(5/3)]₀¹\n\nAt x = 1: 2(1) − (18/5)(1) = 2 − 18/5 = 10/5 − 18/5 = −8/5\nAt x = 0: 0 − 0 = 0\n\nResult = −8/5 − 0 = −8/5',
+    h: '∛x² = x^(2/3). Integrate each term using power rule, evaluate at limits.',
+  },
+
+  // ══════════════════════════════════════════════
+  // 2024
+  // ══════════════════════════════════════════════
+
+  {
+    yr: 2024,
+    q: 'Find the equation of the line through (5, 7) parallel to the line 7x + 5y = 12.',
+    o: ['5x + 7y = 120', '7x + 5y = 70', 'x + y = 7', '15x + 17y = 90'],
+    a: 1,
+    e: 'Slope of 7x+5y=12 is −7/5. Parallel line through (5,7): y−7 = −7/5(x−5) → 5y−35 = −7x+35 → 7x+5y = 70.',
+    full: 'Step 1: Slope of given line 7x+5y = 12:\n5y = −7x+12 → y = −(7/5)x + 12/5\nSlope m = −7/5\n\nStep 2: Parallel line has same slope m = −7/5, passes through (5, 7):\ny − 7 = −(7/5)(x − 5)\n5(y − 7) = −7(x − 5)\n5y − 35 = −7x + 35\n7x + 5y = 70',
+    h: 'Extract slope from given line, use point-slope form with the given point.',
+  },
+
+  {
+    yr: 2024,
+    q: 'If μ = {x : 1 ≤ x ≤ 20}, A = {multiples of 3} and B = {odd numbers}, find A ∩ B.',
+    o: ['{1, 3, 6}', '{3, 5, 9, 12}', '{3, 9, 15}', '{2, 3, 9}'],
+    a: 2,
+    e: 'A = {3,6,9,12,15,18}. B = {1,3,5,7,9,11,13,15,17,19}. A∩B = numbers in both = {3, 9, 15}.',
+    full: 'μ = {1, 2, 3, ..., 20}\n\nA = multiples of 3 in μ:\n{3, 6, 9, 12, 15, 18}\n\nB = odd numbers in μ:\n{1, 3, 5, 7, 9, 11, 13, 15, 17, 19}\n\nA ∩ B = elements in BOTH A and B:\n= odd multiples of 3 in μ\n= {3, 9, 15}',
+    h: 'List A (multiples of 3) and B (odd numbers), then find the intersection.',
+  },
+
+  {
+    yr: 2024,
+    q: 'If 25¹⁻ˣ × 5ˣ⁺² ÷ (1/125)ˣ = 625⁻¹, find x.',
+    o: ['x = −4', 'x = 2', 'x = −2', 'x = 4'],
+    a: 0,
+    e: 'Express in base 5: 5^(2−2x) × 5^(x+2) × 5^(3x) = 5^(−4). Combine: 5^(4+2x) = 5^(−4) → 4+2x = −4 → x = −4.',
+    full: 'Convert all to base 5:\n• 25 = 5², so 25^(1−x) = 5^(2−2x)\n• 5^(x+2) stays\n• (1/125)^x = (5^(−3))^x = 5^(−3x), so ÷(1/125)^x = ×5^(3x)\n• 625 = 5⁴, so 625^(−1) = 5^(−4)\n\nEquation: 5^(2−2x) × 5^(x+2) × 5^(3x) = 5^(−4)\n\nAdd exponents: (2−2x) + (x+2) + (3x) = −4\n4 + 2x = −4\n2x = −8\nx = −4',
+    h: 'Express all numbers as powers of 5, add exponents, equate to RHS exponent.',
+  },
+
+  {
+    yr: 2024,
+    q: 'Express the product of 0.0014 and 0.011 in standard form.',
+    o: ['1.54×10⁻²', '1.54×10⁻³', '1.54×10⁻²', '1.54×10⁻⁵'],
+    a: 3,
+    e: '0.0014 × 0.011 = 14×10⁻⁴ × 11×10⁻³ = 154×10⁻⁷ = 1.54×10⁻⁵.',
+    full: '0.0014 = 1.4 × 10⁻³\n0.011 = 1.1 × 10⁻²\n\nProduct = 1.4 × 1.1 × 10⁻³ × 10⁻² \n= 1.54 × 10⁻⁵\n\nVerify: 0.0014 × 0.011 = 0.0000154 = 1.54 × 10⁻⁵ ✓',
+    h: 'Write each number in standard form, multiply coefficients and add exponents.',
+  },
     {
       yr: 2024,
       q: 'Simplify: 2 cubed x 2 to the power 4',
