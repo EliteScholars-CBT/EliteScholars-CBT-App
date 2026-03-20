@@ -1678,6 +1678,451 @@ const QB = {
     },
   ],
   biology: [
+
+  {
+    yr: 2024,
+    q: 'Which organ removes the largest quantity of water from the blood?',
+    o: ['Lung', 'Skin', 'Kidney', 'Intestine'],
+    a: 2,
+    e: 'The kidneys filter approximately 180 litres of blood daily and reabsorb most of the water, excreting only about 1–2 litres as urine. This is the largest volume of water removed from blood by any single organ.',
+    full: 'The kidneys are the primary regulators of water balance (osmoregulation) in the body. They filter blood continuously through millions of nephrons, reabsorbing most of the water and only allowing excess to leave as urine.\n\nWhile the lungs lose water through breathing (~400 mL/day) and skin loses water through sweat, these amounts are far smaller than what the kidneys process.\n\nThe intestine absorbs water from food — it does not remove water FROM the blood in the same regulatory sense.\n\nAnswer: Kidney (C) — the dominant organ for water removal from blood.',
+    h: 'Which organ filters blood and controls water balance through urine production?',
+  },
+
+  {
+    yr: 2024,
+    q: 'The organisms that adopt swarming as an adaptation to overcome overcrowding are ______.',
+    o: ['Agama lizard', 'Tilapia', 'Rats', 'Termites'],
+    a: 3,
+    e: 'When a termite colony becomes overcrowded, winged reproductive termites (alates) are produced. These alates swarm out of the colony, mate, and establish new colonies elsewhere — a direct response to overcrowding.',
+    full: 'Swarming is a specific population dispersal strategy observed in social insects, particularly termites (and also bees and ants).\n\nIn termites:\n• When the colony grows too large and resources become limited, the queen produces winged reproductive individuals called alates.\n• These alates swarm in large numbers, typically triggered by temperature or rain.\n• They fly out, mate, shed their wings, and the fertilised queen starts a new colony.\n\nThis swarming behaviour is specifically an adaptation to overcome overcrowding — dispersing the population to new locations.\n\n• Agama lizards show territorial behaviour (not swarming).\n• Tilapia and rats disperse individually or in small groups, not through organised swarming.',
+    h: 'Which social insect produces winged alates that swarm when the colony is overcrowded?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Bryophyte is an intermediate group between higher algae and ______.',
+    o: ['Thallophyte', 'Pteridophyte', 'Spermatophyte', 'Tracheophyte'],
+    a: 1,
+    e: 'Bryophytes (mosses, liverworts, hornworts) are transitional between aquatic algae and vascular land plants. Pteridophytes (ferns) are the next group — the first true vascular plants.',
+    full: 'Plant kingdom evolution in order:\n1. Algae (aquatic, no true leaves/stems/roots)\n2. Bryophyta — mosses, liverworts (first land plants; no vascular tissue, need water for reproduction)\n3. Pteridophyta — ferns (first vascular plants; no seeds)\n4. Spermatophyta — seed plants (gymnosperms + angiosperms)\n\nBryophytes sit between higher algae and pteridophytes:\n• Like algae: no vascular tissue, need water for fertilisation\n• Unlike algae: adapted to land, have leaf-like and stem-like structures\n• Unlike pteridophytes: no xylem/phloem\n\n"Tracheophyte" is a broader term encompassing pteridophytes and spermatophytes (all vascular plants). The more specific intermediate step is pteridophyta.',
+    h: 'In plant evolution, what group comes just after bryophytes — the first vascular plants?',
+  },
+
+  {
+    yr: 2024,
+    q: 'One main feature of trees in the savanna habitat is the possession of ______.',
+    o: [
+      'Large, leathery leaves',
+      'Straight slender stems with branches near the top',
+      'Thin, smooth barks',
+      'Thick, corky bark',
+    ],
+    a: 3,
+    e: 'Savanna trees have thick, corky bark as an adaptation against frequent bush fires and to reduce water loss during the long dry season.',
+    full: 'Savanna is characterised by seasonal rainfall, a prolonged dry season, and frequent fires. Trees are adapted as follows:\n\n✓ Thick, corky bark:\n• Protects against fire damage\n• Reduces water loss through the bark\n• Insulates the living tissue inside from heat\n\n✗ Large, leathery leaves: Rainforest adaptation (to capture light in shade).\n✗ Straight slender stems with branches near top: Adaptation for competing for light in dense forests.\n✗ Thin, smooth bark: Found in humid environments — offers NO fire protection.\n\nOther savanna tree adaptations: deep tap roots, drought-deciduous (shedding leaves in dry season), water storage in trunk (e.g., baobab).',
+    h: 'What bark feature protects savanna trees from fire and water loss?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Which of the following structures enables the exchange of gases in insects?',
+    o: ['Skin', 'Tracheae', 'Malpighian tubules', 'Flame cell'],
+    a: 1,
+    e: 'Insects breathe through a tracheal system — a network of air-filled tubes (tracheae) that carry oxygen directly to tissues. Air enters through openings called spiracles.',
+    full: 'Insects do not use lungs or gills. Instead they have a unique respiratory system:\n\n• Tracheae: Branching tubes that carry air directly to every cell in the body. Oxygen diffuses directly into tissues without needing blood as an intermediary.\n• Spiracles: Small openings on the body surface where air enters the tracheal system.\n• Tracheoles: The finest branches of the tracheae, in direct contact with cells.\n\nOther options:\n• Skin: Some gas exchange occurs through the skin in soft-bodied insects, but it is not the PRIMARY system.\n• Malpighian tubules: Excretory organs (like kidneys) — remove nitrogenous waste.\n• Flame cells: Excretory/osmoregulatory structures found in flatworms — NOT in insects.',
+    h: 'What air-tube system carries oxygen directly to insect tissues?',
+  },
+
+  {
+    yr: 2024,
+    q: 'A community of 2,310,000 people lives in an area of 2,310 km². What is the population density?',
+    o: ['10000', '10', '100', '1000'],
+    a: 3,
+    e: 'Population density = Population ÷ Area = 2,310,000 ÷ 2,310 = 1,000 people/km².',
+    full: 'Population density is calculated as:\n\nPopulation density = Number of individuals ÷ Area\n\n= 2,310,000 ÷ 2,310\n= 1,000 people per km²\n\nThis is a straightforward calculation. Population density tells us how crowded a given area is — useful for studying competition, resource availability, and ecological pressure in biology.',
+    h: 'Population density = population ÷ area. Calculate: 2,310,000 ÷ 2,310 = ?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Similar structures that are modified to work in different ways in different organisms are referred to as ______.',
+    o: ['Homologous structures', 'Analogous structures', 'Divergent structures', 'Convergent structures'],
+    a: 0,
+    e: 'Homologous structures share a common evolutionary origin (same ancestry) but have been modified to serve different functions in different organisms — evidence of divergent evolution.',
+    full: 'Key definitions:\n\n• Homologous structures: Same embryonic origin, different function.\n  Example: Human arm, whale flipper, bat wing, dog foreleg — all share the same bone arrangement (humerus, radius, ulna, carpals) but serve different purposes.\n  → Evidence of divergent evolution from a common ancestor.\n\n• Analogous structures: Different origin, same function.\n  Example: Wings of a butterfly and wings of a bird — both used for flight but evolved independently.\n  → Evidence of convergent evolution.\n\nThe question describes structures that are "similar" (same origin) but "work differently" — this is the definition of homologous structures.',
+    h: 'Same origin + different functions in different organisms = homologous or analogous?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Which of the following plants shows hypogeal germination?',
+    o: ['Castor oil', 'Groundnut', 'Maize', 'Orange'],
+    a: 2,
+    e: 'Maize shows hypogeal germination — the cotyledon (scutellum) stays underground while the plumule grows upward. Castor oil, groundnut, and orange show epigeal germination (cotyledons emerge above ground).',
+    full: 'Two types of seed germination:\n\n1. Epigeal germination: The hypocotyl elongates, pushing the cotyledons ABOVE the soil surface.\n   Examples: Castor oil, groundnut, orange, beans, paw-paw\n\n2. Hypogeal germination: The epicotyl elongates while the cotyledon(s) remain BELOW the soil.\n   Examples: Maize, wheat, millet, peas, cocoa, coconut\n\nMemory trick:\n• Hypo = below → cotyledon stays below (underground)\n• Epi = above → cotyledon comes above\n\nMaize (a monocot) keeps its scutellum underground and only the shoot (plumule) emerges.',
+    h: 'In hypogeal germination, the cotyledon stays underground. Which plant does this?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Bilateral symmetry, cylindrical bodies and double openings (mouth and anus) are characteristic features of ______.',
+    o: ['Nematodes', 'Hydra', 'Protozoa', 'Protists'],
+    a: 0,
+    e: 'Nematodes (roundworms) have bilateral symmetry, cylindrical/tube-shaped bodies, and a complete digestive system with both a mouth and an anus — all matching the description.',
+    full: 'Match the features to the phylum:\n\n• Bilateral symmetry: Body has a distinct left and right side (mirror images) — found in nematodes, humans, insects.\n• Cylindrical bodies: Tube-shaped, worm-like — characteristic of roundworms.\n• Double openings (complete gut): Mouth AND anus — allows one-way movement of food through the digestive tract.\n\nAll three features together = Nematoda (roundworms).\n\nOther options:\n• Hydra: Radial symmetry, single opening (mouth only, no separate anus) — incomplete gut.\n• Protozoa: Single-celled, no body symmetry of this kind.\n• Protists: Broad kingdom of mostly single-celled organisms.',
+    h: 'Which worm-like group has bilateral symmetry, cylindrical body, mouth AND anus?',
+  },
+
+  // ══════════════════════════════════════════════
+  // 2023
+  // ══════════════════════════════════════════════
+
+  {
+    yr: 2023,
+    q: 'Which of the following is the most inclusive level of classification in the Linnaean system?',
+    o: ['Kingdom', 'Domain', 'Class', 'Phylum'],
+    a: 0,
+    e: 'In the classical Linnaean system, Kingdom is the highest (most inclusive) level. Domain was added later by Woese and is not part of the original Linnaean hierarchy. JAMB answer: Kingdom.',
+    full: 'The classical Linnaean hierarchy from most to least inclusive:\n1. Kingdom\n2. Phylum\n3. Class\n4. Order\n5. Family\n6. Genus\n7. Species\n\nDomain (Bacteria, Archaea, Eukarya) was introduced by Carl Woese in 1990 — ABOVE Kingdom — but is NOT part of the original Linnaean system.\n\nSince the question asks about the "Linnaean system" specifically, the most inclusive level is Kingdom.\n\n⚠️ EduPadi\'s explanation mentioned Domain but the verified JAMB answer is Kingdom (A).',
+    h: 'In Linnaeus\'s original classification, what is the broadest/most inclusive rank?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is a method of asexual reproduction in plants?',
+    o: ['Pollination', 'Vegetative propagation', 'Seed dispersal', 'Fertilization'],
+    a: 1,
+    e: 'Vegetative propagation produces new plants from vegetative parts (stems, roots, leaves, bulbs) of one parent plant — no gametes involved. It is a form of asexual reproduction.',
+    full: 'Asexual reproduction in plants involves a single parent and no gamete fusion. Types include:\n• Vegetative propagation: Using stems (runners, tubers, rhizomes), leaves (e.g., Bryophyllum), or roots (e.g., cassava cuttings)\n• Budding (in yeast)\n• Spore formation\n• Fragmentation\n\nOther options:\n• Pollination: Transfer of pollen — part of sexual reproduction\n• Seed dispersal: Spreading seeds — part of sexual reproduction cycle\n• Fertilisation: Fusion of gametes — sexual reproduction\n\nVegetative propagation is the only asexual method listed.',
+    h: 'Which method of plant reproduction uses leaves, stems, or roots — not seeds or gametes?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is the primary organ involved in gas exchange during respiration in humans?',
+    o: ['Diaphragm', 'Bronchi', 'Lungs', 'Trachea'],
+    a: 2,
+    e: 'Gas exchange (O₂ in, CO₂ out) occurs in the alveoli of the lungs. The diaphragm drives breathing movement, bronchi are airways, and the trachea is the windpipe — none of them are gas exchange surfaces.',
+    full: 'The respiratory system pathway:\nNose/Mouth → Trachea (windpipe) → Bronchi (two branches) → Bronchioles → Alveoli\n\nGAS EXCHANGE happens at the alveoli — tiny air sacs in the lungs with:\n• Thin walls (one cell thick)\n• Large surface area\n• Rich blood supply (capillaries)\n\nOxygen diffuses into the blood; CO₂ diffuses out.\n\nOther organs:\n• Diaphragm: A muscle that contracts/relaxes to change lung volume (ventilation), not exchange.\n• Bronchi/Trachea: Airways that conduct air to the lungs — no gas exchange occurs there.',
+    h: 'Where does O₂ enter the blood and CO₂ leave it during breathing?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following statements about the heart is true?',
+    o: [
+      'The heart is responsible for the production of red blood cells',
+      'The heart pumps oxygenated blood to the lungs',
+      'The heart receives blood from the kidneys and filters waste products',
+      'The heart is a muscular organ that contracts to circulate blood throughout the body',
+    ],
+    a: 3,
+    e: 'The heart is a pump — a muscular organ that contracts rhythmically to push blood around the body. It does not produce RBCs (that\'s the red bone marrow), filter waste (that\'s kidneys), or send oxygenated blood to lungs (it sends deoxygenated blood to lungs).',
+    full: 'The heart is a double pump:\n• Right side: receives deoxygenated blood from body → pumps it to LUNGS (pulmonary circulation)\n• Left side: receives oxygenated blood from lungs → pumps it to BODY (systemic circulation)\n\nWhy the other options are wrong:\n• A: Red blood cells are produced in red bone marrow, not the heart.\n• B: The heart pumps DEOXYGENATED blood to the lungs (to pick up oxygen), not oxygenated blood.\n• C: The kidneys filter waste from blood — not the heart.\n• D: ✓ The heart is a muscular organ that contracts to circulate blood. Correct.',
+    h: 'What is the heart\'s primary function — production, filtration, or pumping?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following characteristics is typical of the phylum Arthropoda?',
+    o: [
+      'Radial symmetry',
+      'Closed circulatory system',
+      'Endoskeleton made of bones',
+      'Presence of a segmented body',
+    ],
+    a: 3,
+    e: 'Arthropods (insects, spiders, crabs, centipedes) are defined by their segmented bodies, jointed appendages, and exoskeleton made of chitin — NOT an endoskeleton of bone.',
+    full: 'Phylum Arthropoda characteristics:\n✓ Segmented body (e.g., head, thorax, abdomen in insects)\n✓ Jointed appendages (arthros = joint, poda = leg)\n✓ Exoskeleton made of chitin\n✓ Bilateral symmetry\n✓ OPEN circulatory system (blood called haemolymph fills body cavities)\n\nWhy the other options are wrong:\n• A: Radial symmetry → found in echinoderms (starfish) and cnidarians (jellyfish).\n• B: Closed circulatory system → found in vertebrates and earthworms.\n• C: Endoskeleton of bones → vertebrates only.\n\nArthropoda is the largest animal phylum, containing over 80% of all known animal species.',
+    h: 'What body feature is the defining characteristic of all arthropods?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which process in the nutrient cycle converts atmospheric nitrogen into a form that plants can utilise?',
+    o: ['Denitrification', 'Nitrogen fixation', 'Ammonification', 'Nitrification'],
+    a: 1,
+    e: 'Nitrogen fixation converts N₂ gas (atmospheric nitrogen) into ammonia (NH₃) or nitrates — forms usable by plants. Carried out by nitrogen-fixing bacteria such as Rhizobium in root nodules.',
+    full: 'The nitrogen cycle steps:\n\n1. Nitrogen fixation: N₂ → NH₃/NH₄⁺\n   • Done by: Rhizobium (in legume root nodules), Azotobacter, Cyanobacteria\n   • This is the ENTRY POINT — converts inert N₂ into usable nitrogen\n\n2. Nitrification: NH₄⁺ → NO₂⁻ → NO₃⁻\n   • Done by: Nitrosomonas and Nitrobacter\n   • Converts ammonia to nitrates (plant-absorbable form)\n\n3. Ammonification: Organic nitrogen → NH₄⁺\n   • Decomposers break down dead organisms\n\n4. Denitrification: NO₃⁻ → N₂\n   • Returns nitrogen to the atmosphere\n   • Done by: Pseudomonas, Thiobacillus\n\nThe question asks specifically about converting ATMOSPHERIC nitrogen (N₂) — that is NITROGEN FIXATION.',
+    h: 'Which step in the nitrogen cycle captures N₂ gas and converts it into ammonia?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Most fishes do not sink in water because of the presence of:\nI. Swim bladder  II. Air bladder  III. Air sacs  IV. Air in spongy bones',
+    o: ['II and III only', 'I and II only', 'I, II, III and IV', 'III and IV only'],
+    a: 1,
+    e: 'The swim bladder (also called the air bladder) is the gas-filled organ that controls buoyancy in bony fish. "Swim bladder" and "air bladder" are the same organ — two names for it. Air sacs and air in spongy bones are not fish buoyancy structures.',
+    full: '"Swim bladder" and "air bladder" are TWO NAMES for the SAME organ in bony fish (Osteichthyes). It is a gas-filled sac that adjusts the fish\'s density to match the surrounding water, preventing sinking or floating unintentionally.\n\n• Statement I (swim bladder) ✓\n• Statement II (air bladder) ✓ — same thing, different name\n• Statement III (air sacs) ✗ — air sacs are found in birds, not fish\n• Statement IV (air in spongy bones) ✗ — bird adaptation, not fish\n\nAnswer: I and II only (B)',
+    h: 'What organ(s) control buoyancy in bony fish? Are "swim bladder" and "air bladder" the same?',
+  },
+
+  {
+    yr: 2023,
+    q: 'A biome characterised by hot summers, warm winters and treeless vegetation is ______.',
+    o: ['Steppe grasslands', 'Temperate deserts', 'Savannah grassland', 'Tropical deserts'],
+    a: 0,
+    e: 'Steppe grasslands have hot summers, relatively warm (not freezing cold) winters, low rainfall, and are largely treeless — dominated by grasses. This matches the description.',
+    full: 'Biome comparison:\n\n• Steppe grasslands: Treeless, hot summers, warm-to-mild winters, low rainfall, vast grasslands. Found in Central Asia, Eastern Europe, North America (Great Plains).\n• Savannah grassland: Has TREES (scattered), tropical, distinct wet and dry seasons.\n• Temperate deserts: Very low rainfall, extreme temperature swings — very cold winters, hot summers.\n• Tropical deserts: Extremely hot year-round (e.g., Sahara) — sparse vegetation, not truly "treeless grassland."\n\nKey clue in the question: "treeless vegetation" + "warm winters" → Steppe grassland.\n\nSavannah is often confused with steppe, but savannah HAS trees (e.g., acacia) and is tropical.',
+    h: 'Which grassland biome is treeless with hot summers but warmer (not freezing) winters?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following describes the inheritance of traits from parents to offspring?',
+    o: ['Adaptation', 'Evolution', 'Natural selection', 'Genetics'],
+    a: 3,
+    e: 'Genetics is the branch of biology that studies how traits (characteristics) are passed from parents to their offspring through genes and chromosomes.',
+    full: 'Definitions:\n• Genetics: Study of heredity — how traits are transmitted from parents to offspring via genes.\n• Evolution: Long-term change in the inherited traits of populations over many generations.\n• Natural selection: Process where organisms with favourable traits survive and reproduce more.\n• Adaptation: A trait that improves an organism\'s fitness in its environment.\n\nThe question asks specifically about INHERITANCE from parents to offspring — that is Genetics.\n\nKey concept: Genes carry the information. DNA is copied and passed to offspring either through sexual reproduction (with variation) or asexual reproduction (identical copy).',
+    h: 'What branch of biology studies how traits are passed from parents to children?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following options correctly identifies excretory organs in animals?',
+    o: [
+      'Stomach, intestines, and bladder',
+      'Lungs, kidneys, and skin',
+      'Brain, spinal cord, and nerves',
+      'Heart, liver, and spleen',
+    ],
+    a: 1,
+    e: 'Excretory organs eliminate metabolic waste from the body. Lungs excrete CO₂, kidneys excrete urea/water/salts as urine, and skin excretes some salts and water through sweat.',
+    full: 'Excretion is the removal of metabolic waste products produced by chemical reactions in the body.\n\nMain excretory organs in animals:\n• Kidneys: Excrete urea, uric acid, excess salts, and water (as urine)\n• Lungs: Excrete CO₂ and water vapour\n• Skin: Excretes water, salts, and traces of urea through sweat\n• Liver: Produces urea from deamination of amino acids (sends it to kidneys)\n\nOptions breakdown:\n• A: Stomach, intestines, bladder — digestive/storage organs, not primary excretory organs\n• B: Lungs, kidneys, skin ✓ — the three main excretory organs\n• C: Brain, spinal cord, nerves — nervous system\n• D: Heart, liver, spleen — circulatory/lymphatic organs',
+    h: 'Which three organs eliminate metabolic waste (CO₂, urea, salts) from the body?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which processes are involved in nutrient cycling in a functioning ecosystem?',
+    o: [
+      'Erosion, weathering, and sedimentation',
+      'Decomposition, evaporation, and precipitation',
+      'Nitrogen fixation, denitrification, and ammonification',
+      'Respiration, photosynthesis, and transpiration',
+    ],
+    a: 2,
+    e: 'Nitrogen fixation, denitrification, and ammonification are all steps in the nitrogen cycle — a key nutrient cycle in ecosystems. They cycle nitrogen between the atmosphere, soil, and living organisms.',
+    full: 'Nutrient cycling involves the movement of essential elements (nitrogen, carbon, phosphorus, etc.) through biotic and abiotic components of an ecosystem.\n\nNitrogen cycle steps:\n• Nitrogen fixation: N₂ → NH₃ (by Rhizobium, Azotobacter)\n• Ammonification: Dead organic matter → NH₄⁺ (by decomposers)\n• Nitrification: NH₄⁺ → NO₃⁻ (by Nitrosomonas, Nitrobacter)\n• Denitrification: NO₃⁻ → N₂ (by Pseudomonas)\n\nAll three in option C are part of the nitrogen cycle — the most tested nutrient cycle in JAMB Biology.\n\nThe other options describe weather processes (A), the water cycle (B), and energy flow through photosynthesis/respiration (D) — not nutrient cycling.',
+    h: 'Which set of three processes are all part of the nitrogen nutrient cycle?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following eye defects is caused by the inability of the eye to focus light on the retina?',
+    o: ['Glaucoma', 'Myopia', 'Cataracts', 'Astigmatism'],
+    a: 1,
+    e: 'Myopia (short-sightedness) occurs when the eyeball is too long or the cornea/lens is too curved, causing light to focus in FRONT of the retina instead of on it. Distant objects appear blurry.',
+    full: 'Eye defects:\n\n• Myopia (short-sightedness): Light focuses IN FRONT of retina. Distant objects are blurry. Corrected with concave (diverging) lenses.\n• Hypermetropia (long-sightedness): Light focuses BEHIND retina. Near objects are blurry. Corrected with convex (converging) lenses.\n• Astigmatism: Uneven curvature of cornea/lens → distorted image. Corrected with cylindrical lenses.\n• Glaucoma: Increased pressure inside the eye → damages optic nerve. Not a focusing problem.\n• Cataracts: Clouding of the eye lens → reduced light passage. Not a focusing/shape problem.\n\nThe question describes "inability to focus light ON the retina" — this is myopia (light focuses short of the retina).',
+    h: 'Which eye defect causes light to focus in front of the retina, blurring distant objects?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is the correct classification of carbohydrates?',
+    o: ['Lipid', 'Phytonutrient', 'Macronutrient', 'Micronutrient'],
+    a: 2,
+    e: 'Carbohydrates are macronutrients — nutrients needed by the body in large amounts for energy. Macronutrients include carbohydrates, proteins, and fats.',
+    full: 'Nutrient classification:\n\nMacronutrients (needed in large quantities):\n• Carbohydrates — primary energy source (4 kcal/g)\n• Proteins — growth, repair, enzymes (4 kcal/g)\n• Fats/Lipids — energy storage, insulation (9 kcal/g)\n\nMicronutrients (needed in small quantities):\n• Vitamins (A, B, C, D, E, K...)\n• Minerals (iron, calcium, iodine...)\n\nCarbohydrates are definitely NOT:\n• Lipids (fats) — a separate macronutrient class\n• Phytonutrients — plant-derived protective chemicals (e.g., lycopene, flavonoids)\n• Micronutrients — needed only in trace amounts',
+    h: 'Carbohydrates, proteins, and fats are all examples of which nutrient category?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following best describes the alimentary canal in the human digestive system?',
+    o: [
+      'Salivary glands, tongue, and pharynx',
+      'Large intestine, appendix, and rectum',
+      'Stomach, liver, and gallbladder',
+      'Oesophagus, pancreas, and small intestine',
+    ],
+    a: 1,
+    e: 'The alimentary canal is the continuous tube from mouth to anus. Large intestine, appendix, and rectum are all true parts of this tube. Liver, pancreas, and gallbladder are accessory glands — outside the canal itself.',
+    full: 'The alimentary canal (digestive tract) is the muscular tube running from mouth to anus:\nMouth → Oesophagus → Stomach → Small intestine → Large intestine → Appendix → Rectum → Anus\n\nAccessory organs (NOT part of the canal itself, but connected to it):\n• Liver (produces bile)\n• Gallbladder (stores bile)\n• Pancreas (produces digestive enzymes and hormones)\n• Salivary glands (produce saliva)\n\nOption B (large intestine, appendix, rectum) — all part of the alimentary canal ✓\n\n⚠️ EduPadi listed D as correct (oesophagus, pancreas, small intestine). This is wrong because the pancreas is an ACCESSORY organ, NOT part of the alimentary canal. The correct answer is B.',
+    h: 'Which set of organs are all part of the alimentary canal tube — not accessory glands?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following statements about viruses is true?',
+    o: [
+      'Viruses can reproduce outside of a host cell',
+      'Viruses require a host cell to replicate',
+      'Viruses possess a cellular structure',
+      'Viruses are living organisms',
+    ],
+    a: 1,
+    e: 'Viruses are obligate intracellular parasites — they MUST use a host cell\'s machinery (ribosomes, ATP, enzymes) to replicate. They cannot reproduce independently.',
+    full: 'Virus characteristics:\n• Not cellular — no cell membrane, cytoplasm, or organelles\n• Not considered living (debated) — cannot carry out metabolism independently\n• Consist of: nucleic acid (DNA or RNA) + protein coat (capsid), sometimes a lipid envelope\n• Can ONLY replicate inside a living host cell\n\nViral replication cycle:\n1. Attachment to host cell surface receptors\n2. Injection of nucleic acid into host\n3. Use of host\'s ribosomes/enzymes to make viral proteins and copy viral DNA/RNA\n4. Assembly of new viruses\n5. Release (lysis or budding)\n\nWhy others are wrong:\n• A: Viruses CANNOT reproduce outside a host — inert particles outside.\n• C: Viruses are acellular — no cellular structure.\n• D: Viruses are considered non-living — no metabolism, no homeostasis independently.',
+    h: 'What do viruses REQUIRE in order to replicate themselves?',
+  },
+
+  {
+    yr: 2023,
+    q: 'What is the definition of population ecology?',
+    o: [
+      'The study of interactions between organisms and their physical environment',
+      'The study of evolutionary processes and their effects on populations',
+      'The study of interactions between different populations in an ecosystem',
+      'The study of the distribution and abundance of individuals within a species',
+    ],
+    a: 3,
+    e: 'Population ecology is the study of how and why populations of a single species change in size and distribution over time — including birth rates, death rates, immigration, emigration, and limiting factors.',
+    full: 'Ecology sub-disciplines:\n\n• Organismal ecology: How individual organisms interact with their environment\n• Population ecology: Distribution and abundance of a single species — birth/death rates, carrying capacity, population growth models (D)\n• Community ecology: Interactions BETWEEN different populations (C) — competition, predation, symbiosis\n• Ecosystem ecology: Interactions between communities and their physical environment (A)\n• Evolutionary ecology: How evolution shapes ecological interactions (B)\n\nThe question asks about population ecology specifically — "distribution and abundance of individuals within a species" ✓',
+    h: 'Population ecology studies the numbers and spread of individuals within which level of organisation?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following represents the correct hierarchical organisation of life from smallest to largest scale?',
+    o: [
+      'Organs, tissues, cells, organisms, populations, communities, ecosystems',
+      'Cells, organs, tissues, organisms, populations, communities, ecosystems',
+      'Tissues, organs, cells, organisms, populations, communities, ecosystems',
+      'Cells, tissues, organs, organisms, populations, communities, ecosystems',
+    ],
+    a: 3,
+    e: 'The correct order from smallest to largest: Cells → Tissues → Organs → Organisms → Populations → Communities → Ecosystems.',
+    full: 'Hierarchy of biological organisation (smallest → largest):\n\n1. Cells — basic unit of life\n2. Tissues — groups of similar cells\n3. Organs — groups of tissues with a specific function\n4. Organisms — individual living things\n5. Populations — all individuals of one species in an area\n6. Communities — all populations in an area\n7. Ecosystems — community + its physical environment\n8. Biosphere — all ecosystems on Earth\n\nThe correct answer is D: Cells, tissues, organs, organisms, populations, communities, ecosystems.',
+    h: 'Put in order from smallest to largest: cells, organs, tissues, organisms, populations, communities, ecosystems.',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following soil types becomes less fertile due to intense leaching caused by tropical rains?',
+    o: ['Yellow soil', 'Laterite soil', 'Red soils', 'Black soil'],
+    a: 1,
+    e: 'Laterite soil is formed in tropical areas with heavy rainfall. The intense leaching washes away minerals and nutrients, leaving behind iron and aluminium oxides — making the soil hard, reddish, and infertile.',
+    full: 'Laterite soil:\n• Forms in tropical/subtropical regions with high rainfall and seasonal drying\n• Heavy rains leach (wash away) silica, calcium, potassium, and other nutrients downward\n• What remains: iron oxides (Fe₂O₃) and aluminium oxides (Al₂O₃) — laterite\n• The soil hardens on exposure to air (low organic matter, low nutrients)\n• Very poor for agriculture without intensive fertilisation\n\nThis is common in West Africa, including parts of Nigeria.\n\nOther options:\n• Black soil (cotton soil/vertisol): Very fertile, rich in calcium, magnesium — NOT leached\n• Red soils: Some overlap with laterite but are not all infertile\n• Yellow soil: Not a major category associated with tropical leaching',
+    h: 'Which tropical soil type loses fertility because rainwater washes away its minerals?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following factors primarily affects the distribution of organisms in an ecosystem?',
+    o: ['Wind speed', 'Soil pH', 'Temperature', 'Day length'],
+    a: 2,
+    e: 'Temperature is the primary abiotic factor controlling where organisms can survive and reproduce. Every organism has a specific temperature range — this determines their geographic distribution more than most other factors.',
+    full: 'Abiotic factors affecting distribution:\n• Temperature ★ — the single most important factor governing distribution at large scales. Determines metabolic rates, enzyme activity, and survival zones of all organisms.\n• Soil pH — important for plant distribution but more localised\n• Day length (photoperiod) — affects flowering time, animal behaviour, but secondary to temperature\n• Wind speed — affects evaporation/transpiration but not the primary distribution factor\n\nTemperature explains why:\n• Polar bears live in the Arctic (not tropics)\n• Cacti grow in deserts (not rainforests)\n• Coral reefs only exist in warm tropical seas\n• Different biomes exist at different latitudes\n\nFor JAMB: temperature = the PRIMARY ecological factor controlling organism distribution.',
+    h: 'Which abiotic factor most determines WHERE different species of organisms can live?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following statements is true regarding cell growth?',
+    o: [
+      'Cell growth is solely influenced by external factors',
+      'Cell growth is a continuous process throughout the life of a cell',
+      'Cell growth involves an increase in the number of organelles within a cell',
+      'Cell growth occurs by cell division',
+    ],
+    a: 3,
+    e: 'Cell growth and reproduction occur through cell division (mitosis for somatic cells). A parent cell grows and then divides into two daughter cells — this is how organisms grow and replace cells.',
+    full: 'Cell growth:\n• Cells grow to a certain size, then divide (mitosis) producing two daughter cells\n• Growth = increase in cell size AND ultimately increase in cell number through division\n\nWhy the other options are wrong:\n• A: Cell growth is influenced by BOTH internal (genes, hormones) AND external factors — not solely external\n• B: Cell growth is NOT continuous throughout the life of a cell — cells have a G1 phase (growth), S phase (DNA replication), G2 phase, then mitosis. Many cells exit the cycle entirely.\n• C: Organelle number does increase during growth, but this is not the DEFINITION of cell growth; growth leads to DIVISION\n• D: ✓ Cell growth and reproduction occur through cell division\n\nNote: In JAMB context, "cell growth occurs by cell division" means that organisms grow by cells dividing — creating more cells.',
+    h: 'How do organisms grow at the cellular level — how are new cells produced?',
+  },
+
+  {
+    yr: 2023,
+    q: 'The term "cell" was coined by ______.',
+    o: ['Robert Hooke', 'Schwann', 'De Bary', 'Tatum'],
+    a: 0,
+    e: 'Robert Hooke first used the term "cell" in 1665 after observing the box-like compartments in cork under a microscope. He described them as "cells" because they reminded him of small rooms (cellula in Latin).',
+    full: 'History of the cell:\n• 1665 — Robert Hooke: First observed dead cork cells under a microscope; coined the word "cell" (from Latin cellula = small room)\n• 1674 — Antonie van Leeuwenhoek: First observed living cells (bacteria, protozoa)\n• 1838 — Matthias Schleiden: All plants are made of cells\n• 1839 — Theodor Schwann: All animals are made of cells → Cell Theory\n• 1855 — Rudolf Virchow: All cells come from pre-existing cells (Omnis cellula e cellula)\n\nThe question asks specifically who GAVE (coined) the TERM "cell" — that is Robert Hooke.',
+    h: 'Who first used the word "cell" to describe the structures seen in cork under a microscope?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is an example of an abiotic ecological factor?',
+    o: ['Temperature', 'Competition', 'Predation', 'Symbiosis'],
+    a: 0,
+    e: 'Abiotic factors are non-living physical and chemical components of an ecosystem. Temperature is abiotic. Competition, predation, and symbiosis are biotic factors — interactions between living organisms.',
+    full: 'Ecological factors:\n\nAbiotic (non-living):\n• Temperature ✓\n• Light intensity\n• Rainfall/water availability\n• Soil pH and mineral content\n• Wind speed\n• Humidity\n\nBiotic (living/biological interactions):\n• Competition (organisms competing for resources)\n• Predation (predator-prey relationship)\n• Symbiosis (mutualism, commensalism, parasitism)\n• Disease\n• Decomposition\n\nAll of options B, C, D involve interactions BETWEEN living organisms → biotic.\nOnly Temperature (A) is a physical, non-living factor → abiotic.',
+    h: 'Which factor is abiotic (non-living): temperature, competition, predation, or symbiosis?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which type of reproduction involves the fusion of gametes from two parents?',
+    o: ['Sexual reproduction', 'Asexual reproduction', 'Binary fission', 'Budding'],
+    a: 0,
+    e: 'Sexual reproduction involves the fusion of male and female gametes (fertilisation) from two parents, producing offspring with genetic variation.',
+    full: 'Types of reproduction:\n\nSexual reproduction:\n• Involves two parents\n• Produces gametes (sperm and egg) through meiosis\n• Gametes fuse (fertilisation) → zygote\n• Offspring have genetic variation\n• Examples: humans, flowering plants, frogs\n\nAsexual reproduction:\n• Involves ONE parent only\n• No gamete fusion\n• Offspring are genetically identical to parent (clones)\n• Types: Binary fission (bacteria), budding (hydra, yeast), fragmentation, spore formation, vegetative propagation\n\nBinary fission: One cell splits into two equal cells (bacteria)\nBudding: Outgrowth develops into a new organism (hydra)\n\nThe question — fusion of gametes from TWO parents — is Sexual reproduction ✓',
+    h: 'Which type of reproduction requires gametes from two parents to fuse?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is a characteristic feature of Kingdom Plantae?',
+    o: [
+      'Presence of chloroplasts',
+      'Ability to perform photosynthesis',
+      'Lack of cell walls',
+      'Heterotrophic mode of nutrition',
+    ],
+    a: 0,
+    e: 'Chloroplasts are the defining organelles of plants — they contain chlorophyll and are the site of photosynthesis. They are found in all green plant cells.',
+    full: 'Kingdom Plantae characteristics:\n✓ Have chloroplasts (containing chlorophyll)\n✓ Cell walls made of cellulose\n✓ Autotrophic (photosynthesis) — self-feeding\n✓ Eukaryotic\n✓ Mostly multicellular\n✓ Non-motile\n\nWhy option A is better than B:\nBoth A and B are actually correct for plants. However, the "characteristic FEATURE" (structural) is the PRESENCE OF CHLOROPLASTS (A) — photosynthesis (B) is what they DO with them. JAMB typically selects the structural characteristic.\n\nWhy C and D are wrong:\n• Plants DO have cell walls (made of cellulose) — so C is wrong\n• Plants are AUTOTROPHIC (self-feeding via photosynthesis), not heterotrophic — so D is wrong\n\nEduPadi verified answer: A — presence of chloroplasts.',
+    h: 'Which structural organelle is the definitive feature of all plant cells?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following best describes the concept of trophic levels in an ecosystem?',
+    o: [
+      'The levels of ecological interactions within an ecosystem',
+      'The levels of energy flow within an ecosystem',
+      'The levels of nutrient cycling within an ecosystem',
+      'The levels of biological diversity within an ecosystem',
+    ],
+    a: 1,
+    e: 'Trophic levels represent the positions in a food chain and describe how energy flows from producers through successive consumers in an ecosystem.',
+    full: 'Trophic levels:\n• Trophic = relating to feeding/nutrition\n• Each level represents a step in the transfer of energy through an ecosystem\n\nTrophic level sequence:\n1. Producers (plants) — capture solar energy via photosynthesis\n2. Primary consumers (herbivores) — eat plants\n3. Secondary consumers (carnivores) — eat herbivores\n4. Tertiary consumers — eat secondary consumers\n5. Decomposers — break down dead organisms at all levels\n\n~10% rule: Only ~10% of energy transfers from one trophic level to the next (90% lost as heat).\n\nTrophic levels describe ENERGY FLOW — not interactions (A), nutrient cycling (C), or biodiversity (D).\n\nAnswer: B — levels of energy flow within an ecosystem.',
+    h: 'Trophic levels describe how what moves from producers through consumers in an ecosystem?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is NOT a method of reproduction in animals?',
+    o: ['Asexual reproduction', 'Budding', 'Sexual reproduction', 'Sporulation'],
+    a: 3,
+    e: 'Sporulation (spore formation) is a reproductive method used by bacteria, fungi, and some protozoa — NOT animals. Animals reproduce sexually or by limited forms of asexual reproduction like budding.',
+    full: 'Animal reproduction methods:\n• Sexual reproduction ✓ — most animals\n• Budding ✓ — hydra, some sponges (limited asexual reproduction in animals)\n• Fragmentation ✓ — starfish, flatworms\n• Parthenogenesis ✓ — some reptiles, bees\n\nNOT found in animals:\n• Sporulation ✗ — production of spores; used by bacteria (endospores), fungi (conidia, basidiospores), algae, protozoa (Plasmodium). NOT a method of animal reproduction.\n\nAnswer: D — Sporulation is NOT a method of reproduction in animals.',
+    h: 'Which reproductive method (spore formation) belongs to fungi/bacteria but NOT animals?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following are components of the skeletal system in humans?',
+    o: [
+      'Cartilage and blood vessels',
+      'Ligaments and tendons',
+      'Muscles and nerves',
+      'Bones and joints',
+    ],
+    a: 3,
+    e: 'The skeletal system is composed primarily of bones (providing structure, protection, mineral storage) and joints (where bones meet, enabling movement).',
+    full: 'Human skeletal system components:\n• Bones — 206 bones in adults; structural framework, protection, mineral storage, blood cell production\n• Joints — where two or more bones meet; allow movement (synovial, fibrous, cartilaginous)\n• Cartilage — often listed as a skeletal component too, but the PRIMARY components are bones + joints\n\nOther options:\n• A: Cartilage + blood vessels — blood vessels are NOT skeletal components\n• B: Ligaments + tendons — ligaments connect bone to bone; tendons connect muscle to bone. Both are connective tissue around the skeleton but not the skeleton itself\n• C: Muscles + nerves — muscular and nervous systems, not skeletal\n• D: Bones + joints ✓ — the core components of the skeletal system',
+    h: 'What are the two main structural components that make up the skeletal system?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Which of the following is an example of conserving resources in an ecosystem?',
+    o: [
+      'Excessive use of chemical fertilisers in agriculture',
+      'Introducing invasive species to an ecosystem',
+      'Implementing sustainable fishing practices',
+      'Cutting down trees for timber production',
+    ],
+    a: 2,
+    e: 'Sustainable fishing practices manage fish populations to prevent depletion — allowing stocks to regenerate. This is an example of conservation.',
+    full: 'Conservation = using resources in a way that allows them to be sustained over time.\n\nOption analysis:\n• A: Excessive chemical fertilisers — pollutes waterways, kills beneficial organisms, depletes soil. NOT conservation.\n• B: Introducing invasive species — disrupts native ecosystems, causes extinction of native species. NOT conservation.\n• C: Sustainable fishing practices ✓ — fishing within sustainable limits, using fish quotas, avoiding spawning seasons. Allows fish populations to recover. This IS conservation.\n• D: Cutting down trees — deforestation; destroys habitats. NOT conservation.\n\nSustainable fishing is one of the clearest examples of applying ecological principles to conserve a living resource.',
+    h: 'Which practice protects fish populations by fishing within limits they can recover from?',
+  },
+    
     {
       yr: 2024,
       q: 'The powerhouse of the cell is the',
