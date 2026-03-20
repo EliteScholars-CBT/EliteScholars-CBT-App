@@ -3809,7 +3809,7 @@ function Subjects({ name, onStart, onProfile, onSignOut }) {
       {/* Scrollable subject cards */}
       <div
         className="scroll"
-        style={{ flex: 1, padding: '24px 16px 8px', overflowY: 'auto' }}
+        style={{ flex: 1, padding: '24px 16px 100px', overflowY: 'auto' }}
       >
         <div
           style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}
@@ -3985,8 +3985,10 @@ function Subjects({ name, onStart, onProfile, onSignOut }) {
     flexShrink: 0,
     background: BG,
     borderTop: `1px solid ${LGRAY}`,
-    position: 'sticky',
+    position: 'fixed',
     bottom: 0,
+    left: 0,
+    right: 0,
     zIndex: 10,
   }}
 >
