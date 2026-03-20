@@ -3428,7 +3428,34 @@ body{font-family:'Poppins',sans-serif;background:#F8F5FF;margin:0;padding:0;min-
 input{font-family:'Poppins',sans-serif;}
 button{font-family:'Poppins',sans-serif;cursor:pointer;transition:all .18s;}
 button:active{transform:scale(.97);}
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.phone {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100dvh;
+  position: relative;
+}
+.scr {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh;
+  position: relative;
+}
+* {
+  max-width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 `;
+
+
 
 // ── Splash ─────────────────────────────────────────────────────────────────
 function Splash({ onDone }) {
