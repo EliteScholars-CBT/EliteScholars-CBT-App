@@ -3978,37 +3978,42 @@ function Subjects({ name, onStart, onProfile, onSignOut }) {
         </div>
       </div>
 
-      {/* Fixed Start button */}
-      <div
-        style={{
-          padding: '8px 16px 24px',
-          flexShrink: 0,
-          background: BG,
-          borderTop: `1px solid ${LGRAY}`,
-        }}
-      >
-        <button
-          onClick={() => {
-            SFX.submit();
-            // Lekki Headmaster uses novel question bank
-            onStart(sel === '__lekki__' ? 'novel' : sel);
-          }}
-          style={{
-            width: '100%',
-            padding: 16,
-            background: PURPLE,
-            border: 'none',
-            borderRadius: 14,
-            fontSize: 15,
-            fontWeight: 700,
-            color: WHITE,
-            boxShadow: '0 8px 22px rgba(75,0,130,.4)',
-          }}
-        >
-          {sel === '__lekki__' ? '📗' : SUBJ[sel]?.icon} Start{' '}
-          {sel === '__lekki__' ? 'Lekki Headmaster' : SUBJ[sel]?.label} →
-        </button>
-      </div>
+    {/* Fixed Start button */}
+<div
+  style={{
+    padding: '8px 16px 24px',
+    flexShrink: 0,
+    background: BG,
+    borderTop: `1px solid ${LGRAY}`,
+    position: 'sticky',
+    bottom: 0,
+    zIndex: 10,
+  }}
+>
+  <button
+    onClick={() => {
+      SFX.submit();
+      onStart(sel === '__lekki__' ? 'novel' : sel);
+    }}
+    style={{
+      width: '100%',
+      padding: 16,
+      background: sel ? PURPLE : LGRAY,
+      border: 'none',
+      borderRadius: 14,
+      fontSize: 15,
+      fontWeight: 700,
+      color: sel ? WHITE : GRAY,
+      boxShadow: sel ? '0 8px 22px rgba(75,0,130,.4)' : 'none',
+      opacity: sel ? 1 : 0.6,
+      cursor: sel ? 'pointer' : 'not-allowed',
+    }}
+  >
+    {sel === '__lekki__' ? '📗' : SUBJ[sel]?.icon || '📚'} Start{' '}
+    {sel === '__lekki__' ? 'Lekki Headmaster' : SUBJ[sel]?.label || 'a subject'} →
+  </button>
+</div>
+          
     </div>
   );
 }
