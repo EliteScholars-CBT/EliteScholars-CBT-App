@@ -808,6 +808,559 @@ const QB = {
     },
   ],
   english: [
+
+    {
+    yr: 2020,
+    q: 'Choose the correct primary stress pattern for: expenditure',
+    o: ['EX-pen-di-ture', 'ex-PEN-di-ture', 'ex-pen-DI-ture', 'ex-pen-di-TURE'],
+    a: 1,
+    e: '"Expenditure" is stressed on the second syllable: ex-PEN-di-ture /ɪkˈspendɪtʃə/.',
+    full: '"expenditure" → /ɪkˈspendɪtʃə/ — 4 syllables: ex-pen-di-ture.\n\nPrimary stress falls on syllable 2: "-PEN-"\n→ ex-PEN-di-ture ✓\n\nThis is a common pattern for words with the prefix "ex-" followed by a stressed root: exPENditure, exAMination, exPERiment.\n\nMemory tip: Say it naturally — you naturally say "ex-PEN-di-ture," not "EX-pen-di-ture."',
+    h: 'Which syllable carries stress in "expenditure"?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"The man, as well as the woman, ______ arrested."',
+    o: ['Have been', 'Has been', 'Is been', 'Are being'],
+    a: 1,
+    e: '"As well as" is a marker of accompaniment — the verb agrees with the main subject "the man" (singular), so "has been" is correct.',
+    full: 'Rule of Concord — Accompaniment markers:\nWhen phrases like "as well as," "together with," "alongside," "no less than," or "in addition to" are used, the verb agrees with the FIRST (main) subject — not the noun after the marker.\n\n"The man, as well as the woman, ______ arrested."\n→ Main subject = "the man" (singular)\n→ Verb must be singular: "has been" ✓\n\nIf it were "The man AND the woman" — that would be plural ("have been"). But "as well as" is NOT the same as "and."',
+    h: '"As well as" — verb agrees with which subject: the first or both?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"Many a ______ to understand me."',
+    o: ['Man fail', 'Man fails', 'Men fail', 'Men fails'],
+    a: 1,
+    e: '"Many a" is always followed by a singular noun and singular verb: "Many a man fails."',
+    full: 'Rule of Concord — "Many a":\n"Many a" takes a SINGULAR noun and a SINGULAR verb, even though it refers to many people.\n\n"Many a man fails" ✓ — singular noun (man), singular verb (fails)\n\nThis is counterintuitive because "many" suggests plural, but "many a" is a fixed construction that behaves singularly.\n\nOther examples:\n• "Many a student has failed" ✓\n• "Many a soldier was killed" ✓\n\nNever: "Many a men" or "Many a man fail"',
+    h: '"Many a" takes singular or plural noun and verb?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"It is you that ______ to write the letter."',
+    o: ['Is suppose', 'Is supposed', 'Are suppose', 'Are supposed'],
+    a: 3,
+    e: '"You" always takes "are" — so "are supposed" is correct. Also, "supposed to" (not "suppose to") is the correct fixed phrase.',
+    full: 'Two rules apply here:\n\n1. Pronoun-verb agreement: "you" always takes "are" (never "is"), even in emphatic constructions like "It is you that..."\n→ Eliminates A and B ("is supposed/suppose")\n\n2. Fixed phrase: "supposed to" (past participle) is correct — "suppose to" is a common error.\n→ Eliminates C ("are suppose")\n\nAnswer: "are supposed" ✓\n\nFull sentence: "It is you that are supposed to write the letter."',
+    h: '"You" takes "is" or "are"? And is it "suppose" or "supposed" to?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"My father ______ on the floor."',
+    o: ['Has lied', 'Have lied', 'Have laid', 'Has lain'],
+    a: 3,
+    e: '"Lie" (to recline) has the past participle "lain." Since "my father" is singular, "has lain" is correct.',
+    full: 'This tests two things: subject-verb agreement AND irregular verb forms.\n\n1. "My father" is third-person singular → needs "has" (not "have")\n→ Eliminates B and C\n\n2. The verb is "lie" (to recline/rest — intransitive). Its forms are:\n   lie → lay → lain\n\n"Lied" is the past participle of "lie" meaning to tell an untruth — a completely different verb.\n"Laid" is the past participle of "lay" (to place something) — transitive.\n"Lain" is the past participle of "lie" (to recline) — intransitive. ✓\n\nFull answer: "has lain" ✓ — My father has lain on the floor.',
+    h: 'Past participle of "lie" (to recline) = lain, lied, or laid?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"This class ______ students and teachers."',
+    o: ['Comprise', 'Comprises', 'Comprise of', 'Comprises of'],
+    a: 1,
+    e: '"Comprise" means "is made up of" — it never takes "of." Since "this class" is singular, "comprises" (no "of") is correct.',
+    full: '"Comprise" means "to consist of" or "to be made up of." It is a transitive verb that already contains the idea of inclusion — adding "of" creates a tautology.\n\n✓ "This class comprises students and teachers."\n✗ "This class comprises of students and teachers." — WRONG\n\n"This class" is singular → needs "comprises" (third-person singular -s).\n→ "comprise" (no -s, no "of") ✗\n→ "comprises" ✓\n→ "comprise of" ✗\n→ "comprises of" ✗\n\nMnemory trick: You would never say "consist of of" — same logic applies to "comprises of."',
+    h: '"Comprise" — does it take "of" after it?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"Before I arrived, the choir ______ the hymn."',
+    o: ['Have sing', 'Has sing', 'Had sung', 'Have sang'],
+    a: 2,
+    e: 'Two past events: arriving (simple past) happened AFTER the choir sang. The earlier action uses past perfect: "had sung."',
+    full: 'Rule: When two past events occur in sequence, the EARLIER action uses past perfect (had + past participle), while the LATER action uses simple past.\n\n"Before I arrived [later — simple past], the choir had sung [earlier — past perfect] the hymn." ✓\n\nAlso: "sing" → sang → sung (irregular)\n• "Have sing" — wrong auxiliary + wrong form ✗\n• "Has sing" — wrong auxiliary + wrong form ✗\n• "Had sung" ✓ — correct auxiliary + correct past participle\n• "Have sang" — wrong auxiliary + wrong form ✗',
+    h: 'Which tense for the action that happened BEFORE another past action?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the words that best complete the sentence.\n"The soldier ______ his gun on the wall after the armed robber ______."',
+    o: [
+      'Hang / has been hung',
+      'Hung / had been hanged',
+      'Hanged / has been hanged',
+      'Hung / has been hunged',
+    ],
+    a: 1,
+    e: '"Hung" is past tense of "hang" (objects). "Had been hanged" is past perfect passive for executing a person. Both tense and meaning are correct in option B.',
+    full: 'Two distinctions here:\n\n1. Hang (objects) vs Hang (people):\n• hung/hung — used for objects: "He hung the picture."\n• hanged/hanged — used for executing a person: "The criminal was hanged."\n\n2. Tense sequence:\n"After the robber [earlier event — past perfect] ... the soldier [later event — simple past]"\n→ Soldier hung (simple past) ✓\n→ Robber had been hanged (past perfect passive) ✓\n\nOption B: "hung / had been hanged" ✓',
+    h: '"Hung" or "hanged" for objects vs people? Which came first in the sequence?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the correctly spelled word to complete the sentence.\n"Thank you for the ______ of presenting my paper."',
+    o: ['Privelege', 'Priviledge', 'Privilege', 'Preveledge'],
+    a: 2,
+    e: 'The correct spelling is "privilege" — pri-vi-lege. No "d," and "i" not "e" in the second syllable.',
+    full: '"Privilege" is one of the most commonly misspelled words in English.\n\nCorrect: p-r-i-v-i-l-e-g-e\n\nCommon errors:\n• "privelege" — swaps the i and e in wrong places\n• "priviledge" — adds a "d" that doesn\'t exist\n• "preveledge" — wrong vowels throughout\n\nMemory tip: "priv-i-lege" — three syllables, no "d." Think: "a priv-ate priv-ilege."',
+    h: 'How is "privilege" correctly spelled?',
+  },
+
+  {
+    yr: 2020,
+    q: 'Choose the word that best completes the sentence.\n"My brother graduated from university last year; he will soon ______."',
+    o: ['Convocate', 'Convoke', 'Convoce', 'Matriculate'],
+    a: 1,
+    e: '"Convoke" is the correct verb — meaning to call together a formal assembly (a convocation). "Matriculate" is what you do when you ENTER university, not when you graduate.',
+    full: 'Word knowledge question:\n\n• Matriculate = to formally enroll/register at a university (beginning)\n• Convoke = to call/summon a formal assembly, including a graduation convocation (end)\n\nAfter graduating, a student is called to a convocation ceremony. The verb is "convoke."\n\n• "Convocate" — not a standard English word ✗\n• "Convoke" ✓ — the correct verb\n• "Convoce" — not a word ✗\n• "Matriculate" — means to enroll, not to graduate ✗',
+    h: 'What verb means to call a graduation assembly — convoke or matriculate?',
+  },
+
+  // ══════════════════════════════════════════════
+  // 2022
+  // ══════════════════════════════════════════════
+
+  {
+    yr: 2022,
+    q: 'Choose the option that has the same consonant sound as the underlined letter(s).\nwat[ch]ed',
+    o: ['Lived', 'Address', 'Letter', 'Match'],
+    a: 2,
+    e: 'The "-ed" ending of "watched" is pronounced /t/ (not /d/ or /ɪd/) because "watch" ends in a voiceless sound. "Letter" also contains the /t/ sound.',
+    full: 'The "-ed" suffix has three pronunciations:\n1. /ɪd/ — after /t/ or /d/ sounds: wanted, needed\n2. /t/ — after other voiceless sounds (/p, k, f, s, ʃ, tʃ/): watched, kissed, laughed\n3. /d/ — after voiced sounds: lived, called\n\n"watched" ends in /tʃ/ (voiceless) → "-ed" = /t/\nSo "watched" = /wɒtʃt/ — the final consonant is /t/\n\n• lived → /d/ ending ✗\n• address → /s/ or /d/ ✗\n• letter → contains /t/ ✓\n• match → ends in /tʃ/, not /t/ alone ✗',
+    h: 'The "-ed" in "watched" sounds like /t/, /d/, or /ɪd/?',
+  },
+
+  {
+    yr: 2022,
+    q: 'The capitalised word carries emphatic stress. Choose the question the sentence answers.\n"John\'s watch is made of GOLD."',
+    o: [
+      'Whose watch is made of gold?',
+      'What is made of gold?',
+      'Is John\'s watch made of silver?',
+      'Is John\'s necklace made of gold?',
+    ],
+    a: 2,
+    e: 'GOLD is stressed → the sentence contrasts gold with another material. The matching question asks about a different material (silver) — option C.',
+    full: 'Emphatic stress rule: the stressed word is being corrected or contrasted. The correct question will change ONLY that stressed word to an alternative.\n\n"John\'s watch is made of GOLD."\n→ GOLD is stressed → contrasting with another material\n→ Question: "Is John\'s watch made of SILVER?" → "No, it\'s made of GOLD."\n→ Option C ✓\n\nChecking others:\n• A: changes "John\'s" → "whose" (would need JOHN\'S stressed)\n• B: changes "watch" → "what" (would need WATCH stressed)\n• D: changes "watch" → "necklace" (would need WATCH stressed)',
+    h: 'GOLD is stressed — which option replaces it with a different material?',
+  },
+
+  {
+    yr: 2022,
+    q: 'The capitalised word carries emphatic stress. Choose the question the sentence answers.\n"She WORKS at the hospital."',
+    o: [
+      'Who works at the hospital?',
+      'Where does she work?',
+      'Does she work at the hospital?',
+      'What does she do at the hospital?',
+    ],
+    a: 3,
+    e: 'WORKS is stressed → the sentence contrasts working with another activity. The matching question asks what she DOES there — option D, which implies she might not be working.',
+    full: 'Emphatic stress rule: the stressed word is the one being contrasted.\n\n"She WORKS at the hospital."\n→ WORKS is stressed → contrasting with another action (e.g., volunteers, visits, studies)\n→ Question: "What does she DO at the hospital?" → "She WORKS there."\n→ Option D ✓\n\nChecking others:\n• A: changes "she" → "who" (would need SHE stressed)\n• B: changes "hospital" → "where" (would need HOSPITAL stressed)\n• C: "Does she work..." — this is a yes/no question that would make "she" or "work" neither specifically stressed',
+    h: 'WORKS is stressed — which question asks what activity she does at the hospital?',
+  },
+
+  {
+    yr: 2022,
+    q: 'The capitalised word carries emphatic stress. Choose the question the sentence answers.\n"Aderonke STATED she had a right to her privacy."',
+    o: [
+      'Did Aderonke lament she had a right to her privacy?',
+      'Did Omowunmi state she had a right to her privacy?',
+      'Did Aderonke state she had a right to his privacy?',
+      'Did Aderonke state she had a right to her openness?',
+    ],
+    a: 0,
+    e: 'STATED is stressed → contrasting with another speech act. The question asks if she "lamented" instead — option A replaces "stated" with a different verb.',
+    full: 'Emphatic stress rule: the stressed word contrasts with the alternative in the question.\n\n"Aderonke STATED she had a right to her privacy."\n→ STATED is stressed → contrasting with another verb of communication\n→ Question: "Did Aderonke LAMENT she had a right to her privacy?" → "No, she STATED it."\n→ Option A ✓\n\nChecking others:\n• B: changes "Aderonke" → "Omowunmi" (would need ADERONKE stressed)\n• C: changes "her" → "his" (would need HER stressed)\n• D: changes "privacy" → "openness" (would need PRIVACY stressed)',
+    h: 'STATED is stressed — which option replaces it with a different verb (lament)?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option that has the same consonant sound as the underlined letter(s).\nnа[t]ional',
+    o: ['Sugar', 'Raise', 'Glass', 'Tree'],
+    a: 0,
+    e: 'The "t" in "national" is pronounced /ʃ/ (the "sh" sound) because of the "-tion" pattern. "Sugar" also begins with /ʃ/.',
+    full: 'In English, the "-tion" and "-tia-" patterns cause the "t" to sound like /ʃ/ (the "sh" sound):\n• naTIOnal → /ˈnæʃənl/ — the "t" = /ʃ/\n• nation, station, partial — same pattern\n\nNow check options:\n• sugar → /ˈʃʊɡə/ — begins with /ʃ/ ✓\n• raise → /z/ sound ✗\n• glass → /ɡ/ and /l/ and /s/ — no /ʃ/ ✗\n• tree → /t/ and /r/ — no /ʃ/ ✗\n\nAnswer: A. sugar — both have the /ʃ/ sound.',
+    h: 'The "t" in "national" sounds like /ʃ/ — which option also has /ʃ/?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Identify the word that has stress on the first syllable.',
+    o: ['Hotel', 'Esteem', 'Police', 'Table'],
+    a: 3,
+    e: 'Only "table" is stressed on the first syllable: TA-ble. Hotel = ho-TEL, esteem = es-TEEM, police = po-LICE — all stress the second syllable.',
+    full: 'Check each word:\n• hotel → /həʊˈtel/ — stress on syllable 2 ✗\n• esteem → /ɪˈstiːm/ — stress on syllable 2 ✗\n• police → /pəˈliːs/ — stress on syllable 2 ✗\n• table → /ˈteɪbl/ — stress on syllable 1 ✓\n\n"Table" is a common everyday word with natural first-syllable stress. The other three are words of French/Latin origin that typically carry second-syllable stress in English.',
+    h: 'Which 2-syllable word has stress on the FIRST syllable: hotel, esteem, police, or table?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option most nearly OPPOSITE in meaning to the underlined word.\n"Twice, he was repulsed with heavy losses."',
+    o: ['Repelled', 'Gratified', 'Irated', 'Shocked'],
+    a: 1,
+    e: '"Repulsed" here means driven back or rejected (military/physical sense). Its opposite is "gratified" — pleased, satisfied, or accepted.',
+    full: 'In the military context, "repulsed" means driven back, turned away, or defeated in an attack.\n\nAntonym: "gratified" — to be welcomed, satisfied, or accepted (the opposite of being driven back/rejected).\n\n• "repelled" — synonym of repulsed, not antonym ✗\n• "gratified" — pleased, satisfied; opposite of being rejected ✓\n• "irated" — not a standard English word (irritated is) ✗\n• "shocked" — unrelated ✗\n\nNote: "repulsed" also has a secondary meaning of "disgusted" — in that case the opposite would be "attracted" or "delighted." Context here is military, so "gratified" (turned back successfully vs welcomed successfully) is the best fit.',
+    h: 'What is the opposite of "repulsed" (driven back/rejected)?',
+  },
+
+  {
+    yr: 2022,
+    q: '"I only visited Chidi." This means that ______.',
+    o: [
+      'None of the above',
+      'I didn\'t do anything besides visiting Chidi',
+      'I didn\'t go with anyone to visit Chidi',
+      'I visited Chidi and his friends',
+    ],
+    a: 1,
+    e: 'The adverb "only" modifies "visited" — meaning visiting was the ONLY thing I did (I didn\'t also eat, talk business, etc.). It does NOT mean I went alone.',
+    full: 'The placement of "only" determines what it modifies:\n\n"I ONLY visited Chidi." → "only" modifies "visited"\n→ Meaning: visiting was the only action I did (I didn\'t do anything else besides visiting)\n→ Option B ✓\n\nIf it were:\n• "ONLY I visited Chidi" → only I went, not anyone else\n• "I visited ONLY Chidi" → I didn\'t visit anyone else\n\nThis is a classic ambiguity question — JAMB tests whether students understand that adverbs must be placed next to what they modify.',
+    h: '"Only" modifies "visited" — what does the sentence mean?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option most nearly OPPOSITE in meaning to the underlined word.\n"My father is parsimonious."',
+    o: ['Thrifty', 'Ungenerous', 'Frugal', 'Generous'],
+    a: 3,
+    e: '"Parsimonious" means extremely stingy/miserly. Its antonym is "generous" — freely willing to give.',
+    full: '"Parsimonious" = excessively unwilling to spend money; mean-spiritedly tight with money.\n\nAntonym: generous ✓ — freely giving.\n\nTraps:\n• "thrifty" = careful with money (similar to parsimonious, NOT opposite)\n• "ungenerous" = same as parsimonious (NOT opposite)\n• "frugal" = economical, not wasteful (also similar, not opposite)',
+    h: 'Antonym of parsimonious (very stingy) = ?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option most nearly OPPOSITE in meaning to the underlined word.\n"Last Easter was an austere period."',
+    o: ['Harsh', 'Severe', 'Prosperous', 'Sour'],
+    a: 2,
+    e: '"Austere" means severe, plain, lacking comfort or warmth. Its opposite is "prosperous" — abundant, comfortable, thriving.',
+    full: '"Austere" = characterised by severe self-discipline, plainness, or lack of comfort/luxury.\n\nAntonym: prosperous ✓ — thriving, abundant, comfortable.\n\nTraps:\n• "harsh" — synonym of austere ✗\n• "severe" — synonym of austere ✗\n• "sour" — unrelated to the core meaning ✗\n\n"Prosperous" is the opposite because it implies richness, abundance, and comfort — everything "austere" is not.',
+    h: 'Antonym of austere (severe/plain/lacking comfort) = ?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the word that has a different stress pattern from the others.\nProject (v), Basic, Suspect (v), Neglect',
+    o: ['Project (v)', 'Basic', 'Suspect (v)', 'Neglect'],
+    a: 1,
+    e: 'Project (v), Suspect (v), and Neglect are all stressed on the second syllable. "Basic" is stressed on the first syllable — the odd one out.',
+    full: 'Check stress patterns:\n• project (v) → /prəˈdʒekt/ — stress on syllable 2 (note: PROJECT as noun = /ˈprɒdʒekt/ — stress shifts!)\n• basic → /ˈbeɪsɪk/ — stress on syllable 1 ✓ ODD ONE OUT\n• suspect (v) → /səˈspekt/ — stress on syllable 2\n• neglect → /nɪˈɡlekt/ — stress on syllable 2\n\nAll others stress syllable 2; only "basic" stresses syllable 1.',
+    h: 'Which word is stressed on syllable 1 while the rest stress syllable 2?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option that has the same consonant sound as the underlined letter.\n[f]oot',
+    o: ['Live', 'Vegetable', 'Traffic', 'Of'],
+    a: 2,
+    e: 'The "f" in "foot" is the voiceless /f/ sound. "Traffic" also contains /f/. "Live," "vegetable," and "of" all have the voiced /v/ sound.',
+    full: 'The letters "f" and "v" look similar but are different consonants:\n• /f/ — voiceless: foot, traffic, laugh, phone\n• /v/ — voiced: live, of, vegetable, very\n\n"foot" → /f/ (voiceless)\n\n• live → /v/ ✗\n• vegetable → /v/ at start ✗\n• traffic → /træfɪk/ — contains /f/ ✓\n• of → /ɒv/ — ends in /v/ ✗\n\nTrick: "of" looks like it should be /f/ but is actually /v/ in standard pronunciation.',
+    h: '"foot" has /f/ — which option also has /f/, not /v/?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option that has a DIFFERENT vowel sound from the others.',
+    o: ['Here', 'Beer', 'Idea', 'Head'],
+    a: 3,
+    e: '"Here," "beer," and "idea" all contain the /ɪə/ diphthong. "Head" has the short /e/ vowel — the odd one out.',
+    full: 'Identify vowel sounds:\n• here → /hɪə/ — the /ɪə/ diphthong\n• beer → /bɪə/ — the /ɪə/ diphthong\n• idea → /aɪˈdɪə/ — ends in /ɪə/ diphthong\n• head → /hed/ — short /e/ vowel\n\n"Head" is the odd one out — its vowel /e/ is completely different from the /ɪə/ diphthong in the others.',
+    h: 'Which word does NOT have the /ɪə/ sound: here, beer, idea, or head?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Choose the option that has a DIFFERENT vowel sound from the others.',
+    o: ['Beach', 'Ski', 'Be', 'Been'],
+    a: 3,
+    e: '"Beach," "ski," and "be" all have the /iː/ (long ee) vowel. "Been" in standard British English is pronounced with the short /ɪ/ — the odd one out.',
+    full: 'Identify vowel sounds:\n• beach → /biːtʃ/ — long /iː/\n• ski → /skiː/ — long /iː/\n• be → /biː/ — long /iː/\n• been → /bɪn/ (British English) — short /ɪ/ — ODD ONE OUT\n\nNote: In American English, "been" is often /biːn/ (long /iː/), but JAMB follows British English pronunciation, where "been" = /bɪn/.',
+    h: 'Which word does NOT have the long /iː/ sound: beach, ski, be, or been?',
+  },
+
+  {
+    yr: 2022,
+    q: '"My account with the bank is in the red." This means my account is ______.',
+    o: ['Heavy', 'In danger', 'Overdrawn', 'Written in red ink'],
+    a: 2,
+    e: '"In the red" is a financial idiom meaning the account has a negative balance — it is overdrawn (you owe money to the bank).',
+    full: '"In the red" is a financial idiom that originates from old bookkeeping practice where debts were recorded in red ink and credits in black ink.\n\n"In the red" = the account has a negative balance; you have spent more than you have → overdrawn ✓\n"In the black" = the account has a positive balance (profitable/solvent)\n\n• "Heavy" — not the meaning ✗\n• "In danger" — loosely related but not the specific meaning ✗\n• "Overdrawn" ✓ — the account has a negative balance\n• "Written in red ink" — takes the idiom literally ✗',
+    h: 'What does the banking idiom "in the red" mean?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Fill in the gap with the best option.\n"Between you and ______, he is a liar."',
+    o: ['All of the above', 'Me', 'I', 'None of the above'],
+    a: 1,
+    e: 'After a preposition ("between"), use the object pronoun "me," not the subject pronoun "I."',
+    full: 'Rule: Prepositions are always followed by OBJECT pronouns (me, him, her, us, them) — never subject pronouns (I, he, she, we, they).\n\n"Between" is a preposition → must be followed by object pronoun.\n→ "Between you and ME" ✓\n→ "Between you and I" ✗ — common error but grammatically wrong\n\nOther examples:\n• "between him and me" ✓\n• "with her and me" ✓\n• "for you and me" ✓\n\nMemory trick: Remove "you and" — you wouldn\'t say "Between I" but you would say "Between me." So "between you and me."',
+    h: 'After "between," do you use "I" or "me"?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Fill in the gap with the best option.\n"The secretary and treasurer did not do ______ job."',
+    o: ['Their', 'All of the above', 'None of the above', 'His'],
+    a: 3,
+    e: '"The secretary and treasurer" refers to ONE person holding both roles. When "and" joins two titles referring to the same person, use the singular pronoun "his/her."',
+    full: 'This is a tricky concord question about compound subjects:\n\nCase 1 — Two different people: "The secretary AND the treasurer did not do their jobs." (plural)\n\nCase 2 — One person with two titles: "The secretary and treasurer did not do his job." (singular)\n\nHere, "the secretary and treasurer" (no article before "treasurer") = ONE person who holds both roles → singular pronoun "his" ✓\n\nIf it were two people, it would say "The secretary and the treasurer did not do their jobs."',
+    h: '"Secretary and treasurer" = one or two people here? Singular or plural pronoun?',
+  },
+
+  {
+    yr: 2022,
+    q: 'Fill in the gap with the best option.\n"If James fails his examination, his teachers, his parents, his friends, or I ______ to blame."',
+    o: ['Are', 'Is', 'Am', 'Not'],
+    a: 2,
+    e: 'When subjects are joined by "or," the verb agrees with the NEAREST subject to the verb. The nearest subject is "I" → "am."',
+    full: 'Rule of Proximity (Or/Nor rule):\nWhen subjects are joined by "or" or "nor," the verb agrees with the subject CLOSEST to it.\n\n"his teachers, his parents, his friends, or I ______ to blame"\n→ Nearest subject to the verb = "I"\n→ "I am" ✓\n\nIf it were: "I, or his teachers, ______ to blame" → verb = "are" (nearest = "his teachers")\n\nThe key is always look at the LAST subject before the verb.',
+    h: 'With "or" joining subjects, the verb agrees with which subject?',
+  },
+
+  // ══════════════════════════════════════════════
+  // 2023
+  // ══════════════════════════════════════════════
+
+  {
+    yr: 2023,
+    q: 'Choose the option that has the same consonant sound as the underlined letter(s).\nwa[sh]',
+    o: ['Treasure', 'Occasion', 'Nation', 'Equation'],
+    a: 2,
+    e: 'The "sh" in "wash" is /ʃ/. "Nation" also has the /ʃ/ sound in its "-tion" ending (/ˈneɪʃən/). "Treasure," "occasion," and "equation" have the voiced /ʒ/ sound.',
+    full: 'Two similar but different sounds:\n• /ʃ/ — voiceless "sh": wash, nation, sugar, machine\n• /ʒ/ — voiced "zh": treasure, measure, occasion, equation, vision\n\n"wash" → /wɒʃ/ — contains /ʃ/ (voiceless)\n\n• treasure → /ˈtreʒə/ — /ʒ/ ✗\n• occasion → /əˈkeɪʒən/ — /ʒ/ ✗\n• nation → /ˈneɪʃən/ — /ʃ/ ✓\n• equation → /ɪˈkweɪʒən/ — /ʒ/ ✗\n\nAnswer: C. nation',
+    h: '"wash" has /ʃ/ — which option also has /ʃ/, not /ʒ/?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the option that has the same vowel sound as the highlighted letter(s).\nnak[e]d',
+    o: ['Friend', 'Bead', 'Fed', 'Bid'],
+    a: 1,
+    e: 'The "e" in "naked" gives a /iː/ sound in the final syllable. "Bead" also has the /iː/ sound. Verified answer from JAMB 2023 past paper.',
+    full: '"naked" → the highlighted "e" is in the second syllable "-ed." In careful/formal pronunciation, this syllable has the /iː/ sound (like "need").\n\n• friend → /e/ — short e ✗\n• bead → /iː/ — long ee ✓\n• fed → /e/ — short e ✗\n• bid → /ɪ/ — short i ✗\n\nAnswer: B. bead — verified from JAMB 2023.',
+    h: 'The "e" in "naked" matches the vowel in which word: friend, bead, fed, or bid?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the word that has the same rhyme scheme as: day',
+    o: ['Dare', 'Anime', 'Flight', 'Ball'],
+    a: 0,
+    e: '"Day" ends with the /eɪ/ sound. "Dare" also shares the /eɪ/ vowel base and is the verified JAMB 2023 answer.',
+    full: '"day" → /deɪ/ — the "-ay" sound.\n\n• dare → /deə/ (British) or /deɪr/ (American) — shares the /eɪ/ root vowel ✓\n• anime → /ˈænɪmeɪ/ — also ends in /eɪ/ but "dare" is the verified answer\n• flight → /aɪt/ — different ✗\n• ball → /ɔːl/ — different ✗\n\nVerified answer from EduPadi JAMB 2023: A. Dare.',
+    h: 'Which word rhymes with "day" (/eɪ/ sound)?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Pick out the option with a different rhyme from the others.',
+    o: ['Roar', 'Four', 'Growl', 'Bore'],
+    a: 2,
+    e: '"Roar," "four," and "bore" all share the /ɔː/ sound. "Growl" has the /aʊl/ sound — it is the odd one out.',
+    full: '• roar → /rɔː/\n• four → /fɔː/\n• bore → /bɔː/\n• growl → /ɡraʊl/ — completely different /aʊ/ diphthong\n\n"Growl" rhymes with howl, fowl, prowl — not with roar, four, bore.',
+    h: 'Which word does NOT rhyme with the others: roar, four, growl, bore?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the word that does NOT have the same vowel sound as the others.',
+    o: ['Shun', 'Son', 'Sun', 'Short'],
+    a: 3,
+    e: '"Shun," "son," and "sun" all have the /ʌ/ vowel. "Short" has the /ɔː/ vowel — the odd one out.',
+    full: '• shun → /ʌ/\n• son → /ʌ/ (son and sun are homophones)\n• sun → /ʌ/\n• short → /ɔː/ — ODD ONE OUT\n\nThe /ʌ/ sound (as in "but," "cup") vs the /ɔː/ sound (as in "or," "more"). "Short" clearly belongs to a different vowel family.',
+    h: 'Which word has a different vowel: shun /ʌ/, son /ʌ/, sun /ʌ/, or short /ɔː/?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the correct primary stress pattern for: category',
+    o: ['cat-e-GO-ry', 'CAT-e-go-ry', 'cat-e-go-RY', 'cat-E-go-ry'],
+    a: 1,
+    e: '"Category" → /ˈkætəɡəri/ — stress falls on the FIRST syllable: CAT-e-go-ry.',
+    full: '"category" = 4 syllables: cat-e-go-ry\nIPA: /ˈkætəɡəri/ — primary stress on syllable 1.\n\nSay it naturally: you say "CAT-uh-gor-ee" not "cat-EG-ory."\n\nPattern tip: many 4-syllable nouns ending in "-ory/-ary/-ery" carry first-syllable stress in British English.',
+    h: 'Which syllable carries the primary stress in "category"?',
+  },
+
+  {
+    yr: 2023,
+    q: 'The capitalised word carries emphatic stress. Choose the question the sentence answers.\n"I bought my WIFE a red dress."',
+    o: [
+      'Did I buy my husband a red dress?',
+      'Did I buy my wife a red shoe?',
+      'Did he buy my wife a red dress?',
+      'Did I buy my wife a black dress?',
+    ],
+    a: 0,
+    e: 'WIFE is stressed → contrasting with another recipient. The question asks about a husband — option A replaces WIFE with the contrasting word.',
+    full: 'WIFE is stressed → question must swap WIFE for an alternative (husband).\n→ "Did I buy my HUSBAND a red dress?" → "No, I bought my WIFE one." ✓\n\n• B: changes "dress" → "shoe" (would need DRESS stressed)\n• C: changes "I" → "he" (would need I stressed)\n• D: changes "red" → "black" (would need RED stressed)',
+    h: 'WIFE stressed → which option asks about a husband instead?',
+  },
+
+  {
+    yr: 2023,
+    q: 'The capitalised word carries emphatic stress. Choose the question the sentence answers.\n"Daddy plays TENNIS on Saturday afternoons."',
+    o: [
+      'Does mummy play tennis on Saturday afternoons?',
+      'Does daddy play tennis on Sunday afternoons?',
+      'Does daddy play tennis on Saturday morning?',
+      'Does daddy play cricket on Saturday afternoon?',
+    ],
+    a: 3,
+    e: 'TENNIS is stressed → contrasting with another sport. The question asks about cricket — option D replaces TENNIS with the contrasting word.',
+    full: 'TENNIS is stressed → question must swap TENNIS for another sport.\n→ "Does daddy play CRICKET on Saturday afternoon?" → "No, daddy plays TENNIS." ✓ = Option D\n\n• A: changes "daddy" → "mummy" (would need DADDY stressed)\n• B: changes "Saturday" → "Sunday" (would need SATURDAY stressed)\n• C: changes "afternoon" → "morning" (would need AFTERNOON stressed)\n\n⚠️ EduPadi originally listed A incorrectly. Verified correct answer: D.',
+    h: 'TENNIS stressed → which option replaces it with a different sport (cricket)?',
+  },
+
+  {
+    yr: 2023,
+    q: '"James and Henry were at daggers drawn when I knew them." This means they ______.',
+    o: [
+      'Were always angry with each other',
+      'Always wore daggers',
+      'Were good at drawing daggers',
+      'Were fighting everybody',
+    ],
+    a: 0,
+    e: '"At daggers drawn" is an idiom meaning in a state of bitter mutual hostility — always angry and ready to fight each other.',
+    full: '"At daggers drawn" — from the image of two people who have unsheathed daggers at each other, ready to fight at any moment.\n\nModern meaning: in a state of intense, open hostility between two specific people.\n\n• "Always wore daggers" — literal misreading ✗\n• "Good at drawing daggers" — literal misreading ✗\n• "Fighting everybody" — the idiom is about two people in mutual conflict, not general fighting ✗',
+    h: 'What does "at daggers drawn" mean?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Fill in the gap with the most appropriate option.\n"Without our relentless campaigns, we might ______ sure of victory in the race for the National Assembly."',
+    o: ['Be never', 'Never have been', 'Never had been', 'Have never be'],
+    a: 1,
+    e: 'After "might," use the perfect infinitive "have been." The full phrase is "might never have been" — a third conditional structure.',
+    full: 'Structure: modal (might) + never + perfect infinitive (have been)\n→ "might never have been" ✓\n\n• "be never" — wrong word order ✗\n• "never have been" ✓\n• "never had been" — "had been" is past perfect; after "might" you need perfect infinitive "have been" ✗\n• "have never be" — "be" should be "been" ✗',
+    h: 'What comes after "might" in a counterfactual — "have been" or "had been"?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Fill in the gap with the most appropriate option.\n"We are all hungry; we ______ anything to eat since morning."',
+    o: ["Hadn't had", 'Never had', "Haven't had", "Didn't have"],
+    a: 2,
+    e: '"Since morning" signals present perfect tense. "Haven\'t had" is correct — the situation started in the past and continues to now.',
+    full: 'Rule: "since" + a point in time → present perfect tense.\n\n→ "We haven\'t had anything to eat since morning." ✓\n\n• "Hadn\'t had" — past perfect; needs a past reference point ✗\n• "Never had" — general life statement, not time-specific ✗\n• "Didn\'t have" — simple past (completed); "since" requires present perfect ✗',
+    h: '"Since morning" triggers which tense?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Fill in the gap with the most appropriate option.\n"To check desertification in the arid zones, ______ trees should be planted."',
+    o: ['Drought-resisting', 'Drought-resistant', 'Drought-effective', 'Drought-proof'],
+    a: 1,
+    e: '"Drought-resistant" is the correct compound adjective for plants that can withstand drought — a fixed property, like fire-resistant or water-resistant.',
+    full: '"Drought-resistant" is the standard scientific/agricultural compound adjective.\n\n• "Drought-resisting" — present participle; implies active ongoing action, not a fixed property ✗\n• "Drought-resistant" ✓ — standard fixed adjective (compare: fire-resistant, rust-resistant)\n• "Drought-effective" — not standard ✗\n• "Drought-proof" — implies complete immunity; less standard ✗',
+    h: 'Which compound adjective correctly describes trees able to withstand drought?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the option most nearly OPPOSITE in meaning to the underlined word.\n"My father is parsimonious."',
+    o: ['Thrifty', 'Frugal', 'Generous', 'Ungenerous'],
+    a: 2,
+    e: '"Parsimonious" = extremely stingy. Antonym = "generous."',
+    full: '"Parsimonious" = miserly, excessively unwilling to spend.\nAntonym: generous ✓\n\nTraps: "thrifty" and "frugal" are SYNONYMS of parsimonious, not antonyms. "Ungenerous" = same meaning as parsimonious.',
+    h: 'Opposite of parsimonious?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the option most nearly OPPOSITE in meaning to the underlined word.\n"She was impertinent until she met her husband."',
+    o: ['Subdued', 'Extravagant', 'Courteous', 'Promiscuous'],
+    a: 2,
+    e: '"Impertinent" = rude, disrespectful. Its antonym is "courteous" = polite, well-mannered.',
+    full: '"Impertinent" = bold, rude, lacking appropriate respect.\nAntonym: courteous ✓ — polite, respectful, considerate.\n\n• "subdued" — quiet/restrained, not specifically polite ✗\n• "extravagant" — lavish spender; unrelated ✗\n• "promiscuous" — unrelated ✗',
+    h: 'Opposite of impertinent (rude)?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the option nearest in meaning to the underlined word.\n"Repugnant rules in the society should be repealed."',
+    o: ['Enacted', 'Exemplary', 'Abhorrent', 'Justified'],
+    a: 2,
+    e: '"Repugnant" = causing strong disgust or moral revulsion. "Abhorrent" is a direct synonym.',
+    full: '"Repugnant" = deeply offensive, causing revulsion.\nSynonym: abhorrent ✓ — also means morally revolting, causing loathing.\n\n• "enacted" — passed into law (opposite in context) ✗\n• "exemplary" — worthy of imitation (opposite of repugnant) ✗\n• "justified" — fair, warranted (opposite in context) ✗',
+    h: 'Synonym of repugnant (deeply offensive)?',
+  },
+
+  {
+    yr: 2023,
+    q: 'Choose the option nearest in meaning to the underlined word.\n"Bisi has become an indispensable member of staff."',
+    o: ['Vital', 'Principal', 'Dedicated', 'Effective'],
+    a: 0,
+    e: '"Indispensable" = absolutely necessary, cannot be done without. "Vital" is the closest synonym.',
+    full: '"Indispensable" = essential, impossible to do without.\nSynonym: vital ✓ — critically important.\n\n• "principal" — main/chief; implies rank, not necessity ✗\n• "dedicated" — hardworking; describes attitude, not importance ✗\n• "effective" — produces results; describes performance ✗',
+    h: 'Synonym of indispensable (absolutely essential)?',
+  },
+
+  // ══════════════════════════════════════════════
+  // 2024
+  // ══════════════════════════════════════════════
+
+  {
+    yr: 2024,
+    q: 'Choose the option that has the same consonant sound as the underlined letter(s).\narCHbishop',
+    o: ['Christian', 'Chemical', 'Archangel', 'Sachet'],
+    a: 0,
+    e: 'The "ch" in "archbishop" = /tʃ/ (church sound). "Christian" also has /tʃ/. Chemical and archangel = /k/; sachet = /ʃ/.',
+    full: '"ch" can be /tʃ/, /k/, or /ʃ/:\n• /tʃ/: church, archbishop, christian\n• /k/: chemical, chaos, archangel\n• /ʃ/: sachet, chef, machine\n\n"archbishop" → /tʃ/ ✓ matches "christian" → /tʃ/ ✓',
+    h: '"ch" in "archbishop" = /tʃ/ — which option also has /tʃ/?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Choose the option that rhymes with: permit',
+    o: ['Enlist', 'Commit', 'Meat', 'Profit'],
+    a: 1,
+    e: '"Permit" ends in /-mɪt/. "Commit" also ends in /-mɪt/ — a perfect rhyme.',
+    full: '"permit" → /-mɪt/\n• enlist → /-lɪst/ ✗\n• commit → /-mɪt/ ✓\n• meat → /-iːt/ (different vowel) ✗\n• profit → /-fɪt/ (same vowel but different consonant cluster) ✗',
+    h: 'Which word perfectly rhymes with "permit" (same /-mɪt/ ending)?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Choose the option that rhymes with: boys',
+    o: ['Moist', 'Elbows', 'Noise', 'Stays'],
+    a: 2,
+    e: '"Boys" ends with /ɔɪz/. "Noise" also ends with /ɔɪz/ — a perfect rhyme.',
+    full: '"boys" → /bɔɪz/\n• moist → /mɔɪst/ — shares /ɔɪ/ but ends in /st/ not /z/ ✗\n• elbows → /ɛlboʊz/ — different diphthong /oʊ/ ✗\n• noise → /nɔɪz/ ✓ — same /ɔɪz/ ending!\n• stays → /steɪz/ — /eɪ/ diphthong ✗',
+    h: 'Which word rhymes with "boys" (/ɔɪz/ ending)?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Choose the most appropriate stress pattern for: productivity',
+    o: ['PROductivity', 'proDUCtivity', 'producTIvity', 'productiVIty'],
+    a: 2,
+    e: '"Productivity" → /ˌprɒdʌkˈtɪvɪti/ — stress on syllable 3: producTIvity. Words ending in "-ivity" stress the syllable before "-ity."',
+    full: '"productivity" = pro-duc-tiv-i-ty (5 syllables)\nIPA: /ˌprɒdʌkˈtɪvɪti/ — stress on "-tiv-" (syllable 3).\n\nRule: words ending in "-ivity/-ity" stress the syllable immediately before "-ity."\nExamples: elecTRIcity, sensiTIvity, producTIvity.',
+    h: 'In "-ivity" words, stress falls on the syllable just before "-ity" — which option shows this?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Choose the option that has the same vowel sound as the underlined letter(s).\n[u]rn',
+    o: ['Bed', 'Corn', 'Hearse', 'Calm'],
+    a: 2,
+    e: '"Urn" has the /ɜː/ vowel (the "er" sound in "her," "bird"). "Hearse" also contains /ɜː/.',
+    full: '"urn" → /ɜːn/ — the /ɜː/ vowel (as in: her, bird, word, nurse, earth)\n\n• bed → /e/ ✗\n• corn → /ɔː/ ✗\n• hearse → /hɜːs/ ✓ — same /ɜː/!\n• calm → /ɑː/ ✗\n\nTrick: "hearse" looks like "hear" but sounds like /hɜːs/. Always sound it out.',
+    h: '"Urn" has /ɜː/ — which option also has /ɜː/: bed, corn, hearse, or calm?',
+  },
+
+  {
+    yr: 2024,
+    q: 'Choose the option that has the same consonant sound as the underlined letter(s).\nclo[the]',
+    o: ['Cloth', 'Smooth', 'Good', 'Thesis'],
+    a: 1,
+    e: 'The "th" in "clothe" is voiced /ð/ (like "this"). "Smooth" also ends in /ð/. "Cloth" and "thesis" have voiceless /θ/.',
+    full: 'Two "th" sounds:\n• /ð/ voiced — this, that, clothe, smooth, breathe\n• /θ/ voiceless — think, cloth, thesis, three, bath\n\n"clothe" (with final -e) → voiced /ð/\n\n• cloth (no e) → /θ/ ✗\n• smooth → /ð/ ✓\n• good → /d/ ✗\n• thesis → /θ/ ✗\n\nKey: adding the final "-e" to "cloth" changes it from /θ/ to /ð/".',
+    h: '"clothe" ends in voiced /ð/ — which option also has /ð/?',
+  },
+    
     {
       yr: 2024,
       q: "'Her response was AMBIGUOUS' — underlined word means",
