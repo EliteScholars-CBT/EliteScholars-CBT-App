@@ -9893,6 +9893,42 @@ img {
   height: auto;
   display: block;
 }
+
+@media (min-width: 640px) {
+
+  body {
+    background: #0d0018;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .phone {
+    max-width: 1200px !important;
+    margin: 0 auto;
+  }
+
+  /* All screens fill viewport properly */
+  .scr {
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  /* Better scrollbar */
+  .scroll::-webkit-scrollbar { width: 6px; }
+  .scroll::-webkit-scrollbar-track { background: rgba(75,0,130,.06); border-radius: 3px; }
+  .scroll::-webkit-scrollbar-thumb { background: rgba(75,0,130,.28); border-radius: 3px; }
+
+  /* Hover states */
+  button:hover:not(:disabled) {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  button:active {
+    transform: scale(0.98) translateY(0) !important;
+  }
+}
+
 `;
 
 
