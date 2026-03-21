@@ -3296,10 +3296,6 @@ const QB = {
     h: 'Soap making requires alkaline conditions. Ash dissolves in water to form what type of solution?',
   },
 
-  // ═══════════════════════════════════════
-  // 2020 — Page 4
-  // ═══════════════════════════════════════
-
   {
     yr: 2020,
     q: 'The chlorinated alkane often used industrially to remove grease is ___',
@@ -3369,10 +3365,6 @@ const QB = {
     h: 'CO₂ is acidic; CO is neutral. Which reagent reacts with CO₂ but not CO?',
   },
 
-  // ═══════════════════════════════════════
-  // 2020 — Pages 2 & 3 (from verified snippets)
-  // ═══════════════════════════════════════
-
   {
     yr: 2020,
     q: 'The most common method for separating oxygen and nitrogen from liquid air is ___',
@@ -3428,9 +3420,6 @@ const QB = {
     h: 'Water: 2 bonds + 2 lone pairs. Lone pairs push bonds closer. Angle = less than 109.5°.',
   },
 
-  // ═══════════════════════════════════════
-  // 2023 — Pages 2 & 3 (from EduPadi)
-  // ═══════════════════════════════════════
 
   {
     yr: 2023,
@@ -3596,10 +3585,6 @@ const QB = {
     full: 'Element identification:\n• X: Z=8 → Oxygen (O), Group 16, gains 2e⁻ → valency 2, charge −2\n• Y: Z=13 → Aluminium (Al), Group 13, loses 3e⁻ → valency 3, charge +3\n\nIonic compound formation:\nY (Al, 3+) combines with X (O, 2−)\n\nCross-multiplication rule:\n• Y has charge +3, X has charge −2\n• Take the magnitude of each as the subscript of the other\n• Y₂X₃ (i.e., Al₂O₃) ✓\n\nVerification:\n2(+3) + 3(−2) = 6 − 6 = 0 ✓ (neutral compound)\n\nThis is aluminium oxide (Al₂O₃), the main component of bauxite.\n\nAnswer: A — Y₂X₃',
     h: 'O is 2−, Al is 3+. Cross multiply: Al₂O₃. In the question\'s notation: Y₂X₃.',
   },
-
-  // ═══════════════════════════════════════
-  // 2022 — Page 2 (from verified snippets)
-  // ═══════════════════════════════════════
 
   {
     yr: 2022,
@@ -4669,7 +4654,7 @@ const QB = {
     e: 'Ionisation energy is the energy required to remove an electron from a gaseous atom in its ground state. 496 kJ/mol is the first ionisation energy of sodium.',
     full: 'Ionisation energy:\n\nDefinition: The minimum energy required to remove ONE electron from a gaseous atom (or ion) in its ground state:\nNa(g) → Na⁺(g) + e⁻    ΔH = +496 kJ/mol\n\nSodium (Na, atomic number 11):\n• Configuration: 1s² 2s² 2p⁶ 3s¹\n• The 3s¹ electron is relatively easy to remove (low ionisation energy = 496 kJ/mol)\n• This is the FIRST ionisation energy of Na\n\nTypes of energies:\n• Electron affinity: energy RELEASED when atom GAINS an electron\n  X(g) + e⁻ → X⁻(g)    ΔH negative\n\n• Ionisation energy ✓: energy REQUIRED to REMOVE an electron\n  X(g) → X⁺(g) + e⁻    ΔH positive\n\n• Lattice energy: energy released when gaseous ions form a solid crystal\n  Na⁺(g) + Cl⁻(g) → NaCl(s)    ΔH negative\n\n• Hydration energy: energy released when ions are surrounded by water molecules\n\nFirst ionisation energies increase across a period (nuclear charge increases) and decrease down a group (electrons further from nucleus).\n\nAnswer: B — Ionisation energy',
     h: 'Energy to REMOVE an electron from a gaseous atom = which type of energy?',
-  }
+  },
     
   {
     yr: 2024,
@@ -13058,3 +13043,4 @@ export default function App() {
     </>
   );
 }
+
