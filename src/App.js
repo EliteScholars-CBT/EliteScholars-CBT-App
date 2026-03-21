@@ -9842,7 +9842,7 @@ const GLOBAL_CSS = `
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Poppins',sans-serif;background:#F8F5FF;margin:0;padding:0;min-height:100dvh;display:flex;flex-direction:column;}
 .phone{width:100%;min-height:100dvh;background:#F8F5FF;position:relative;display:flex;flex-direction:column;overflow-x:hidden;}
-.scr{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:100dvh;}
+.scr{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:100dvh;max-height:100dvh}
 .scroll{overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .scroll::-webkit-scrollbar{width:3px;}
 .scroll::-webkit-scrollbar-thumb{background:rgba(75,0,130,.18);border-radius:2px;}
