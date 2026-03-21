@@ -3507,7 +3507,6 @@ const QB = {
   ],
   mathematics: [
 
-const jambMathsNewQuestions = [
   {
     yr: 2023,
     q: 'What is the general term of the sequence 3, 8, 13, 18, ...?',
