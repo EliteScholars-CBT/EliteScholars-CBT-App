@@ -4,7 +4,7 @@ import logo from './assets/elite-scholars-cbt-logo.png';
 
 // ── Config — edit these freely ─────────────────────────────────────────────
 const ROUND_SIZE = 20; // questions per quiz round
-const SHARE_GATE_EVERY = 6; // show "share to WhatsApp friends" gate every N quizzes
+const SHARE_GATE_EVERY = 3; // show "share to WhatsApp friends" gate every N quizzes
 
 // When no share gate: alternate between showing Join Group and Join Channel.
 // Quizzes 1,3,5... (odd) → Group. Quizzes 2,4,6... (even) → Channel.
