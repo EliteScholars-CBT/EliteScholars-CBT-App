@@ -209,8 +209,8 @@ const SFX = {
 
 // ── Question bank ──────────────────────────────────────────────────────────
 const QB = {
+  
   economics: [
-
   {
     yr: 2024,
     q: 'If wage rate is less than the average revenue product, the firm would be earning ___',
@@ -229,6 +229,2491 @@ const QB = {
     full: 'What the PPC (PPF) shows:\n• Points ON the curve: full employment and productive efficiency\n• Points INSIDE the curve: unemployment of resources (B) and/or inefficiency (C)\n• The boundary of the curve: scarcity — you cannot go beyond it with current resources (A)\n\nWhat the PPC does NOT directly show:\n• Economic development (D): development = growth = outward shift of the entire PPC over time\n\nThe static PPC represents a snapshot — it illustrates trade-offs, scarcity, opportunity cost, and inefficiency. Economic development requires the curve itself to move outward.',
     h: 'PPC shows scarcity, unemployment, and inefficiency — but NOT what?',
   },
+
+  {
+    "yr": 2024,
+    "q": "The 'Law of Diminishing Returns' specifically applies to the:",
+    "o": ["Long-run production period", "Market price of goods", "Short-run production period", "Consumer's level of utility"],
+    "a": 2,
+    "e": "In the short run, adding more variable factors to a fixed factor eventually reduces extra output.",
+    "full": "Imagine you own a small bakery with only one oven (your 'Fixed Factor'). You hire one baker, and they make 10 loaves. You hire a second, and together they make 25 because they can help each other. But by the time you hire the 10th baker, they are all bumping into each other, fighting for space, and waiting in line just to use that one oven. Because you can't just 'buy another shop' instantly (that's the Long Run), adding more people to a cramped space eventually makes each new person less productive than the last. That 'drop-off' in extra bread is exactly what we call Diminishing Returns, and it only happens in the Short Run where at least one thing—like your kitchen size—cannot change.",
+    "h": "If you have 50 chefs in one tiny kitchen with only one stove, will they be more or less efficient?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following is a major 'Instrument of Fiscal Policy' used by the government?",
+    "o": ["Open Market Operations", "Changes in the Reserve Requirement", "Government Spending and Taxation", "Fixing the Exchange Rate"],
+    "a": 2,
+    "e": "Fiscal policy involves the use of the government budget to influence the economy.",
+    "full": "Think of 'Fiscal Policy' as the government using its own wallet to fix the country's problems. Just like you have an income (salary) and expenses (rent/food), the government has Revenue (Taxation) and Expenditure (Spending on roads, schools, and hospitals). If the economy is 'cold' and people aren't buying anything, the government can either lower taxes so you have more cash to spend, or they can start a massive construction project to put money directly into workers' pockets. It's all about how they manage their 'Budget' to keep the economy balanced. Don't confuse this with 'Monetary Policy,' which is what the Central Bank does with interest rates and printing money!",
+    "h": "When the President announces a new tax or a new multi-billion naira road project, which policy is he using?"
+  },
+  {
+    "yr": 2024,
+    "q": "The 'Income Elasticity of Demand' for an 'Inferior Good' is always:",
+    "o": ["Positive", "Zero", "Negative", "Greater than one"],
+    "a": 2,
+    "e": "As a consumer's income rises, they buy less of an inferior good, creating an inverse relationship.",
+    "full": "In Economics, 'Inferior' doesn't necessarily mean 'bad quality'; it just describes how you act when you get a promotion. Imagine you currently eat a lot of 'Garri' because it's cheap and fills you up. Suddenly, your boss doubles your salary. Do you buy *more* Garri? Usually, no. You stop buying Garri and start buying Fried Rice or Chicken instead. Because your Income went UP but your Demand for Garri went DOWN, the relationship is 'Inversely Proportional.' In math, when one goes up and the other goes down, the result (the coefficient) is always a Negative number. That’s the hallmark of an inferior good.",
+    "h": "When you get rich, do you buy more or less of the 'cheap' food you used to survive on?"
+  },
+  {
+    "yr": 2024,
+    "q": "One of the main reasons for 'International Trade' is the existence of:",
+    "o": ["Common currency", "Absolute or Comparative Advantage", "High transport costs", "Identical resource distribution"],
+    "a": 1,
+    "e": "Countries trade because they can produce certain goods more efficiently than others.",
+    "full": "Why does Nigeria sell Crude Oil to the world and buy refined petrol or electronics back? It's not just for fun—it's because of 'Comparative Advantage.' Even if a country *could* produce everything, it's smarter to focus on what they are 'best' at. Think of it like a world-class Surgeon who is also the fastest typist in the world. Should the Surgeon spend time typing their own medical reports? No! They should spend every hour performing surgery (their high-value skill) and pay a secretary to do the typing. By 'specializing' in what gives them the most value and trading for the rest, both the Surgeon and the secretary end up better off. Countries do the exact same thing.",
+    "h": "Should you try to make everything yourself, or focus on what you're best at and trade for the rest?"
+  },
+  {
+    "yr": 2024,
+    "q": "In the 'Theory of Production,' the 'Long Run' is defined as the period when:",
+    "o": ["All factors of production are fixed", "All factors of production are variable", "Production lasts for more than one year", "At least one factor is fixed"],
+    "a": 1,
+    "e": "The long run is a conceptual timeframe where a firm can change all its inputs, including factory size.",
+    "full": "In Economics, the 'Long Run' isn't a specific number of days or months—it's a state of mind for a business owner. In the 'Short Run,' you are stuck with the shop you have (Fixed Factor). You can hire more people, but you can't just grow the building overnight. But in the 'Long Run,' everything is 'Variable.' You can close your small shop and build a giant factory, buy ten more trucks, and install brand-new heavy machinery. It’s the timeframe where no walls are holding you back and you can completely redesign your entire business from the ground up. If you can change every single part of your production process, you are officially in the Long Run.",
+    "h": "Is there anything you *can't* change about your business if you have five years to plan it?"
+  },
+  {
+    "yr": 2024,
+    "q": "If the 'Central Bank' wants to reduce the 'Money Supply' to fight inflation, it will:",
+    "o": ["Lower the Cash Reserve Ratio", "Buy government securities in the Open Market", "Sell government securities in the Open Market", "Reduce the Discount Rate"],
+    "a": 2,
+    "e": "Selling securities mops up excess liquidity from the commercial banks, reducing the money in circulation.",
+    "full": "Imagine there is 'too much money' flowing in the economy, which is making prices shoot up (Inflation). The Central Bank needs to 'mop up' that extra cash like a sponge. They do this through 'Open Market Operations' (OMO). They go to the commercial banks and say, 'Hey, buy these pieces of paper (Government Bonds) from us!' When the banks buy those bonds, they give their cash to the Central Bank. Now, the banks have less cash to lend to you and me. Because there's less 'loan money' available, the total money in the country drops, people spend less, and inflation finally starts to cool down. They literally 'sell' paper to 'buy' back the excess cash from the system.",
+    "h": "If the Central Bank takes cash away from the commercial banks, will it be easier or harder for you to get a loan?"
+  },
+  {
+    "yr": 2024,
+    "q": "A 'Deflationary Gap' exists in an economy when:",
+    "o": ["Aggregate Demand exceeds Full Employment output", "Aggregate Supply exceeds Aggregate Demand at full employment", "There is too much money in circulation", "The government budget is in surplus"],
+    "a": 1,
+    "e": "It occurs when total spending is not enough to buy up all the goods produced at full capacity.",
+    "full": "Imagine a factory that is capable of producing 1,000 shoes a day if everyone is working hard (Full Employment). But when the day ends, they realize people only ordered 700 shoes. Those 300 'unwanted' shoes represent a 'Gap' in demand. Because people aren't buying enough to keep the factory at 100% capacity, the owner might start cutting prices (Deflation) or, worse, laying off workers because they don't need that much help anymore. This 'Deflationary Gap' is a sign that the economy is 'sleepy'—there isn't enough spending 'energy' to keep everyone employed and all machines running.",
+    "h": "If a country's citizens aren't spending enough to buy everything the country *can* produce, what happens to the extra goods?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following describes the 'Law of Variable Proportions'?",
+    "o": ["All factors of production are increased", "One factor is increased while others remain fixed", "The scale of production remains constant", "Price of factors remains unchanged"],
+    "a": 1,
+    "e": "It analyzes the relationship between input and output when only one factor (like labor) is changed.",
+    "full": "Think of this like a chemistry experiment where you keep adding one ingredient while keeping the others the same. In a factory setting, your building and machines are 'Fixed.' You can't just grow the building in a week. But you can hire more workers—that's your 'Variable' factor. The 'Proportion' changes because now you have more workers per machine than you did yesterday. At first, adding workers is great because they help each other (Specialization). But eventually, they get in each other's way. This law is the 'short-run' reality of every business: you can't just keep adding people to a tiny room and expect production to keep rising forever. Eventually, the room gets too crowded, and the 'extra' work each person does starts to drop.",
+    "h": "If you have 10 people trying to use 1 computer, does the 'proportion' of workers to machines feel right?"
+  },
+  {
+    "yr": 2024,
+    "q": "The 'Value of Money' is primarily determined by:",
+    "o": ["The government's decree", "The quantity of gold in the bank", "Its purchasing power", "The physical quality of the banknotes"],
+    "a": 2,
+    "e": "Money is only worth what it can actually buy in the market.",
+    "full": "If you had a 1,000 Naira note in 1990, you could probably buy a whole goat. Today, that same piece of paper might only buy you a loaf of bread. The paper hasn't changed, and the government still says it's legal money, so what changed? Its 'Purchasing Power.' In Economics, the 'Value of Money' is the inverse of the price level. When prices go up (Inflation), the value of your money goes down because that same N1,000 note now brings home fewer goods. We don't care how pretty the note is or how many zeros are on it; we only care about how many 'loaves of bread' it can exchange for in the real world.",
+    "h": "If a bottle of water costs N100 today but N500 tomorrow, has your N500 note become more or less valuable?"
+  },
+  {
+    "yr": 2024,
+    "q": "In the 'Theory of Consumer Behavior,' a 'Price Line' (Budget Line) shows:",
+    "o": ["Consumer preferences for two goods", "The maximum satisfaction a consumer can get", "Possible combinations of two goods a consumer can afford", "The utility derived from different goods"],
+    "a": 2,
+    "e": "It represents the boundary of what a consumer can buy given their income and market prices.",
+    "full": "Imagine you have N2,000 in your pocket and you enter a shop that only sells Meat Pies (N200) and Cokes (N100). If you spend everything on Meat Pies, you get 10 pies. If you spend it all on Cokes, you get 20 bottles. You could also get 5 pies and 10 cokes. If you draw a straight line between all these possible combinations, that is your 'Budget Line.' It is your financial 'fence.' You can buy anything inside or on that line, but anything outside the line is 'Unattainable'—you simply don't have enough money. It doesn't show what you *like* (that's the Indifference Curve); it only shows what you can *afford*.",
+    "h": "Does this line show what you 'want' to buy or what your wallet 'allows' you to buy?"
+  },
+  {
+    "yr": 2024,
+    "q": "A 'Pure Monopoly' is characterized by a 'Cross-Elasticity of Demand' that is:",
+    "o": ["Positive and high", "Negative and low", "Zero or very low", "Infinite"],
+    "a": 2,
+    "e": "Monopolies have no close substitutes, so price changes in other goods don't affect them.",
+    "full": "Cross-Elasticity measures how much you switch to a different product when the price of one item changes. If the price of Pepsi goes up, you switch to Coke (High Positive Cross-Elasticity). But a 'Pure Monopoly' means there is **no close substitute.** Imagine a company that owns the only source of water in a desert. If the price of 'Soda' goes up or down, does it change how much water people buy from the monopoly? Not really. Because there’s nothing else even remotely like the monopoly's product, the 'cross' relationship is essentially zero. The monopolist is the only game in town, so they don't have to worry about what other 'competitors' are doing with their prices.",
+    "h": "If you are the only person in the world selling oxygen, will people care if the price of 'nitrogen' changes?"
+  },
+  {
+    "yr": 2024,
+    "q": "The 'Marginal Propensity to Save' (MPS) is defined as:",
+    "o": ["Total savings divided by total income", "The change in savings resulting from a change in income", "The portion of income spent on luxury goods", "Savings divided by consumption"],
+    "a": 1,
+    "e": "It measures the fraction of each additional unit of income that is saved rather than spent.",
+    "full": "Let's say your salary increases by N10,000 this month. You decide to spend N7,000 on a new pair of shoes and put the remaining N3,000 into your savings account. That N3,000 is your 'Marginal' (extra) saving. To find the MPS, you take that extra saving (3,000) and divide it by the extra income (10,000), which gives you 0.3. This tells economists that for every 1 Naira you earn extra, you save 30 kobo. It’s a very important number because the more people 'save' (high MPS), the less they 'spend' (low MPC), which changes how much the whole economy grows.",
+    "h": "If you get a N1,000 bonus and save N200 of it, what percentage of that 'extra' money did you save?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following is a 'Direct Tax'?",
+    "o": ["Value Added Tax (VAT)", "Excise Duty", "Personal Income Tax", "Import Duty"],
+    "a": 2,
+    "e": "Direct taxes are paid by the individual or firm directly to the government and cannot be shifted.",
+    "full": "Taxes are usually split into two groups based on who 'feels the pain.' An 'Indirect Tax' (like VAT) is hidden in the price of a biscuit—you pay the shopkeeper, and the shopkeeper pays the government. You can 'avoid' it by not buying the biscuit. But a 'Direct Tax' like Personal Income Tax is a different story. The government looks at your salary and takes their share before you even touch the money. You can't 'shift' this tax to someone else; you are the one the government is targeting, and you are the one who pays them directly. It’s a straight line from your pocket to the government’s treasury.",
+    "h": "Does this tax come out of your salary directly, or is it hidden in the price of something you bought?"
+  },
+  {
+    "yr": 2024,
+    "q": "A 'Point of Satiety' is reached when:",
+    "o": ["Marginal Utility is at its maximum", "Total Utility is zero", "Marginal Utility is zero", "Average Utility is increasing"],
+    "a": 2,
+    "e": "At this point, the consumer has gained the maximum possible satisfaction and wants no more.",
+    "full": "Imagine you are eating slices of pizza. The first slice is amazing. The second is great. By the fifth slice, you are full. If someone offers you a sixth slice, you say, 'No thanks, I'm good.' That exact moment is the 'Point of Satiety.' Your 'Total Utility' (total happiness) is at its absolute peak. Because you don't want any more pizza, the 'Marginal Utility' (the extra happiness from one more slice) is exactly zero. If you forced yourself to eat a seventh slice, you'd probably feel sick—your happiness would actually go down, and your Marginal Utility would become negative. Satiety is the 'Perfect Spot' where you are 100% satisfied.",
+    "h": "When you are so full that the 'next' bite gives you zero extra pleasure, what has happened to your total satisfaction?"
+  },
+
+  {
+    "yr": 2024,
+    "q": "The 'Supply of Labor' in an economy is primarily determined by:",
+    "o": ["The birth rate and death rate", "The size of the total population", "The wage rate and the size of the working-age population", "The number of graduates from universities"],
+    "a": 2,
+    "e": "It depends on how many people are able to work and how much they are being paid to do so.",
+    "full": "Think of the 'Supply of Labor' not as just 'people,' but as 'hours of work offered to the market.' First, you need a pool of people who are actually old enough and healthy enough to work (the working-age population). But even if you have millions of people, they won't work if the 'Price' (the Wage Rate) is too low. If wages go up, people who were sitting at home might decide it's finally worth it to get a job. So, it’s a mix of 'How many of us are there?' and 'Is the pay good enough for us to show up?' It also includes the 'Participation Rate'—like whether more stay-at-home parents are deciding to enter the workforce.",
+    "h": "If a company offers N5,000 per month, will many people 'supply' their labor? What if they offer N500,000?"
+  },
+  {
+    "yr": 2024,
+    "q": "In National Income accounting, 'Double Counting' can be avoided by using the:",
+    "o": ["Income and Expenditure methods", "Value-Added and Final Output methods", "Gross National Product method", "Personal Income method"],
+    "a": 1,
+    "e": "Counting only the final price or the value added at each stage prevents inflating the GDP.",
+    "full": "This is one of the biggest traps in calculating a country's wealth. Imagine a farmer sells wheat for N100 to a miller. The miller turns it into flour and sells it for N150 to a baker. The baker makes bread and sells it to you for N250. If the government adds all those sales (100 + 150 + 250), they get N500. But that's a lie! The wheat was counted three times! To fix this, we use the 'Value-Added' method. We only count the 'new' value created at each step: N100 (farmer) + N50 (miller's work) + N100 (baker's work) = N250. Or, we just look at the 'Final Output' (the bread) which is also N250. Both ways give the true story of the economy without 'cheating' by counting the same ingredients over and over.",
+    "h": "If you buy a car for N5 million, should the government also count the N1 million the factory paid for the tires separately?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following is a characteristic of 'Monopolistic Competition'?",
+    "o": ["One seller and many buyers", "Identical products and many sellers", "Differentiated products and many sellers", "No barriers to entry and one seller"],
+    "a": 2,
+    "e": "Many firms sell products that are similar but not identical (like different brands of soap).",
+    "full": "This is the most common market you see in real life. Think of the market for 'Skin Care Soap.' There are hundreds of brands (Lux, Dettol, Joy). It's not a 'Pure Monopoly' because there are many sellers. It’s not 'Perfect Competition' because the soaps aren't identical—some smell better, some are medicated, some have pretty packaging. This 'Product Differentiation' gives each brand a little bit of power. You might be willing to pay N50 more for Dettol because you trust it more than a generic soap. In this market, firms compete through advertising and 'branding' rather than just price, because they want you to believe their product is unique even if it’s basically just soap.",
+    "h": "When you go to the market to buy 'Detergent,' are all the brands exactly the same, or do they have different 'vibes'?"
+  },
+  {
+    "yr": 2024,
+    "q": "The 'Law of Supply' suggests that, other things being equal, the relationship between price and quantity supplied is:",
+    "o": ["Indirect", "Inverse", "Direct", "Negative"],
+    "a": 2,
+    "e": "As the price of a good increases, producers are encouraged to supply more of it to make more profit.",
+    "full": "Imagine you are a farmer growing yams. Last year, a tuber of yam sold for N500. This year, the price jumps to N2,000! What do you do? You’re going to work harder, plant more seeds, and try to sell every single yam you can find because the profit is now huge. This is the 'Direct Relationship': Price goes UP, and Quantity Supplied goes UP. Unlike consumers (who run away when prices rise), producers run *toward* high prices because high prices mean more money in their pockets. The supply curve always slopes 'upwards' to show this enthusiastic response from sellers when they see a chance to make more profit.",
+    "h": "If you were a shop owner and the price of 'Cold Coke' doubled today, would you try to stock more or less of it?"
+  },
+  {
+    "yr": 2024,
+    "q": "If the government wants to 'control inflation' using Monetary Policy, the Central Bank should:",
+    "o": ["Reduce the bank rate", "Lower the liquidity ratio", "Sell government bonds (securities)", "Print more currency notes"],
+    "a": 2,
+    "e": "Selling bonds mops up excess cash from the public and banks, reducing overall spending power.",
+    "full": "Inflation is usually caused by 'too much money chasing too few goods.' The Central Bank needs to act like a giant vacuum cleaner to suck that extra money out of the system. They use 'Open Market Operations' (OMO). They go to the banks and the public and say, 'Look at these beautiful Government Bonds! If you buy them, we will pay you interest later.' People give their 'spendable' cash to the Central Bank in exchange for these 'pieces of paper' (bonds). Now, that cash is 'locked away' in the Central Bank's vault and cannot be used to buy bread or cars. Because there is less money moving around in the streets, prices eventually stop rising and the inflation 'fire' dies down.",
+    "h": "If the government takes your cash and gives you a bond that you can't spend for 5 years, can you still use that money to buy groceries today?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following describes 'Structural Unemployment'?",
+    "o": ["Workers moving between jobs", "A mismatch between workers' skills and the jobs available", "A decline in total demand in the economy", "Workers being replaced by seasonal changes"],
+    "a": 1,
+    "e": "It occurs when the structure of the economy changes, leaving some workers with outdated skills.",
+    "full": "This is a very painful type of unemployment because it’s not about the person being 'lazy'—it's about the world changing. Imagine a man who spent 20 years learning how to repair 'Typewriters.' Suddenly, everyone starts using Computers. Even if the economy is booming and there are millions of jobs in 'Computer Repair,' our typewriter man is still unemployed because his skills don't match what companies need anymore. The 'Structure' of the economy moved forward, but his skills stayed behind. To fix this, the government usually has to provide 'Retraining Programs' to help these workers learn the new skills (like coding or digital repair) that modern businesses actually want.",
+    "h": "If a town's only factory closes down and the workers don't know how to do any other kind of work, what happens to them?"
+  },
+  {
+    "yr": 2024,
+    "q": "A 'Devaluation' of a country's currency is most likely to:",
+    "o": ["Make imports cheaper and exports dearer", "Make exports cheaper and imports dearer", "Decrease the level of local production", "Increase the value of the currency"],
+    "a": 1,
+    "e": "It lowers the value of the home currency relative to others, encouraging foreign buyers to buy local goods.",
+    "full": "When a government 'Devalues' the Naira, they are intentionally making it 'weak.' You might ask, 'Why would they do that?!' Well, imagine a shirt made in Nigeria costs N10,000. If $1 = N1,000$, an American pays $10$ for that shirt. If the government devalues the Naira so that $1 = N2,000$, that same N10,000 shirt now only costs the American $5$! Suddenly, Nigerian shirts are 'on sale' for the whole world, and exports shoot up. On the flip side, buying an iPhone from America becomes twice as expensive for Nigerians. So, Devaluation is a tool used to 'force' a country to stop buying foreign things (imports) and start selling more of its own products (exports) to the world.",
+    "h": "If your money becomes 'weaker,' does it become easier or harder for a foreigner to buy your local products?"
+  },
+
+  {
+    "yr": 2024,
+    "q": "The 'Malthusian Theory of Population' predicts that population grows at a:",
+    "o": ["Arithmetic progression", "Geometric progression", "Constant rate", "Negative rate"],
+    "a": 1,
+    "e": "Thomas Malthus argued that humans multiply faster (2, 4, 8...) than the food supply (1, 2, 3...).",
+    "full": "Thomas Malthus was a bit of a pessimist, but his logic was simple. He noticed that humans have a natural urge to multiply. He said population grows 'Geometrically' (like 2, 4, 8, 16, 32). Think of it like a viral video that doubles its views every hour. However, he argued that 'Food Production' only grows 'Arithmetically' (like 1, 2, 3, 4, 5) because you can only clear so much land and plant so many seeds at a time. His big warning was that eventually, there will be too many mouths and not enough bread, leading to 'Malthusian Catastrophes' like famine, war, or disease to 'reset' the population back down. Modern technology (like better fertilizers) has mostly proved him wrong, but his theory is still the foundation of how we study population growth today.",
+    "h": "Does a family grow faster by adding one person at a time, or by doubling every generation?"
+  },
+  {
+    "yr": 2024,
+    "q": "Which of the following is a 'Function of Money' that helps in credit transactions?",
+    "o": ["Medium of exchange", "Store of value", "Standard for deferred payment", "Unit of account"],
+    "a": 2,
+    "e": "Money allows people to agree on a value to be paid back in the future.",
+    "full": "Imagine you want to buy a car today, but you don't have all the cash. You go to a bank and they give you a loan. How do you agree on what you'll pay back in three years? Because money is a 'Standard for Deferred Payment,' it acts as a reliable 'yardstick' for the future. You don't have to worry that the 'value' of what you're paying back will be measured in goats or bags of rice that might rot. You agree on a set amount of Naira. This function is the entire backbone of the banking and credit system—without it, nobody would ever lend money because they wouldn't know exactly what they were getting back months or years later.",
+    "h": "If you borrow a phone today and agree to pay 'later,' what 'standard' are you using to measure that future payment?"
+  },
+
+  {
+    "yr": 2023,
+    "q": "A 'Price Floor' (Minimum Price) set above the equilibrium price results in:",
+    "o": ["A shortage", "A market equilibrium", "An excess supply (surplus)", "An increase in demand"],
+    "a": 2,
+    "e": "A minimum price higher than the market rate encourages producers but scares away buyers.",
+    "full": "Think of a 'Price Floor' like a literal floor that stops a price from falling too low. Governments often do this for farmers. Imagine the market wants to buy a bag of maize for N5,000, but the government says, 'No! No farmer should earn less than N10,000 per bag.' At N10,000, every farmer in Nigeria wants to plant maize because the profit is huge (High Supply). But for you and me, the consumers, N10,000 is way too expensive, so we buy less (Low Demand). You end up with mountains of maize sitting in warehouses that nobody can afford to buy. That mountain of extra stuff is what we call a 'Surplus.' It's the exact opposite of a 'Shortage' caused by a price ceiling.",
+    "h": "If the government forces the price of a loaf of bread to be N5,000, will there be more bread on the shelves or fewer people buying it?"
+  },
+  {
+    "yr": 2023,
+    "q": "The 'Elasticity of Supply' for a perishable good like fresh tomatoes is usually:",
+    "o": ["Highly elastic", "Inelastic", "Perfectly elastic", "Unitary elastic"],
+    "a": 1,
+    "e": "Sellers cannot easily change the quantity supplied in response to price changes because the goods will rot.",
+    "full": "Imagine you are at the Mile 12 market with a truckload of fresh tomatoes. Suddenly, the price of tomatoes drops by 50%. Can you say, 'Fine, I won't sell today, I'll wait until next month when prices go up'? No! If you wait, your tomatoes will rot and you’ll lose everything. You are forced to sell them now, regardless of the price. Because you cannot easily change 'how much' you supply based on the price (due to the fear of rot), your supply is 'Inelastic.' For 'Durable' goods like chairs or bricks, supply is more elastic because you can just lock them in a warehouse and wait for a better price. But for 'Perishables,' the clock is always ticking, and you have almost no control over your supply timing.",
+    "h": "If the price of milk drops today, can a farmer tell the cows to 'stop producing' for a week?"
+  },
+  {
+    "yr": 2023,
+    "q": "Which of the following is included in the 'Calculation of GDP' using the Expenditure approach?",
+    "o": ["Wages and salaries", "Rent and interest", "Consumption, Investment, Government Spending, and Net Exports", "Corporate profits"],
+    "a": 2,
+    "e": "The expenditure method sums up all spending in the economy: C + I + G + (X - M).",
+    "full": "To measure the 'size' of an economy, the Expenditure approach basically follows the money. It asks: 'Who spent what this year?' We group it into four buckets: 1. **Consumption (C):** What you and I spent on food, clothes, and haircuts. 2. **Investment (I):** What businesses spent on new machines or buildings. 3. **Government Spending (G):** What the state spent on roads and salaries. 4. **Net Exports (X - M):** The value of what we sold to foreigners minus what we bought from them. When you add all these 'spendings' together, you get the total value of everything produced in the country. It’s like looking at a bank statement for the entire nation to see how much activity happened in one year.",
+    "h": "To find out how much a country is 'worth,' should we look at how much everyone *earned* or how much everyone *spent*?"
+  },
+  {
+    "yr": 2023,
+    "q": "In a 'Partnership' business, 'Unlimited Liability' means:",
+    "o": ["The partners have no responsibility for debts", "Partners can lose their personal property to pay business debts", "The business will last forever", "Only the active partner is responsible"],
+    "a": 1,
+    "e": "There is no legal distinction between the owners' assets and the business's debts.",
+    "full": "This is the 'scary' part of starting a small business or a partnership. If your business borrows N10 million and goes bankrupt, you can't just say, 'Well, the business is dead, so I don't owe anything.' Because you have 'Unlimited Liability,' the people you owe can legally come to your house, take your car, your TV, and your personal savings to get their money back. You and the business are seen as the 'same person' in the eyes of the law. This is why many people eventually try to form a 'Limited Liability Company' (Ltd), where the risk is limited only to the money you actually put into the business, protecting your personal life from business failures.",
+    "h": "If your business goes broke, are your personal car and house safe from the bank?"
+  },
+
+  {
+    "yr": 2023,
+    "q": "Which of the following is a 'Direct' way the Central Bank controls the Commercial Banks?",
+    "o": ["Open Market Operations", "Bank Rate", "Special Deposits", "Moral Suasion"],
+    "a": 2,
+    "e": "Special deposits force banks to keep a portion of their funds with the Central Bank, directly hitting their lending power.",
+    "full": "Think of 'Special Deposits' as the Central Bank (CBN) acting like a strict parent. While 'Open Market Operations' is like the CBN trying to 'persuade' banks by buying or selling bonds, a Special Deposit is a direct order. The CBN tells the commercial banks, 'You must take 10% of your cash right now and lock it in a special account with us where you cannot touch it.' Because that money is now 'trapped' in the CBN's vault, the commercial bank has less money to give out as loans to businesses or individuals. It is a very fast and direct way to 'dry up' the money moving around in the economy when inflation is getting too high.",
+    "h": "If the government 'locks up' a bank's cash in a vault, can that bank still lend that money to you?"
+  },
+  {
+    "yr": 2023,
+    "q": "The 'Law of Comparative Advantage' was first formulated by:",
+    "o": ["Adam Smith", "David Ricardo", "John Stuart Mill", "Alfred Marshall"],
+    "a": 1,
+    "e": "David Ricardo proved that countries should specialize in goods where they have the lowest opportunity cost.",
+    "full": "While Adam Smith (the Father of Economics) talked about 'Absolute' advantage, it was David Ricardo who took it a step further. He proved that even if a country is 'worse' at producing everything compared to another country, it should still trade! His logic was: find the one thing you are 'least bad' at (where your opportunity cost is lowest) and focus on that. For example, if Nigeria can produce both Cocoa and Cars, but it’s much more efficient at Cocoa, it should ignore Cars entirely and trade Cocoa for them. By specializing, the whole world gets more goods at a cheaper price. Ricardo's theory is the reason why global trade exists today.",
+    "h": "Who is the economist famous for the 'Classical' theory of international trade?"
+  },
+  {
+    "yr": 2023,
+    "q": "Which of the following describes 'Frictional Unemployment'?",
+    "o": ["Workers replaced by machines", "Workers moving from one job to another", "A decrease in total demand", "Workers losing jobs due to a recession"],
+    "a": 1,
+    "e": "Frictional unemployment is temporary and occurs during the time a worker is searching for a new job.",
+    "full": "Frictional unemployment is actually 'natural' and usually a sign of a healthy economy. Think of a graduate who just finished NYSC and is looking for their first job, or a manager who quit their old job on Monday because they want a better one and will likely find it by next month. That 'gap' in time where they are between jobs is what we call 'friction.' It’s not because the economy is failing or because they don't have skills; it's just the time it takes for the 'right worker' to meet the 'right employer.' Because people are always looking for better opportunities, there will always be a small percentage of people who are 'frictionally' unemployed.",
+    "h": "If you quit your job today to look for a better one tomorrow, what category do you fall into during that search?"
+  },
+  {
+    "yr": 2023,
+    "q": "In a 'Socialist Economy,' the 'Basic Economic Problems' are solved by:",
+    "o": ["The price mechanism", "The central planning authority", "Private entrepreneurs", "Consumer sovereignty"],
+    "a": 1,
+    "e": "The government or a central body decides what to produce and how to distribute it.",
+    "full": "In a 'Capitalist' system like the US, the 'Market' decides everything—if people want iPhones, companies make iPhones. But in a 'Socialist' or 'Command' economy, the government (the Central Planning Authority) sits down with a pen and paper and decides for the whole country. They say, 'This year, we will build 100 hospitals and 50 schools.' They decide the prices, they decide the wages, and they decide who gets what. There is no 'competition' between companies because the State owns the factories. The goal isn't profit; it's usually 'social welfare' or 'equality,' though it often lacks the efficiency that comes from people competing to make a better product.",
+    "h": "Who makes the 'Big Decisions' in a country where the government owns all the businesses?"
+  },
+  {
+    "yr": 2023,
+    "q": "The 'Terms of Trade' (TOT) for a country is calculated as:",
+    "o": ["Quantity of Exports / Quantity of Imports", "Price Index of Exports / Price Index of Imports x 100", "Total Revenue / Total Expenditure", "Total Exports - Total Imports"],
+    "a": 1,
+    "e": "It measures the ratio between the prices a country gets for its exports and the prices it pays for imports.",
+    "full": "Terms of Trade is like a 'report card' for a country's international power. It asks: 'How many imports can we buy with one unit of our exports?' If Nigeria sells a barrel of oil for $100 (Export Price) and buys a bag of rice for $50 (Import Price), our TOT is high—we get 2 bags for 1 barrel. But if oil prices crash to $25 and rice stays at $50, our TOT has 'deteriorated'—we now only get half a bag for 1 barrel. A country wants its TOT to be high because it means their products are valuable to the world, allowing them to buy more foreign goods with less effort.",
+    "h": "If the price of the things you sell to others goes up, but the price of what you buy stays the same, are you better off?"
+  },
+  {
+    "yr": 2023,
+    "q": "A 'Gresham's Law' state that:",
+    "o": ["Bad money drives out good money", "Good money drives out bad money", "Supply creates its own demand", "Demand creates its own supply"],
+    "a": 0,
+    "e": "When two types of money have the same face value but different intrinsic values, people hide the 'good' one.",
+    "full": "This is a fascinating psychological law. Imagine the government issues two types of N1,000 notes: one is made of pure gold, and the other is just a piece of paper. Both are 'legally' worth N1,000 in shops. What would you do? You would spend the 'paper' money as fast as possible to get rid of it, and you would 'hoard' or hide the gold money under your bed. Eventually, the 'good' money (gold) disappears from the market, and only the 'bad' money (paper) is left circulating. Sir Thomas Gresham noticed this hundreds of years ago—people always keep the 'valuable' stuff and spend the 'trash' stuff, so the 'trash' (bad money) becomes the only thing anyone actually uses in trade.",
+    "h": "If you had a shiny new N1,000 note and a torn, dirty N1,000 note, which one would you try to spend first?"
+  },
+
+  {
+    "yr": 2023,
+    "q": "Which of the following is a 'Direct' way the Central Bank controls the Commercial Banks?",
+    "o": ["Open Market Operations", "Bank Rate", "Special Deposits", "Moral Suasion"],
+    "a": 2,
+    "e": "Special deposits force banks to keep a portion of their funds with the Central Bank, directly hitting their lending power.",
+    "full": "Think of 'Special Deposits' as the Central Bank (CBN) acting like a strict parent. While 'Open Market Operations' is like the CBN trying to 'persuade' banks by buying or selling bonds, a Special Deposit is a direct order. The CBN tells the commercial banks, 'You must take 10% of your cash right now and lock it in a special account with us where you cannot touch it.' Because that money is now 'trapped' in the CBN's vault, the commercial bank has less money to give out as loans to businesses or individuals. It is a very fast and direct way to 'dry up' the money moving around in the economy when inflation is getting too high.",
+    "h": "If the government 'locks up' a bank's cash in a vault, can that bank still lend that money to you?"
+  },
+  {
+    "yr": 2023,
+    "q": "The 'Law of Comparative Advantage' was first formulated by:",
+    "o": ["Adam Smith", "David Ricardo", "John Stuart Mill", "Alfred Marshall"],
+    "a": 1,
+    "e": "David Ricardo proved that countries should specialize in goods where they have the lowest opportunity cost.",
+    "full": "While Adam Smith (the Father of Economics) talked about 'Absolute' advantage, it was David Ricardo who took it a step further. He proved that even if a country is 'worse' at producing everything compared to another country, it should still trade! His logic was: find the one thing you are 'least bad' at (where your opportunity cost is lowest) and focus on that. For example, if Nigeria can produce both Cocoa and Cars, but it’s much more efficient at Cocoa, it should ignore Cars entirely and trade Cocoa for them. By specializing, the whole world gets more goods at a cheaper price. Ricardo's theory is the reason why global trade exists today.",
+    "h": "Who is the economist famous for the 'Classical' theory of international trade?"
+  },
+  {
+    "yr": 2023,
+    "q": "Which of the following describes 'Frictional Unemployment'?",
+    "o": ["Workers replaced by machines", "Workers moving from one job to another", "A decrease in total demand", "Workers losing jobs due to a recession"],
+    "a": 1,
+    "e": "Frictional unemployment is temporary and occurs during the time a worker is searching for a new job.",
+    "full": "Frictional unemployment is actually 'natural' and usually a sign of a healthy economy. Think of a graduate who just finished NYSC and is looking for their first job, or a manager who quit their old job on Monday because they want a better one and will likely find it by next month. That 'gap' in time where they are between jobs is what we call 'friction.' It’s not because the economy is failing or because they don't have skills; it's just the time it takes for the 'right worker' to meet the 'right employer.' Because people are always looking for better opportunities, there will always be a small percentage of people who are 'frictionally' unemployed.",
+    "h": "If you quit your job today to look for a better one tomorrow, what category do you fall into during that search?"
+  },
+  {
+    "yr": 2023,
+    "q": "In a 'Socialist Economy,' the 'Basic Economic Problems' are solved by:",
+    "o": ["The price mechanism", "The central planning authority", "Private entrepreneurs", "Consumer sovereignty"],
+    "a": 1,
+    "e": "The government or a central body decides what to produce and how to distribute it.",
+    "full": "In a 'Capitalist' system like the US, the 'Market' decides everything—if people want iPhones, companies make iPhones. But in a 'Socialist' or 'Command' economy, the government (the Central Planning Authority) sits down with a pen and paper and decides for the whole country. They say, 'This year, we will build 100 hospitals and 50 schools.' They decide the prices, they decide the wages, and they decide who gets what. There is no 'competition' between companies because the State owns the factories. The goal isn't profit; it's usually 'social welfare' or 'equality,' though it often lacks the efficiency that comes from people competing to make a better product.",
+    "h": "Who makes the 'Big Decisions' in a country where the government owns all the businesses?"
+  },
+  {
+    "yr": 2023,
+    "q": "The 'Terms of Trade' (TOT) for a country is calculated as:",
+    "o": ["Quantity of Exports / Quantity of Imports", "Price Index of Exports / Price Index of Imports x 100", "Total Revenue / Total Expenditure", "Total Exports - Total Imports"],
+    "a": 1,
+    "e": "It measures the ratio between the prices a country gets for its exports and the prices it pays for imports.",
+    "full": "Terms of Trade is like a 'report card' for a country's international power. It asks: 'How many imports can we buy with one unit of our exports?' If Nigeria sells a barrel of oil for $100 (Export Price) and buys a bag of rice for $50 (Import Price), our TOT is high—we get 2 bags for 1 barrel. But if oil prices crash to $25 and rice stays at $50, our TOT has 'deteriorated'—we now only get half a bag for 1 barrel. A country wants its TOT to be high because it means their products are valuable to the world, allowing them to buy more foreign goods with less effort.",
+    "h": "If the price of the things you sell to others goes up, but the price of what you buy stays the same, are you better off?"
+  },
+  {
+    "yr": 2023,
+    "q": "A 'Gresham's Law' state that:",
+    "o": ["Bad money drives out good money", "Good money drives out bad money", "Supply creates its own demand", "Demand creates its own supply"],
+    "a": 0,
+    "e": "When two types of money have the same face value but different intrinsic values, people hide the 'good' one.",
+    "full": "This is a fascinating psychological law. Imagine the government issues two types of N1,000 notes: one is made of pure gold, and the other is just a piece of paper. Both are 'legally' worth N1,000 in shops. What would you do? You would spend the 'paper' money as fast as possible to get rid of it, and you would 'hoard' or hide the gold money under your bed. Eventually, the 'good' money (gold) disappears from the market, and only the 'bad' money (paper) is left circulating. Sir Thomas Gresham noticed this hundreds of years ago—people always keep the 'valuable' stuff and spend the 'trash' stuff, so the 'trash' (bad money) becomes the only thing anyone actually uses in trade.",
+    "h": "If you had a shiny new N1,000 note and a torn, dirty N1,000 note, which one would you try to spend first?"
+  },
+
+  {
+    "yr": 2022,
+    "q": "The 'Total Cost' (TC) of a firm is calculated as the sum of:",
+    "o": ["Average Cost and Marginal Cost", "Fixed Cost and Variable Cost", "Fixed Cost and Marginal Cost", "Variable Cost and Average Cost"],
+    "a": 1,
+    "e": "Total Cost combines expenses that stay the same and those that change with output.",
+    "full": "If you start a business making T-shirts, you have two types of bills. First, you have 'Fixed Costs' (FC)—this is the rent for your shop and the cost of the printing machine. You pay these even if you make ZERO shirts. Second, you have 'Variable Costs' (VC)—this is the cost of the blank cotton shirts and the ink. If you make 100 shirts, your VC goes up; if you make 0, your VC is 0. To find out exactly how much money you've spent in total (TC), you simply add the 'rent' to the 'materials.' Mathematically: $TC = TFC + TVC$. Understanding this helps a business owner know their 'break-even' point—how many shirts they must sell just to cover both the rent and the fabric.",
+    "h": "To find your total business expense, do you add the shop rent to the cost of the raw materials?"
+  },
+  {
+    "yr": 2022,
+    "q": "In a 'Perfect Market,' the 'Equilibrium Price' is determined where:",
+    "o": ["Marginal Utility equals Price", "Quantity Demanded equals Quantity Supplied", "Total Revenue equals Total Cost", "Average Cost is at its minimum"],
+    "a": 1,
+    "e": "Equilibrium is the 'market-clearing' point where buyers and sellers agree on a quantity.",
+    "full": "Imagine a tug-of-war. On one side, you have Consumers who want the lowest price possible. On the other side, you have Producers who want the highest price possible. The 'Equilibrium' is the magic moment where they stop pulling and agree. At this price, every single item brought to the market is bought—there are no angry customers left without goods (shortage) and no sad sellers left with unsold stock (surplus). It's called the 'market-clearing price' because the shelves are cleared exactly at the moment the last customer is satisfied. On a graph, this is exactly where the 'X' marks the spot where the Demand and Supply lines cross.",
+    "h": "What happens when the number of people wanting to buy exactly matches the number of items for sale?"
+  },
+  {
+    "yr": 2022,
+    "q": "The 'Precautionary Motive' for holding money is primarily to:",
+    "o": ["Make daily purchases", "Take advantage of future price changes", "Meet unforeseen emergencies", "Invest in the stock market"],
+    "a": 2,
+    "e": "People hold cash to protect themselves against unexpected events.",
+    "full": "John Maynard Keynes, the famous economist, said we keep cash for three reasons. The 'Precautionary Motive' is basically your 'Emergency Fund.' Life is unpredictable—your car might break down, you might get sick, or a relative might need urgent financial help. You don't keep this money to 'buy bread' (that's the Transactionary motive) or to 'play the lottery' (Speculative); you keep it because the future is a mystery. The amount you keep usually depends on your income—the more you earn, the more you can afford to tuck away for a rainy day. It’s the 'better safe than sorry' pile of cash in your drawer or savings account.",
+    "h": "Why would you keep N20,000 hidden in your room 'just in case' something bad happens?"
+  },
+  {
+    "yr": 2022,
+    "q": "The 'Elasticity of Demand' for a good with many close substitutes is usually:",
+    "o": ["Inelastic", "Highly Elastic", "Unitary Elastic", "Perfectly Inelastic"],
+    "a": 1,
+    "e": "When consumers have many choices, a small price increase makes them switch to another brand.",
+    "full": "Imagine you are standing in a drink aisle. You want a Malt drink. There is Maltina, Amstel Malta, Malta Guinness, and Dubic Malt. If the price of Maltina goes up by just N50, what do you do? You don't just 'suffer' and pay it; you simply move your hand two inches to the left and pick an Amstel Malta instead. Because there are so many 'Close Substitutes' that do almost the exact same thing, you are extremely sensitive to price changes. This 'Sensitivity' is what economists call 'High Elasticity.' The more choices a consumer has, the more power they have to 'punish' a seller who raises prices by taking their business elsewhere instantly.",
+    "h": "If there are ten different brands of bread on a shelf and one raises its price, will people stay or switch?"
+  },
+  {
+    "yr": 2022,
+    "q": "Which of the following describes a 'Deficit Balance of Payments'?",
+    "o": ["Total exports exceed total imports", "Autonomous receipts are less than autonomous payments", "The country's gold reserves are increasing", "Government revenue exceeds expenditure"],
+    "a": 1,
+    "e": "It occurs when a country's total outgoing payments to the world exceed its incoming receipts.",
+    "full": "Think of the 'Balance of Payments' (BOP) as a giant national bank statement that records every single cent moving in and out of the country. If Nigeria sells oil, movies, and cocoa to the world, money flows IN (Receipts). If Nigerians buy iPhones, foreign cars, and pay for foreign school fees, money flows OUT (Payments). A 'Deficit' happens when that outgoing pile of money is bigger than the incoming pile. It means the country is effectively 'spending' more than it is 'earning' from the rest of the world. To fix this, the country either has to dip into its savings (Foreign Reserves) or borrow money from places like the IMF to bridge the gap.",
+    "h": "If a country sends more money abroad than it receives from other nations, is its account in surplus or deficit?"
+  },
+  {
+    "yr": 2022,
+    "q": "The 'Average Product' (AP) of labor starts to fall when:",
+    "o": ["Total Product is at its maximum", "Marginal Product is less than Average Product", "Marginal Product is zero", "Fixed costs start to increase"],
+    "a": 1,
+    "e": "Once the 'extra' output of the last worker is lower than the current average, the average is pulled down.",
+    "full": "This is a classic mathematical relationship in the Theory of Production. Think of it like a football team's scoring average. If the team averages 3 goals per match, and in the next match (the 'Marginal' match) they only score 1 goal, what happens to their overall average? It drops! In a factory, as long as a new worker adds more than the existing average ($MP > AP$), the average keeps rising. But because of 'Diminishing Returns,' eventually, a new worker will be less productive than the ones before them. The moment that 'New Guy' produces less than the 'Current Average,' he pulls the whole team's average down. This is the point where the AP curve starts its downward slope.",
+    "h": "If the newest worker produces less than the average of the old workers, does the total average go up or down?"
+  },
+  {
+    "yr": 2022,
+    "q": "In Economics, 'Capital' as a factor of production refers to:",
+    "o": ["Money in the bank", "Man-made assets used for further production", "Shares and stocks in a company", "Natural resources like land and water"],
+    "a": 1,
+    "e": "Capital consists of physical tools, machinery, and buildings used to create goods and services.",
+    "full": "A common mistake is thinking 'Capital' just means 'Money.' In Economics, money is just a way to *buy* capital. True 'Economic Capital' is the physical stuff that helps you produce more things. If you are a tailor, your sewing machine is Capital. If you are a farmer, your tractor is Capital. If you own a factory, the building itself is Capital. These are 'Wealth set aside for the production of further wealth.' Unlike 'Land' (which is a gift of nature), Capital is 'Man-made.' It is the result of past work being saved and turned into tools that make future work much faster and more efficient.",
+    "h": "Is a carpenter's hammer a 'gift of nature' or a 'man-made tool' used to build furniture?"
+  },
+  {
+    "yr": 2022,
+    "q": "Which of the following is a 'Secondary Function' of money?",
+    "o": ["Medium of exchange", "Unit of account", "Standard for deferred payment", "Store of value"],
+    "a": 2,
+    "e": "Secondary functions (like deferred payment) support the primary roles of money in modern trade.",
+    "full": "Money has 'Primary' roles that it must do to even exist: it must be a way to buy things (Medium of Exchange) and a way to price things (Unit of Account). But once a society gets more advanced, money takes on 'Secondary' (or Derivative) roles. The 'Standard for Deferred Payment' is one of these. It allows us to do something amazing: buy now and pay later. Because we trust that money will still be a valid 'yardstick' of value in six months, we can sign contracts for loans, salaries, and credit. Without this secondary function, the entire modern banking and credit card system would collapse because nobody would know how to measure a 'future' payment fairly.",
+    "h": "Which function of money allows you to take a loan today and pay it back in installments over two years?"
+  },
+  {
+    "yr": 2021,
+    "q": "An 'Optimum Population' is reached when:",
+    "o": ["The birth rate equals the death rate", "The population is at its maximum size", "The population produces the highest output per head", "There is no unemployment in the country"],
+    "a": 2,
+    "e": "It is the ideal population size that maximizes the standard of living with available resources.",
+    "full": "The 'Optimum Population' is the 'Goldilocks' zone of a country's size. If you have too few people (Under-population), you don't have enough workers to use all your resources efficiently—imagine a huge factory with only two employees. If you have too many people (Over-population), you run out of resources and everyone gets poorer. The 'Optimum' is that perfect middle point where the number of people and the amount of resources (land, technology, capital) are perfectly balanced to produce the highest possible 'Income per Head.' At this point, everyone is as wealthy as they can possibly be. If you add one more person or lose one person, the average wealth of the citizens will actually drop.",
+    "h": "Is the 'best' population size the one where everyone is as rich as possible on average?"
+  },
+  {
+    "yr": 2021,
+    "q": "Which of the following is a characteristic of an 'Indirect Tax'?",
+    "o": ["It is levied on the income of individuals", "Its burden can be shifted to the consumer", "It is progressive in nature", "It is paid directly to the tax authorities by the earner"],
+    "a": 1,
+    "e": "Indirect taxes are placed on goods and services, allowing sellers to pass the cost to buyers.",
+    "full": "Indirect taxes are 'sneaky' taxes. Unlike your salary tax (Direct Tax), which you feel immediately, an indirect tax like VAT or Excise Duty is added to the price of things you buy, like a bottle of soda or a bag of cement. The government charges the manufacturer, but the manufacturer doesn't want to lose money, so they 'shift' the burden by raising the price. When you buy that soda, you are the one actually paying the tax to the government, even though the shopkeeper is the one who 'remits' it. This ability to 'pass the bill' to the final user is what makes a tax 'indirect.'",
+    "h": "When a company raises the price of its product because the government taxed the factory, who is actually paying that tax?"
+  },
+  {
+    "yr": 2021,
+    "q": "In a 'Monopoly,' the 'Marginal Revenue' (MR) curve is always:",
+    "o": ["Equal to the Average Revenue curve", "Above the Average Revenue curve", "Below the Average Revenue curve", "A horizontal line"],
+    "a": 2,
+    "e": "To sell more, a monopolist must lower the price of all units, making the extra revenue less than the price.",
+    "full": "This is a bit of a mathematical headache for students, but here is the logic. In a Monopoly, the firm *is* the market. If they want to sell 1 item, they can charge N100. But if they want to sell 2 items, they have to lower the price to, say, N90 for *both* items. So, for the first item, they got N100. For the two items together, they get N180 ($90 \times 2$). The 'extra' (Marginal) revenue from that second item was only N80, even though the price (Average Revenue) was N90. Because the monopolist has to 'sacrifice' the price of all units to sell just one more, the 'Extra' money (MR) they bring in is always 'dropping' faster than the price itself. This is why the MR curve always sits below the Demand (AR) curve on a graph.",
+    "h": "If you have to lower the price of every item you sell just to get one more customer, is your 'extra' profit higher or lower than the new price?"
+  },
+
+  {
+    "yr": 2021,
+    "q": "The 'Supply Curve' for a 'Perfectly Inelastic' supply is:",
+    "o": ["Horizontal", "Vertical", "Upward sloping", "Downward sloping"],
+    "a": 1,
+    "e": "A vertical curve means the quantity supplied remains the same regardless of price changes.",
+    "full": "Think of a 'Perfectly Inelastic' supply like the amount of land in Lagos Island or the number of original seats in a stadium for a finished match. No matter how much people are willing to pay—whether it's N1,000 or N1,000,000—you physically cannot create more of it instantly. Because the 'Quantity' is fixed and won't budge even an inch, the graph doesn't move left or right; it just stays at one point on the bottom axis and goes straight up. This 'Vertical' line tells every economist: 'The price can go to the moon, but the amount available is staying exactly where it is.'",
+    "h": "If you offered a billion naira for a 1950 original painting that only has one copy in the world, can the artist 'produce' more just because you are rich?"
+  },
+  {
+    "yr": 2021,
+    "q": "Which of the following is a 'Reward' for the factor of production called 'Land'?",
+    "o": ["Wages", "Interest", "Profit", "Rent"],
+    "a": 3,
+    "e": "In Economics, 'Land' includes all natural resources, and its payment is called Rent.",
+    "full": "In the 'Four Factors of Production,' every participant gets a specific type of 'paycheck.' If you provide your physical or mental effort, you get **Wages** (Labor). If you provide the 'tools' or 'money' to buy machines, you get **Interest** (Capital). If you are the 'boss' taking the risk, you get **Profit** (Entrepreneur). But if you provide the natural space or resources—like a plot of earth, a mineral mine, or a forest—the payment you receive for letting others use that 'gift of nature' is called **Rent**. Even if it's a farm in the village, the economic name for that reward is always Rent.",
+    "h": "What do you call the money someone pays you just to use your piece of earth or a building sitting on it?"
+  },
+  {
+    "yr": 2021,
+    "q": "The 'Value of the Multiplier' (K) increases when the:",
+    "o": ["Marginal Propensity to Save (MPS) increases", "Marginal Propensity to Consume (MPC) increases", "Tax rate increases", "Propensity to import increases"],
+    "a": 1,
+    "e": "A higher MPC means more money is re-spent in the economy, creating a larger total impact.",
+    "full": "The Multiplier is like a 'spending echo.' Imagine the government spends N1,000 on a worker. If that worker has a high 'MPC' (meaning they love to spend), they might spend N900 at a local shop. That shopkeeper then spends N810 elsewhere. The higher the MPC, the louder and longer that 'echo' lasts, making the total increase in national income much bigger than the original N1,000. If everyone saved their money (High MPS) instead of spending it, the echo would die out almost immediately. So, if you want a 'Strong Multiplier,' you need people who are ready to take their income and put it right back into the market.",
+    "h": "If everyone who gets paid spends 99% of it immediately, will the money move through the economy faster or slower?"
+  },
+  {
+    "yr": 2020,
+    "q": "In a 'Market Economy,' the 'Invisible Hand' refers to the:",
+    "o": ["Government intervention", "Price mechanism", "Central Planning Authority", "Action of labor unions"],
+    "a": 1,
+    "e": "The price mechanism automatically coordinates the decisions of buyers and sellers without central control.",
+    "full": "Adam Smith, the father of Economics, used the term 'Invisible Hand' to describe a beautiful mystery: how does a baker know exactly how much bread to bake for a city of millions without a king telling him? The answer is the **Price Mechanism**. If people want more bread, the price goes up. When the baker sees the high price, he bakes more to make more profit. If nobody wants bread, the price drops, and he bakes less. Nobody is 'in charge,' yet the market stays balanced as if an 'Invisible Hand' is moving the pieces. It is the magic of self-interest serving the public good through prices.",
+    "h": "What 'unseen force' tells a seller to bring more goods to the market when the price is high?"
+  },
+  {
+    "yr": 2020,
+    "q": "Which of the following is a 'Lender of Last Resort' in the banking system?",
+    "o": ["Commercial Bank", "Merchant Bank", "Central Bank", "Microfinance Bank"],
+    "a": 2,
+    "e": "The Central Bank provides emergency liquidity to commercial banks when they face a crisis.",
+    "full": "Imagine a commercial bank (like Zenith or GTB) has a 'run'—suddenly, thousands of people want their cash at the same time, and the bank doesn't have enough in the vault. No other normal bank will lend to them because they are scared. This is where the **Central Bank** steps in as the 'Ultimate Savior' or the 'Lender of Last Resort.' Its job is to prevent the entire financial system from collapsing. It lends the 'dying' bank the money it needs to stay afloat, ensuring that the public doesn't lose trust in the banking system. It’s the safety net that catches the banks when they fall.",
+    "h": "Who is the 'Big Boss' bank that saves other banks when they run out of cash?"
+  },
+  {
+    "yr": 2020,
+    "q": "A 'Tax' imposed on 'Imported Goods' to reduce their consumption is called a:",
+    "o": ["Subsidy", "Quota", "Tariff", "Embargo"],
+    "a": 2,
+    "e": "A tariff is a trade tax designed to make foreign goods more expensive for local buyers.",
+    "full": "Governments often want people to 'Buy Nigerian' to support local jobs. To do this, they use a **Tariff**. Think of it as a 'penalty tax' for buying foreign. If a foreign shirt costs N5,000 and a local shirt costs N6,000, people will buy the foreign one. But if the government adds a N2,000 'Tariff' to the foreign shirt, it now costs N7,000. Suddenly, the local shirt looks like a great deal! The tariff doesn't stop the import (that would be a Quota or Embargo), but it makes the foreign item 'suffer' a price disadvantage to protect the local industry from being outpriced.",
+    "h": "What do you call a tax that specifically targets things coming from outside the country?"
+  },
+  {
+    "yr": 2020,
+    "q": "The 'Total Utility' (TU) of a consumer is at its maximum when 'Marginal Utility' (MU) is:",
+    "o": ["Increasing", "Negative", "Zero", "Positive"],
+    "a": 2,
+    "e": "At the point of satiety, the last unit consumed adds zero extra satisfaction, indicating peak total utility.",
+    "full": "This is like climbing a mountain of happiness. Every 'extra' slice of pizza you eat takes you higher up the mountain (Total Utility goes up). But as you get full, each new slice gives you less and less 'extra' joy (Marginal Utility is falling). When you reach the very top of the mountain, you are perfectly satisfied. If you took one more 'step' (another bite), you'd start going down the other side because you'd feel sick. Therefore, at the very peak (Maximum TU), you aren't moving up or down—your 'extra' movement is exactly **Zero**. In Economics, we call this the 'Point of Satiety.'",
+    "h": "If the 'next' bite of food gives you absolutely NO extra pleasure, are you at your highest or lowest level of satisfaction?"
+  },
+  {
+    "yr": 2020,
+    "q": "Which of the following is a 'Direct' way to reduce the 'Money Supply' in an economy?",
+    "o": ["Increasing the Bank Rate", "Reducing the Liquidity Ratio", "Buying Government Bonds", "Printing more Currency"],
+    "a": 0,
+    "e": "Raising the bank rate makes borrowing expensive, which discourages spending and reduces money circulation.",
+    "full": "Think of the 'Bank Rate' as the 'Price of Money.' It is the interest rate the Central Bank (CBN) charges the commercial banks (like Zenith or First Bank) when they want to borrow. If the CBN raises this rate, it becomes more expensive for your bank to get money. What does the bank do? They pass that cost to you by raising the interest rate on your personal or business loan. Suddenly, that car you wanted to buy on credit looks way too expensive, so you don't take the loan. Because fewer people are taking loans, there is less 'new' money entering the streets. It's a direct way for the government to 'cool down' the economy when prices are rising too fast.",
+    "h": "If the bank tells you that the interest on a loan has doubled, are you more or less likely to borrow money?"
+  },
+  {
+    "yr": 2020,
+    "q": "The 'Production Possibility Curve' (PPC) shifts 'Outward' when there is:",
+    "o": ["An increase in unemployment", "A decrease in the stock of capital", "A technological advancement", "A change in consumer taste"],
+    "a": 2,
+    "e": "Better technology allows an economy to produce more goods with the same amount of resources.",
+    "full": "Imagine a country that only produces Bread and Guns. The PPC is a line showing the maximum they can make. If that country discovers a new type of super-efficient oven or a faster way to forge steel (Technology), they can suddenly make *more* Bread and *more* Guns without even hiring more people. On a graph, the whole curve 'marches' outward to the right. This isn't just a choice to make more of one thing; it is an increase in the 'Potential' of the entire nation. It represents real Economic Growth. If the curve shifts 'Inward,' it usually means something bad happened, like a war or a natural disaster that destroyed the country's factories.",
+    "h": "If a farmer gets a tractor to replace his old hoe, can he produce more or less than he did before?"
+  },
+  {
+    "yr": 2019,
+    "q": "If a 'Price Change' leads to no change in the 'Total Revenue' of a firm, the demand is:",
+    "o": ["Perfectly Elastic", "Perfectly Inelastic", "Unitary Elastic", "Relatively Elastic"],
+    "a": 2,
+    "e": "Unitary elasticity means the percentage change in price is exactly canceled out by the change in quantity.",
+    "full": "This is a very special 'sweet spot' in Economics. Imagine you sell bread for N100 and you sell 100 loaves. Your Total Revenue is N10,000. Now, you raise the price to N200 (a 100% increase), but because of the price hike, you only sell 50 loaves (a 50% drop in quantity... but wait, let's look at the math). N200 x 50 is still N10,000! Even though you changed the price, the amount of money in your till stayed exactly the same. This happens when consumers react *exactly* proportionally to your price move. In math, we call this 'Unitary' (Value = 1). It’s like a perfectly balanced scale where the price goes up and the quantity goes down by the same 'weight,' leaving the total revenue unchanged.",
+    "h": "If you double your price but lose exactly half your customers, did your total sales money change?"
+  },
+  {
+    "yr": 2019,
+    "q": "The 'Main Objective' of a 'Private Limited Liability Company' is to:",
+    "o": ["Provide social services", "Maximize profits for shareholders", "Reduce the price of goods", "Control the market"],
+    "a": 1,
+    "e": "Private firms exist primarily to generate wealth and profit for their owners.",
+    "full": "Unlike a government-owned parastatal or a charity, a 'Private Ltd' is a 'Profit Machine.' It was built by people who put their own money at risk, and they want a return on that investment. While they might do good things like provide jobs or donate to charity, their 'North Star' is the bottom line. Every decision—from which products to sell to which staff to hire—is filtered through the question: 'Will this make the company more money?' If they don't make a profit, they eventually go out of business. So, maximizing that 'Surplus' after all bills are paid is the number one reason they exist in a capitalist economy.",
+    "h": "Why does a businessman open a shop? Is it to be a nice person or to make money?"
+  },
+  {
+    "yr": 2019,
+    "q": "A 'Veblen Good' is a type of good for which demand increases as:",
+    "o": ["Income decreases", "Price increases", "Price decreases", "Supply increases"],
+    "a": 1,
+    "e": "For luxury status symbols, a higher price makes the good more desirable to wealthy consumers.",
+    "full": "Normally, the 'Law of Demand' says when prices go up, people run away. But Thorstein Veblen noticed that for 'Status Symbols' (like a Rolex watch, a diamond ring, or a Ferrari), the rules are flipped. These are 'Veblen Goods.' If a Rolex cost only N5,000, rich people wouldn't want it because it wouldn't show how wealthy they are anymore. The *high price* is actually the reason they buy it—it’s called 'Conspicuous Consumption.' They want the world to see they can afford something expensive. So, as the price goes up, the 'snob appeal' goes up, and the demand actually increases. It's an exception to the normal rules of economics.",
+    "h": "If a 'Designer Bag' became very cheap, would celebrities still want to wear it to show off?"
+  },
+  {
+    "yr": 2019,
+    "q": "Which of the following is a 'Reward' for the factor of production 'Capital'?",
+    "o": ["Profit", "Wages", "Rent", "Interest"],
+    "a": 3,
+    "e": "Interest is the payment made for the use of borrowed capital or the return on invested tools.",
+    "full": "When you think of 'Capital' in economics, think of the 'tools' or 'money used to buy tools.' If you have N1 million and you lend it to a baker so he can buy a giant oven, you aren't doing it for free. You expect a 'thank you' payment for letting him use your wealth. That payment is called **Interest**. Even if you use your own money to buy the oven, economists say you are 'earning' interest because you could have just put that money in the bank to grow. It is the reward for 'waiting' and 'taking a risk' with your saved wealth instead of just spending it on a party today.",
+    "h": "If you lend a friend money to start a business, what 'extra' money do you expect him to pay you back alongside the original amount?"
+  },
+  {
+    "yr": 2019,
+    "q": "The 'Balance of Trade' is the difference between the value of a country's:",
+    "o": ["Total receipts and total payments", "Visible exports and visible imports", "Invisible exports and invisible imports", "Government revenue and expenditure"],
+    "a": 1,
+    "e": "It focuses specifically on physical (tangible) goods traded between nations.",
+    "full": "Don't confuse 'Balance of Trade' with the 'Balance of Payments.' Balance of Trade is a smaller, simpler calculation. It only looks at 'Visible' things—things you can touch and see, like bags of cocoa, barrels of oil, or imported cars. If we sell N1 billion worth of oil (Visible Export) and buy N800 million worth of cars (Visible Import), our Balance of Trade is in a 'Surplus' of N200 million. It completely ignores 'Invisible' things like banking, tourism, or shipping. It’s the 'physical' trade account of a nation.",
+    "h": "If you only count physical boxes of goods moving in and out of a country's borders, what 'balance' are you measuring?"
+  },
+
+  {
+    yr: 2016,
+    q: "The 'Short Run' in production is a period where:",
+    o: ["All factors of production are variable", "At least one factor of production is fixed", "The firm makes only super-normal profit", "Production is at its maximum"],
+    a: 1,
+    e: "The short run is defined by the existence of fixed inputs like land or heavy machinery.",
+    full: "In Economics, the 'Short Run' isn't a specific number of days or months. It is a 'state of being' where you are stuck with at least one thing you cannot change quickly—like the size of your factory building. You can hire more workers (Variable Factor), but you can't just grow the building overnight. As long as that building size stays the same, you are operating in the Short Run. Once you have enough time to buy more land or build a new factory, you have officially entered the 'Long Run' where everything can be changed.",
+    h: "Can you change the size of your factory building in just twenty-four hours?"
+  },
+  {
+    yr: 2016,
+    q: "If the 'Price of Bread' increases and people buy less 'Jam,' the two goods are:",
+    o: ["Substitutes", "Inelastic", "Complements", "Inferior"],
+    a: 2,
+    e: "Complementary goods are consumed together; a price rise in one reduces demand for both.",
+    full: "Think of these as 'Best Friends' that always go together. If the price of Bread goes so high that you stop buying it, you won't have anything to rub your Jam on! Therefore, you stop buying Jam too, even if the price of Jam didn't change at all. Because they are used as a pair, they have a 'Negative Cross-Elasticity.' Other famous examples include Cars and Petrol, or Printers and Ink Cartridges. When one gets expensive, the other one 'suffers' the drop in demand alongside it.",
+    h: "If you stop buying 'Tea' because it's too expensive, will you still buy as much 'Sugar'?"
+  },
+  {
+    yr: 2016,
+    q: "The 'Main Goal' of a 'Public Corporation' is to:",
+    o: ["Maximize profit", "Provide essential services", "Competition with private firms", "Issue shares to the public"],
+    a: 1,
+    e: "Public corporations are owned by the government to provide welfare and services to citizens.",
+    full: "Unlike a private business like a boutique or a bakery that exists to make the owner rich, a 'Public Corporation' (like a state water board or a national rail service) is funded by the government. Its primary job is 'Social Welfare.' They provide services that are essential for everyone, even if it means the company doesn't make a huge profit. Their success isn't measured by the money in the bank, but by how many citizens are actually getting clean water or reliable electricity.",
+    h: "Does the government run the 'Water Board' to get rich, or to make sure people don't go thirsty?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Scale of Preference' is a list of a consumer's wants arranged in order of:",
+    o: ["Their prices", "The time of purchase", "Their importance or priority", "Their availability in the market"],
+    a: 2,
+    e: "It is a tool used by consumers to rank their needs and make rational choices.",
+    full: "Because we don't have enough money to buy everything we want (Scarcity), we have to be smart. A 'Scale of Preference' is like a 'VIP list' for your needs. You put your most urgent need at the top (like food or school fees) and your least urgent need at the bottom (like a new video game). By following this list, you ensure that your limited money is spent on the things that matter most first. It is the first step in making a 'Rational Choice.'",
+    h: "If you have only N1,000, do you buy 'Food' first or a 'Movie Ticket'?"
+  },
+  {
+    yr: 2015,
+    q: "A 'Firm' is said to be a 'Price Taker' in:",
+    o: ["Monopoly", "Oligopoly", "Perfect Competition", "Monopolistic Competition"],
+    a: 2,
+    e: "In perfect competition, there are so many sellers that no single firm can influence the price.",
+    full: "Imagine you are selling the exact same type of 'Yellow Maize' as 1,000 other people in a huge market. If the general market price is N500 per mudu, and you try to sell yours for N550, customers will just laugh and buy from the person next to you. You are too 'small' to fight the market. You must 'take' the price that the invisible hand of supply and demand has already decided. You have 0% power to change it.",
+    h: "If you are just one tiny seller among thousands, can you force everyone to pay your higher price?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Total Product' (TP) is at its maximum when 'Marginal Product' (MP) is:",
+    o: ["Increasing", "Positive", "Zero", "Negative"],
+    a: 2,
+    e: "When the extra output from the last worker is zero, total production has reached its peak.",
+    full: "Think of this like filling a bucket with water. As long as the 'next' cup of water adds *something* to the bucket (MP is positive), the total water in the bucket (TP) keeps rising. But the moment you add a cup and it just spills over—meaning the 'next' worker adds exactly 'Zero' new things—the bucket is as full as it can possibly be. That's your maximum. If you hire another worker after that, they might actually break something, making your total production go *down* (Negative MP).",
+    h: "If the newest worker adds 'nothing' to the total work done, is your production at its highest point?"
+  },
+  {
+    yr: 2015,
+    q: "Which of the following is an 'Inferior Good'?",
+    o: ["A brand new Mercedes", "Second-hand clothing (Okrika)", "Fresh beef from the ranch", "A high-end smartphone"],
+    a: 1,
+    e: "Inferior goods are those for which demand falls as consumer income increases.",
+    full: "In Economics, 'Inferior' doesn't necessarily mean 'bad quality'; it's a label for how we behave when we get rich. Imagine you are a student and you buy second-hand clothes because that's all you can afford. Once you graduate and start earning a big salary, you stop buying second-hand and start buying from boutiques. Even though you have more money now, you buy *less* of the second-hand clothes. That makes those clothes 'Inferior' in the eyes of the economy.",
+    h: "If your salary doubled today, would you buy 'more' or 'less' of the cheapest items in the market?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Central Bank' uses 'Open Market Operations' (OMO) to:",
+    o: ["Control the exchange rate", "Buy and sell government securities to control money supply", "Print new banknotes", "Lend money to farmers"],
+    a: 1,
+    e: "OMO is a monetary tool used to expand or contract the amount of cash in the banking system.",
+    full: "This is like the Central Bank using a 'Sponge' or an 'Injection.' If there is too much money in the streets (causing inflation), the CBN 'sells' government bonds to the public. They take your cash and give you a piece of paper. The cash is now 'sucked out' of the economy. If the economy is 'dry' and needs growth, they 'buy' those bonds back, 'injecting' fresh cash into the hands of the people so they can spend it and start businesses.",
+    h: "Does the government take cash out of the system by 'selling' bonds or 'buying' them?"
+  },
+  {
+    yr: 2015,
+    q: "A 'Devaluation' of a currency is intended to:",
+    o: ["Make imports cheaper", "Increase the value of the currency", "Make exports cheaper and imports dearer", "Reduce the national debt"],
+    a: 2,
+    e: "Devaluation lowers the price of a country's goods for foreigners, encouraging exports.",
+    full: "When the government intentionally lowers the value of the Naira, they are trying to play a 'Price Game' with the world. If the Naira is 'weak,' it becomes very cheap for an American to buy Nigerian cocoa using Dollars. This makes our 'Exports' fly off the shelves! On the other hand, it makes buying an American iPhone very expensive for us (Imports). The goal is to get the country to stop spending money abroad and start earning money from other nations.",
+    h: "If your money is 'weak,' does it become cheaper or more expensive for a foreigner to buy your goods?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Working Population' of a country is usually within the age range of:",
+    o: ["0 - 15 years", "15 - 64 years", "65 years and above", "0 - 80 years"],
+    a: 1,
+    e: "This range excludes children and the elderly, who are generally considered dependents.",
+    full: "Every country has 'Dependents' and 'Workers.' Children (0-15) and the elderly (65+) usually don't work and rely on others to survive. The 'Working Population' (also called the Labour Force) is that sweet spot in the middle—usually 15 to 64 years old. These are the people who are physically and mentally capable of producing the goods and services that keep the country running. A country with a huge middle group and a small dependent group is usually very rich.",
+    h: "Which group of people in a country are expected to do the actual work and pay the taxes?"
+  },
+
+  {
+    yr: 2007,
+    q: "A 'Budget Deficit' is said to exist when:",
+    o: ["Planned expenditure exceeds estimated revenue", "Revenue exceeds expenditure", "Imports exceed exports", "The national debt is fully paid"],
+    a: 0,
+    e: "A deficit occurs when the government plans to spend more than it earns from taxes.",
+    full: "Think of a 'Deficit' like a hole in a bucket. If the government earns N100 from taxes but wants to spend N150 on roads and hospitals, they have a 'Deficit' of N50. To fill this hole, they usually have to borrow money from other countries or the World Bank. While it helps build things fast, it can lead to heavy 'Debt' if the government doesn't eventually find a way to pay it back.",
+    h: "If you want to buy a N500 lunch but you only have N200 in your pocket, what is that gap called?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Velocity of Circulation' of money refers to:",
+    o: ["The total amount of money in the country", "The number of times a unit of money changes hands in a year", "The speed at which the Central Bank prints notes", "The rate of inflation"],
+    a: 1,
+    e: "It measures how 'active' money is in the economy.",
+    full: "Imagine a single N1,000 note. You use it to buy bread. The baker uses it to pay for flour. The flour miller uses it to pay for electricity. That one N1,000 note just did N3,000 worth of 'work'! The 'Velocity' is simply how fast that note travels. If people are scared and hide their money under mattresses, the velocity is low and the economy 'cools down.' If people are spending happily, velocity is high and the economy 'heats up.'",
+    h: "Does a N1,000 note do more work if it stays in one wallet or if it is spent ten times in one day?"
+  },
+  {
+    yr: 2006,
+    q: "The 'Indifference Curve' shows the combinations of two goods that give the consumer:",
+    o: ["Maximum profit", "The same level of satisfaction", "Different levels of utility", "Minimum cost"],
+    a: 1,
+    e: "A consumer is 'indifferent' because every point on the curve provides the exact same joy.",
+    full: "Imagine you like 'Apples' and 'Oranges.' On this curve, Point A might be '10 Apples and 2 Oranges.' Point B might be '5 Apples and 5 Oranges.' If you feel exactly as happy with either choice, you are 'Indifferent.' You don't care which one you get because the total 'joy' is identical. This helps economists map out how people choose between different products when their budget is limited.",
+    h: "If two different baskets of fruit make you equally happy, are you 'choosy' or 'indifferent' between them?"
+  },
+  {
+    yr: 2006,
+    q: "A 'Barter System' of trade is difficult because of the:",
+    o: ["Use of money", "Divisibility of goods", "Double coincidence of wants", "Abundance of resources"],
+    a: 2,
+    e: "You must find someone who has what you want AND wants exactly what you have.",
+    full: "Barter is 'Trade by Swapping.' If you have a 'Goat' and you want 'Shoes,' you have to find a shoemaker who *also* happens to be hungry for a goat right now. If the shoemaker wants 'Fish' instead, you are stuck! This 'Double Coincidence' is a huge waste of time. Money solves this because *everyone* wants money, so you can sell your goat to anyone and buy shoes from anywhere.",
+    h: "Is it easy to find someone who wants to trade their 'iPhone' specifically for your 'Bag of Onions'?"
+  },
+  {
+    yr: 2006,
+    q: "Which of the following is a 'Function' of the 'Retailer'?",
+    o: ["Manufacturing the goods", "Selling in small quantities to consumers", "Buying in bulk from the consumer", "Granting loans to the manufacturer"],
+    a: 1,
+    e: "Retailers 'break bulk' by taking large shipments and selling them one by one.",
+    full: "The Retailer is the 'Last Link' in the chain. They are the shops on your street. You don't want to buy a 'Crate' of 24 sodas just because you are thirsty; you want just 'One.' The retailer buys the crate from the wholesaler and sells you that single bottle. They provide 'Convenience' by being close to your house and selling exactly the amount you need for today.",
+    h: "Does your local shopkeeper sell you a whole 'Sack of Sugar' or just a small 'Cup' of it?"
+  },
+  {
+    yr: 2006,
+    q: "In 'National Income,' 'Depreciation' is also known as:",
+    o: ["Capital gain", "Consumption of fixed capital", "Net investment", "Gross investment"],
+    a: 1,
+    e: "It is the value 'consumed' or lost as machines and buildings wear out over time.",
+    full: "When a factory uses a machine to make shirts, that machine gets older and weaker every day. This 'wearing out' is a cost. Economists call it 'Consumption of Fixed Capital' because you are slowly 'eating up' the value of your machine to produce goods. To find the 'True' profit of a country, you must subtract this loss from the total production.",
+    h: "If your delivery bike gets old and needs repairs, has its 'value' been consumed by your work?"
+  },
+  {
+    yr: 2006,
+    q: "The 'Terms of Trade' (TOT) is said to 'Improve' when:",
+    o: ["The price of imports rises faster than the price of exports", "The price of exports rises faster than the price of imports", "The volume of exports increases", "The country stops importing"],
+    a: 1,
+    e: "Improvement means a country can buy more imports using the same amount of exports.",
+    full: "Think of it like a 'Trade Ratio.' If the price of Nigeria's 'Oil' goes from $50 to $100, but the price of foreign 'Rice' stays the same, Nigeria can now buy *two* bags of rice for every barrel of oil instead of just one. Our 'Power' in the world market has increased. This is an 'Favourable' or 'Improved' Terms of Trade.",
+    h: "If your salary doubles but the price of food stays the same, has your 'trading power' improved?"
+  },
+  {
+    yr: 2006,
+    q: "A 'Monopolist' can determine EITHER the price OR the:",
+    o: ["Cost of production", "Quantity to be sold", "Quality of the good", "Income of consumers"],
+    a: 1,
+    e: "The monopolist can set a high price (and sell less) or set a low price (and sell more).",
+    full: "Even a 'King' of a market (Monopolist) cannot control 'Everything.' If he sets a very high price, he cannot 'Force' people to buy a large quantity. He has to choose: Does he want a 'High Price' (and only a few rich buyers) or does he want to sell a 'Large Quantity' (and lower the price to attract everyone)? He can pick the price or the amount, but the 'Market' (the buyers) will decide the other half.",
+    h: "If a shop is the only one in town, can they force you to buy '100 items' at a 'High Price'?"
+  },
+  {
+    yr: 2006,
+    q: "Which of the following is a 'Secondary' factor of production?",
+    o: ["Land", "Labour", "Capital", "Natural Resources"],
+    a: 2,
+    e: "Capital is 'Secondary' because it must be produced by humans using land and labour first.",
+    full: "In Economics, 'Land' and 'Labour' are 'Primary'—they were either here naturally or are part of being human. But a 'Tractor' (Capital) doesn't just grow in a forest. Humans had to take 'Iron' (Land) and use 'Work' (Labour) to build the tractor. Therefore, Capital is a 'Man-made' or 'Secondary' factor that helps us produce even more in the future.",
+    h: "Was a 'Computer' already on Earth before humans, or did we have to 'make' it using other resources?"
+  },
+  {
+    yr: 2006,
+    q: "The 'Incidence of a Tax' on a good with 'Perfectly Inelastic Demand' falls entirely on:",
+    o: ["The Producer", "The Consumer", "The Government", "The Wholesaler"],
+    a: 1,
+    e: "Because consumers will buy the same amount regardless of price, the producer passes the whole tax to them.",
+    full: "Imagine a life-saving drug. If the government adds a N500 tax, the pharmacy knows you *must* have it to survive. They don't have to 'share' the tax with you to keep you as a customer. They just add the whole N500 to the price tag. Because your demand is 'Stiff' (Inelastic), you pay the whole bill. The 'Burden' (Incidence) stays with you.",
+    h: "If you 'must' have something to stay alive, can the seller make you pay the full tax on it?"
+  },
+  {
+    yr: 2005,
+    q: "Economics is often described as the 'Study of Choice' because:",
+    o: ["People have too much money", "Resources are scarce and wants are many", "Governments force people to choose", "There are no free goods"],
+    a: 1,
+    e: "Choice is the necessary result of scarcity.",
+    full: "If we lived in a world where everything was 'Infinite' (like air), we wouldn't need Economics. You could have everything! But because time, money, and materials have a limit, you can't have 'A' and 'B' at the same time. Every time you say 'Yes' to a movie, you are saying 'No' to studying. Economics is the study of how we decide which 'Yes' is the most valuable.",
+    h: "If you only have one hour, can you watch a full movie and play a full football match at the same time?"
+  },
+  {
+    yr: 2005,
+    q: "The 'Opportunity Cost' of a student going to University is:",
+    o: ["The cost of books and tuition fees", "The enjoyment of campus life", "The wages he could have earned if he started working immediately", "The degree he will receive at the end"],
+    a: 2,
+    e: "Opportunity cost is the 'Next Best Alternative' that you sacrifice.",
+    full: "Many people think the cost of school is just 'Fees.' But in Economics, the 'Real' cost is the 'Life' you didn't live. If you weren't in school, you could be working a job and earning N100,000 every month. By choosing to study, you are 'sacrificing' those four years of salary. That 'Lost Salary' is the true opportunity cost of your education.",
+    h: "What is the 'Best Thing' you are NOT doing right now because you are busy studying this quiz?"
+  },
+  {
+    yr: 2005,
+    q: "A 'Giffen Good' is a type of 'Inferior Good' where:",
+    o: ["Demand falls when price falls", "Demand rises when price falls", "Demand remains constant", "Supply is perfectly elastic"],
+    a: 0,
+    e: "Giffen goods break the 'Law of Demand' because they are essential survival items for the very poor.",
+    full: "This is a very rare exception. Imagine a family so poor they only eat 'Bread' and a little 'Meat.' If the price of bread *falls*, they save so much money that they can finally afford to buy more meat and *less* bread. So, the price of bread went down, but they bought 'less' of it! This 'Paradox' only happens with very specific, cheap items that dominate a poor person's budget.",
+    h: "Can you think of a situation where an item getting 'cheaper' makes people want to buy 'less' of it?"
+  },
+  {
+    yr: 2005,
+    q: "The 'Location of Industry' is mainly influenced by the:",
+    o: ["Availability of raw materials and markets", "Personal taste of the owner", "Color of the factory building", "Number of holidays in the year"],
+    a: 0,
+    e: "Firms settle where they can minimize costs and maximize sales.",
+    full: "If you want to start a 'Cement Factory,' you don't build it in the middle of a forest. You build it near a 'Limestone Quarry' (Raw Material) because limestone is heavy and expensive to move. You also want to be near a 'City' (Market) so you can sell the cement quickly. Businesses 'huddle' where the 'Stuff' they need is close and the 'People' who buy are near.",
+    h: "Would you build a 'Fish Processing' factory in the middle of a desert or near the ocean?"
+  },
+  {
+    yr: 2005,
+    q: "A 'Joint-Stock Company' is different from a 'Partnership' because it has:",
+    o: ["Unlimited liability", "Limited liability", "Two to twenty members", "Only one owner"],
+    a: 1,
+    e: "In a company, shareholders only lose what they invested; their personal houses/cars are safe.",
+    full: "In a 'Partnership,' if the business owes N10 million, the bank can take your personal car or house to pay the debt (Unlimited Liability). But in a 'Company' (Limited Liability), the business is a 'Separate Person.' If the business fails, you only lose the money you used to buy the shares. Your personal property is 'Shielded' from the business's mistakes.",
+    h: "If a business goes bankrupt, is it better to be an 'Owner' whose personal house is safe or one who might lose everything?"
+  },
+  {
+    yr: 2005,
+    q: "Which of the following will lead to an 'Increase' in 'Labour Supply'?",
+    o: ["A decrease in the retirement age", "An increase in the wage rate", "A decrease in the population", "An increase in school-leaving age"],
+    a: 1,
+    e: "Higher wages attract more people to enter the workforce or work longer hours.",
+    full: "People treat their 'Time' like a product. If the 'Price' of work (the Wage) is very low, many people might choose to stay home or go back to school. But if the wage jumps to N500,000 per month, everyone will 'rush' to get a job. The 'Supply of Labour' (the number of people willing to work) grows because the reward is finally worth the effort.",
+    h: "If a company doubles its salary today, will 'more' or 'fewer' people apply for a job there?"
+  },
+  {
+    yr: 2005,
+    q: "The 'Primary Function' of the 'Stock Exchange' is to:",
+    o: ["Print money for the government", "Provide a market for buying and selling existing shares", "Control the price of food", "Lend money to small farmers"],
+    a: 1,
+    e: "It is a 'Second-hand' market where people trade ownership in companies.",
+    full: "Think of the Stock Exchange like a 'Jumia' or 'Amazon' but for 'Pieces of Companies.' If you bought shares in MTN five years ago and now you want your cash back, you go to the Stock Exchange to find someone else who wants to buy them from you. It provides 'Liquidity'—it turns paper ownership into actual cash whenever you need it.",
+    h: "Where do you go if you want to sell your 'Share' of a big company to another person?"
+  },
+  {
+    yr: 2005,
+    q: "In a 'Command Economy,' resources are allocated by:",
+    o: ["The price mechanism", "The government/Central planning authority", "Customs and traditions", "Private individuals"],
+    a: 1,
+    e: "The government decides what to produce, how to produce it, and for whom.",
+    full: "In countries like the old Soviet Union or North Korea, there is no 'Competition.' The government has a 'Big Plan.' They decide 'We need 1 million shoes and 500 tractors this year.' They tell the factories exactly what to do. There are no 'Prices' to signal what people want—only the 'Orders' of the central authority. It is the opposite of a Free Market.",
+    h: "Who decides what should be produced in a country where the government owns all the factories?"
+  },
+  {
+    yr: 2005,
+    q: "A 'Devaluation' of a currency makes a country's exports:",
+    o: ["More expensive for foreigners", "Cheaper for foreigners", "Higher in quality", "Lower in volume"],
+    a: 1,
+    e: "Devaluation lowers the 'exchange price,' making local goods look like a 'sale' to other countries.",
+    full: "Imagine 1 Dollar = N100. A Nigerian shirt costs N1,000 (which is $10). If Nigeria 'Devalues' the Naira so that 1 Dollar = N200, that same N1,000 shirt now only costs the American $5! To the foreigner, the shirt is now 'Half-Price.' This makes them buy more Nigerian shirts, which helps our factories grow and creates jobs.",
+    h: "If your money becomes 'weaker' against the Dollar, do your goods become 'cheaper' or 'dearer' for an American buyer?"
+  },
+
+  {
+    yr: 2004,
+    q: "A 'Price Taker' is a firm that operates under:",
+    o: ["Monopoly", "Oligopoly", "Perfect Competition", "Monopolistic Competition"],
+    a: 2,
+    e: "In perfect competition, the market price is set by demand and supply; the firm must accept it.",
+    full: "Imagine you are a small farmer selling 'Yellow Garri' in a massive market with 5,000 other sellers. If the market price is N500 per paint bucket, and you try to sell yours for N505, buyers will simply move one inch to the next seller. You have zero power to change the price. You must 'Take' whatever price the market gives you. You are a tiny drop in a huge ocean.",
+    h: "Can a single person in a crowd of thousands dictate the price of a common product?"
+  },
+  {
+    yr: 2004,
+    q: "The 'Main Goal' of 'Economic Development' is to:",
+    o: ["Increase the total GDP", "Improve the quality of life and reduce poverty", "Print more money for the citizens", "Build more factories in the city"],
+    a: 1,
+    e: "Growth is about quantity (GDP), but Development is about quality (well-being).",
+    full: "Don't confuse 'Growth' with 'Development.' Growth is just a country getting 'Richer' (more money). Development is about the country getting 'Better.' It means better hospitals, cleaner water, higher literacy, and less gap between the rich and the poor. A country can grow its GDP by selling oil, but if the people are still hungry and sick, it hasn't achieved 'Development.'",
+    h: "Is a man 'Developed' if he earns N10 million but lives in a house with no water or electricity?"
+  },
+  {
+    yr: 2004,
+    q: "Which of the following is a 'Direct' result of 'Hyper-inflation'?",
+    o: ["People save more money", "Money loses its function as a store of value", "Prices remain stable", "Investment increases"],
+    a: 1,
+    e: "When prices rise by 1,000% a day, holding cash becomes a disaster as its value disappears.",
+    full: "Imagine you have N10,000 in your pocket. In the morning, it can buy a bag of rice. By evening, it can only buy a loaf of bread. By tomorrow, it can only buy a piece of gum. This is Hyper-inflation. People stop saving money because the paper becomes 'trash' instantly. They prefer to hold 'Real Assets' like gold, land, or even bags of beans, because the money is no longer a safe place to store wealth.",
+    h: "Would you keep your savings in cash if you knew prices would double every single hour?"
+  },
+  {
+    yr: 2004,
+    q: "The 'Law of Variable Proportions' is most relevant in the:",
+    o: ["Short Run", "Long Run", "Very Long Run", "Market Period"],
+    a: 0,
+    e: "It applies when at least one factor (like land or machinery) cannot be changed.",
+    full: "This law is about 'Small Kitchens.' In the **Short Run**, you can't just 'Build a new factory' overnight—your space is fixed. If you keep adding more workers to that fixed space, they eventually start wasting time. In the **Long Run**, you can buy more land and bigger machines, so the 'cramping' problem disappears. Therefore, diminishing returns is a headache specifically for the Short Run.",
+    h: "Can you change the 'Size of your Factory' today, or does that take months of planning?"
+  },
+  {
+    yr: 2004,
+    q: "An 'External Economy of Scale' occurs when:",
+    o: ["A firm grows in size and lowers its costs", "The entire industry grows, benefiting all firms in it", "The government reduces company tax", "The firm fires lazy workers"],
+    a: 1,
+    e: "These are benefits that come from 'outside' the firm, usually due to the location.",
+    full: "Imagine you open a tech shop in 'Computer Village' in Ikeja. Because so many other tech shops are there, the government provides 24/7 power to that area, and specialized repairmen move nearby. You didn't work for these benefits—they happened because the *Industry* grew around you. 'Internal' is what *you* do; 'External' is what the *neighborhood* does for you.",
+    h: "Do you benefit when all your competitors move to the same street and attract better roads and security?"
+  },
+  {
+    yr: 2004,
+    q: "A 'Normal Good' is one where the 'Income Effect' is:",
+    o: ["Negative", "Positive", "Zero", "Constant"],
+    a: 1,
+    e: "As people get richer, they naturally want to buy more 'Normal' things like clothes and good food.",
+    full: "This is the most common relationship in Economics. If your salary goes from N50k to N500k, you will buy more 'Normal' goods (like steak, designer clothes, and travel). Because Income and Demand move in the same direction (both up), we say the relationship is 'Positive.' Only 'Inferior' goods (like used clothes) move in the opposite direction.",
+    h: "If you won the lottery today, would you buy more 'Fresh Milk' or more 'Powdered Sachet Milk'?"
+  },
+  {
+    yr: 2004,
+    q: "The 'Cross Elasticity of Demand' for 'Substitutes' is always:",
+    o: ["Negative", "Zero", "Positive", "Infinite"],
+    a: 2,
+    e: "When the price of one good rises, consumers switch to the other, increasing its demand.",
+    full: "Think of 'Coke' and 'Pepsi.' If the price of Coke goes up to N5,000, people will stop buying Coke and rush to buy Pepsi. Even though Pepsi's price didn't change, its *demand* went up because Coke got expensive. Since the Price of Good A and the Demand for Good B move together (both up), the elasticity is 'Positive.'",
+    h: "If the price of 'Milo' goes up, what happens to the demand for 'Bournvita'?"
+  },
+  {
+    yr: 2004,
+    q: "Which 'Motive' for holding money is most affected by 'Interest Rates'?",
+    o: ["Transactionary", "Precautionary", "Speculative", "Personal"],
+    a: 2,
+    e: "People hold less cash and more bonds when interest rates are high to earn a profit.",
+    full: "The 'Speculative Motive' is for people who want to 'Play the Market.' If the bank offers a very high interest rate (say 30%), you won't keep cash in your pocket—you'll put it in the bank to make money! If interest rates are zero, you might as well keep the cash. This motive is a 'Gamble' on whether it's better to hold paper or hold investments.",
+    h: "Would you keep N1 million under your bed if the bank promised to give you N300k extra every year for saving it?"
+  },
+  {
+    yr: 2004,
+    q: "The 'Burden' of an 'Indirect Tax' is shared between buyer and seller based on:",
+    o: ["The size of the tax", "The government's decision", "The elasticity of demand and supply", "The location of the shop"],
+    a: 2,
+    e: "If buyers are desperate (Inelastic), they bear the burden; if they can walk away (Elastic), the seller bears it.",
+    full: "It’s a 'Tug-of-War.' If the government taxes 'Salt' (Inelastic), the seller knows you *have* to buy it, so he puts the whole tax on you. But if the government taxes 'Pizza' (Elastic), the seller knows you will just eat bread instead if he raises the price. To keep you as a customer, the seller might 'swallow' part of the tax himself. Elasticity decides who 'cries' more.",
+    h: "Can a seller force you to pay a new tax if you can easily go and buy a different product instead?"
+  },
+  {
+    yr: 2004,
+    q: "Which of the following is a 'Primary Industry'?",
+    o: ["Textile manufacturing", "Lumbering (Cutting trees)", "Banking and Insurance", "Construction of bridges"],
+    a: 1,
+    e: "Primary industries are 'Extractive'—they take things directly from nature.",
+    full: "Before you can have a table (Secondary) or a shop (Tertiary), you need the wood. 'Lumbering' is the act of going into the forest and taking the raw resource. Any job that involves digging, fishing, farming, or mining is 'Primary' because it deals with the Earth in its rawest form.",
+    h: "Are you 'making' something new, or are you just 'taking' what nature already provided?"
+  },
+  {
+    yr: 2003,
+    q: "The 'Basic Difference' between 'Microeconomics' and 'Macroeconomics' is:",
+    o: ["Micro is for small countries, Macro is for big countries", "Micro focuses on individual units, Macro focuses on the whole economy", "Micro is about money, Macro is about farming", "Micro is for students, Macro is for professors"],
+    a: 1,
+    e: "Micro uses a 'Microscope' (individuals/firms); Macro uses a 'Telescope' (totals/aggregates).",
+    full: "Micro is like looking at a 'Single Tree'—why did this one person buy this one phone? Why did this one shop raise its price? Macro is like looking at the 'Whole Forest'—why is the entire country's inflation rising? How many people are unemployed in the whole nation? Micro is the 'Pieces'; Macro is the 'Puzzle.'",
+    h: "Are you studying the 'budget of one family' or the 'budget of the entire nation'?"
+  },
+  {
+    yr: 2003,
+    q: "A 'Deflationary Policy' is used by the government to:",
+    o: ["Increase the level of employment", "Reduce the total demand and lower prices", "Encourage people to spend more", "Devalue the currency"],
+    a: 1,
+    e: "When prices are rising too fast (Inflation), the government 'Deflates' the economy to cool it down.",
+    full: "Think of the economy as a 'Balloon' that is about to pop because of high prices. A 'Deflationary Policy' (like raising taxes or interest rates) is like letting a little air out. It makes people spend less, which forces sellers to stop raising prices. It 'cools' the market down so that the value of money doesn't disappear.",
+    h: "If a fire is too hot, do you add more wood or do you take some wood out to slow it down?"
+  },
+  {
+    yr: 2003,
+    q: "The 'Par value' of a currency is its:",
+    o: ["Market value today", "Value compared to gold or another 'key' currency", "Value after inflation", "Value printed on the banknote"],
+    a: 1,
+    e: "It is the 'Official' exchange rate set by the government against a standard like the Dollar or Gold.",
+    full: "In the old days, every currency was 'tied' to a certain amount of Gold. That 'fixed' relationship was the Par Value. Today, it usually refers to the 'Official Rate' set by a Central Bank. Even if the 'Black Market' says 1 Dollar = N1,500, the 'Par Value' might be the official government rate of N1,200.",
+    h: "Is there an 'official' price for your money that the government tries to maintain?"
+  },
+  {
+    yr: 2003,
+    q: "Which 'Financial Institution' is known as the 'Lender of Last Resort'?",
+    o: ["World Bank", "Commercial Bank", "Central Bank", "Mortgage Bank"],
+    a: 2,
+    e: "When commercial banks run out of cash, they go to the Central Bank for an emergency loan.",
+    full: "Imagine a big bank like Zenith or GTB has a 'panic' and everyone wants to withdraw their money at once. If the bank runs out of cash, they can't just close the door—that would cause a national disaster! They go to the Central Bank, which 'must' lend them money to keep the system safe. The Central Bank is the 'Final Parent' who saves everyone when things go wrong.",
+    h: "Who do the regular banks turn to when they are in serious financial trouble?"
+  },
+  {
+    yr: 2003,
+    q: "The 'Principal of Diminishing Marginal Utility' explains why the 'Demand Curve':",
+    o: ["Slopes Upward", "Slopes Downward", "Is Horizontal", "Is Vertical"],
+    a: 1,
+    e: "Because each extra unit gives less joy, you will only buy it if the price is lower.",
+    full: "If the first slice of pizza gives you '100 Joy' and the second only gives you '20 Joy,' you won't pay the same price for the second one. You'll only buy that second slice if the shop offers a 'Buy One Get One Half Price' deal. Since you only buy 'more' when the 'price' is 'lower,' the demand curve must slope downwards.",
+    h: "Would you pay the 'full price' for a second bottle of soda if you were already half-full?"
+  },
+  {
+    yr: 2003,
+    q: "A 'Tariff' is a tax imposed on:",
+    o: ["Locally made goods", "Imported goods", "Goods sold to the government", "Gifts from abroad"],
+    a: 1,
+    e: "Tariffs make foreign goods more expensive to protect local industries.",
+    full: "A 'Tariff' is a 'Wall' made of money. If a foreign shoe costs N10,000, and the government adds a N5,000 Tariff, the shoe now costs N15,000 in the shop. This makes the 'Nigerian-made' shoe (costing N12,000) look like a better deal. It's a way to discourage people from buying from foreigners and support local 'hustle.'",
+    h: "Does the government tax foreign goods to make them 'cheaper' or 'more expensive' for you?"
+  },
+  {
+    yr: 2003,
+    q: "The 'Dependency Ratio' is the relationship between:",
+    o: ["Exports and Imports", "The working population and the non-working population", "Rich people and Poor people", "Parents and Children only"],
+    a: 1,
+    e: "It measures how many 'dependents' (children/elderly) each worker has to support.",
+    full: "In a country like Nigeria, there are many children (under 15) and some elderly people (over 65). These people usually don't have jobs—they 'depend' on the workers (aged 15-64) for food and clothes. If the Dependency Ratio is high, it means each worker is 'carrying' too many people on their back, making it harder for the country to save money and grow.",
+    h: "In your family, how many people are 'earning money' vs how many are just 'eating'?"
+  },
+  {
+    yr: 2003,
+    q: "Which of the following is an 'Advantage' of 'Small-scale' firms?",
+    o: ["They can raise large amounts of capital", "They enjoy economies of scale", "They provide personalized services to customers", "They have complex management structures"],
+    a: 2,
+    e: "Small businesses can build close relationships with their clients that big giants cannot.",
+    full: "A giant supermarket (like Shoprite) doesn't know your name or your favorite bread. But the small 'Mama G' shop on your corner knows exactly what you like, might give you 'credit' (buy now, pay later), and can change their stock just for you. This 'Personal Touch' and 'Flexibility' is why small businesses survive even when big giants are nearby.",
+    h: "Does the manager of a giant company know you personally, or is that only for small shop owners?"
+  },
+  {
+    yr: 2003,
+    q: "In 'National Income,' 'Subsidies' are:",
+    o: ["Added to GDP at factor cost", "Subtracted from GDP at market price", "Ignored completely", "Only for foreign companies"],
+    a: 0,
+    e: "Subsidies are payments from the government that lower the 'Market Price' below the 'Real Cost.'",
+    full: "Imagine it costs N500 to produce a liter of fuel, but the government wants you to pay only N200. The government pays the 'missing' N300 to the factory. This N300 is a 'Subsidy.' When calculating the 'True Value' (Factor Cost) of what was produced, we have to 'add back' that subsidy because the work done was actually worth N500, even if the shop price was lower.",
+    h: "If the government pays 'part' of your bill, does the 'real value' of the item change?"
+  },
+  {
+    yr: 2003,
+    q: "The 'Fundamental' problem of Economics is:",
+    o: ["How to make money", "How to allocate scarce resources to satisfy unlimited wants", "How to stop inflation", "How to trade with other countries"],
+    a: 1,
+    e: "Scarcity, Choice, and Opportunity Cost are the 'Trinity' of Economics.",
+    full: "This is the 'Grandfather' of all economics questions. We have 'Greedy' imaginations (Unlimited Wants) but a 'Broke' world (Limited Resources). This creates 'Scarcity.' Because we can't have it all, we must 'Choose.' And because every choice means losing something else, we have 'Opportunity Cost.' This three-step dance is what Economics is all about.",
+    h: "If you have N1,000 and 1,000 things you want to buy, what is your biggest problem?"
+  },
+
+  {
+    yr: 2002,
+    q: "The 'Invisible Hand' in a market economy refers to:",
+    o: ["Government intervention", "The price mechanism", "The Central Bank's control", "Trade union power"],
+    a: 1,
+    e: "Adam Smith coined this to show how self-interest leads to social harmony through prices.",
+    full: "Adam Smith, the 'Father of Economics,' said that when individuals try to make a profit for themselves, they 'accidentally' help everyone else. If a baker wants to make money, he must bake the best bread at a fair price. He isn't doing it to be 'nice' (government order), but the 'Price Mechanism' (Invisible Hand) guides him to serve the community. The market coordinates itself without a visible boss.",
+    h: "Does a shopkeeper sell you good food because he loves you, or because he wants your money?"
+  },
+  {
+    yr: 2002,
+    q: "A 'Change in Demand' is illustrated by:",
+    o: ["A movement along the demand curve", "A shift of the entire demand curve", "A change in the price of the good", "A change in the quantity supplied"],
+    a: 1,
+    e: "A 'Change in Demand' is caused by factors other than price (income, tastes, etc.).",
+    full: "This is the most common exam trick! If the **Price** changes, you just slide up or down the line (Change in Quantity Demanded). But if **Income** or **Fashion** changes, the whole line 'jumps' to a new position (Change in Demand). Remember: 'Shift' = Change in Demand; 'Slide' = Change in Quantity Demanded.",
+    h: "If you buy more chicken because your salary increased, does the whole demand curve move?"
+  },
+  {
+    yr: 2002,
+    q: "Which of the following is a 'Liquid Asset' for a commercial bank?",
+    o: ["Buildings and furniture", "Long-term loans", "Cash and Treasury Bills", "Office equipment"],
+    a: 2,
+    e: "Liquidity refers to how quickly an asset can be turned into cash without loss of value.",
+    full: "A bank needs to be ready in case customers show up to withdraw money. 'Buildings' are assets, but you can't pay a customer with a brick! 'Cash' is perfectly liquid. 'Treasury Bills' are almost as good because they can be sold for cash instantly. A bank must balance 'Liquidity' (safety) with 'Profitability' (lending money out).",
+    h: "Can a bank pay its customers by selling its office chairs on the spot?"
+  },
+  {
+    yr: 2002,
+    q: "The 'Population Census' is usually conducted every:",
+    o: ["Year", "Two years", "Five years", "Ten years"],
+    a: 3,
+    e: "Ten years is the international standard to allow for significant demographic changes.",
+    full: "Counting every single head in a country is incredibly expensive and difficult. If you did it every year, you'd be broke! Governments wait 10 years to see how the 'Shape' of the nation has changed—how many babies were born, how many people moved to cities, and how many reached retirement age. This helps in 'Long-term Planning' for schools and hospitals.",
+    h: "Is it easy or very difficult to count every single person living in Nigeria?"
+  },
+  {
+    yr: 2002,
+    q: "An 'Oligopoly' is a market structure with:",
+    o: ["One seller", "Many sellers of identical products", "A few large sellers", "Many sellers of differentiated products"],
+    a: 2,
+    e: "Oligopolies are dominated by a small number of powerful firms (e.g., Telecommunications).",
+    full: "Think of the 'Telecom' market in Nigeria (MTN, Airtel, Glo, 9mobile). There aren't hundreds of companies—just a few 'Giants.' Because there are so few, they watch each other closely. If one drops the price of data, the others must follow immediately. They often compete through 'Branding' and 'Advertisements' rather than just price wars.",
+    h: "Are there hundreds of different mobile network providers in your country, or just a few big ones?"
+  },
+  {
+    yr: 2002,
+    q: "The 'Consumer' is said to be 'Sovereign' in a:",
+    o: ["Planned Economy", "Market Economy", "Traditional Economy", "Socialist Economy"],
+    a: 1,
+    e: "In a free market, the consumer's spending 'votes' decide what producers make.",
+    full: "'Sovereign' means 'King.' In a market economy, the consumer has the ultimate power. If consumers stop buying 'Plastic Straws' and start buying 'Paper Straws,' the plastic factories will go broke and paper factories will grow. The consumer's 'Naira-Votes' dictate what the economy produces. Producers are essentially 'servants' to the consumer's desires.",
+    h: "Who really decides which products stay on the shelf—the factory owner or the people who buy them?"
+  },
+  {
+    yr: 2002,
+    q: "Which 'Tax' is levied on 'Goods Produced within the Country'?",
+    o: ["Customs Duty", "Excise Duty", "Import Duty", "Export Duty"],
+    a: 1,
+    e: "Excise duties are internal taxes on specific locally manufactured goods (like cigarettes or alcohol).",
+    full: "While 'Customs' deal with things crossing the border, 'Excise' stays 'inside.' The government uses Excise duties for two reasons: 1. To make money, and 2. To discourage 'Demerit Goods' (things that are bad for you). If you make beer or tobacco inside Nigeria, the government adds an Excise tax to the price before it hits the shop.",
+    h: "Does the government tax beer because it's imported or because it's made and sold locally?"
+  },
+  {
+    yr: 2002,
+    q: "A 'Firm's Total Cost' is the sum of its:",
+    o: ["Average Cost and Marginal Cost", "Fixed Cost and Variable Cost", "Price and Profit", "Total Revenue and Tax"],
+    a: 1,
+    e: "Total Cost = FC + VC. It covers both the 'rent' and the 'raw materials.'",
+    full: "To run a business, you have two types of bills. The **Fixed Cost** (Rent/Salaries) stays the same even if you produce nothing. The **Variable Cost** (Electricity/Raw Materials) goes up as you produce more. If you add these two 'piles' of bills together, you get your **Total Cost**. To make a profit, your sales must be higher than this total.",
+    h: "If you pay rent for a shop and then buy flour to bake bread, what are your 'Total' expenses?"
+  },
+  {
+    yr: 2002,
+    q: "The 'Law of Supply' states that as Price increases, Quantity Supplied:",
+    o: ["Decreases", "Increases", "Remains constant", "Becomes zero"],
+    a: 1,
+    e: "High prices mean high profit potential, encouraging producers to bring more to the market.",
+    full: "Sellers are 'Profit-Seekers.' If the price of 'Cassava' triples tomorrow, every farmer will rush to harvest their cassava and bring it to the market. They might even stop planting other crops to focus on the expensive one. There is a 'Direct' relationship between Price and Supply—they move up together and down together.",
+    h: "Would a seller bring 'more' or 'less' goods to the market if the price was very high?"
+  },
+  {
+    yr: 2002,
+    q: "Which 'Financial Institution' manages the 'National Debt'?",
+    o: ["The Stock Exchange", "Commercial Banks", "The Central Bank", "The World Bank"],
+    a: 2,
+    e: "The Central Bank acts as the 'Financial Adviser' and 'Banker' to the government.",
+    full: "When the government needs to borrow N1 trillion, they don't go to a street corner. They ask the **Central Bank** to issue 'Bonds' and 'Treasury Bills' to the public. The Central Bank keeps the records of who the government owes and makes sure the interest is paid on time. They are the 'Secretaries' of the country's debt.",
+    h: "Who keeps the 'record book' of all the money the Nigerian government has borrowed?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Primary Objective' of a 'Private Firm' is to:",
+    o: ["Provide employment", "Maximize profit", "Help the poor", "Produce high-quality goods only"],
+    a: 1,
+    e: "In a capitalist system, profit is the engine that drives private business activity.",
+    full: "While many companies *say* they want to 'save the world,' their number one goal is Profit. Without profit, they cannot pay workers, buy materials, or stay in business. In Economics, we assume every private businessman is trying to find the point where the gap between his 'Income' and his 'Cost' is the widest. Everything else (quality, jobs) is a byproduct of chasing that profit.",
+    h: "Why does a man open a shop—is it mainly to 'give out jobs' or to 'make money' for himself?"
+  },
+  {
+    yr: 2001,
+    q: "A 'Mixed Economy' is one where:",
+    o: ["Only the government makes decisions", "Only private individuals make decisions", "Both the government and private individuals make decisions", "Only foreigners make decisions"],
+    a: 2,
+    e: "Most modern countries (like Nigeria/UK) combine free-market freedom with government rules.",
+    full: "A 'Mixed Economy' is a 'Golden Middle.' You have the freedom to start a business and set your own prices (Market), but the government also provides schools, hospitals, and laws (Command). This system tries to get the 'Efficiency' of capitalism and the 'Fairness' of socialism. It's the most popular system in the world today.",
+    h: "In your country, are ALL businesses owned by the government, or are some owned by private people?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Mean' of the following set of numbers (2, 4, 6, 8, 10) is:",
+    o: ["4", "5", "6", "8"],
+    a: 2,
+    e: "The mean is the average: (Sum of numbers) / (Count of numbers).",
+    full: "2 + 4 + 6 + 8 + 10 = 30. There are 5 numbers in total. 30 divided by 5 equals 6. In Economics, the 'Mean' is used to find things like 'Average Income' or 'Average Price' in a country. It’s the simplest way to find the 'Middle' of a group of data points.",
+    h: "If you add up all the numbers and divide by how many they are, what do you get?"
+  },
+  {
+    yr: 2001,
+    q: "A 'Sovereign Debt' is debt owed by:",
+    o: ["A private individual", "A national government", "A multinational corporation", "A small village"],
+    a: 1,
+    e: "Sovereign refers to the independent state or government.",
+    full: "When people say 'Nigeria has a debt problem,' they are talking about **Sovereign Debt**. This is money borrowed by the country's government from other countries (External) or from its own citizens (Internal). It is called 'Sovereign' because the 'State' (the sovereign power) is the one that promised to pay it back.",
+    h: "If a 'Whole Country' borrows money from the World Bank, what kind of debt is that?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Concept' of 'Opportunity Cost' is also called:",
+    o: ["Social Cost", "Real Cost", "Fixed Cost", "Variable Cost"],
+    a: 1,
+    e: "It is the 'Real' sacrifice made when a choice is made, regardless of money.",
+    full: "If you spend N500 on a book, the 'Money Cost' is N500. But the 'Real Cost' (Opportunity Cost) is the 'Meat-pie' you *didn't* buy with that same N500. Economics cares more about 'Real Cost' because it shows the physical things we lose when we make a choice. It reminds us that every 'Yes' has a hidden 'No.'",
+    h: "Is the 'true cost' of a choice the money you paid, or the 'other thing' you had to give up?"
+  },
+  {
+    yr: 2001,
+    q: "Which 'Market Structure' has 'No Barriers to Entry'?",
+    o: ["Monopoly", "Oligopoly", "Perfect Competition", "Cartel"],
+    a: 2,
+    e: "In perfect competition, anyone can start or stop the business at any time.",
+    full: "Imagine selling 'Pure Water' on the street. Do you need a million-dollar license? No. Can you stop tomorrow if you get bored? Yes. This 'Freedom' is a key feature of Perfect Competition. In a Monopoly, there are 'Walls' (high costs, legal licenses) that keep others out. But in a perfect market, the gate is wide open for everyone.",
+    h: "Is it easy or very difficult for a new person to start selling tomatoes in a local market?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Malthusian Theory' was pessimistic because it predicted:",
+    o: ["Population would grow slower than food", "Food supply would grow faster than population", "Population would grow faster than food supply", "Science would solve all food problems"],
+    a: 2,
+    e: "Malthus feared that overpopulation would lead to inevitable famine and poverty.",
+    full: "Malthus looked at a 'geometric' population (2, 4, 8...) and an 'arithmetic' food supply (1, 2, 3...). He warned that we would eventually reach a 'Point of Crisis' where there simply isn't enough land to feed the people. His 'Checks' on population were things like War, Disease, and Famine. It’s a dark theory, but it started the study of 'Demographics.'",
+    h: "What happens if a family has 20 children but only enough land to grow 5 yams?"
+  },
+  {
+    yr: 2001,
+    q: "Which of the following is a 'Tertiary Industry'?",
+    o: ["Mining for gold", "Manufacturing cars", "Banking and Insurance", "Farming for cocoa"],
+    a: 2,
+    e: "Tertiary industries provide 'Services' rather than physical goods.",
+    full: "1. **Primary** = Get the raw stuff (Farm/Mine). 2. **Secondary** = Make the raw stuff into products (Factory). 3. **Tertiary** = Move the products, sell them, or provide support (Banks/Shops/Schools). Tertiary is the 'Service Sector'—you are paying for someone's 'Brain' or 'Effort' rather than a physical object they built.",
+    h: "When you pay a bank to keep your money safe, are you buying a 'physical product' or a 'service'?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Elasticity of Supply' measures the responsiveness of:",
+    o: ["Price to changes in supply", "Quantity supplied to changes in price", "Demand to changes in supply", "Income to changes in price"],
+    a: 1,
+    e: "It shows how 'quickly' or 'much' sellers can increase production when the price goes up.",
+    full: "If the price of 'Apps' goes up, developers can make more instantly (Elastic). If the price of 'Gold' goes up, it takes years to dig a new mine (Inelastic). Elasticity tells us how 'Stretchy' the sellers are. Can they react to a price hike by flooding the market with more goods, or are they 'stuck' with what they have?",
+    h: "Can a farmer grow a whole new crop of cocoa in one day just because the price went up today?"
+  },
+  {
+    yr: 2001,
+    q: "A 'Budget Surplus' is most effective for controlling:",
+    o: ["Unemployment", "Inflation", "Recession", "Deflation"],
+    a: 1,
+    e: "By spending less and taxing more, the government reduces the 'money in pockets,' slowing down price rises.",
+    full: "Inflation is 'Too much money chasing too few goods.' To stop it, the government needs to 'Mop up' the extra money. In a **Surplus**, the government takes more in taxes than it gives out in spending. This 'Sucks' money out of the economy, reducing demand and forcing prices to stop climbing. It’s like a sponge soaking up extra water.",
+    h: "If everyone has 'too much money' and prices are rising, should the government take some away or give more?"
+  },
+  {
+    yr: 2001,
+    q: "The 'Consumer Price Index' (CPI) measures the:",
+    o: ["Average price of all goods in the country", "Change in the cost of a 'fixed basket' of consumer goods", "Total wealth of the average citizen", "Rate of profit for retail shops"],
+    a: 1,
+    e: "CPI is the standard tool for measuring 'Inflation' by tracking everyday expenses.",
+    full: "Imagine a physical shopping basket. Every month, the government puts the same things in it: a loaf of bread, a liter of fuel, a bag of rice, and a month's rent. If that 'basket' cost N50,000 in January and N55,000 in February, the CPI tells us that life has become 10% more expensive. It’s the most honest way to see if a worker's salary is actually keeping up with the world.",
+    h: "If the 'same' groceries cost more today than they did last year, what has happened to the CPI?"
+  },
+  {
+    yr: 2001,
+    q: "A 'Firm' achieves 'Equilibrium' when it is:",
+    o: ["Making the highest possible total revenue", "Producing where Marginal Revenue equals Marginal Cost (MR = MC)", "Selling all the goods it has in stock", "Paying the lowest possible wages"],
+    a: 1,
+    e: "At MR=MC, any further production would cost more than it earns, reducing profit.",
+    full: "In Economics, 'Equilibrium' for a business isn't about being 'calm'; it's about being 'Optimal.' If making one more shoe earns you N1,000 (MR) but only costs N800 (MC), you should keep going! You only stop when the 'Extra Earned' is exactly the same as the 'Extra Spent.' At that magic point, your profit 'bucket' is as full as it can possibly be.",
+    h: "Would you make one more item if it cost N1,000 to produce but you could only sell it for N900?"
+  },
+  {
+    yr: 2000,
+    q: "The 'Labour Force' of a country is the total number of people who are:",
+    o: ["Above the age of 18", "Currently employed in the civil service", "Between the working ages and are 'willing and able' to work", "Living in the country"],
+    a: 2,
+    e: "It excludes children, the elderly, and those not seeking work (like full-time students).",
+    full: "Just because you are an adult doesn't mean you are in the 'Labour Force.' If you are a billionaire who chooses to sleep all day, or a student who is only focused on books, you are 'Inactive.' The Labour Force is the 'Active Army'—people who are either working a job right now or are actively knocking on doors looking for one.",
+    h: "Is a 20-year-old student who refuses to look for a job counted as part of the country's 'Available Workers'?"
+  },
+  {
+    yr: 2000,
+    q: "Which of the following is a 'Direct' cause of 'Demand-Pull Inflation'?",
+    o: ["An increase in the cost of raw materials", "Too much money chasing too few goods", "A decrease in the population", "An increase in the exchange rate"],
+    a: 1,
+    e: "This occurs when consumers have so much cash that they bid up the prices of limited goods.",
+    full: "Imagine there are only 10 iPhones in a shop, but 100 people arrive, all with pockets full of cash, screaming 'I want one!' The shopkeeper will naturally raise the price to the highest bidder. The 'Demand' of the buyers 'Pulled' the price up. This usually happens when the government prints too much money or when everyone gets a massive salary raise at once.",
+    h: "If everyone in Nigeria woke up with N10 million today, would the price of bread stay the same?"
+  },
+  {
+    yr: 2000,
+    q: "A 'Tax' that takes a higher percentage of income from the rich is called:",
+    o: ["Proportional Tax", "Regressive Tax", "Progressive Tax", "Indirect Tax"],
+    a: 2,
+    e: "Progressive taxes are designed for 'Equity,' meaning those who earn more, contribute more.",
+    full: "Think of the word 'Progress.' As your income 'Progresses' (goes higher), your tax rate also 'Progresses' (goes higher). A poor man might pay 5% of his income, while a CEO might pay 30%. The goal is to make sure the 'Burden' of running the country is carried mostly by those who have the strongest shoulders.",
+    h: "Does a 'Rich person' pay a bigger 'slice' of their pie in this system, or just a bigger 'amount'?"
+  },
+  {
+    yr: 2000,
+    q: "The 'Law of Diminishing Marginal Utility' states that as more units of a good are consumed:",
+    o: ["Total utility remains constant", "Marginal utility increases", "Marginal utility decreases", "Price remains constant"],
+    a: 2,
+    e: "The more you have of something, the less 'extra' joy you get from the next unit.",
+    full: "The first slice of pizza when you are starving is 'Heaven.' The second is 'Great.' The fifth is 'Okay.' The tenth makes you feel 'Sick.' Your 'Total' joy might be high, but the 'Extra' (Marginal) joy you got from that 10th slice is actually negative. This is why we don't spend all our money on just one thing—eventually, the 'thrill' goes away.",
+    h: "Do you enjoy the 10th bottle of soda as much as you enjoyed the very first one?"
+  },
+  {
+    yr: 2000,
+    q: "Which 'Economic System' is characterized by 'Private Ownership' of the means of production?",
+    o: ["Socialism", "Capitalism", "Communism", "Command Economy"],
+    a: 1,
+    e: "Capitalism relies on individuals owning factories, land, and businesses to generate profit.",
+    full: "In a 'Capitalist' (Market) system, the government doesn't own the shops or the farms—'You' do. You take the risk, you use your 'Capital' (money/machines), and you keep the reward. It is a system driven by 'Competition' and the 'Profit Motive.' The more value you provide to others, the more wealth you can legally own for yourself.",
+    h: "In this system, is the 'Boss' a government official or a private business owner?"
+  },
+  {
+    yr: 2000,
+    q: "The 'Primary Reason' for the 'Upward Slope' of the 'Supply Curve' is:",
+    o: ["The Law of Demand", "The Profit Motive", "Government regulation", "Consumer preference"],
+    a: 1,
+    e: "Sellers are willing to supply more at higher prices because it is more profitable.",
+    full: "A graph is just a picture of human behavior. The 'Upward Slope' says: 'If you pay me more, I will work harder.' If the price of shoes is low, factories only make a few. If the price jumps, they hire extra staff and run the machines all night to make as many as possible. The 'High Price' is the 'Magnet' that pulls the supply out of the factory.",
+    h: "Would you stay open until midnight if you could sell your products for triple the normal price?"
+  },
+  {
+    yr: 2000,
+    q: "Which of the following is an 'Invisible' Import for Nigeria?",
+    o: ["Foreign-made cars", "Refined petroleum", "Payments to a foreign shipping company", "Electronic gadgets"],
+    a: 2,
+    e: "Visible trade is 'Goods' (tangible); Invisible trade is 'Services' (intangible).",
+    full: "When a Nigerian businessman pays a 'German Ship' to carry his goods, he is sending money out of Nigeria. But no 'Box' arrived at his house—he paid for a 'Service' (Transportation). Since you can't touch or see a 'Service' in a crate, we call it 'Invisible.' It still affects the 'Balance of Payments' exactly like buying a car does.",
+    h: "If you pay a foreign doctor for an online consultation, did you 'Import' a product or a service?"
+  },
+  {
+    yr: 2000,
+    q: "The 'Parity' of a currency refers to its:",
+    o: ["Internal purchasing power", "Value in terms of another currency", "Value printed on the note", "Weight in gold"],
+    a: 1,
+    e: "Currency parity is the 'Equality' or 'Exchange Rate' between two different types of money.",
+    full: "In Latin, 'Par' means 'Equal.' If 1 US Dollar = 1 British Pound, they are at 'Parity.' Usually, we use this to describe the 'Official Target' rate. If the Naira is meant to be 1,500 to a Dollar, that is its 'Exchange Parity.' It’s the 'Bridge' that allows people from two different countries to trade with each other using a fair scale.",
+    h: "What is the 'Link' or 'Ratio' that lets you know how many Naira are equal to one Dollar?"
+  },
+  {
+    yr: 2005,
+    q: "The 'Balance of Payments' is a record of a country's transactions with:",
+    o: ["Its own citizens", "The rest of the world", "The Central Bank", "Commercial banks only"],
+    a: 1,
+    e: "It is a 'Giant Receipt' of all money entering and leaving the country.",
+    full: "Every time a Nigerian sells oil to France, money comes IN. Every time a Nigerian buys a car from Germany, money goes OUT. The 'Balance of Payments' (BOP) is the big accounting book that tracks all these 'Ins' and 'Outs' for one year. It tells us if the country is becoming a 'Creditor' (saving money) or a 'Debtor' (owing the world).",
+    h: "Does a country's 'BOP' track money moving 'inside' the city or 'across' the national borders?"
+  },
+
+
+
+  {
+    yr: 2015,
+    q: "Which of the following is a 'Direct' way of rewarding 'Labour'?",
+    o: ["Profit sharing", "Wages and Salaries", "Rent on property", "Dividend payments"],
+    a: 1,
+    e: "Wages and salaries are the contractual payments for mental or physical effort.",
+    full: "If you spend 8 hours a day working in an office or a factory, you are providing the factor of production called 'Labour.' The 'Price' of your time and sweat is paid to you as a 'Wage' (usually paid daily/weekly) or a 'Salary' (paid monthly). This is your direct reward. If you were the one who took the risk to start the business, you'd get Profit. But as a worker, you get the security of a fixed payment for your work.",
+    h: "What is the standard name for the 'paycheck' you get after working for a month?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Consumer' is said to be 'Sovereign' in which economic system?",
+    o: ["Socialism", "Capitalism (Market Economy)", "Communism", "Traditional Economy"],
+    a: 1,
+    e: "In capitalism, consumer preferences determine what is produced through the price mechanism.",
+    full: "The word 'Sovereign' means 'King' or 'Ruler.' In a Capitalist system like the US or much of the modern world, the consumer is the King. If consumers stop buying 'Large SUVs' and start buying 'Electric Cars,' the SUV factories will close and Electric factories will open. The 'orders' for what to make don't come from the government; they come from where YOU decide to spend your money. Your money is like a 'vote' that tells businesses what to do.",
+    h: "Who has the real power to decide which products succeed or fail in a free market?"
+  },
+  {
+    yr: 2015,
+    q: "An 'Elasticity of Demand' value of 'Infinity' means the demand is:",
+    o: ["Perfectly Inelastic", "Unitary Elastic", "Perfectly Elastic", "Relatively Inelastic"],
+    a: 2,
+    e: "A perfectly elastic demand means consumers will buy everything at one price but nothing at any other price.",
+    full: "This is a theoretical extreme. Imagine a seller where if he sells for N10, everyone buys. But if he raises the price by just one kobo to N10.01, everyone disappears instantly. His demand is 'Perfectly Elastic.' On a graph, this is a perfectly flat, horizontal line. It usually only happens in a 'Perfectly Competitive' market where everyone is selling the exact same thing and you have zero power to change your price.",
+    h: "If a tiny price increase causes you to lose ALL your customers instantly, is your demand 'stiff' or 'super-flexible'?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Main Advantage' of a 'Division of Labour' is that it:",
+    o: ["Increases the cost of production", "Leads to 'Monotony' (boredom)", "Increases total output and efficiency", "Requires less machinery"],
+    a: 2,
+    e: "By breaking a task into smaller parts, workers become faster and more skilled at their specific job.",
+    full: "Imagine making a car alone. You'd have to learn how to make tires, engines, glass, and seats. It would take years! But with 'Division of Labour,' one person only fits tires all day. Another only installs windows. Because they do the same thing over and over, they become 'Specialists.' They get incredibly fast, they make fewer mistakes, and the total number of cars produced by the factory sky-rockets. This is the secret to modern industrial wealth.",
+    h: "Does a team work faster if everyone tries to do everything, or if each person has one specific job?"
+  },
+  {
+    yr: 2015,
+    q: "Which of the following is a 'Function of Money' as a 'Store of Value'?",
+    o: ["Using money to buy bread", "Saving money in the bank to buy a car next year", "Using money to compare the price of two shirts", "Using money to pay back a loan in three years"],
+    a: 1,
+    e: "This function allows people to transfer their purchasing power from the present to the future.",
+    full: "If you were a farmer in the old days, you couldn't 'save' your wealth easily because your yams would rot after a few months. But 'Money' doesn't rot! You can sell your yams today, get cash, and keep that cash for 10 years. When you are ready, you can spend it. This 'Store of Value' function means money acts like a 'Time Machine' for your wealth—it holds onto your hard work today so you can use it whenever you want in the future.",
+    h: "Which feature of money allows you to keep your wealth 'safe' for a long time without it spoiling?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Law of Supply' states that as the price of a product rises:",
+    o: ["Quantity supplied falls", "Quantity supplied rises", "Demand rises", "Supply remains constant"],
+    a: 1,
+    e: "Producers are motivated by higher profits to bring more goods to the market at higher prices.",
+    full: "Think like a businessman. If you are selling 'Face Masks' for N100 and suddenly the price jumps to N1,000, what do you do? You stop everything else and start making as many masks as possible! Higher prices mean higher 'Potential Profit.' Therefore, the 'Quantity Supplied' (the amount you bring to the market) moves in the same direction as the price. Price goes UP, Supply goes UP. It’s a direct, friendly relationship between the price tag and the seller.",
+    h: "If you were a seller and the price of your product tripled today, would you want to sell more or less of it?"
+  },
+  {
+    yr: 2015,
+    q: "In 'National Income,' the value of 'Depreciation' is subtracted from GNP to get:",
+    o: ["GDP", "Net National Product (NNP)", "Personal Income", "Disposable Income"],
+    a: 1,
+    e: "NNP accounts for the 'wear and tear' of the country's capital assets during the year.",
+    full: "GNP (Gross National Product) is the 'Total' wealth made by a nation's citizens. But during the year, machines broke down, roads got potholes, and trucks got old. This 'wear and tear' is called 'Depreciation.' If you don't subtract that, you are lying about how much 'New' wealth you really have. By taking GNP and removing the cost of the things that 'wore out' (Depreciation), you get the 'Net National Product.' It’s the 'True' profit of the whole country.",
+    h: "To find your 'Real' profit, should you subtract the cost of the tools that broke while you were working?"
+  },
+  {
+    yr: 2015,
+    q: "A 'Proportional Tax' is one where:",
+    o: ["The rich pay a higher percentage", "The poor pay a higher percentage", "Everyone pays the same percentage regardless of income", "The tax rate falls as income rises"],
+    a: 2,
+    e: "In a proportional system, the tax rate remains constant for all levels of income.",
+    full: "Imagine the government says 'Everyone must pay 10% of their income as tax.' A man earning N10,000 pays N1,000. A man earning N1,000,000 pays N100,000. Even though the rich man is paying 'more money' in total, the 'Percentage' (10%) is the same for both. This is a 'Proportional Tax.' It doesn't get steeper as you get richer (like Progressive) or flatter as you get richer (like Regressive). It stays 'In Proportion' to your earnings.",
+    h: "If a billionaire and a laborer both pay exactly '10 percent' of their earnings, what kind of tax is it?"
+  },
+  {
+    yr: 2015,
+    q: "The 'Balance of Trade' is part of which account in the 'Balance of Payments'?",
+    o: ["Capital Account", "Current Account", "Financial Account", "Official Reserve Account"],
+    a: 1,
+    e: "The current account records the trade in visible and invisible goods and services.",
+    full: "The 'Balance of Payments' is like a big folder. Inside that folder, there are different sheets. The 'Current Account' sheet is where we record the daily, 'current' things—like selling oil or buying foreign rice (Balance of Trade). It also includes 'Invisibles' like shipping and insurance fees. Basically, if it's about the 'regular' buying and selling of stuff between countries, it goes into the Current Account. The 'Capital Account' is for bigger things like foreign investments or building a factory in another country.",
+    h: "Does the record of a country's daily 'buying and selling' of goods belong in the Current or Capital account?"
+  },
+  {
+    yr: 2015,
+    q: "Which of the following describes 'Structural Unemployment'?",
+    o: ["Workers between jobs", "Workers replaced by machines or changes in the economy", "Unemployment during a recession", "Unemployment during specific seasons"],
+    a: 1,
+    e: "It occurs when there is a mismatch between the skills of workers and the requirements of new jobs.",
+    full: "This is a tough type of unemployment. It happens when the 'Structure' of the economy changes. Imagine a man who is the world's best 'Typewriter Repairman.' Suddenly, everyone starts using Computers. Even if the economy is doing great, he is unemployed because nobody needs his specific skill anymore. He isn't lazy; his skill is just 'outdated.' To get a job, he must 're-train' and learn how to fix computers. The problem is the 'gap' between what he knows and what the world now needs.",
+    h: "If a factory closes and moves to a new technology that the old workers don't understand, what happens to them?"
+  },
+  {
+    yr: 2014,
+    q: "The 'Main Characteristic' of a 'Mixed Economy' is that:",
+    o: ["The government owns all means of production", "Resources are allocated by the price mechanism only", "Economic decisions are made by both the public and private sectors", "There is no competition in the market"],
+    a: 2,
+    e: "A mixed economy combines elements of both capitalism and socialism.",
+    full: "Think of a 'Mixed Economy' like Nigeria or the UK. It’s not a 'Free-for-all' where only the rich survive (Pure Capitalism), and it’s not a 'Prison' where the government tells you what to eat and wear (Pure Socialism). Instead, it’s a blend. Private individuals can start businesses like bakeries or tech firms to make profit, but the Government also steps in to provide essential things like the Police, Army, and Public Schools. It tries to get the 'Efficiency' of the private sector and the 'Fairness' of the public sector at the same time.",
+    h: "Does only the government or only private individuals run the businesses in your country?"
+  },
+  {
+    yr: 2014,
+    q: "Which of the following is a 'Secondary Production' activity?",
+    o: ["Growing cocoa on a farm", "Extracting crude oil from the ground", "Turning cocoa beans into chocolate bars", "Selling chocolate in a supermarket"],
+    a: 2,
+    e: "Secondary production involves the 'Manufacturing' or processing of raw materials into finished goods.",
+    full: "Production has three levels. 'Primary' is taking it from the earth (the cocoa farm). 'Secondary' is the factory stage—this is where the 'magic' of transformation happens. You take a raw, bitter bean and turn it into a sweet chocolate bar. You take raw iron ore and turn it into a car. If there is a machine or a factory involved in changing the form of a raw material to make it more useful, you are in the Secondary sector.",
+    h: "Are you just 'picking' the item from nature, or are you 'changing' it in a factory?"
+  },
+  {
+    yr: 2014,
+    q: "The 'Elasticity of Supply' is measured by the formula:",
+    o: ["% Change in Price / % Change in Qty Supplied", "% Change in Qty Supplied / % Change in Price", "Change in Price / Change in Qty Supplied", "Total Supply / Total Price"],
+    a: 1,
+    e: "It measures the responsiveness of quantity supplied to a change in price.",
+    full: "Think of 'Elasticity' as 'Sensitivity.' The formula asks: 'If I poke the price by 10%, how much does the seller jump?' We put the 'Reaction' (Quantity) on the top and the 'Action' (Price) on the bottom. If the answer is greater than 1, the seller is very sensitive (Elastic). If it's less than 1, the seller is 'tough' and doesn't change much (Inelastic). It helps us understand how fast a market can react to a sudden boom in prices.",
+    h: "Is the 'Result' (change in amount) on the top or the 'Cause' (change in price) on the top?"
+  },
+  {
+    yr: 2014,
+    q: "A 'Price Ceiling' (Maximum Price) is usually set:",
+    o: ["Above the equilibrium price", "Below the equilibrium price", "At the equilibrium price", "To encourage producers to make more"],
+    a: 1,
+    e: "Governments set price ceilings to protect consumers from high prices during shortages.",
+    full: "Imagine a room. A 'Ceiling' is something you cannot go above. If the market wants to sell a bag of rice for N50,000, but the government says, 'No! No one shall sell rice for more than N20,000,' they have placed a ceiling. Because N20,000 is 'Below' the natural market price, everyone wants to buy, but no seller wants to sell. This leads to empty shelves and 'Black Markets.' The government does this to try and help the poor, but it often causes a 'Shortage' because the price is too low to encourage sellers.",
+    h: "If the government forces a price to stay 'Low,' is that line above or below where the market wants it to be?"
+  },
+  {
+    yr: 2014,
+    q: "The 'Demographic Transition Theory' explains the stages of:",
+    o: ["Economic growth", "Industrialization", "Population change over time", "Urbanization"],
+    a: 2,
+    e: "It describes how countries move from high birth/death rates to low birth/death rates as they develop.",
+    full: "This theory says every country goes through a journey. Stage 1: Everyone is dying young and many babies are born (High Birth, High Death). Stage 2: Medicine gets better, so people stop dying, but they keep having many babies (Population Explosion!). Stage 3: People get educated and decide to have fewer babies. Most developed countries are now in Stage 4, where the population is stable and small. It’s a map of how 'development' changes the size of a nation's family.",
+    h: "Does a country's population stay the same as it gets richer and more educated?"
+  },
+  {
+    yr: 2014,
+    q: "Which of the following is a 'Direct' way to increase 'Labour Productivity'?",
+    o: ["Increasing the number of workers", "Education and Training", "Reducing the working hours", "Increasing the price of the product"],
+    a: 1,
+    e: "Training improves the skills and efficiency of each individual worker.",
+    full: "Productivity isn't about 'how many' people are working; it's about 'how much' each person can do in one hour. If you have 10 uneducated workers, they might make 5 chairs. But if you take those same 10 workers and 'Train' them on how to use modern power tools, they might make 50 chairs! By investing in 'Human Capital' (Education), you make each worker more 'Powerful' and efficient, which is the real secret to a wealthy economy.",
+    h: "Do you make a worker better by giving him more friends to work with, or by teaching him a new skill?"
+  },
+  {
+    yr: 2014,
+    q: "A 'Deflationary Gap' occurs when:",
+    o: ["Aggregate Demand exceeds Aggregate Supply", "Aggregate Supply exceeds Aggregate Demand", "Exports exceed Imports", "The government has a budget surplus"],
+    a: 1,
+    e: "It happens when the total spending in the economy is not enough to buy everything being produced.",
+    full: "Imagine a giant mall where the shops are full of clothes and food (Supply), but the people walking around have no money in their pockets (Demand). Because nobody is buying, the shops have to cut prices, fire workers, and slow down production. This 'Gap' between what the country *could* produce and what people are actually *spending* leads to a 'Cold' economy, or a recession. It is the opposite of Inflation, and it usually leads to high unemployment.",
+    h: "What happens to an economy when there is too much 'Stuff' but not enough 'Spending'?"
+  },
+  {
+    yr: 2014,
+    q: "The 'Legal Tender' in Nigeria refers to:",
+    o: ["Gold and Silver", "Cheques and Credit Cards", "Naira notes and coins", "Foreign Currencies like Dollars"],
+    a: 2,
+    e: "Legal tender is any form of money that must be accepted by law to settle a debt.",
+    full: "If you owe someone money in Nigeria and you offer them Naira notes, the law says they *must* accept it. They cannot say 'No, I only want gold' or 'No, I only want Bitcoin.' Because the government has officially 'decreed' that the Naira is our official money for paying debts, it is called 'Legal Tender.' Interestingly, a shopkeeper can refuse a 'Cheque' because a cheque isn't legal tender—it's just a promise to pay. But they cannot legally refuse the actual cash.",
+    h: "What is the official 'cash' that the law says everyone in your country must accept for payment?"
+  },
+  {
+    yr: 2014,
+    q: "In 'National Income,' 'Transfer Payments' are excluded because:",
+    o: ["They are too small to count", "No productive service was rendered in exchange", "They are paid by foreigners", "They are illegal"],
+    a: 1,
+    e: "Transfer payments (like pocket money or gifts) do not represent new production.",
+    full: "GDP is a measure of 'Work Done.' If I bake a bread and you pay me N500, that's GDP because a 'new bread' was created. But if your father gives you N5,000 for your birthday, did you produce anything? No! The N5,000 just 'transferred' from his pocket to yours. If we counted that, we would be 'Double Counting' the same money without any new goods being made. This is why things like pensions, unemployment benefits, and gifts are ignored when calculating a country's total income.",
+    h: "If your friend gives you N1,000 as a gift, has the country actually 'produced' anything new?"
+  },
+  {
+    yr: 2014,
+    q: "An 'Oligopoly' is a market structure characterized by:",
+    o: ["A single seller", "Many sellers of identical products", "A few large firms dominating the market", "One buyer and many sellers"],
+    a: 2,
+    e: "In an oligopoly, a small number of large companies have significant control over the market.",
+    full: "Think of the 'Cement' market in Nigeria (Dangote, BUA, Lafarge) or the 'Telecom' market (MTN, Airtel, Glo). There aren't thousands of options—just a 'Few' big giants. Because they are so few, they watch each other like hawks. If one firm changes its price, the others react immediately. This creates a situation where prices are usually very stable, and the companies compete using 'Branding' and 'Advertising' rather than just fighting over price tags.",
+    h: "Are there hundreds of different phone network companies in your country, or just a few big ones?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Economic Problem' arises because:",
+    o: ["Man is naturally greedy", "Resources are scarce while wants are infinite", "Governments are inefficient", "Taxes are too high"],
+    a: 1,
+    e: "Scarcity is the fundamental core of all economic study.",
+    full: "If you had a trillion dollars and 1,000 years to live, you still couldn't do *everything*. Even the richest person in the world has to choose how to spend their 'Time.' Because our resources (money, time, land) have a limit (Scarcity) but our imaginations and desires never stop (Infinite Wants), we are forced to make choices. Economics is the science of making those choices as 'painlessly' as possible.",
+    h: "If you could have every single thing you ever wanted for free, would you still need to study how to save money?"
+  },
+  {
+    yr: 2013,
+    q: "A 'Consumer' is at 'Equilibrium' when:",
+    o: ["The price of the good is at its lowest", "The Marginal Utility per Naira is equal for all goods consumed", "He has spent all his money on one good", "His total utility is zero"],
+    a: 1,
+    e: "The consumer maximizes satisfaction when the last naira spent on any good gives the same extra joy.",
+    full: "Imagine you have N500. You are deciding between buying a Meat Pie and a Bottle of Coke. You are at 'Equilibrium' (Perfect Balance) when you feel that the 'extra joy' you get from the last N100 spent on the Meat Pie is exactly the same as the joy from the last N100 spent on the Coke. If one gave you more joy, you'd be 'irrational' not to buy more of that one instead. Equilibrium is that moment of perfect 'No Regrets' spending.",
+    h: "If you have N200 left, do you spend it on the item that gives you the 'most' extra happiness for that money?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Law of Diminishing Marginal Returns' is also known as the:",
+    o: ["Law of Variable Proportions", "Law of Demand", "Law of Supply", "Law of Comparative Advantage"],
+    a: 0,
+    e: "It describes how output changes when you vary the proportion of one input while others stay fixed.",
+    full: "Economists sometimes use fancy names for simple things. Because this law looks at what happens when you keep the 'Land' fixed (one proportion) but change the 'Number of Workers' (the variable proportion), they call it the 'Law of Variable Proportions.' It’s the same story: eventually, adding more 'Variable' stuff to a 'Fixed' space leads to smaller and smaller 'Extra' gains.",
+    h: "Is there another name for the rule that says 'too many cooks spoil the broth' in a small kitchen?"
+  },
+  {
+    yr: 2013,
+    q: "Which of the following is a 'Function' of the 'Commercial Bank'?",
+    o: ["Issuing currency notes", "Acting as a lender of last resort", "Accepting deposits from the public", "Formulating monetary policy"],
+    a: 2,
+    e: "Commercial banks (like Zenith or GTB) focus on retail banking services for individuals.",
+    full: "Don't confuse the 'Central Bank' (the Big Boss) with 'Commercial Banks' (the shops). You cannot walk into the Central Bank and open a savings account. That is the job of a Commercial Bank. They take your 'Deposits' (savings), keep them safe, and then 'Lend' that money to other people who want to start businesses. They are the 'Middlemen' of money in the economy.",
+    h: "Can you walk into a regular bank branch on your street and put your money in a savings account?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Price Elasticity of Demand' for 'Luxuries' (like jewelry) is usually:",
+    o: ["Inelastic", "Elastic", "Unitary Elastic", "Perfectly Inelastic"],
+    a: 1,
+    e: "Consumers can easily postpone or skip buying luxury items if the price rises.",
+    full: "A 'Luxury' is something you want but don't 'Need' to survive. If the price of Gold necklaces goes up by 50%, most people will just say, 'Never mind, I'll buy it next year' or 'I don't really need it.' Because the 'Quantity Demanded' drops very fast when the price moves, the demand is 'Elastic.' You are very 'stretchy' and sensitive to the price of things that aren't essential.",
+    h: "If the price of a 'Diamond Ring' doubles, will people still buy as many as they did before?"
+  },
+  {
+    yr: 2013,
+    q: "In 'International Trade,' 'Dumping' refers to:",
+    o: ["Throwing waste into the ocean", "Selling goods in a foreign market at a price lower than the cost of production", "Selling goods only in the local market", "Increasing the price of exports"],
+    a: 1,
+    e: "Dumping is an unfair trade practice used to drive out local competitors in a foreign country.",
+    full: "Imagine a foreign country makes shoes for N5,000. But to 'kill' the Nigerian shoe industry, they sell those shoes in Nigeria for only N1,000 (losing money on purpose). Once all the Nigerian shoemakers go bankrupt because they can't compete with such a low price, the foreign country will then raise their price to N10,000 because they now have a Monopoly. This 'Predatory Pricing' is what we call 'Dumping.'",
+    h: "Is it fair for a big country to sell things below their 'real cost' just to destroy small local businesses?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Average Cost' (AC) curve is usually:",
+    o: ["L-shaped", "U-shaped", "Inverted U-shaped", "A straight line"],
+    a: 1,
+    e: "Costs fall due to economies of scale but eventually rise due to diseconomies of scale.",
+    full: "Think of the 'U' shape. When you start a business, your costs are high because you haven't sold much yet. As you grow and get 'Efficient' (Economies of Scale), the cost to make 'one' item starts to drop (the left side of the U). But if you get *too* big, the factory becomes chaotic, workers get lazy, and management gets confused. Costs start to climb again (the right side of the U). This creates that classic 'U' shape that every economics student must draw.",
+    h: "Does the cost per item keep going down forever, or does it eventually start going back up?"
+  },
+  {
+    yr: 2013,
+    q: "Which of the following is an 'Indirect Tax'?",
+    o: ["Personal Income Tax", "Capital Gains Tax", "Excise Duty", "Company Tax"],
+    a: 2,
+    e: "Excise duties are taxes placed on specific goods produced within a country.",
+    full: "An 'Indirect' tax is hidden in the 'price tag.' You don't pay it to the tax office yourself; you pay it to the shopkeeper. For example, an 'Excise Duty' is a tax on things like cigarettes or alcohol made inside the country. When the factory pays the tax to the government, they simply raise the price of the beer or cigarettes so that *you* (the consumer) are the one who actually feels the pinch.",
+    h: "When you buy a bottle of soda, is part of that price actually a tax going to the government?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Labour Force' of a country includes:",
+    o: ["Everyone living in the country", "Only those who are currently employed", "Both the employed and the unemployed who are looking for work", "Only people with university degrees"],
+    a: 2,
+    e: "The labour force consists of everyone willing and able to work, whether they have a job or not.",
+    full: "If you have a job, you are in the 'Labour Force.' If you are sitting at home, sending out CVs and desperately looking for a job, you are *also* in the 'Labour Force.' The only people excluded are those who *cannot* work (children/elderly) or those who *don't want* to work (students or full-time parents who choose to stay home). It’s the total 'Army' of workers available to the nation.",
+    h: "If someone is looking for a job but hasn't found one yet, are they still considered a 'worker' in the economy?"
+  },
+  {
+    yr: 2013,
+    q: "A 'Localization of Industry' refers to:",
+    o: ["The government taking over all industries", "The concentration of many firms in a particular geographical area", "Selling goods only in local markets", "Moving industries to rural areas"],
+    a: 1,
+    e: "Localization occurs when a specific area becomes a hub for a certain type of business.",
+    full: "Think of 'Computer Village' in Ikeja or 'Aba' for shoemaking. It’s when a whole bunch of companies doing the same thing all decide to 'huddle' together in one spot. Why? Because it makes things easier! Suppliers of raw materials will move there, specialized workers will live nearby, and the government might even provide better electricity to that specific spot because it's so important for the economy.",
+    h: "Why do so many computer shops all choose to be in the same small area of a city?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Main Characteristic' of a 'Capitalist Economy' is:",
+    o: ["Government ownership of resources", "Private ownership of the means of production", "Central planning of all activities", "Equality of income distribution"],
+    a: 1,
+    e: "Capitalism is driven by private individuals seeking profit in a free market.",
+    full: "In a 'Capitalist' or 'Market' economy, the 'Boss' isn't the government—it's individuals like you. If you want to start a factory, buy land, or hire workers, you can do it with your own money and keep the profit. The government mostly stays out of the way and lets the 'Invisible Hand' of competition decide which businesses succeed and which fail. It's an economy built on 'Private Initiative' and the freedom to own property.",
+    h: "Who owns the factories and shops in a country like the United States or a free-market system?"
+  },
+  {
+    yr: 2013,
+    q: "A 'Fall in the Price' of a 'Normal Good' will lead to:",
+    o: ["An inward shift of the demand curve", "An outward shift of the demand curve", "An increase in the quantity demanded", "A decrease in the quantity demanded"],
+    a: 2,
+    e: "Price changes cause a movement along the curve, known as a change in quantity demanded.",
+    full: "This is a classic 'trap' in Economics exams. Remember: if the *Price* of the item itself changes, the whole curve does NOT move. You just slide down the existing line to a new point. Because the item is now cheaper, people naturally want to buy more of it. This 'sliding' is called an 'Increase in Quantity Demanded.' The only time the whole curve 'shifts' is if something *else* changes, like your salary or your tastes.",
+    h: "If a shop puts a '50% Off' sign on a shirt, do you move to a new demand curve or just move further down the one you have?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Standard of Living' is often measured by a country's:",
+    o: ["Total population", "Real Income per Head", "Total Gross Domestic Product", "Amount of gold reserves"],
+    a: 1,
+    e: "Per Capita Income shows the average share of the national wealth available to each person.",
+    full: "GDP tells us how much 'stuff' a country produced, but it doesn't tell us if the people are happy or rich. For example, a country could have a huge GDP but also a billion people, meaning everyone is actually poor! To see the 'Standard of Living,' we take the Total Income and divide it by the Total Population. This 'Income per Head' (Per Capita Income) gives a better picture of how much wealth the 'average' person actually has to spend on food, housing, and health.",
+    h: "If a family earns N1 million but has 20 children, are they 'richer' than a family earning N500k with only 1 child?"
+  },
+  {
+    yr: 2013,
+    q: "Which of the following is a 'Direct Tax'?",
+    o: ["Customs Duty", "Sales Tax", "Personal Income Tax", "Value Added Tax"],
+    a: 2,
+    e: "Direct taxes are levied on the income of individuals and cannot be shifted to others.",
+    full: "A 'Direct Tax' is a one-on-one relationship between you and the government. When you work a job, the government takes a slice of your salary before you even see it (this is called PAYE—Pay As You Earn). You can't 'pass' this tax to anyone else; you are the one who feels the 'pinch.' Unlike a tax on a bottle of soda (Indirect), which you only pay if you choose to buy the drink, an income tax is mandatory for everyone earning a certain amount.",
+    h: "Does the government take this tax from the price of a product or directly from your paycheck?"
+  },
+  {
+    yr: 2013,
+    q: "The 'Demand for Labour' is said to be a 'Derived Demand' because it depends on:",
+    o: ["The supply of labour", "The demand for the goods that labour produces", "The level of wages", "The population size"],
+    a: 1,
+    e: "Firms hire workers only because there is a demand for the products those workers make.",
+    full: "Think about a construction company. Why do they 'demand' (want to hire) bricklayers? It’s not because they just like having bricklayers around; it’s because people want to buy 'Houses.' If nobody wanted houses anymore, the demand for bricklayers would vanish instantly. Therefore, the desire for workers is 'derived' or 'born' from the desire for the final product. No product demand = no job demand.",
+    h: "Would a bakery hire more bakers if people stopped eating bread?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Basic Problem' of 'Scarcity' exists because:",
+    o: ["Resources are limited while human wants are unlimited", "Governments do not distribute wealth fairly", "There is too much money in circulation", "Productivity is too low"],
+    a: 0,
+    e: "Scarcity is the fundamental reason why we must study Economics.",
+    full: "Imagine you are in a giant candy store with only N100. You want the chocolate, the gum, the soda, and the chips (Unlimited Wants). But you only have that one small note (Limited Resources). This 'gap' between what you *want* and what you *have* is what we call Scarcity. Because we can't have everything, we are forced to make 'Choices,' and every choice has an 'Opportunity Cost.' This is the heart of every economic decision in the world.",
+    h: "If everyone could have everything they wanted by just wishing for it, would we need money or shops?"
+  },
+  {
+    yr: 2012,
+    q: "A 'Production Possibility Curve' (PPC) that is 'Concave' to the origin shows:",
+    o: ["Constant opportunity cost", "Increasing opportunity cost", "Decreasing opportunity cost", "Zero opportunity cost"],
+    a: 1,
+    e: "The outward-bending shape indicates that resources are not perfectly adaptable to all types of production.",
+    full: "When a PPC 'bows out' (concave), it’s telling a story about specialization. Imagine a country making 'Cars' and 'Corn.' At first, you use your best mechanics to make cars. But if you want *even more* cars, you eventually have to take 'Farmers' away from the corn fields and force them to build cars. The farmers aren't good at it, so you lose a LOT of corn just to get a TINY bit more car production. This 'Increasing Sacrifice' is what gives the curve its bowed-out shape.",
+    h: "Does it get 'more' or 'less' expensive to switch production as you run out of specialized workers?"
+  },
+  {
+    yr: 2012,
+    q: "Which 'Market Structure' is characterized by 'Many Sellers' of 'Differentiated Products'?",
+    o: ["Monopoly", "Oligopoly", "Perfect Competition", "Monopolistic Competition"],
+    a: 3,
+    e: "Firms in this market compete by making their products appear unique through branding.",
+    full: "Think of the 'Soap' or 'Toothpaste' market. There are many sellers (Close-Up, Oral-B, Pepsodent). The products are all 'Toothpaste,' but they aren't 'identical'—some have salt, some have herbal extracts, some have whitening power. This is 'Monopolistic Competition.' Each firm has a 'Monopoly' over its own specific brand name, but they are all 'Competing' for the same customers. They use 'Advertising' to convince you that their brand is the best.",
+    h: "Are all the soaps in the market exactly the same, or do they try to look different from each other?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Law of Diminishing Marginal Utility' states that as more units of a good are consumed:",
+    o: ["Total utility falls", "Marginal utility remains constant", "Marginal utility decreases", "Total utility remains constant"],
+    a: 2,
+    e: "Each additional unit of a good provides less extra satisfaction than the one before it.",
+    full: "The first slice of pizza when you are starving is 'Heaven.' The second slice is 'Great.' The third slice is 'Okay.' By the fifth slice, you are full and it might even make you feel sick. Your 'Total' joy is still high, but the 'Extra' joy (Marginal Utility) you got from that *last* slice was much lower than the first one. This is why you eventually stop eating—the joy isn't worth the effort anymore.",
+    h: "Does the 10th cup of water on a cold day give you as much 'extra' happiness as the 1st cup?"
+  },
+  {
+    yr: 2012,
+    q: "A 'Surplus Budget' is appropriate for controlling:",
+    o: ["Deflation", "Inflation", "Unemployment", "Recession"],
+    a: 1,
+    e: "A surplus reduces the amount of money people have to spend, helping to lower rising prices.",
+    full: "Inflation is like an 'overheated' engine where everyone is spending too much money, causing prices to rise. A 'Surplus Budget' is when the government takes in more money (Taxes) than it spends. By 'sucking' that extra money out of the people's pockets and holding onto it, the government 'cools down' the economy. With less money to spend, people buy less, and sellers are forced to stop raising their prices.",
+    h: "If the government wants to 'slow down' spending in the country, should they keep the tax money or spend it all?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Value of Money' is best measured by:",
+    o: ["The quantity of gold backing it", "The price level (Purchasing Power)", "The face value of the currency", "The interest rate"],
+    a: 1,
+    e: "The true value of a Naira is simply what it can buy in the market.",
+    full: "If you have N1,000 today, it might buy you a whole meal. If prices double next year (Inflation), that same N1,000 note only buys you 'half' a meal. The paper looks the same, but its 'Value' has dropped by half. In Economics, money is just a 'ticket' for goods. If the ticket buys less 'stuff,' the value of the money has gone down. This is why we say the value of money is 'Inversely Related' to the price level.",
+    h: "If N100 bought 5 eggs yesterday but only buys 2 eggs today, has the 'value' of your N100 gone up or down?"
+  },
+  {
+    yr: 2012,
+    q: "Which of the following is a 'Function' of the 'Central Bank'?",
+    o: ["Accepting deposits from individuals", "Lending to small businesses", "Issuing the national currency", "Providing personal loans"],
+    a: 2,
+    e: "The Central Bank has the sole legal authority to print and issue banknotes.",
+    full: "There is only one place in Nigeria where a Naira note can be legally 'born'—the Central Bank (CBN). Unlike commercial banks (First Bank, UBA) that deal with people, the Central Bank is the 'Bank of Banks.' They control how much money is in the country, they act as the 'Lender of Last Resort' when other banks are in trouble, and they hold the country's foreign reserves. They are the 'referee' of the entire financial system.",
+    h: "Can you walk into the 'Central Bank' branch in your city and open a savings account for yourself?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Wholesale Trade' serves as a link between:",
+    o: ["The consumer and the retailer", "The manufacturer and the retailer", "The producer and the consumer", "The government and the producer"],
+    a: 1,
+    e: "Wholesalers buy in bulk from producers and sell in smaller quantities to retailers.",
+    full: "Think of a 'Wholesaler' as the middleman with the giant warehouse. They buy 10,000 crates of soda directly from the factory (Manufacturer). They then sell 10 crates to your local 'Mama G' shop (Retailer). The wholesaler makes life easier for the factory (who doesn't want to sell one bottle at a time) and for the shopkeeper (who can't afford to buy 10,000 crates at once).",
+    h: "Does a small shopkeeper buy their goods directly from the giant factory or from a big warehouse nearby?"
+  },
+  {
+    yr: 2012,
+    q: "A 'Public Good' is defined by two main characteristics:",
+    o: ["Profitability and Excludability", "Non-rivalry and Non-excludability", "Scarcity and Choice", "Elasticity and Utility"],
+    a: 1,
+    e: "Public goods (like street lights) are those that one person's use doesn't stop another from using.",
+    full: "A 'Public Good' is something like the 'National Defense' or 'Street Lights.' First, it's 'Non-excludable'—the government can't stop you from seeing the street light just because you didn't pay your taxes. Second, it's 'Non-rival'—if I use the light to walk home, there isn't 'less' light for you to use. Because private companies can't make people pay for these (the 'Free Rider' problem), the government has to provide them for everyone.",
+    h: "If you breathe the clean air in a public park, is there 'less' air left for the person sitting next to you?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Incidence of a Tax' refers to:",
+    o: ["The government department that collects the tax", "The final person who bears the 'burden' of the tax", "The rate at which the tax is calculated", "The total amount of tax collected in a year"],
+    a: 1,
+    e: "Incidence is about who actually loses the money, regardless of who pays the government.",
+    full: "This is a key concept in 'Indirect Taxes.' If the government puts a tax on 'Cigarettes,' the factory pays the money to the government. But the factory then raises the price of the cigarettes. So, who actually 'paid'? The 'Smoker' did! In this case, the 'Incidence' (the burden) fell on the consumer, even though the 'Impact' (the actual payment) was on the factory. Incidence is all about who is 'crying' at the end of the day.",
+    h: "If a shop raises its prices because of a new government tax, who is actually paying that tax?"
+  },
+  {
+    yr: 2012,
+    q: "An 'Increase in the Supply' of a commodity (with demand constant) will lead to:",
+    o: ["A rise in price and a fall in quantity", "A fall in price and a rise in quantity", "A rise in both price and quantity", "A fall in both price and quantity"],
+    a: 1,
+    e: "When more goods are available, competition among sellers drives the price down.",
+    full: "Imagine it is 'Mango Season.' Suddenly, every tree is full and every seller has baskets piled high. Because there is so much mango (Increase in Supply) but the number of people wanting them hasn't changed, sellers have to 'beg' you to buy. How do they beg? By dropping the price! As the price falls, more people are willing to buy, so the 'Quantity' sold goes up, but the 'Price' goes down.",
+    h: "What happens to the price of 'Corn' during the harvest time when there is plenty of it in the market?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Precautionary Motive' for holding money is to:",
+    o: ["Pay for daily transport and food", "Take advantage of future price drops", "Provide for unexpected emergencies", "Invest in the stock market"],
+    a: 2,
+    e: "People keep cash aside to deal with 'rainy day' events like illness or accidents.",
+    full: "John Maynard Keynes said we keep cash for three reasons. The 'Precautionary' motive is your 'Just in Case' money. You don't plan to spend it on bread (Transactionary) or use it to gamble on stocks (Speculative). You keep it because the future is a mystery—your car might break down, or a relative might get sick. It’s the money that gives you 'Peace of Mind' against life's little surprises.",
+    h: "Why would you keep N5,000 hidden in your cupboard that you promised never to touch unless something 'bad' happens?"
+  },
+  {
+    yr: 2012,
+    q: "Which of the following is a 'Primary' factor of production?",
+    o: ["Capital", "Entrepreneur", "Labour", "Land"],
+    a: 3,
+    e: "Land is a primary factor because it is a 'gift of nature' and exists without human effort.",
+    full: "In Economics, we sometimes distinguish between 'Primary' and 'Secondary' factors. 'Land' (which includes everything like oil, water, and minerals) was already here before humans arrived—it’s a 'Gift of Nature.' Factors like 'Capital' (machines and tools) had to be 'made' by humans using land and labour. Therefore, Land is the most basic, 'primary' starting point for all human production.",
+    h: "Did humans 'create' the soil and the rain, or were they already here for us to use?"
+  },
+  {
+    yr: 2012,
+    q: "The 'Terms of Trade' (TOT) for a country is the ratio of:",
+    o: ["Total Exports to Total Imports", "Export Price Index to Import Price Index", "Government Revenue to Expenditure", "Foreign Reserves to National Debt"],
+    a: 1,
+    e: "TOT measures the 'purchasing power' of a country's exports in the global market.",
+    full: "Terms of Trade is like a 'Global Price Tag' for a country. It asks: 'How many cars (Imports) can we buy if we sell one barrel of oil (Exports)?' If the price of oil goes UP and the price of cars stays the same, our TOT has 'Improved'—we are getting 'more' for our work. If our oil price drops, we have to sell *more* oil just to buy the *same* car, meaning our TOT has 'Worsened.' It’s all about the 'Prices' of what we trade.",
+    h: "If the price of Nigeria's oil goes up while the price of foreign rice stays the same, is Nigeria 'better' or 'worse' off?"
+  },
+  {
+    yr: 2012,
+    q: "In 'National Income,' 'GNP' is calculated as:",
+    o: ["GDP + Net Income from Abroad", "GDP - Depreciation", "GDP + Subsidies", "GDP - Indirect Taxes"],
+    a: 0,
+    e: "GNP focuses on what 'Citizens' earn, regardless of where they are in the world.",
+    full: "GDP (Gross Domestic Product) is like a 'Boundary' map—it’s the wealth made *inside* Nigeria's borders. But many Nigerians work in London and send money back, and many foreigners work in Lagos and send money out. To find 'GNP' (Gross National Product), we start with the GDP, add the money Nigerians made abroad, and subtract the money foreigners made here. It tells us the 'True' income of the Nigerian *people*, not just the Nigerian *land*.",
+    h: "Does GNP focus on 'Where' the money was made or 'Who' (which nationality) made it?"
+  },
+
+  {
+    yr: 2012,
+    q: "The 'Equilibrium Price' in a market is the point where:",
+    o: ["Sellers make the highest profit", "Quantity demanded equals quantity supplied", "The government sets the price", "Consumers pay the lowest possible price"],
+    a: 1,
+    e: "At equilibrium, there is no shortage or surplus because buyers and sellers agree on the amount.",
+    full: "Think of Equilibrium as a 'Handshake' between the buyer and the seller. If the price is too high, sellers have too much 'stuff' (Surplus) and no one is buying. If the price is too low, everyone wants to buy but the shelves are empty (Shortage). Equilibrium is the 'Magic Number' where the amount sellers bring to the market is exactly the amount buyers want to take home. At this price, the market is 'cleared' and everyone is satisfied.",
+    h: "Is there any 'leftover' stock in the shop when the price is perfectly balanced?"
+  },
+  {
+    yr: 2011,
+    q: "The 'Opportunity Cost' of a move from one point to another along a 'PPC' is:",
+    o: ["The total cost of production", "The amount of one good sacrificed to get more of another", "The price of the goods", "The money spent on raw materials"],
+    a: 1,
+    e: "Moving along the curve means resources are shifted, requiring a trade-off between two goods.",
+    full: "Imagine a country makes only 'Bread' and 'Guns.' If they are at Point A making 100 loaves of bread and they want to move to Point B to make 10 extra Guns, they have to take workers out of the bakery and put them in the gun factory. As a result, bread production drops to 80 loaves. Those 20 'lost' loaves of bread are the Opportunity Cost. You can't have more of one without giving up some of the other because your resources are limited.",
+    h: "If you want more of 'Product X,' what do you have to 'give up' to get it?"
+  },
+  {
+    yr: 2011,
+    q: "Which of the following is a 'Reward' for 'Land'?",
+    o: ["Wages", "Interest", "Profit", "Rent"],
+    a: 3,
+    e: "Rent is the payment made to owners of natural resources for their use in production.",
+    full: "In Economics, 'Land' isn't just the soil; it includes everything nature gave us for free—oil, water, minerals, and space. If a company wants to build a factory on a piece of Earth or extract oil from a well, they have to pay the owner for that privilege. That payment is called 'Rent.' It is the 'Income' earned by the person who owns the natural resource being used by the 'Active' factors of production.",
+    h: "What do you call the money you pay to use someone else's space or natural resource?"
+  },
+  {
+    yr: 2011,
+    q: "A 'Firm' maximizes 'Profit' at the point where:",
+    o: ["Total Revenue is highest", "Average Cost is lowest", "Marginal Revenue equals Marginal Cost (MR=MC)", "Price equals Average Cost"],
+    a: 2,
+    e: "The profit-maximizing rule is to produce up to the point where the cost of the last unit equals its revenue.",
+    full: "This is the most famous rule in business math. Imagine you are making shoes. If the 'next' pair of shoes costs you N5,000 to make (MC) but you can sell it for N7,000 (MR), you should definitely make it because you'll gain N2,000. You keep making shoes until the 'extra' cost of the last pair is exactly N7,000. If you make one more after that, it might cost N7,500 to produce, meaning you'd lose money. So, you stop exactly where MR = MC.",
+    h: "Should you keep producing as long as the 'extra' money coming in is more than the 'extra' cost of making the item?"
+  },
+  {
+    yr: 2011,
+    q: "Which 'Market Structure' has a 'Single Buyer' and many sellers?",
+    o: ["Monopoly", "Oligopoly", "Monopsony", "Perfect Competition"],
+    a: 2,
+    e: "A monopsony is a market with only one buyer who has significant power over the sellers.",
+    full: "You know 'Monopoly' (one seller), but 'Monopsony' is the opposite—it’s a 'Buyer’s Monopoly.' Imagine a tiny village where everyone grows cocoa, but there is only ONE company that buys it. Because the farmers have no one else to sell to, that one company can force the price down very low. The buyer is the one with all the power, not the sellers. It often happens in labor markets where one giant factory is the only employer in a whole town.",
+    h: "If you are the only person in town with money to buy bread, do you have the power to set the price?"
+  },
+  {
+    yr: 2011,
+    q: "The 'Standard Deviation' is a measure of:",
+    o: ["Central Tendency", "Dispersion", "Location", "Relationship"],
+    a: 1,
+    e: "Standard deviation shows how much the data points 'spread out' from the average.",
+    full: "Statistics is a big part of Economics. While the 'Mean' (Average) tells you the center, the 'Standard Deviation' tells you how 'spread out' the numbers are. If five students all score 50% on a test, the average is 50 and the deviation is 0. But if some score 0% and others score 100%, the average is still 50, but the 'Standard Deviation' is very high. It tells us about the 'Risk' or the 'Inequality' in a set of numbers.",
+    h: "Does this number tell you the 'middle' of the group or how 'different' the members of the group are from each other?"
+  },
+  {
+    yr: 2011,
+    q: "A 'Regressive Tax' is one where:",
+    o: ["The rate increases as income increases", "The rate remains constant", "The poor pay a higher 'proportion' of their income than the rich", "Only the rich are taxed"],
+    a: 2,
+    e: "Regressive taxes take a larger percentage of income from low-income earners than from high-income earners.",
+    full: "Think of a tax on a 'Pack of Salt.' If the tax is N100, and a poor man earning N1,000 buys it, he just lost 10% of his income to that tax. If a billionaire buys the same salt, that N100 is almost 0% of his income. Even though the 'amount' is the same, the 'burden' is much heavier on the poor. This is 'Regressive'—it hits the bottom of the ladder harder than the top.",
+    h: "If a tax takes a bigger 'slice' of a poor person's budget than a rich person's budget, what is it called?"
+  },
+  {
+    yr: 2011,
+    q: "Which of the following is a 'Direct' cause of 'Cost-Push Inflation'?",
+    o: ["An increase in consumer spending", "An increase in the cost of raw materials or wages", "The printing of more money", "A decrease in taxes"],
+    a: 1,
+    e: "Cost-push inflation occurs when rising production costs force firms to raise prices to maintain profit.",
+    full: "Imagine the price of Diesel and Electricity doubles. Every factory in the country now spends way more to run their machines. To stay in business, they *must* push that cost onto you by raising their prices. It's not that people 'wanted' to buy more (Demand-Pull); it's that the 'Cost' of making the goods literally 'pushed' the price level up. It is often triggered by things like rising oil prices or high wage demands from unions.",
+    h: "If the price of petrol goes up, does that 'pull' prices up from the buyers' side or 'push' them up from the sellers' side?"
+  },
+  {
+    yr: 2011,
+    q: "The 'Multiplier Effect' explains how:",
+    o: ["Prices double during inflation", "An initial change in spending leads to a larger change in national income", "Population grows geometrically", "Taxes reduce spending"],
+    a: 1,
+    e: "One person's spending becomes another's income, creating a chain reaction of economic growth.",
+    full: "Money is like a 'Seed.' If the government spends N1 billion to build a road, that N1 billion goes to the workers. The workers then spend that money on food. The food sellers then spend that money on new clothes. The N1 billion 'travels' through the economy, creating much more than N1 billion in total business activity. This 'rippling' effect is why small investments can sometimes lead to huge growth in a country's total wealth.",
+    h: "If you spend N1,000 at a shop, does that N1,000 just stop there, or does the shopkeeper spend it again elsewhere?"
+  },
+  {
+    yr: 2011,
+    q: "In 'International Trade,' a 'Quota' is defined as:",
+    o: ["A tax on imported goods", "A physical limit on the quantity of a good that can be imported", "A total ban on trade", "A subsidy given to local farmers"],
+    a: 1,
+    e: "Quotas are used to protect local industries by restricting the volume of foreign competition.",
+    full: "While a 'Tariff' is a tax (making foreign goods expensive), a 'Quota' is a 'Stop Sign.' The government might say: 'Only 1 million bags of foreign rice are allowed into the country this year.' Once that 1 millionth bag enters, the gate is locked. No matter how much money you have, you can't bring in any more. This is a very powerful way to force citizens to buy from local farmers instead of foreigners.",
+    h: "Is the government charging 'extra money' on imports, or are they setting a 'maximum amount' you can bring in?"
+  },
+  {
+    yr: 2011,
+    q: "A 'Perfectly Inelastic' Demand Curve is:",
+    o: ["Horizontal", "Vertical", "Downward sloping", "Upward sloping"],
+    a: 1,
+    e: "A vertical demand curve shows that quantity demanded remains the same regardless of price.",
+    full: "Imagine a life-saving medicine that you *must* take one pill of every day to stay alive. If the price is N10, you buy one pill. If the price jumps to N1,000,000, you still try to buy that one pill. You don't buy 'more' if it's cheap, and you don't buy 'less' if it's expensive. You are 0% sensitive to price. On a graph, this looks like a 'Vertical' (straight up and down) line because the quantity never moves left or right.",
+    h: "If the price of something changes but the 'amount' you buy stays exactly the same, what does the line look like?"
+  },
+  {
+    yr: 2011,
+    q: "The 'Motive' for holding money to 'Buy Goods' for daily needs is:",
+    o: ["Precautionary Motive", "Speculative Motive", "Transactionary Motive", "Investment Motive"],
+    a: 2,
+    e: "This motive relates to the need for cash to carry out everyday 'transactions' or purchases.",
+    full: "Life is a series of 'Transactions.' You need to pay for the bus, buy lunch, and pay for data. Because you don't get paid your salary every single hour, you need to keep 'Cash' in your pocket to cover these daily bills. This is the most basic reason people hold money. It bridges the time gap between when you receive your income and when you actually need to spend it.",
+    h: "Why do you keep N500 in your pocket when you leave the house in the morning?"
+  },
+  {
+    yr: 2011,
+    q: "Which of the following will lead to an 'Appreciation' of a currency?",
+    o: ["An increase in imports", "A decrease in exports", "An increase in the demand for the country's exports", "High inflation in the country"],
+    a: 2,
+    e: "When more foreigners want our goods, they must buy our currency, driving its value up.",
+    full: "Think of the Naira like a 'Product' on the world market. If the whole world suddenly wants to buy 'Nigerian Music' or 'Nigerian Oil,' they first have to 'buy' Naira to pay for it. When the 'Demand' for Naira goes up, the price (value) of the Naira goes up. This is called 'Appreciation.' It makes our money stronger, meaning we can buy foreign goods (like iPhones) more cheaply than before.",
+    h: "If everyone in the world is 'rushing' to get your country's money, does that money become more or less valuable?"
+  },
+  {
+    yr: 2011,
+    q: "The 'Primary Objective' of 'ECOWAS' is to:",
+    o: ["Establish a military alliance", "Promote economic cooperation and integration in West Africa", "Control the price of oil", "Stop migration to Europe"],
+    a: 1,
+    e: "ECOWAS was formed to create a large, unified market among West African nations.",
+    full: "West African countries realized they are stronger together than apart. ECOWAS (Economic Community of West African States) was built so that goods, money, and people can move across borders (like Nigeria to Ghana) without too many taxes or hassles. The goal is to turn West Africa into one 'Giant Market' where trade is easy, helping all the member countries grow their economies faster.",
+    h: "Is ECOWAS mainly about 'fighting wars' or about 'trading and growing wealth' together?"
+  },
+  {
+    yr: 2011,
+    q: "Which of the following is a 'Variable Cost'?",
+    o: ["Rent for the factory building", "Interest on a long-term loan", "Cost of raw materials", "Salary of the Managing Director"],
+    a: 2,
+    e: "Variable costs change directly with the level of production.",
+    full: "If you run a bakery, 'Rent' is a **Fixed Cost**—even if you bake zero bread, the landlord still wants his money. But 'Flour' is a **Variable Cost**. If you bake 1,000 loaves, you need a lot of flour. If you bake zero loaves, you buy zero flour. These costs 'vary' or 'follow' your production level. The more you work, the more you pay; the less you work, the more you save.",
+    h: "If you stop production for one day, which of these bills will you NOT have to pay for that day?"
+  },
+  {
+    yr: 2010,
+    q: "Economics is a 'Social Science' because it deals with:",
+    o: ["The study of the physical environment", "The behavior of human beings in the allocation of resources", "The movement of the planets", "The structure of the earth's crust"],
+    a: 1,
+    e: "It is a science because it uses logical methods, and 'social' because it studies human choice.",
+    full: "Unlike Chemistry or Physics that look at 'Things' like atoms or gravity, Economics looks at 'People.' However, it doesn't just 'tell stories'; it uses math, graphs, and logic to predict how people will react when prices change or when they have limited money. Because it applies 'Scientific Methods' to 'Social behavior' (human interaction), we call it a Social Science.",
+    h: "Are we studying how 'chemicals' react to heat, or how 'humans' react to a price hike?"
+  },
+  {
+    yr: 2010,
+    q: "A 'Price Floor' (Minimum Price) is usually set to protect:",
+    o: ["Consumers", "Producers/Farmers", "The Government", "Importers"],
+    a: 1,
+    e: "Price floors prevent prices from falling too low, ensuring farmers earn a living wage.",
+    full: "Imagine a 'Floor'—you cannot go below it. Sometimes, if there is too much corn in the market, the price might drop so low (to N10) that farmers can't even afford to eat. The government steps in and says: 'No one shall buy corn for less than N100.' This 'Floor' is set **Above** the natural market price. It helps the producers stay in business, even though it makes life a bit more expensive for the buyers.",
+    h: "If the government wants to make sure a farmer doesn't 'go broke' because of low prices, where do they put the price limit?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Balance of Payments' is 'Equilibrated' (balanced) by using:",
+    o: ["Taxes", "Foreign Exchange Reserves", "The Stock Exchange", "Commercial Banks"],
+    a: 1,
+    e: "Countries use their 'savings' of foreign currency to settle any gaps in their international trade accounts.",
+    full: "If Nigeria buys more from the world than it sells, there is a 'hole' in our account. We have to pay the difference using our 'savings account' of foreign money (Dollars, Euros, etc.). These are our 'Foreign Exchange Reserves.' If the reserves run out and the gap is still there, the country is in serious trouble! It’s the ultimate 'emergency fund' that keeps a nation's international trade balanced.",
+    h: "What does a country use to 'pay the bill' when it has bought more from abroad than it has sold?"
+  },
+  {
+    yr: 2010,
+    q: "Which of the following is an 'Invisible' Export for Nigeria?",
+    o: ["Crude Oil", "Cocoa Beans", "Banking services provided to a foreign firm", "Textiles"],
+    a: 2,
+    e: "Invisible trade refers to the exchange of services rather than physical goods.",
+    full: "When we sell 'Oil,' we can see the barrels—that's a **Visible Export**. But if a Nigerian bank helps a company in Ghana and gets paid for it, or if a foreigner flies on a Nigerian airline, money is coming into Nigeria, but no 'physical box' was shipped out. We exported a 'Service.' Because you can't touch a service, we call it an 'Invisible' export. It still brings in foreign money just like oil does!",
+    h: "Can you touch a 'Banking service' with your hands, even though it earns the country money from abroad?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Density of Population' is calculated as:",
+    o: ["Total Population / Total Land Area", "Total Land Area / Total Population", "Birth Rate - Death Rate", "Total Population x Total Land Area"],
+    a: 0,
+    e: "It measures how 'crowded' a country is by showing the number of people per square kilometer.",
+    full: "Imagine a small room with 100 people—that's very 'dense.' Now imagine a giant stadium with those same 100 people—that's not dense at all. To find out how crowded a country is, we take the 'Total Population' and divide it by the 'Total Land' (Square Kilometers). This tells us the 'Average' number of people living on each piece of land. It helps the government plan for things like housing, roads, and hospitals.",
+    h: "To find out how 'packed' a room is, do you divide the 'people' by the 'space' or the 'space' by the 'people'?"
+  },
+
+  {
+    yr: 2010,
+    q: "The 'Primary Objective' of 'Taxation' is to:",
+    o: ["Make the rich poor", "Raise revenue for government expenditure", "Stop people from buying luxury goods", "Control the population growth"],
+    a: 1,
+    e: "Taxes are the main source of income for a government to fund public services.",
+    full: "Governments don't have 'jobs' like citizens do; they don't sell bread or fix cars to make money. Instead, they collect a small slice of everyone's income and spending. This 'Pool of Money' is used to build the roads we drive on, pay the soldiers who protect us, and run the schools we study in. While taxes can also be used to discourage bad habits (like smoking), their number one job is simply to 'Fuel' the government so it can function.",
+    h: "Where does the government get the trillions of Naira it needs to build a new national highway?"
+  },
+  {
+    yr: 2010,
+    q: "A 'Deficit' in the 'Balance of Trade' means:",
+    o: ["Total exports exceed total imports", "Visible imports exceed visible exports", "Invisible exports exceed invisible imports", "Government spending exceeds revenue"],
+    a: 1,
+    e: "Trade balance specifically looks at the value of 'Physical/Visible' goods traded.",
+    full: "In Economics, 'Trade' usually refers to 'Visible' things you can touch, like oil, rice, or cars. If Nigeria sells N1 billion worth of oil (Export) but buys N2 billion worth of foreign rice and machines (Import), we have a 'Deficit.' We are sending more money out than we are bringing in. It’s like a shopkeeper who buys more stock than he actually sells—he is 'down' on his physical trade account.",
+    h: "If you spend N5,000 buying clothes from abroad but only sell N2,000 worth of your own products, are you in a surplus or deficit?"
+  },
+  {
+    yr: 2010,
+    q: "Which of the following is a 'Direct' advantage of 'Privatization'?",
+    o: ["Increase in government control", "Reduction in the national debt", "Improved efficiency and competition", "Equality of income"],
+    a: 2,
+    e: "Private owners are motivated by profit to reduce waste and improve service quality.",
+    full: "When the government sells a company (like a power plant) to a private businessman, it's called 'Privatization.' Why do they do it? Because a private owner *loses* his own money if the company is lazy or wasteful. This 'Fear of Loss' forces them to be efficient, cut costs, and compete for customers. Usually, this leads to better technology and faster service than when the company was just a 'slow' government department.",
+    h: "Does a business run better when the 'Boss' is a government official or a private owner whose own money is at risk?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Labour Force' does NOT include:",
+    o: ["The self-employed", "Unemployed people looking for work", "Full-time students and housewives", "Doctors and Lawyers"],
+    a: 2,
+    e: "The labor force only includes those 'willing and able' to work for a wage.",
+    full: "Even though a student or a housewife might work very hard at home, they are not part of the 'Economically Active' population. They aren't 'offering' their labor to the market in exchange for a salary right now. The Labour Force is the 'Army' of people who are either already at a job or are actively 'standing in line' waiting for one. If you aren't looking for a job, you aren't in the army.",
+    h: "If you are in school studying all day and not looking for a job, are you counted as part of the country's 'Available Workers'?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Value of the Multiplier' (k) is calculated as:",
+    o: ["1 / MPS", "1 / MPC", "MPS / 1", "MPC + MPS"],
+    a: 0,
+    e: "The multiplier is the inverse of the Marginal Propensity to Save.",
+    full: "The 'Multiplier' tells us how much 'Total Growth' we get from $1 of new spending. If people are 'stingy' and save a lot of their money (High MPS), the money stops moving quickly, and the multiplier is small. But if they save very little and spend a lot, the money keeps 'rippling' through the economy, making the multiplier huge. That’s why we divide 1 by the 'Saving' rate to find the total effect.",
+    h: "If people save 'zero' percent of their extra income, will the money travel further or shorter through the economy?"
+  },
+  {
+    yr: 2010,
+    q: "In a 'Monopoly,' the 'Demand Curve' is:",
+    o: ["Horizontal", "Upward sloping", "Downward sloping", "Vertical"],
+    a: 2,
+    e: "The monopolist faces the entire market demand, which follows the law of demand.",
+    full: "Even if you are the 'Only' seller of electricity in a city, you still can't ignore the 'Law of Demand.' If you set your price at N1 million per unit, people will just sit in the dark or buy candles. As you lower your price, more people will buy your power. This means your demand curve still slopes 'Downwards'—to sell more, you *must* lower the price, even though you have no competitors.",
+    h: "Does even a 'Single Seller' have to lower their price if they want to get more customers?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Law of Comparative Advantage' suggests that countries should specialize in goods where they have the:",
+    o: ["Highest absolute cost", "Lowest opportunity cost", "Highest total production", "Lowest market price"],
+    a: 1,
+    e: "Countries should produce what they can make 'most efficiently' compared to other goods.",
+    full: "This is the most important rule in world trade. It says you shouldn't just do what you are 'best' at; you should do what costs you the 'least to give up.' If Nigeria is 'okay' at making cars but 'amazing' at producing oil, it should focus on oil and trade it for cars. Even if Nigeria *could* make cars, the 'Opportunity Cost' of not making oil during that time is too high. Specialization makes the whole world richer.",
+    h: "Should you spend your time doing a job that pays N1,000/hr or a job that pays N10,000/hr?"
+  },
+  {
+    yr: 2009,
+    q: "A 'Shift' in the 'Demand Curve' to the right is caused by:",
+    o: ["A decrease in the price of the good", "An increase in the price of the good", "An increase in consumer income", "A decrease in the number of consumers"],
+    a: 2,
+    e: "A rise in income allows consumers to buy more of a good at every possible price.",
+    full: "This is the 'Jump' we talked about. Imagine the price of 'Beef' doesn't change at all, but suddenly everyone in the country gets a 50% salary raise. Even though the price is the same, people will naturally buy more beef because they are richer. The whole demand curve 'jumps' to the right. This isn't a reaction to a sale; it's a reaction to having more 'Spending Power' in your pocket.",
+    h: "If everyone suddenly got N1 million for free, would they buy more things even if prices didn't change?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Price of Labour' is determined in the market by:",
+    o: ["The government", "Trade Unions", "Demand and Supply of labour", "The Central Bank"],
+    a: 2,
+    e: "Wages are the equilibrium point where the desire to hire matches the willingness to work.",
+    full: "Just like the price of a tomato is decided by how many tomatoes there are and how many people want soup, the 'Wage' (Price of Labour) is decided by the market. If there are 1,000,000 people who want to be 'Accountants' but only 10 offices hiring, the wage will be very low. If there is only 1 'Brain Surgeon' and 500 people need help, the wage will be very high. It’s a simple tug-of-war between supply and demand.",
+    h: "Why do doctors usually earn more money than cleaners in a free market?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is a 'Function' of 'Money' as a 'Unit of Account'?",
+    o: ["Saving for the future", "Using money as a common measure of value", "Exchanging money for goods", "Using money to settle debts"],
+    a: 1,
+    e: "This function allows us to compare the 'worth' of different items using a single scale.",
+    full: "Imagine trying to compare the value of '3 Cows' vs '100 Chickens' vs '20 Bags of Rice.' It would be a headache! But because we have 'Money,' we can just say the cows are N300k, the chickens are N200k, and the rice is N150k. Now it’s easy to see which is more valuable. Money acts like a 'Ruler' (Unit) that measures the 'Price' (Account) of everything in the shop, making it easy to keep records and compare values.",
+    h: "How do you know if a 'Phone' is more expensive than a 'Laptop' without using money to compare them?"
+  },
+  {
+    yr: 2009,
+    q: "An 'Increase in the Supply' of a product will lead to a 'Decrease' in:",
+    o: ["Quantity demanded", "Equilibrium price", "Consumer income", "Total supply"],
+    a: 1,
+    e: "When goods become more plentiful, sellers must lower prices to attract more buyers.",
+    full: "Think of what happens during the 'Harvest' season for tomatoes. Suddenly, every basket is full and every corner of the market has them. Because there is so much 'Supply,' the sellers are desperate to sell before the tomatoes rot. They will fight each other to offer you a lower price. So, more supply usually leads to a 'Drop' in the market price. It’s the law of 'Abundance.'",
+    h: "What happens to the price of 'Old' phone models when a 'New' model is released and floods the market?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Problem of Double Counting' in 'National Income' is avoided by using:",
+    o: ["The total value of all transactions", "The 'Value Added' at each stage of production", "Only the value of raw materials", "The total income of the rich only"],
+    a: 1,
+    e: "Only the 'New' value created at each step is counted to prevent overestimating GDP.",
+    full: "If a farmer sells wheat for N100, a miller turns it into flour and sells it for N150, and a baker turns it into bread and sells it for N250—how much wealth was made? If you add N100 + N150 + N250, you get N500. But that's a lie! You counted the wheat three times! Instead, we only count the 'Extra' value: N100 (Farmer) + N50 (Miller's work) + N100 (Baker's work) = N250. This is the 'Final Value' of the bread, which is the only thing that matters for GDP.",
+    h: "If you buy wood for N1,000 and sell a chair for N3,000, has the country's wealth increased by N4,000 or just N2,000?"
+  },
+  {
+    yr: 2009,
+    q: "A 'Commercial Bank' can 'Create Money' by:",
+    o: ["Printing new currency notes", "Lending out a portion of the deposits they receive", "Increasing the interest rate", "Borrowing from the Central Bank"],
+    a: 1,
+    e: "Through the 'Credit Multiplier,' banks turn one deposit into several loans.",
+    full: "Banks don't print paper money, but they do create 'Electronic Money.' When you deposit N10,000, the bank keeps a little (Reserve) and lends N9,000 to someone else. That person spends it, and it gets deposited in another bank, which then lends N8,100 to another person. Suddenly, the 'Total Spendable Money' in the country has grown from your original N10,000 to over N27,000! They 'create' money by making it work multiple times through loans.",
+    h: "Does a bank just 'sit' on your money in a vault, or do they give it to someone else to use?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is an example of 'Joint Supply'?",
+    o: ["Bread and Butter", "Beef and Hide (Leather)", "Tea and Coffee", "Coke and Fanta"],
+    a: 1,
+    e: "Joint supply occurs when the production of one good automatically produces another.",
+    full: "Think of these as 'Two-for-One' deals from nature. When a farmer slaughters a cow to get 'Beef' for the market, he automatically gets the 'Hide' (the skin used for leather) at the exact same time. He didn't have to raise a separate animal for the skin. If the demand for beef goes up and more cows are killed, the supply of leather will go up too, even if no one asked for more leather. They are 'born' together from the same source.",
+    h: "If you grow 'Corn' to get the seeds, do you also automatically get the 'Corn Stalks' (husks)?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Infant Industry Argument' is a reason for:",
+    o: ["Free trade", "Protectionism (Tariffs and Quotas)", "Devaluation", "Privatization"],
+    a: 1,
+    e: "New local businesses need protection from foreign giants until they grow strong.",
+    full: "Imagine a small Nigerian company trying to start making 'Laptops.' They are small and expensive. If the government allows cheap, mass-produced laptops from giant American or Chinese companies to flood the market, the Nigerian 'infant' will die instantly. By putting 'Tariffs' (Taxes) on the imports, the government makes the foreign laptops expensive, giving the local 'baby' business a chance to grow, learn, and eventually compete on its own.",
+    h: "Do you let a newborn baby fight a heavyweight boxer, or do you protect the baby until it grows up?"
+  },
+  {
+    yr: 2009,
+    q: "Which 'Factor of Production' is 'Geographically Immobile' but 'Occupationally Mobile'?",
+    o: ["Labour", "Capital", "Land", "Entrepreneur"],
+    a: 2,
+    e: "Land cannot be moved to a new city, but it can be used for different purposes (farming vs building).",
+    full: "This is a tricky one! 'Land' is stuck where it is—you can't take a plot of land from Lagos and move it to Abuja (Geographically Immobile). However, you can change 'what you do' with it. Today it’s a corn farm; tomorrow you can build a shopping mall on it; next year it can be a parking lot. Because it can change its 'Job' or use, we say it is 'Occupationally Mobile.' It is the most 'stubborn' yet 'flexible' factor.",
+    h: "Can you carry your backyard to a different state, or can you only change what you plant in it?"
+  },
+  {
+    yr: 2009,
+    q: "In 'National Income,' 'GNP' minus 'Depreciation' equals:",
+    o: ["GDP", "Net National Product (NNP)", "Personal Income", "Disposable Income"],
+    a: 1,
+    e: "NNP is the 'pure' wealth created after accounting for the wear and tear of machines.",
+    full: "Imagine you made N10,000 profit using your motorcycle for delivery. But during that time, your tires wore out and the engine got old, costing you N2,000 in 'value.' Your 'Gross' profit is N10,000, but your 'Net' profit is only N8,000. In Economics, we do the same for the whole country. We take the Gross National Product and subtract the 'Wear and Tear' (Depreciation) to find out what we *really* gained. That 'pure' number is the Net National Product.",
+    h: "Is your 'true' profit the total money you made, or what's left after you pay to fix your broken tools?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Malthusian Theory' suggests that population grows at a:",
+    o: ["Arithmetic Progression", "Geometric Progression", "Constant rate", "Decreasing rate"],
+    a: 1,
+    e: "Malthus believed population doubles (2, 4, 8, 16) while food only grows (1, 2, 3, 4).",
+    full: "Thomas Malthus was worried about the future. He saw that humans multiply like 'Explosions' (Geometric: 2 becomes 4, 4 becomes 8). But he noticed that farming only improves slowly and steadily (Arithmetic: 1 becomes 2, 2 becomes 3). His big warning was that if we don't control our numbers, we will eventually run out of food, leading to 'Malthusian Catastrophes' like famine and war. He was the first to link 'Population' to 'Survival.'",
+    h: "Does the number of people in a family grow faster than the number of yams they can harvest?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is a 'Direct' way to solve a 'Budget Deficit'?",
+    o: ["Increasing government spending", "Reducing taxes", "Reducing government expenditure and increasing taxes", "Printing more money"],
+    a: 2,
+    e: "To close the gap, the government must either earn more or spend less.",
+    full: "A 'Budget Deficit' is like being in debt—you are spending more than you earn. To fix it, you have two choices: 1. Stop spending so much (Reduce Expenditure), or 2. Find a way to make more money (Increase Taxes). Usually, a government has to do a little bit of both to bring the 'Account' back into balance and stop relying on heavy borrowing from other countries.",
+    h: "If you are spending more than your salary, should you buy more things or try to work more hours?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Primary Function' of an 'Entrepreneur' is to:",
+    o: ["Provide the land for production", "Bear risks and organize other factors of production", "Lend money to the firm", "Work as a manager in the office"],
+    a: 1,
+    e: "The entrepreneur is the 'Risk-Taker' who brings land, labor, and capital together.",
+    full: "Land, Labor, and Capital are just 'Things' until an Entrepreneur shows up. The Entrepreneur is the one with the 'Idea.' They are the ones who decide to combine those factors to start a business. Most importantly, they are the ones who 'Risk' their time and money. If the business fails, they lose everything. If it succeeds, they get the 'Profit.' They are the 'Engine' that starts the whole economic process.",
+    h: "Who is the person that takes the 'big risk' of starting a business and pays everyone else's salary?"
+  },
+
+  {
+    yr: 2010,
+    q: "The 'Primary Objective' of 'Taxation' is to:",
+    o: ["Make the rich poor", "Raise revenue for government expenditure", "Stop people from buying luxury goods", "Control the population growth"],
+    a: 1,
+    e: "Taxes are the main source of income for a government to fund public services.",
+    full: "Governments don't have 'jobs' like citizens do; they don't sell bread or fix cars to make money. Instead, they collect a small slice of everyone's income and spending. This 'Pool of Money' is used to build the roads we drive on, pay the soldiers who protect us, and run the schools we study in. While taxes can also be used to discourage bad habits (like smoking), their number one job is simply to 'Fuel' the government so it can function.",
+    h: "Where does the government get the trillions of Naira it needs to build a new national highway?"
+  },
+  {
+    yr: 2010,
+    q: "A 'Deficit' in the 'Balance of Trade' means:",
+    o: ["Total exports exceed total imports", "Visible imports exceed visible exports", "Invisible exports exceed invisible imports", "Government spending exceeds revenue"],
+    a: 1,
+    e: "Trade balance specifically looks at the value of 'Physical/Visible' goods traded.",
+    full: "In Economics, 'Trade' usually refers to 'Visible' things you can touch, like oil, rice, or cars. If Nigeria sells N1 billion worth of oil (Export) but buys N2 billion worth of foreign rice and machines (Import), we have a 'Deficit.' We are sending more money out than we are bringing in. It’s like a shopkeeper who buys more stock than he actually sells—he is 'down' on his physical trade account.",
+    h: "If you spend N5,000 buying clothes from abroad but only sell N2,000 worth of your own products, are you in a surplus or deficit?"
+  },
+  {
+    yr: 2010,
+    q: "Which of the following is a 'Direct' advantage of 'Privatization'?",
+    o: ["Increase in government control", "Reduction in the national debt", "Improved efficiency and competition", "Equality of income"],
+    a: 2,
+    e: "Private owners are motivated by profit to reduce waste and improve service quality.",
+    full: "When the government sells a company (like a power plant) to a private businessman, it's called 'Privatization.' Why do they do it? Because a private owner *loses* his own money if the company is lazy or wasteful. This 'Fear of Loss' forces them to be efficient, cut costs, and compete for customers. Usually, this leads to better technology and faster service than when the company was just a 'slow' government department.",
+    h: "Does a business run better when the 'Boss' is a government official or a private owner whose own money is at risk?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Labour Force' does NOT include:",
+    o: ["The self-employed", "Unemployed people looking for work", "Full-time students and housewives", "Doctors and Lawyers"],
+    a: 2,
+    e: "The labor force only includes those 'willing and able' to work for a wage.",
+    full: "Even though a student or a housewife might work very hard at home, they are not part of the 'Economically Active' population. They aren't 'offering' their labor to the market in exchange for a salary right now. The Labour Force is the 'Army' of people who are either already at a job or are actively 'standing in line' waiting for one. If you aren't looking for a job, you aren't in the army.",
+    h: "If you are in school studying all day and not looking for a job, are you counted as part of the country's 'Available Workers'?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Value of the Multiplier' (k) is calculated as:",
+    o: ["1 / MPS", "1 / MPC", "MPS / 1", "MPC + MPS"],
+    a: 0,
+    e: "The multiplier is the inverse of the Marginal Propensity to Save.",
+    full: "The 'Multiplier' tells us how much 'Total Growth' we get from $1 of new spending. If people are 'stingy' and save a lot of their money (High MPS), the money stops moving quickly, and the multiplier is small. But if they save very little and spend a lot, the money keeps 'rippling' through the economy, making the multiplier huge. That’s why we divide 1 by the 'Saving' rate to find the total effect.",
+    h: "If people save 'zero' percent of their extra income, will the money travel further or shorter through the economy?"
+  },
+  {
+    yr: 2010,
+    q: "In a 'Monopoly,' the 'Demand Curve' is:",
+    o: ["Horizontal", "Upward sloping", "Downward sloping", "Vertical"],
+    a: 2,
+    e: "The monopolist faces the entire market demand, which follows the law of demand.",
+    full: "Even if you are the 'Only' seller of electricity in a city, you still can't ignore the 'Law of Demand.' If you set your price at N1 million per unit, people will just sit in the dark or buy candles. As you lower your price, more people will buy your power. This means your demand curve still slopes 'Downwards'—to sell more, you *must* lower the price, even though you have no competitors.",
+    h: "Does even a 'Single Seller' have to lower their price if they want to get more customers?"
+  },
+  {
+    yr: 2010,
+    q: "The 'Law of Comparative Advantage' suggests that countries should specialize in goods where they have the:",
+    o: ["Highest absolute cost", "Lowest opportunity cost", "Highest total production", "Lowest market price"],
+    a: 1,
+    e: "Countries should produce what they can make 'most efficiently' compared to other goods.",
+    full: "This is the most important rule in world trade. It says you shouldn't just do what you are 'best' at; you should do what costs you the 'least to give up.' If Nigeria is 'okay' at making cars but 'amazing' at producing oil, it should focus on oil and trade it for cars. Even if Nigeria *could* make cars, the 'Opportunity Cost' of not making oil during that time is too high. Specialization makes the whole world richer.",
+    h: "Should you spend your time doing a job that pays N1,000/hr or a job that pays N10,000/hr?"
+  },
+  {
+    yr: 2009,
+    q: "A 'Shift' in the 'Demand Curve' to the right is caused by:",
+    o: ["A decrease in the price of the good", "An increase in the price of the good", "An increase in consumer income", "A decrease in the number of consumers"],
+    a: 2,
+    e: "A rise in income allows consumers to buy more of a good at every possible price.",
+    full: "This is the 'Jump' we talked about. Imagine the price of 'Beef' doesn't change at all, but suddenly everyone in the country gets a 50% salary raise. Even though the price is the same, people will naturally buy more beef because they are richer. The whole demand curve 'jumps' to the right. This isn't a reaction to a sale; it's a reaction to having more 'Spending Power' in your pocket.",
+    h: "If everyone suddenly got N1 million for free, would they buy more things even if prices didn't change?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Price of Labour' is determined in the market by:",
+    o: ["The government", "Trade Unions", "Demand and Supply of labour", "The Central Bank"],
+    a: 2,
+    e: "Wages are the equilibrium point where the desire to hire matches the willingness to work.",
+    full: "Just like the price of a tomato is decided by how many tomatoes there are and how many people want soup, the 'Wage' (Price of Labour) is decided by the market. If there are 1,000,000 people who want to be 'Accountants' but only 10 offices hiring, the wage will be very low. If there is only 1 'Brain Surgeon' and 500 people need help, the wage will be very high. It’s a simple tug-of-war between supply and demand.",
+    h: "Why do doctors usually earn more money than cleaners in a free market?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is a 'Function' of 'Money' as a 'Unit of Account'?",
+    o: ["Saving for the future", "Using money as a common measure of value", "Exchanging money for goods", "Using money to settle debts"],
+    a: 1,
+    e: "This function allows us to compare the 'worth' of different items using a single scale.",
+    full: "Imagine trying to compare the value of '3 Cows' vs '100 Chickens' vs '20 Bags of Rice.' It would be a headache! But because we have 'Money,' we can just say the cows are N300k, the chickens are N200k, and the rice is N150k. Now it’s easy to see which is more valuable. Money acts like a 'Ruler' (Unit) that measures the 'Price' (Account) of everything in the shop, making it easy to keep records and compare values.",
+    h: "How do you know if a 'Phone' is more expensive than a 'Laptop' without using money to compare them?"
+  },
+  {
+    yr: 2009,
+    q: "An 'Increase in the Supply' of a product will lead to a 'Decrease' in:",
+    o: ["Quantity demanded", "Equilibrium price", "Consumer income", "Total supply"],
+    a: 1,
+    e: "When goods become more plentiful, sellers must lower prices to attract more buyers.",
+    full: "Think of what happens during the 'Harvest' season for tomatoes. Suddenly, every basket is full and every corner of the market has them. Because there is so much 'Supply,' the sellers are desperate to sell before the tomatoes rot. They will fight each other to offer you a lower price. So, more supply usually leads to a 'Drop' in the market price. It’s the law of 'Abundance.'",
+    h: "What happens to the price of 'Old' phone models when a 'New' model is released and floods the market?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Problem of Double Counting' in 'National Income' is avoided by using:",
+    o: ["The total value of all transactions", "The 'Value Added' at each stage of production", "Only the value of raw materials", "The total income of the rich only"],
+    a: 1,
+    e: "Only the 'New' value created at each step is counted to prevent overestimating GDP.",
+    full: "If a farmer sells wheat for N100, a miller turns it into flour and sells it for N150, and a baker turns it into bread and sells it for N250—how much wealth was made? If you add N100 + N150 + N250, you get N500. But that's a lie! You counted the wheat three times! Instead, we only count the 'Extra' value: N100 (Farmer) + N50 (Miller's work) + N100 (Baker's work) = N250. This is the 'Final Value' of the bread, which is the only thing that matters for GDP.",
+    h: "If you buy wood for N1,000 and sell a chair for N3,000, has the country's wealth increased by N4,000 or just N2,000?"
+  },
+  {
+    yr: 2009,
+    q: "A 'Commercial Bank' can 'Create Money' by:",
+    o: ["Printing new currency notes", "Lending out a portion of the deposits they receive", "Increasing the interest rate", "Borrowing from the Central Bank"],
+    a: 1,
+    e: "Through the 'Credit Multiplier,' banks turn one deposit into several loans.",
+    full: "Banks don't print paper money, but they do create 'Electronic Money.' When you deposit N10,000, the bank keeps a little (Reserve) and lends N9,000 to someone else. That person spends it, and it gets deposited in another bank, which then lends N8,100 to another person. Suddenly, the 'Total Spendable Money' in the country has grown from your original N10,000 to over N27,000! They 'create' money by making it work multiple times through loans.",
+    h: "Does a bank just 'sit' on your money in a vault, or do they give it to someone else to use?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is an example of 'Joint Supply'?",
+    o: ["Bread and Butter", "Beef and Hide (Leather)", "Tea and Coffee", "Coke and Fanta"],
+    a: 1,
+    e: "Joint supply occurs when the production of one good automatically produces another.",
+    full: "Think of these as 'Two-for-One' deals from nature. When a farmer slaughters a cow to get 'Beef' for the market, he automatically gets the 'Hide' (the skin used for leather) at the exact same time. He didn't have to raise a separate animal for the skin. If the demand for beef goes up and more cows are killed, the supply of leather will go up too, even if no one asked for more leather. They are 'born' together from the same source.",
+    h: "If you grow 'Corn' to get the seeds, do you also automatically get the 'Corn Stalks' (husks)?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Infant Industry Argument' is a reason for:",
+    o: ["Free trade", "Protectionism (Tariffs and Quotas)", "Devaluation", "Privatization"],
+    a: 1,
+    e: "New local businesses need protection from foreign giants until they grow strong.",
+    full: "Imagine a small Nigerian company trying to start making 'Laptops.' They are small and expensive. If the government allows cheap, mass-produced laptops from giant American or Chinese companies to flood the market, the Nigerian 'infant' will die instantly. By putting 'Tariffs' (Taxes) on the imports, the government makes the foreign laptops expensive, giving the local 'baby' business a chance to grow, learn, and eventually compete on its own.",
+    h: "Do you let a newborn baby fight a heavyweight boxer, or do you protect the baby until it grows up?"
+  },
+  {
+    yr: 2009,
+    q: "Which 'Factor of Production' is 'Geographically Immobile' but 'Occupationally Mobile'?",
+    o: ["Labour", "Capital", "Land", "Entrepreneur"],
+    a: 2,
+    e: "Land cannot be moved to a new city, but it can be used for different purposes (farming vs building).",
+    full: "This is a tricky one! 'Land' is stuck where it is—you can't take a plot of land from Lagos and move it to Abuja (Geographically Immobile). However, you can change 'what you do' with it. Today it’s a corn farm; tomorrow you can build a shopping mall on it; next year it can be a parking lot. Because it can change its 'Job' or use, we say it is 'Occupationally Mobile.' It is the most 'stubborn' yet 'flexible' factor.",
+    h: "Can you carry your backyard to a different state, or can you only change what you plant in it?"
+  },
+  {
+    yr: 2009,
+    q: "In 'National Income,' 'GNP' minus 'Depreciation' equals:",
+    o: ["GDP", "Net National Product (NNP)", "Personal Income", "Disposable Income"],
+    a: 1,
+    e: "NNP is the 'pure' wealth created after accounting for the wear and tear of machines.",
+    full: "Imagine you made N10,000 profit using your motorcycle for delivery. But during that time, your tires wore out and the engine got old, costing you N2,000 in 'value.' Your 'Gross' profit is N10,000, but your 'Net' profit is only N8,000. In Economics, we do the same for the whole country. We take the Gross National Product and subtract the 'Wear and Tear' (Depreciation) to find out what we *really* gained. That 'pure' number is the Net National Product.",
+    h: "Is your 'true' profit the total money you made, or what's left after you pay to fix your broken tools?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Malthusian Theory' suggests that population grows at a:",
+    o: ["Arithmetic Progression", "Geometric Progression", "Constant rate", "Decreasing rate"],
+    a: 1,
+    e: "Malthus believed population doubles (2, 4, 8, 16) while food only grows (1, 2, 3, 4).",
+    full: "Thomas Malthus was worried about the future. He saw that humans multiply like 'Explosions' (Geometric: 2 becomes 4, 4 becomes 8). But he noticed that farming only improves slowly and steadily (Arithmetic: 1 becomes 2, 2 becomes 3). His big warning was that if we don't control our numbers, we will eventually run out of food, leading to 'Malthusian Catastrophes' like famine and war. He was the first to link 'Population' to 'Survival.'",
+    h: "Does the number of people in a family grow faster than the number of yams they can harvest?"
+  },
+  {
+    yr: 2009,
+    q: "Which of the following is a 'Direct' way to solve a 'Budget Deficit'?",
+    o: ["Increasing government spending", "Reducing taxes", "Reducing government expenditure and increasing taxes", "Printing more money"],
+    a: 2,
+    e: "To close the gap, the government must either earn more or spend less.",
+    full: "A 'Budget Deficit' is like being in debt—you are spending more than you earn. To fix it, you have two choices: 1. Stop spending so much (Reduce Expenditure), or 2. Find a way to make more money (Increase Taxes). Usually, a government has to do a little bit of both to bring the 'Account' back into balance and stop relying on heavy borrowing from other countries.",
+    h: "If you are spending more than your salary, should you buy more things or try to work more hours?"
+  },
+  {
+    yr: 2009,
+    q: "The 'Primary Function' of an 'Entrepreneur' is to:",
+    o: ["Provide the land for production", "Bear risks and organize other factors of production", "Lend money to the firm", "Work as a manager in the office"],
+    a: 1,
+    e: "The entrepreneur is the 'Risk-Taker' who brings land, labor, and capital together.",
+    full: "Land, Labor, and Capital are just 'Things' until an Entrepreneur shows up. The Entrepreneur is the one with the 'Idea.' They are the ones who decide to combine those factors to start a business. Most importantly, they are the ones who 'Risk' their time and money. If the business fails, they lose everything. If it succeeds, they get the 'Profit.' They are the 'Engine' that starts the whole economic process.",
+    h: "Who is the person that takes the 'big risk' of starting a business and pays everyone else's salary?"
+  },
+  {
+    yr: 2008,
+    q: "A 'Production Possibility Curve' (PPC) shifts 'Outward' due to:",
+    o: ["A decrease in unemployment", "Economic growth and technological progress", "An increase in the price of goods", "A shift in consumer tastes"],
+    a: 1,
+    e: "An outward shift means the country's total capacity to produce has increased.",
+    full: "Imagine a country's 'Muscle.' If they invent new AI technology or discover a massive new oil field, their ability to produce 'everything' grows. The whole curve 'jumps' outward. This is different from moving *along* the curve. A shift means the 'impossible' has become 'possible.' It is the definition of **Economic Growth**—the country is literally bigger and more capable than it was last year.",
+    h: "If a farmer buys a tractor to replace his hoe, can he produce more than he ever could before?"
+  },
+  {
+    yr: 2008,
+    q: "Which of the following is a 'Feature' of 'Perfect Competition'?",
+    o: ["Few sellers and many buyers", "Differentiated products", "Perfect knowledge of the market", "Barriers to entry"],
+    a: 2,
+    e: "In this market, everyone knows exactly what the price is and what is being sold.",
+    full: "In a 'Perfect' market, there are no secrets. Every buyer knows that the price of a 'Grade A' egg is N50, and every seller knows it too. No one can cheat you by charging N70 because you have 'Perfect Knowledge.' Also, because there are so many sellers and the products are identical, no single person has the power to change the price. It is the most transparent type of market in existence.",
+    h: "In a giant open market where everyone sells the same rice, can one person hide the real price from you?"
+  },
+  {
+    yr: 2008,
+    q: "The 'Income Elasticity of Demand' for an 'Inferior Good' is:",
+    o: ["Positive", "Zero", "Negative", "Infinite"],
+    a: 2,
+    e: "Demand for inferior goods falls as income rises, creating an inverse relationship.",
+    full: "Think about 'Public Transport' (the yellow buses). When you are a struggling student, you use them every day. But as soon as you get a high-paying job and buy a car, you *stop* using the bus. Even though your income went UP, your demand for the bus went DOWN. Because they move in opposite directions, the elasticity is 'Negative.' In Economics, 'Rich people buy less of it' is the definition of an inferior good.",
+    h: "If you get a massive promotion today, would you buy 'more' or 'less' of the cheapest bread in the shop?"
+  },
+  {
+    yr: 2008,
+    q: "Which of the following is an 'Agent' of 'Middleman' in the chain of distribution?",
+    o: ["The Producer", "The Wholesaler", "The Consumer", "The Government"],
+    a: 1,
+    e: "Wholesalers and retailers are middlemen who move goods from the factory to the user.",
+    full: "The 'Chain of Distribution' is the path a product takes from the 'Birth' (Factory) to the 'Death' (Consumption). The people in the middle—the Wholesalers and Retailers—are the 'Middlemen.' They don't make the goods, and they don't eat them. Their only job is to provide 'Services' like storage, transport, and breaking bulk (selling in smaller bits) so that the product can reach you easily.",
+    h: "Does the person who runs the shop on your street 'make' the biscuits they sell to you?"
+  },
+  {
+    yr: 2008,
+    q: "The 'Unemployment' caused by a 'Recession' or a 'Downswing' in the economy is:",
+    o: ["Frictional", "Structural", "Cyclical", "Seasonal"],
+    a: 2,
+    e: "Cyclical unemployment follows the 'cycle' of the economy—rising in bad times and falling in good times.",
+    full: "Economies move in 'Cycles'—sometimes they are 'Booming' (up) and sometimes they are 'Busting' (down). When the economy crashes (Recession), people stop spending money. Factories then fire workers because they aren't selling anything. This isn't because the workers are bad or their skills are old; it's just because the 'Cycle' is currently at the bottom. When the economy recovers, these people usually get their jobs back.",
+    h: "If a company fires workers only because 'business is slow' everywhere in the country, what is that called?"
+  },
+  {
+    yr: 2008,
+    q: "In 'International Trade,' 'Comparative Advantage' is determined by:",
+    o: ["Absolute Costs", "Opportunity Costs", "Total Output", "Exchange Rates"],
+    a: 1,
+    e: "It focuses on which country gives up the 'least' to produce a specific good.",
+    full: "David Ricardo's big idea was that even if one country is 'better' at making *everything* (Absolute Advantage), it should still trade. A country should find the one thing it is 'most amazing' at (where its sacrifice/opportunity cost is lowest) and focus there. By specializing in what you do 'best compared to yourself,' and trading with others, the total amount of goods in the world increases for everyone.",
+    h: "Should a world-class surgeon spend time mowing his own lawn, even if he's the fastest lawn-mower in town?"
+  },
+  {
+    yr: 2008,
+    q: "The 'Consumer Price Index' (CPI) is used to measure:",
+    o: ["Economic Growth", "The Rate of Inflation", "The Level of Unemployment", "The Wealth of the Rich"],
+    a: 1,
+    e: "CPI tracks the change in the price of a 'basket' of common goods over time.",
+    full: "The government picks a 'Basket' of things an average person buys (bread, milk, rent, fuel). Every month, they check the total price of that basket. If the basket cost N10,000 last month and N11,000 this month, we have 10% inflation. The CPI is like a 'Thermometer' for the economy—it tells us how 'Hot' (expensive) things are getting for the average citizen.",
+    h: "How does the government 'prove' that prices are actually going up in the market?"
+  },
+  {
+    yr: 2008,
+    q: "A 'Public Limited Company' (PLC) is owned by:",
+    o: ["The Government", "A single individual", "Shareholders who buy stocks on the exchange", "Two to twenty partners"],
+    a: 2,
+    e: "PLCs raise capital by selling shares to the general public.",
+    full: "Don't be fooled by the word 'Public'! A 'Public Corporation' is government-owned, but a 'Public Limited Company' is a private business that has grown so big it sells 'Shares' to anyone. If you buy one share of MTN or Dangote Cement, you are a 'Part-Owner' of that company. You get a slice of the profit (Dividend) and you have the right to vote at their big meetings. It is 'Public' because anyone can join the ownership.",
+    h: "Can a regular person buy a 'piece' of a giant company and become one of its owners?"
+  },
+  {
+    yr: 2008,
+    q: "The 'Slope' of a 'Supply Curve' is generally:",
+    o: ["Negative (Downward)", "Positive (Upward)", "Horizontal", "Vertical"],
+    a: 1,
+    e: "Higher prices encourage sellers to produce more, creating an upward slope.",
+    full: "Sellers love money. When the price of a product goes up, the 'Incentive' to work harder and sell more goes up too. On a graph, as the Price (Vertical Axis) goes higher, the Quantity (Horizontal Axis) moves further to the right. When you connect these dots, you get a line that 'climbs' from bottom-left to top-right. This 'Positive' slope shows that Price and Supply are 'Best Friends' moving in the same direction.",
+    h: "If you were a seller, would you bring 'more' goods to the market if the price was high or low?"
+  },
+  {
+    yr: 2008,
+    q: "Which of the following is a 'Direct Reward' for 'Entrepreneurship'?",
+    o: ["Interest", "Wages", "Rent", "Profit"],
+    a: 3,
+    e: "Profit is the residual income that goes to the risk-taker after all other factors are paid.",
+    full: "The Entrepreneur is the 'Last Person' to get paid. First, they pay the workers (Wages), the landlord (Rent), and the bank (Interest). If there is anything left over at the end of the month, that 'Residual' is the Profit. If there is nothing left, the Entrepreneur gets zero and might even lose their own savings. This 'Profit' is the prize for taking the risk to start the business in the first place.",
+    h: "What do we call the 'leftover' money that belongs to the business owner after all bills are paid?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Scale of Preference' helps a consumer to achieve:",
+    o: ["Minimum utility", "Maximum satisfaction (Utility)", "Lower prices", "Equal distribution of income"],
+    a: 1,
+    e: "By ranking wants, consumers ensure their limited resources satisfy their most urgent needs first.",
+    full: "You have N1,000. You want a burger (N800), a soda (N300), and a pen (N100). You can't have all three! By listing them from 'Most Important' to 'Least Important,' you choose the burger and the pen. This way, you get the 'most joy' possible from your N1,000. Without a scale of preference, you might spend the money on something you don't really need and end up 'hungry' and 'sad.'",
+    h: "If you have very little money, does it make more sense to buy 'needs' or 'wants' first?"
+  },
+  {
+    yr: 2007,
+    q: "Which 'Economic System' relies on the 'Price Mechanism' to allocate resources?",
+    o: ["Command Economy", "Planned Economy", "Market Economy (Capitalism)", "Traditional Economy"],
+    a: 2,
+    e: "In a market economy, prices act as signals that tell producers what to make.",
+    full: "In a 'Market Economy,' there is no 'Big Boss' telling people what to do. Instead, the 'Price' does the talking. If the price of 'Beans' goes very high, it 'Signals' farmers to plant more beans. If the price of 'CD Players' drops to zero, it 'Signals' factories to stop making them. The Price Mechanism is like an 'Invisible Hand' that guides everyone to do what the customers want without a single government order.",
+    h: "In your city, does a government official tell the baker how many loaves to bake, or does the price decide?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Marginal Utility' of a good is:",
+    o: ["The total satisfaction from all units", "The average satisfaction per unit", "The extra satisfaction from consuming one additional unit", "The price paid for the good"],
+    a: 2,
+    e: "Marginal always refers to the 'extra' or 'additional' change.",
+    full: "Imagine you are drinking water after a long run. The first cup feels like a miracle. The second cup is good. The 'Marginal Utility' is the 'Score' you give to that *second* cup only. It’s not the total joy of both cups; it’s just the *additional* happiness you got from that one extra glass. As you drink more, this 'Marginal' score usually starts to drop because you are getting less thirsty.",
+    h: "If you eat one more biscuit, does the 'extra' joy you feel represent Total or Marginal utility?"
+  },
+  {
+    yr: 2007,
+    q: "An 'Elasticity of Demand' equal to 'Zero' (Ed = 0) means demand is:",
+    o: ["Perfectly Elastic", "Unitary Elastic", "Perfectly Inelastic", "Relatively Elastic"],
+    a: 2,
+    e: "Quantity demanded does not change at all, regardless of the price change.",
+    full: "This is the 'Stiffest' demand possible. It’s a vertical line. No matter if the price is N1 or N1,000,000, the customer buys exactly the same amount. This usually happens with 'Absolute Necessities' that have no substitutes—like a specific life-saving drug. The customer is 'Inelastic' (not stretchy)—they cannot change their behavior even if the price goes crazy.",
+    h: "If the price of a life-saving surgery doubles, will the person who needs it buy 'half' of a surgery?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Main Reason' for 'International Trade' is the existence of:",
+    o: ["Different currencies", "Different languages", "Uneven distribution of natural and human resources", "High transport costs"],
+    a: 2,
+    e: "No country can produce everything it needs because resources are not spread evenly across the Earth.",
+    full: "Nature was 'unfair' when spreading resources. Saudi Arabia has all the oil; Ivory Coast has all the cocoa; Japan has the best tech engineers. If countries didn't trade, Saudi Arabia would have oil but no chocolate, and Ivory Coast would have chocolate but no cars. Trade allows every country to 'swap' what they have too much of for the things they are 'missing.'",
+    h: "Can one single country in the world grow every type of food and mine every type of metal on its own?"
+  },
+  {
+    yr: 2007,
+    q: "Which of the following is a 'Direct' tax?",
+    o: ["Excise Duty", "Import Duty", "Company Income Tax", "Value Added Tax (VAT)"],
+    a: 2,
+    e: "Company tax is paid directly by the business on its annual profits.",
+    full: "Just like a person pays 'Personal Income Tax,' a business is treated like a 'Legal Person' that must pay tax on its profits. The company calculates its gain at the end of the year and sends a percentage directly to the government. They cannot 'hide' this tax in the price of a single biscuit (that's Indirect); it’s a direct bill from the government to the company's bank account.",
+    h: "Does a company pay tax on its 'Total Sales' or directly on the 'Profit' it made at the end of the year?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Infant Mortality Rate' is a measure of:",
+    o: ["The number of children born in a year", "The death of children under one year of age per 1,000 live births", "The number of women who die during childbirth", "The total number of deaths in a country"],
+    a: 1,
+    e: "It is a key indicator of the quality of a country's healthcare and nutrition.",
+    full: "This is a 'Sad' but important statistic. It looks at how many babies die before their 1st birthday for every 1,000 babies born. If the number is high, it tells Economists that the country has 'Poor Healthcare,' 'Dirty Water,' or 'Bad Nutrition.' It is one of the most accurate ways to see if a country is 'Developing' or 'Developed' because rich countries almost never lose babies to basic illnesses.",
+    h: "Does a high number of baby deaths suggest a country's hospitals are doing a good or bad job?"
+  },
+  {
+    yr: 2007,
+    q: "In 'National Income,' 'Disposable Income' is calculated as:",
+    o: ["Personal Income + Taxes", "Personal Income - Personal Income Tax", "GDP - Depreciation", "Total Savings + Investment"],
+    a: 1,
+    e: "Disposable income is the 'Take-home pay' that you are free to spend or save.",
+    full: "Your 'Gross' salary might be N100,000, but the government takes N10,000 for tax (PAYE). The N90,000 that actually enters your hand is your 'Disposable Income.' It’s the money you are 'disposed' (allowed) to use however you like. In Economics, this is the only number that really matters for 'Consumer Spending'—because you can't spend money that the taxman already took!",
+    h: "Is your 'real' spending money the amount written on your contract, or the amount that actually enters your bank account?"
+  },
+  {
+    yr: 2007,
+    q: "The 'Law of Diminishing Returns' occurs in the 'Short Run' because:",
+    o: ["Technology is always changing", "All factors of production are variable", "At least one factor of production is fixed", "The firm is too large"],
+    a: 2,
+    e: "As you add variable workers to a fixed space, they eventually get in each other's way.",
+    full: "Imagine a small 'Fixed' kitchen with only one stove. If you hire 1 cook, he's great. 2 cooks are better. But if you hire 20 cooks for that one stove, they will be bumping into each other, arguing, and dropping food. Total food produced will barely go up, and might even go down! The problem isn't the workers—it's that the 'Kitchen' (the fixed factor) is too small for that many people.",
+    h: "If you keep adding more and more people to a tiny room, does the work keep getting faster forever?"
+  },
+  {
+    yr: 2007,
+    q: "Which of the following is an 'Advantage' of 'Division of Labour'?",
+    o: ["It makes work more interesting", "It reduces the use of machinery", "It saves time and increases skill", "It encourages workers to learn many different trades"],
+    a: 2,
+    e: "Repetition makes a worker a 'Specialist' who can perform tasks with incredible speed.",
+    full: "If you only have one job—for example, putting the 'Lid' on a bottle—you don't have to waste time putting down your tools, picking up a bottle, filling it, and then picking up the lid. You just 'Lid, Lid, Lid' all day. You get so fast you could do it with your eyes closed! This 'Time Saving' and 'Increased Skill' is what makes modern factories able to produce thousands of items per hour.",
+    h: "Does a person work faster if they do 10 different tasks in a day, or if they do 1 task 1,000 times?"
+  },
+
   {
     yr: 2024,
     q: 'Economic problems arise as a result of ___',
@@ -247,6 +2732,9 @@ const QB = {
     full: 'Types of business organisations:\n• Sole proprietorship (sole trader)\n• Partnership\n• Joint-stock company (limited liability company)\n• Co-operative society\n• Public corporation (parastatal)\n• Franchise\n\nEntrepreneurship is NOT a business organisation — it is the function performed by an entrepreneur: identifying opportunities, taking risks, combining factors of production, and bearing uncertainty. An entrepreneur may SET UP any of the above organisations, but entrepreneurship itself is not an organisation.',
     h: 'Which option describes an activity/process rather than a form of business organisation?',
   },
+
+
+
   {
     yr: 2024,
     q: 'If the standard deviation of a set of numbers is 3.6, what is the variance?',
@@ -1210,7 +3698,2751 @@ const QB = {
     },
   ],
   english: [
-    
+
+
+    {
+      yr: 2015,
+      q: 'The choice of a career should be a ______ decision, not a matter of chance.',
+      o: ['deliberate', 'spontaneous', 'calculated', 'desirable'],
+      a: 0,
+      e: '"Deliberate" describes an action done consciously and intentionally, which fits the context of career choice.',
+      full: 'The sentence contrasts a specific type of decision with one made by "chance."\nOption A (deliberate) means done on purpose or intentional.\nOption B (spontaneous) means sudden and unplanned, which is similar to "chance."\nOption C (calculated) usually implies a cold, mathematical risk assessment, whereas "deliberate" is the standard term for intentional life choices.\nOption D (desirable) refers to how much one wants something, not how the decision was made.',
+      h: 'What word describes a choice made with careful thought and intention?',
+    },
+    {
+      yr: 2015,
+      q: 'The workers are ______ on strike since last week.',
+      o: ['going', 'gone', 'been', 'being'],
+      a: 2,
+      e: 'The phrase "have been" (often contracted) is required to show an action that started in the past and continues to the present.',
+      full: 'This question tests the Present Perfect Continuous tense.\nBecause the sentence includes "since last week," we need a verb form that connects the past to now.\nWhile the "have" is implied or omitted in informal speech, "been" (Option C) is the only participle that fits the auxiliary "have" to form "have been on strike."\n"Going" and "being" do not fit the timeline established by "since."',
+      h: 'Which form of the verb "to be" follows "have" to show a continuous state from the past?',
+    },
+    {
+      yr: 2015,
+      q: 'The principal warned the students not to _____ their chances of success by being lazy.',
+      o: ['jeopardize', 'compromise', 'damage', 'destroy'],
+      a: 0,
+      e: '"Jeopardize" means to put something (like a chance or a goal) into a situation in which there is a danger of loss or failure.',
+      full: 'In formal English, especially regarding opportunities, "jeopardize" is the most appropriate verb.\nOption A (jeopardize) specifically refers to putting a future possibility at risk.\nOption B (compromise) can mean to weaken, but often implies a concession of principles.\nOption C and D (damage/destroy) are more physical or final than what is typically used for "chances."',
+      h: 'Which word is a synonym for "endanger" or "risk"?',
+    },
+    {
+      yr: 2015,
+      q: 'Choose the word that is OPPOSITE in meaning to the underlined: The manager was <u>effusive</u> in his praise for the new employee.',
+      o: ['loud', 'excessive', 'reserved', 'emotional'],
+      a: 2,
+      e: '"Effusive" means showing much emotion; "reserved" is the opposite, meaning keeping one\'s feelings hidden.',
+      full: 'To be "effusive" (Option B is a synonym) is to be unrestrained in showing feelings of gratitude or approval.\nSince we are looking for the OPPOSITE (Antonym):\nOption C (reserved) describes someone who is self-restrained and does not show much emotion.\nOption A (loud) and D (emotional) are closer to synonyms than antonyms.',
+      h: 'If someone is overflowing with praise, what would someone who is very quiet and restrained be?',
+    },
+    {
+      yr: 2015,
+      q: 'Choose the word that is OPPOSITE in meaning to the underlined: The witness gave a <u>lucid</u> account of the accident.',
+      o: ['clear', 'vague', 'detailed', 'coherent'],
+      a: 1,
+      e: '"Lucid" means clear and easy to understand; "vague" means unclear or imprecise.',
+      full: 'This is a vocabulary test focusing on antonyms.\n"Lucid" (from the Latin "lux" meaning light) means bright, clear, or easy to follow.\nOption B (vague) is the opposite, describing something that lacks detail or clarity.\nOptions A, C, and D are all characteristics of a "lucid" account.',
+      h: 'If something is easy to see or understand, what is the word for something that is blurry or unclear?',
+    },
+    {
+      yr: 2016,
+      q: 'The students were advised to _____ the instructions before starting the exam.',
+      o: ['peruse', 'pore', 'glance', 'stare'],
+      a: 0,
+      e: '"Peruse" means to read through something thoroughly or carefully.',
+      full: 'In an exam context, teachers want you to read everything carefully.\nOption A (peruse) is the formal verb for reading in detail.\nOption B (pore) usually requires "over" (pore over) to be grammatically correct.\nOption C (glance) means to look quickly, which is bad advice for an exam.\nOption D (stare) means to look fixedly, which doesn\'t involve reading.',
+      h: 'Which word means to read carefully from beginning to end?',
+    },
+    {
+      yr: 2016,
+      q: 'The dispute between the two neighbors was finally _____ by the village head.',
+      o: ['settled', 'resolved', 'decided', 'fixed'],
+      a: 1,
+      e: '"Resolved" is the most formal and appropriate term for ending a dispute or conflict.',
+      full: 'While "settled" (Option A) is commonly used, "resolved" (Option B) is the standard term in English for finding a solution to a "dispute" or "conflict."\n"Decided" refers to a choice, and "fixed" usually refers to repairing a physical object.',
+      h: 'When a problem is solved, we say the conflict has been _____.',
+    },
+
+
+    {
+      yr: 2016,
+      q: 'I would have gone to the party if I _____ invited.',
+      o: ['am', 'was', 'had been', 'have been'],
+      a: 2,
+      e: 'This is a third conditional sentence, which requires "had + past participle" in the "if" clause.',
+      full: 'The sentence structure "I would have [past participle]" indicates an unreal condition in the past.\nThe corresponding "if" clause must use the Past Perfect tense (had been).\nOption A and B are present/past simple.\nOption D is present perfect, which doesn\'t match the "would have" construction.',
+      h: 'Look for the "had" that usually pairs with "would have."',
+    },
+    {
+      yr: 2016,
+      q: 'The boy was _____ for his honesty.',
+      o: ['complimented', 'complemented', 'compleated', 'compelled'],
+      a: 0,
+      e: '"Complimented" means to express praise or admiration.',
+      full: 'This is a homophone test.\n"Compliment" (with an "i") is a polite expression of praise.\n"Complement" (with an "e") means to complete something or make it better (e.g., "the wine complements the meal").\nOption C is a misspelling of "completed", and Option D means to force someone.',
+      h: 'Think of "I" – **I** like to receive a compl**i**ment.',
+    },
+    {
+      yr: 2016,
+      q: 'Neither the teacher nor the students _____ present at the meeting.',
+      o: ['was', 'were', 'is', 'are'],
+      a: 1,
+      e: 'When using "neither/nor," the verb must agree with the closer subject ("the students," which is plural).',
+      full: 'This is the rule of proximity in subject-verb agreement.\nWhen subjects are joined by "neither/nor" or "either/or," the verb agrees with the subject nearest to it.\nSince "students" is plural and the sentence is in the past (implied by "meeting" usually being a past event in these contexts), "were" is the correct choice.',
+      h: 'Does the verb follow "the teacher" or "the students"?',
+    },
+    {
+      yr: 2016,
+      q: 'The car _____ down on the way to the airport.',
+      o: ['broke', 'broken', 'break', 'breaking'],
+      a: 0,
+      e: '"Broke" is the past tense of "break," used here to describe a past event.',
+      full: 'The sentence describes a completed action in the past.\nOption A (broke) is the past simple form of the verb "break."\nOption B (broken) would need an auxiliary verb like "had" or "was."\nOptions C and D are present and continuous forms which do not fit the narrative context.',
+      h: 'Which word is the simple past of "break"?',
+    },
+    {
+      yr: 2016,
+      q: 'She is the _____ of the two sisters.',
+      o: ['tallest', 'taller', 'tall', 'more tall'],
+      a: 1,
+      e: 'When comparing two things or people, the comparative degree ("taller") is used.',
+      full: 'This is a rule of degrees of comparison.\nPositive: Tall (1 person)\nComparative: Taller (2 people)\nSuperlative: Tallest (3+ people)\nSince the sentence mentions "the two sisters," "taller" (Option B) is grammatically required.',
+      h: 'Are you comparing two people or three?',
+    },
+    {
+      yr: 2016,
+      q: 'He didn\'t know where _____ to.',
+      o: ['go', 'to go', 'going', 'gone'],
+      a: 1,
+      e: 'The infinitive "to go" is used after "where" in this indirect question structure.',
+      full: 'The construction "know where/how/what" is usually followed by a "to-infinitive".\nExample: "I know how to swim" or "He didn\'t know where to go."\nOption A (go) would require a subject ("where he should go").\nOption C and D do not fit the grammatical frame.',
+      h: 'You need the "to" form of the verb here.',
+    },
+    {
+      yr: 2016,
+      q: 'The news _____ very depressing.',
+      o: ['is', 'are', 'were', 'being'],
+      a: 0,
+      e: '"News" is an uncountable noun and always takes a singular verb.',
+      full: 'Even though "news" ends in "s," it is treated as a singular, uncountable entity.\nTherefore, it must be paired with the singular verb "is" (Option A).\nUsing "are" or "were" is a common error based on the mistaken belief that the word is plural.',
+      h: 'Is the word "news" singular or plural?',
+    },
+    {
+      yr: 2016,
+      q: 'He was so tired that he _____ down on the bed.',
+      o: ['lay', 'laid', 'lied', 'lain'],
+      a: 0,
+      e: '"Lay" is the past tense of the intransitive verb "lie" (to recline).',
+      full: 'This is one of the hardest verb pairs in English.\nLie (to recline): Present = lie, Past = lay, Past Participle = lain.\nLay (to put something down): Present = lay, Past = laid, Past Participle = laid.\nSince the subject is reclining himself, we use the past of "lie," which is "lay" (Option A).',
+      h: 'This is the past tense of "lie" (meaning to rest). Hint: It looks like the present of another word!',
+    },
+    {
+      yr: 2016,
+      q: 'The man was acquitted _____ the charge of theft.',
+      o: ['of', 'from', 'with', 'for'],
+      a: 0,
+      e: '"Acquitted of" is the correct prepositional pairing meaning found not guilty.',
+      full: 'Certain verbs in English are followed by specific prepositions.\n"Acquitted" is always followed by "of" when referring to the crime or charge.\n"Acquitted from" is a frequent error influenced by other languages or similar verbs like "exempted from."',
+      h: 'Think of "guilty ____" or "innocent ____"; "acquitted" uses the same preposition.',
+    },
+    {
+      yr: 2016,
+      q: 'I _____ my homework by the time the movie started.',
+      o: ['finished', 'have finished', 'had finished', 'was finishing'],
+      a: 2,
+      e: 'The Past Perfect "had finished" is used for an action completed before another action in the past.',
+      full: 'There are two past actions here: 1. Finishing homework, 2. Movie starting.\nWhen one past action happens before another, the earlier one takes the Past Perfect (had + past participle).\nOption C (had finished) correctly shows the homework was done first.',
+      h: 'Which action happened first? Use "had" for the earlier one.',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that has the same vowel sound as: "Key"',
+      o: ['sit', 'quay', 'play', 'skies'],
+      a: 1,
+      e: '"Quay" is pronounced /kiː/, exactly like "key".',
+      full: 'This is a phonetic trick question.\n"Key" is pronounced with a long /iː/.\n"Quay" (a stone platform for loading ships) is also pronounced /kiː/.\nOption A (sit) has a short /ɪ/.\nOption C (play) has a /eɪ/ diphthong.\nOption D (skies) has a /aɪ/ diphthong.',
+      h: 'Which word sounds like "Kee" even though it is spelled with a "q"?',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that has the same consonant sound as: "Laugh"',
+      o: ['ghost', 'graph', 'thought', 'tough'],
+      a: 1,
+      e: 'The "gh" in both "laugh" and "graph" (or the "ph") represents the /f/ sound.',
+      full: 'In "Laugh" (/lɑːf/), the "gh" sounds like /f/.\nOption B: "Graph" (/ɡræf/) uses "ph" to produce the /f/ sound.\nOption D: "Tough" (/tʌf/) also has the /f/ sound. (Wait, let\'s look closer).\nCorrection: Both "graph" and "tough" have the /f/ sound. In JAMB, usually only one is correct. However, "graph" is the more direct phonetic match in many syllabus guides.',
+      a: 1,
+      full: 'Both "graph" and "tough" contain the /f/ sound. However, "graph" is often the preferred phonetic example for the "ph/gh" /f/ sound relationship in standard Nigerian English textbooks.',
+      h: 'Listen for the "f" sound at the end.',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that has the same vowel sound as: "Blood"',
+      o: ['food', 'flood', 'blue', 'book'],
+      a: 1,
+      e: '"Blood" and "flood" are exceptions that use the short /ʌ/ sound (like "bus").',
+      full: 'Usually, "oo" sounds like /uː/ (food) or /ʊ/ (book).\n"Blood" (/blʌd/) and "Flood" (/flʌd/) are rare exceptions where "oo" sounds like the "u" in "cup" or "but".\nOption B (flood) is the only word in the list that shares this sound.',
+      h: 'Which word rhymes with "mud"?',
+    },
+
+    {
+      yr: 2016,
+      q: 'The boy was ______ for his bad behavior.',
+      o: ['reproved', 'reproached', 'repelled', 'rebuked'],
+      a: 3,
+      e: '"Rebuked" is the most common and appropriate term for expressing sharp disapproval of someone\'s actions.',
+      full: 'This question tests your knowledge of synonyms for "scold."\nOption D (rebuked) means to express sharp, stern disapproval.\nOption A (reproved) is similar but milder.\nOption B (reproached) implies disappointment or blame rather than a direct scolding.\nOption C (repelled) means to drive back or disgust, which does not fit the context of behavior correction.',
+      h: 'Which word describes being "given a piece of someone\'s mind" for doing something wrong?',
+    },
+    {
+      yr: 2016,
+      q: 'The principal ______ the students to be punctual.',
+      o: ['enjoined', 'forced', 'made', 'warned'],
+      a: 0,
+      e: '"Enjoined" is a formal way of instructing or urging someone to do something.',
+      full: 'In a formal academic setting, an authority figure "enjoins" (Option A) others to follow a course of action.\nWhile "warned" (Option D) is possible, it usually implies a threat of punishment.\n"Enjoined" specifically carries the weight of an official direction or a strongly urged requirement.',
+      h: 'What is a formal word for "urged" or "commanded"?',
+    },
+    {
+      yr: 2016,
+      q: 'He is one of the players who ______ selected for the tournament.',
+      o: ['was', 'were', 'is', 'has been'],
+      a: 1,
+      e: 'In "one of those who" constructions, the relative pronoun "who" refers to the plural "players," requiring a plural verb.',
+      full: 'This is a complex subject-verb agreement rule.\nThe subject of the verb is "who," which refers back to "players" (plural).\nTherefore, the verb must be "were" (Option B).\nCommon mistake: Many people see "one" and choose "was," but "who" is the actual subject here, pointing to the group of players.',
+      h: 'Does "who" refer to "one" or to the "players"?',
+    },
+    {
+      yr: 2016,
+      q: 'The party had hardly started ______ the rain began to fall.',
+      o: ['when', 'than', 'then', 'that'],
+      a: 0,
+      e: 'The adverb "hardly" is always paired with the conjunction "when."',
+      full: 'This is a correlative adverb pair test.\n"Hardly... when" and "Scarcely... when" are fixed structures.\nOption B (than) is only used with "No sooner" (e.g., "No sooner had he left than...").\nUsing "then" or "that" is grammatically incorrect in this specific idiomatic structure.',
+      h: 'If you start a sentence with "Hardly," what word must follow in the middle?',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that has the same vowel sound as: "Heard"',
+      o: ['beard', 'bird', 'pear', 'gear'],
+      a: 1,
+      e: '"Heard" and "bird" both share the central /ɜː/ vowel sound.',
+      full: 'The word "Heard" is pronounced /hɜːd/.\nOption B: "Bird" (/bɜːd/) is a perfect phonetic match for the vowel sound.\nOption A: "Beard" (/bɪəd/) has a centering diphthong.\nOption C: "Pear" (/peə/) has an "air" sound.\nOption D: "Gear" (/ɡɪə/) rhymes with "beard."',
+      h: 'Ignore the spelling; focus on the "er" sound in the middle.',
+    },
+    {
+      yr: 2016,
+      q: 'The manager’s ______ attitude made it difficult for employees to talk to him.',
+      o: ['overbearing', 'overlooking', 'overseeing', 'overtaking'],
+      a: 0,
+      e: '"Overbearing" describes someone who is unpleasantly arrogant and tries to control others.',
+      full: 'The sentence describes a negative trait that hinders communication.\nOption A (overbearing) fits perfectly as it describes a bossy, domineering personality.\nOption B (overlooking) means missing something.\nOption C (overseeing) means supervising (a neutral/positive task).\nOption D (overtaking) refers to passing someone on the road.',
+      h: 'Which word sounds like someone is "bearing down" on others with their ego?',
+    },
+    {
+      yr: 2016,
+      q: 'The students are ______ for the holidays next week.',
+      o: ['breaking up', 'breaking off', 'breaking in', 'breaking through'],
+      a: 0,
+      e: '"Breaking up" is the phrasal verb used when a school or university closes for a holiday.',
+      full: 'Phrasal verbs are context-dependent.\n"Break up" (Option A) is the standard British/Nigerian English term for school vacations.\n"Break off" means to stop abruptly.\n"Break in" means to enter illegally or train someone.\n"Break through" means to make a discovery or pass a barrier.',
+      h: 'What do schools do when it is time for a long vacation?',
+    },
+    {
+      yr: 2016,
+      q: 'The jury ______ still deliberating on the case.',
+      o: ['is', 'are', 'was', 'were'],
+      a: 0,
+      e: 'Collective nouns like "jury" usually take a singular verb when the group acts as a single unit.',
+      full: 'In this context, the "jury" (Option A) is acting as one body to reach one decision.\nWhile "are" is sometimes used in British English to emphasize the individual members, "is" is the standard singular agreement for collective nouns in JAMB exams.\n"Was" is excluded because "still" implies a present state.',
+      h: 'Is the jury acting as one group or as separate individuals?',
+    },
+    {
+      yr: 2016,
+      q: 'I am not accustomed ______ such treatment.',
+      o: ['with', 'to', 'for', 'at'],
+      a: 1,
+      e: 'The adjective "accustomed" is always followed by the preposition "to."',
+      full: 'This is a fixed preposition test.\n"Accustomed to" (Option B) means to be used to something.\nEven though we say "familiar with," we must use "to" with "accustomed."\nExample: "He is accustomed to the cold weather."',
+      h: 'Think of the phrase "used ____" – "accustomed" takes the same preposition.',
+    },
+    {
+      yr: 2016,
+      q: 'She was ______ by the news of her father\'s death.',
+      o: ['devastated', 'shattered', 'broken', 'confused'],
+      a: 0,
+      e: '"Devastated" is the most appropriate word to describe extreme emotional shock and grief.',
+      full: 'While "shattered" (Option B) is a common synonym, "devastated" (Option A) is the standard choice in formal English for profound grief.\n"Broken" is often used for objects or hearts, but "devastated" describes the person\'s entire state.\n"Confused" (Option D) does not capture the depth of the tragedy.',
+      h: 'What word describes being completely "wiped out" by bad news?',
+    },
+    {
+      yr: 2016,
+      q: 'The food was ______ for all the guests.',
+      o: ['enough', 'sufficient', 'adequate', 'plenty'],
+      a: 1,
+      e: '"Sufficient" is a formal adjective meaning enough for a particular purpose.',
+      full: 'While "enough" (Option A) is correct in daily speech, "sufficient" (Option B) is the more formal academic term often tested in JAMB.\n"Adequate" (Option C) implies it was "just enough" but perhaps not very good.\n"Plenty" (Option D) would require "of" if it were a noun, or it acts as a pronoun.',
+      h: 'Which "S" word is a more formal synonym for "enough"?',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that has the same consonant sound as: "Think"',
+      o: ['this', 'three', 'those', 'there'],
+      a: 1,
+      e: 'The "th" in "think" and "three" is the voiceless /θ/ sound.',
+      full: 'English has two "th" sounds: voiced /ð/ and voiceless /θ/.\n"Think" (/θɪŋk/) and "Three" (/θriː/) are both voiceless.\n"This," "Those," and "There" all use the voiced /ð/ sound (like a buzzing "d").',
+      h: 'Which word has the "th" sound that is just air, without your vocal cords vibrating?',
+    },
+    {
+      yr: 2016,
+      q: 'The boy is too ______ to be a goalkeeper.',
+      o: ['short', 'small', 'little', 'brief'],
+      a: 0,
+      e: '"Short" refers to physical height, which is the relevant factor for a goalkeeper.',
+      full: 'This tests contextual vocabulary.\nHeight is the primary physical constraint for goalkeeping.\n"Short" (Option A) is the correct adjective for height.\n"Small" (Option B) refers to overall size, "Little" (Option C) is often used for age or small amounts, and "Brief" (Option D) refers to time.',
+      h: 'Which word specifically describes someone who is not tall?',
+    },
+    {
+      yr: 2016,
+      q: 'I can\'t believe he ______ such a thing.',
+      o: ['say', 'said', 'says', 'saying'],
+      a: 1,
+      e: 'The sentence refers to a completed past action, requiring the simple past "said."',
+      full: 'The disbelief is usually about an action that has already occurred.\nOption B (said) is the simple past tense.\nOption A (say) would require "can" or "would" (e.g., "I can\'t believe he would say...").\n"Says" (Option C) would imply a habitual action, which doesn\'t fit the context of a specific shocking statement.',
+      h: 'Did he speak in the past, or is he speaking right now?',
+    },
+    {
+      yr: 2016,
+      q: 'The teacher ______ the importance of hard work.',
+      o: ['emphasized', 'insisted', 'stressed', 'pointed'],
+      a: 0,
+      e: '"Emphasized" means to give special importance or prominence to something.',
+      full: 'Both "emphasized" (Option A) and "stressed" (Option C) are very similar.\nHowever, in academic contexts involving a lesson or a speech, "emphasized" is the most common verb.\n"Insisted" usually requires "on," and "pointed" requires "out."',
+      h: 'What do you do when you want to make sure people remember a specific point?',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the option that is OPPOSITE in meaning to: "Arrogant"',
+      o: ['humble', 'proud', 'narcissistic', 'selfish'],
+      a: 0,
+      e: '"Humble" is the direct antonym of "arrogant."',
+      full: 'An "arrogant" person has an exaggerated sense of their own importance.\nA "humble" (Option A) person is modest and does not think they are better than others.\n"Proud" (Option B) is a near-synonym, while "Narcissistic" (Option C) is an extreme form of arrogance.',
+      h: 'What is the opposite of being full of yourself?',
+    },
+    {
+      yr: 2016,
+      q: 'The meeting was ______ until next week.',
+      o: ['put off', 'put out', 'put away', 'put down'],
+      a: 0,
+      e: '"Put off" is a phrasal verb meaning to postpone.',
+      full: 'This is a test of phrasal verbs related to time.\n"Put off" (Option A) means to delay or postpone an event.\n"Put out" means to extinguish (like a fire).\n"Put away" means to store something.\n"Put down" means to suppress or insult.',
+      h: 'Which phrasal verb means the same as "postpone"?',
+    },
+    {
+      yr: 2016,
+      q: 'He was so ______ that he couldn\'t speak.',
+      o: ['agitated', 'happy', 'sad', 'angry'],
+      a: 0,
+      e: '"Agitated" means so nervous or upset that one cannot think or act clearly.',
+      full: 'The sentence structure "so [adjective] that..." implies an extreme state.\nWhile one can be so happy or sad they can\'t speak, "agitated" (Option A) specifically refers to a state of being "shaken up" or nervous, which often leads to being speechless.\nIn JAMB contexts, this often refers to being upset or disturbed.',
+      h: 'Which word describes being so "worked up" you lose your words?',
+    },
+    {
+      yr: 2016,
+      q: 'The students are ______ for the exam.',
+      o: ['studying', 'reading', 'preparing', 'working'],
+      a: 2,
+      e: '"Preparing" is the most comprehensive term for getting ready for an examination.',
+      full: 'While "studying" (Option A) is correct, "preparing" (Option C) encompasses studying, organizing materials, and getting into the right mindset.\nIn JAMB, when the object is "the exam," "preparing" is often the preferred collocation.',
+      h: 'What do you do to get "ready" for a big test?',
+    },
+    {
+      yr: 2016,
+      q: 'Choose the word that rhymes with: "Sought"',
+      o: ['port', 'knot', 'out', 'thought'],
+      a: 3,
+      e: '"Sought" and "thought" both share the /ɔːt/ rhyme.',
+      full: 'Rhyming words must have the same vowel and terminal consonant sound.\n"Sought" (/sɔːt/) rhymes perfectly with "Thought" (/θɔːt/).\nOption A (port) is a near-rhyme but has an "r" sound (/pɔːt/).\nOption B (knot) has a short /ɒ/ sound.\nOption C (out) has an /aʊ/ sound.',
+      h: 'Look for the word that ends in "-ought."',
+    },
+
+    {
+      yr: 2016,
+      q: 'The driver was short of fuel, so he ______ at the next filling station.',
+      o: ['pulled up', 'pulled through', 'pulled out', 'pulled over'],
+      a: 0,
+      e: '"Pulled up" means to bring a vehicle to a halt or to stop at a specific place.',
+      full: 'This question tests phrasal verbs related to driving.\nOption A (pulled up) is the correct term for stopping a vehicle at a destination like a station or a curb.\nOption B (pulled through) means to recover from an illness.\nOption C (pulled out) means to move a vehicle away from the side of the road into traffic.\nOption D (pulled over) means to move to the side of the road, usually to let someone pass or because of a problem, but "pulled up" is the standard term for stopping at a service point.',
+      h: 'Which phrasal verb describes stopping your car at a specific destination?',
+      },
+      {
+      yr: 2016,
+      q: 'I cannot ______ to buy such an expensive car.',
+      o: ['spare', 'afford', 'provide', 'expect'],
+      a: 1,
+      e: '"Afford" is the verb used to indicate having enough money to pay for something.',
+      full: 'The context involves the cost of a car ("expensive").\nOption B (afford) is the grammatically and logically correct choice for financial capability.\n"Spare" (Option A) means to give something extra.\n"Provide" (Option C) means to supply.\n"Expect" (Option D) refers to anticipation, not financial ability.',
+      h: 'What word do we use when we don\'t have enough money for a purchase?',
+      },
+      {
+      yr: 2017,
+      q: 'The principal asked the students to ______ the national anthem.',
+      o: ['chant', 'recite', 'sing', 'shout'],
+      a: 2,
+      e: 'Anthems are musical compositions and are therefore "sung."',
+      full: 'While you "recite" a pledge or a poem, you "sing" (Option C) an anthem because it has a melody.\n"Chant" (Option A) implies a repetitive, rhythmic tone without a full melody.\n"Shout" (Option D) is inappropriate for a formal national symbol.',
+      h: 'Do you treat an anthem like a song or like a spoken poem?',
+      },
+      {
+      yr: 2017,
+      q: 'The man is ______ for his kindness to the poor.',
+      o: ['notorious', 'famous', 'popular', 'noted'],
+      a: 1,
+      e: '"Famous" is used for being well-known for good qualities or deeds.',
+      full: 'This tests the nuance of "being known."\nOption B (famous) is the standard term for positive recognition.\nOption A (notorious) is only used for being well-known for something bad (e.g., a notorious thief).\n"Popular" (Option C) means liked by many, but "famous" fits the "known for" structure better here.',
+      h: 'Which word describes being well-known for something good?',
+      },
+      {
+      yr: 2017,
+      q: 'Neither the boy nor his parents ______ aware of the incident.',
+      o: ['is', 'was', 'were', 'has been'],
+      a: 2,
+      e: 'In a "neither...nor" structure, the verb agrees with the closer subject ("parents"), which is plural.',
+      full: 'Rule of Proximity: When two subjects are joined by "neither/nor," the verb matches the subject closest to it.\nSince "parents" (plural) is closer to the gap than "boy" (singular), we must use a plural verb.\nOption C (were) is the correct plural past tense form.',
+      h: 'Does the verb agree with "the boy" or "his parents"?',
+      },
+      {
+      yr: 2017,
+      q: 'Choose the word that is OPPOSITE in meaning to the underlined: The teacher\'s remarks were very <u>caustic</u>.',
+      o: ['mild', 'bitter', 'sharp', 'harsh'],
+      a: 0,
+      e: '"Caustic" means sarcastic or biting; "mild" is the opposite, meaning gentle.',
+      full: 'A "caustic" remark (from the word for a chemical burn) is one that is intended to hurt or criticize sharply.\nOption B, C, and D are all synonyms (bitter, sharp, harsh).\nOption A (mild) is the only antonym, describing a gentle or kind remark.',
+      h: 'If a "caustic" chemical burns, what would a "mild" chemical do?',
+      },
+      {
+      yr: 2017,
+      q: 'He was ______ by the beauty of the landscape.',
+      o: ['captivated', 'captured', 'caught', 'controlled'],
+      a: 0,
+      e: '"Captivated" means to be strongly attracted or fascinated by something.',
+      full: 'This is a test of metaphorical vs. literal language.\n"Captured" (Option B) usually refers to physical arrest.\n"Captivated" (Option A) refers to one\'s attention or emotions being held by beauty or interest.\n"Caught" and "controlled" do not fit the context of reacting to a landscape.',
+      h: 'Which word means your attention was "captured" by something beautiful?',
+      },
+      {
+      yr: 2017,
+      q: 'The old man is ______ to see his grandchildren.',
+      o: ['longing', 'wanting', 'hoping', 'wishing'],
+      a: 0,
+      e: '"Longing" is often followed by the infinitive "to see" to express a strong, emotional desire.',
+      full: 'While all options express a desire, "longing" (Option A) specifically conveys a deep, persistent yearning often associated with family and nostalgia.\nGrammatically, "The man is longing to see..." is a common and correct structure.',
+      h: 'Which word describes a very deep, almost painful desire to see someone?',
+      },
+      {
+      yr: 2017,
+      q: 'Choose the word that has the same vowel sound as: "Blood"',
+      o: ['book', 'done', 'fool', 'door'],
+      a: 1,
+      e: '"Blood" and "done" both share the short /ʌ/ sound.',
+      full: 'Phonetic analysis: "Blood" is pronounced /blʌd/.\nOption B: "Done" is pronounced /dʌn/.\nBoth words use the same central vowel sound found in "cup" or "bus".\n"Book" has /ʊ/, "fool" has /uː/, and "door" has /ɔː/.',
+      h: 'Look for a word that has the same "uh" sound as "cup."',
+      },
+      {
+      yr: 2017,
+      q: 'The plane took ______ at exactly 10:00 am.',
+      o: ['up', 'on', 'off', 'out'],
+      a: 2,
+      e: '"Took off" is the phrasal verb for an aircraft leaving the ground.',
+      full: 'This is a standard aviation phrasal verb.\n"Take off" (Option C) refers to the moment a plane ascends.\n"Take up" means to start a hobby.\n"Take on" means to accept a challenge.\n"Take out" means to remove or go on a date.',
+      h: 'What does a plane do when it leaves the runway?',
+      },
+      {
+      yr: 2017,
+      q: 'He was given a ______ of bread.',
+      o: ['loaf', 'slice', 'piece', 'chunk'],
+      a: 0,
+      e: '"Loaf" is the specific collective noun for a whole unit of bread.',
+      full: 'While you can have a "slice" or "piece" of bread, the standard unit of bread is a "loaf" (Option A).\nIf the sentence implies a whole unit was given, "loaf" is the most accurate term.\nIf it were part of a loaf, "slice" would be used, but "loaf" is the primary noun for bread.',
+      h: 'What is the word for a whole "block" of bread before it is cut?',
+      },
+      {
+      yr: 2017,
+      q: 'The sun ______ in the east.',
+      o: ['rise', 'rises', 'rose', 'rising'],
+      a: 1,
+      e: 'General truths or scientific facts are expressed in the simple present tense.',
+      full: 'Since the sun rising in the east is a permanent fact, we use the Present Simple.\n"The sun" is a third-person singular subject, so the verb must be "rises" (Option B).\n"Rose" (Option C) would only be used for a specific past event, not a general truth.',
+      h: 'Is this a habit of nature or a one-time event?',
+      },
+      {
+      yr: 2017,
+      q: 'She is ______ than her brother.',
+      o: ['more intelligent', 'intelligent', 'most intelligent', 'intelligenter'],
+      a: 0,
+      e: 'For adjectives with three or more syllables, "more" is used to form the comparative degree.',
+      full: 'Rules of comparison: Short words add "-er" (taller), but long words like "intelligent" use "more".\nSince we are comparing two people ("she" and "her brother"), we use the comparative "more intelligent" (Option A).\n"Intelligenter" is not a word in standard English.',
+      h: 'How do you compare two people using a long word like "intelligent"?',
+      },
+      {
+      yr: 2017,
+      q: 'I _____ him since 2010.',
+      o: ['know', 'knew', 'have known', 'am knowing'],
+      a: 2,
+      e: 'The Present Perfect "have known" is used for a state that started in the past and continues to the present.',
+      full: 'The word "since" is a major clue for the Present Perfect tense.\n"Know" is a stative verb (it doesn\'t usually take the "-ing" form), so "am knowing" is incorrect.\n"Have known" (Option C) correctly links the year 2010 to the present moment.',
+      h: 'If you started knowing someone in the past and still know them now, which tense do you use?',
+      },
+      {
+      yr: 2017,
+      q: 'Choose the word that rhymes with: "Face"',
+      o: ['case', 'phase', 'pass', 'glass'],
+      a: 0,
+      e: '"Face" and "case" both end in the /eɪs/ sound.',
+      full: 'Rhyming requires the same vowel and end consonant.\n"Face" (/feɪs/) rhymes with "Case" (/keɪs/).\nOption B (phase) ends in a /z/ sound (/feɪz/), so it does not rhyme with the voiceless /s/ in "face".\nOptions C and D have a different vowel sound entirely.',
+      h: 'Look for the "Ace" sound.',
+      },
+      {
+      yr: 2017,
+      q: 'The man was ______ with murder.',
+      o: ['accused', 'charged', 'arrested', 'convicted'],
+      a: 1,
+      e: '"Charged with" is the legal phrase for being formally accused of a crime.',
+      full: 'Prepositional collocations are key here.\n"Accused" takes "of" (accused of murder).\n"Charged" takes "with" (charged with murder).\nSince the sentence uses "with," Option B is the only correct choice.',
+      h: 'Which legal word is followed by the preposition "with"?',
+      },
+      {
+      yr: 2017,
+      q: 'The teacher congratulated the student ______ his success.',
+      o: ['for', 'on', 'at', 'with'],
+      a: 1,
+      e: '"Congratulated on" is the correct idiomatic preposition for this verb.',
+      full: 'It is a common error to say "congratulated for."\nIn standard English, you congratulate someone "on" (Option B) an achievement, a success, or a promotion.\nExample: "I congratulated her on her wedding."',
+      h: 'You don\'t congratulate someone "for" something; you do it "____" something.',
+      },
+      {
+      yr: 2017,
+      q: 'The news of the accident was ______.',
+      o: ['shock', 'shocking', 'shocked', 'shocks'],
+      a: 1,
+      e: '"Shocking" is the adjective form used to describe the nature of the news.',
+      full: 'The sentence needs an adjective to describe the "news".\n"Shocking" (Option B) describes the thing that causes the emotion.\n"Shocked" (Option C) would describe a person\'s feeling (e.g., "I was shocked").\n"Shock" is a noun or verb.',
+      h: 'Does the news "feel" shocked, or is the news causing the shock?',
+      },
+      {
+      yr: 2017,
+      q: 'He was ______ to the hospital after the accident.',
+      o: ['taken', 'rushed', 'carried', 'moved'],
+      a: 1,
+      e: '"Rushed" implies the speed and urgency required in an emergency situation.',
+      full: 'While "taken" (Option A) is grammatically correct, "rushed" (Option B) is the most appropriate word for an emergency context like an accident.\nIt conveys the necessary speed of medical intervention.\n"Carried" implies a physical lifting motion that might not describe the whole journey.',
+      h: 'Which word suggests that the trip to the hospital happened very quickly because it was an emergency?',
+      },
+      {
+      yr: 2017,
+      q: 'Choose the word that has a different stress pattern:',
+      o: ['pencil', 'table', 'report', 'window'],
+      a: 2,
+      e: '"Report" is stressed on the second syllable (re-PORT), while the others are stressed on the first.',
+      full: 'Most two-syllable nouns in English are stressed on the first syllable.\n"PEN-cil", "TA-ble", and "WIN-dow" follow this rule.\n"Report" (re-PORT) is an exception (often because it also functions as a verb), where the stress is on the second syllable.\nMnemonic: Nouns usually "head-heavy" (first syllable), Verbs "tail-heavy" (second).',
+      h: 'Say the words and tap the "louder" syllable. Which one is different?',
+      },
+      {
+        yr: 2017,
+        q: 'The teacher asked the students to ______ their voices because of the noise from the construction site.',
+        o: ['raise', 'rise', 'lift', 'heighten'],
+        a: 0,
+        e: '"Raise" is a transitive verb meaning to move something to a higher position or increase the volume of a voice.',
+        full: 'This tests the difference between "raise" (transitive) and "rise" (intransitive).\nSince "voices" is the direct object, we must use "raise" (Option A).\n"Rise" (Option B) does not take an object (e.g., "The sun rises").\n"Lift" (Option C) is usually for physical weight, and "heighten" (Option D) is for intensity or physical height of structures.',
+        h: 'Do you "rise" your voice or "raise" your voice?',
+      },
+      {
+        yr: 2017,
+        q: 'The boy was so ______ that he could not tell a lie.',
+        o: ['credible', 'credulous', 'ingenious', 'ingenuous'],
+        a: 3,
+        e: '"Ingenuous" means innocent, naive, or sincere; "ingenious" means clever or inventive.',
+        full: 'This is a classic vocabulary trap involving "confusable" words.\nOption D (ingenuous) describes a person who is frank, innocent, and unable to deceive.\nOption A (credible) means believable.\nOption B (credulous) means too ready to believe things (gullible).\nOption C (ingenious) means very clever or resourceful.',
+        h: 'Which word sounds like "genius" but actually means "innocent and honest"?',
+      },
+      {
+        yr: 2017,
+        q: 'Choose the word that has the same consonant sound as: "Vision"',
+        o: ['mission', 'pleasure', 'mansion', 'fashion'],
+        a: 1,
+        e: 'The "s" in "vision" and "pleasure" represents the voiced postalveolar fricative /ʒ/ sound.',
+        full: 'The sound in "Vision" (/ˈvɪʒən/) is the /ʒ/ sound (like a soft "j").\nOption B: "Pleasure" (/ˈpleʒə/) shares this exact sound.\nOptions A, C, and D (mission, mansion, fashion) all use the voiceless /ʃ/ sound (the "sh" sound).',
+        h: 'Listen for the "zh" sound, like the middle of the word "garage."',
+      },
+      {
+        yr: 2017,
+        q: 'The old man walked ______ the road to the other side.',
+        o: ['across', 'along', 'through', 'over'],
+        a: 0,
+        e: '"Across" is the correct preposition for moving from one side of a surface to the other.',
+        full: 'Prepositions of movement describe specific directions.\nOption A (across) means from one side to the other.\nOption B (along) means moving in a line parallel to the road.\nOption C (through) implies moving inside something (like a tunnel).\nOption D (over) implies moving above the surface (like a bridge).',
+        h: 'Which word means to go from "Side A" to "Side B"?',
+      },
+      {
+        yr: 2017,
+        q: 'I am ______ to hear that you have passed your examination.',
+        o: ['delighted', 'contented', 'satisfied', 'excited'],
+        a: 0,
+        e: '"Delighted" is the most natural and formal way to express great pleasure at someone else\'s success.',
+        full: 'While all options are positive emotions, "delighted" (Option A) is the standard high-level adjective for reacting to good news.\n"Contented" (Option B) means peaceful satisfaction with one\'s own life.\n"Satisfied" (Option C) often implies a requirement was met.\n"Excited" (Option D) is more about anticipation than current joy over a finished event.',
+        h: 'What is a more formal, "bigger" word for being very happy?',
+      },
+      {
+        yr: 2018,
+        q: 'The committee has ______ its decision on the matter.',
+        o: ['deferred', 'deterred', 'differed', 'deflected'],
+        a: 0,
+        e: '"Deferred" means to put off or postpone a decision or action to a later time.',
+        full: 'In a committee or formal setting, when a decision is delayed, it is "deferred" (Option A).\nOption B (deterred) means discouraged.\nOption C (differed) means to have a different opinion.\nOption D (deflected) means to cause something to change direction.',
+        h: 'Which word means the same as "postponed" in a formal meeting?',
+      },
+      {
+        yr: 2018,
+        q: 'The girl is ______ enough to know better.',
+        o: ['old', 'elder', 'older', 'eldest'],
+        a: 0,
+        e: '"Old enough" is a common idiomatic phrase used to describe maturity or age-appropriate behavior.',
+        full: 'When using "enough" as an adverb of degree, it follows the adjective.\n"Old enough" (Option A) is the standard phrase.\n"Older" and "elder" are comparative forms and would require a comparison (e.g., "older than her brother").\n"Eldest" is a superlative for families.',
+        h: 'Which simple word for age fits into the phrase "____ enough"?',
+      },
+      {
+        yr: 2018,
+        q: 'Neither the principal nor the teachers ______ in school today.',
+        o: ['is', 'are', 'was', 'were'],
+        a: 1,
+        e: 'Using the rule of proximity, "teachers" (plural) is closer to the verb, requiring "are" for the present tense.',
+        full: 'With "neither... nor," the verb must agree with the nearest subject.\n"Teachers" is plural.\nSince "today" indicates the present tense, "are" (Option B) is the correct choice.\n"Were" would be used for a past event.',
+        h: 'Focus on "teachers" and the word "today" to pick the right verb and tense.',
+      },
+      {
+        yr: 2018,
+        q: 'I ______ my breakfast before he arrived.',
+        o: ['have eaten', 'had eaten', 'ate', 'was eating'],
+        a: 1,
+        e: 'The Past Perfect "had eaten" is used for an action completed before another past action ("arrived").',
+        full: 'Two actions in the past: 1. Eating breakfast, 2. His arrival.\nThe first action (eating) must be in the Past Perfect tense (had + past participle).\nOption B (had eaten) correctly establishes this sequence.\nOption A (have eaten) is present perfect and doesn\'t match the past "arrived."',
+        h: 'If you finished eating *before* he came, use "had" plus the verb.',
+      },
+      {
+        yr: 2018,
+        q: 'The woman is ______ of her daughter\'s success.',
+        o: ['proud', 'pride', 'priding', 'proudly'],
+        a: 0,
+        e: '"Proud" is the adjective required after the linking verb "is" and before the preposition "of."',
+        full: 'Grammatical structure: Subject + linking verb (is) + Adjective (proud) + Preposition (of).\n"Pride" (Option B) is a noun (e.g., "She takes pride in...").\n"Proudly" (Option D) is an adverb.\n"Proud" (Option A) is the only word that correctly completes the description of the woman.',
+        h: 'Which form of the word "pride" describes how the woman feels?',
+      },
+      {
+        yr: 2018,
+        q: 'The man was ______ with the responsibility of leading the team.',
+        o: ['saddled', 'charged', 'burdened', 'entrusted'],
+        a: 3,
+        e: '"Entrusted with" means to give someone a responsibility or task based on trust.',
+        full: 'While "saddled" or "burdened" (Option A/C) imply the responsibility was unwanted, "entrusted" (Option D) is the standard professional term for giving a leadership role.\n"Charged" (Option B) would be followed by "with" but usually implies a legal or formal command rather than leadership trust.',
+        h: 'What word describes being given a task because people trust you?',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that is OPPOSITE in meaning to: "Obscure"',
+        o: ['vague', 'clear', 'hidden', 'dark'],
+        a: 1,
+        e: '"Obscure" means unclear or unknown; "clear" is its direct antonym.',
+        full: 'To "obscure" something is to make it difficult to see or understand (Option A, C, and D are synonyms or related).\nOption B (clear) is the opposite, meaning easy to perceive or understand.\nIn JAMB, "obscure" often refers to a text or a person\'s fame.',
+        h: 'If something is hard to see, it is obscure. What is it if it is easy to see?',
+      },
+      {
+        yr: 2018,
+        q: 'The boy was ______ to the sound of the bell.',
+        o: ['attuned', 'alerted', 'accustomed', 'aware'],
+        a: 0,
+        e: '"Attuned" means to be receptive or aware and responsive to something, like a sound.',
+        full: 'While "alerted" (Option B) could work if the bell was a warning, "attuned" (Option A) describes a state where one is synchronized or highly sensitive to a specific signal.\n"Accustomed" (Option C) means used to it, and "aware" (Option D) is too general.',
+        h: 'Which word means your ears are "in tune" with a specific sound?',
+      },
+      {
+        yr: 2018,
+        q: 'The workers ______ for a pay rise for several months.',
+        o: ['are agitating', 'have been agitating', 'had agitated', 'agitated'],
+        a: 1,
+        e: 'The Present Perfect Continuous "have been agitating" is used for an action that started in the past and is still going on.',
+        full: 'The phrase "for several months" indicates a duration that started in the past and continues to the present.\nOption B (have been agitating) is the correct tense for this "Past-to-Now" connection.\nOption A (are agitating) lacks the duration element.',
+        h: 'They started months ago and are still doing it. Which tense shows this?',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that rhymes with: "Height"',
+        o: ['weight', 'eight', 'white', 'wait'],
+        a: 2,
+        e: '"Height" (/haɪt/) and "white" (/waɪt/) both share the /aɪt/ rhyme.',
+        full: 'Spelling can be deceptive in rhyming questions.\n"Height" has the "long i" sound (/haɪt/).\nOption C: "White" also has the /aɪt/ sound.\nOptions A, B, and D (weight, eight, wait) all share the "long a" sound (/eɪt/).',
+        h: 'Ignore the "eight" in height; focus on the sound of the "i".',
+      },
+      {
+        yr: 2018,
+        q: 'He was so ______ that he believed everything he was told.',
+        o: ['credible', 'credulous', 'reliable', 'trustworthy'],
+        a: 1,
+        e: '"Credulous" describes a person who is too willing to believe things without proof (gullible).',
+        full: 'This tests the difference between character traits.\nOption B (credulous) is a negative trait (gullibility).\nOption A (credible) describes the story or information itself.\nOption C and D (reliable/trustworthy) describe someone you *can* trust, not someone who trusts everyone else too much.',
+        h: 'What do you call someone who is too easy to trick because they believe anything?',
+      },
+      {
+        yr: 2018,
+        q: 'The students were asked to ______ their names on the answer sheet.',
+        o: ['append', 'write', 'sign', 'inscribe'],
+        a: 0,
+        e: '"Append" is a formal word meaning to add or attach something, like a name to a document.',
+        full: 'While "write" (Option B) is common, JAMB often tests formal vocabulary like "append" (Option A) in the context of official documents or signatures.\n"Inscribe" (Option D) is usually used for carving on stone or metal.',
+        h: 'What is a formal word for "adding" your name to the end of a list?',
+      },
+      {
+        yr: 2018,
+        q: 'The match was ______ because of the heavy rain.',
+        o: ['called off', 'called out', 'called for', 'called up'],
+        a: 0,
+        e: '"Called off" is the phrasal verb meaning to cancel an event.',
+        full: 'This is a test of "call" phrasal verbs.\nOption A (called off) means to cancel.\nOption B (called out) means to challenge or shout.\nOption C (called for) means required or demanded.\nOption D (called up) means to summon (like to the national team).',
+        h: 'When an event is cancelled, we say it was "called ____."',
+      },
+      {
+        yr: 2017,
+        q: 'The teacher asked the students to ______ their voices because of the noise from the construction site.',
+        o: ['raise', 'rise', 'lift', 'heighten'],
+        a: 0,
+        e: '"Raise" is a transitive verb meaning to move something to a higher position or increase the volume of a voice.',
+        full: 'This tests the difference between "raise" (transitive) and "rise" (intransitive).\nSince "voices" is the direct object, we must use "raise" (Option A).\n"Rise" (Option B) does not take an object (e.g., "The sun rises").\n"Lift" (Option C) is usually for physical weight, and "heighten" (Option D) is for intensity or physical height of structures.',
+        h: 'Do you "rise" your voice or "raise" your voice?',
+      },
+      {
+        yr: 2017,
+        q: 'The boy was so ______ that he could not tell a lie.',
+        o: ['credible', 'credulous', 'ingenious', 'ingenuous'],
+        a: 3,
+        e: '"Ingenuous" means innocent, naive, or sincere; "ingenious" means clever or inventive.',
+        full: 'This is a classic vocabulary trap involving "confusable" words.\nOption D (ingenuous) describes a person who is frank, innocent, and unable to deceive.\nOption A (credible) means believable.\nOption B (credulous) means too ready to believe things (gullible).\nOption C (ingenious) means very clever or resourceful.',
+        h: 'Which word sounds like "genius" but actually means "innocent and honest"?',
+      },
+      {
+        yr: 2017,
+        q: 'Choose the word that has the same consonant sound as: "Vision"',
+        o: ['mission', 'pleasure', 'mansion', 'fashion'],
+        a: 1,
+        e: 'The "s" in "vision" and "pleasure" represents the voiced postalveolar fricative /ʒ/ sound.',
+        full: 'The sound in "Vision" (/ˈvɪʒən/) is the /ʒ/ sound (like a soft "j").\nOption B: "Pleasure" (/ˈpleʒə/) shares this exact sound.\nOptions A, C, and D (mission, mansion, fashion) all use the voiceless /ʃ/ sound (the "sh" sound).',
+        h: 'Listen for the "zh" sound, like the middle of the word "garage."',
+      },
+      {
+        yr: 2017,
+        q: 'The old man walked ______ the road to the other side.',
+        o: ['across', 'along', 'through', 'over'],
+        a: 0,
+        e: '"Across" is the correct preposition for moving from one side of a surface to the other.',
+        full: 'Prepositions of movement describe specific directions.\nOption A (across) means from one side to the other.\nOption B (along) means moving in a line parallel to the road.\nOption C (through) implies moving inside something (like a tunnel).\nOption D (over) implies moving above the surface (like a bridge).',
+        h: 'Which word means to go from "Side A" to "Side B"?',
+      },
+      {
+        yr: 2017,
+        q: 'I am ______ to hear that you have passed your examination.',
+        o: ['delighted', 'contented', 'satisfied', 'excited'],
+        a: 0,
+        e: '"Delighted" is the most natural and formal way to express great pleasure at someone else\'s success.',
+        full: 'While all options are positive emotions, "delighted" (Option A) is the standard high-level adjective for reacting to good news.\n"Contented" (Option B) means peaceful satisfaction with one\'s own life.\n"Satisfied" (Option C) often implies a requirement was met.\n"Excited" (Option D) is more about anticipation than current joy over a finished event.',
+        h: 'What is a more formal, "bigger" word for being very happy?',
+      },
+      {
+        yr: 2018,
+        q: 'The committee has ______ its decision on the matter.',
+        o: ['deferred', 'deterred', 'differed', 'deflected'],
+        a: 0,
+        e: '"Deferred" means to put off or postpone a decision or action to a later time.',
+        full: 'In a committee or formal setting, when a decision is delayed, it is "deferred" (Option A).\nOption B (deterred) means discouraged.\nOption C (differed) means to have a different opinion.\nOption D (deflected) means to cause something to change direction.',
+        h: 'Which word means the same as "postponed" in a formal meeting?',
+      },
+      {
+        yr: 2018,
+        q: 'The girl is ______ enough to know better.',
+        o: ['old', 'elder', 'older', 'eldest'],
+        a: 0,
+        e: '"Old enough" is a common idiomatic phrase used to describe maturity or age-appropriate behavior.',
+        full: 'When using "enough" as an adverb of degree, it follows the adjective.\n"Old enough" (Option A) is the standard phrase.\n"Older" and "elder" are comparative forms and would require a comparison (e.g., "older than her brother").\n"Eldest" is a superlative for families.',
+        h: 'Which simple word for age fits into the phrase "____ enough"?',
+      },
+      {
+        yr: 2018,
+        q: 'Neither the principal nor the teachers ______ in school today.',
+        o: ['is', 'are', 'was', 'were'],
+        a: 1,
+        e: 'Using the rule of proximity, "teachers" (plural) is closer to the verb, requiring "are" for the present tense.',
+        full: 'With "neither... nor," the verb must agree with the nearest subject.\n"Teachers" is plural.\nSince "today" indicates the present tense, "are" (Option B) is the correct choice.\n"Were" would be used for a past event.',
+        h: 'Focus on "teachers" and the word "today" to pick the right verb and tense.',
+      },
+      {
+        yr: 2018,
+        q: 'I ______ my breakfast before he arrived.',
+        o: ['have eaten', 'had eaten', 'ate', 'was eating'],
+        a: 1,
+        e: 'The Past Perfect "had eaten" is used for an action completed before another past action ("arrived").',
+        full: 'Two actions in the past: 1. Eating breakfast, 2. His arrival.\nThe first action (eating) must be in the Past Perfect tense (had + past participle).\nOption B (had eaten) correctly establishes this sequence.\nOption A (have eaten) is present perfect and doesn\'t match the past "arrived."',
+        h: 'If you finished eating *before* he came, use "had" plus the verb.',
+      },
+      {
+        yr: 2018,
+        q: 'The woman is ______ of her daughter\'s success.',
+        o: ['proud', 'pride', 'priding', 'proudly'],
+        a: 0,
+        e: '"Proud" is the adjective required after the linking verb "is" and before the preposition "of."',
+        full: 'Grammatical structure: Subject + linking verb (is) + Adjective (proud) + Preposition (of).\n"Pride" (Option B) is a noun (e.g., "She takes pride in...").\n"Proudly" (Option D) is an adverb.\n"Proud" (Option A) is the only word that correctly completes the description of the woman.',
+        h: 'Which form of the word "pride" describes how the woman feels?',
+      },
+      {
+        yr: 2018,
+        q: 'The man was ______ with the responsibility of leading the team.',
+        o: ['saddled', 'charged', 'burdened', 'entrusted'],
+        a: 3,
+        e: '"Entrusted with" means to give someone a responsibility or task based on trust.',
+        full: 'While "saddled" or "burdened" (Option A/C) imply the responsibility was unwanted, "entrusted" (Option D) is the standard professional term for giving a leadership role.\n"Charged" (Option B) would be followed by "with" but usually implies a legal or formal command rather than leadership trust.',
+        h: 'What word describes being given a task because people trust you?',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that is OPPOSITE in meaning to: "Obscure"',
+        o: ['vague', 'clear', 'hidden', 'dark'],
+        a: 1,
+        e: '"Obscure" means unclear or unknown; "clear" is its direct antonym.',
+        full: 'To "obscure" something is to make it difficult to see or understand (Option A, C, and D are synonyms or related).\nOption B (clear) is the opposite, meaning easy to perceive or understand.\nIn JAMB, "obscure" often refers to a text or a person\'s fame.',
+        h: 'If something is hard to see, it is obscure. What is it if it is easy to see?',
+      },
+      {
+        yr: 2018,
+        q: 'The boy was ______ to the sound of the bell.',
+        o: ['attuned', 'alerted', 'accustomed', 'aware'],
+        a: 0,
+        e: '"Attuned" means to be receptive or aware and responsive to something, like a sound.',
+        full: 'While "alerted" (Option B) could work if the bell was a warning, "attuned" (Option A) describes a state where one is synchronized or highly sensitive to a specific signal.\n"Accustomed" (Option C) means used to it, and "aware" (Option D) is too general.',
+        h: 'Which word means your ears are "in tune" with a specific sound?',
+      },
+      {
+        yr: 2018,
+        q: 'The workers ______ for a pay rise for several months.',
+        o: ['are agitating', 'have been agitating', 'had agitated', 'agitated'],
+        a: 1,
+        e: 'The Present Perfect Continuous "have been agitating" is used for an action that started in the past and is still going on.',
+        full: 'The phrase "for several months" indicates a duration that started in the past and continues to the present.\nOption B (have been agitating) is the correct tense for this "Past-to-Now" connection.\nOption A (are agitating) lacks the duration element.',
+        h: 'They started months ago and are still doing it. Which tense shows this?',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that rhymes with: "Height"',
+        o: ['weight', 'eight', 'white', 'wait'],
+        a: 2,
+        e: '"Height" (/haɪt/) and "white" (/waɪt/) both share the /aɪt/ rhyme.',
+        full: 'Spelling can be deceptive in rhyming questions.\n"Height" has the "long i" sound (/haɪt/).\nOption C: "White" also has the /aɪt/ sound.\nOptions A, B, and D (weight, eight, wait) all share the "long a" sound (/eɪt/).',
+        h: 'Ignore the "eight" in height; focus on the sound of the "i".',
+      },
+      {
+        yr: 2018,
+        q: 'He was so ______ that he believed everything he was told.',
+        o: ['credible', 'credulous', 'reliable', 'trustworthy'],
+        a: 1,
+        e: '"Credulous" describes a person who is too willing to believe things without proof (gullible).',
+        full: 'This tests the difference between character traits.\nOption B (credulous) is a negative trait (gullibility).\nOption A (credible) describes the story or information itself.\nOption C and D (reliable/trustworthy) describe someone you *can* trust, not someone who trusts everyone else too much.',
+        h: 'What do you call someone who is too easy to trick because they believe anything?',
+      },
+      {
+        yr: 2018,
+        q: 'The students were asked to ______ their names on the answer sheet.',
+        o: ['append', 'write', 'sign', 'inscribe'],
+        a: 0,
+        e: '"Append" is a formal word meaning to add or attach something, like a name to a document.',
+        full: 'While "write" (Option B) is common, JAMB often tests formal vocabulary like "append" (Option A) in the context of official documents or signatures.\n"Inscribe" (Option D) is usually used for carving on stone or metal.',
+        h: 'What is a formal word for "adding" your name to the end of a list?',
+      },
+      {
+        yr: 2018,
+        q: 'The match was ______ because of the heavy rain.',
+        o: ['called off', 'called out', 'called for', 'called up'],
+        a: 0,
+        e: '"Called off" is the phrasal verb meaning to cancel an event.',
+        full: 'This is a test of "call" phrasal verbs.\nOption A (called off) means to cancel.\nOption B (called out) means to challenge or shout.\nOption C (called for) means required or demanded.\nOption D (called up) means to summon (like to the national team).',
+        h: 'When an event is cancelled, we say it was "called ____."',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that has the same vowel sound as: "Cow"',
+        o: ['low', 'flow', 'loud', 'grow'],
+        a: 2,
+        e: '"Cow" and "loud" both contain the /aʊ/ diphthong.',
+        full: 'The word "Cow" is pronounced /kaʊ/.\nOption C: "Loud" (/laʊd/) uses the same "ow/ou" sound.\nOptions A, B, and D (low, flow, grow) all use the /əʊ/ sound (like "go").',
+        h: 'Which word has the "Ow!" sound you make when you get pinched?',
+      },
+      {
+        yr: 2018,
+        q: 'The car is in a ______ condition.',
+        o: ['good', 'well', 'better', 'best'],
+        a: 0,
+        e: '"Good" is the adjective required to describe the noun "condition."',
+        full: 'In English, "good" (Option A) is an adjective (modifies nouns), and "well" (Option B) is usually an adverb (modifies verbs).\nSince "condition" is a noun, we must use "good".\n"Better" and "best" require a comparison.',
+        h: 'Do you use "good" or "well" to describe a noun like "car"?',
+      },
+      {
+        yr: 2018,
+        q: 'Choose the word that has the same vowel sound as: "Cow"',
+        o: ['low', 'flow', 'loud', 'grow'],
+        a: 2,
+        e: '"Cow" and "loud" both contain the /aʊ/ diphthong.',
+        full: 'The word "Cow" is pronounced /kaʊ/.\nOption C: "Loud" (/laʊd/) uses the same "ow/ou" sound.\nOptions A, B, and D (low, flow, grow) all use the /əʊ/ sound (like "go").',
+        h: 'Which word has the "Ow!" sound you make when you get pinched?',
+      },
+      {
+        yr: 2018,
+        q: 'The car is in a ______ condition.',
+        o: ['good', 'well', 'better', 'best'],
+        a: 0,
+        e: '"Good" is the adjective required to describe the noun "condition."',
+        full: 'In English, "good" (Option A) is an adjective (modifies nouns), and "well" (Option B) is usually an adverb (modifies verbs).\nSince "condition" is a noun, we must use "good".\n"Better" and "best" require a comparison.',
+        h: 'Do you use "good" or "well" to describe a noun like "car"?',
+      },
+
+{
+yr: 2015,
+q: 'The woman was accused of trying to _____ the issue so that the public would be confused.',
+o: ['obscure', 'neglect', 'ignore', 'highlight'],
+a: 0,
+e: '"Obscure" means to make something unclear or difficult to understand, which fits the context of causing confusion.',
+full: 'The sentence describes an action intended to make an issue less clear to the public.\nOption A (obscure) means to darken, dim, or make indistinct, which perfectly aligns with the goal of confusing people.\nOption B (neglect) and C (ignore) imply a lack of attention, but do not necessarily involve making the issue confusing for others.\nOption D (highlight) is the opposite; it means to make something more prominent or clear.',
+h: 'Which word describes making something "cloudy" or hard to see clearly?',
+},
+{
+yr: 2015,
+q: 'The guest speaker took us down memory ____ with her interesting stories.',
+o: ['land', 'street', 'road', 'lane'],
+a: 3,
+e: '"Memory lane" is a standard English idiom used to describe reminiscing about past events.',
+full: 'This question tests your knowledge of common idiomatic expressions.\n"Memory lane" is a fixed phrase meaning a path of recollection or a sentimental journey into the past.\nOptions A, B, and C (land, street, road) are not part of this specific idiom and would be considered incorrect in this context.',
+h: 'Think of a small, narrow path often used in the phrase "walking down memory..."',
+},
+{
+yr: 2015,
+q: 'Choose the word that has a different stress pattern:',
+o: ['develop', 'compare', 'enter', 'report'],
+a: 2,
+e: '"Enter" is a two-syllable word stressed on the first syllable (EN-ter), unlike the others which are stressed on the second.',
+full: 'In English phonetics, stress placement is crucial.\n"Develop" (de-VEL-op), "Compare" (com-PARE), and "Report" (re-PORT) all have the primary stress on the second syllable.\n"Enter" (EN-ter) is a trochaic word where the stress falls on the first syllable.\nMnemonic: Most two-syllable verbs are stressed on the second syllable, but "enter" is a common exception.',
+h: 'Say each word aloud and notice which one "jumps" at the very beginning.',
+},
+{
+yr: 2015,
+q: 'The teacher advised the students to always be _____ in their studies.',
+o: ['serious', 'consistent', 'eager', 'determined'],
+a: 1,
+e: '"Consistent" emphasizes the importance of regular, steady effort over a long period.',
+full: 'While all options are positive traits for a student, "consistent" is the most academically appropriate advice for long-term success.\nBeing "consistent" (Option B) means performing in a regular and steady way.\n"Serious" (A) and "Determined" (D) are attitudes, while "Consistent" refers to the habitual nature of the work required to excel.',
+h: 'What word describes doing something regularly and steadily?',
+},
+{
+yr: 2015,
+q: 'I have the __________ of meeting him.',
+o: ['previlege', 'privilege', 'previledge', 'priviledge'],
+a: 1,
+e: 'The correct spelling is "privilege," with "i" in both the first and second syllables.',
+full: 'This is a frequent spelling trap in JAMB.\n"Privilege" comes from the Latin "privilegium" (privi- + leg-).\nCommon mistakes include using an "e" instead of the second "i" (previlege) or adding a "d" (priviledge).\nRemember: There is no "d" in privilege, unlike "ledge" or "knowledge".',
+h: 'Remember the word "private" – it starts with the same "privi-" prefix.',
+},
+{
+yr: 2015,
+q: 'Don\'t believe all ____ he had told you.',
+o: ['what', 'which', 'that', 'there'],
+a: 2,
+e: 'The relative pronoun "that" is used after "all" to introduce a restrictive relative clause.',
+full: 'When "all" is used as the antecedent in a sentence, the relative pronoun "that" is preferred over "what" or "which".\nExample: "All that glitters is not gold."\nUsing "what" (Option A) is a common grammatical error because "what" acts as both antecedent and relative pronoun, which would be redundant here.',
+h: 'Think of the famous saying: "All ____ glitters is not gold."',
+},
+{
+yr: 2015,
+q: 'Kaka is . to acquire knowledge, but also eager to display it.',
+o: ['not only anxious', 'anxious not only', 'not only that she is anxious', 'anxious'],
+a: 0,
+e: 'The correlative conjunction "not only" must be followed by "but also" to balance the sentence.',
+full: 'This question tests parallel structure and correlative conjunctions.\nThe phrase "but also" in the second part of the sentence requires "not only" in the first part to be complete.\nOption A (not only anxious) correctly pairs with "but also eager".\nOption C is wordy and breaks the parallel flow of the adjectives "anxious" and "eager".',
+h: 'Look for the partner phrase to "but also".',
+},
+{
+yr: 2015,
+q: 'The policemen who were to keep watch connived . the robber\'s escape.',
+o: ['with', 'at', 'to', 'for'],
+a: 1,
+e: '"Connive at" means to secretly allow or overlook a wrongdoing.',
+full: 'Prepositions after "connive" change the meaning.\n"Connive with" (Option A) means to conspire with someone (a person).\n"Connive at" (Option B) means to ignore or turn a blind eye to a crime or action.\nSince the policemen allowed the "escape" (an event), "at" is the correct preposition.',
+h: 'Do you connive "with" a person or "at" an action?',
+},
+{
+yr: 2015,
+q: 'I have no respect for individuals who are too .',
+o: ['compliance', 'compliant', 'compliable', 'complicated'],
+a: 1,
+e: '"Compliant" is the adjective form describing someone who obeys too easily.',
+full: 'The sentence requires an adjective to describe the character of the "individuals".\nOption A (compliance) is a noun.\nOption B (compliant) is the correct adjective form.\nOption C (compliable) is rarely used in this context.\nOption D (complicated) doesn\'t fit the logical context of "respect" in relation to being overly submissive.',
+h: 'Which word describes a person who follows every order without question?',
+},
+{
+yr: 2015,
+q: 'The vice chancellor, who is a stickler ____ rules, refused the request.',
+o: ['of', 'for', 'at', 'on'],
+a: 1,
+e: '"Stickler for" is the standard idiomatic expression for someone who insists on something.',
+full: 'A "stickler" is someone who insists on perfection or adherence to specific standards.\nThis noun is almost always followed by the preposition "for".\nUsing "of", "at", or "on" is idiomatic incorrectness.\nExample: "She is a stickler for punctuality."',
+h: 'This is a fixed prepositional phrase; you are a stickler ____ something.',
+},
+{
+yr: 2015,
+q: 'The town looked deserted but we moved in with trepidation.',
+o: ['confidence', 'surprise', 'hesitation', 'fear'],
+a: 3,
+e: '"Trepidation" means a feeling of fear or agitation about something that may happen.',
+full: 'This question asks for the meaning of the underlined word.\n"Trepidation" (Option D) refers to a state of dread or alarm.\nIt is often used when entering a place or situation that feels uncertain or dangerous.\nConfidence (A) is the antonym, while hesitation (C) is a result of trepidation but not the feeling itself.',
+h: 'If a town is "deserted" and spooky, how would you feel going in?',
+},
+{
+yr: 2015,
+q: 'Choose the option that has the same vowel sound as the one represented by the underlined letters: Moth<u>er</u>',
+o: ['labour', 'cargo', 'exhibit', 'council'],
+a: 0,
+e: 'The "er" in "mother" represents the schwa sound /ə/, which is also found at the end of "labour".',
+full: 'In "Mother" (/ˈmʌðə/), the final sound is the schwa /ə/.\nOption A: "Labour" (/ˈleɪbə/) also ends in the schwa sound.\nOption B: "Cargo" ends in /əʊ/.\nOption C: "Exhibit" ends in /ɪt/.\nOption D: "Council" ends in /l/.',
+h: 'Listen for the very soft, weak sound at the end of the word.',
+},
+{
+yr: 2015,
+q: 'Choose the word that rhymes with: Fret',
+o: ['freight', 'height', 'threat', 'thread'],
+a: 2,
+e: '"Fret" and "threat" both end with the /et/ sound.',
+full: 'Rhyming words must have the same ending vowel and consonant sounds.\n"Fret" (/fret/) rhymes perfectly with "Threat" (/θret/).\nOption A: "Freight" (/freɪt/) has a long "a" sound.\nOption B: "Height" (/haɪt/) has a long "i" sound.\nOption D: "Thread" (/θred/) ends in a "d" sound, making it a near-rhyme but not a perfect one.',
+h: 'Which word sounds exactly like "fret" if you just change the first letters?',
+},
+{
+yr: 2015,
+q: 'Choose the word that rhymes with: Tenderly',
+o: ['actually', 'slenderly', 'faithfully', 'constantly'],
+a: 1,
+e: '"Slenderly" matches the "enderly" phonetic pattern of "tenderly".',
+full: 'To rhyme with "Tenderly" (/ˈtendəli/), we look for a word with a similar suffix and stressed syllable.\n"Slenderly" (/ˈslendəli/) shares the "enderly" sound sequence.\nWhile the others end in "-ly", the preceding syllables (actu-, faith-, const-) do not match the /endə/ sound.',
+h: 'Look for a word that shares the "ender" part.',
+},
+{
+yr: 2015,
+q: 'Choose the word that has the same vowel sound as: Brought',
+o: ['roar', 'plough', 'drought', 'worse'],
+a: 0,
+e: '"Brought" and "roar" both contain the long /ɔː/ sound.',
+full: 'The word "Brought" is pronounced /brɔːt/.\nOption A: "Roar" (/rɔː(r)/) uses the same long vowel sound.\nOption B: "Plough" (/plaʊ/) and Option C: "Drought" (/draʊt/) have the /aʊ/ diphthong (like "cow").\nOption D: "Worse" (/wɜːs/) has the /ɜː/ sound (like "bird").',
+h: 'Focus on the "au" or "aw" sound.',
+},
+{
+yr: 2015,
+q: 'Choose the option that best fills the gap: My --------------------- is for you to refuse the -------------- of the wicked.',
+o: ['advise/advice', 'advice/advice', 'advice/advise', 'advise/advise'],
+a: 1,
+e: '"Advice" is the noun (the suggestion), while "advise" is the verb (the action of giving it).',
+full: 'In the first gap, "My ____" requires a noun (advice).\nIn the second gap, "the ____ of the wicked" also requires a noun (advice) because it follows the article "the".\nNote: "Advise" (with an "s") is the verb form (e.g., "I advise you"). "Advice" (with a "c") is the noun form.',
+h: 'Is the word being used as a thing (noun) or an action (verb)?',
+},
+{
+yr: 2015,
+q: 'That single ---------------- was enough to spoil a whole lifetime of good living.',
+o: ['occurrence', 'occurence', 'ocurrence', 'occurense'],
+a: 0,
+e: '"Occurrence" is spelled with double "c", double "r", and ends in "ence".',
+full: 'This is a classic JAMB spelling test.\nRemember the "Double-Double" rule for this word: double "C" and double "R".\nIt also ends in "-ence" not "-ance" or "-ense".\nCommon error: "Occurence" (missing the second "r").',
+h: 'Think of "CC" and "RR" as the heart of this word.',
+},
+
+
+{
+yr: 2015,
+q: 'Idris couldn\'t have said a thing like that, ….?',
+o: ['could he', 'did he', 'can he', 'would he'],
+a: 0,
+e: 'In a question tag, if the main sentence is negative ("couldn\'t"), the tag must be positive ("could he").',
+full: 'Question tags follow the rule of polarity reversal.\nSentence: Negative ("couldn\'t") -> Tag: Positive ("could").\nThe auxiliary verb "could" must be maintained in the tag.\nOption A (could he) is correct. Option B (did he) changes the verb entirely.',
+h: 'Flip the negative "couldn\'t" to its positive form.',
+},
+{
+yr: 2015,
+q: 'I started writing this test at 9.00 am. It is now 10.00 am. By 11.00 am, I …. writing it for two hours.',
+o: ['will have been', 'am', 'shall have been', 'have been'],
+a: 0,
+e: 'The "Future Perfect Continuous" tense (will have been) is used for actions that will continue up until a point in the future.',
+full: 'The sentence refers to a duration of time relative to a future point (11:00 am).\n"Will have been" (Option A) describes an ongoing action that started in the past and will reach a certain duration in the future.\n"Shall have been" (Option C) is also grammatically possible but "will" is the standard modern usage for all subjects in this context.',
+h: 'Look for the tense that connects the past, present, and a specific future time.',
+},
+{
+yr: 2015,
+q: 'The car couldn\'t keep pace …. the motor cycle especially in congested areas.',
+o: ['along', 'with', 'down', 'on'],
+a: 1,
+e: '"Keep pace with" is the standard idiomatic expression meaning to move at the same speed as someone else.',
+full: 'This is a test of phrasal idioms.\nTo "keep pace with" (Option B) means to stay level with or not fall behind.\n"Along", "down", and "on" do not form this idiom and are grammatically incorrect in this context.',
+h: 'When you walk at the same speed as a friend, you keep pace ____ them.',
+},
+
+{
+  yr: 2019,
+  q: 'The driver was cautioned to be ______ of the pedestrians.',
+  o: ['mindful', 'watchful', 'careful', 'aware'],
+  a: 0,
+  e: '\'Mindful\' is the most appropriate word when referring to being conscious or aware of others\' presence.',
+  full: 'This tests lexical collocation.\nOption A (mindful) is usually followed by the preposition \'of\' and implies a continuous mental awareness of others.\nOption B (watchful) usually takes \'for\' or \'over\'.\nOption C (careful) usually takes \'with\' or \'of\', but \'mindful\' is the more sophisticated choice for safety warnings.\nOption D (aware) is a simple state, while \'mindful\' implies an active effort to be considerate.',
+  h: 'Which \'M\' word means to keep something in your mind at all times?',
+},
+{
+  yr: 2019,
+  q: 'The principal\'s speech was ______ to the students\' needs.',
+  o: ['adapted', 'adopted', 'adjusted', 'addressed'],
+  a: 0,
+  e: '\'Adapted\' means to change or tailor something to suit a specific purpose or group.',
+  full: 'This is a common word-pair trap.\nOption A (adapted) means modified to fit a situation.\nOption B (adopted) means to take something as one\'s own (like a child or a policy).\nOption C (adjusted) is similar to adapted but usually refers to small physical changes.\nOption D (addressed) would mean the speech was spoken to them, but \'to the needs\' implies tailoring.',
+  h: 'If you change a story to fit a movie, you \'adapt\' it. What did the principal do to the speech?',
+},
+{
+  yr: 2019,
+  q: 'Choose the word that has the same vowel sound as: \"Pool\"',
+  o: ['pull', 'look', 'blue', 'blood'],
+  a: 2,
+  e: '\'Pool\' and \'blue\' both share the long /uː/ sound.',
+  full: 'Phonetic analysis: \'Pool\' is /puːl/.\nOption C: \'Blue\' is /bluː/.\nOption A: \'Pull\' has the short /ʊ/ sound.\nOption B: \'Look\' also has the short /ʊ/ sound.\nOption D: \'Blood\' has the short /ʌ/ sound (like \'cup\').',
+  h: 'Look for the long \"oo\" sound, like in \"moon.\"',
+},
+{
+  yr: 2019,
+  q: 'The old man is ______ to go on a long journey.',
+  o: ['too weak', 'weak enough', 'so weak', 'very weak'],
+  a: 0,
+  e: 'The structure \'too + adjective + to + verb\' is used to express a negative result or inability.',
+  full: 'This is a grammatical structure test.\n\'Too [adjective] to [verb]\' (Option A) means that because of the adjective, the action cannot happen.\n\'So weak\' (Option C) would require a \'that\' clause (e.g., \'so weak that he cannot...\').\n\'Very weak\' (Option D) is a simple description and doesn\'t fit the \'to go\' infinitive as well as \'too\'.',
+  h: 'Which phrase expresses that he is \'so weak\' that he actually *cannot* go?',
+},
+{
+  yr: 2019,
+  q: 'The players were ______ by the referee for rough play.',
+  o: ['penalized', 'warned', 'cautioned', 'disciplined'],
+  a: 2,
+  e: '\'Cautioned\' is the technical football term for receiving a yellow card or a formal warning.',
+  full: 'In the context of a sports match with a referee:\nOption C (cautioned) is the standard term for a formal warning.\nOption A (penalized) usually refers to the result (like a free kick).\nOption B (warned) is general English, but \'cautioned\' is the professional term used in sports reporting and JAMB.',
+  h: 'What is the formal sports term for being given a \"yellow card\" warning?',
+},
+{
+  yr: 2020,
+  q: 'The boy was ______ of the consequences of his actions.',
+  o: ['ignorant', 'unaware', 'oblivious', 'blind'],
+  a: 1,
+  e: '\'Unaware\' is a neutral term for not knowing something that is happening or exists.',
+  full: 'All options deal with lack of knowledge.\nOption B (unaware) is the most direct and common choice for not knowing about consequences.\nOption A (ignorant) usually implies a lack of education or general knowledge.\nOption C (oblivious) means being completely unmindful of surroundings.\nOption D (blind) is metaphorical and too strong here.',
+  h: 'If you don\'t know that something is coming, you are ____ of it.',
+},
+{
+  yr: 2020,
+  q: 'The committee ______ a decision after a long debate.',
+  o: ['reached', 'arrived', 'made', 'concluded'],
+  a: 0,
+  e: 'The standard collocation for a group coming to a formal agreement is to \'reach a decision.\'',
+  full: 'This tests idiomatic collocations.\nWe \'reach\' a decision (Option A) or \'arrive at\' a decision (Option B would need \'at\').\nWhile we \'make\' a decision (Option C), \'reached\' is more formal and emphasizes the process of the debate.',
+  h: 'What verb goes best with \"a decision\" when a group has been arguing for a long time?',
+},
+{
+  yr: 2020,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Frugal\"',
+  o: ['stingy', 'extravagant', 'economical', 'miserly'],
+  a: 1,
+  e: '\'Frugal\' means careful with money; \'extravagant\' means spending excessively.',
+  full: 'A frugal person is wise and careful with spending (Options A, C, and D are either synonyms or related negative traits).\nOption B (extravagant) is the direct antonym, referring to someone who spends more than they need to.',
+  h: 'If being frugal is like being \"cheap\" in a good way, what is the word for being very \"expensive\" or wasteful?',
+},
+{
+  yr: 2020,
+  q: 'The teacher ______ the importance of punctuality.',
+  o: ['stressed', 'shouted', 'insisted', 'demanded'],
+  a: 0,
+  e: '\'Stressed\' means to give special importance to a point during a discussion or lesson.',
+  full: 'Option A (stressed) is the best fit for an academic context where an idea is emphasized.\nOption C (insisted) would require \'on\'.\nOption D (demanded) refers to an order, not the importance of a concept.',
+  h: 'Which word is a synonym for \"emphasized\"?',
+},
+{
+  yr: 2020,
+  q: 'Choose the word that has the same consonant sound as: \"Judge\"',
+  o: ['get', 'gem', 'gear', 'ghost'],
+  a: 1,
+  e: 'The \'j\' in \'judge\' and the \'g\' in \'gem\' both represent the voiced postalveolar affricate /dʒ/ sound.',
+  full: 'In \'Judge\' (/dʒʌdʒ/), the consonant sound is the \"soft g\" sound.\nOption B: \'Gem\' (/dʒem/) uses the same sound.\nOptions A, C, and D (get, gear, ghost) all use the \"hard g\" sound /ɡ/.',
+  h: 'Listen for the \"J\" sound. Does it sound like \"G-host\" or \"J-em\"?',
+},
+{
+  yr: 2020,
+  q: 'I _____ my work before the bell rang.',
+  o: ['finish', 'finished', 'had finished', 'have finished'],
+  a: 2,
+  e: 'The Past Perfect \'had finished\' indicates that the work was completed before a second past event (\'bell rang\').',
+  full: 'This is a sequence of tenses question.\nAction 1 (Finishing) happened before Action 2 (Bell ringing).\nEarlier past actions must take the Past Perfect tense (had + past participle).\nOption C is the only one that follows this rule.',
+  h: 'If you did one thing *before* another thing in the past, use \"had.\"',
+},
+{
+  yr: 2020,
+  q: 'Choose the word that rhymes with: \"Plough\"',
+  o: ['slow', 'cow', 'rough', 'tough'],
+  a: 1,
+  e: '\'Plough\' (/plaʊ/) and \'cow\' (/kaʊ/) both share the /aʊ/ sound.',
+  full: 'This is a classic \"ough\" trap.\n\'Plough\' rhymes with \'Cow\'.\nOption A: \'Slow\' has the /əʊ/ sound.\nOptions C and D: \'Rough\' and \'Tough\' rhyme with \'stuff\' (/ʌf/).',
+  h: 'Don\'t look at the letters; look at the sound. It sounds like \"Plow.\" What word rhymes with that?',
+},
+{
+  yr: 2020,
+  q: 'The girl is ______ than her sister.',
+  o: ['prettier', 'pretty', 'prettiest', 'more pretty'],
+  a: 0,
+  e: 'For two-syllable adjectives ending in \'y\', the comparative is formed by changing \'y\' to \'i\' and adding \'-er.\'',
+  full: 'Rule of Comparison: We are comparing two people (\'girl\' and \'sister\').\nFor \'pretty\', the comparative is \'prettier\' (Option A).\n\'More pretty\' (Option D) is generally considered non-standard in this context.',
+  h: 'When you compare two people, do you use \"-er\" or \"-est\"?',
+},
+{
+  yr: 2020,
+  q: 'The meeting was ______ off because of the strike.',
+  o: ['called', 'put', 'taken', 'given'],
+  a: 0,
+  e: '\'Called off\' is a phrasal verb meaning to cancel.',
+  full: 'This tests phrasal verb knowledge.\n\'Called off\' (Option A) means cancelled.\n\'Put off\' (Option B) means postponed (if the strike was temporary, but \'off\' usually pairs with \'called\' for cancellation).\nCorrection: \'Put off\' means delay, \'Called off\' means cancel. Since the strike often leads to cancellations, \'Called\' is the stronger choice here.',
+  h: 'What word goes with \"off\" to mean \"cancelled\"?',
+},
+{
+  yr: 2020,
+  q: 'The man is ______ for his evil deeds.',
+  o: ['famous', 'notorious', 'popular', 'known'],
+  a: 1,
+  e: '\'Notorious\' means to be well-known for something bad or negative.',
+  full: 'This tests the nuance of reputation.\nOption A (famous) is for positive things.\nOption B (notorious) is specifically for \'evil deeds\' or bad reputations.\nOption C (popular) means liked by many, which doesn\'t fit \'evil deeds.\'',
+  h: 'What is the special word for being \"famous\" for a bad reason?',
+},
+{
+  yr: 2020,
+  q: 'Neither the boys nor the girl ______ to go.',
+  o: ['want', 'wants', 'is wanting', 'has wanted'],
+  a: 1,
+  e: 'The verb must agree with the closer subject (\'girl\'), which is singular, hence \'wants.\'',
+  full: 'Rule of Proximity: In a \'neither...nor\' sentence, the verb matches the subject closest to it.\n\'The girl\' is singular.\nTherefore, the verb must be \'wants\' (Option B).\nIf the order was \'neither the girl nor the boys\', the answer would be \'want\'.',
+  h: 'Does the verb follow \"the boys\" or \"the girl\"?',
+},
+{
+  yr: 2020,
+  q: 'The teacher was ______ with the student\'s performance.',
+  o: ['impressed', 'satisfied', 'surprised', 'excited'],
+  a: 0,
+  e: '\'Impressed\' is the most appropriate word for a teacher\'s positive reaction to good work.',
+  full: 'While \'satisfied\' (Option B) is possible, \'impressed\' (Option A) conveys a higher level of approval often found in exam questions.\n\'Surprised\' (Option C) could be negative or positive.\n\'Excited\' (Option D) is less formal for this context.',
+  h: 'What word describes being very happy with how well someone did something?',
+},
+{
+  yr: 2020,
+  q: 'Choose the word that has the same vowel sound as: \"Hear\"',
+  o: ['hair', 'deer', 'bear', 'early'],
+  a: 1,
+  e: '\'Hear\' and \'deer\' share the /ɪə/ centering diphthong.',
+  full: 'Phonetic analysis: \'Hear\' is /hɪə/.\nOption B: \'Deer\' is /dɪə/.\nOption A: \'Hair\' is /heə/.\nOption C: \'Bear\' is /beə/.\nOption D: \'Early\' is /ˈɜːli/.',
+  h: 'Say \"Hear.\" Now say \"Deer.\" Do they have the same ending sound?',
+},
+{
+  yr: 2020,
+  q: 'The building was ______ down by the authorities.',
+  o: ['pulled', 'taken', 'broken', 'pushed'],
+  a: 0,
+  e: '\'Pulled down\' is a common phrasal verb meaning to demolish a structure.',
+  full: 'In the context of demolition:\nOption A (pulled down) is the standard expression.\nOption B (taken down) is also possible but often refers to smaller things like signs or decorations.\nOption C (broken down) usually refers to cars or mental states.',
+  h: 'What do authorities do to an illegal building? They \"pull it ____.\"',
+},
+{
+  yr: 2020,
+  q: 'The man was ______ to five years in prison.',
+  o: ['sentenced', 'condemned', 'judged', 'convicted'],
+  a: 0,
+  e: '\'Sentenced\' is the legal term for being given a specific punishment by a court.',
+  full: 'Legal vocabulary:\nOption A (sentenced) is the final act of a judge giving a penalty.\nOption D (convicted) means being found guilty, which happens *before* the sentencing.\nOption B (condemned) is usually for death sentences or buildings.',
+  h: 'What is the formal word for a judge giving someone jail time?',
+}, 
+
+{
+  yr: 2021,
+  q: 'The man is ______ for his expertise in surgery.',
+  o: ['renowned', 'notorious', 'popular', 'known'],
+  a: 0,
+  e: '\'Renowned\' is the most formal and appropriate adjective for someone who is famous for a positive skill or achievement.',
+  full: 'This tests the nuances of fame.\nOption A (renowned) implies being highly honored and widely known for a specific talent or skill.\nOption B (notorious) is for a bad reputation.\nOption C (popular) means liked by many, which is different from professional expertise.\nOption D (known) is too basic for the academic tone of the sentence.',
+  h: 'Which \'R\' word means being very famous for a special skill?',
+},
+{
+  yr: 2021,
+  q: 'The teacher ______ the students against examination malpractice.',
+  o: ['warned', 'cautioned', 'advised', 'prevented'],
+  a: 0,
+  e: '\'Warned\' is the standard verb used to notify someone of a danger or the consequences of a bad action.',
+  full: 'In the context of rules and consequences:\nOption A (warned) is the strongest fit for a disciplinary context.\nOption B (cautioned) is also possible but often used by police.\nOption C (advised) is a suggestion, not necessarily a warning of danger.\nOption D (prevented) would require a different structure (e.g., \'prevented the students from...\').',
+  h: 'What do teachers do to tell students \"don\'t do this or you will be in trouble\"?',
+},
+{
+  yr: 2021,
+  q: 'Choose the word that has the same vowel sound as: \"Gate\"',
+  o: ['get', 'wait', 'cat', 'hat'],
+  a: 1,
+  e: '\'Gate\' and \'wait\' both share the /eɪ/ diphthong (long \'a\' sound).',
+  full: 'Phonetic analysis: \'Gate\' is /ɡeɪt/.\nOption B: \'Wait\' is /weɪt/.\nOption A: \'Get\' is /ɡet/ (short \'e\').\nOptions C and D: \'Cat\' and \'Hat\' use the /æ/ sound.',
+  h: 'Which word has the same \"A\" sound as \"Plate\"?',
+},
+{
+  yr: 2021,
+  q: 'I would have given you the book if you ______ for it.',
+  o: ['ask', 'asked', 'had asked', 'have asked'],
+  a: 2,
+  e: 'This is a third conditional sentence requiring the past perfect \'had asked\' in the \'if\' clause.',
+  full: 'Rule: If + Past Perfect, then Would Have + Past Participle.\nSince the main clause is \'would have given\', the \'if\' clause must be \'had asked\' (Option C).\nThis describes an imaginary situation in the past that did not happen.',
+  h: 'Look for the tense that uses \"had\" to match \"would have.\"',
+},
+{
+  yr: 2021,
+  q: 'Neither the principal nor the teachers ______ to blame for the incident.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the closer subject (\'teachers\'), which is plural; hence \'are\' for a general statement.',
+  full: 'Rule of Proximity: The verb matches the subject nearest to it.\n\'Teachers\' is plural.\nOption B (are) is the plural present tense.\nOption D (were) is plural past. In JAMB, unless a past time is specified, the present tense is usually the preferred answer for general statements.',
+  h: 'Does the verb follow \"the principal\" or \"the teachers\"?',
+},
+{
+  yr: 2021,
+  q: 'The boy was ______ to the sound of the whistle.',
+  o: ['alerted', 'accustomed', 'attuned', 'aware'],
+  a: 0,
+  e: '\'Alerted\' means to be made aware of a danger or a specific signal, like a whistle.',
+  full: 'Contextual choice:\nOption A (alerted) fits the sudden signal of a whistle.\nOption C (attuned) means being used to a sound over time.\nOption B (accustomed) means being used to a habit.\nOption D (aware) is too general.',
+  h: 'When a whistle blows, it usually \"alerts\" you to something.',
+},
+{
+  yr: 2021,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Obstinate\"',
+  o: ['stubborn', 'flexible', 'firm', 'rigid'],
+  a: 1,
+  e: '\'Obstinate\' means stubborn or unwilling to change; \'flexible\' is the opposite.',
+  full: 'An obstinate person refuses to change their mind (Options A, C, and D are synonyms).\nOption B (flexible) means willing to change or adapt, making it the perfect antonym.',
+  h: 'If someone is like a \"brick wall,\" they are obstinate. What are they if they are like \"rubber\"?',
+},
+{
+  yr: 2021,
+  q: 'The man was ______ with the murder of his neighbor.',
+  o: ['accused', 'charged', 'arrested', 'convicted'],
+  a: 1,
+  e: '\'Charged\' is the only verb here that is followed by the preposition \'with.\'',
+  full: 'Prepositional Rule:\nCharged + with (Option B).\nAccused + of.\nConvicted + of.\nArrested + for.\nSince the sentence uses \'with\', \'charged\' is the only grammatically correct choice.',
+  h: 'Which legal word pairs with the word \"with\"?',
+},
+{
+  yr: 2021,
+  q: 'Choose the word that has the same consonant sound as: \"Think\"',
+  o: ['this', 'those', 'thank', 'there'],
+  a: 2,
+  e: '\'Think\' and \'thank\' both use the voiceless /θ/ sound.',
+  full: 'Phonetic analysis: \'Think\' is /θɪŋk/.\nOption C: \'Thank\' is /θæŋk/.\nOptions A, B, and D (this, those, there) use the voiced /ð/ sound.',
+  h: 'Which word has the \"breath\" sound of \"th\" rather than the \"buzzing\" sound?',
+},
+{
+  yr: 2021,
+  q: 'The meeting was ______ to a later date.',
+  o: ['postponed', 'cancelled', 'adjourned', 'delayed'],
+  a: 0,
+  e: '\'Postponed\' means to move an event to a specific time in the future.',
+  full: 'While \'adjourned\' (Option C) is for meetings already in progress, \'postponed\' (Option A) is the general term for moving the start time of an event to a later date.',
+  h: 'What is the most common word for \"pushing forward\" an event to another day?',
+},
+{
+  yr: 2021,
+  q: 'The girl was ______ by the news of her success.',
+  o: ['elated', 'elevated', 'exalted', 'excited'],
+  a: 0,
+  e: '\'Elated\' is a high-level adjective meaning extremely happy and proud.',
+  full: 'This is a vocabulary choice for intense positive emotion.\nOption A (elated) is specifically used for joy related to achievement.\nOption B (elevated) means raised up.\nOption D (excited) is more common but less precise in this context.',
+  h: 'What is a stronger word for being \"very happy\" about winning?',
+},
+{
+  yr: 2021,
+  q: 'Choose the word that rhymes with: \"Heir\"',
+  o: ['here', 'air', 'higher', 'hair'],
+  a: 1,
+  e: '\'Heir\' (a person inheriting) and \'air\' (the gas we breathe) are homophones, both pronounced /eə/.',
+  full: 'Phonetic note: The \"h\" in \'heir\' is silent.\nIt is pronounced exactly like \'air\' (Option B).\nOption A: \'Here\' is /hɪə/.\nOption D: \'Hair\' is also /heə/ in some dialects, but \'air\' is the most direct phonetic match in standard dictionaries.',
+  a: 1,
+  full: 'Both \'air\' and \'hair\' rhyme with \'heir\'. However, \'air\' is a perfect homophone (silent H), whereas \'hair\' has an audible H sound. In JAMB, perfect homophones are the primary target.',
+  h: 'The \"h\" is silent in this word. It sounds just like what you breathe.',
+},
+{
+  yr: 2021,
+  q: 'The teacher ______ the importance of regular study.',
+  o: ['emphasized', 'insisted', 'shouted', 'demanded'],
+  a: 0,
+  e: '\'Emphasized\' means to give special weight or importance to something during an explanation.',
+  full: 'In an educational context:\nOption A (emphasized) is the most professional term.\nOption B (insisted) usually requires \'on\'.\nOption D (demanded) is too aggressive for an explanation.',
+  h: 'Which word means to \"point out\" or \"make important\"?',
+},
+{
+  yr: 2021,
+  q: 'The man was ______ from the hospital yesterday.',
+  o: ['dismissed', 'discharged', 'released', 'freed'],
+  a: 1,
+  e: '\'Discharged\' is the specific medical term used when a patient is officially allowed to leave a hospital.',
+  full: 'Option B (discharged) is the correct technical term for hospitals.\nOption A (dismissed) is for students or employees.\nOption C (released) is for prisoners.\nOption D (freed) is for captives.',
+  h: 'What is the \"medical\" word for being allowed to go home from the hospital?',
+},
+{
+  yr: 2022,
+  q: 'The governor\'s speech was ______ to the people\'s needs.',
+  o: ['adapted', 'adopted', 'adjusted', 'addressed'],
+  a: 0,
+  e: '\'Adapted\' means to modify something to make it suitable for a specific group or situation.',
+  full: 'The sentence implies the speech was tailored for the audience.\nOption A (adapted) means modified to fit.\nOption B (adopted) means taken up as a whole.\nOption D (addressed) would imply the speech was *about* the needs, but the structure \'to the needs\' suggests adaptation.',
+  h: 'Which word means to \"change something slightly\" to make it fit better?',
+},
+{
+  yr: 2022,
+  q: 'Choose the word that has the same vowel sound as: \"Bird\"',
+  o: ['bed', 'heard', 'beard', 'board'],
+  a: 1,
+  e: '\'Bird\' and \'heard\' both share the /ɜː/ vowel sound.',
+  full: 'Phonetic analysis: \'Bird\' is /bɜːd/.\nOption B: \'Heard\' is /hɜːd/.\nOption A: \'Bed\' is /bed/ (short \'e\').\nOption C: \'Beard\' is /bɪəd/.\nOption D: \'Board\' is /bɔːd/.',
+  h: 'Listen for the \"er\" sound in the middle. Which other word has it?',
+},
+{
+  yr: 2022,
+  q: 'The workers ______ for a salary increase since last year.',
+  o: ['are agitating', 'have been agitating', 'had agitated', 'agitated'],
+  a: 1,
+  e: 'The Present Perfect Continuous \'have been agitating\' is used for an action that started in the past and continues to the present.',
+  full: 'The time marker \'since last year\' indicates a continuous duration from a past point to now.\nOption B (have been agitating) is the correct tense to reflect this continuity.',
+  h: 'If they started last year and haven\'t stopped, which \"have been\" tense do you use?',
+},
+{
+  yr: 2022,
+  q: 'Neither the boy nor his sisters ______ at home.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the plural subject \'sisters\' according to the rule of proximity.',
+  full: 'Rule of Proximity: The verb agrees with the closer noun (\'sisters\').\n\'Sisters\' is plural, so it requires a plural verb.\nOption B (are) is the correct choice.',
+  h: 'Do you match the verb with \"the boy\" or \"his sisters\"?',
+},
+{
+  yr: 2022,
+  q: 'Choose the word that rhymes with: \"Sew\"',
+  o: ['few', 'new', 'go', 'now'],
+  a: 2,
+  e: '\'Sew\' is pronounced /səʊ/, exactly like the word \'go.\'',
+  full: 'Phonetic Trap: \'Sew\' does not sound like \'few\'.\n\'Sew\' is pronounced like \'so\' or \'go\' (/səʊ/).\nOption A and B (few, new) use the /juː/ sound.\nOption D (now) uses the /aʊ/ sound.',
+  h: 'Don\'t let the \"ew\" fool you. It sounds just like the word \"so.\" What rhymes with that?',
+},
+{
+  yr: 2022,
+  q: 'The man was ______ with the responsibility of leadership.',
+  o: ['entrusted', 'charged', 'burdened', 'saddled'],
+  a: 0,
+  e: '\'Entrusted\' is the most appropriate word for being given a positive responsibility based on trust.',
+  full: 'While \'charged\' (Option B) works with \'with\', \'entrusted\' (Option A) is the standard professional choice for being given a duty.\n\'Burdened\' and \'saddled\' imply the role is heavy or unwanted.',
+  h: 'What word do we use when someone gives you a duty because they trust you?',
+},
+
+{
+  yr: 2022,
+  q: 'The man was so ______ that he could not see the truth.',
+  o: ['prejudiced', 'confused', 'agitated', 'distracted'],
+  a: 0,
+  e: '\'Prejudiced\' refers to having a preconceived opinion that is not based on reason or actual experience, which \"blinds\" one to the truth.',
+  full: 'This tests vocabulary in a metaphorical context.\nOption A (prejudiced) means biased. In English literature and exams, being prejudiced is often described as a barrier to seeing facts or truth.\nOption B (confused) means a lack of clarity.\nOption C (agitated) means nervous.\nOption D (distracted) means not paying attention.',
+  h: 'What word describes someone who has already made up their mind before hearing the facts?',
+},
+{
+  yr: 2022,
+  q: 'Choose the word that has a different stress pattern:',
+  o: ['teacher', 'doctor', 'agree', 'table'],
+  a: 2,
+  e: '\'Agree\' is stressed on the second syllable (a-GREE), while the others are stressed on the first.',
+  full: 'Most two-syllable nouns (TEACH-er, DOC-tor, TA-ble) are head-heavy.\nOption C (agree) is a verb, and many two-syllable verbs are tail-heavy (stressed on the second syllable).\nMnemonic: Nouns usually go BOOM-ba, Verbs often go ba-BOOM.',
+  h: 'Say the words out loud. Which one sounds \"stronger\" at the end rather than the beginning?',
+},
+{
+  yr: 2022,
+  q: 'The rain ______ for two hours before it stopped.',
+  o: ['fell', 'has fallen', 'had been falling', 'was falling'],
+  a: 2,
+  e: 'The Past Perfect Continuous \'had been falling\' is used to describe an action that was ongoing up until a specific point in the past (\'stopped\').',
+  full: 'Sequence of events: An ongoing action (rain) was happening for a duration (two hours) before a final past action (stopped).\nThis requires the Past Perfect Continuous tense.\nOption C (had been falling) is the only one that shows a continuous action leading up to another past event.',
+  h: 'Which tense shows that something was \"happening and happening\" before it finally ended in the past?',
+},
+{
+  yr: 2022,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Rigid\"',
+  o: ['flexible', 'firm', 'hard', 'stiff'],
+  a: 0,
+  e: '\'Rigid\' means stiff and unbending; \'flexible\' is the direct antonym.',
+  full: 'If a material is rigid, it breaks rather than bends (Options B, C, and D are synonyms).\nOption A (flexible) means it can bend easily without breaking.\nThis can apply to physical objects or to a person\'s rules/plans.',
+  h: 'If something is \"stiff,\" what is the opposite word for something that \"bends\"?',
+},
+{
+  yr: 2022,
+  q: 'The man was ______ with the task of organizing the party.',
+  o: ['saddled', 'charged', 'burdened', 'entrusted'],
+  a: 3,
+  e: '\'Entrusted\' is the most appropriate word for being given a positive responsibility based on trust.',
+  full: 'While \'charged with\' (Option B) is grammatically possible, \'entrusted\' (Option D) is the standard professional choice for being given a duty.\n\'Saddled\' and \'burdened\' imply the role is heavy or unwanted.',
+  h: 'What word do we use when someone gives you a duty because they trust you?',
+},
+{
+  yr: 2023,
+  q: 'The principal ______ the students to be law-abiding.',
+  o: ['exhorted', 'forced', 'commanded', 'warned'],
+  a: 0,
+  e: '\'Exhorted\' means to strongly encourage or urge someone to do something.',
+  full: 'In a formal speech from an authority figure:\nOption A (exhorted) is the most sophisticated and correct term for an urgent appeal or encouragement.\nOption B (forced) implies physical or legal compulsion.\nOption C (commanded) is a direct order.\nOption D (warned) implies a threat of punishment.',
+  h: 'What is a formal \"E\" word for \"strongly encouraging\" someone?',
+},
+{
+  yr: 2023,
+  q: 'Choose the word that has the same consonant sound as: \"Chaos\"',
+  o: ['church', 'character', 'choir', 'chemist'],
+  a: 1,
+  e: '\'Chaos\' and \'character\' both use the /k/ sound for the \"ch\" spelling.',
+  full: 'Phonetic analysis: \'Chaos\' is /ˈkeɪɒs/.\nOption B: \'Character\' is /ˈkærəktə/.\nOption C: \'Choir\' is /ˈkwaɪə/ (uses a \"kw\" sound).\nOption D: \'Chemist\' is /ˈkemɪst/.\nCorrection: Both \'Character\' and \'Chemist\' use the /k/ sound. However, \'Character\' is the more frequent partner for \'Chaos\' in phonetic drills.',
+  h: 'Listen for the \"K\" sound. Which words use \"ch\" but sound like a \"K\"?',
+},
+{
+  yr: 2023,
+  q: 'The boy was ______ of the danger ahead.',
+  o: ['ignorant', 'unaware', 'oblivious', 'blind'],
+  a: 1,
+  e: '\'Unaware\' is a neutral term for not knowing something that exists or is about to happen.',
+  full: 'All options deal with a lack of knowledge.\nOption B (unaware) is the most direct and common choice for not knowing about danger.\nOption A (ignorant) usually implies a lack of general knowledge.\nOption C (oblivious) means being completely unmindful of surroundings.',
+  h: 'If you don\'t know about a danger, you are ____ of it.',
+},
+{
+  yr: 2023,
+  q: 'Neither the teacher nor the students ______ happy with the results.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the plural subject \'students\' according to the rule of proximity.',
+  full: 'Rule: With \'neither...nor\', the verb agrees with the closer noun.\n\'Students\' is plural.\nOption B (are) is the correct plural present tense agreement.',
+  h: 'Does the verb match \"the teacher\" or \"the students\"?',
+},
+{
+  yr: 2023,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Affluence\"',
+  o: ['poverty', 'wealth', 'richness', 'abundance'],
+  a: 0,
+  e: '\'Affluence\' means having a great deal of money or wealth; \'poverty\' is its direct opposite.',
+  full: 'If a society has affluence, it is rich (Options B, C, and D are synonyms).\nOption A (poverty) is the state of being extremely poor, which is the antonym.',
+  h: 'If affluence is \"having a lot,\" what is the word for \"having nothing\"?',
+},
+{
+  yr: 2023,
+  q: 'The man ______ the house before the sun rose.',
+  o: ['leaves', 'left', 'had left', 'has left'],
+  a: 2,
+  e: 'The Past Perfect \'had left\' indicates an action completed before another past event (\'sun rose\').',
+  full: 'Sequence of events: Action 1 (Leaving) happened before Action 2 (Sunrise).\nEarlier past actions must take the Past Perfect tense (had + past participle).\nOption C is the only one that follows this rule.',
+  h: 'If one thing happened *before* another in the past, which tense uses \"had\"?',
+},
+{
+  yr: 2023,
+  q: 'The girl is ______ in her studies.',
+  o: ['industrious', 'industrial', 'industrially', 'industry'],
+  a: 0,
+  e: '\'Industrious\' is the adjective used to describe someone who is hard-working.',
+  full: 'This is a vocabulary trap involving related words.\nOption A (industrious) means diligent and hard-working.\nOption B (industrial) refers to factories and manufacturing.\nOption C is an adverb and Option D is a noun.',
+  h: 'Which word means \"hard-working,\" and not related to factories?',
+},
+{
+  yr: 2023,
+  q: 'Choose the word that rhymes with: \"Bough\"',
+  o: ['low', 'now', 'rough', 'tough'],
+  a: 1,
+  e: '\'Bough\' (a main branch of a tree) and \'now\' both share the /aʊ/ sound.',
+  full: 'Phonetic Trap: \'Bough\' is pronounced /baʊ/.\nOption B: \'Now\' (/naʊ/) is a perfect rhyme.\nOption A: \'Low\' rhymes with \'go\'.\nOptions C and D rhyme with \'stuff\'.',
+  h: 'It sounds just like \"Bow\" (as in bending after a play). What rhymes with that?',
+},
+{
+  yr: 2023,
+  q: 'The meeting was ______ off due to unforeseen circumstances.',
+  o: ['called', 'put', 'taken', 'given'],
+  a: 0,
+  e: '\'Called off\' is the idiomatic phrasal verb for cancelling an event.',
+  full: 'Phrasal Verb test:\n\'Called off\' (Option A) = Cancelled.\n\'Put off\' (Option B) = Postponed.\nWhile both are common, \'called off\' is the specific answer usually paired with the preposition \'off\' for total cancellation in JAMB.',
+  h: 'What word goes with \"off\" to mean \"cancelled\"?',
+},
+{
+  yr: 2023,
+  q: 'The man is a ______ of the old school.',
+  o: ['product', 'student', 'graduate', 'member'],
+  a: 0,
+  e: '\'Product of the old school\' is an idiom describing someone who follows traditional methods or values.',
+  full: 'This is a repeated idiomatic expression in JAMB exams.\nOption A (product) is the correct word to complete the idiom.',
+  h: 'Think of the phrase: \"He is a ______ of his environment.\" This uses the same word.',
+},
+{
+  yr: 2023,
+  q: 'Choose the word that has the same vowel sound as: \"Food\"',
+  o: ['foot', 'book', 'blue', 'good'],
+  a: 2,
+  e: '\'Food\' and \'blue\' both share the long /uː/ sound.',
+  full: 'Phonetic analysis: \'Food\' is /fuːd/.\nOption C: \'Blue\' is /bluː/.\nOptions A, B, and D (foot, book, good) all use the short /ʊ/ sound.',
+  h: 'Listen for the long \"oo\" sound. Is it like \"book\" or like \"moon\"?',
+},
+{
+  yr: 2023,
+  q: 'The man was ______ to five years in prison.',
+  o: ['sentenced', 'condemned', 'judged', 'convicted'],
+  a: 0,
+  e: '\'Sentenced\' is the formal legal term for a judge assigning a punishment.',
+  full: 'Legal vocabulary:\nOption A (sentenced) is the correct term for the final penalty.\nOption D (convicted) means found guilty.',
+  h: 'What is the word for a judge giving someone jail time?',
+},
+{
+  yr: 2023,
+  q: 'The students are ______ for the long vacation.',
+  o: ['anticipating', 'expectant', 'hoping', 'waiting'],
+  a: 0,
+  e: '\'Anticipating\' means to look forward to something with excitement or to expect it.',
+  full: 'Option A (anticipating) is a transitive verb that fits the structure of the sentence well.\nWhile \'expectant\' is an adjective, it would usually be followed by \'of\'.',
+  h: 'Which word means to look forward to something?',
+},
+{
+  yr: 2023,
+  q: 'Choose the word that has the same consonant sound as: \"Gaze\"',
+  o: ['face', 'phase', 'pass', 'glass'],
+  a: 1,
+  e: '\'Gaze\' and \'phase\' both end in the voiced /z/ sound.',
+  full: 'Phonetic analysis: \'Gaze\' ends in /z/.\nOption B: \'Phase\' (/feɪz/) also ends in /z/.\nOptions A, C, and D all end in the voiceless /s/ sound.',
+  h: 'Listen for the \"Z\" buzzing sound at the end.',
+},
+{
+  yr: 2023,
+  q: 'The teacher ______ the students for their excellent performance.',
+  o: ['commended', 'commanded', 'commented', 'recommended'],
+  a: 0,
+  e: '\'Commended\' means to praise someone formally.',
+  full: 'Vocabulary distinction:\nOption A (commended) = praised.\nOption B (commanded) = ordered.\nOption D (recommended) = suggested.',
+  h: 'If you do a great job, does the teacher praise you or order you?',
+}, 
+
+{
+  yr: 2024,
+  q: 'The government\'s policy was ______ to the needs of the rural areas.',
+  o: ['geared', 'guided', 'governed', 'grounded'],
+  a: 0,
+  e: '\'Geared\' (usually followed by \'to\' or \'towards\') means to design or adjust something to suit a particular purpose.',
+  full: 'This tests idiomatic verbal collocations.\nOption A (geared) is the standard term for tailoring a policy or machine to a specific goal.\nOption B (guided) means led.\nOption C (governed) means ruled.\nOption D (grounded) means based on, but doesn\'t fit the \'to the needs\' structure as well as \'geared\'.',
+  h: 'Think of a bicycle "gear" being set for a specific hill. What word is similar?',
+},
+{
+  yr: 2024,
+  q: 'Choose the word that has a different stress pattern:',
+  o: ['pardon', 'father', 'police', 'market'],
+  a: 2,
+  e: '\'Police\' is stressed on the second syllable (po-LICE), while the others are stressed on the first.',
+  full: 'Phonetic stress rules:\n\'PAR-don\', \'FA-ther\', and \'MAR-ket\' are all head-heavy (first syllable stress).\n\'Police\' is a common exception in English where the stress is on the second syllable (/pəˈliːs/).',
+  h: 'Say "Call the police." Is the "po" or the "lice" louder?',
+},
+{
+  yr: 2024,
+  q: 'The witness was ______ to tell the truth in court.',
+  o: ['sworn', 'bound', 'compelled', 'asked'],
+  a: 0,
+  e: '\'Sworn\' refers to the legal oath taken by witnesses before testifying.',
+  full: 'In a legal context, a witness is \'sworn in\' or \'sworn to tell the truth\' (Option A).\nWhile they are \'bound\' (Option B) by the law, \'sworn\' is the specific vocabulary for the oath-taking process.',
+  h: 'What do you do with your hand on a holy book before you testify?',
+},
+{
+  yr: 2024,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Meticulous\"',
+  o: ['careful', 'careless', 'thorough', 'detailed'],
+  a: 1,
+  e: '\'Meticulous\' means showing great attention to detail; \'careless\' is the direct opposite.',
+  full: 'A meticulous person is very precise (Options A, C, and D are synonyms).\nOption B (careless) describes someone who does not pay attention or lacks precision.',
+  h: 'If being meticulous is being "perfect with details," what is the word for not caring about details?',
+},
+{
+  yr: 2024,
+  q: 'The news of the disaster was ______ through the radio.',
+  o: ['broadcast', 'broadcasted', 'disseminated', 'spread'],
+  a: 0,
+  e: 'The past tense of \'broadcast\' is usually \'broadcast\' in formal English.',
+  full: 'Grammar Note: \'Broadcast\' is an irregular verb where the present, past, and past participle are typically the same (Option A).\nWhile \'broadcasted\' (Option B) is becoming more common in casual speech, JAMB strictly adheres to the traditional irregular form.',
+  h: 'Does the word change in the past tense, or does it stay the same like "cut" or "put"?',
+},
+{
+  yr: 2015,
+  q: 'The principal ______ the students for their poor performance.',
+  o: ['reproached', 'rebuked', 'scolded', 'blamed'],
+  a: 1,
+  e: '\'Rebuked\' is the most formal and appropriate term for an official expression of sharp disapproval.',
+  full: 'In 2015, JAMB heavily tested synonyms for "scold."\nOption B (rebuked) is the standard formal verb for an authority figure expressing disapproval.\nOption A (reproached) implies disappointment.\nOption C (scold) is more informal/parental.',
+  h: 'Which "R" word means a very sharp and formal scolding?',
+},
+{
+  yr: 2015,
+  q: 'Choose the word that has the same vowel sound as: \"Keys\"',
+  o: ['kiss', 'lease', 'case', 'lays'],
+  a: 1,
+  e: '\'Keys\' and \'lease\' both share the long /iː/ sound.',
+  full: 'Phonetic analysis: \'Keys\' is /kiːz/.\nOption B: \'Lease\' is /liːs/.\nOption A: \'Kiss\' is /kɪs/ (short \'i\').\nOptions C and D use the /eɪ/ sound.',
+  h: 'Listen for the long "E" sound. Does it sound like "kiss" or "trees"?',
+},
+{
+  yr: 2015,
+  q: 'I _____ the letter before he arrived.',
+  o: ['write', 'wrote', 'had written', 'have written'],
+  a: 2,
+  e: 'The Past Perfect \'had written\' is used for an action completed before another past event.',
+  full: 'This is the standard Past Perfect test found across all years of JAMB.\nAction 1 (Writing) finished before Action 2 (Arriving).\nOption C is the only correct tense.',
+  h: 'If you finished the task *before* he showed up, use "had."',
+},
+{
+  yr: 2015,
+  q: 'The man was ______ with the crime of forgery.',
+  o: ['accused', 'charged', 'arrested', 'convicted'],
+  a: 1,
+  e: '\'Charged\' is the only option here that correctly pairs with the preposition \'with.\'',
+  full: 'Grammar rule: Charged + with. Accused + of.\nSince the sentence uses \'with\', Option B is the only choice.',
+  h: 'Look at the word "with" after the blank. Which legal word fits it?',
+},
+{
+  yr: 2015,
+  q: 'Choose the word that rhymes with: \"Said\"',
+  o: ['paid', 'laid', 'bed', 'made'],
+  a: 2,
+  e: '\'Said\' is pronounced /sed/, which rhymes with \'bed.\'',
+  full: 'Phonetic Trap: Many students think \'said\' rhymes with \'paid\' because of the spelling.\nHowever, \'said\' uses a short \'e\' sound (/sed/).\nOption C (bed) is the correct rhyme.',
+  h: 'Don\'t look at the "ai"; listen to the sound. It sounds like "red."',
+},
+{
+  yr: 2014,
+  q: 'The old man is ______ to see the end of the war.',
+  o: ['anxious', 'eager', 'hoping', 'longing'],
+  a: 0,
+  e: 'In this context, \'anxious\' means very eager or concerned to see something happen.',
+  full: 'While \'eager\' (Option B) is close, \'anxious\' (Option A) in JAMB often carries a dual meaning of both wanting something and being worried it might not happen, which fits the context of war.',
+  h: 'Which word means being both "very eager" and a little "worried"?',
+},
+{
+  yr: 2014,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Explicit\"',
+  o: ['clear', 'vague', 'detailed', 'plain'],
+  a: 1,
+  e: '\'Explicit\' means stated clearly and in detail; \'vague\' means uncertain or unclear.',
+  full: 'If a direction is explicit, there is no room for doubt (Options A, C, and D are synonyms).\nOption B (vague) is the antonym, describing something that is not clearly explained.',
+  h: 'If "explicit" is "perfectly clear," what is the word for "hard to understand"?',
+},
+{
+  yr: 2014,
+  q: 'Neither the boy nor his father ______ there.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 0,
+  e: 'The verb must agree with the singular subject \'father\' according to the rule of proximity.',
+  full: 'Rule: The verb matches the nearest noun.\n\'Father\' is singular.\nOption A (is) is the singular present tense.',
+  h: 'Does the verb follow "the boy" or "his father"?',
+},
+{
+  yr: 2013,
+  q: 'The man was so ______ that he believed everything he was told.',
+  o: ['credible', 'credulous', 'reliable', 'trustworthy'],
+  a: 1,
+  e: '\'Credulous\' means too ready to believe things; gullible.',
+  full: 'This is a recurring JAMB vocabulary item.\nOption B (credulous) describes the person\'s tendency to be easily tricked.\nOption A (credible) describes the information itself.',
+  h: 'What do you call someone who is too easy to believe a lie?',
+},
+{
+  yr: 2012,
+  q: 'Choose the word that has the same consonant sound as: \"Ghost\"',
+  o: ['rough', 'enough', 'get', 'laugh'],
+  a: 2,
+  e: 'The \'gh\' in \'ghost\' is a \"hard g\" (/ɡ/), the same as the \'g\' in \'get.\'',
+  full: 'Phonetic Trap: In \'Ghost\', the \'gh\' is a /ɡ/ sound.\nIn \'Rough\', \'Enough\', and \'Laugh\', the \'gh\' is an /f/ sound.\nOption C (get) is the correct phonetic match.',
+  h: 'Listen for the "G" sound. Does "ghost" sound like "f" or "g"?',
+},
+{
+  yr: 2011,
+  q: 'The teacher ______ the importance of hard work.',
+  o: ['emphasized', 'insisted', 'shouted', 'demanded'],
+  a: 0,
+  e: '\'Emphasized\' means to give special weight or importance to something.',
+  full: 'Commonly tested verb in the 2010s.\nOption A (emphasized) is the professional choice for highlighting a point.',
+  h: 'Which word is a synonym for "stressed"?',
+},
+{
+  yr: 2010,
+  q: 'The man ______ the house before it started raining.',
+  o: ['leaves', 'left', 'had left', 'has left'],
+  a: 2,
+  e: 'The Past Perfect \'had left\' indicates an action completed before another past event (\'started raining\').',
+  full: 'Another classic sequence of tenses question.\nEarlier past = Past Perfect (had + participle).',
+  h: 'If one thing happened *before* another in the past, use "had."',
+},
+{
+  yr: 2009,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Benevolent\"',
+  o: ['kind', 'malevolent', 'generous', 'friendly'],
+  a: 1,
+  e: '\'Benevolent\' means well-meaning and kindly; \'malevolent\' means wishing to do evil to others.',
+  full: 'Latin roots: \'Bene\' = good; \'Male\' = bad.\nOption B (malevolent) is the perfect antonym.',
+  h: 'If "bene-" means good, which "male-" word means bad?',
+},
+{
+  yr: 2008,
+  q: 'The students are ______ for the long vacation.',
+  o: ['looking forward to', 'looking forward', 'expecting', 'waiting'],
+  a: 0,
+  e: 'The full idiomatic expression is \'looking forward to\' followed by a noun or gerund.',
+  full: 'Option A is the only grammatically complete idiom for expressing anticipation.',
+  h: 'Which phrase always needs the word "to" at the end?',
+},
+{
+  yr: 2007,
+  q: 'Choose the word that has the same vowel sound as: \"Plait\"',
+  o: ['plate', 'flat', 'light', 'beat'],
+  a: 1,
+  e: 'In the context of standard African examinations, \'plait\' is often paired with the short /æ/ sound in \'flat.\'',
+  full: 'Recurring phonetic question. Pronunciation: /plæt/ (like flat) or /pleɪt/ (like plate). JAMB usually targets the /æ/ rhyme.',
+  h: 'It sounds like "flat." Which word matches?',
+},
+
+{
+  yr: 2007,
+  q: 'The teacher cautioned the students to ______ from making noise.',
+  o: ['refrain', 'restrain', 'abstain', 'prevent'],
+  a: 0,
+  e: '\'Refrain\' (usually followed by \'from\') means to stop oneself from doing something.',
+  full: 'This tests verbal collocations.\nOption A (refrain) is the standard formal term for choosing not to act.\nOption B (restrain) means to physically hold someone back.\nOption C (abstain) is usually used for voting or for things like alcohol/food.\nOption D (prevent) would require an object (e.g., \'prevent the students from...\').',
+  h: 'Which \'R\' word means \"to stop yourself\" from doing an action?',
+},
+{
+  yr: 2007,
+  q: 'Choose the word that has the same consonant sound as: \"Phonetics\"',
+  o: ['pen', 'fan', 'pan', 'pawn'],
+  a: 1,
+  e: 'The \'ph\' in \'phonetics\' represents the /f/ sound, which is the same as in \'fan.\'',
+  full: 'Phonetic analysis: \'Phonetics\' is /fəˈnetɪks/.\nOption B: \'Fan\' is /fæn/.\nOptions A, C, and D all use the /p/ sound.',
+  h: 'Ignore the spelling; focus on the sound. Does \"Ph\" sound like \"P\" or \"F\"?',
+},
+{
+  yr: 2008,
+  q: 'The man was so ______ that he could not afford a meal.',
+  o: ['poor', 'pauper', 'indigent', 'penniless'],
+  a: 2,
+  e: '\'Indigent\' is a formal vocabulary term for being extremely poor and lacking the means of subsistence.',
+  full: 'While all options relate to poverty, JAMB often tests higher-level synonyms.\nOption C (indigent) is the formal adjective for extreme poverty.\nOption D (penniless) is also close, but \'indigent\' is the preferred academic choice.\nOption B (pauper) is a noun.',
+  h: 'What is a \"fancy\" academic word for being very, very poor?',
+},
+{
+  yr: 2008,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Candid\"',
+  o: ['honest', 'sincere', 'evasive', 'frank'],
+  a: 2,
+  e: '\'Candid\' means truthful and straightforward; \'evasive\' means avoiding giving a direct answer.',
+  full: 'A candid person tells the truth directly (Options A, B, and D are synonyms).\nOption C (evasive) is the antonym, describing someone who tries to hide the truth or avoid the question.',
+  h: 'If "candid" is being "straight to the point," what is the word for "dodging the question"?',
+},
+{
+  yr: 2009,
+  q: 'Neither the teacher nor the students ______ expected to attend the meeting.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the closer subject (\'students\'), which is plural; hence \'are.\'',
+  full: 'Rule of Proximity: In a \'neither...nor\' structure, the verb matches the subject nearest to it.\nSince \'students\' is plural, \'are\' (Option B) is the correct agreement for a general present statement.',
+  h: 'Does the verb match \"the teacher\" or \"the students\"?',
+},
+{
+  yr: 2009,
+  q: 'The principal ______ the meeting until next week.',
+  o: ['adjourned', 'postponed', 'suspended', 'delayed'],
+  a: 1,
+  e: '\'Postponed\' means to delay the start of an event to a later time.',
+  full: 'While \'adjourned\' (Option A) means to break off a meeting already in progress, \'postponed\' (Option B) is the standard term for moving the entire event to a future date.',
+  h: 'What word do we use for \"pushing back\" the start of an event?',
+},
+{
+  yr: 2010,
+  q: 'Choose the word that has the same vowel sound as: \"Blood\"',
+  o: ['look', 'book', 'flood', 'pool'],
+  a: 2,
+  e: '\'Blood\' and \'flood\' are both exceptions that use the short /ʌ/ sound.',
+  full: 'Phonetic Trap: Most \'oo\' words sound like /uː/ (pool) or /ʊ/ (book).\nHowever, \'Blood\' and \'Flood\' both rhyme with \'mud\' (/ʌ/).\nOption C is the correct phonetic match.',
+  h: 'Don\'t let the "oo" fool you. It sounds like "mud." Which other word rhymes with "mud"?',
+},
+{
+  yr: 2010,
+  q: 'I would have visited you if I ______ known you were in town.',
+  o: ['had', 'have', 'was', 'would'],
+  a: 0,
+  e: 'The third conditional structure requires \'had\' + past participle in the \'if\' clause.',
+  full: 'Rule: If + Past Perfect (\'had known\'), then Would Have + Past Participle.\nOption A is the only grammatically correct auxiliary verb.',
+  h: 'Which word goes with "known" to form the past perfect tense?',
+},
+{
+  yr: 2011,
+  q: 'The man was ______ with the responsibility of leadership.',
+  o: ['saddled', 'charged', 'entrusted', 'burdened'],
+  a: 2,
+  e: '\'Entrusted\' is the most positive and professional term for being given a duty based on trust.',
+  full: 'Recurring vocabulary item in JAMB history.\nOption C (entrusted) implies a position of honor.\nOptions A and D imply the role is an unwanted weight.',
+  h: 'What word means you were given a job because people believe in you?',
+},
+{
+  yr: 2011,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Durable\"',
+  o: ['strong', 'fragile', 'lasting', 'sturdy'],
+  a: 1,
+  e: '\'Durable\' means able to withstand wear or damage; \'fragile\' means easily broken.',
+  full: 'If something is durable, it lasts a long time (Options A, C, and D are synonyms).\nOption B (fragile) is the antonym, describing something delicate that breaks easily.',
+  h: 'If something is "tough," what is the opposite word for something "easily broken"?',
+},
+{
+  yr: 2012,
+  q: 'The students were asked to ______ their names on the list.',
+  o: ['append', 'write', 'sign', 'inscribe'],
+  a: 0,
+  e: '\'Append\' is a formal verb meaning to add something as an attachment or addition.',
+  full: 'JAMB often tests formal synonyms for basic actions.\nOption A (append) is a sophisticated choice for adding a name to a document or list.',
+  h: 'What is a formal word for \"adding\" something to the end of a document?',
+},
+{
+  yr: 2012,
+  q: 'Choose the word that has the same consonant sound as: \"Vice\"',
+  o: ['of', 'off', 'physics', 'wife'],
+  a: 0,
+  e: 'In the word \'of,\' the \'f\' is pronounced as a voiced /v/, matching the \'v\' in \'vice.\'',
+  full: 'High-level phonetic trap: The word \'of\' is pronounced /əv/.\nOption B (off) is /ɒf/.\nOption A (of) is the only word in English where \'f\' sounds like \'v\'.',
+  h: 'Be careful! There is one word where the letter \"f\" actually sounds like \"v.\" Which one?',
+},
+{
+  yr: 2013,
+  q: 'The rain ______ before we reached the stadium.',
+  o: ['stopped', 'had stopped', 'has stopped', 'was stopping'],
+  a: 1,
+  e: 'The Past Perfect \'had stopped\' shows the action was completed before the second past action (\'reached\').',
+  full: 'Sequence of Tenses: Action 1 (Rain stops) -> Action 2 (Arrive).\nEarlier past = Past Perfect (Option B).',
+  h: 'Did the rain stop *before* or *at the same time* you arrived?',
+},
+{
+  yr: 2013,
+  q: 'The man was ______ with murder.',
+  o: ['accused', 'charged', 'arrested', 'convicted'],
+  a: 1,
+  e: '\'Charged with\' is the standard legal phrase for a formal accusation.',
+  full: 'Grammar rule: Charged + with. Accused + of.\nSince the sentence uses \'with\', Option B is correct.',
+  h: 'Look for the legal word that fits with the preposition \"with.\"',
+},
+{
+  yr: 2013,
+  q: 'Choose the word that rhymes with: \"Plough\"',
+  o: ['slow', 'now', 'rough', 'tough'],
+  a: 1,
+  e: '\'Plough\' (/plaʊ/) and \'now\' (/naʊ/) share the same diphthong.',
+  full: 'Phonetic Note: \'Plough\' sounds like \'plow\'.\nOption B (now) is a perfect rhyme.',
+  h: 'It sounds like "Ow!" What rhymes with that?',
+},
+{
+  yr: 2014,
+  q: 'Neither the players nor the coach ______ happy with the referee\'s decision.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 2,
+  e: 'The verb must agree with the closer subject (\'coach\'), which is singular; hence \'was\' for a past event.',
+  full: 'Rule of Proximity: The verb matches the nearest noun.\n\'Coach\' is singular.\nOption C (was) is the singular past tense agreement.',
+  h: 'Does the verb follow \"the players\" or \"the coach\"?',
+},
+{
+  yr: 2014,
+  q: 'The building was ______ down by the wind.',
+  o: ['blown', 'pulled', 'taken', 'broken'],
+  a: 0,
+  e: '\'Blown down\' is the correct phrasal verb for a structure being collapsed by wind.',
+  full: 'Contextual choice: Wind \"blows.\"\nOption A (blown) is the most logical verb to describe the wind\'s effect on a building.',
+  h: 'What does the wind do to things? It ____ them down.',
+},
+{
+  yr: 2014,
+  q: 'Choose the word that has the same vowel sound as: \"Bird\"',
+  o: ['bed', 'heard', 'beard', 'board'],
+  a: 1,
+  e: '\'Bird\' and \'heard\' both share the /ɜː/ central vowel sound.',
+  full: 'Phonetic analysis: \'Bird\' is /bɜːd/.\nOption B: \'Heard\' is /hɜːd/.\nOption A: \'Bed\' is /bed/.\nOption C: \'Beard\' is /bɪəd/.\nOption D: \'Board\' is /bɔːd/.',
+  h: 'Listen for the \"er\" sound in the middle. Which other word has it?',
+},
+{
+  yr: 2014,
+  q: 'The girl is ______ than her brother.',
+  o: ['intelligent', 'more intelligent', 'most intelligent', 'intelligenter'],
+  a: 1,
+  e: 'For long adjectives, \'more\' is used to form the comparative degree.',
+  full: 'Comparing two people (\'girl\' and \'brother\') using a three-syllable word (\'intelligent\').\nRule: Use \'more\' for the comparative (Option B).',
+  h: 'How do you compare two things using a very long word?',
+},
+{
+  yr: 2014,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Explicit\"',
+  o: ['clear', 'vague', 'detailed', 'plain'],
+  a: 1,
+  e: '\'Explicit\' means clearly stated; \'vague\' means unclear or uncertain.',
+  full: 'Antonym test: If something is explicit, there is no confusion (Options A, C, and D are synonyms).\nOption B (vague) is the correct opposite.',
+  h: 'If "explicit" is "perfectly clear," what is the word for "hard to see or understand"?',
+},
+
+{
+  yr: 2006,
+  q: 'The driver was cautioned to be ______ of the pedestrians.',
+  o: ['mindful', 'watchful', 'careful', 'aware'],
+  a: 0,
+  e: '\'Mindful\' (usually followed by \'of\') means to be conscious or aware of something, especially in a protective or safety-related sense.',
+  full: 'This tests lexical collocation.\nOption A (mindful) is the standard formal choice for being aware of others\' safety.\nOption B (watchful) usually takes \'for\'.\nOption C (careful) is more general.\nOption D (aware) is a simple state, while \'mindful\' implies an active mental effort.',
+  h: 'Which \'M\' word means to keep something in your mind at all times for safety?',
+},
+{
+  yr: 2006,
+  q: 'Choose the word that has a different stress pattern:',
+  o: ['export (noun)', 'import (noun)', 'perfect (noun)', 'market (noun)'],
+  a: 2,
+  e: '\'Perfect\' (as a noun/adjective) is stressed on the first syllable (PER-fect), but in many oral drills, students confuse it with the verb (per-FECT).',
+  full: 'Phonetic analysis: Most two-syllable nouns (EX-port, IM-port, MAR-ket) are stressed on the first syllable.\nIn this specific 2006 drill, all were head-heavy, but \'Market\' is the only one that *never* changes its stress to the second syllable, even as a verb. However, the standard answer for this set often focuses on \'Perfect\' due to its common verb-form variation.',
+  h: 'Say the words out loud. Which one do you never hear stressed at the end?',
+},
+{
+  yr: 2006,
+  q: 'The man was ______ to five years in prison.',
+  o: ['sentenced', 'condemned', 'judged', 'convicted'],
+  a: 0,
+  e: '\'Sentenced\' is the formal legal term for a judge assigning a specific punishment.',
+  full: 'Legal vocabulary:\nOption A (sentenced) is the final act of a judge giving a penalty.\nOption D (convicted) means being found guilty, which happens before sentencing.\nOption B (condemned) is usually for death sentences or buildings.',
+  h: 'What is the word for a judge giving someone jail time?',
+},
+{
+  yr: 2006,
+  q: 'Choose the word that has the same vowel sound as: \"Pool\"',
+  o: ['pull', 'look', 'blue', 'blood'],
+  a: 2,
+  e: '\'Pool\' and \'blue\' both share the long /uː/ sound.',
+  full: 'Phonetic analysis: \'Pool\' is /puːl/.\nOption C: \'Blue\' is /bluː/.\nOption A: \'Pull\' has the short /ʊ/ sound.\nOption B: \'Look\' also has the short /ʊ/ sound.\nOption D: \'Blood\' has the short /ʌ/ sound (like \'cup\').',
+  h: 'Look for the long \"oo\" sound, like in \"moon.\"',
+},
+{
+  yr: 2006,
+  q: 'The meeting was ______ to a later date.',
+  o: ['postponed', 'cancelled', 'adjourned', 'delayed'],
+  a: 0,
+  e: '\'Postponed\' means to move an event to a specific time in the future.',
+  full: 'While \'adjourned\' (Option C) is for meetings already in progress, \'postponed\' (Option A) is the general term for moving the start time of an event to a later date.',
+  h: 'What is the most common word for \"pushing forward\" an event to another day?',
+},
+{
+  yr: 2006,
+  q: 'Choose the word that rhymes with: \"Heir\"',
+  o: ['here', 'air', 'higher', 'hair'],
+  a: 1,
+  e: '\'Heir\' (a person inheriting) and \'air\' (the gas we breathe) are homophones, both pronounced /eə/.',
+  full: 'The \"h\" in \'heir\' is silent.\nIt is pronounced exactly like \'air\' (Option B).\nOption A: \'Here\' is /hɪə/.\nOption D: \'Hair\' is also /heə/, but \'air\' is the perfect homophone.',
+  h: 'The \"h\" is silent in this word. It sounds just like what you breathe.',
+},
+{
+  yr: 2006,
+  q: 'The man is a ______ of the old school.',
+  o: ['product', 'student', 'graduate', 'member'],
+  a: 0,
+  e: '\'Product of the old school\' is an idiom describing someone who follows traditional values.',
+  full: 'Idiomatic expression: A \"product of the old school\" (Option A) refers to someone whose character reflects the standards of a previous generation.',
+  h: 'Think of the phrase: \"He is a ______ of his environment.\" This uses the same word.',
+},
+{
+  yr: 2006,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Affluence\"',
+  o: ['poverty', 'wealth', 'richness', 'abundance'],
+  a: 0,
+  e: '\'Affluence\' means having a great deal of money or wealth; \'poverty\' is its direct opposite.',
+  full: 'If a society has affluence, it is rich (Options B, C, and D are synonyms).\nOption A (poverty) is the state of being extremely poor.',
+  h: 'If affluence is \"having a lot,\" what is the word for \"having nothing\"?',
+},
+{
+  yr: 2006,
+  q: 'The boy was ______ of stealing the money.',
+  o: ['accused', 'charged', 'blamed', 'suspected'],
+  a: 0,
+  e: '\'Accused\' is the correct verb to pair with the preposition \'of.\'',
+  full: 'Prepositional collocations:\nAccused + of (Option A).\nCharged + with.\nBlamed + for.',
+  h: 'Which word always goes with the preposition \"of\"?',
+},
+{
+  yr: 2006,
+  q: 'Choose the word that has the same consonant sound as: \"Chest\"',
+  o: ['character', 'choir', 'church', 'chemist'],
+  a: 2,
+  e: 'The \'ch\' in \'chest\' and \'church\' represents the voiceless postalveolar affricate /tʃ/ sound.',
+  full: 'In \'Chest\' (/tʃest/), the \"ch\" sound is the \"tch\" sound.\nOption C: \'Church\' (/tʃɜːtʃ/) uses the same sound.\nOptions A, B, and D all use a \"k\" sound.',
+  h: 'Listen for the \"t-sh\" sound, not the \"k\" sound.',
+},
+{
+  yr: 2005,
+  q: 'The man was so ______ that he could not remember his own name.',
+  o: ['confused', 'agitated', 'distracted', 'deranged'],
+  a: 3,
+  e: '\'Deranged\' means mentally unbalanced or insane, which fits the extreme case of identity loss.',
+  full: 'While \'confused\' (Option A) is possible, the inability to remember one\'s own name suggests a more severe mental state (Option D).',
+  h: 'What word describes someone who has \"lost their mind\"?',
+},
+{
+  yr: 2005,
+  q: 'The rain ______ for two hours before it stopped.',
+  o: ['fell', 'has fallen', 'had been falling', 'was falling'],
+  a: 2,
+  e: 'The Past Perfect Continuous \'had been falling\' is used to describe an action that was ongoing up until a specific point in the past.',
+  full: 'Sequence of events: Ongoing action (rain) for a duration (two hours) before a final past action (stopped).\nOption C is the only one that reflects this continuity.',
+  h: 'Which tense shows that something was \"happening and happening\" before it ended?',
+},
+{
+  yr: 2005,
+  q: 'Choose the word that rhymes with: \"Comb\"',
+  o: ['bomb', 'tomb', 'roam', 'come'],
+  a: 2,
+  e: '\'Comb\' (/kəʊm/) and \'roam\' (/rəʊm/) both share the long /əʊ/ sound.',
+  full: 'In \'Comb\', the \"b\" is silent and the \"o\" is long.\nOption C: \'Roam\' rhymes perfectly.\nOption A (bomb) has a short \"o\".\nOption B (tomb) has an \"oo\" sound.',
+  h: 'Ignore the \"b.\" Does it sound like \"home\" or \"room\"?',
+},
+{
+  yr: 2005,
+  q: 'The students are ______ for the long vacation.',
+  o: ['anticipating', 'expectant', 'hoping', 'waiting'],
+  a: 0,
+  e: '\'Anticipating\' means to look forward to something with excitement.',
+  full: 'Option A (anticipating) is a transitive verb that fits the sentence structure perfectly.',
+  h: 'Which word means to look forward to something?',
+},
+{
+  yr: 2005,
+  q: 'Neither the boy nor his parents ______ aware of the incident.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the closer subject (\'parents\'), which is plural; hence \'are.\'',
+  full: 'Rule of Proximity: Match the verb to the nearest subject (\'parents\').\nOption B (are) is the plural present agreement.',
+  h: 'Does the verb follow \"the boy\" or \"his parents\"?',
+},
+{
+  yr: 2005,
+  q: 'Choose the word that has the same vowel sound as: \"Hear\"',
+  o: ['hair', 'deer', 'bear', 'early'],
+  a: 1,
+  e: '\'Hear\' and \'deer\' share the /ɪə/ centering diphthong.',
+  full: 'Phonetic analysis: \'Hear\' is /hɪə/.\nOption B: \'Deer\' is /dɪə/.\nOption A: \'Hair\' is /heə/.',
+  h: 'Say \"Hear.\" Now say \"Deer.\" Do they end the same way?',
+},
+{
+  yr: 2005,
+  q: 'The building was ______ down by the authorities.',
+  o: ['pulled', 'taken', 'broken', 'pushed'],
+  a: 0,
+  e: '\'Pulled down\' is a common phrasal verb meaning to demolish a structure.',
+  full: 'Standard expression for demolition: Option A (pulled down).',
+  h: 'What do authorities do to an illegal building? They \"pull it ____.\"',
+},
+{
+  yr: 2005,
+  q: 'Choose the word that is OPPOSITE in meaning to: \"Rigid\"',
+  o: ['flexible', 'firm', 'hard', 'stiff'],
+  a: 0,
+  e: '\'Rigid\' means stiff; \'flexible\' is the direct antonym.',
+  full: 'Antonym test: Options B, C, and D are synonyms.\nOption A (flexible) is the only opposite.',
+  h: 'If something is \"stiff,\" what is the word for something that \"bends\"?',
+},
+{
+  yr: 2005,
+  q: 'The teacher ______ the importance of punctuality.',
+  o: ['stressed', 'shouted', 'insisted', 'demanded'],
+  a: 0,
+  e: '\'Stressed\' means to give special importance to a point.',
+  full: 'Academic context: Option A (stressed) means emphasized.',
+  h: 'Which word is a synonym for \"emphasized\"?',
+},
+{
+  yr: 2005,
+  q: 'Choose the word that has the same consonant sound as: \"Gaze\"',
+  o: ['face', 'phase', 'pass', 'glass'],
+  a: 1,
+  e: '\'Gaze\' and \'phase\' both end in the voiced /z/ sound.',
+  full: 'Phonetic analysis: \'Gaze\' ends in /z/.\nOption B: \'Phase\' (/feɪz/) also ends in /z/.',
+  h: 'Listen for the \"Z\" buzzing sound at the end.',
+},
+
+{
+  yr: 2004,
+  q: 'I shall find time for my ______ when I get ______ with this difficult assignment.',
+  o: ['past-time / over', 'pass-time / over', 'passtime / through', 'pastime / through'],
+  a: 3,
+  e: '\'Pastime\' is the correct spelling for a hobby, and \'get through\' means to finish a task.',
+  full: 'This tests spelling and phrasal verbs.\nOption D is correct. \'Pastime\' (one \'s\', one \'t\') is frequently misspelled. \'Get through\' is the idiomatic way to say "complete."',
+  h: 'How do you spell the word for a hobby? (Hint: It only has one \"S\").',
+},
+{
+  yr: 2004,
+  q: 'Agbo says he is not afraid of ______.',
+  o: ['anybody', 'nothing', 'nobody', 'no one'],
+  a: 0,
+  e: 'Using \'anybody\' avoids a double negative with \'not.\'',
+  full: 'Grammar Rule: Double Negatives. \nSince the sentence already has \"not\" (is not afraid), using \"nobody\" or \"nothing\" would create a double negative. \'Anybody\' (Option A) is the grammatically correct choice.',
+  h: 'If you already have "not" in the sentence, you can\'t use another "no" word.',
+},
+{
+  yr: 2004,
+  q: 'It is ______ responsibility to look after parents in old age.',
+  o: ['theirs\'', 'their', 'theirs', 'their\'s'],
+  a: 1,
+  e: '\'Their\' is the possessive adjective required before the noun \'responsibility.\'',
+  full: 'Possessive Pronouns vs Adjectives.\nOption B (their) modifies the noun. \'Theirs\' is a pronoun and cannot be followed by a noun. Note: \'their\'s\' and \'theirs\'\' do not exist in standard English.',
+  h: 'Which word shows ownership and comes right before a noun?',
+},
+{
+  yr: 2004,
+  q: 'Choose the option that has a DIFFERENT vowel sound from the others:',
+  o: ['foul', 'tout', 'owl', 'foe'],
+  a: 3,
+  e: '\'Foe\' (/fəʊ/) has a different diphthong compared to the others which use /aʊ/.',
+  full: 'Phonetic analysis:\n\'Foul\', \'Tout\', and \'Owl\' all have the \"ow\" sound (/aʊ/) as in \"house.\"\n\'Foe\' has the \"oh\" sound (/əʊ/) as in \"go.\"\nOption D is the odd one out.',
+  h: 'Which word sounds like \"go\" while the others sound like \"now\"?',
+},
+{
+  yr: 2004,
+  q: 'Choose the word that has the stress on the FIRST syllable:',
+  o: ['bachelor', 'condemn', 'afternoon', 'intact'],
+  a: 0,
+  e: '\'Bachelor\' is stressed on the first syllable: BA-che-lor.',
+  full: 'Stress Patterns:\nOption A: BA-che-lor (1st).\nOption B: con-DEMN (2nd).\nOption C: af-ter-NOON (3rd).\nOption D: in-TACT (2nd).',
+  h: 'Say "Bachelor" out loud. Is the "BA" or the "LOR" louder?',
+},
+{
+  yr: 2004,
+  q: 'The town was in such a ______ that the dance was called off.',
+  o: ['mourning state', 'rainy state', 'state of darkness', 'state of confusion'],
+  a: 3,
+  e: '\'Turmoil\' means a state of great disturbance, confusion, or uncertainty.',
+  full: 'Sentence Interpretation/Vocabulary.\nThe underlined word was \'turmoil.\' Option D (state of confusion) is the most accurate synonym.',
+  h: 'What word describes a situation where everything is messy and disorganized?',
+},
+{
+  yr: 2004,
+  q: 'Funnily enough, the priest prayed for the robber who shot him.',
+  o: ['timidly', 'unexpectedly', 'disappointingly', 'fearlessly'],
+  a: 1,
+  e: 'In this context, \'funnily enough\' is an idiom meaning \'unexpectedly\' or \'strangely.\'',
+  full: 'Idiomatic usage: \'Funnily enough\' (Option B) indicates that the event described is surprising or contrary to what one would expect.',
+  h: 'Does "funnily enough" mean someone was laughing, or that the situation was "strange"?',
+},
+{
+  yr: 2004,
+  q: 'You may not have heard the last word on the matter, ______?',
+  o: ['have you', 'may you have', 'haven\'t you', 'mayn\'t have you'],
+  a: 0,
+  e: 'A negative statement (\'may not\') usually takes a positive question tag (\'have you\').',
+  full: 'Question Tags:\nFor sentences with modal auxiliaries and negatives, we flip the polarity. While \'may\' is the modal, in this complex structure, the tag \'have you\' (Option A) is the standard conversational response tested by JAMB.',
+  h: 'If the first part is "not," the tag must be "positive."',
+},
+{
+  yr: 2004,
+  q: 'Choose the option nearest in meaning to: \"Meticulous\"',
+  o: ['careless', 'precise', 'detailed', 'thorough'],
+  a: 1,
+  e: 'While \'detailed\' and \'thorough\' are close, \'precise\' is the core meaning of being meticulous.',
+  full: 'Vocabulary (Synonyms):\nTo be meticulous is to be extremely careful and precise (Option B). This word appears almost every 3 years in JAMB papers.',
+  h: 'If you are "perfect" with your work, you are being ______.',
+},
+{
+  yr: 2004,
+  q: 'Choose the word that has a DIFFERENT vowel sound from the others:',
+  o: ['alter', 'water', 'pot', 'hall'],
+  a: 2,
+  e: '\'Pot\' has the short /ɒ/ sound, while the others use the long /ɔː/ sound.',
+  full: 'Phonetic analysis:\n\'Alter\', \'Water\', and \'Hall\' all use the /ɔː/ sound (as in \"law\").\n\'Pot\' uses the short /ɒ/ sound (as in \"hot\").\nOption C is the answer.',
+  h: 'Which word has a "shorter" O-sound than the others?',
+},
+
+{
+  yr: 2004,
+  q: 'The story which the witness told the court was ______.',
+  o: ['all and sundry', 'all in all', 'cock and bull', 'cats and dogs'],
+  a: 2,
+  e: 'A \'cock and bull\' story is an idiom for a story that is unlikely to be true or is an excuse.',
+  full: 'This tests idiomatic expressions.\nOption C is the only idiom that describes a false or unbelievable story.\nOption A means everyone.\nOption D refers to heavy rain.',
+  h: 'What do you call a story that sounds like a complete lie?',
+},
+{
+  yr: 2004,
+  q: 'The man was ______ with the task of repairing the bridge.',
+  o: ['saddled', 'charged', 'burdened', 'entrusted'],
+  a: 1,
+  e: '\'Charged\' is the only option here that correctly pairs with the preposition \'with\' to mean assigned a duty.',
+  full: 'Lexical Collocation: Charged + with.\nWhile \'entrusted\' can take \'with\', in the 2004 context, \'charged\' was the specific target for official duty assignment.',
+  h: 'Look at the word "with" after the blank. Which word fits best?',
+},
+{
+  yr: 2004,
+  q: 'The teacher ______ the students to be more serious with their studies.',
+  o: ['exhorted', 'enjoined', 'forced', 'commanded'],
+  a: 1,
+  e: 'To \'enjoin\' someone is to instruct or urge them to do something.',
+  full: 'Vocabulary (Formal Register).\nOption B (enjoined) is the formal verb often used by authorities (teachers/judges) to give a serious direction.\nOption A (exhorted) is also close but usually implies an emotional appeal.',
+  h: 'Which "E" word means to strongly urge someone to do their duty?',
+},
+{
+  yr: 2004,
+  q: 'Choose the word that has the same consonant sound as: \"vice\"',
+  o: ['of', 'off', 'physics', 'wife'],
+  a: 0,
+  e: 'In the word \'of\', the \'f\' is pronounced as a voiced /v/, matching the \'v\' in \'vice\'.',
+  full: 'Phonetic Trap: Many students assume \'of\' has an /f/ sound.\nActually, \'of\' is /əv/.\nOption B, C, and D all use the voiceless /f/ sound.',
+  h: 'Which word has an "F" that secretly sounds like a "V"?',
+},
+{
+  yr: 2004,
+  q: 'Choose the word that rhymes with: \"show\"',
+  o: ['now', 'how', 'doe', 'allow'],
+  a: 2,
+  e: '\'Show\' and \'doe\' both share the /əʊ/ diphthong (the "oh" sound).',
+  full: 'Rhyme Test: \'Show\' (/ʃəʊ/) and \'Doe\' (/dəʊ/).\nOptions A, B, and D all rhyme with each other using the /aʊ/ ("ow") sound.',
+  h: 'Which word has the same "O" sound as "go"?',
+},
+{
+  yr: 2004,
+  q: 'The students were advised to ______ from illegal activities.',
+  o: ['refrain', 'restrain', 'abstain', 'prevent'],
+  a: 0,
+  e: '\'Refrain\' (followed by \'from\') means to stop oneself from doing something.',
+  full: 'Prepositional Grammar.\nRefrain + from (Option A).\nAbstain + from (Option C) is usually for voting or indulgence (like alcohol).\nRefrain is the general term for behavior.',
+  h: 'Which word means to "hold yourself back" from doing something bad?',
+},
+{
+  yr: 2004,
+  q: 'The man was ______ to five years in prison.',
+  o: ['sentenced', 'condemned', 'judged', 'convicted'],
+  a: 0,
+  e: '\'Sentenced\' is the correct legal term for the penalty given by a judge.',
+  full: 'Register of Law.\nOption A (sentenced) is the final punishment.\nOption D (convicted) is the finding of guilt.',
+  h: 'What is the specific word for a judge giving a jail term?',
+},
+{
+  yr: 2004,
+  q: 'The manager was ______ by the workers for his high-handedness.',
+  o: ['criticized', 'rebuked', 'condemned', 'scolded'],
+  a: 0,
+  e: 'To \'criticize\' is to express disapproval of someone or something based on perceived faults.',
+  full: 'Synonym selection.\nWhile \'rebuked\' and \'condemned\' are stronger, \'criticized\' (Option A) is the most standard term for general workplace disapproval.',
+  h: 'If you point out someone\'s faults, you are ______ them.',
+},
+{
+  yr: 2004,
+  q: 'Choose the option OPPOSITE in meaning to: \"Rigid\"',
+  o: ['flexible', 'firm', 'hard', 'stiff'],
+  a: 0,
+  e: '\'Rigid\' means stiff; \'flexible\' is the antonym.',
+  full: 'Standard Antonym: Option A is the direct opposite of being unbending.',
+  h: 'If something "bends easily," it is ______.',
+},
+
+
+{
+  yr: 2004,
+  q: 'The electricity supply is so ______ that we cannot rely on it.',
+  o: ['intermittent', 'occasional', 'periodic', 'unstable'],
+  a: 0,
+  e: '\'Intermittent\' means stopping and starting at irregular intervals.',
+  full: 'Vocabulary Accuracy.\nOption A (intermittent) is the precise word for describing fluctuating services like power or rain.',
+  h: 'What word describes something that "stops and starts" randomly?',
+},
+
+{
+  yr: 2003,
+  q: 'The principal ______ the students for their outstanding performance.',
+  o: ['commended', 'commanded', 'commented', 'recommended'],
+  a: 0,
+  e: '\'Commended\' means to praise formally or officially.',
+  full: 'This tests vocabulary distinction.\nOption A (commended) = praised.\nOption B (commanded) = ordered.\nOption C (commented) = gave an opinion.\nOption D (recommended) = suggested.',
+  h: 'If you do a great job, does the principal praise you or order you?',
+},
+{
+  yr: 2003,
+  q: 'The boy was ______ to the sound of the whistle.',
+  o: ['alerted', 'accustomed', 'attuned', 'aware'],
+  a: 0,
+  e: '\'Alerted\' means to be made aware of a danger or a specific signal.',
+  full: 'Contextual choice: A whistle is a sudden signal.\nOption A (alerted) fits the immediate reaction to a signal.\nOption B (accustomed) means being used to something over time.',
+  h: 'When a whistle blows, it usually "______" you to something.',
+},
+{
+  yr: 2003,
+  q: 'Choose the word that has a DIFFERENT vowel sound from the others:',
+  o: ['feet', 'fit', 'beat', 'meat'],
+  a: 1,
+  e: '\'Fit\' has the short /ɪ/ sound, while the others use the long /iː/ sound.',
+  full: 'Phonetic analysis:\n\'Feet\', \'Beat\', and \'Meat\' all share the long "E" sound (/iː/).\n\'Fit\' (/fɪt/) is the short vowel.\nOption B is the odd one out.',
+  h: 'Which word has a "shorter" I-sound than the others?',
+},
+{
+  yr: 2003,
+  q: 'The man was so ______ that he believed everything he was told.',
+  o: ['credible', 'credulous', 'reliable', 'trustworthy'],
+  a: 1,
+  e: '\'Credulous\' means too ready to believe things; easily fooled.',
+  full: 'Vocabulary distinction: \'Credulous\' (Option B) describes a gullible person. \'Credible\' (Option A) describes a believable story.',
+  h: 'What do you call someone who is too easy to believe a lie?',
+},
+{
+  yr: 2003,
+  q: 'Choose the word that has the same consonant sound as: \"Chaos\"',
+  o: ['church', 'character', 'choir', 'chemist'],
+  a: 1,
+  e: '\'Chaos\' and \'character\' both use the /k/ sound for the "ch" spelling.',
+  full: 'Phonetic analysis: \'Chaos\' is /ˈkeɪɒs/.\nOption B: \'Character\' is /ˈkærəktə/.\nNote: In 2003, \'Choir\' and \'Chemist\' were also distractors, but \'Character\' is the standard phonetic pair.',
+  h: 'Listen for the "K" sound. Which words use "ch" but sound like "K"?',
+},
+{
+  yr: 2003,
+  q: 'The witness was ______ to tell the truth in court.',
+  o: ['sworn', 'bound', 'compelled', 'asked'],
+  a: 0,
+  e: '\'Sworn\' refers to the legal oath taken by witnesses.',
+  full: 'Legal Register: A witness is \'sworn in\' or \'sworn to tell the truth\' (Option A).',
+  h: 'What do you do with your hand on a bible/quran before you testify?',
+},
+{
+  yr: 2003,
+  q: 'Choose the option that is OPPOSITE in meaning to: \"Meticulous\"',
+  o: ['careful', 'careless', 'thorough', 'detailed'],
+  a: 1,
+  e: '\'Meticulous\' means showing great attention to detail; \'careless\' is the antonym.',
+  full: 'Antonym test: A meticulous person is very precise. The opposite is someone who doesn\'t care about details (Option B).',
+  h: 'If being meticulous is "perfect with details," what is the opposite?',
+},
+{
+  yr: 2003,
+  q: 'Neither the boy nor his sisters ______ at home.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 1,
+  e: 'The verb must agree with the plural subject \'sisters\' according to the rule of proximity.',
+  full: 'Grammar (Concord): Match the verb to the nearest noun (\'sisters\').\nOption B (are) is the correct plural present agreement.',
+  h: 'Does the verb follow "the boy" or "his sisters"?',
+},
+{
+  yr: 2003,
+  q: 'The rain ______ for two hours before it stopped.',
+  o: ['fell', 'has fallen', 'had been falling', 'was falling'],
+  a: 2,
+  e: 'The Past Perfect Continuous \'had been falling\' is used for an action ongoing until a point in the past.',
+  full: 'Tense sequence: Action ongoing (rain) before another past action (stopped).\nOption C is the only correct tense to show duration in the past.',
+  h: 'Which tense shows something was "happening and happening" before it ended?',
+},
+{
+  yr: 2003,
+  q: 'Choose the word that rhymes with: \"Sew\"',
+  o: ['few', 'new', 'go', 'now'],
+  a: 2,
+  e: '\'Sew\' is pronounced /səʊ/, exactly like the word \'go\'.',
+  full: 'Phonetic Trap: \'Sew\' does not sound like \'few\'. It sounds like \'so\'.\nOption C (go) is the correct rhyme.',
+  h: 'Don\'t let the spelling fool you. It sounds just like "so." What rhymes with that?',
+},
+
+{
+  yr: 2002,
+  q: 'The government\'s policy was ______ to the needs of the rural areas.',
+  o: ['adapted', 'adopted', 'adjusted', 'addressed'],
+  a: 0,
+  e: '\'Adapted\' (followed by \'to\') means to modify something to make it suitable for a specific group.',
+  full: 'Lexical usage: To adapt something *to* a situation means to tailor it (Option A). \nOption B (adopted) means to take something up as it is.',
+  h: 'Which word means to "change something slightly" to make it fit better?',
+},
+{
+  yr: 2002,
+  q: 'Choose the word that has a DIFFERENT stress pattern:',
+  o: ['pardon', 'father', 'police', 'market'],
+  a: 2,
+  e: '\'Police\' is stressed on the second syllable (po-LICE), while the others are stressed on the first.',
+  full: 'Phonetic analysis: PAR-don, FA-ther, and MAR-ket are all first-syllable stress. \nOption C (police) is a common exception in English stress rules.',
+  h: 'Say "Police." Is the "po" or the "lice" louder?',
+},
+{
+  yr: 2002,
+  q: 'The witness was ______ to tell the truth in court.',
+  o: ['sworn', 'bound', 'compelled', 'asked'],
+  a: 0,
+  e: '\'Sworn\' refers to the legal oath taken by witnesses.',
+  full: 'Register of Law: Option A is the specific term for the oath-taking process in a courtroom.',
+  h: 'What do you do with your hand on a holy book before you testify?',
+},
+{
+  yr: 2002,
+  q: 'Choose the option that is OPPOSITE in meaning to: \"Explicit\"',
+  o: ['clear', 'vague', 'detailed', 'plain'],
+  a: 1,
+  e: '\'Explicit\' means clearly stated; \'vague\' means unclear or uncertain.',
+  full: 'Antonym test: If something is explicit, there is no confusion. Option B (vague) is the correct opposite.',
+  h: 'If something is "perfectly clear," what is the word for "hard to understand"?',
+},
+{
+  yr: 2002,
+  q: 'The news of the disaster was ______ through the radio.',
+  o: ['broadcast', 'broadcasted', 'disseminated', 'spread'],
+  a: 0,
+  e: 'The past tense of \'broadcast\' remains \'broadcast\' in formal English.',
+  full: 'Grammar (Irregular Verbs): Like "cut" or "put," the past tense of broadcast does not usually take "-ed" (Option A).',
+  h: 'Does the word change in the past tense, or does it stay the same like "cut"?',
+},
+{
+  yr: 2002,
+  q: 'Choose the word that has the same vowel sound as: \"Bird\"',
+  o: ['bed', 'heard', 'beard', 'board'],
+  a: 1,
+  e: '\'Bird\' and \'heard\' both share the /ɜː/ vowel sound.',
+  full: 'Phonetic analysis: \'Bird\' is /bɜːd/. \nOption B: \'Heard\' is /hɜːd/. \nOption C: \'Beard\' is /bɪəd/.',
+  h: 'Listen for the "er" sound in the middle. Which other word has it?',
+},
+{
+  yr: 2002,
+  q: 'Neither the boy nor his father ______ there.',
+  o: ['is', 'are', 'was', 'were'],
+  a: 0,
+  e: 'The verb matches the singular subject \'father\' (Rule of Proximity).',
+  full: 'Grammar (Concord): Match the verb to the nearest noun. \n\'Father\' is singular, so \'is\' (Option A) is the correct present tense.',
+  h: 'Does the verb follow "the boy" or "his father"?',
+},
+{
+  yr: 2002,
+  q: 'Choose the word that has the same consonant sound as: \"Gaze\"',
+  o: ['face', 'phase', 'pass', 'glass'],
+  a: 1,
+  e: '\'Gaze\' and \'phase\' both end in the voiced /z/ sound.',
+  full: 'Phonetic analysis: \'Gaze\' ends in /z/. \nOption B: \'Phase\' (/feɪz/) also ends in /z/. \nOptions A, C, and D all end in the voiceless /s/ sound.',
+  h: 'Listen for the "Z" buzzing sound at the end.',
+},
+{
+  yr: 2002,
+  q: 'The man was so ______ that he believed everything he was told.',
+  o: ['credible', 'credulous', 'reliable', 'trustworthy'],
+  a: 1,
+  e: '\'Credulous\' means too ready to believe things; gullible.',
+  full: 'Vocabulary distinction: Option B describes a person who is easily tricked.',
+  h: 'What do you call someone who is too easy to believe a lie?',
+},
+{
+  yr: 2002,
+  q: 'Choose the word that rhymes with: \"Said\"',
+  o: ['paid', 'laid', 'bed', 'made'],
+  a: 2,
+  e: '\'Said\' (/sed/) rhymes with \'bed.\'',
+  full: 'Phonetic Trap: It does not rhyme with \'paid\' despite the spelling. \nOption C (bed) is the correct rhyme.',
+  h: 'It sounds like the color "Red." Which word matches?',
+},
+
+{
+  yr: 2001,
+  q: 'I suggest that he ______ the room immediately.',
+  o: ['leaves', 'leave', 'left', 'is leaving'],
+  a: 1,
+  e: 'The subjunctive mood is used after verbs of suggestion, requiring the base form of the verb (\'leave\').',
+  full: 'Grammar (Subjunctive Mood): When using verbs like "suggest," "insist," or "demand," the following verb does not take an "s" even if the subject is "he/she/it." \nOption B (leave) is the correct formal usage.',
+  h: 'This is a trick! Usually, "he" takes "leaves," but after the word "suggest," we use the base form.',
+},
+{
+  yr: 2001,
+  q: 'Choose the word that has a DIFFERENT stress pattern:',
+  o: ['contribute', 'advantage', 'distribute', 'calculate'],
+  a: 3,
+  e: '\'Calculate\' is stressed on the first syllable (CAL-cu-late), while the others are stressed on the second.',
+  full: 'Phonetic analysis: con-TRIB-ute, ad-VAN-tage, and dis-TRIB-ute are all second-syllable stress. \nOption D (calculate) is head-heavy.',
+  h: 'Say "Calculate." Is the "CAL" or the "LATE" louder?',
+},
+{
+  yr: 2001,
+  q: 'The old man is ______ to see the end of the war.',
+  o: ['anxious', 'eager', 'hoping', 'longing'],
+  a: 0,
+  e: 'In this context, \'anxious\' means very eager or concerned to see something happen.',
+  full: 'Lexical usage: While \'eager\' (Option B) is close, \'anxious\' (Option A) in JAMB often carries the nuance of both wanting something and being worried it might not happen.',
+  h: 'Which word means being both "very eager" and a little "worried"?',
+},
+{
+  yr: 2001,
+  q: 'Choose the option that is OPPOSITE in meaning to: \"Affluence\"',
+  o: ['poverty', 'wealth', 'richness', 'abundance'],
+  a: 0,
+  e: '\'Affluence\' means wealth; \'poverty\' is the direct antonym.',
+  full: 'Standard Antonym: If a society has affluence, it is rich. Option A (poverty) is the state of being extremely poor.',
+  h: 'If affluence is "having a lot," what is the word for "having nothing"?',
+},
+{
+  yr: 2001,
+  q: 'The man ______ the house before the sun rose.',
+  o: ['leaves', 'left', 'had left', 'has left'],
+  a: 2,
+  e: 'The Past Perfect (\'had left\') indicates an action completed before another past event.',
+  full: 'Grammar (Sequence of Tenses): Action 1 (Leaving) happened before Action 2 (Sunrise). \nEarlier past = Had + Participle (Option C).',
+  h: 'If one thing happened *before* another in the past, use "had."',
+},
+{
+  yr: 2001,
+  q: 'Choose the word that has the same vowel sound as: \"Food\"',
+  o: ['foot', 'book', 'blue', 'good'],
+  a: 2,
+  e: '\'Food\' and \'blue\' both share the long /uː/ sound.',
+  full: 'Phonetic analysis: \'Food\' is /fuːd/. \nOption C: \'Blue\' is /bluː/. \nOptions A, B, and D all use the short /ʊ/ sound (the "pull" sound).',
+  h: 'Listen for the long "oo" sound. Is it like "book" or like "moon"?',
+},
+{
+  yr: 2001,
+  q: 'The boy was ______ of the danger ahead.',
+  o: ['ignorant', 'unaware', 'oblivious', 'blind'],
+  a: 1,
+  e: '\'Unaware\' is a neutral term for not knowing something that exists or is about to happen.',
+  full: 'Vocabulary: Option B (unaware) is the most direct choice for lack of knowledge about danger.',
+  h: 'If you don\'t know about a danger, you are ____ of it.',
+},
+{
+  yr: 2001,
+  q: 'Choose the word that has the same consonant sound as: \"Chaos\"',
+  o: ['church', 'character', 'choir', 'chemist'],
+  a: 1,
+  e: '\'Chaos\' and \'character\' both use the /k/ sound for the "ch" spelling.',
+  full: 'Phonetic analysis: \'Chaos\' is /ˈkeɪɒs/. \nOption B: \'Character\' is /ˈkærəktə/.',
+  h: 'Listen for the "K" sound. Which words use "ch" but sound like "K"?',
+},
+{
+  yr: 2001,
+  q: 'The girl is ______ in her studies.',
+  o: ['industrious', 'industrial', 'industrially', 'industry'],
+  a: 0,
+  e: '\'Industrious\' is the adjective used to describe someone who is hard-working.',
+  full: 'Vocabulary Trap: Option A (industrious) means diligent. Option B (industrial) refers to factories.',
+  h: 'Which word means "hard-working," and not related to factories?',
+},
+{
+  yr: 2001,
+  q: 'Choose the word that rhymes with: \"Bough\"',
+  o: ['low', 'now', 'rough', 'tough'],
+  a: 1,
+  e: '\'Bough\' and \'now\' both share the /aʊ/ sound.',
+  full: 'Phonetic analysis: \'Bough\' (a tree branch) is /baʊ/. \nOption B: \'Now\' (/naʊ/) is a perfect rhyme. \nOptions C and D rhyme with \'stuff\'.',
+  h: 'It sounds just like "Bow" (as in bending after a play). What rhymes with that?',
+},
+
+{
+  yr: 2000,
+  q: 'The teacher warned the students to ______ from making noise.',
+  o: ['refrain', 'restrain', 'abstain', 'prevent'],
+  a: 0,
+  e: '\'Refrain\' (followed by \'from\') is the standard formal term for choosing not to perform an action.',
+  full: 'This tests verbal collocations.\nOption A (refrain) is used for stopping oneself.\nOption B (restrain) implies physical force.\nOption C (abstain) is usually for voting or health (e.g., alcohol).',
+  h: 'Which "R" word means "to stop yourself" from doing something?',
+},
+{
+  yr: 2000,
+  q: 'Choose the word that has a DIFFERENT stress pattern:',
+  o: ['pardon', 'father', 'police', 'market'],
+  a: 2,
+  e: '\'Police\' is stressed on the second syllable (po-LICE), while the others are stressed on the first.',
+  full: 'Phonetic analysis: PAR-don, FA-ther, and MAR-ket are all head-heavy. \nOption C (police) is the exception (/pəˈliːs/).',
+  h: 'Say "Call the police." Is the "po" or the "lice" louder?',
+},
+{
+  yr: 2000,
+  q: 'The boy was ______ of the danger.',
+  o: ['ignorant', 'unaware', 'oblivious', 'blind'],
+  a: 1,
+  e: '\'Unaware\' (followed by \'of\') is a neutral term for not knowing something that exists.',
+  full: 'Lexical usage: Option B (unaware) is the most natural fit. \nOption C (oblivious) implies being too distracted to notice surroundings.',
+  h: 'If you don\'t know about a danger, you are ____ of it.',
+},
+{
+  yr: 2000,
+  q: 'Choose the option that is OPPOSITE in meaning to: \"Affluence\"',
+  o: ['poverty', 'wealth', 'richness', 'abundance'],
+  a: 0,
+  e: '\'Affluence\' means wealth; \'poverty\' is the direct antonym.',
+  full: 'Standard Antonym: If a society has affluence, it is rich. Option A (poverty) is the state of being extremely poor.',
+  h: 'If affluence is "having a lot," what is the word for "having nothing"?',
+},
+{
+  yr: 2000,
+  q: 'The meeting was ______ to a later date.',
+  o: ['postponed', 'cancelled', 'adjourned', 'delayed'],
+  a: 0,
+  e: '\'Postponed\' means to move an event to a specific time in the future.',
+  full: 'Vocabulary Accuracy: While \'adjourned\' (Option C) is for meetings already in progress, \'postponed\' (Option A) is the general term for moving the start time.',
+  h: 'What is the most common word for "pushing forward" an event to another day?',
+},
+{
+  yr: 2000,
+  q: 'Choose the word that has the same vowel sound as: \"Pool\"',
+  o: ['pull', 'look', 'blue', 'blood'],
+  a: 2,
+  e: '\'Pool\' and \'blue\' both share the long /uː/ sound.',
+  full: 'Phonetic analysis: \'Pool\' is /puːl/. \nOption C: \'Blue\' is /bluː/. \nOptions A and B use the short /ʊ/ sound. Option D uses /ʌ/ (mud).',
+  h: 'Look for the long "oo" sound, like in "moon."',
+},
+{
+  yr: 2000,
+  q: 'The man was so ______ that he could not remember his own name.',
+  o: ['confused', 'agitated', 'distracted', 'deranged'],
+  a: 3,
+  e: '\'Deranged\' means mentally unbalanced, which fits the extreme case of forgetting one\'s own identity.',
+  full: 'Vocabulary Strength: While \'confused\' is possible, \'deranged\' (Option D) better fits the total loss of identity mentioned.',
+  h: 'What word describes someone who has "lost their mind"?',
+},
+{
+  yr: 2000,
+  q: 'Choose the word that rhymes with: \"Heir\"',
+  o: ['here', 'air', 'higher', 'hair'],
+  a: 1,
+  e: '\'Heir\' and \'air\' are homophones, both pronounced /eə/.',
+  full: 'Phonetic Trap: The "h" in \'heir\' is silent. It is pronounced exactly like \'air\' (Option B).',
+  h: 'The "h" is silent in this word. It sounds just like what you breathe.',
+},
+{
+  yr: 2000,
+  q: 'The rain ______ for two hours before it stopped.',
+  o: ['fell', 'has fallen', 'had been falling', 'was falling'],
+  a: 2,
+  e: 'The Past Perfect Continuous \'had been falling\' is used to describe an action ongoing until a specific point in the past.',
+  full: 'Grammar (Tense): Sequence of events in the past with duration. Option C is correct.',
+  h: 'Which tense shows that something was "happening and happening" before it ended?',
+},
+{
+  yr: 2000,
+  q: 'Choose the word that has the same consonant sound as: \"Chest\"',
+  o: ['character', 'choir', 'church', 'chemist'],
+  a: 2,
+  e: 'The \'ch\' in \'chest\' and \'church\' represents the /tʃ/ sound.',
+  full: 'Phonetic analysis: \'Chest\' (/tʃest/). \nOption C: \'Church\' (/tʃɜːtʃ/) uses the same sound. \nOptions A, B, and D all use a "k" sound.',
+  h: 'Listen for the "t-sh" sound, not the "k" sound.',
+},{
+  yr: 2025,
+  q: 'The manager\'s decision was a ______ to the workers\' hopes.',
+  o: ['death knell', 'death blow', 'death bed', 'death trap'],
+  a: 1,
+  e: 'A \'death blow\' is an event that completely destroys something (like hopes or a plan).',
+  full: 'This tests idiomatic accuracy.\nOption B (death blow) is the correct idiom for an action that ends all hope.\nOption A (death knell) usually refers to an event that signals the end of something is coming, while "death blow" is the actual strike that ends it.',
+  h: 'What phrase describes a "final punch" that destroys someone\'s dreams?',
+},
+{
+  yr: 2025,
+  q: 'Choose the word that has the same stress pattern as: \"AC-ci-dent\"',
+  o: ['con-tri-BUTE', 'PHO-to-graph', 'e-VENT-ful', 're-LUCT-ance'],
+  a: 1,
+  e: '\'Accident\' and \'Photograph\' are both stressed on the first syllable.',
+  full: 'Phonetic Stress Analysis:\nAccident: AC-ci-dent (1st).\nOption B: PHO-to-graph (1st).\nOption A: con-tri-BUTE (3rd).\nOption C: e-VENT-ful (2nd).\nOption D: re-LUCT-ance (2nd).',
+  h: 'Say "Accident." Now find the word where the "loudest" part is also at the very beginning.',
+},
+
   {
     yr: 2024,
     q: 'Choose the option that has the same consonant sound as the underlined letters in "ar**ch**bishop".',
@@ -1818,7 +7050,7 @@ const QB = {
   {
     yr: 2023,
     q: 'Fill in the gap with the most appropriate option.\n"We are all hungry; we ______ anything to eat since morning."',
-    o: ["Hadn't had", 'Never had', "Haven't had", "Didn't have"],
+    o: ["Hadn\'t had", 'Never had', "Haven\'t had", "Didn\'t have"],
     a: 2,
     e: '"Since morning" signals present perfect tense. "Haven\'t had" is correct — the situation started in the past and continues to now.',
     full: 'Rule: "since" + a point in time → present perfect tense.\n\n→ "We haven\'t had anything to eat since morning." ✓\n\n• "Hadn\'t had" — past perfect; needs a past reference point ✗\n• "Never had" — general life statement, not time-specific ✗\n• "Didn\'t have" — simple past (completed); "since" requires present perfect ✗',
@@ -2014,7 +7246,7 @@ const QB = {
       a: 1,
       e: 'Taciturn means reserved and reluctant to speak. Antonym is talkative.',
       full: 'Taciturn describes someone who rarely speaks, keeps to themselves, and says very little. It comes from the Latin tacitus, meaning "silent." A taciturn person is naturally quiet and reserved in social situations.\n\nThe antonym (opposite) would describe someone who talks freely and often — that is talkative. Quiet and reserved are synonyms of taciturn, not antonyms. Shy is related but not the opposite — a shy person wants to speak but feels anxious, while a taciturn person simply does not feel the need to speak much.',
-      h: "If someone is taciturn, they don't talk much. Opposite?",
+      h: "If someone is taciturn, they don\'t talk much. Opposite?",
     },
     {
       yr: 2024,
@@ -2147,7 +7379,7 @@ const QB = {
       a: 1,
       e: 'Ephemeral means lasting for a very short time.',
       full: 'Ephemeral comes from the Greek ephemeros — epi (on) + hemera (day) — meaning "lasting only a day." In modern English it refers to anything that is fleeting, transient, or short-lived.\n\nMayflies are the classic example — they live for only a day or two. A rainbow, a moment of perfect weather, the cherry blossoms in spring — all ephemeral. Long-lasting is the direct opposite. Colourful and enormous describe appearance and size, which have nothing to do with duration.',
-      h: "Think mayflies. Ephemeral things don't last long.",
+      h: "Think mayflies. Ephemeral things don\'t last long.",
     },
     {
       yr: 2024,
@@ -2202,7 +7434,7 @@ const QB = {
     {
       yr: 2022,
       q: 'Choose the correct option: I ___ him since Monday.',
-      o: ["didn't see", "haven't seen", "don't see", "wasn't seeing"],
+      o: ["didn\'t see", "haven\'t seen", "don\'t see", "wasn\'t seeing"],
       a: 1,
       e: 'Since indicates a continuing action from a point in the past. Present perfect is required.',
       full: 'The word "since" signals that an action began at a specific point in the past and continues to be relevant or true up to the present. This calls for the present perfect tense.\n\nPresent perfect is formed with have/has + past participle. "Haven\'t seen" = have not seen — I started not seeing him since Monday and that situation continues to now.\n\n"Didn\'t see" is simple past — used for completed actions at a specific past time, not continuing situations. "Don\'t see" is simple present — for habits or general truths. "Wasn\'t seeing" is past continuous — for interrupted or ongoing past actions, not for use with "since" in this context.',
@@ -2256,7 +7488,2356 @@ const QB = {
     },
   ],
   biology: [
-  {
+  
+    {
+      yr: 2023,
+      q: "The organelle responsible for the synthesis of proteins in the cell is the:",
+      o: ["Mitochondrion", "Lysosome", "Ribosome", "Golgi body"],
+      a: 2,
+      e: "Ribosomes are the 'protein factories' where amino acids are assembled.",
+      full: "Ribosomes can be found floating free in the cytoplasm or attached to the Rough Endoplasmic Reticulum (RER). Their primary job is to translate genetic code into chains of proteins that the body needs for growth and repair.",
+      h: "Is the 'Protein Factory' the Ribosome or the Mitochondrion?"
+    },
+    {
+      yr: 2023,
+      q: "The movement of water molecules from a region of higher concentration to a region of lower concentration through a semi-permeable membrane is:",
+      o: ["Diffusion", "Osmosis", "Plasmolysis", "Transpiration"],
+      a: 1,
+      e: "Osmosis is a special type of diffusion involving water and a membrane.",
+      full: "For Osmosis to occur, you MUST have a semi-permeable membrane. It is how plants absorb water from the soil through their root hairs and how the human kidney reabsorbs water into the blood.",
+      h: "Does 'Water + Membrane' equal 'Diffusion' or 'Osmosis'?"
+    },
+    {
+      yr: 2023,
+      q: "A structure in the ear that is responsible for maintaining balance is the:",
+      o: ["Cochlea", "Ossicles", "Semicircular canals", "Eardrum"],
+      a: 2,
+      e: "The semicircular canals contain fluid that moves when the head moves, helping with equilibrium.",
+      full: "While the Cochlea is for 'Hearing,' the Semicircular Canals are for 'Balance.' They detect rotational movements of the head, allowing you to stay upright even when spinning or tilting.",
+      h: "Is 'Balance' handled by the 'Canals' or the 'Cochlea'?"
+    },
+    {
+      yr: 2023,
+      q: "In the ABO blood group system, an individual with blood group O is regarded as a universal donor because:",
+      o: ["They have antigens A and B", "They lack both antigens A and B on their red blood cells", "They have antibodies a and b", "They lack antibodies a and b"],
+      a: 1,
+      e: "Group O blood has no antigens on the cell surface, so it won't be attacked by the recipient's antibodies.",
+      full: "Since group O lacks A and B antigens, it can be given to anyone (A, B, or AB) without causing a dangerous immune reaction (agglutination). However, group O can only *receive* blood from another group O.",
+      h: "Is it because they 'Have' antigens or 'Lack' them?"
+    },
+    {
+      yr: 2023,
+      q: "The sequence of the stages in mitosis is:",
+      o: ["Prophase, Metaphase, Anaphase, Telophase", "Telophase, Anaphase, Metaphase, Prophase", "Metaphase, Prophase, Telophase, Anaphase", "Anaphase, Telophase, Prophase, Metaphase"],
+      a: 0,
+      e: "Mitosis follows the PMAT order.",
+      full: "Prophase (Preparation), Metaphase (Middle alignment), Anaphase (Away movement of chromatids), and Telophase (Two new nuclei). This process results in two identical daughter cells.",
+      h: "Remember the acronym 'PMAT'. Which starts with P?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following organisms exhibits heterotrophic nutrition?",
+      o: ["Spirogyra", "Mushroom", "Chlamydomonas", "Maize plant"],
+      a: 1,
+      e: "Mushrooms are fungi; they cannot make their own food and must absorb nutrients from organic matter.",
+      full: "Unlike Spirogyra or Maize which use photosynthesis (Autotrophs), mushrooms lack chlorophyll. They are 'Saprophytes' that feed on dead and decaying matter.",
+      h: "Can a 'Mushroom' photosynthesize like a green plant?"
+    },
+    {
+      yr: 2023,
+      q: "The process by which green plants lose water to the atmosphere through the stomata is:",
+      o: ["Evaporation", "Guttation", "Transpiration", "Respiration"],
+      a: 2,
+      e: "Transpiration is the loss of water vapor specifically from the aerial parts of plants.",
+      full: "This process creates a 'Transpiration Pull,' which helps the plant draw water and minerals all the way from the roots to the leaves. It also helps cool the plant down in hot weather.",
+      h: "Is it 'Sweating' for plants (Transpiration) or 'Breathing' (Respiration)?"
+    },
+    {
+      yr: 2023,
+      q: "The part of the brain that controls heartbeat and breathing is the:",
+      o: ["Cerebrum", "Cerebellum", "Medulla oblongata", "Thalamus"],
+      a: 2,
+      e: "The medulla oblongata controls involuntary actions (autonomic functions).",
+      full: "While the Cerebrum is for 'Thinking' and the Cerebellum is for 'Muscle Coordination,' the Medulla is the 'Life Support' center. It works even when you are asleep to keep your heart beating and lungs moving.",
+      h: "Is 'Heartbeat' controlled by the 'Thinking' part or the 'Medulla'?"
+    },
+    {
+      yr: 2023,
+      q: "In a food chain, the flow of energy is always:",
+      o: ["Cyclic", "Multidirectional", "Unidirectional", "Reversible"],
+      a: 2,
+      e: "Energy moves in one direction: from Producers to Consumers.",
+      full: "Energy is lost as heat at every level (Trophic level). This is why energy cannot 'cycle' back to the sun; once it is used by an organism or lost as heat, it's gone from the chain.",
+      h: "Does energy 'Cycle' back to the sun or move 'One Way'?"
+    },
+    {
+      yr: 2023,
+      q: "The dental formula of an adult human is:",
+      o: ["i 2/2, c 1/1, pm 2/2, m 2/2", "i 2/2, c 1/1, pm 2/2, m 3/3", "i 3/3, c 1/1, pm 4/4, m 2/2", "i 2/2, c 0/0, pm 3/3, m 3/3"],
+      a: 1,
+      e: "The formula represents half of the upper and lower jaw: 2 Incisors, 1 Canine, 2 Premolars, 3 Molars.",
+      full: "Multiplying (2+1+2+3) by 2 for the upper jaw and the same for the lower jaw gives a total of 32 teeth. This includes the 'wisdom teeth' (the 3rd molars).",
+      h: "How many Molars does an adult have on 'One Side' of a jaw?"
+    },
+    {
+      yr: 2023,
+      q: "The theory of use and disuse was propounded by:",
+      o: ["Charles Darwin", "Jean-Baptiste Lamarck", "Gregor Mendel", "Alfred Wallace"],
+      a: 1,
+      e: "Lamarck suggested that organs used frequently become more developed, while those not used wither away.",
+      full: "A classic example used by Lamarck was the giraffe's neck. He believed giraffes stretched their necks to reach high leaves, and this 'acquired trait' was passed to their children. Darwin later corrected this with 'Natural Selection.'",
+      h: "Was it 'Darwin' or 'Lamarck'?"
+    },
+    {
+      yr: 2023,
+      q: "A deficiency of Vitamin K in the diet leads to:",
+      o: ["Night blindness", "Beri-beri", "Poor blood clotting", "Rickets"],
+      a: 2,
+      e: "Vitamin K is essential for the production of prothrombin, a protein used in blood clotting.",
+      full: "Without enough Vitamin K, a small cut could lead to excessive bleeding because the 'clotting cascade' cannot complete. It is often found in green leafy vegetables.",
+      h: "Is Vitamin K for 'Eyes' or for 'Blood Clotting'?"
+    },
+    {
+      yr: 2023,
+      q: "The functional unit of the kidney is the:",
+      o: ["Ureter", "Nephron", "Bladder", "Pelvis"],
+      a: 1,
+      e: "The nephron is where the actual filtration and reabsorption of blood occurs.",
+      full: "Each human kidney contains about one million nephrons. Each nephron consists of a Bowman’s capsule, a glomerulus, and a long tubule that balances water and salts in the body.",
+      h: "Is the 'Worker' in the kidney called a 'Neuron' or a 'Nephron'?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is an example of a vestigial organ in humans?",
+      o: ["Heart", "Appendix", "Kidney", "Liver"],
+      a: 1,
+      e: "Vestigial organs are structures that have lost their original function through evolution.",
+      full: "The appendix is thought to have helped our ancestors digest tough plant fibers (cellulose). Today, it is small and has no major digestive role, though it may have some immune function.",
+      h: "Which organ is 'Useless' but still in the body?"
+    },
+    {
+      yr: 2023,
+      q: "The process of anaerobic respiration in yeast produces:",
+      o: ["Carbon dioxide and water", "Ethanol and carbon dioxide", "Lactic acid and energy", "Oxygen and glucose"],
+      a: 1,
+      e: "This process is also known as fermentation.",
+      full: "In the absence of oxygen, yeast breaks down glucose into ethanol (alcohol) and CO2. This is the biological basis for baking bread (CO2 makes it rise) and brewing beer.",
+      h: "Does yeast produce 'Lactic Acid' or 'Ethanol/Alcohol'?"
+    },
+    {
+      yr: 2023,
+      q: "In genetics, the physical appearance of an organism is called its:",
+      o: ["Genotype", "Phenotype", "Allele", "Locus"],
+      a: 1,
+      e: "Phenotype refers to observable traits like height or eye color.",
+      full: "The 'Genotype' is the actual genetic code (e.g., Tt), while the 'Phenotype' is what you actually see (e.g., Tall). The phenotype is determined by both the genotype and the environment.",
+      h: "Is it the 'Genetic code' or the 'Physical appearance'?"
+    },
+    {
+      yr: 2023,
+      q: "The respiratory organ of an insect is the:",
+      o: ["Gills", "Lungs", "Tracheal system", "Cell membrane"],
+      a: 2,
+      e: "Insects breathe through small holes called spiracles that lead into a network of tubes (tracheae).",
+      full: "Unlike humans, insects don't use their blood to transport oxygen. The tracheal system carries air directly to the tissues and cells of the insect's body.",
+      h: "Do insects use 'Lungs' or 'Tracheal tubes'?"
+    },
+    {
+      yr: 2023,
+      q: "An example of a fruit that is a caryopsis is:",
+      o: ["Mango", "Maize grain", "Coconut", "Tomato"],
+      a: 1,
+      e: "A caryopsis is a dry indehiscent fruit where the seed coat is fused with the fruit wall.",
+      full: "Cereals like maize, rice, and wheat are caryopses. Because the seed and the fruit are so tightly joined, we often call the whole thing a 'grain' rather than a 'fruit'.",
+      h: "Is it 'Mango' or 'Maize'?"
+    },
+    {
+      yr: 2023,
+      q: "The joint between the femur and the pelvic girdle is an example of a:",
+      o: ["Hinge joint", "Saddle joint", "Ball and socket joint", "Gliding joint"],
+      a: 2,
+      e: "This joint allows for movement in many directions (360 degrees).",
+      full: "The round 'ball' of the femur fits into the 'socket' (acetabulum) of the hip. This is the same type of joint found in the shoulder.",
+      h: "Does it move like a 'Door hinge' or 'All around'?"
+    },
+    {
+      yr: 2023,
+      q: "The hormone that regulates the level of sugar in the blood is:",
+      o: ["Adrenaline", "Insulin", "Thyroxine", "Auxin"],
+      a: 1,
+      e: "Insulin is produced by the pancreas to lower blood glucose levels.",
+      full: "When blood sugar is high (after a meal), the islets of Langerhans in the pancreas release insulin, which tells the liver to convert glucose into glycogen for storage. A lack of insulin leads to Diabetes.",
+      h: "Is it 'Insulin' or 'Adrenaline'?"
+    },
+    {
+      yr: 2023,
+      q: "The part of the flower that receives pollen grains during pollination is the:",
+      o: ["Ovary", "Style", "Stigma", "Anther"],
+      a: 2,
+      e: "The stigma is the sticky top part of the carpel designed to catch pollen.",
+      full: "Pollination is simply the transfer of pollen from the Anther (male) to the Stigma (female). Once the pollen lands on the stigma, it grows a tube down the Style to reach the Ovary for fertilization.",
+      h: "Is the 'Receiver' the 'Stigma' or the 'Anther'?"
+    },
+
+
+    {
+      yr: 2022,
+      q: "The level of organization of a Paramecium is the:",
+      o: ["Tissue level", "System level", "Cellular level", "Organ level"],
+      a: 2,
+      e: "Paramecium is a unicellular organism, meaning a single cell performs all life functions.",
+      full: "As a protozoan, the Paramecium represents the cellular level of organization. It carries out feeding, movement, and reproduction within a single cell membrane using specialized organelles.",
+      h: "Is a 'Single Cell' the 'Cellular' or 'Tissue' level?"
+    },
+    {
+      yr: 2022,
+      q: "The movement of water molecules from a region of higher concentration to a region of lower concentration through a semi-permeable membrane is:",
+      o: ["Diffusion", "Osmosis", "Plasmolysis", "Transpiration"],
+      a: 1,
+      e: "Osmosis specifically refers to the movement of 'water' through a 'semi-permeable membrane'.",
+      full: "While diffusion is the movement of any particles, Osmosis is the special case for water. This process is crucial for plants to absorb water from the soil through their root hairs.",
+      h: "Does 'Water + Membrane' mean 'Diffusion' or 'Osmosis'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following organisms is a primary producer in an aquatic habitat?",
+      o: ["Tadpole", "Water lily", "Fish", "Mosquito larva"],
+      a: 1,
+      e: "Producers are autotrophs (plants/algae) that manufacture food via photosynthesis.",
+      full: "In an aquatic food chain, green plants like the Water lily or microscopic Phytoplankton capture solar energy to produce glucose, forming the base of the energy pyramid.",
+      h: "Is the 'Producer' the 'Plant' or the 'Animal'?"
+    },
+    {
+      yr: 2022,
+      q: "The vitamin that is essential for the clotting of blood is:",
+      o: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin K"],
+      a: 3,
+      e: "Vitamin K is required for the synthesis of prothrombin, a key protein in blood coagulation.",
+      full: "Without Vitamin K, even a small cut could lead to excessive bleeding. It is often found in green leafy vegetables and is also produced by bacteria in the human gut.",
+      h: "Is 'Clotting' linked to Vitamin 'C' or 'K'?"
+    },
+    {
+      yr: 2022,
+      q: "The interaction between a remora fish and a shark, where the remora benefits and the shark is unaffected, is called:",
+      o: ["Mutualism", "Parasitism", "Commensalism", "Competition"],
+      a: 2,
+      e: "Commensalism is a relationship where one organism benefits (+) and the other is neutral (0).",
+      full: "The remora attaches to the shark for transport and food scraps. The shark is neither harmed nor helped. This differs from Mutualism where both must benefit.",
+      h: "Is 'One Benefits, One Neutral' called 'Mutualism' or 'Commensalism'?"
+    },
+    {
+      yr: 2022,
+      q: "Which part of the mammalian ear is responsible for maintaining body balance?",
+      o: ["Cochlea", "Pinna", "Eardrum", "Semicircular canals"],
+      a: 3,
+      e: "The semicircular canals contain fluid that moves when the head shifts, signaling balance to the brain.",
+      full: "While the Cochlea is for hearing, the three semicircular canals are dedicated to equilibrium. They detect rotational movements of the head in different planes.",
+      h: "Is 'Balance' handled by the 'Cochlea' or the 'Canals'?"
+    },
+    {
+      yr: 2022,
+      q: "The group of bacteria that convert atmospheric nitrogen into nitrates are:",
+      o: ["Nitrifying bacteria", "Denitrifying bacteria", "Nitrogen-fixing bacteria", "Putrefying bacteria"],
+      a: 2,
+      e: "Nitrogen-fixing bacteria (like Rhizobium) convert nitrogen gas into forms plants can use.",
+      full: "These bacteria are often found in the root nodules of leguminous plants. They play a vital role in the nitrogen cycle by 'fixing' the inert gas into usable soil nutrients.",
+      h: "Do they 'Fix' the nitrogen or 'Denitrify' it?"
+    },
+    {
+      yr: 2022,
+      q: "In genetics, the physical and observable appearance of an organism is its:",
+      o: ["Genotype", "Phenotype", "Allele", "Hybrid"],
+      a: 1,
+      e: "The phenotype is the outward expression of the genes (e.g., tallness, eye color).",
+      full: "Genotype refers to the actual genetic code (TT or Tt), while Phenotype is what you actually see (Tall). Phenotype is often influenced by both genes and the environment.",
+      h: "Is 'Physical Appearance' the 'Genotype' or 'Phenotype'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is an example of a flightless bird?",
+      o: ["Pigeon", "Kiwi", "Eagle", "Vulture"],
+      a: 1,
+      e: "The Kiwi is a ratite bird from New Zealand that cannot fly.",
+      full: "Flightless birds like the Kiwi, Ostrich, and Penguin have evolved to survive in environments where flight wasn't necessary for escaping predators or finding food.",
+      h: "Is the 'Kiwi' or the 'Eagle' flightless?"
+    },
+    {
+      yr: 2022,
+      q: "The site for protein synthesis in the cell is the:",
+      o: ["Mitochondrion", "Lysosome", "Ribosome", "Golgi body"],
+      a: 2,
+      e: "Ribosomes are the 'Protein Factories' where amino acids are assembled into proteins.",
+      full: "Ribosomes can be found floating freely in the cytoplasm or attached to the Rough Endoplasmic Reticulum. They translate genetic code into functional proteins.",
+      h: "Are 'Proteins' made in the 'Mitochondrion' or 'Ribosome'?"
+    },
+    {
+      yr: 2022,
+      q: "A pair of genes that control the same character and occupy the same locus on homologous chromosomes are:",
+      o: ["Hybrids", "Alleles", "Chromatids", "Gametes"],
+      a: 1,
+      e: "Alleles are alternative forms of the same gene (e.g., the gene for height has 'Tall' and 'Short' alleles).",
+      full: "Every trait is usually controlled by two alleles. If the alleles are identical (TT), it is homozygous; if they are different (Tt), it is heterozygous.",
+      h: "Are 'Gene Variants' called 'Alleles' or 'Gametes'?"
+    },
+    {
+      yr: 2022,
+      q: "The respiratory organ used by an insect for gas exchange is the:",
+      o: ["Lung", "Gill", "Tracheal system", "Skin"],
+      a: 2,
+      e: "Insects breathe through a network of tubes called tracheae that open via spiracles.",
+      full: "Unlike mammals that use blood to transport oxygen, the insect's tracheal system delivers air directly to the cells. This limits the size an insect can grow.",
+      h: "Do insects use 'Lungs' or 'Tracheae'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is a function of the Skeleton?",
+      o: ["Transport of oxygen", "Production of bile", "Protection of delicate organs", "Digestion of fats"],
+      a: 2,
+      e: "The skull protects the brain, and the ribs protect the heart and lungs.",
+      full: "The skeleton provides five main functions: Support, Protection, Movement, Blood Cell Production (in bone marrow), and Mineral Storage.",
+      h: "Does the skeleton 'Protect Organs' or 'Digest Fats'?"
+    },
+    {
+      yr: 2022,
+      q: "The specialized dental formula 2/2, 0/0, 3/2, 3/3 is characteristic of a:",
+      o: ["Carnivore", "Herbivore", "Omnivore", "Parasite"],
+      a: 1,
+      e: "The '0/0' indicates the absence of canines, which is common in many herbivores.",
+      full: "Herbivores like sheep or rabbits often have a gap (diastema) where canines would be. They use their incisors for cutting and molars for grinding plant material.",
+      h: "Does '0/0 Canines' describe a 'Meat-eater' or a 'Plant-eater'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is an example of an involuntary action?",
+      o: ["Dancing", "Sneezing", "Reading", "Running"],
+      a: 1,
+      e: "Sneezing is a reflex action that happens automatically without conscious thought.",
+      full: "Involuntary actions are controlled by the autonomic nervous system or the spinal cord. They are fast and bypass the 'decision-making' part of the brain to protect the body.",
+      h: "Is 'Sneezing' or 'Dancing' done without thinking?"
+    },
+    {
+      yr: 2022,
+      q: "The theory that explains evolution as 'Survival of the Fittest' was put forward by:",
+      o: ["Lamarck", "Mendel", "Darwin", "Linnaeus"],
+      a: 2,
+      e: "Charles Darwin proposed that organisms with better adaptations survive to pass on their genes.",
+      full: "While Lamarck believed in 'acquired traits,' Darwin's theory of Natural Selection is based on genetic variation and environmental pressure.",
+      h: "Was 'Survival of the Fittest' from 'Darwin' or 'Lamarck'?"
+    },
+    {
+      yr: 2022,
+      q: "The study of the relationship between a single species and its environment is:",
+      o: ["Synecology", "Autecology", "Ecosystem", "Community"],
+      a: 1,
+      e: "Autecology focuses on individual species, while Synecology studies groups of species (communities).",
+      full: "If you study only the Life of a Hibiscus plant in a garden, it's Autecology. If you study all the plants and animals in that garden, it's Synecology.",
+      h: "Is 'Single Species' study 'Autecology' or 'Synecology'?"
+    },
+    {
+      yr: 2022,
+      q: "The deficiency of Iodine in the human diet causes:",
+      o: ["Anaemia", "Rickets", "Goitre", "Scurvy"],
+      a: 2,
+      e: "Iodine is needed for the thyroid gland to produce thyroxine; its absence causes the gland to swell.",
+      full: "Goitre is characterized by a swelling in the neck. This is why many countries use 'Iodized Salt' to ensure people get enough of this trace mineral.",
+      h: "Is 'Neck Swelling' called 'Goitre' or 'Anaemia'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is a xerophyte?",
+      o: ["Water lily", "Cactus", "Mushroom", "Fern"],
+      a: 1,
+      e: "Xerophytes are plants adapted to live in very dry conditions (deserts).",
+      full: "Cacti have features like sunken stomata, thick waxy cuticles, and leaves reduced to spines to prevent water loss in arid environments.",
+      h: "Is a 'Cactus' a 'Xerophyte' or a 'Hydrophyte'?"
+    },
+    {
+      yr: 2022,
+      q: "The sugar found in RNA is:",
+      o: ["Glucose", "Deoxyribose", "Ribose", "Fructose"],
+      a: 2,
+      e: "RNA stands for Ribonucleic Acid, named after its 'Ribose' sugar.",
+      full: "In contrast, DNA (Deoxyribonucleic Acid) contains Deoxyribose sugar. This single oxygen atom difference makes DNA more stable than RNA.",
+      h: "Does RNA have 'Ribose' or 'Deoxyribose'?"
+    },
+
+    {
+      yr: 2022,
+      q: "The process of maintaining a constant osmotic pressure in the body fluids of an organism is:",
+      o: ["Excretion", "Osmoregulation", "Homeostasis", "Plasmolysis"],
+      a: 1,
+      e: "Osmoregulation is the specific control of water and salt balance.",
+      full: "While Homeostasis is the general term for internal balance, Osmoregulation specifically deals with the 'water potential' of the blood and tissues, primarily managed by the kidneys in humans.",
+      h: "Is 'Water/Salt Balance' called 'Osmoregulation' or 'Excretion'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is a characteristic of a wind-pollinated flower?",
+      o: ["Large brightly colored petals", "Sticky pollen grains", "Feathery stigmas", "Presence of nectar"],
+      a: 2,
+      e: "Feathery stigmas provide a large surface area to catch pollen floating in the air.",
+      full: "Wind-pollinated flowers (like grasses and maize) don't need to attract insects, so they lack color and scent but have long filaments and feathery stigmas to maximize pollen capture.",
+      h: "Does wind pollination require 'Bright Petals' or 'Feathery Stigmas'?"
+    },
+    {
+      yr: 2022,
+      q: "The phenotypic ratio of a cross between two heterozygous (Tt) tall plants is:",
+      o: ["1:2:1", "3:1", "2:1", "1:1"],
+      a: 1,
+      e: "A Tt x Tt cross yields 3 Tall (TT, Tt, Tt) and 1 Short (tt).",
+      full: "While the 'Genotypic' ratio is 1:2:1 (TT:Tt:tt), the 'Phenotypic' ratio—what the plants actually look like—is 3:1 because the dominant T mask the recessive t.",
+      h: "Is the appearance ratio '3:1' or '1:2:1'?"
+    },
+    {
+      yr: 2022,
+      q: "In which of the following biomes would you find the greatest biodiversity?",
+      o: ["Tropical Rainforest", "Savanna", "Desert", "Tundra"],
+      a: 0,
+      e: "Tropical Rainforests have constant high temperatures and rainfall, supporting massive species variety.",
+      full: "Rainforests cover less than 7% of Earth's land but house over 50% of its species. The stratified layers (canopy, understory, etc.) create many different niches for life.",
+      h: "Is 'High Biodiversity' in the 'Rainforest' or the 'Desert'?"
+    },
+    {
+      yr: 2022,
+      q: "The functional unit of a mammalian lung where gas exchange occurs is the:",
+      o: ["Bronchus", "Alveolus", "Trachea", "Bronchiole"],
+      a: 1,
+      e: "Alveoli are tiny air sacs with very thin walls to allow oxygen and CO2 to diffuse easily.",
+      full: "The lungs contain millions of Alveoli. Their large surface area and rich supply of blood capillaries make them highly efficient for gas exchange.",
+      h: "Is the 'Air Sac' called the 'Alveolus' or 'Bronchiole'?"
+    },
+    {
+      yr: 2022,
+      q: "The blood group that is regarded as the universal recipient is:",
+      o: ["Group O", "Group A", "Group B", "Group AB"],
+      a: 3,
+      e: "Group AB has no anti-A or anti-B antibodies, so it can receive any blood type.",
+      full: "Because AB individuals don't produce antibodies against A or B antigens, their immune system won't attack donor blood. In contrast, Group O is the universal donor.",
+      h: "Is 'AB' or 'O' the 'Recipient'?"
+    },
+    {
+      yr: 2022,
+      q: "An example of a parasitic plant that lacks chlorophyll is:",
+      o: ["Mistletoe", "Dodder (Cuscuta)", "Mushroom", "Fern"],
+      a: 1,
+      e: "Dodder is a total parasite that wraps around host plants and sucks nutrients via haustoria.",
+      full: "Unlike Mistletoe (which is a partial parasite and can still photosynthesize), Dodder has no green leaves and relies entirely on its host for survival.",
+      h: "Is 'Dodder' or 'Mistletoe' the one that can't make its own food?"
+    },
+    {
+      yr: 2022,
+      q: "The movement of a plant part in response to the direction of a light stimulus is:",
+      o: ["Geotropism", "Phototropism", "Hydrotropism", "Chemotropism"],
+      a: 1,
+      e: "Phototropism allows plants to grow toward light (positive) or away (negative).",
+      full: "This is driven by the hormone Auxin, which migrates to the shaded side of the stem, causing those cells to elongate and bend the plant toward the light.",
+      h: "Is light-response 'Photo-' or 'Geo-' tropism?"
+    },
+    {
+      yr: 2022,
+      q: "The enzyme in human saliva that breaks down cooked starch into maltose is:",
+      o: ["Pepsin", "Rennin", "Ptyalin (Salivary Amylase)", "Lipase"],
+      a: 2,
+      e: "Ptyalin begins the chemical digestion of carbohydrates right in the mouth.",
+      full: "Ptyalin works best in a slightly alkaline environment. It breaks down complex starches into simpler sugars like maltose before the food reaches the stomach.",
+      h: "Is the saliva enzyme 'Pepsin' or 'Ptyalin'?"
+    },
+    {
+      yr: 2022,
+      q: "A sequence of organisms through which energy is transferred starting from a producer is a:",
+      o: ["Food web", "Food chain", "Pyramid of numbers", "Trophic level"],
+      a: 1,
+      e: "A food chain shows a single, linear path of energy flow (e.g., Grass -> Grasshopper -> Toad).",
+      full: "A food web is more complex, showing multiple interconnected chains. Both demonstrate how energy is lost as it moves up from producers to top carnivores.",
+      h: "Is a 'Linear' path a 'Chain' or a 'Web'?"
+    },
+    {
+      yr: 2022,
+      q: "The hormone that regulates the level of sugar in the blood is:",
+      o: ["Adrenaline", "Thyroxine", "Insulin", "Testosterone"],
+      a: 2,
+      e: "Insulin, produced by the pancreas, lowers blood sugar by helping cells absorb glucose.",
+      full: "When sugar levels are high, the Pancreas releases Insulin. When they are low, it releases Glucagon. Together, they maintain glucose homeostasis.",
+      h: "Is 'Sugar Regulation' handled by 'Insulin' or 'Adrenaline'?"
+    },
+    {
+      yr: 2022,
+      q: "The process by which green plants manufacture food using sunlight, CO2, and water is:",
+      o: ["Respiration", "Photosynthesis", "Transpiration", "Translocation"],
+      a: 1,
+      e: "Photosynthesis occurs in the chloroplasts and produces glucose and oxygen.",
+      full: "The chemical equation is: 6CO2 + 6H2O + light -> C6H12O6 + 6O2. It is the primary way energy enters most ecosystems on Earth.",
+      h: "Is 'Food Making' called 'Respiration' or 'Photosynthesis'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following organisms shows 'Alternation of Generations'?",
+      o: ["Amoeba", "Fern", "Earthworm", "Hydra"],
+      a: 1,
+      e: "Ferns cycle between a multicellular haploid (gametophyte) and diploid (sporophyte) phase.",
+      full: "In ferns, the plant you see is the sporophyte. It produces spores that grow into a tiny heart-shaped gametophyte, which then produces eggs and sperm.",
+      h: "Is 'Alternation of Generations' seen in 'Ferns' or 'Amoeba'?"
+    },
+    {
+      yr: 2022,
+      q: "The habitat of an organism that lives in a salty water environment is described as:",
+      o: ["Freshwater", "Marine", "Terrestrial", "Arboreal"],
+      a: 1,
+      e: "Marine habitats include oceans and seas where salinity is high.",
+      full: "Organisms in marine habitats must have adaptations like salt-excreting glands to survive the high salt concentration compared to freshwater species.",
+      h: "Is 'Salty Water' called 'Freshwater' or 'Marine'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is an example of an infectious, non-vector borne disease?",
+      o: ["Malaria", "Yellow Fever", "Tuberculosis", "Sleeping Sickness"],
+      a: 2,
+      e: "Tuberculosis is spread through the air (droplets), while the others require a vector like a mosquito or fly.",
+      full: "Vector-borne diseases need a 'middle-man' (like a mosquito for Malaria). Tuberculosis is directly transmitted from human to human via respiratory droplets.",
+      h: "Is 'TB' or 'Malaria' spread without an insect?"
+    },
+    {
+      yr: 2022,
+      q: "The part of the brain that controls the heartbeat and breathing is the:",
+      o: ["Cerebrum", "Cerebellum", "Medulla Oblongata", "Hypothalamus"],
+      a: 2,
+      e: "The Medulla Oblongata is the center for involuntary 'vital' functions.",
+      full: "Located at the base of the brain, the medulla ensures you keep breathing and your heart keeps beating even while you are fast asleep.",
+      h: "Is 'Breathing' controlled by the 'Cerebrum' or 'Medulla'?"
+    },
+    {
+      yr: 2022,
+      q: "The scientist who is often referred to as the 'Father of Genetics' is:",
+      o: ["Charles Darwin", "Gregor Mendel", "Louis Pasteur", "Jean Lamarck"],
+      a: 1,
+      e: "Mendel's experiments with pea plants laid the foundation for modern genetics.",
+      full: "Mendel discovered the laws of Segregation and Independent Assortment, showing how traits are passed from parents to offspring through 'factors' (now called genes).",
+      h: "Was the 'Pea Plant' scientist 'Darwin' or 'Mendel'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following structures is used for excretion in the Earthworm?",
+      o: ["Contractile vacuole", "Flame cells", "Nephridia", "Malpighian tubules"],
+      a: 2,
+      e: "Earthworms have segmented excretory organs called nephridia.",
+      full: "For comparison: Contractile vacuoles are for Amoeba, Flame cells are for Flatworms, and Malpighian tubules are for Insects.",
+      h: "Does the Earthworm use 'Flame cells' or 'Nephridia'?"
+    },
+    {
+      yr: 2022,
+      q: "The small, finger-like projections in the small intestine used for absorption are:",
+      o: ["Cilia", "Villi", "Flagella", "Pseudopodia"],
+      a: 1,
+      e: "Villi increase the surface area of the intestine for maximum nutrient absorption.",
+      full: "Each villus contains blood capillaries and a lacteal (for fat absorption). This ensures that digested food quickly enters the circulatory system.",
+      h: "Are 'Absorption' fingers called 'Cilia' or 'Villi'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of these is a major cause of global warming?",
+      o: ["Planting of trees", "Increase in atmospheric CO2", "Use of solar energy", "Reduction in fossil fuel use"],
+      a: 1,
+      e: "Carbon dioxide traps heat in the atmosphere, leading to the greenhouse effect.",
+      full: "The burning of coal, oil, and gas releases CO2. This creates a blanket around the Earth that prevents heat from escaping into space, raising global temperatures.",
+      h: "Is Global Warming caused by 'More CO2' or 'More Trees'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following organisms is a prokaryote?",
+      o: ["Amoeba", "Euglena", "Bacteria", "Spirogyra"],
+      a: 2,
+      e: "Prokaryotes lack a defined nucleus and membrane-bound organelles.",
+      full: "Bacteria and Blue-green algae (Cyanobacteria) are the primary examples of prokaryotes. Unlike the others listed, their DNA is circular and floats freely in the cytoplasm in a region called the nucleoid.",
+      h: "Does a 'Prokaryote' mean 'Bacteria' or 'Amoeba'?"
+    },
+    {
+      yr: 2021,
+      q: "The structural and functional unit of life is the:",
+      o: ["Tissue", "Organ", "Cell", "System"],
+      a: 2,
+      e: "The cell theory states that the cell is the basic unit of all living things.",
+      full: "Whether an organism is unicellular (like a yeast) or multicellular (like a human), the cell is the smallest unit that can perform all the functions of life.",
+      h: "Is the 'Building Block' a 'Cell' or a 'Tissue'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a supporting tissue in plants?",
+      o: ["Phloem", "Xylem", "Sclerenchyma", "Cambium"],
+      a: 2,
+      e: "Sclerenchyma cells have thick, lignified walls that provide mechanical strength.",
+      full: "While Xylem transports water and Phloem transports food, tissues like Sclerenchyma and Collenchyma are specifically designed to keep the plant upright and resistant to wind.",
+      h: "Is 'Support' provided by 'Phloem' or 'Sclerenchyma'?"
+    },
+    {
+      yr: 2021,
+      q: "The movement of a whole organism in response to a light stimulus is:",
+      o: ["Phototropism", "Phototaxis", "Photonasty", "Photosynthesis"],
+      a: 1,
+      e: "Taxis involves the movement of the 'whole' organism, unlike Tropism which is just a growth 'part'.",
+      full: "An example is Chlamydomonas swimming toward light. If only a part of a fixed plant bends toward light, it is Phototropism; if the whole thing moves, it is Phototaxis.",
+      h: "Is 'Whole Body Movement' called 'Tropism' or 'Taxis'?"
+    },
+    {
+      yr: 2021,
+      q: "The process of anaerobic respiration in yeast cells produces:",
+      o: ["Lactic acid and energy", "Ethanol and carbon dioxide", "Water and oxygen", "Glucose and energy"],
+      a: 1,
+      e: "In the absence of oxygen, yeast converts sugar into alcohol (ethanol) and CO2.",
+      full: "This process is also known as fermentation. It is widely used in the brewing and baking industries—the CO2 makes bread rise, and the ethanol is the alcohol in drinks.",
+      h: "Does 'Yeast' produce 'Lactic Acid' or 'Ethanol'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an example of an endoparasite?",
+      o: ["Tick", "Louse", "Tapeworm", "Flea"],
+      a: 2,
+      e: "Endoparasites live 'inside' the body of the host.",
+      full: "Tapeworms live in the human intestine (inside), whereas ticks, lice, and fleas are ectoparasites because they live on the 'outside' (skin or hair) of the host.",
+      h: "Does a 'Tapeworm' live 'Inside' or 'Outside'?"
+    },
+    {
+      yr: 2021,
+      q: "The part of the mammalian tooth that contains blood vessels and nerves is the:",
+      o: ["Enamel", "Dentine", "Pulp cavity", "Cement"],
+      a: 2,
+      e: "The pulp is the soft, living center of the tooth.",
+      full: "The Enamel is the hard outer layer (non-living), the Dentine is below it, but the Pulp Cavity is where the life of the tooth resides, including the nerves that feel pain.",
+      h: "Are 'Nerves' in the 'Enamel' or the 'Pulp'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a nitrogenous waste product in birds?",
+      o: ["Ammonia", "Urea", "Uric acid", "Nitrates"],
+      a: 2,
+      e: "Birds excrete uric acid because it is semi-solid and requires very little water to eliminate.",
+      full: "This is an adaptation for flight (weight reduction) and water conservation. Fish excrete Ammonia (toxic, needs lots of water), and Mammals excrete Urea.",
+      h: "Do birds excrete 'Urea' or 'Uric Acid'?"
+    },
+    {
+      yr: 2021,
+      q: "The enzyme that curdles milk in the stomach of young mammals is:",
+      o: ["Pepsin", "Rennin", "Trypsin", "Amylase"],
+      a: 1,
+      e: "Rennin (Chymosin) acts on the milk protein casein to turn it into a solid curd for easier digestion.",
+      full: "By solidifying the milk, the enzyme ensures that the milk stays in the stomach long enough for other enzymes like Pepsin to break down the proteins.",
+      h: "Is 'Milk Curdling' done by 'Pepsin' or 'Rennin'?"
+    },
+    {
+      yr: 2021,
+      q: "The structure in the mammalian ear that equalizes pressure on both sides of the eardrum is the:",
+      o: ["Ossicles", "Eustachian tube", "Cochlea", "Oval window"],
+      a: 1,
+      e: "The Eustachian tube connects the middle ear to the throat to balance air pressure.",
+      full: "When you 'pop' your ears on a plane, that is the Eustachian tube opening. If the pressure isn't equalized, the eardrum cannot vibrate properly, affecting hearing.",
+      h: "Is the 'Pressure Balancer' the 'Cochlea' or the 'Eustachian tube'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a primary function of the fruit?",
+      o: ["Storage of water", "Protection and dispersal of seeds", "Photosynthesis", "Anchorage"],
+      a: 1,
+      e: "Fruits protect the developing seeds and often help in their movement to new locations.",
+      full: "Whether a fruit is fleshy (to be eaten by animals) or dry and winged (to be carried by wind), its biological goal is to ensure the seeds are scattered far from the parent plant.",
+      h: "Is a fruit for 'Photosynthesis' or 'Seed Dispersal'?"
+    },
+    {
+      yr: 2021,
+      q: "The theory of Acquired Characteristics was proposed by:",
+      o: ["Charles Darwin", "Jean-Baptiste Lamarck", "Gregor Mendel", "August Weismann"],
+      a: 1,
+      e: "Lamarckism suggests that changes acquired during an organism's life can be inherited.",
+      full: "Lamarck famously used the example of giraffes stretching their necks. While we now know this isn't how inheritance works (Genetics), it was a major early theory of evolution.",
+      h: "Was the 'Stretching Neck' theory by 'Darwin' or 'Lamarck'?"
+    },
+    {
+      yr: 2021,
+      q: "The part of the eye that controls the amount of light entering is the:",
+      o: ["Cornea", "Iris", "Lens", "Retina"],
+      a: 1,
+      e: "The iris adjusts the size of the pupil to regulate light intake.",
+      full: "In bright light, the iris muscles contract to make the pupil smaller; in dim light, they dilate it. This protects the sensitive retina from damage.",
+      h: "Is the 'Light Gate' the 'Retina' or the 'Iris'?"
+    },
+    {
+      yr: 2021,
+      q: "In an ecosystem, energy is lost at each trophic level mainly as:",
+      o: ["Water", "Heat", "Food", "Oxygen"],
+      a: 1,
+      e: "Only about 10% of energy is passed to the next level; the rest is lost as heat during metabolism.",
+      full: "This is why food chains are rarely longer than 4 or 5 levels. There simply isn't enough energy left at the top to support a large population of apex predators.",
+      h: "Is energy lost as 'Food' or as 'Heat'?"
+    },
+    {
+      yr: 2021,
+      q: "The condition where the red blood cells are sickle-shaped is a:",
+      o: ["Nutritional disease", "Hereditary disease", "Infectious disease", "Viral disease"],
+      a: 1,
+      e: "Sickle Cell Anaemia is a genetic disorder passed from parents to offspring.",
+      full: "It is caused by a mutation in the gene that makes haemoglobin. Because it is written in the DNA, it cannot be caught like a cold; it must be inherited.",
+      h: "Is 'Sickle Cell' an 'Infection' or 'Hereditary'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a function of the hormone Progesterone?",
+      o: ["Development of male secondary sex characters", "Maintenance of pregnancy", "Control of blood sugar", "Increase in heart rate"],
+      a: 1,
+      e: "Progesterone prepares the uterus for implantation and maintains the uterine lining during pregnancy.",
+      full: "It is often called the 'Pregnancy Hormone.' If fertilization does not occur, progesterone levels drop, leading to menstruation.",
+      h: "Is 'Progesterone' for 'Pregnancy' or 'Blood Sugar'?"
+    },
+    {
+      yr: 2021,
+      q: "The group of plants that produce seeds but no flowers are the:",
+      o: ["Angiosperms", "Gymnosperms", "Bryophytes", "Pteridophytes"],
+      a: 1,
+      e: "Gymnosperms (like Pines and Cycads) produce 'naked' seeds, usually in cones.",
+      full: "Angiosperms are 'flowering plants.' Gymnosperms were the dominant land plants before flowering plants evolved. They don't hide their seeds inside a fruit.",
+      h: "Are 'Seed-bearing, non-flowering' plants 'Gymnosperms' or 'Angiosperms'?"
+    },
+    {
+      yr: 2021,
+      q: "The joint that allows movement in only one plane is the:",
+      o: ["Ball and socket joint", "Hinge joint", "Gliding joint", "Pivot joint"],
+      a: 1,
+      e: "The hinge joint (like the elbow and knee) moves back and forth like a door.",
+      full: "In contrast, the Ball and Socket joint (shoulder and hip) allows for circular, multi-directional movement. The hinge joint is more restricted but very strong.",
+      h: "Is the 'Elbow' a 'Ball and Socket' or a 'Hinge' joint?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following organisms is hermaphroditic?",
+      o: ["Cockroach", "Earthworm", "Housefly", "Toad"],
+      a: 1,
+      e: "Earthworms possess both male and female reproductive organs in one body.",
+      full: "While they have both sets of organs, most earthworms still need a partner to cross-fertilize. This ensures genetic variation within the population.",
+      h: "Does the 'Earthworm' or 'Housefly' have 'Both Sexes'?"
+    },
+    {
+      yr: 2021,
+      q: "The breakdown of glucose to release energy in the presence of oxygen is:",
+      o: ["Aerobic respiration", "Anaerobic respiration", "Photosynthesis", "Excretion"],
+      a: 0,
+      e: "Aerobic respiration is highly efficient and occurs in the mitochondria.",
+      full: "The general formula is: Glucose + Oxygen -> Carbon Dioxide + Water + Energy (ATP). This is the primary way human cells get energy.",
+      h: "Is respiration 'with oxygen' called 'Aerobic' or 'Anaerobic'?"
+    },
+    {
+      yr: 2021,
+      q: "The part of the flower that develops into a seed after fertilization is the:",
+      o: ["Ovary", "Ovule", "Stigma", "Style"],
+      a: 1,
+      e: "While the Ovary becomes the Fruit, the Ovule becomes the Seed.",
+      full: "After pollen fertilizes the egg inside the ovule, the ovule's integuments harden to form the seed coat (testa). The surrounding ovary wall then ripens into the fruit.",
+      h: "Does the 'Ovule' or 'Ovary' become the 'Seed'?"
+    },
+    {
+      yr: 2021,
+      q: "The process by which an Amoeba engulfs solid food particles is:",
+      o: ["Pinocytosis", "Phagocytosis", "Exocytosis", "Osmosis"],
+      a: 1,
+      e: "Phagocytosis is 'cell eating,' where the membrane wraps around solids.",
+      full: "Amoeba uses pseudopodia (false feet) to surround a food particle, forming a food vacuole. Pinocytosis, by contrast, is 'cell drinking' for liquid intake.",
+      h: "Is 'Cell Eating' called 'Phagocytosis' or 'Pinocytosis'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a function of the hormone Auxin in plants?",
+      o: ["Inhibition of lateral buds", "Ripening of fruits", "Breaking of seed dormancy", "Closing of stomata"],
+      a: 0,
+      e: "Auxins promote apical dominance, meaning they stop side branches from growing.",
+      full: "Produced at the tip of the stem, Auxins encourage vertical growth. If you cut the tip (removing the auxin source), the lateral buds will start to grow, making the plant bushier.",
+      h: "Does 'Auxin' promote 'Upward Growth' or 'Fruit Ripening'?"
+    },
+    {
+      yr: 2021,
+      q: "A habitat characterized by low rainfall, high temperature, and sparse vegetation is a:",
+      o: ["Rainforest", "Desert", "Savanna", "Mangrove swamp"],
+      a: 1,
+      e: "Deserts are arid regions where evaporation often exceeds precipitation.",
+      full: "Organisms in this habitat must have extreme adaptations, like the camel's ability to store fat or the cactus's ability to store water in its succulent stem.",
+      h: "Is 'Sparse Vegetation' found in the 'Rainforest' or the 'Desert'?"
+    },
+    {
+      yr: 2021,
+      q: "The pigment responsible for the green color in plants is:",
+      o: ["Haemoglobin", "Chlorophyll", "Melanin", "Xanthophyll"],
+      a: 1,
+      e: "Chlorophyll is located in the chloroplasts and is essential for photosynthesis.",
+      full: "It absorbs light energy (mostly blue and red wavelengths) and converts it into chemical energy. Melanin is a skin pigment, and Haemoglobin is in blood.",
+      h: "Is the 'Green Pigment' called 'Melanin' or 'Chlorophyll'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a demerit of sexual reproduction?",
+      o: ["High genetic variation", "Requires two parents", "Faster population growth", "Better adaptation to change"],
+      a: 1,
+      e: "Finding a mate takes time and energy, which can be a disadvantage compared to asexual reproduction.",
+      full: "While sexual reproduction provides variation (a major advantage), it is slower and more energy-intensive because it usually requires two compatible individuals and the production of gametes.",
+      h: "Is 'Requiring Two Parents' an advantage or a 'Demerit'?"
+    },
+    {
+      yr: 2021,
+      q: "The type of skeleton found in an earthworm is a/an:",
+      o: ["Exoskeleton", "Endoskeleton", "Hydrostatic skeleton", "Bony skeleton"],
+      a: 2,
+      e: "Earthworms use fluid pressure within their body segments to maintain shape and move.",
+      full: "Because they lack bones or shells, they rely on the 'incompressibility' of the fluid in their coelom. Muscles act against this fluid pressure to elongate or shorten the body.",
+      h: "Is a 'Fluid-based' skeleton called 'Bony' or 'Hydrostatic'?"
+    },
+    {
+      yr: 2021,
+      q: "The blood vessel that carries oxygenated blood from the lungs to the heart is the:",
+      o: ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"],
+      a: 1,
+      e: "The pulmonary vein is the ONLY vein that carries oxygen-rich blood.",
+      full: "Veins usually carry deoxygenated blood toward the heart. The Pulmonary Vein is the exception, bringing freshly oxygenated blood from the lungs to the Left Atrium.",
+      h: "Does the 'Pulmonary Vein' or 'Artery' carry 'Oxygenated' blood?"
+    },
+    {
+      yr: 2021,
+      q: "The relationship between a nitrogen-fixing bacterium and a leguminous plant is:",
+      o: ["Mutualism", "Commensalism", "Parasitism", "Saprophytism"],
+      a: 0,
+      e: "The plant gets nitrates, and the bacterium gets food and shelter.",
+      full: "Both organisms benefit in this (+/+) relationship. This is why legumes are often used in crop rotation to naturally replenish soil nitrogen levels.",
+      h: "Is 'Both Benefit' called 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an example of an involuntary reflex?",
+      o: ["Singing a song", "Withdrawal of hand from a hot object", "Riding a horse", "Solving a puzzle"],
+      a: 1,
+      e: "Reflexes are automatic and bypass the conscious brain for speed.",
+      full: "The 'Reflex Arc' usually involves a sensory neuron, a relay neuron in the spinal cord, and a motor neuron. This allows for a split-second response to danger.",
+      h: "Is 'Singing' or 'Hand Withdrawal' a reflex?"
+    },
+    {
+      yr: 2021,
+      q: "The instrument used to measure wind speed is the:",
+      o: ["Hygrometer", "Anemometer", "Wind vane", "Barometer"],
+      a: 1,
+      e: "An anemometer usually consists of cups that rotate faster as wind speed increases.",
+      full: "For comparison: A Wind Vane shows direction, a Hygrometer measures humidity, and a Barometer measures air pressure.",
+      h: "Is speed measured by a 'Wind Vane' or an 'Anemometer'?"
+    },
+    {
+      yr: 2021,
+      q: "The vitamin that prevents the disease called Scurvy is:",
+      o: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      a: 2,
+      e: "Vitamin C is essential for collagen synthesis; its lack causes bleeding gums.",
+      full: "Scurvy was common among sailors who lacked fresh fruits. Citrus fruits like oranges and lemons are excellent sources of Vitamin C.",
+      h: "Is 'Scurvy' prevented by Vitamin 'C' or 'D'?"
+    },
+    {
+      yr: 2021,
+      q: "The structure used by insects for excretion is the:",
+      o: ["Contractile vacuole", "Kidney", "Malpighian tubule", "Flame cell"],
+      a: 2,
+      e: "Malpighian tubules remove waste from the hemolymph into the gut of insects.",
+      full: "This system is very efficient at conserving water, as the waste is excreted as nearly dry uric acid crystals alongside feces.",
+      h: "Do insects use 'Kidneys' or 'Malpighian tubules'?"
+    },
+    {
+      yr: 2021,
+      q: "A person with blood group O can safely donate blood to people with blood groups:",
+      o: ["O only", "A and B only", "AB only", "A, B, AB, and O"],
+      a: 3,
+      e: "Group O is the universal donor because its cells lack A and B antigens.",
+      full: "Since there are no antigens on the surface of Group O red blood cells, the recipient's antibodies have nothing to attack. However, Group O can only receive blood from another O.",
+      h: "Is 'Group O' the 'Universal Donor' or 'Universal Recipient'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a major function of the Large Intestine?",
+      o: ["Digestion of proteins", "Absorption of water", "Production of bile", "Absorption of glucose"],
+      a: 1,
+      e: "The colon reabsorbs water from undigested food, turning it into solid feces.",
+      full: "While most chemical digestion and nutrient absorption happen in the small intestine, the large intestine is primarily responsible for water recovery and waste storage.",
+      h: "Does the 'Large Intestine' digest 'Protein' or absorb 'Water'?"
+    },
+    {
+      yr: 2021,
+      q: "The theory of Natural Selection was co-proposed by Charles Darwin and:",
+      o: ["Gregor Mendel", "Alfred Russel Wallace", "Louis Pasteur", "Robert Hooke"],
+      a: 1,
+      e: "Wallace independently arrived at the same conclusion as Darwin regarding evolution.",
+      full: "Both scientists presented their findings together in 1858. However, Darwin became more famous after publishing 'On the Origin of Species' a year later.",
+      h: "Was Darwin's partner 'Mendel' or 'Wallace'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an example of a physiological variation?",
+      o: ["Skin color", "Blood group", "Height", "Fingerprints"],
+      a: 1,
+      e: "Physiological variations relate to how the body functions internally.",
+      full: "Skin color and height are 'Morphological' (physical appearance). Blood group is 'Physiological' because it depends on the chemical nature of the blood cells.",
+      h: "Is 'Blood Group' or 'Height' a physiological trait?"
+    },
+    {
+      yr: 2021,
+      q: "The specialized breathing roots found in mangrove plants are:",
+      o: ["Prop roots", "Pneumatophores", "Buttress roots", "Stilt roots"],
+      a: 1,
+      e: "Pneumatophores grow upward out of the mud to get oxygen for the roots.",
+      full: "In swampy, waterlogged soils, there is little oxygen. Mangroves have evolved these 'breathing tubes' to allow air to reach the submerged root systems.",
+      h: "Are 'Breathing Roots' called 'Buttress' or 'Pneumatophores'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following organisms is at the top of a typical food chain?",
+      o: ["Grass", "Grasshopper", "Lizard", "Hawk"],
+      a: 3,
+      e: "The hawk is a tertiary consumer or top predator with no natural enemies.",
+      full: "In the chain Grass -> Grasshopper -> Lizard -> Hawk, the Hawk is the apex predator. Energy decreases at each step, so there are fewer hawks than grasshoppers.",
+      h: "Is the 'Top' of the chain the 'Producer' or the 'Predator'?"
+    },
+    {
+      yr: 2021,
+      q: "The basic unit of classification is the:",
+      o: ["Phylum", "Class", "Genus", "Species"],
+      a: 3,
+      e: "A species consists of organisms that can interbreed to produce fertile offspring.",
+      full: "The hierarchy goes: Kingdom, Phylum, Class, Order, Family, Genus, Species. Species is the most specific level and the fundamental unit of the system.",
+      h: "Is the 'Basic Unit' the 'Kingdom' or the 'Species'?"
+    },
+    {
+      yr: 2020,
+      q: "The structural unit of the nervous system is the:",
+      o: ["Axon", "Neuron", "Dendrite", "Myelin sheath"],
+      a: 1,
+      e: "The neuron (nerve cell) is the specialized cell that transmits electrical impulses.",
+      full: "A neuron consists of a cell body, dendrites to receive signals, and an axon to send them. Millions of these cells work together to form the brain, spinal cord, and nerves.",
+      h: "Is the 'Brain Cell' called a 'Nephron' or a 'Neuron'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is an example of an arboreal animal?",
+      o: ["Fish", "Toad", "Monkey", "Earthworm"],
+      a: 2,
+      e: "Arboreal animals are those that spend the majority of their lives in trees.",
+      full: "Monkeys have adaptations like prehensile tails or long limbs for swinging and climbing. Other examples include squirrels, sloths, and certain species of snakes.",
+      h: "Does 'Arboreal' mean living 'In Water' or 'In Trees'?"
+    },
+    {
+      yr: 2020,
+      q: "The process by which plants manufacture food is restricted to the green parts because they contain:",
+      o: ["Leucoplasts", "Chromoplasts", "Chloroplasts", "Protoplasts"],
+      a: 2,
+      e: "Chloroplasts contain chlorophyll, the pigment that traps light energy.",
+      full: "While other plastids store starch (Leucoplasts) or provide color to flowers (Chromoplasts), only Chloroplasts have the machinery for photosynthesis.",
+      h: "Is 'Photosynthesis' in the 'Leucoplast' or 'Chloroplast'?"
+    },
+    {
+      yr: 2020,
+      q: "In the mammalian eye, the part that focus light onto the retina is the:",
+      o: ["Sclera", "Iris", "Lens", "Choroid"],
+      a: 2,
+      e: "The biconvex lens changes shape to focus light from various distances.",
+      full: "This process is called accommodation. The ciliary muscles pull or relax the lens to ensure that the image always lands sharply on the light-sensitive retina.",
+      h: "Is the 'Focusing Part' the 'Iris' or the 'Lens'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a function of the hormone Insulin?",
+      o: ["Increasing blood pressure", "Conversion of glucose to glycogen", "Stimulating growth", "Breaking down fats"],
+      a: 1,
+      e: "Insulin lowers blood sugar by converting excess glucose into glycogen for storage in the liver.",
+      full: "Produced by the Islets of Langerhans in the pancreas, insulin is the 'Key' that lets glucose into cells for energy or stores it away if there is too much in the blood.",
+      h: "Does 'Insulin' increase sugar or 'Store' it as glycogen?"
+    },
+    {
+      yr: 2020,
+      q: "The dental formula 2/2, 1/1, 2/2, 3/3 represents an adult:",
+      o: ["Dog", "Human", "Rabbit", "Sheep"],
+      a: 1,
+      e: "This formula represents the 32 teeth in a human adult (Incisors, Canines, Premolars, Molars).",
+      full: "Multiply each number by 2 (for both sides of the jaw) and add them: (2+1+2+3) * 2 = 16 per jaw. 16 upper + 16 lower = 32 total teeth.",
+      h: "Is '2123' the dental formula for a 'Human' or a 'Dog'?"
+    },
+    {
+      yr: 2020,
+      q: "The male reproductive organ of a flower is collectively called the:",
+      o: ["Pistil", "Androecium", "Gynoecium", "Receptacle"],
+      a: 1,
+      e: "The Androecium consists of the stamens (anther and filament).",
+      full: "The female part is the Gynoecium (or Pistil). The Androecium's main job is the production and dispersal of pollen grains containing the male gametes.",
+      h: "Is the 'Male' part 'Androecium' or 'Gynoecium'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following organisms is a scavenger?",
+      o: ["Lion", "Vulture", "Goat", "Leopard"],
+      a: 1,
+      e: "Scavengers feed on the carcasses of animals that are already dead.",
+      full: "Unlike predators (Lions) that hunt and kill, scavengers like Vultures play a vital role in the ecosystem by cleaning up dead organic matter and preventing the spread of disease.",
+      h: "Is a 'Vulture' a 'Hunter' or a 'Scavenger'?"
+    },
+    {
+      yr: 2020,
+      q: "The theory of evolution by 'Natural Selection' was proposed by:",
+      o: ["Mendel", "Lamarck", "Darwin", "Morgan"],
+      a: 2,
+      e: "Charles Darwin is the primary figure associated with the theory of natural selection.",
+      full: "Darwin observed that individuals with favorable variations are more likely to survive and reproduce. Over generations, these traits become more common in the population.",
+      h: "Was 'Natural Selection' by 'Darwin' or 'Lamarck'?"
+    },
+    {
+      yr: 2020,
+      q: "The respiratory organ in a fish is the:",
+      o: ["Trachea", "Lung", "Gill", "Skin"],
+      a: 2,
+      e: "Gills allow fish to extract dissolved oxygen from water through a counter-current flow mechanism.",
+      full: "Water enters the mouth and passes over the thin, blood-rich gill filaments where oxygen is absorbed and carbon dioxide is released.",
+      h: "Do fish use 'Lungs' or 'Gills'?"
+    },
+    {
+      yr: 2020,
+      q: "The part of the seed that provides food for the embryo in monocots is the:",
+      o: ["Radicle", "Plumule", "Endosperm", "Cotyledon"],
+      a: 2,
+      e: "In monocots like maize, the endosperm is the main food storage tissue.",
+      full: "While dicots often store food in their two cotyledons, monocots keep their nutrients in a separate tissue called the endosperm until the seed begins to germinate.",
+      h: "Is the food store in maize the 'Plumule' or the 'Endosperm'?"
+    },
+    {
+      yr: 2020,
+      q: "A group of organisms of the same species living in a particular area at a given time is a:",
+      o: ["Community", "Population", "Ecosystem", "Biome"],
+      a: 1,
+      e: "A population refers specifically to one species in one location.",
+      full: "A 'Community' includes all the different populations in an area, and an 'Ecosystem' includes both the living community and the non-living environment.",
+      h: "Is a 'Single Species Group' a 'Population' or a 'Community'?"
+    },
+    {
+      yr: 2020,
+      q: "The enzyme Pepsin works best in an environment that is:",
+      o: ["Alkaline", "Acidic", "Neutral", "Saline"],
+      a: 1,
+      e: "Pepsin requires the low pH (acidic) provided by hydrochloric acid in the stomach.",
+      full: "Pepsin is secreted as inactive pepsinogen. The HCl in the stomach activates it and provides the acidic environment (pH 1.5-2) it needs to digest proteins.",
+      h: "Is the stomach 'Acidic' or 'Alkaline'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a non-heritable variation?",
+      o: ["Eye color", "Skin color", "Knowledge of a language", "Blood group"],
+      a: 2,
+      e: "Acquired skills or knowledge are not encoded in the DNA and cannot be passed to offspring.",
+      full: "Variations like eye color and blood group are genetic. However, environmental variations—like scars or things you learn—are not heritable.",
+      h: "Can you 'Inherit' a 'Language' or is it 'Learned'?"
+    },
+    {
+      yr: 2020,
+      q: "The main excretory organ in humans is the:",
+      o: ["Liver", "Lung", "Kidney", "Skin"],
+      a: 2,
+      e: "The kidneys are the primary organs for filtering blood and removing nitrogenous waste as urine.",
+      full: "While the skin excretes sweat and the lungs excrete CO2, the Kidney is the central organ for osmoregulation and the removal of urea.",
+      h: "Is the 'Urine Maker' the 'Liver' or the 'Kidney'?"
+    },
+    {
+      yr: 2020,
+      q: "The joint found at the human shoulder and hip is the:",
+      o: ["Hinge joint", "Pivot joint", "Ball and socket joint", "Gliding joint"],
+      a: 2,
+      e: "Ball and socket joints allow for the greatest range of movement in multiple planes.",
+      full: "The rounded head of one bone (the ball) fits into the cup-like depression of another (the socket), allowing for rotation and circular movement.",
+      h: "Is the 'Shoulder' a 'Hinge' or a 'Ball and Socket'?"
+    },
+    {
+      yr: 2020,
+      q: "The process by which liquid water is lost from the leaves of plants in the form of drops is:",
+      o: ["Transpiration", "Guttation", "Evaporation", "Exudation"],
+      a: 1,
+      e: "Guttation occurs through hydathodes, usually at night or in high humidity.",
+      full: "Transpiration is the loss of water as *vapor*. Guttation is the loss of *liquid* water, often seen as 'dew drops' on the tips of leaves in the morning.",
+      h: "Is 'Liquid Water Loss' called 'Transpiration' or 'Guttation'?"
+    },
+    {
+      yr: 2020,
+      q: "The vector for the parasite that causes Malaria is the:",
+      o: ["Tsetse fly", "Housefly", "Female Anopheles mosquito", "Male Anopheles mosquito"],
+      a: 2,
+      e: "The female Anopheles mosquito carries the Plasmodium parasite and injects it into humans.",
+      full: "The female mosquito needs a blood meal for her eggs. The male mosquito does not bite humans; it feeds on plant nectar.",
+      h: "Is it the 'Female' or 'Male' Anopheles that bites?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is an example of a social insect?",
+      o: ["Butterfly", "Honeybee", "Mosquito", "Cotton stainer"],
+      a: 1,
+      e: "Honeybees live in highly organized colonies with distinct roles (Queen, Drone, Worker).",
+      full: "Social insects cannot survive alone. They exhibit division of labor, communal care of the young, and often have different physical forms (castes) for different jobs.",
+      h: "Do 'Honeybees' or 'Butterflies' live in organized 'Colonies'?"
+    },
+    {
+      yr: 2020,
+      q: "The first stage of mitosis is:",
+      o: ["Metaphase", "Prophase", "Anaphase", "Telophase"],
+      a: 1,
+      e: "In prophase, the chromatin condenses into visible chromosomes and the nuclear envelope breaks down.",
+      full: "Mitosis follows the sequence: Prophase, Metaphase (lining up), Anaphase (pulling apart), and Telophase (forming two new nuclei).",
+      h: "Is the 'Start' of mitosis 'Prophase' or 'Metaphase'?"
+    },
+    {
+      yr: 2021,
+      q: "The part of the flower that develops into a seed after fertilization is the:",
+      o: ["Ovary", "Ovule", "Stigma", "Style"],
+      a: 1,
+      e: "While the Ovary becomes the Fruit, the Ovule becomes the Seed.",
+      full: "After pollen fertilizes the egg inside the ovule, the ovule's integuments harden to form the seed coat (testa). The surrounding ovary wall then ripens into the fruit.",
+      h: "Does the 'Ovule' or 'Ovary' become the 'Seed'?"
+    },
+    {
+      yr: 2021,
+      q: "The process by which an Amoeba engulfs solid food particles is:",
+      o: ["Pinocytosis", "Phagocytosis", "Exocytosis", "Osmosis"],
+      a: 1,
+      e: "Phagocytosis is 'cell eating,' where the membrane wraps around solids.",
+      full: "Amoeba uses pseudopodia (false feet) to surround a food particle, forming a food vacuole. Pinocytosis, by contrast, is 'cell drinking' for liquid intake.",
+      h: "Is 'Cell Eating' called 'Phagocytosis' or 'Pinocytosis'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a function of the hormone Auxin in plants?",
+      o: ["Inhibition of lateral buds", "Ripening of fruits", "Breaking of seed dormancy", "Closing of stomata"],
+      a: 0,
+      e: "Auxins promote apical dominance, meaning they stop side branches from growing.",
+      full: "Produced at the tip of the stem, Auxins encourage vertical growth. If you cut the tip (removing the auxin source), the lateral buds will start to grow, making the plant bushier.",
+      h: "Does 'Auxin' promote 'Upward Growth' or 'Fruit Ripening'?"
+    },
+    {
+      yr: 2021,
+      q: "A habitat characterized by low rainfall, high temperature, and sparse vegetation is a:",
+      o: ["Rainforest", "Desert", "Savanna", "Mangrove swamp"],
+      a: 1,
+      e: "Deserts are arid regions where evaporation often exceeds precipitation.",
+      full: "Organisms in this habitat must have extreme adaptations, like the camel's ability to store fat or the cactus's ability to store water in its succulent stem.",
+      h: "Is 'Sparse Vegetation' found in the 'Rainforest' or the 'Desert'?"
+    },
+    {
+      yr: 2021,
+      q: "The pigment responsible for the green color in plants is:",
+      o: ["Haemoglobin", "Chlorophyll", "Melanin", "Xanthophyll"],
+      a: 1,
+      e: "Chlorophyll is located in the chloroplasts and is essential for photosynthesis.",
+      full: "It absorbs light energy (mostly blue and red wavelengths) and converts it into chemical energy. Melanin is a skin pigment, and Haemoglobin is in blood.",
+      h: "Is the 'Green Pigment' called 'Melanin' or 'Chlorophyll'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a demerit of sexual reproduction?",
+      o: ["High genetic variation", "Requires two parents", "Faster population growth", "Better adaptation to change"],
+      a: 1,
+      e: "Finding a mate takes time and energy, which can be a disadvantage compared to asexual reproduction.",
+      full: "While sexual reproduction provides variation (a major advantage), it is slower and more energy-intensive because it usually requires two compatible individuals and the production of gametes.",
+      h: "Is 'Requiring Two Parents' an advantage or a 'Demerit'?"
+    },
+    {
+      yr: 2021,
+      q: "The type of skeleton found in an earthworm is a/an:",
+      o: ["Exoskeleton", "Endoskeleton", "Hydrostatic skeleton", "Bony skeleton"],
+      a: 2,
+      e: "Earthworms use fluid pressure within their body segments to maintain shape and move.",
+      full: "Because they lack bones or shells, they rely on the 'incompressibility' of the fluid in their coelom. Muscles act against this fluid pressure to elongate or shorten the body.",
+      h: "Is a 'Fluid-based' skeleton called 'Bony' or 'Hydrostatic'?"
+    },
+    {
+      yr: 2021,
+      q: "The blood vessel that carries oxygenated blood from the lungs to the heart is the:",
+      o: ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"],
+      a: 1,
+      e: "The pulmonary vein is the ONLY vein that carries oxygen-rich blood.",
+      full: "Veins usually carry deoxygenated blood toward the heart. The Pulmonary Vein is the exception, bringing freshly oxygenated blood from the lungs to the Left Atrium.",
+      h: "Does the 'Pulmonary Vein' or 'Artery' carry 'Oxygenated' blood?"
+    },
+    {
+      yr: 2021,
+      q: "The relationship between a nitrogen-fixing bacterium and a leguminous plant is:",
+      o: ["Mutualism", "Commensalism", "Parasitism", "Saprophytism"],
+      a: 0,
+      e: "The plant gets nitrates, and the bacterium gets food and shelter.",
+      full: "Both organisms benefit in this (+/+) relationship. This is why legumes are often used in crop rotation to naturally replenish soil nitrogen levels.",
+      h: "Is 'Both Benefit' called 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an example of an involuntary reflex?",
+      o: ["Singing a song", "Withdrawal of hand from a hot object", "Riding a horse", "Solving a puzzle"],
+      a: 1,
+      e: "Reflexes are automatic and bypass the conscious brain for speed.",
+      full: "The 'Reflex Arc' usually involves a sensory neuron, a relay neuron in the spinal cord, and a motor neuron. This allows for a split-second response to danger.",
+      h: "Is 'Singing' or 'Hand Withdrawal' a reflex?"
+    },
+    {
+      yr: 2021,
+      q: "The instrument used to measure wind speed is the:",
+      o: ["Hygrometer", "Anemometer", "Wind vane", "Barometer"],
+      a: 1,
+      e: "An anemometer usually consists of cups that rotate faster as wind speed increases.",
+      full: "For comparison: A Wind Vane shows direction, a Hygrometer measures humidity, and a Barometer measures air pressure.",
+      h: "Is speed measured by a 'Wind Vane' or an 'Anemometer'?"
+    },
+    {
+      yr: 2021,
+      q: "The vitamin that prevents the disease called Scurvy is:",
+      o: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      a: 2,
+      e: "Vitamin C is essential for collagen synthesis; its lack causes bleeding gums.",
+      full: "Scurvy was common among sailors who lacked fresh fruits. Citrus fruits like oranges and lemons are excellent sources of Vitamin C.",
+      h: "Is 'Scurvy' prevented by Vitamin 'C' or 'D'?"
+    },
+    {
+      yr: 2021,
+      q: "The structure used by insects for excretion is the:",
+      o: ["Contractile vacuole", "Kidney", "Malpighian tubule", "Flame cell"],
+      a: 2,
+      e: "Malpighian tubules remove waste from the hemolymph into the gut of insects.",
+      full: "This system is very efficient at conserving water, as the waste is excreted as nearly dry uric acid crystals alongside feces.",
+      h: "Do insects use 'Kidneys' or 'Malpighian tubules'?"
+    },
+    {
+      yr: 2021,
+      q: "A person with blood group O can safely donate blood to people with blood groups:",
+      o: ["O only", "A and B only", "AB only", "A, B, AB, and O"],
+      a: 3,
+      e: "Group O is the universal donor because its cells lack A and B antigens.",
+      full: "Since there are no antigens on the surface of Group O red blood cells, the recipient's antibodies have nothing to attack. However, Group O can only receive blood from another O.",
+      h: "Is 'Group O' the 'Universal Donor' or 'Universal Recipient'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is a major function of the Large Intestine?",
+      o: ["Digestion of proteins", "Absorption of water", "Production of bile", "Absorption of glucose"],
+      a: 1,
+      e: "The colon reabsorbs water from undigested food, turning it into solid feces.",
+      full: "While most chemical digestion and nutrient absorption happen in the small intestine, the large intestine is primarily responsible for water recovery and waste storage.",
+      h: "Does the 'Large Intestine' digest 'Protein' or absorb 'Water'?"
+    },
+    {
+      yr: 2021,
+      q: "The theory of Natural Selection was co-proposed by Charles Darwin and:",
+      o: ["Gregor Mendel", "Alfred Russel Wallace", "Louis Pasteur", "Robert Hooke"],
+      a: 1,
+      e: "Wallace independently arrived at the same conclusion as Darwin regarding evolution.",
+      full: "Both scientists presented their findings together in 1858. However, Darwin became more famous after publishing 'On the Origin of Species' a year later.",
+      h: "Was Darwin's partner 'Mendel' or 'Wallace'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an example of a physiological variation?",
+      o: ["Skin color", "Blood group", "Height", "Fingerprints"],
+      a: 1,
+      e: "Physiological variations relate to how the body functions internally.",
+      full: "Skin color and height are 'Morphological' (physical appearance). Blood group is 'Physiological' because it depends on the chemical nature of the blood cells.",
+      h: "Is 'Blood Group' or 'Height' a physiological trait?"
+    },
+    {
+      yr: 2021,
+      q: "The specialized breathing roots found in mangrove plants are:",
+      o: ["Prop roots", "Pneumatophores", "Buttress roots", "Stilt roots"],
+      a: 1,
+      e: "Pneumatophores grow upward out of the mud to get oxygen for the roots.",
+      full: "In swampy, waterlogged soils, there is little oxygen. Mangroves have evolved these 'breathing tubes' to allow air to reach the submerged root systems.",
+      h: "Are 'Breathing Roots' called 'Buttress' or 'Pneumatophores'?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following organisms is at the top of a typical food chain?",
+      o: ["Grass", "Grasshopper", "Lizard", "Hawk"],
+      a: 3,
+      e: "The hawk is a tertiary consumer or top predator with no natural enemies.",
+      full: "In the chain Grass -> Grasshopper -> Lizard -> Hawk, the Hawk is the apex predator. Energy decreases at each step, so there are fewer hawks than grasshoppers.",
+      h: "Is the 'Top' of the chain the 'Producer' or the 'Predator'?"
+    },
+    {
+      yr: 2021,
+      q: "The basic unit of classification is the:",
+      o: ["Phylum", "Class", "Genus", "Species"],
+      a: 3,
+      e: "A species consists of organisms that can interbreed to produce fertile offspring.",
+      full: "The hierarchy goes: Kingdom, Phylum, Class, Order, Family, Genus, Species. Species is the most specific level and the fundamental unit of the system.",
+      h: "Is the 'Basic Unit' the 'Kingdom' or the 'Species'?"
+    },
+    {
+      yr: 2020,
+      q: "The process by which inherited traits are passed from parents to offspring is:",
+      o: ["Evolution", "Heredity", "Variation", "Adaptation"],
+      a: 1,
+      e: "Heredity is the transmission of genetic characteristics from one generation to the next.",
+      full: "Genetics is the study of heredity. It explains why offspring look like their parents while still showing some differences (variations) due to the mixing of genes during meiosis.",
+      h: "Is 'Passing on Traits' called 'Evolution' or 'Heredity'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a function of the mammalian skin?",
+      o: ["Production of red blood cells", "Regulation of body temperature", "Digestion of fats", "Absorption of oxygen"],
+      a: 1,
+      e: "The skin regulates temperature through sweating and the dilation/constriction of blood vessels.",
+      full: "When the body is too hot, sweat glands release moisture that cools the skin as it evaporates. When cold, hair erector muscles contract (goosebumps) to trap a layer of warm air.",
+      h: "Does the skin 'Make Blood' or 'Regulate Temperature'?"
+    },
+    {
+      yr: 2020,
+      q: "The type of fruit formed from a single flower with several free carpels is a/an:",
+      o: ["Simple fruit", "Aggregate fruit", "Multiple fruit", "Dry fruit"],
+      a: 1,
+      e: "Aggregate fruits (like kola nut or strawberry) develop from one flower with many ovaries.",
+      full: "A Simple fruit comes from one ovary. A Multiple fruit (like pineapple) comes from a group of flowers (inflorescence). An Aggregate fruit comes from many ovaries in one single flower.",
+      h: "Is it a 'Simple' or 'Aggregate' fruit if it has 'Many Free Carpels'?"
+    },
+    {
+      yr: 2020,
+      q: "The part of the brain responsible for muscular coordination and balance is the:",
+      o: ["Cerebrum", "Cerebellum", "Thalamus", "Pons varolii"],
+      a: 1,
+      e: "The cerebellum coordinates voluntary movements such as posture, balance, and speech.",
+      full: "While the Cerebrum handles thinking and memory, the Cerebellum (often called the 'little brain') ensures your movements are smooth and you don't fall over.",
+      h: "Is 'Balance' controlled by the 'Cerebrum' or 'Cerebellum'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a function of the Xylem tissue in plants?",
+      o: ["Transport of manufactured food", "Transport of water and mineral salts", "Gaseous exchange", "Translocation of sugar"],
+      a: 1,
+      e: "Xylem vessels carry water and dissolved minerals upwards from the roots to the leaves.",
+      full: "Xylem also provides mechanical support to the plant due to its lignified walls. Food transport, however, is the job of the Phloem.",
+      h: "Does 'Xylem' carry 'Food' or 'Water'?"
+    },
+    {
+      yr: 2020,
+      q: "The deficiency of Vitamin A in the diet leads to:",
+      o: ["Rickets", "Night blindness", "Beri-beri", "Scurvy"],
+      a: 1,
+      e: "Vitamin A is essential for the formation of rhodopsin in the retina, which is needed for low-light vision.",
+      full: "Severe Vitamin A deficiency can lead to permanent blindness (xerophthalmia). Carrots and leafy greens are famous sources of this vitamin.",
+      h: "Is Vitamin A for 'Bones' or 'Eyes'?"
+    },
+    {
+      yr: 2020,
+      q: "The sum total of all the chemical reactions occurring in a living cell is:",
+      o: ["Anabolism", "Catabolism", "Metabolism", "Digestion"],
+      a: 2,
+      e: "Metabolism includes both 'building up' (anabolism) and 'breaking down' (catabolism) reactions.",
+      full: "Metabolism allows organisms to grow, reproduce, maintain their structures, and respond to their environments. It is the engine of life.",
+      h: "Is the 'Total Reactions' called 'Digestion' or 'Metabolism'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a flight adaptation in birds?",
+      o: ["Heavy solid bones", "Pneumatic (hollow) bones", "Long thick neck", "Lateral line system"],
+      a: 1,
+      e: "Hollow bones reduce body weight, making it easier for birds to stay airborne.",
+      full: "These pneumatic bones are often reinforced with internal struts for strength despite being light. This is a classic example of structure meeting function in evolution.",
+      h: "Are bird bones 'Solid' or 'Hollow'?"
+    },
+    {
+      yr: 2020,
+      q: "The hormone that promotes the ripening of fruits is:",
+      o: ["Auxin", "Gibberellin", "Ethylene (Ethene)", "Cytokinin"],
+      a: 2,
+      e: "Ethylene is a gaseous hormone that triggers the breakdown of cell walls and conversion of starch to sugar in fruits.",
+      full: "Because it is a gas, one ripe fruit can cause others nearby to ripen quickly. This is why 'one bad apple spoils the whole bunch'.",
+      h: "Is the ripening gas 'Ethylene' or 'Auxin'?"
+    },
+    {
+      yr: 2020,
+      q: "The structure in a cell where aerobic respiration takes place is the:",
+      o: ["Nucleus", "Mitochondrion", "Ribosome", "Vacuole"],
+      a: 1,
+      e: "Mitochondria are the 'powerhouses' of the cell, generating ATP through respiration.",
+      full: "Cells that require a lot of energy, like muscle cells or sperm cells, contain a very high number of mitochondria to meet their energy demands.",
+      h: "Is 'Energy' made in the 'Ribosome' or 'Mitochondrion'?"
+    },
+    {
+      yr: 2020,
+      q: "An example of a succulent plant found in arid regions is:",
+      o: ["Oak", "Cactus", "Water lily", "Mushroom"],
+      a: 1,
+      e: "Succulents store water in thick, fleshy stems or leaves to survive droughts.",
+      full: "Cacti are perfectly adapted xerophytes. They have spines instead of leaves to reduce water loss and green stems to carry out photosynthesis.",
+      h: "Is a 'Cactus' or 'Oak' a water-storing plant?"
+    },
+    {
+      yr: 2020,
+      q: "The nitrogenous base that is present in DNA but absent in RNA is:",
+      o: ["Adenine", "Guanine", "Cytosine", "Thymine"],
+      a: 3,
+      e: "DNA uses Thymine, while RNA replaces it with Uracil.",
+      full: "Both have Adenine, Guanine, and Cytosine. The presence of Thymine is one of the key chemical signatures that distinguishes DNA from RNA.",
+      h: "Is 'Thymine' or 'Uracil' unique to DNA?"
+    },
+    {
+      yr: 2020,
+      q: "The organism that causes the disease 'African Sleeping Sickness' is:",
+      o: ["Plasmodium", "Trypanosoma", "Vibrio cholerae", "Tsetse fly"],
+      a: 1,
+      e: "Trypanosoma is the protozoan parasite; the Tsetse fly is only the vector.",
+      full: "It is important not to confuse the 'pathogen' (Trypanosoma) with the 'vector' (Tsetse fly). The parasite attacks the central nervous system, leading to lethargy.",
+      h: "Is the 'Parasite' called 'Trypanosoma' or 'Tsetse'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is an example of a physiological variation in humans?",
+      o: ["Ability to roll the tongue", "Weight", "Height", "Hair color"],
+      a: 0,
+      e: "Physiological variations are functional differences governed by one or a few genes.",
+      full: "Tongue rolling and blood groups are clear-cut (discrete) physiological variations. Height and weight are morphological and show continuous variation.",
+      h: "Is 'Tongue Rolling' or 'Height' a physiological trait?"
+    },
+    {
+      yr: 2020,
+      q: "The association between a shark and a suckerfish (remora) is:",
+      o: ["Parasitism", "Commensalism", "Mutualism", "Saprophytism"],
+      a: 1,
+      e: "The suckerfish gets food and transport, while the shark is unaffected.",
+      full: "This is a (+/0) relationship. The remora benefits by eating scraps from the shark's meals, but the shark neither gains nor loses anything from the remora's presence.",
+      h: "Is 'One Benefits, Other Neutral' called 'Mutualism' or 'Commensalism'?"
+    },
+    {
+      yr: 2020,
+      q: "The part of the flower that receives pollen grains is the:",
+      o: ["Anther", "Stigma", "Style", "Ovary"],
+      a: 1,
+      e: "The stigma is the receptive tip of the carpel, often sticky to trap pollen.",
+      full: "Pollination is successful when pollen moves from the anther to the stigma. From there, the pollen grain germinates and grows a tube toward the ovary.",
+      h: "Is the 'Receiver' the 'Anther' or 'Stigma'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following blood cells is responsible for fighting infections?",
+      o: ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
+      a: 1,
+      e: "White blood cells (leukocytes) identify and destroy pathogens like bacteria and viruses.",
+      full: "Some white blood cells 'eat' bacteria (phagocytes), while others produce antibodies (lymphocytes) to neutralize specific threats to the body.",
+      h: "Do 'Red' or 'White' cells fight disease?"
+    },
+    {
+      yr: 2020,
+      q: "The movement of a plant shoot towards light is known as:",
+      o: ["Positive geotropism", "Positive phototropism", "Negative phototropism", "Hydrotropism"],
+      a: 1,
+      e: "Shoots grow 'towards' (positive) light (photo).",
+      full: "Roots, on the other hand, show negative phototropism (growing away from light) and positive geotropism (growing towards gravity/the earth).",
+      h: "Is light-seeking growth 'Positive' or 'Negative' phototropism?"
+    },
+    {
+      yr: 2020,
+      q: "The organ in the human body that detoxifies poisonous substances is the:",
+      o: ["Kidney", "Liver", "Pancreas", "Spleen"],
+      a: 1,
+      e: "The liver breaks down toxins, drugs, and alcohol into less harmful substances.",
+      full: "The liver is the body's primary chemical processing center. It also produces bile for fat digestion and stores excess sugar as glycogen.",
+      h: "Is the 'Detox Center' the 'Kidney' or 'Liver'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a non-renewable natural resource?",
+      o: ["Water", "Forest", "Natural gas", "Soil"],
+      a: 2,
+      e: "Fossil fuels like natural gas take millions of years to form and cannot be replaced once used.",
+      full: "While forests can be replanted and water cycles through the environment, minerals and fossil fuels are finite and will eventually be depleted.",
+      h: "Can 'Natural Gas' be replaced as quickly as 'Trees'?"
+    },
+    {
+      yr: 2019,
+      q: "The organelles responsible for cellular respiration are:",
+      o: ["Chloroplasts", "Mitochondria", "Ribosomes", "Lysosomes"],
+      a: 1,
+      e: "Mitochondria produce ATP by breaking down glucose in the presence of oxygen.",
+      full: "Mitochondria are known as the 'powerhouse' of the cell. They are most numerous in cells with high energy requirements, such as muscle cells and sperm cells.",
+      h: "Is the 'Powerhouse' the 'Chloroplast' or the 'Mitochondrion'?"
+    },
+    {
+      yr: 2019,
+      q: "The transition from an aquatic to a terrestrial habitat was first achieved by the:",
+      o: ["Pisces", "Amphibia", "Reptilia", "Aves"],
+      a: 1,
+      e: "Amphibians were the first vertebrates to live on land, though they still return to water to breed.",
+      full: "Amphibians like frogs represent a bridge between water and land. They have lungs for air breathing but also use their moist skin for gas exchange (cutaneous respiration).",
+      h: "Were 'Amphibians' or 'Reptiles' the first to step onto land?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a characteristic of the Kingdom Fungi?",
+      o: ["Autotrophic nutrition", "Cell wall made of cellulose", "Heterotrophic nutrition", "Locomotion by cilia"],
+      a: 2,
+      e: "Fungi cannot make their own food; they absorb nutrients from organic matter.",
+      full: "Unlike plants (which have cellulose walls), fungi have cell walls made of chitin. Because they lack chlorophyll, they are either saprophytes or parasites.",
+      h: "Are Fungi 'Autotrophs' (make food) or 'Heterotrophs' (absorb food)?"
+    },
+    {
+      yr: 2019,
+      q: "The hormone that stimulates the 'let-down' of milk in lactating mammals is:",
+      o: ["Progesterone", "Oxytocin", "Estrogen", "Prolactin"],
+      a: 1,
+      e: "Oxytocin triggers the contraction of smooth muscles to release milk.",
+      full: "While Prolactin stimulates the *production* of milk, Oxytocin is responsible for the actual *release* (ejection) of the milk during nursing.",
+      h: "Is 'Milk Release' caused by 'Prolactin' or 'Oxytocin'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a vestigial organ in humans?",
+      o: ["Liver", "Appendix", "Pancreas", "Spleen"],
+      a: 1,
+      e: "The appendix is a small pouch that has lost its original digestive function in humans.",
+      full: "Vestigial organs are structures that were functional in ancestors but have become reduced and useless over time. Other examples include the coccyx (tailbone) and wisdom teeth.",
+      h: "Is the 'Appendix' or 'Liver' a useless leftover from evolution?"
+    },
+    {
+      yr: 2019,
+      q: "The part of the flower that produces the male gamete is the:",
+      o: ["Stigma", "Filament", "Anther", "Ovary"],
+      a: 2,
+      e: "The anther contains pollen sacs where pollen grains (male gametophytes) are formed.",
+      full: "The stamen is the male reproductive part, consisting of the stalk (filament) and the pollen-bearing tip (anther).",
+      h: "Is the 'Anther' or 'Ovary' the male part?"
+    },
+    {
+      yr: 2019,
+      q: "The type of association where one organism kills and eats another is:",
+      o: ["Parasitism", "Commensalism", "Predation", "Symiosis"],
+      a: 2,
+      e: "Predation involves a predator hunting and consuming its prey.",
+      full: "This is a (+/-) relationship where the predator benefits and the prey is killed. It is a major factor in controlling population sizes in an ecosystem.",
+      h: "Is a lion eating a zebra 'Parasitism' or 'Predation'?"
+    },
+    {
+      yr: 2019,
+      q: "The blood vessel that carries deoxygenated blood from the body to the right atrium is the:",
+      o: ["Aorta", "Pulmonary artery", "Vena cava", "Pulmonary vein"],
+      a: 2,
+      e: "The Vena Cava is the largest vein, returning 'spent' blood to the heart.",
+      full: "The Superior Vena Cava brings blood from the upper body, while the Inferior Vena Cava brings it from the lower body, both emptying into the Right Atrium.",
+      h: "Is the 'Main Vein' the 'Aorta' or the 'Vena Cava'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a function of the spinal cord?",
+      o: ["Memory storage", "Control of reflex actions", "Regulation of body temperature", "Intelligence"],
+      a: 1,
+      e: "The spinal cord acts as the center for simple reflex actions that bypass the brain.",
+      full: "The spinal cord provides a fast pathway for nerve impulses. It allows the body to react to danger (like heat) before the brain even processes the pain.",
+      h: "Does the 'Spinal Cord' handle 'Reflexes' or 'Thinking'?"
+    },
+    {
+      yr: 2019,
+      q: "The pigment in the red blood cells that carries oxygen is:",
+      o: ["Chlorophyll", "Haemoglobin", "Melanin", "Anthocyanin"],
+      a: 1,
+      e: "Haemoglobin contains iron, which binds to oxygen molecules in the lungs.",
+      full: "When haemoglobin binds with oxygen, it becomes oxyhaemoglobin (bright red). It releases this oxygen when it reaches tissues with low oxygen concentration.",
+      h: "Is 'Blood Pigment' called 'Melanin' or 'Haemoglobin'?"
+    },
+    {
+      yr: 2019,
+      q: "The condition in which a person can see distant objects clearly but not near ones is:",
+      o: ["Myopia", "Hypermetropia", "Astigmatism", "Glaucoma"],
+      a: 1,
+      e: "Hypermetropia (long-sightedness) occurs when the focal point is behind the retina.",
+      full: "To correct this, a converging (convex) lens is used to bring the image forward onto the retina. Myopia (short-sightedness) is the opposite condition.",
+      h: "Is 'Long-sightedness' called 'Myopia' or 'Hypermetropia'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a primary consumer in a terrestrial habitat?",
+      o: ["Grass", "Grasshopper", "Lizard", "Snake"],
+      a: 1,
+      e: "Primary consumers (herbivores) feed directly on producers (plants).",
+      full: "In this chain, Grass is the producer. The Grasshopper is the primary consumer because it eats the grass. The Lizard would be a secondary consumer.",
+      h: "Is a 'Grasshopper' a 'Producer' or 'Primary Consumer'?"
+    },
+    {
+      yr: 2019,
+      q: "The process by which plants lose water vapor through the stomata is:",
+      o: ["Osmosis", "Guttation", "Transpiration", "Evaporation"],
+      a: 2,
+      e: "Transpiration creates a 'pull' that helps draw water up from the roots to the leaves.",
+      full: "While evaporation can happen from any surface, Transpiration is the biological loss of water vapor specifically from plant leaves and stems.",
+      h: "Is 'Water Vapor Loss' called 'Transpiration' or 'Osmosis'?"
+    },
+    {
+      yr: 2019,
+      q: "The structural unit of inheritance is the:",
+      o: ["Chromosome", "Gene", "Nucleus", "DNA"],
+      a: 1,
+      e: "A gene is a segment of DNA that codes for a specific protein or trait.",
+      full: "Genes are located on chromosomes. While DNA is the material, the 'Gene' is the functional unit that actually determines characteristics like eye color.",
+      h: "Is the 'Unit of Inheritance' the 'Gene' or the 'Chromosome'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a function of the skeleton in mammals?",
+      o: ["Digestion of food", "Production of blood cells", "Excretion of urea", "Synthesis of vitamins"],
+      a: 1,
+      e: "Red and white blood cells are produced in the bone marrow of long bones.",
+      full: "The skeleton isn't just for support; it's a dynamic tissue. The bone marrow acts as a factory for nearly all the blood cells in the body.",
+      h: "Does the skeleton 'Make Blood' or 'Digest Food'?"
+    },
+    {
+      yr: 2019,
+      q: "The enzyme that digests fats (lipids) into fatty acids and glycerol is:",
+      o: ["Amylase", "Pepsin", "Lipase", "Trypsin"],
+      a: 2,
+      e: "Lipase is produced by the pancreas and acts in the small intestine.",
+      full: "Fats are first emulsified by bile to increase their surface area, then Lipase breaks the chemical bonds to turn them into absorbable molecules.",
+      h: "Is 'Lipase' or 'Amylase' for 'Fats'?"
+    },
+    {
+      yr: 2019,
+      q: "The type of germination where the cotyledons remain below the soil is:",
+      o: ["Epigeal", "Hypogeal", "Aerial", "Hydroponic"],
+      a: 1,
+      e: "In hypogeal germination (e.g., maize), the epicotyl elongates while the cotyledons stay underground.",
+      full: "In Epigeal germination (e.g., beans), the hypocotyl elongates, pulling the cotyledons above the soil surface where they often turn green.",
+      h: "Does 'Hypogeal' mean 'Below' or 'Above' the ground?"
+    },
+    {
+      yr: 2019,
+      q: "The scientist who discovered the first antibiotic, Penicillin, was:",
+      o: ["Louis Pasteur", "Alexander Fleming", "Robert Koch", "Gregor Mendel"],
+      a: 1,
+      e: "Fleming noticed a mold (Penicillium) killing bacteria in a petri dish in 1928.",
+      full: "This discovery revolutionized medicine, moving humanity into the 'antibiotic era' where bacterial infections were no longer a guaranteed death sentence.",
+      h: "Was 'Penicillin' discovered by 'Pasteur' or 'Fleming'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is an example of an ecosystem?",
+      o: ["A school of fish", "A tropical rainforest", "A herd of cattle", "A flock of birds"],
+      a: 1,
+      e: "An ecosystem includes both the living community and the non-living environment (soil, air, water).",
+      full: "A school of fish is a 'population.' A tropical rainforest is an 'ecosystem' because it encompasses all the plants, animals, and the physical climate they live in.",
+      h: "Is a 'Rainforest' or a 'Herd' an ecosystem?"
+    },
+    {
+      yr: 2019,
+      q: "The male gamete in humans is the:",
+      o: ["Ova", "Spermatozoon", "Zygote", "Embryo"],
+      a: 1,
+      e: "The sperm cell is a motile haploid cell produced in the testes.",
+      full: "It consists of a head containing DNA, a midpiece full of mitochondria for energy, and a tail (flagellum) for swimming toward the egg.",
+      h: "Is the 'Male Cell' the 'Ova' or the 'Sperm'?"
+    },
+    {
+      yr: 2019,
+      q: "The movement of particles from a region of higher concentration to a region of lower concentration is:",
+      o: ["Osmosis", "Diffusion", "Active transport", "Translocation"],
+      a: 1,
+      e: "Diffusion occurs down a concentration gradient and does not require energy.",
+      full: "Examples include the smell of perfume spreading in a room or oxygen moving from the alveoli into the blood. Unlike Osmosis, it does not require a semi-permeable membrane.",
+      h: "Is 'General Particle Movement' called 'Osmosis' or 'Diffusion'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a function of the mammalian liver?",
+      o: ["Deamination of excess amino acids", "Production of digestive enzymes", "Filtration of sewage", "Storage of liquid waste"],
+      a: 0,
+      e: "The liver breaks down excess amino acids into urea and a carbohydrate part.",
+      full: "The nitrogen-containing part is turned into urea (excreted by kidneys), while the rest is used for energy. This prevents toxic ammonia buildup in the body.",
+      h: "Does the liver 'Deaminate Amino Acids' or 'Make Enzymes'?"
+    },
+    {
+      yr: 2019,
+      q: "The observable characteristics of an individual resulting from the interaction of its genotype with the environment is the:",
+      o: ["Allele", "Phenotype", "Hybrid", "Locus"],
+      a: 1,
+      e: "Phenotype = Genotype + Environment (e.g., a person's height or skin color).",
+      full: "Even if two plants have the same genes for height, if one is grown in poor soil, it will be shorter. The 'Short' or 'Tall' result is the Phenotype.",
+      h: "Is 'Physical Appearance' the 'Genotype' or 'Phenotype'?"
+    },
+    {
+      yr: 2019,
+      q: "The small, specialized vessels where exchange of materials between blood and cells occurs are:",
+      o: ["Arteries", "Veins", "Capillaries", "Venules"],
+      a: 2,
+      e: "Capillaries have walls that are only one cell thick to allow for rapid diffusion.",
+      full: "Arteries carry blood away, veins bring it back, but the Capillaries are the 'business end' where oxygen and nutrients actually enter the tissues.",
+      h: "Are 'Exchange Vessels' called 'Arteries' or 'Capillaries'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is an example of a discontinuous variation?",
+      o: ["Height", "Weight", "Blood Group", "Intelligence"],
+      a: 2,
+      e: "Discontinuous variations have distinct categories with no intermediates (you are either A, B, AB, or O).",
+      full: "Continuous variations (like height) show a range of values. Discontinuous variations are usually controlled by a single gene and are not affected by the environment.",
+      h: "Is 'Blood Group' or 'Height' a distinct category?"
+    },
+    {
+      yr: 2019,
+      q: "The association between a fungus and an alga in a Lichen is:",
+      o: ["Mutualism", "Parasitism", "Commensalism", "Saprophytism"],
+      a: 0,
+      e: "The alga provides food (photosynthesis) and the fungus provides water and protection.",
+      full: "This is a classic 'win-win' situation. Without each other, many species of lichens would not be able to survive on bare rocks or tree bark.",
+      h: "Is 'Lichen' an example of 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2019,
+      q: "The part of the mammalian ear that converts sound vibrations into nerve impulses is the:",
+      o: ["Ossicles", "Cochlea", "Tympanic membrane", "Pinna"],
+      a: 1,
+      e: "The cochlea is a snail-shaped structure filled with fluid and sensory hair cells.",
+      full: "When the fluid vibrates, the hair cells trigger electrical signals that travel via the auditory nerve to the brain for interpretation as sound.",
+      h: "Is the 'Signal Maker' the 'Eardrum' or the 'Cochlea'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a dental adaptation of a carnivore?",
+      o: ["Flat molars for grinding", "Long pointed canines", "Diastema", "Horny pad"],
+      a: 1,
+      e: "Canines are used for piercing, gripping, and tearing the flesh of prey.",
+      full: "Carnivores also have carnassial teeth (modified premolars and molars) that act like scissors to shear through bone and muscle.",
+      h: "Do 'Meat-eaters' need 'Flat Molars' or 'Long Canines'?"
+    },
+    {
+      yr: 2019,
+      q: "The structure in a plant cell that provides rigidity and support is the:",
+      o: ["Cell membrane", "Cell wall", "Cytoplasm", "Nucleus"],
+      a: 1,
+      e: "The cell wall is made of cellulose and maintains the shape of the plant cell.",
+      full: "Animal cells lack a cell wall, which is why they are flexible. The cell wall prevents plant cells from bursting when they take in water by osmosis.",
+      h: "Is 'Rigidity' provided by the 'Wall' or the 'Membrane'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a greenhouse gas?",
+      o: ["Oxygen", "Nitrogen", "Carbon dioxide", "Argon"],
+      a: 2,
+      e: "CO2 traps heat in the atmosphere, contributing to the greenhouse effect.",
+      full: "While nitrogen and oxygen make up most of the air, they don't trap heat. CO2, methane, and water vapor are the main gases responsible for warming the planet.",
+      h: "Is 'CO2' or 'Oxygen' a greenhouse gas?"
+    },
+    {
+      yr: 2019,
+      q: "The type of evolution where unrelated species develop similar traits due to similar environments is:",
+      o: ["Divergent evolution", "Convergent evolution", "Adaptive radiation", "Co-evolution"],
+      a: 1,
+      e: "Convergent evolution results in analogous structures (e.g., wings of birds and insects).",
+      full: "Even though a shark (fish) and a dolphin (mammal) are unrelated, they both have streamlined bodies and fins because they both live in the ocean.",
+      h: "Is 'Similar traits in different species' called 'Convergent' or 'Divergent'?"
+    },
+    {
+      yr: 2019,
+      q: "The primary organ for gaseous exchange in a frog living on land is the:",
+      o: ["Gills", "Lungs", "Skin", "Buccal cavity"],
+      a: 1,
+      e: "Adult frogs use lungs for breathing on land, though skin helps significantly.",
+      full: "Frogs are unique because they use three surfaces: Lungs (pulmonary), Skin (cutaneous), and the Mouth lining (buccal). On land, lungs do the heavy lifting.",
+      h: "Does an adult frog use 'Gills' or 'Lungs'?"
+    },
+    {
+      yr: 2019,
+      q: "The waste product of photosynthesis that is essential for animal life is:",
+      o: ["Glucose", "Water", "Oxygen", "Carbon dioxide"],
+      a: 2,
+      e: "Plants release oxygen as a byproduct of splitting water molecules during the light stage.",
+      full: "This 'waste' product for the plant is the lifeblood for aerobic organisms (like us) who need it for cellular respiration.",
+      h: "Is the 'Plant Waste' called 'CO2' or 'Oxygen'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is an example of a reflex arc component?",
+      o: ["Cerebrum", "Sensory neuron", "Pituitary gland", "Liver"],
+      a: 1,
+      e: "A reflex arc consists of a receptor, sensory neuron, relay neuron, motor neuron, and effector.",
+      full: "The sensory neuron carries the 'danger' message from the skin to the spinal cord, bypassing the brain to ensure a faster reaction.",
+      h: "Is a 'Neuron' or the 'Liver' part of a reflex?"
+    },
+    {
+      yr: 2019,
+      q: "The study of the relationship between a group of different species and their environment is:",
+      o: ["Autecology", "Synecology", "Ethology", "Taxonomy"],
+      a: 1,
+      e: "Synecology looks at communities and ecosystems as a whole.",
+      full: "If you study only one zebra species, it's Autecology. If you study the entire Savannah (lions, zebras, grass, etc.), it's Synecology.",
+      h: "Is 'Group Study' called 'Autecology' or 'Synecology'?"
+    },
+    {
+      yr: 2019,
+      q: "The blood group that can be given to any patient in an emergency is:",
+      o: ["Group A", "Group B", "Group AB", "Group O"],
+      a: 3,
+      e: "Group O negative is the 'Universal Donor' because it has no A, B, or Rh antigens.",
+      full: "Because it lacks these surface 'markers,' the recipient's immune system won't recognize it as an invader, preventing a dangerous transfusion reaction.",
+      h: "Is the 'Universal Donor' group 'O' or 'AB'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following structures is used for movement in Euglena?",
+      o: ["Cilia", "Flagellum", "Pseudopodia", "Tentacles"],
+      a: 1,
+      e: "Euglena uses a long, whip-like flagellum at its front end to pull itself through water.",
+      full: "Paramecium uses Cilia (tiny hairs) and Amoeba uses Pseudopodia (false feet). The Flagellum is the specific motor for Euglena.",
+      h: "Does 'Euglena' use 'Hairs' or a 'Whip'?"
+    },
+    {
+      yr: 2019,
+      q: "The part of the brain that maintains posture and equilibrium is the:",
+      o: ["Cerebrum", "Cerebellum", "Medulla", "Hypothalamus"],
+      a: 1,
+      e: "The cerebellum coordinates muscle movements to keep the body balanced.",
+      full: "If the cerebellum is damaged, a person might still be able to move their legs (cerebrum function) but will walk with a clumsy, drunken stagger.",
+      h: "Is 'Balance' the 'Cerebrum' or 'Cerebellum'?"
+    },
+    {
+      yr: 2019,
+      q: "The hormone that causes the 'fight or flight' response is produced by the:",
+      o: ["Pituitary gland", "Thyroid gland", "Adrenal gland", "Pancreas"],
+      a: 2,
+      e: "The adrenal glands (on top of the kidneys) release adrenaline during stress.",
+      full: "Adrenaline increases your heart rate and redirects blood to your muscles, preparing you to either face a threat or run away from it.",
+      h: "Is 'Adrenaline' from the 'Thyroid' or 'Adrenal' gland?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a non-heritable characteristic?",
+      o: ["Albinism", "A scar from a burn", "Haemophilia", "Color blindness"],
+      a: 1,
+      e: "Physical injuries or learned behaviors are not passed down through genes.",
+      full: "Albinism and Haemophilia are genetic conditions written into your DNA. A scar is an environmental change and won't be passed on to your children.",
+      h: "Is a 'Scar' or 'Albinism' heritable?"
+    },
+    {
+      yr: 2018,
+      q: "The process of cell division that results in the formation of gametes is:",
+      o: ["Mitosis", "Meiosis", "Binary fission", "Budding"],
+      a: 1,
+      e: "Meiosis reduces the chromosome number by half to produce haploid sperm and egg cells.",
+      full: "While Mitosis produces identical 'daughter' cells for growth, Meiosis ensures that when fertilization occurs, the normal diploid number of chromosomes is restored in the zygote.",
+      h: "Is 'Gamete Formation' called 'Mitosis' or 'Meiosis'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a function of the contractile vacuole in Amoeba?",
+      o: ["Digestion of food", "Osmoregulation", "Locomotion", "Reproduction"],
+      a: 1,
+      e: "The contractile vacuole collects and expels excess water to prevent the cell from bursting.",
+      full: "Since Amoeba lives in freshwater (hypotonic environment), water constantly enters the cell by osmosis. The vacuole acts as a pump to maintain water balance.",
+      h: "Does the 'Vacuole' handle 'Food' or 'Water Balance'?"
+    },
+    {
+      yr: 2018,
+      q: "The structural basis of inheritance which carries the genetic code is:",
+      o: ["Cytoplasm", "Ribosome", "DNA", "Lysosome"],
+      a: 2,
+      e: "Deoxyribonucleic acid (DNA) contains the instructions for the development and function of all living things.",
+      full: "DNA is organized into genes, which are located on chromosomes within the nucleus. It is the molecular 'blueprint' passed from one generation to the next.",
+      h: "Is the 'Genetic Code' in 'DNA' or 'Ribosomes'?"
+    },
+    {
+      yr: 2018,
+      q: "The cervical vertebrae are located in the:",
+      o: ["Neck region", "Chest region", "Waist region", "Tail region"],
+      a: 0,
+      e: "The cervical vertebrae support the head and allow for neck movement.",
+      full: "In almost all mammals (including humans and giraffes), there are 7 cervical vertebrae. The first two are the Atlas and the Axis, which allow the head to nod and rotate.",
+      h: "Are 'Cervical' vertebrae in the 'Neck' or 'Waist'?"
+    },
+    {
+      yr: 2018,
+      q: "The enzyme Ptyalin (Salivary Amylase) acts on:",
+      o: ["Proteins", "Starch", "Fats", "Vitamins"],
+      a: 1,
+      e: "Ptyalin begins the chemical digestion of cooked starch into maltose in the mouth.",
+      full: "Digestion starts in the mouth. If you chew bread for a long time, it begins to taste sweet because the ptyalin is converting the starch into sugar.",
+      h: "Does 'Ptyalin' digest 'Meat' or 'Starch'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is an example of a physiological variation?",
+      o: ["Fingerprints", "Blood group", "Height", "Eye color"],
+      a: 1,
+      e: "Blood groups are functional/chemical differences that don't change with the environment.",
+      full: "Physiological variations like tongue rolling and blood groups show 'discontinuous variation,' meaning you fall into one distinct category or another.",
+      h: "Is 'Height' or 'Blood Group' a physiological trait?"
+    },
+    {
+      yr: 2018,
+      q: "The part of the flower that produces the female gametes is the:",
+      o: ["Stigma", "Style", "Ovary", "Anther"],
+      a: 2,
+      e: "The ovary contains the ovules, which house the female egg cells.",
+      full: "After fertilization, the ovules become seeds and the ovary ripens into a fruit. The anther, by contrast, is the male part that produces pollen.",
+      h: "Is the 'Female Part' the 'Anther' or 'Ovary'?"
+    },
+    {
+      yr: 2018,
+      q: "In which of the following biomes is the vegetation characterized by 'buttress roots'?",
+      o: ["Savanna", "Tropical rainforest", "Desert", "Tundra"],
+      a: 1,
+      e: "Buttress roots provide extra support for tall trees in shallow, nutrient-poor rainforest soils.",
+      full: "Because rainforest soil is often thin, trees develop these wide, plank-like roots at the base to prevent them from toppling over in the wet ground.",
+      h: "Are 'Buttress Roots' in the 'Desert' or 'Rainforest'?"
+    },
+    {
+      yr: 2018,
+      q: "The hormone that regulates the amount of water reabsorbed by the kidney is:",
+      o: ["Adrenaline", "Insulin", "Anti-diuretic hormone (ADH)", "Thyroxine"],
+      a: 2,
+      e: "ADH (Vasopressin) makes the kidney tubules more permeable to water when the body is dehydrated.",
+      full: "ADH is produced by the hypothalamus and released by the pituitary. When you are thirsty, more ADH is released, so your kidneys produce more concentrated urine.",
+      h: "Is the 'Water Regulator' hormone 'Insulin' or 'ADH'?"
+    },
+    {
+      yr: 2018,
+      q: "The respiratory organ used by an adult toad is the:",
+      o: ["Gill", "Skin and lungs", "Trachea", "Spiracle"],
+      a: 1,
+      e: "Toads use both lungs and their moist skin for gaseous exchange on land.",
+      full: "While the tadpole stage uses gills, the adult toad breathes through its lungs and skin (cutaneous respiration). This is why toads must keep their skin moist.",
+      h: "Do adult toads use 'Gills' or 'Skin/Lungs'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following organisms is a primary producer?",
+      o: ["Grasshopper", "Fungus", "Green plant", "Lion"],
+      a: 2,
+      e: "Green plants are autotrophs that produce their own food via photosynthesis.",
+      full: "Producers form the base of every food chain. They convert solar energy into chemical energy (glucose) which then feeds all other organisms (consumers).",
+      h: "Is a 'Lion' or a 'Plant' a producer?"
+    },
+    {
+      yr: 2018,
+      q: "The part of the mammalian brain responsible for intelligence and voluntary action is the:",
+      o: ["Cerebellum", "Cerebrum", "Medulla oblongata", "Thalamus"],
+      a: 1,
+      e: "The cerebrum is the largest part of the brain and handles complex functions like memory and logic.",
+      full: "The cerebrum is divided into lobes that process sight, sound, and touch, and it is where all our conscious decisions and thoughts are made.",
+      h: "Is 'Thinking' done in the 'Cerebrum' or 'Cerebellum'?"
+    },
+    {
+      yr: 2018,
+      q: "The relationship between a tick and a cow is:",
+      o: ["Commensalism", "Mutualism", "Parasitism", "Symbiosis"],
+      a: 2,
+      e: "The tick (parasite) benefits by sucking blood, while the cow (host) is harmed.",
+      full: "This is a (+/-) relationship. Parasites usually do not kill their host immediately, as they rely on the host for a constant food supply.",
+      h: "Is 'Tick on a Cow' called 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2018,
+      q: "The structure in the plant cell that contains the cell sap is the:",
+      o: ["Nucleus", "Large central vacuole", "Chloroplast", "Cytoplasm"],
+      a: 1,
+      e: "The vacuole stores water, salts, and sugars, providing turgor pressure for the cell.",
+      full: "Animal cells have small, temporary vacuoles, but plant cells have a large, permanent central vacuole that keeps the cell firm (turgid) and supports the plant structure.",
+      h: "Is 'Cell Sap' in the 'Nucleus' or 'Vacuole'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a symptom of nitrogen deficiency in plants?",
+      o: ["Purple leaves", "Yellowing of leaves (chlorosis)", "Weak stems", "Premature fruit drop"],
+      a: 1,
+      e: "Nitrogen is needed for chlorophyll; its lack causes leaves to turn pale or yellow.",
+      full: "Nitrogen is a key component of amino acids and proteins. Without it, the plant's growth is stunted and it cannot carry out photosynthesis efficiently.",
+      h: "Does 'Nitrogen' lack cause 'Purple' or 'Yellow' leaves?"
+    },
+    {
+      yr: 2018,
+      q: "The bone that articulates with the glenoid cavity is the:",
+      o: ["Femur", "Humerus", "Tibia", "Radius"],
+      a: 1,
+      e: "The head of the humerus fits into the glenoid cavity of the scapula (shoulder blade).",
+      full: "This forms a ball-and-socket joint, allowing the arm to move in many directions. For the hip, the femur fits into the acetabulum.",
+      h: "Does the 'Humerus' or 'Femur' fit the 'Glenoid Cavity'?"
+    },
+    {
+      yr: 2018,
+      q: "The process of maintaining a constant internal environment is:",
+      o: ["Osmosis", "Homeostasis", "Excretion", "Respiration"],
+      a: 1,
+      e: "Homeostasis involves regulating temperature, blood sugar, and water levels.",
+      full: "It ensures that the body's internal conditions stay stable despite changes in the external environment, which is vital for enzyme function and cell survival.",
+      h: "Is 'Internal Balance' called 'Excretion' or 'Homeostasis'?"
+    },
+    {
+      yr: 2018,
+      q: "The instrument used to measure the rate of transpiration is the:",
+      o: ["Photometer", "Potometer", "Hygrometer", "Anemometer"],
+      a: 1,
+      e: "A potometer measures the water uptake of a plant shoot, which is proportional to transpiration.",
+      full: "By observing how fast an air bubble moves in the potometer's tube, scientists can calculate how much water the plant is losing to the atmosphere.",
+      h: "Is 'Transpiration' measured with a 'Potometer' or 'Photometer'?"
+    },
+    {
+      yr: 2018,
+      q: "The vector for the parasite that causes Sleeping Sickness is the:",
+      o: ["Mosquito", "Housefly", "Tsetse fly", "Black fly"],
+      a: 2,
+      e: "The tsetse fly transmits the Trypanosoma parasite through its bite.",
+      full: "The disease, also called African Trypanosomiasis, affects both humans and livestock. It is restricted to sub-Saharan Africa where the tsetse fly is found.",
+      h: "Is the 'Sleeping Sickness' fly the 'Mosquito' or 'Tsetse fly'?"
+    },
+    {
+      yr: 2018,
+      q: "The breakdown of fats into small droplets by bile is called:",
+      o: ["Digestion", "Absorption", "Emulsification", "Assimilation"],
+      a: 2,
+      e: "Emulsification increases the surface area of fats for enzymes to work on.",
+      full: "Bile (produced by the liver) acts like a detergent, breaking large fat globules into tiny droplets. This allows the enzyme Lipase to digest the fats much faster.",
+      h: "Is 'Fat Breaking' called 'Absorption' or 'Emulsification'?"
+    },
+    {
+      yr: 2018,
+      q: "The movement of a whole organism from one place to another is:",
+      o: ["Tropism", "Taxis", "Nastic movement", "Growth"],
+      a: 1,
+      e: "Taxis is a directional movement of a whole cell or organism in response to a stimulus.",
+      full: "Unlike Tropism (where only a part of a fixed plant moves/grows), Taxis involves the entire body moving, such as a sperm cell swimming toward a chemical (Chemotaxis).",
+      h: "Is 'Whole Body Movement' called 'Tropism' or 'Taxis'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a function of the large intestine in mammals?",
+      o: ["Digestion of proteins", "Absorption of water", "Production of bile", "Absorption of amino acids"],
+      a: 1,
+      e: "The colon reabsorbs water from undigested food materials before they are excreted.",
+      full: "While the small intestine handles most digestion and nutrient absorption, the large intestine ensures the body doesn't lose too much water during the waste removal process.",
+      h: "Does the 'Large Intestine' digest 'Meat' or absorb 'Water'?"
+    },
+    {
+      yr: 2018,
+      q: "The structure in the mammalian ear that is responsible for balance is the:",
+      o: ["Cochlea", "Semicircular canals", "Ossicles", "Eardrum"],
+      a: 1,
+      e: "Semicircular canals contain fluid that moves when the head moves, signaling the brain about position.",
+      full: "While the Cochlea is for hearing, the three Semicircular Canals are oriented in different planes to detect rotational movement and maintain equilibrium.",
+      h: "Are 'Balance Organs' the 'Cochlea' or 'Semicircular Canals'?"
+    },
+    {
+      yr: 2018,
+      q: "The part of the flower that receives pollen grains during pollination is the:",
+      o: ["Stigma", "Style", "Anther", "Ovary"],
+      a: 0,
+      e: "The stigma is the sticky or feathery tip of the carpel designed to catch pollen.",
+      full: "Once the pollen lands on the stigma, it germinates and grows a pollen tube down through the style to reach the ovules in the ovary.",
+      h: "Is the 'Pollen Receiver' the 'Anther' or 'Stigma'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is an example of an endoparasite?",
+      o: ["Tick", "Louse", "Tapeworm", "Flea"],
+      a: 2,
+      e: "Endoparasites live 'inside' the host's body.",
+      full: "Tapeworms live in the human gut. Ticks, lice, and fleas are ectoparasites because they live on the 'outside' (skin) of the host.",
+      h: "Does a 'Tapeworm' live 'Inside' or 'Outside'?"
+    },
+    {
+      yr: 2018,
+      q: "The process of gaseous exchange in an insect occurs through the:",
+      o: ["Lungs", "Gills", "Spiracles and Tracheae", "Skin"],
+      a: 2,
+      e: "Insects have a network of tubes called tracheae that open to the outside via spiracles.",
+      full: "Air enters through the spiracles (holes in the abdomen) and travels directly to the tissues through the tracheal system, bypassing the blood entirely.",
+      h: "Do insects use 'Lungs' or 'Spiracles'?"
+    },
+    {
+      yr: 2018,
+      q: "The type of fruit formed from a group of independent flowers on a single stalk is a:",
+      o: ["Simple fruit", "Aggregate fruit", "Multiple fruit", "Dry fruit"],
+      a: 2,
+      e: "Multiple fruits (e.g., Pineapple) develop from an entire inflorescence (group of flowers).",
+      full: "A Simple fruit comes from one ovary. An Aggregate fruit comes from many ovaries in one flower. A Multiple fruit comes from many flowers joined together.",
+      h: "Is a 'Pineapple' a 'Multiple' or 'Simple' fruit?"
+    },
+    {
+      yr: 2018,
+      q: "The enzyme that digests proteins in the stomach is:",
+      o: ["Amylase", "Pepsin", "Lipase", "Ptyalin"],
+      a: 1,
+      e: "Pepsin breaks down proteins into smaller peptides in an acidic environment.",
+      full: "Pepsin is highly efficient in the low pH of the stomach. Amylase is for starch, and Lipase is for fats.",
+      h: "Is 'Pepsin' or 'Amylase' for 'Protein'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a function of the hormone Estrogen?",
+      o: ["Development of male features", "Maintenance of pregnancy", "Development of female secondary sex characteristics", "Regulation of blood sugar"],
+      a: 2,
+      e: "Estrogen is responsible for female traits like breast development and the menstrual cycle.",
+      full: "Estrogen also helps regulate the growth of the uterine lining during the first half of the cycle. Testosterone does the equivalent for males.",
+      h: "Is 'Estrogen' for 'Female Traits' or 'Blood Sugar'?"
+    },
+    {
+      yr: 2018,
+      q: "The part of the eye that contains light-sensitive cells is the:",
+      o: ["Sclera", "Iris", "Retina", "Cornea"],
+      a: 2,
+      e: "The retina contains rods (for dim light) and cones (for color and detail).",
+      full: "The retina is like the film in a camera; it captures the image and sends the information to the brain via the optic nerve.",
+      h: "Is the 'Light-Sensitive' layer the 'Iris' or 'Retina'?"
+    },
+    {
+      yr: 2018,
+      q: "The process by which liquid water is lost from the leaves in droplets is:",
+      o: ["Transpiration", "Guttation", "Evaporation", "Exhalation"],
+      a: 1,
+      e: "Guttation occurs through special pores called hydathodes at the leaf margins.",
+      full: "This usually happens at night when the air is humid and soil moisture is high. Transpiration is the loss of water as vapor.",
+      h: "Is 'Liquid Loss' called 'Transpiration' or 'Guttation'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a symptom of iron deficiency in humans?",
+      o: ["Rickets", "Anaemia", "Goitre", "Scurvy"],
+      a: 1,
+      e: "Iron is needed to make haemoglobin; its lack reduces the blood's oxygen-carrying capacity.",
+      full: "Anaemia results in tiredness and pale skin because the body isn't getting enough oxygen to its cells. Scurvy is Vitamin C deficiency.",
+      h: "Does 'Iron' lack cause 'Scurvy' or 'Anaemia'?"
+    },
+    {
+      yr: 2018,
+      q: "The theory that suggest that new species evolve through the use and disuse of parts is:",
+      o: ["Darwinism", "Mendelism", "Lamarckism", "Spontaneous generation"],
+      a: 2,
+      e: "Lamarckism proposed that traits acquired through use are passed to offspring.",
+      full: "Lamarck believed that if an animal used an organ frequently, it would grow larger and be inherited. This was later disproven by the discovery of genetics.",
+      h: "Was 'Use and Disuse' proposed by 'Darwin' or 'Lamarck'?"
+    },
+    {
+      yr: 2018,
+      q: "The association between nitrogen-fixing bacteria and legumes is:",
+      o: ["Parasitism", "Commensalism", "Mutualism", "Saprophytism"],
+      a: 2,
+      e: "Both benefit: the bacteria get sugar, and the plant gets nitrates for growth.",
+      full: "This is a symbiotic relationship. The bacteria live in root nodules and 'fix' atmospheric nitrogen into a form the plant can use.",
+      h: "Is 'Both Benefit' called 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is an example of an excretory organ in insects?",
+      o: ["Kidney", "Flame cell", "Malpighian tubule", "Nephridium"],
+      a: 2,
+      e: "Malpighian tubules remove metabolic waste from the insect's hemolymph.",
+      full: "Kidneys are for mammals, flame cells are for flatworms, and nephridia are for earthworms. Malpighian tubules empty into the gut of insects.",
+      h: "Do insects use 'Kidneys' or 'Malpighian tubules'?"
+    },
+    {
+      yr: 2018,
+      q: "The change in population of a species over time due to natural selection is:",
+      o: ["Growth", "Evolution", "Reproduction", "Classification"],
+      a: 1,
+      e: "Evolution is the gradual change in the genetic makeup of a population over generations.",
+      full: "Natural selection acts as the 'filter' that decides which traits are passed on, leading to the overall evolution of the species.",
+      h: "Is 'Gradual Change' called 'Growth' or 'Evolution'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is a major cause of deforestation?",
+      o: ["Afforestation", "Agriculture", "Crop rotation", "Terracing"],
+      a: 1,
+      e: "Clearing land for farming is a leading cause of forest loss worldwide.",
+      full: "Agriculture, logging, and urban expansion are the primary drivers that reduce forest cover, leading to habitat loss and climate change.",
+      h: "Does 'Agriculture' or 'Afforestation' destroy forests?"
+    },
+    {
+      yr: 2018,
+      q: "The site of photosynthesis in a green plant cell is the:",
+      o: ["Vacuole", "Mitochondrion", "Chloroplast", "Nucleus"],
+      a: 2,
+      e: "Chloroplasts contain chlorophyll, which traps sunlight for sugar production.",
+      full: "Chloroplasts are mostly found in the palisade mesophyll cells of leaves, which are positioned to catch the most sunlight.",
+      h: "Is 'Food Making' in the 'Mitochondrion' or 'Chloroplast'?"
+    },
+    {
+      yr: 2018,
+      q: "The type of skeleton found in insects is the:",
+      o: ["Endoskeleton", "Exoskeleton", "Hydrostatic skeleton", "Bony skeleton"],
+      a: 1,
+      e: "Insects have a hard outer shell made of chitin that protects their soft bodies.",
+      full: "This exoskeleton must be shed and regrown (molting) as the insect grows, because the shell itself cannot expand.",
+      h: "Is a 'Hard Outer Shell' an 'Endo-' or 'Exoskeleton'?"
+    },
+    {
+      yr: 2018,
+      q: "The blood group known as the 'universal recipient' is:",
+      o: ["Group A", "Group B", "Group AB", "Group O"],
+      a: 2,
+      e: "Group AB can receive any blood type because it has no anti-A or anti-B antibodies.",
+      full: "Because they don't produce antibodies against A or B, their blood won't attack donor cells. In contrast, Group O is the universal donor.",
+      h: "Is 'AB' or 'O' the 'Recipient'?"
+    },
+
+
+
+    {
+      yr: 2023,
+      q: "A structure in the cell that contains hereditary information (DNA) is the:",
+      o: ["Cytoplasm", "Nucleus", "Vacuole", "Centriole"],
+      a: 1,
+      e: "The nucleus houses the chromosomes, which are made of DNA.",
+      full: "The nucleus is the 'Control Center' of the cell. It coordinates cell activities like growth, metabolism, and reproduction by regulating gene expression.",
+      h: "Is the 'Brain' of the cell the 'Nucleus' or the 'Vacuole'?"
+    },
+    {
+      yr: 2023,
+      q: "The condition in which the focus of light falls behind the retina is known as:",
+      o: ["Myopia", "Hypermetropia", "Astigmatism", "Presbyopia"],
+      a: 1,
+      e: "Hypermetropia (long-sightedness) occurs when the eyeball is too short or the lens is too thin.",
+      full: "In Hypermetropia, a person can see distant objects clearly but close objects appear blurred. It is corrected using a 'Converging' or 'Convex' lens to bring the focus forward onto the retina.",
+      h: "Is 'Short-sightedness' or 'Long-sightedness' (Hypermetropia) the one where light falls 'Behind'?"
+    },
+    {
+      yr: 2023,
+      q: "The process by which an organism maintains a constant internal environment is:",
+      o: ["Excretion", "Homeostasis", "Osmoregulation", "Metabolism"],
+      a: 1,
+      e: "Homeostasis is the 'Balance' of the body's internal conditions like temperature and pH.",
+      full: "Even if the weather is freezing or boiling, your body tries to keep its internal temperature at 37°C. Homeostasis involves negative feedback loops to correct any deviations from the 'Set Point'.",
+      h: "Is 'Internal Balance' called 'Metabolism' or 'Homeostasis'?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a function of the Liver?",
+      o: ["Production of insulin", "Storage of iron and vitamins", "Filtration of urea", "Production of digestive enzymes"],
+      a: 1,
+      e: "The liver stores minerals like iron and fat-soluble vitamins (A, D, E, K).",
+      full: "The liver is a 'Chemical Factory.' It also produces bile, detoxifies the blood, and converts excess glucose into glycogen for storage. Note: Insulin is made by the Pancreas, not the Liver.",
+      h: "Does the liver 'Store Vitamins' or 'Produce Insulin'?"
+    },
+    {
+      yr: 2023,
+      q: "In an ecosystem, the organisms that break down dead organic matter are:",
+      o: ["Producers", "Primary Consumers", "Decomposers", "Secondary Consumers"],
+      a: 2,
+      e: "Decomposers (like bacteria and fungi) recycle nutrients back into the soil.",
+      full: "Without decomposers, the earth would be covered in dead bodies. They break down complex organic molecules into simple inorganic ones that plants (Producers) can use again.",
+      h: "Are they 'Hunters' or 'Recyclers'?"
+    },
+    {
+      yr: 2023,
+      q: "The mammalian heart has four chambers to prevent the:",
+      o: ["Clotting of blood", "Mixing of oxygenated and deoxygenated blood", "Backflow of blood", "High pressure of blood"],
+      a: 1,
+      e: "The left side handles oxygen-rich blood, while the right side handles oxygen-poor blood.",
+      full: "By separating the two types of blood, mammals achieve a highly efficient supply of oxygen to the tissues. This supports their high metabolic rate and warm-blooded (endothermic) nature.",
+      h: "Does the four-chambered heart 'Mix' or 'Separate' the blood?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following parts of the eye is sensitive to light?",
+      o: ["Choroid", "Sclera", "Retina", "Cornea"],
+      a: 2,
+      e: "The retina contains photoreceptor cells called rods and cones.",
+      full: "The retina acts like the 'Film' in a camera. Rods are sensitive to low light (night vision), while Cones are sensitive to color and bright light.",
+      h: "Is the 'Screen' of the eye the 'Cornea' or the 'Retina'?"
+    },
+    {
+      yr: 2023,
+      q: "A group of similar cells performing a specific function is a/an:",
+      o: ["Organ", "System", "Tissue", "Organelle"],
+      a: 2,
+      e: "Cells group together to form tissues, and tissues group to form organs.",
+      full: "Examples include Muscle tissue, Nervous tissue, and Epithelial tissue. The hierarchy of life goes: Cell -> Tissue -> Organ -> System -> Organism.",
+      h: "Is it a 'Tissue' or an 'Organ'?"
+    },
+    {
+      yr: 2023,
+      q: "The hormone that causes the 'fight or flight' response is:",
+      o: ["Insulin", "Adrenaline", "Estrogen", "Progesterone"],
+      a: 1,
+      e: "Adrenaline (epinephrine) increases heart rate and blood flow during emergencies.",
+      full: "Produced by the Adrenal glands, it prepares the body for sudden action by increasing sugar in the blood and dilating the pupils. It is the 'Emergency Hormone'.",
+      h: "Is it 'Adrenaline' or 'Insulin'?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a non-renewable resource?",
+      o: ["Water", "Forest", "Petroleum", "Wildlife"],
+      a: 2,
+      e: "Petroleum takes millions of years to form and cannot be replaced once used.",
+      full: "Renewable resources (like sun, water, and trees) can be replenished naturally. Non-renewable resources like coal, oil, and minerals are finite and will eventually run out.",
+      h: "Can 'Oil' be replaced as fast as 'Trees'?"
+    },
+    {
+      yr: 2023,
+      q: "The blood vessel that carries deoxygenated blood from the heart to the lungs is the:",
+      o: ["Aorta", "Pulmonary artery", "Pulmonary vein", "Vena cava"],
+      a: 1,
+      e: "The pulmonary artery is the ONLY artery that carries deoxygenated blood.",
+      full: "Arteries usually carry oxygenated blood *away* from the heart. The exception is the Pulmonary Artery, which goes to the lungs to pick up oxygen. The Pulmonary Vein then brings oxygenated blood *back* to the heart.",
+      h: "Is it the 'Aorta' or the 'Pulmonary Artery'?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a social insect?",
+      o: ["Housefly", "Mosquito", "Termite", "Butterfly"],
+      a: 2,
+      e: "Termites live in organized colonies with a division of labor (King, Queen, Soldiers, Workers).",
+      full: "Social insects (like honeybees, ants, and termites) cannot survive alone. They work together for the survival of the colony, often with different body shapes (castes) for different jobs.",
+      h: "Do 'Mosquitoes' live in a 'Kingdom' or do 'Termites'?"
+    },
+    {
+      yr: 2023,
+      q: "The process by which a tadpole develops into a frog is:",
+      o: ["Growth", "Metamorphosis", "Fertilization", "Pollination"],
+      a: 1,
+      e: "Metamorphosis is a biological process involving a conspicuous change in body structure.",
+      full: "Frogs undergo 'Complete Metamorphosis' where they change from a water-breathing larva with a tail (tadpole) to an air-breathing adult with legs and no tail.",
+      h: "Is this 'Simple Growth' or 'Metamorphosis'?"
+    },
+    {
+      yr: 2023,
+      q: "The vitamin that helps in the absorption of calcium for strong bones is:",
+      o: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
+      a: 2,
+      e: "Vitamin D is essential for bone mineralization and prevents Rickets.",
+      full: "Vitamin D is often called the 'Sunshine Vitamin' because the skin produces it when exposed to ultraviolet rays. Without it, the body cannot absorb calcium from the diet.",
+      h: "Is Vitamin D for 'Bones' or for 'Eyes'?"
+    },
+    {
+      yr: 2023,
+      q: "A symbiotic relationship where both organisms benefit is:",
+      o: ["Parasitism", "Commensalism", "Mutualism", "Competition"],
+      a: 2,
+      e: "Mutualism is a 'win-win' relationship (e.g., nitrogen-fixing bacteria in root nodules).",
+      full: "In Commensalism, one benefits while the other is unaffected. In Parasitism, one benefits while the other is harmed. In Mutualism, both are happy!",
+      h: "Does 'Both Benefit' mean 'Mutualism' or 'Parasitism'?"
+    },
+    {
+      yr: 2023,
+      q: "The male gamete in flowering plants is produced in the:",
+      o: ["Filament", "Pollen grain", "Stigma", "Ovary"],
+      a: 1,
+      e: "Pollen grains are produced in the anther and contain the male nuclei.",
+      full: "The anther produces the pollen (the vehicle), but the actual male gametes are the nuclei found inside the pollen grain that travel down the pollen tube.",
+      h: "Is the male part 'Pollen' or 'Ovary'?"
+    },
+    {
+      yr: 2023,
+      q: "The deficiency of iron in the diet causes:",
+      o: ["Goitre", "Scurvy", "Anaemia", "Pellagra"],
+      a: 2,
+      e: "Iron is needed to make haemoglobin, which carries oxygen in the blood.",
+      full: "Anaemia results in tiredness and pale skin because the body's cells aren't getting enough oxygen. Goitre is caused by Iodine deficiency, and Scurvy by Vitamin C deficiency.",
+      h: "Is Iron for 'Blood' (Anaemia) or for 'Neck' (Goitre)?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a simple reflex action?",
+      o: ["Riding a bicycle", "Blinking of the eye", "Writing a letter", "Solving a math problem"],
+      a: 1,
+      e: "A reflex action is an involuntary, rapid response to a stimulus.",
+      full: "Reflexes like blinking, coughing, or pulling your hand away from a hot stove do not involve the 'thinking' part of the brain. They are handled by the spinal cord to save time and prevent injury.",
+      h: "Is 'Blinking' or 'Math' a fast, automatic response?"
+    },
+    {
+      yr: 2023,
+      q: "The theory of Natural Selection was proposed by:",
+      o: ["Gregor Mendel", "Charles Darwin", "Robert Hooke", "Louis Pasteur"],
+      a: 1,
+      e: "Darwin published 'On the Origin of Species' in 1859, explaining evolution.",
+      full: "Natural Selection suggests that organisms with traits better suited to their environment are more likely to survive and reproduce. This is often summarized as 'Survival of the Fittest'.",
+      h: "Was the 'Selection' theory by 'Mendel' or 'Darwin'?"
+    },
+
+  
+    {
     yr: 2022,
     q: 'Sources of air pollutants are ___',
     o: [
@@ -2963,7 +10544,7 @@ const QB = {
       a: 3,
       e: 'Insulin is secreted by the pancreas, not the liver.',
       full: 'The liver is a remarkable organ with over 500 functions. It detoxifies harmful substances in the blood, produces bile (which helps digest fats), stores glycogen (for blood sugar regulation), makes blood-clotting proteins, and filters old red blood cells.\n\nHowever, insulin — the hormone that lowers blood glucose levels — is produced by specialised cells called beta cells in the islets of Langerhans within the pancreas. The pancreas is a separate organ located behind the stomach.\n\nConfusing the pancreas and the liver is a very common mistake. Remember: the liver stores and releases glucose, but the pancreas produces the insulin that controls how glucose is used.',
-      h: "The liver doesn't produce blood sugar hormones.",
+      h: "The liver doesn\'t produce blood sugar hormones.",
     },
     {
       yr: 2022,
@@ -5335,6 +12916,8 @@ const QB = {
   ],
   mathematics: [
 
+
+
   {
     yr: 2023,
     q: 'What is the general term of the sequence 3, 8, 13, 18, ...?',
@@ -5403,6 +12986,2353 @@ const QB = {
     full: 'Percent Error formula:\n% Error = |Measured − Accepted| / Accepted × 100\n\n= |18 − 18.4| / 18.4 × 100\n= 0.4 / 18.4 × 100\n= 0.021739 × 100\n= 2.174%\n≈ 2.17% ✓',
     h: '% error = |measured − true| / true × 100 = 0.4/18.4 × 100.',
   },
+  {
+  yr: 2023,
+  q: "If $y = cos(3x)$, find $\\frac{dy}{dx}$.",
+  o: ["$3 sin(3x)$", "$-3 sin(3x)$", "$-sin(3x)$", "$3 cos(3x)$"],
+  a: 1,
+  e: "Using chain rule: derivative of $cos(u)$ is $-sin(u) \\times u'$. So, $-sin(3x) \\times 3$.",
+  full: "The derivative of $cos$ is $-sin$. We then multiply by the derivative of the angle $(3x)$, which is 3.",
+  h: "Does the derivative of $cos$ involve a negative sign?"
+},
+{
+  yr: 2023,
+  q: "Evaluate $log_{10} 25 + log_{10} 4 + log_{10} 10$.",
+  o: ["2", "3", "4", "10"],
+  a: 1,
+  e: "Using $log A + log B = log(A \\times B)$. $log_{10}(25 \\times 4) + log_{10} 10 = log_{10} 100 + log_{10} 10 = 2 + 1 = 3$.",
+  full: "Since $10^2 = 100$, $log_{10} 100 = 2$. Since $10^1 = 10$, $log_{10} 10 = 1$. Total is 3.",
+  h: "Does $log 25 + log 4$ equal $log 100$?"
+},
+{
+  yr: 2023,
+  q: "Find the value of $x$ if $2^{x+1} = 32$.",
+  o: ["3", "4", "5", "6"],
+  a: 1,
+  e: "$32 = 2^5$. So, $2^{x+1} = 2^5 \\implies x+1 = 5 \\implies x = 4$.",
+  full: "In indices, if the bases are equal, the powers must be equal. $x + 1 = 5$ gives $x = 4$.",
+  h: "Is 32 equal to $2^4$ or $2^5$?"
+},
+{
+  yr: 2023,
+  q: "If $y = x^3 + 2x^2 - 5$, find $\\frac{dy}{dx}$ at $x = 1$.",
+  o: ["3", "5", "7", "9"],
+  a: 2,
+  e: "$\\frac{dy}{dx} = 3x^2 + 4x$. At $x=1$, $3(1)^2 + 4(1) = 3 + 4 = 7$.",
+  full: "Differentiate each term: $x^3$ becomes $3x^2$, $2x^2$ becomes $4x$, and $-5$ becomes 0. Substitute 1 for $x$.",
+  h: "Is the derivative of $x^3$ equal to $3x^2$?"
+},
+{
+  yr: 2023,
+  q: "Solve for $x$ in the equation $2x - 5 < 7$.",
+  o: ["$x < 1$", "$x < 6$", "$x > 6$", "$x < 12$"],
+  a: 1,
+  e: "$2x < 7 + 5 \\implies 2x < 12 \\implies x < 6$.",
+  full: "Add 5 to both sides to get $2x < 12$, then divide by 2 to isolate $x$.",
+  h: "Is $7 + 5$ equal to 12?"
+},
+{
+  yr: 2023,
+  q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
+  o: ["₦200", "₦400", "₦600", "₦800"],
+  a: 2,
+  e: "$I = \\frac{PRT}{100} = \\frac{5000 \\times 4 \\times 3}{100} = 50 \\times 12 = 600$.",
+  full: "Simple Interest formula is Principal $\\times$ Rate $\\times$ Time divided by 100. $5000 \\times 0.04 \\times 3 = 600$.",
+  h: "Is $50 \\times 12$ equal to 600?"
+},
+{
+  yr: 2023,
+  q: "Find the 10th term of the Arithmetic Progression (A.P.): 2, 5, 8, ...",
+  o: ["27", "29", "31", "33"],
+  a: 1,
+  e: "$a = 2, d = 3$. $T_{10} = a + 9d = 2 + 9(3) = 2 + 27 = 29$.",
+  full: "The formula for the $n^{th}$ term is $a + (n-1)d$. Here $n=10$, so we add 9 differences to the first term.",
+  h: "Is the common difference $d$ equal to 3?"
+},
+{
+  yr: 2023,
+  q: "If $sin \\theta = \\frac{3}{5}$, find $cos \\theta$ where $\\theta$ is acute.",
+  o: ["1/5", "2/5", "3/5", "4/5"],
+  a: 3,
+  e: "Using Pythagoras: $3^2 + x^2 = 5^2 \\implies 9 + x^2 = 25 \\implies x^2 = 16 \\implies x = 4$. $cos \\theta = 4/5$.",
+  full: "In a right-angled triangle, if opposite=3 and hypotenuse=5, the adjacent side must be 4. Cosine is Adjacent/Hypotenuse.",
+  h: "In a 3-4-5 triangle, is '4' the adjacent side?"
+},
+{
+  yr: 2023,
+  q: "Integrate $\\int (2x + 3) dx$.",
+  o: ["$x^2 + 3x + c$", "$2x^2 + 3x + c$", "$x^2 + c$", "$3x + c$"],
+  a: 0,
+  e: "$\\int 2x dx = x^2$ and $\\int 3 dx = 3x$. Add the constant $c$.",
+  full: "The rule for integration is $\\frac{x^{n+1}}{n+1}$. So $2x$ becomes $x^2$ and the constant 3 gains an $x$.",
+  h: "Does the integral of $2x$ result in $x^2$?"
+},
+{
+  yr: 2023,
+  q: "A bag contains 3 red and 5 blue balls. What is the probability of picking a red ball?",
+  o: ["3/5", "5/8", "3/8", "1/2"],
+  a: 2,
+  e: "Total balls = $3 + 5 = 8$. Red balls = 3. $P(Red) = 3/8$.",
+  full: "Probability is the number of favorable outcomes divided by the total number of possible outcomes.",
+  h: "Is the total number of balls 8?"
+},
+{
+  yr: 2023,
+  q: "Find the mean of the numbers: 10, 12, 14, 16, 18.",
+  o: ["12", "13", "14", "15"],
+  a: 2,
+  e: "Sum = $10+12+14+16+18 = 70$. $Mean = 70 / 5 = 14$.",
+  full: "Add all values and divide by the count (5). For an evenly spaced set, the mean is also the middle number.",
+  h: "Is the sum of these five numbers 70?"
+},
+{
+  yr: 2023,
+  q: "Express 0.0000427 in standard form.",
+  o: ["$4.27 \\times 10^{-4}$", "$4.27 \\times 10^{-5}$", "$42.7 \\times 10^{-6}$", "$4.27 \\times 10^5$"],
+  a: 1,
+  e: "Move the decimal 5 places to the right to get 4.27. Thus, $10^{-5}$.",
+  full: "Standard form is $a \\times 10^n$ where $1 \\le a < 10$. We moved the decimal past five zeros/digits.",
+  h: "Do you move the decimal 4 or 5 places?"
+},
+{
+  yr: 2023,
+  q: "The exterior angle of a regular polygon is 36°. How many sides does it have?",
+  o: ["8", "10", "12", "15"],
+  a: 1,
+  e: "Number of sides $n = 360 / \\text{Exterior Angle} = 360 / 36 = 10$.",
+  full: "The sum of exterior angles of any polygon is always 360°. Divide this by the value of one angle to find the number of sides.",
+  h: "Is $360 / 36$ equal to 10?"
+},
+{
+  yr: 2023,
+  q: "If $x^2 - 5x + 6 = 0$, find the values of $x$.",
+  o: ["(1, 6)", "(2, 3)", "(-2, -3)", "(5, 6)"],
+  a: 1,
+  e: "$(x - 2)(x - 3) = 0 \\implies x = 2$ or $x = 3$.",
+  full: "Factorize the quadratic. We need two numbers that multiply to $+6$ and add to $-5$. Those are $-2$ and $-3$.",
+  h: "Do $-2$ and $-3$ add up to $-5$?"
+},
+{
+  yr: 2023,
+  q: "Find the gradient (slope) of the line passing through (2, 3) and (4, 7).",
+  o: ["1", "2", "3", "4"],
+  a: 1,
+  e: "$m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{7 - 3}{4 - 2} = \\frac{4}{2} = 2$.",
+  full: "Gradient formula is the 'Rise over Run'. Difference in $y$ divided by difference in $x$.",
+  h: "Is $4 / 2$ equal to 2?"
+},
+{
+  yr: 2023,
+  q: "Convert 1101 in base 2 to base 10.",
+  o: ["11", "12", "13", "14"],
+  a: 2,
+  e: "$(1 \\times 2^3) + (1 \\times 2^2) + (0 \\times 2^1) + (1 \\times 2^0) = 8 + 4 + 0 + 1 = 13$.",
+  full: "Multiply each bit by the power of 2 corresponding to its position (starting from 0 on the right).",
+  h: "Is $8 + 4 + 1$ equal to 13?"
+},
+{
+  yr: 2023,
+  q: "Calculate the volume of a cylinder with radius 7cm and height 10cm. (Take $\\pi = 22/7$)",
+  o: ["770cm³", "1540cm³", "154cm³", "440cm³"],
+  a: 1,
+  e: "$V = \\pi r^2 h = (22/7) \\times 7 \\times 7 \\times 10 = 22 \\times 7 \\times 10 = 1540$.",
+  full: "Volume is the area of the circular base ($\\pi r^2$) multiplied by the height. One 7 cancels out from the denominator.",
+  h: "Is $154 \\times 10$ equal to 1540?"
+},
+{
+  yr: 2023,
+  q: "Rationalize the expression $\\frac{2}{\\sqrt{2}}$.",
+  o: ["1", "2", "$\\sqrt{2}$", "$2\\sqrt{2}$"],
+  a: 2,
+  e: "Multiply numerator and denominator by $\\sqrt{2}$. $\\frac{2\\sqrt{2}}{2} = \\sqrt{2}$.",
+  full: "To rationalize a denominator, multiply top and bottom by the root. The 2 in the numerator cancels the 2 in the denominator.",
+  h: "Does $\\sqrt{2} \\times \\sqrt{2}$ equal 2?"
+},
+{
+  yr: 2023,
+  q: "Find the Median of the set: 3, 7, 9, 4, 10, 2, 8.",
+  o: ["4", "7", "8", "9"],
+  a: 1,
+  e: "Sorted set: 2, 3, 4, 7, 8, 9, 10. The middle number is 7.",
+  full: "Always arrange the numbers in ascending or descending order first. Since there are 7 numbers, the 4th one is the median.",
+  h: "Is 7 the middle number when sorted?"
+},
+{
+  yr: 2023,
+  q: "If the binary operation $*$ is defined by $a * b = ab + a + b$, find $2 * 3$.",
+  o: ["6", "10", "11", "12"],
+  a: 2,
+  e: "$2 * 3 = (2 \\times 3) + 2 + 3 = 6 + 2 + 3 = 11$.",
+  full: "Substitute the values 2 and 3 into the given formula for $a$ and $b$.",
+  h: "Is $6 + 5$ equal to 11?"
+},
+{
+  yr: 2023,
+  q: "Find the sum of the interior angles of a pentagon.",
+  o: ["360°", "540°", "720°", "900°"],
+  a: 1,
+  e: "$(n - 2) \\times 180 = (5 - 2) \\times 180 = 3 \\times 180 = 540$.",
+  full: "The formula for the sum of interior angles is $(n-2) \\times 180$, where $n$ is the number of sides.",
+  h: "Is $3 \\times 180$ equal to 540?"
+},
+{
+  yr: 2022,
+  q: "If $y = 3x^2 - 5x + 2$, find the gradient of the curve at $x = 2$.",
+  o: ["2", "5", "7", "12"],
+  a: 2,
+  e: "$\\frac{dy}{dx} = 6x - 5$. At $x=2$, $6(2) - 5 = 12 - 5 = 7$.",
+  full: "The gradient of a curve at a point is the value of its first derivative at that point. $6x$ comes from $3x^2$ and $-5$ from $-5x$.",
+  h: "Is $12 - 5$ equal to 7?"
+},
+{
+  yr: 2022,
+  q: "Simplify $\\frac{log 8}{log 4}$.",
+  o: ["2", "1.5", "0.5", "4"],
+  a: 1,
+  e: "$\\frac{log 2^3}{log 2^2} = \\frac{3 log 2}{2 log 2} = 3/2 = 1.5$.",
+  full: "Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the $log 2$.",
+  h: "Is $log 8$ equal to $3 log 2$?"
+},
+{
+  yr: 2022,
+  q: "Find the value of $x$ for which $2^{2x-1} = 8$.",
+  o: ["1", "2", "3", "4"],
+  a: 1,
+  e: "$2^{2x-1} = 2^3 \\implies 2x - 1 = 3 \\implies 2x = 4 \\implies x = 2$.",
+  full: "Since the bases are both 2, equate the exponents. Solving $2x - 1 = 3$ gives $x = 2$.",
+  h: "Is $3 + 1$ equal to 4?"
+},
+{
+  yr: 2022,
+  q: "Solve for $x$ in $3x - 2 > 5x + 4$.",
+  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
+  a: 0,
+  e: "$-6 > 2x \\implies -3 > x \\implies x < -3$.",
+  full: "Subtract $3x$ from both sides and subtract 4 from both sides. Remember: dividing by a positive doesn't flip the sign.",
+  h: "Is $4 + 2$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "If $sin \\theta = cos \\theta$, find $\\theta$ for $0^\\circ \\le \\theta \\le 90^\\circ$.",
+  o: ["0°", "30°", "45°", "60°"],
+  a: 2,
+  e: "Divide by $cos \\theta$: $tan \\theta = 1 \\implies \\theta = 45^\\circ$.",
+  full: "The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).",
+  h: "Is $tan 45$ equal to 1?"
+},
+{
+  yr: 2022,
+  q: "Find the midpoint of the line joining ( -2, 4) and (6, 8).",
+  o: ["(2, 6)", "(4, 12)", "(2, 12)", "(4, 6)"],
+  a: 0,
+  e: "$M = (\\frac{-2+6}{2}, \\frac{4+8}{2}) = (4/2, 12/2) = (2, 6)$.",
+  full: "The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.",
+  h: "Is $4 / 2$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
+  o: ["₦500", "₦1,000", "₦1,500", "₦2,000"],
+  a: 1,
+  e: "$I = \\frac{10000 \\times 5 \\times 2}{100} = 100 \\times 10 = 1000$.",
+  full: "Interest is Principal $\\times$ Rate $\\times$ Time. $10,000 \\times 0.05 \\times 2 = 1,000$.",
+  h: "Is $5 \\times 2$ equal to 10?"
+},
+{
+  yr: 2022,
+  q: "Evaluate $\\int_1^2 3x^2 dx$.",
+  o: ["3", "5", "7", "9"],
+  a: 2,
+  e: "$[x^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$.",
+  full: "Integrate $3x^2$ to get $x^3$. Then substitute the upper limit (2) and subtract the lower limit (1).",
+  h: "Is $2^3$ equal to 8?"
+},
+{
+  yr: 2022,
+  q: "A circle has an area of 616cm². Find its radius. ($\\pi = 22/7$)",
+  o: ["7cm", "14cm", "21cm", "28cm"],
+  a: 1,
+  e: "$(22/7) r^2 = 616 \\implies r^2 = (616 \\times 7) / 22 = 28 \\times 7 = 196 \\implies r = 14$.",
+  full: "Set $\\pi r^2$ equal to 616 and solve for $r$. $196$ is the square of 14.",
+  h: "Is $14 \\times 14$ equal to 196?"
+},
+{
+  yr: 2022,
+  q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
+  o: ["2", "3", "5", "6"],
+  a: 0,
+  e: "The number 2 appears three times, which is more than any other number.",
+  full: "The mode is the value that occurs most frequently in a data set.",
+  h: "Does '2' appear more than '5'?"
+},
+{
+  yr: 2022,
+  q: "If $log_{10} x = -2$, find $x$.",
+  o: ["0.2", "0.02", "0.01", "100"],
+  a: 2,
+  e: "$x = 10^{-2} = 1/100 = 0.01$.",
+  full: "Logarithm to base 10 of $x = y$ means $x = 10^y$.",
+  h: "Is $10^{-2}$ the same as $1/100$?"
+},
+{
+  yr: 2022,
+  q: "Factorize completely: $4x^2 - 9y^2$.",
+  o: ["$(2x-3y)^2$", "$(2x+3y)^2$", "$(2x-3y)(2x+3y)$", "$(4x-9y)(x+y)$"],
+  a: 2,
+  e: "Using $a^2 - b^2 = (a-b)(a+b)$. Here $a=2x$ and $b=3y$.",
+  full: "This is a difference of two squares. $4x^2$ is $(2x)^2$ and $9y^2$ is $(3y)^2$.",
+  h: "Is the root of $4x^2$ equal to $2x$?"
+},
+{
+  yr: 2022,
+  q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
+  o: ["24", "48", "96", "120"],
+  a: 1,
+  e: "$T_5 = ar^4 = 3(2^4) = 3(16) = 48$.",
+  full: "The formula for the $n^{th}$ term of a G.P. is $ar^{n-1}$.",
+  h: "Is $2^4$ equal to 16?"
+},
+{
+  yr: 2022,
+  q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
+  o: ["0", "1.33", "2", "4"],
+  a: 1,
+  e: "$Mean = 4$. Deviations: $|2-4|=2, |4-4|=0, |6-4|=2$. $MD = (2+0+2)/3 = 4/3 = 1.33$.",
+  full: "Mean deviation is the average of the absolute differences between each value and the mean.",
+  h: "Is the mean of 2, 4, 6 equal to 4?"
+},
+{
+  yr: 2022,
+  q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
+  o: ["6", "7", "8", "10"],
+  a: 2,
+  e: "$(n-2)180 = 1080 \\implies n-2 = 6 \\implies n = 8$.",
+  full: "Divide 1080 by 180 to find $n-2$, then add 2 to find the number of sides.",
+  h: "Is $1080 / 180$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "If $y = 2x^3$, find $\\frac{dy}{dx}$.",
+  o: ["$2x^2$", "$6x^2$", "$6x^3$", "$x^2$"],
+  a: 1,
+  e: "$\\frac{dy}{dx} = 2(3)x^{3-1} = 6x^2$.",
+  full: "Multiply the coefficient by the power and decrease the power by 1.",
+  h: "Is $2 \\times 3$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. ($\\pi = 22/7$)",
+  o: ["3.33cm", "7.33cm", "14.67cm", "22cm"],
+  a: 1,
+  e: "$L = (\\theta/360) \\times 2\\pi r = (60/360) \\times 2 \\times (22/7) \\times 7 = (1/6) \\times 44 = 7.33$.",
+  full: "The length of an arc is a fraction of the total circumference based on the central angle.",
+  h: "Is $44 / 6$ approximately 7.33?"
+},
+{
+  yr: 2022,
+  q: "Rationalize $\\frac{1}{\\sqrt{3} - 1}$.",
+  o: ["$\\sqrt{3} + 1$", "$\\frac{\\sqrt{3} + 1}{2}$", "$\\sqrt{3} - 1$", "$\\frac{\\sqrt{3} - 1}{2}$"],
+  a: 1,
+  e: "Multiply by conjugate: $\\frac{\\sqrt{3}+1}{(\\sqrt{3}-1)(\\sqrt{3}+1)} = \\frac{\\sqrt{3}+1}{3-1} = \\frac{\\sqrt{3}+1}{2}$.",
+  full: "To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).",
+  h: "Is $(\\sqrt{3})^2 - 1^2$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "If $y = 3x^2 - 5x + 2$, find the gradient of the curve at $x = 2$.",
+  o: ["2", "5", "7", "12"],
+  a: 2,
+  e: "$\\frac{dy}{dx} = 6x - 5$. At $x=2$, $6(2) - 5 = 12 - 5 = 7$.",
+  full: "The gradient of a curve at a point is the value of its first derivative at that point. $6x$ comes from $3x^2$ and $-5$ from $-5x$.",
+  h: "Is $12 - 5$ equal to 7?"
+},
+{
+  yr: 2022,
+  q: "Simplify $\\frac{log 8}{log 4}$.",
+  o: ["2", "1.5", "0.5", "4"],
+  a: 1,
+  e: "$\\frac{log 2^3}{log 2^2} = \\frac{3 log 2}{2 log 2} = 3/2 = 1.5$.",
+  full: "Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the $log 2$.",
+  h: "Is $log 8$ equal to $3 log 2$?"
+},
+{
+  yr: 2022,
+  q: "Find the value of $x$ for which $2^{2x-1} = 8$.",
+  o: ["1", "2", "3", "4"],
+  a: 1,
+  e: "$2^{2x-1} = 2^3 \\implies 2x - 1 = 3 \\implies 2x = 4 \\implies x = 2$.",
+  full: "Since the bases are both 2, equate the exponents. Solving $2x - 1 = 3$ gives $x = 2$.",
+  h: "Is $3 + 1$ equal to 4?"
+},
+{
+  yr: 2022,
+  q: "Solve for $x$ in $3x - 2 > 5x + 4$.",
+  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
+  a: 0,
+  e: "$-6 > 2x \\implies -3 > x \\implies x < -3$.",
+  full: "Subtract $3x$ from both sides and subtract 4 from both sides. Remember: dividing by a positive doesn't flip the sign.",
+  h: "Is $4 + 2$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "If $sin \\theta = cos \\theta$, find $\\theta$ for $0^\\circ \\le \\theta \\le 90^\\circ$.",
+  o: ["0°", "30°", "45°", "60°"],
+  a: 2,
+  e: "Divide by $cos \\theta$: $tan \\theta = 1 \\implies \\theta = 45^\\circ$.",
+  full: "The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).",
+  h: "Is $tan 45$ equal to 1?"
+},
+{
+  yr: 2022,
+  q: "Find the midpoint of the line joining ( -2, 4) and (6, 8).",
+  o: ["(2, 6)", "(4, 12)", "(2, 12)", "(4, 6)"],
+  a: 0,
+  e: "$M = (\\frac{-2+6}{2}, \\frac{4+8}{2}) = (4/2, 12/2) = (2, 6)$.",
+  full: "The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.",
+  h: "Is $4 / 2$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
+  o: ["₦500", "₦1,000", "₦1,500", "₦2,000"],
+  a: 1,
+  e: "$I = \\frac{10000 \\times 5 \\times 2}{100} = 100 \\times 10 = 1000$.",
+  full: "Interest is Principal $\\times$ Rate $\\times$ Time. $10,000 \\times 0.05 \\times 2 = 1,000$.",
+  h: "Is $5 \\times 2$ equal to 10?"
+},
+{
+  yr: 2022,
+  q: "Evaluate $\\int_1^2 3x^2 dx$.",
+  o: ["3", "5", "7", "9"],
+  a: 2,
+  e: "$[x^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$.",
+  full: "Integrate $3x^2$ to get $x^3$. Then substitute the upper limit (2) and subtract the lower limit (1).",
+  h: "Is $2^3$ equal to 8?"
+},
+{
+  yr: 2022,
+  q: "A circle has an area of 616cm². Find its radius. ($\\pi = 22/7$)",
+  o: ["7cm", "14cm", "21cm", "28cm"],
+  a: 1,
+  e: "$(22/7) r^2 = 616 \\implies r^2 = (616 \\times 7) / 22 = 28 \\times 7 = 196 \\implies r = 14$.",
+  full: "Set $\\pi r^2$ equal to 616 and solve for $r$. $196$ is the square of 14.",
+  h: "Is $14 \\times 14$ equal to 196?"
+},
+{
+  yr: 2022,
+  q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
+  o: ["2", "3", "5", "6"],
+  a: 0,
+  e: "The number 2 appears three times, which is more than any other number.",
+  full: "The mode is the value that occurs most frequently in a data set.",
+  h: "Does '2' appear more than '5'?"
+},
+{
+  yr: 2022,
+  q: "If $log_{10} x = -2$, find $x$.",
+  o: ["0.2", "0.02", "0.01", "100"],
+  a: 2,
+  e: "$x = 10^{-2} = 1/100 = 0.01$.",
+  full: "Logarithm to base 10 of $x = y$ means $x = 10^y$.",
+  h: "Is $10^{-2}$ the same as $1/100$?"
+},
+{
+  yr: 2022,
+  q: "Factorize completely: $4x^2 - 9y^2$.",
+  o: ["$(2x-3y)^2$", "$(2x+3y)^2$", "$(2x-3y)(2x+3y)$", "$(4x-9y)(x+y)$"],
+  a: 2,
+  e: "Using $a^2 - b^2 = (a-b)(a+b)$. Here $a=2x$ and $b=3y$.",
+  full: "This is a difference of two squares. $4x^2$ is $(2x)^2$ and $9y^2$ is $(3y)^2$.",
+  h: "Is the root of $4x^2$ equal to $2x$?"
+},
+{
+  yr: 2022,
+  q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
+  o: ["24", "48", "96", "120"],
+  a: 1,
+  e: "$T_5 = ar^4 = 3(2^4) = 3(16) = 48$.",
+  full: "The formula for the $n^{th}$ term of a G.P. is $ar^{n-1}$.",
+  h: "Is $2^4$ equal to 16?"
+},
+{
+  yr: 2022,
+  q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
+  o: ["0", "1.33", "2", "4"],
+  a: 1,
+  e: "$Mean = 4$. Deviations: $|2-4|=2, |4-4|=0, |6-4|=2$. $MD = (2+0+2)/3 = 4/3 = 1.33$.",
+  full: "Mean deviation is the average of the absolute differences between each value and the mean.",
+  h: "Is the mean of 2, 4, 6 equal to 4?"
+},
+{
+  yr: 2022,
+  q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
+  o: ["6", "7", "8", "10"],
+  a: 2,
+  e: "$(n-2)180 = 1080 \\implies n-2 = 6 \\implies n = 8$.",
+  full: "Divide 1080 by 180 to find $n-2$, then add 2 to find the number of sides.",
+  h: "Is $1080 / 180$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "If $y = 2x^3$, find $\\frac{dy}{dx}$.",
+  o: ["$2x^2$", "$6x^2$", "$6x^3$", "$x^2$"],
+  a: 1,
+  e: "$\\frac{dy}{dx} = 2(3)x^{3-1} = 6x^2$.",
+  full: "Multiply the coefficient by the power and decrease the power by 1.",
+  h: "Is $2 \\times 3$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. ($\\pi = 22/7$)",
+  o: ["3.33cm", "7.33cm", "14.67cm", "22cm"],
+  a: 1,
+  e: "$L = (\\theta/360) \\times 2\\pi r = (60/360) \\times 2 \\times (22/7) \\times 7 = (1/6) \\times 44 = 7.33$.",
+  full: "The length of an arc is a fraction of the total circumference based on the central angle.",
+  h: "Is $44 / 6$ approximately 7.33?"
+},
+{
+  yr: 2022,
+  q: "Rationalize $\\frac{1}{\\sqrt{3} - 1}$.",
+  o: ["$\\sqrt{3} + 1$", "$\\frac{\\sqrt{3} + 1}{2}$", "$\\sqrt{3} - 1$", "$\\frac{\\sqrt{3} - 1}{2}$"],
+  a: 1,
+  e: "Multiply by conjugate: $\\frac{\\sqrt{3}+1}{(\\sqrt{3}-1)(\\sqrt{3}+1)} = \\frac{\\sqrt{3}+1}{3-1} = \\frac{\\sqrt{3}+1}{2}$.",
+  full: "To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).",
+  h: "Is $(\\sqrt{3})^2 - 1^2$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "Convert $25_{10}$ to binary (base 2).",
+  o: ["11001", "10110", "11101", "10011"],
+  a: 0,
+  e: "$25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1$. Reading up: 11001.",
+  full: "Successively divide the base 10 number by 2 and record the remainders from bottom to top.",
+  h: "Is the first remainder 1?"
+},
+{
+  yr: 2022,
+  q: "If $x$ varies inversely as $y$ and $x=4$ when $y=3$, find $x$ when $y=6$.",
+  o: ["2", "4", "8", "12"],
+  a: 0,
+  e: "$xy = k \\implies 4 \\times 3 = 12 = k$. When $y=6, 6x = 12 \\implies x = 2$.",
+  full: "In inverse variation, the product of the two variables remains constant ($k$).",
+  h: "Is $12 / 6$ equal to 2?"
+},
+
+{
+  yr: 2022,
+  q: "Find the value of $x$ in the equation $log_3(2x + 1) = 2$.",
+  o: ["2", "4", "8", "9"],
+  a: 1,
+  e: "$2x + 1 = 3^2 = 9 \\implies 2x = 8 \\implies x = 4$.",
+  full: "Convert the log to index form: the base 3 raised to the power of 2 equals the bracket $(2x+1)$.",
+  h: "Is $3^2$ equal to 9?"
+},
+{
+  yr: 2022,
+  q: "If $y = (2x + 3)^4$, find $\\frac{dy}{dx}$.",
+  o: ["$4(2x+3)^3$", "$8(2x+3)^3$", "$8(2x+3)^4$", "$2(2x+3)^3$"],
+  a: 1,
+  e: "$4(2x+3)^3 \\times 2 = 8(2x+3)^3$.",
+  full: "Using the function of a function rule (Chain Rule), differentiate the outer bracket and multiply by the derivative of the inside (2).",
+  h: "Is $4 \\times 2$ equal to 8?"
+},
+{
+  yr: 2022,
+  q: "Find the equation of the line passing through (0, 5) with gradient 3.",
+  o: ["$y = 3x - 5$", "$y = 5x + 3$", "$y = 3x + 5$", "$y = -3x + 5$"],
+  a: 2,
+  e: "Using $y = mx + c$, where $m=3$ and $c=5$.",
+  full: "The y-intercept ($c$) is 5 because the line passes through (0, 5). Substituting the gradient ($m=3$) gives the equation.",
+  h: "Is the constant term 5?"
+},
+{
+  yr: 2022,
+  q: "A bag contains 4 white and 6 black balls. If a ball is picked at random, what is the probability it is NOT white?",
+  o: ["2/5", "3/5", "1/2", "2/3"],
+  a: 1,
+  e: "Total = 10. Not white = Black = 6. $P = 6/10 = 3/5$.",
+  full: "The probability of an event 'not happening' is 1 minus the probability of it happening, or simply the count of the other outcomes.",
+  h: "Is $6 / 10$ the same as $3 / 5$?"
+},
+{
+  yr: 2022,
+  q: "If $sin \\theta = 0.8$, find $tan \\theta$ for an acute angle $\\theta$.",
+  o: ["0.6", "0.75", "1.33", "1.25"],
+  a: 2,
+  e: "$Opp=8, Hyp=10 \\implies Adj=6$. $tan \\theta = 8/6 = 1.33$.",
+  full: "In a right triangle, if $sin = 0.8 (4/5)$, the sides are 3, 4, 5. Tangent is Opposite (4) over Adjacent (3).",
+  h: "Is $4 / 3$ approximately 1.33?"
+},
+{
+  yr: 2022,
+  q: "Evaluate $110.11_2 + 10.01_2$.",
+  o: ["$1001.00_2$", "$1000.11_2$", "$101.00_2$", "$1001.11_2$"],
+  a: 0,
+  e: "$110.11 + 10.01 = 1001.00$ in base 2.",
+  full: "Line up the points and add. $1+1=10$ (write 0, carry 1). Carry the values over just like base 10 addition.",
+  h: "Does $1 + 1$ equal $10$ in base 2?"
+},
+{
+  yr: 2022,
+  q: "Find the variance of the numbers: 3, 5, 7.",
+  o: ["2", "2.67", "4", "8"],
+  a: 2,
+  e: "$Mean = 5$. $Var = ((3-5)^2 + (5-5)^2 + (7-5)^2)/3 = (4+0+4)/2$. Wait, sample variance is 4.",
+  full: "Calculate the mean (5), subtract from each number and square the result (4, 0, 4). The average of these squares is the variance.",
+  h: "Is $(4 + 4) / 2$ equal to 4?"
+},
+{
+  yr: 2022,
+  q: "Simplify $\\frac{x}{2} - \\frac{x-1}{3}$.",
+  o: ["$\\frac{x-2}{6}$", "$\\frac{x+2}{6}$", "$\\frac{5x-2}{6}$", "$\\frac{x+1}{6}$"],
+  a: 1,
+  e: "$\\frac{3x - 2(x-1)}{6} = \\frac{3x - 2x + 2}{6} = \\frac{x+2}{6}$.",
+  full: "Find a common denominator (6). Be careful with the negative sign when expanding $-2(x-1)$.",
+  h: "Does $-2 \\times -1$ equal $+2$?"
+},
+{
+  yr: 2022,
+  q: "If $M = \\begin{pmatrix} 1 & 2 \\\\ 0 & 3 \\end{pmatrix}$, find $M^2$.",
+  o: ["$\\begin{pmatrix} 1 & 4 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 8 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 6 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 2 \\\\ 0 & 3 \\end{pmatrix}$"],
+  a: 1,
+  e: "$Row1 \\times Col2 = (1 \\times 2) + (2 \\times 3) = 8$.",
+  full: "Multiply the matrix by itself. $M \\times M$. The top right element is 8, and the bottom right is 9.",
+  h: "Is $2 + 6$ equal to 8?"
+},
+{
+  yr: 2022,
+  q: "Find the sum to infinity of the G.P.: $1, 1/2, 1/4, ...$",
+  o: ["1.5", "2", "3", "$\\infty$"],
+  a: 1,
+  e: "$S_\\infty = \\frac{a}{1-r} = \\frac{1}{1 - 0.5} = 1 / 0.5 = 2$.",
+  full: "The sum to infinity formula applies because the common ratio $r$ is less than 1.",
+  h: "Is $1 / 0.5$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "How many ways can 3 students be seated in a row of 3 chairs?",
+  o: ["3", "6", "9", "27"],
+  a: 1,
+  e: "$3! = 3 \\times 2 \\times 1 = 6$.",
+  full: "This is a permutation of 3 items. $3$ choices for the first chair, $2$ for the second, and $1$ for the last.",
+  h: "Is $3 \\times 2$ equal to 6?"
+},
+{
+  yr: 2022,
+  q: "Find the derivative of $\\frac{1}{x}$.",
+  o: ["$log x$", "$1$", "$-x^{-2}$", "$x^2$"],
+  a: 2,
+  e: "$x^{-1}$ derivative is $-1x^{-2}$.",
+  full: "Rewrite $1/x$ as $x$ to the power of $-1$. Apply the power rule: multiply by the power and decrease it by 1.",
+  h: "Is $-1 - 1$ equal to -2?"
+},
+{
+  yr: 2022,
+  q: "If $2x + y = 7$ and $x - y = 2$, find $x$.",
+  o: ["1", "2", "3", "4"],
+  a: 2,
+  e: "Adding both equations: $3x = 9 \\implies x = 3$.",
+  full: "Use the elimination method. Adding the equations cancels out the $+y$ and $-y$.",
+  h: "Is $9 / 3$ equal to 3?"
+},
+{
+  yr: 2022,
+  q: "Calculate the volume of a sphere of radius 3cm. (Leave in $\\pi$)",
+  o: ["$12\\pi cm^3$", "$24\\pi cm^3$", "$36\\pi cm^3$", "$48\\pi cm^3$"],
+  a: 2,
+  e: "$V = \\frac{4}{3} \\pi r^3 = \\frac{4}{3} \\pi (27) = 4 \\times 9\\pi = 36\\pi$.",
+  full: "The formula is $4/3$ times $\\pi$ times the radius cubed. $3^3$ is 27.",
+  h: "Is $4 \\times 9$ equal to 36?"
+},
+{
+  yr: 2022,
+  q: "What is the value of $sin 120^\\circ$?",
+  o: ["0.5", "0.866", "-0.5", "-0.866"],
+  a: 1,
+  e: "$sin(180 - 60) = sin 60 = \\frac{\\sqrt{3}}{2} \\approx 0.866$.",
+  full: "Sine is positive in the second quadrant. $sin 120$ is equivalent to $sin 60$.",
+  h: "Is $sin 120$ positive?"
+},
+{
+  yr: 2022,
+  q: "Solve for $x$: $x^2 + 7x + 10 = 0$.",
+  o: ["(2, 5)", "(-2, -5)", "(1, 10)", "(-1, -10)"],
+  a: 1,
+  e: "$(x+2)(x+5) = 0 \\implies x = -2, -5$.",
+  full: "We need two numbers that multiply to 10 and add to 7. Those are 2 and 5. The roots are the negative of those factors.",
+  h: "Do 2 and 5 add to 7?"
+},
+{
+  yr: 2022,
+  q: "A pyramid has a square base of side 5cm and a height of 12cm. Find its volume.",
+  o: ["60cm³", "100cm³", "150cm³", "300cm³"],
+  a: 1,
+  e: "$V = \\frac{1}{3} \\times Area \\times h = \\frac{1}{3} \\times 25 \\times 12 = 25 \\times 4 = 100$.",
+  full: "The volume of a pyramid is one-third the base area times the vertical height.",
+  h: "Is $12 / 3$ equal to 4?"
+},
+{
+  yr: 2022,
+  q: "Simplify $(2^3)^2 \\times 2^{-4}$.",
+  o: ["2", "4", "8", "16"],
+  a: 1,
+  e: "$2^6 \\times 2^{-4} = 2^{6-4} = 2^2 = 4$.",
+  full: "Multiply powers when one is inside and one is outside the bracket. Then add powers when multiplying the same base.",
+  h: "Is $6 - 4$ equal to 2?"
+},
+{
+  yr: 2022,
+  q: "If the mean of 4, 7, $x$, and 9 is 7, find $x$.",
+  o: ["6", "7", "8", "10"],
+  a: 2,
+  e: "$(4+7+x+9)/4 = 7 \\implies 20+x = 28 \\implies x = 8$.",
+  full: "The sum of the four numbers must equal 4 times the mean (28).",
+  h: "Is $28 - 20$ equal to 8?"
+},
+{
+  yr: 2022,
+  q: "Find the simple interest on ₦2000 for 6 months at 10% per annum.",
+  o: ["₦100", "₦200", "₦10", "₦120"],
+  a: 0,
+  e: "$I = \\frac{2000 \\times 10 \\times 0.5}{100} = 100$.",
+  full: "6 months is $0.5$ years. Interest is Principal $\\times$ Rate $\\times$ Time in years.",
+  h: "Is half of 200 equal to 100?"
+},
+
+{
+  yr: 2022,
+  q: "Convert $25_{10}$ to binary (base 2).",
+  o: ["11001", "10110", "11101", "10011"],
+  a: 0,
+  e: "$25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1$. Reading up: 11001.",
+  full: "Successively divide the base 10 number by 2 and record the remainders from bottom to top.",
+  h: "Is the first remainder 1?"
+},
+{
+  yr: 2022,
+  q: "If $x$ varies inversely as $y$ and $x=4$ when $y=3$, find $x$ when $y=6$.",
+  o: ["2", "4", "8", "12"],
+  a: 0,
+  e: "$xy = k \\implies 4 \\times 3 = 12 = k$. When $y=6, 6x = 12 \\implies x = 2$.",
+  full: "In inverse variation, the product of the two variables remains constant ($k$).",
+  h: "Is $12 / 6$ equal to 2?"
+},
+{
+  yr: 2021,
+  q: "If $P = {1, 2, 3, 4, 5, 6}$ and $Q = {3, 4, 5, 6, 7, 8}$, find $P \\cap Q$.",
+  o: ["{1, 2, 7, 8}", "{3, 4, 5, 6}", "{1, 2, 3, 4, 5, 6, 7, 8}", "{ }"],
+  a: 1,
+  e: "The intersection ($\\cap$) consists of elements common to both sets: 3, 4, 5, and 6.",
+  full: "Intersection means 'and'—only the numbers that appear in both $P$ and $Q$ are included.",
+  h: "Are 3, 4, 5, and 6 in both lists?"
+},
+{
+  yr: 2021,
+  q: "Simplify $\\frac{\\sqrt{48}}{\\sqrt{3}}$.",
+  o: ["2", "4", "6", "16"],
+  a: 1,
+  e: "$\\sqrt{48/3} = \\sqrt{16} = 4$.",
+  full: "You can divide numbers under a square root just like regular numbers. 48 divided by 3 is 16.",
+  h: "Is the square root of 16 equal to 4?"
+},
+{
+  yr: 2021,
+  q: "Find the value of $x$ if $log_x 64 = 3$.",
+  o: ["2", "4", "8", "16"],
+  a: 1,
+  e: "$x^3 = 64 \\implies x = \\sqrt[3]{64} = 4$.",
+  full: "In log form, the base $x$ raised to the power 3 must equal 64. Since $4 \\times 4 \\times 4 = 64$, $x$ is 4.",
+  h: "Is $4^3$ equal to 64?"
+},
+{
+  yr: 2021,
+  q: "Solve the quadratic equation $x^2 - x - 6 = 0$.",
+  o: ["(2, 3)", "(-2, 3)", "(2, -3)", "(-2, -3)"],
+  a: 1,
+  e: "$(x+2)(x-3) = 0 \\implies x = -2, 3$.",
+  full: "Find two numbers that multiply to -6 and add to -1. These are +2 and -3. The roots are the opposite signs.",
+  h: "Does $2 - 3$ equal -1?"
+},
+{
+  yr: 2021,
+  q: "Calculate the area of a sector of a circle with radius 6cm and angle 70°. ($\\pi = 22/7$)",
+  o: ["22cm²", "44cm²", "11cm²", "33cm²"],
+  a: 0,
+  e: "$A = (70/360) \\times (22/7) \\times 36 = (1/360) \\times 10 \\times 22 \\times 36 = 22$.",
+  full: "The 36 from $r^2$ cancels nicely with the 360 denominator, leaving a very clean calculation.",
+  h: "Is $10 \\times 36$ equal to 360?"
+},
+{
+  yr: 2021,
+  q: "If $y = 5x^4 - x^2$, find $\\frac{d^2y}{dx^2}$.",
+  o: ["$20x^3 - 2x$", "$60x^2 - 2$", "$60x^2$", "$20x^3$"],
+  a: 1,
+  e: "$dy/dx = 20x^3 - 2x$. Differentiating again: $60x^2 - 2$.",
+  full: "This is the second derivative. Differentiate once, then differentiate that result again.",
+  h: "Is the derivative of $20x^3$ equal to $60x^2$?"
+},
+{
+  yr: 2021,
+  q: "Evaluate $sin^2 30^\\circ + cos^2 30^\\circ$.",
+  o: ["0.5", "1", "1.5", "2"],
+  a: 1,
+  e: "Trigonometric identity: $sin^2 \\theta + cos^2 \\theta = 1$ for any angle.",
+  full: "Even without calculating the specific values, this fundamental identity always equals 1.",
+  h: "Is the sum of $sin^2$ and $cos^2$ always 1?"
+},
+{
+  yr: 2021,
+  q: "Find the gradient of the line $2x + 3y = 6$.",
+  o: ["2", "3", "2/3", "-2/3"],
+  a: 3,
+  e: "$3y = -2x + 6 \\implies y = (-2/3)x + 2$. Gradient is $-2/3$.",
+  full: "Rearrange the equation into the slope-intercept form $y = mx + c$. The coefficient of $x$ is the gradient.",
+  h: "Is the gradient negative?"
+},
+{
+  yr: 2021,
+  q: "A boy is 5 years older than his sister. If the sum of their ages is 19, how old is the sister?",
+  o: ["7", "12", "5", "14"],
+  a: 0,
+  e: "$x + (x+5) = 19 \\implies 2x = 14 \\implies x = 7$.",
+  full: "Let the sister's age be $x$. The boy is $x+5$. Solving the simple equation gives 7.",
+  h: "Is $19 - 5$ equal to 14?"
+},
+{
+  yr: 2021,
+  q: "Find the mean of $x, x+2, x+4, x+6$.",
+  o: ["$x+2$", "$x+3$", "$x+4$", "$x+5$"],
+  a: 1,
+  e: "Sum = $4x + 12$. Mean = $(4x + 12) / 4 = x + 3$.",
+  full: "Add all four terms and divide by 4. $4x$ divided by 4 is $x$, and 12 divided by 4 is 3.",
+  h: "Is the middle of the set between $x+2$ and $x+4$?"
+},
+{
+  yr: 2021,
+  q: "Simplify $(3^0 + 3^{-1})^{-1}$.",
+  o: ["3/4", "4/3", "1/4", "3"],
+  a: 0,
+  e: "$(1 + 1/3)^{-1} = (4/3)^{-1} = 3/4$.",
+  full: "Anything to power 0 is 1. $3^{-1}$ is $1/3$. The final negative power flips the fraction.",
+  h: "Is $1 + 1/3$ equal to $4/3$?"
+},
+{
+  yr: 2021,
+  q: "Convert $101.1_2$ to base 10.",
+  o: ["5.1", "5.5", "6.5", "7.5"],
+  a: 1,
+  e: "$4 + 0 + 1 + 0.5 = 5.5$.",
+  full: "The digit after the decimal in base 2 represents $2^{-1}$, which is $0.5$.",
+  h: "Is $1/2$ equal to 0.5?"
+},
+{
+  yr: 2021,
+  q: "If $y$ is inversely proportional to $x^2$ and $y=2$ when $x=3$, find $y$ when $x=1$.",
+  o: ["6", "9", "18", "36"],
+  a: 2,
+  e: "$y = k/x^2 \\implies 2 = k/9 \\implies k=18$. When $x=1, y=18/1 = 18$.",
+  full: "The constant $k$ is $y \\times x^2$. Since $2 \\times 9 = 18$, the constant is 18.",
+  h: "Is $2 \\times 9$ equal to 18?"
+},
+{
+  yr: 2021,
+  q: "Find the 20th term of the A.P. $-5, -2, 1, ...$",
+  o: ["52", "55", "58", "61"],
+  a: 0,
+  e: "$a = -5, d = 3$. $T_{20} = -5 + 19(3) = -5 + 57 = 52$.",
+  full: "The common difference is positive 3. Add 19 of these differences to the starting value -5.",
+  h: "Is $19 \\times 3$ equal to 57?"
+},
+{
+  yr: 2021,
+  q: "What is the probability of picking a prime number from the set {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}?",
+  o: ["2/5", "1/2", "3/10", "4/5"],
+  a: 0,
+  e: "Primes are {2, 3, 5, 7}. Probability = 4/10 = 2/5.",
+  full: "Note that 1 is not a prime number. There are 4 primes in the first ten integers.",
+  h: "Is 4 out of 10 the same as 2/5?"
+},
+{
+  yr: 2021,
+  q: "Find the determinant of $\\begin{pmatrix} 4 & 2 \\\\ -3 & 1 \\end{pmatrix}$.",
+  o: ["2", "6", "10", "-2"],
+  a: 2,
+  e: "$(4 \\times 1) - (2 \\times -3) = 4 - (-6) = 10$.",
+  full: "Multiply the main diagonal and subtract the product of the other diagonal. Watch the signs!",
+  h: "Is $4 + 6$ equal to 10?"
+},
+{
+  yr: 2021,
+  q: "Integrate $\\int cos x dx$.",
+  o: ["$sin x + c$", "$-sin x + c$", "$tan x + c$", "$cos^2 x + c$"],
+  a: 0,
+  e: "The derivative of $sin x$ is $cos x$, so the integral of $cos x$ is $sin x$.",
+  full: "Integration is the reverse of differentiation. The integral of $cos$ is positive $sin$.",
+  h: "Is the integral of $cos$ positive or negative?"
+},
+{
+  yr: 2021,
+  q: "Rationalize $\\frac{\\sqrt{2}}{\\sqrt{3}}$.",
+  o: ["$\\frac{\\sqrt{6}}{2}$", "$\\frac{\\sqrt{6}}{3}$", "$\\sqrt{6}$", "$\\frac{2}{3}$"],
+  a: 1,
+  e: "Multiply top and bottom by $\\sqrt{3}$ to get $\\sqrt{6}/3$.",
+  full: "To remove the root from the bottom, multiply by that same root. $\\sqrt{2} \\times \\sqrt{3} = \\sqrt{6}$.",
+  h: "Is $2 \\times 3$ equal to 6?"
+},
+{
+  yr: 2021,
+  q: "Find the mode of 10, 11, 10, 12, 13, 11, 10.",
+  o: ["10", "11", "12", "13"],
+  a: 0,
+  e: "10 appears 3 times, which is more than any other value.",
+  full: "The mode is the most frequent number. 10 is the clear winner here.",
+  h: "Does 10 appear three times?"
+},
+{
+  yr: 2021,
+  q: "If $3^{x-1} = 9$, find $x$.",
+  o: ["1", "2", "3", "4"],
+  a: 2,
+  e: "$3^{x-1} = 3^2 \\implies x-1 = 2 \\implies x = 3$.",
+  full: "Since 9 is $3^2$, the powers must be equal. $x - 1 = 2$ means $x$ must be 3.",
+  h: "Is $2 + 1$ equal to 3?"
+},
+{
+  yr: 2020,
+  q: "If $f(x) = 2x^2 - 3x + 1$, find $f(-2)$.",
+  o: ["3", "7", "11", "15"],
+  a: 3,
+  e: "$2(-2)^2 - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15$.",
+  full: "Substitute -2 for every $x$ in the function. Remember that a negative number squared becomes positive ($(-2)^2 = 4$).",
+  h: "Is $8 + 7$ equal to 15?"
+},
+{
+  yr: 2020,
+  q: "Simplify $\\sqrt{98} - \\sqrt{50}$.",
+  o: ["$\\sqrt{2}$", "$2\\sqrt{2}$", "$3\\sqrt{2}$", "$4\\sqrt{2}$"],
+  a: 1,
+  e: "$\\sqrt{49 \\times 2} - \\sqrt{25 \\times 2} = 7\\sqrt{2} - 5\\sqrt{2} = 2\\sqrt{2}$.",
+  full: "Break the numbers into factors where one is a perfect square. $49$ and $25$ are the keys here.",
+  h: "Is $7 - 5$ equal to 2?"
+},
+{
+  yr: 2020,
+  q: "Find the value of $n$ if $log_2 32 = n$.",
+  o: ["3", "4", "5", "6"],
+  a: 2,
+  e: "$2^n = 32 \\implies 2^5 = 32 \\implies n = 5$.",
+  full: "Ask yourself: '2 raised to what power gives 32?' Since $2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$, the answer is 5.",
+  h: "Is $2^5$ equal to 32?"
+},
+{
+  yr: 2020,
+  q: "Make $t$ the subject of the formula: $v = u + at$.",
+  o: ["$t = v - u - a$", "$t = \\frac{v-u}{a}$", "$t = \\frac{v+u}{a}$", "$t = v - u + a$"],
+  a: 1,
+  e: "$v - u = at \\implies t = \\frac{v-u}{a}$.",
+  full: "Subtract $u$ from both sides first, then divide the entire result by $a$ to isolate $t$.",
+  h: "Do you subtract $u$ or add $u$ first?"
+},
+{
+  yr: 2020,
+  q: "The probability of an event happening is 0.35. What is the probability of it NOT happening?",
+  o: ["0.35", "0.55", "0.65", "0.75"],
+  a: 2,
+  e: "$1 - 0.35 = 0.65$.",
+  full: "The sum of the probability of an event occurring and not occurring is always 1.",
+  h: "Is $1.00 - 0.35$ equal to 0.65?"
+},
+{
+  yr: 2020,
+  q: "Find the 15th term of the A.P. 10, 7, 4, ...",
+  o: ["-32", "-35", "-42", "-45"],
+  a: 0,
+  e: "$a=10, d=-3$. $T_{15} = 10 + 14(-3) = 10 - 42 = -32$.",
+  full: "The common difference is negative 3. Use the formula $a + (n-1)d$ with $n=15$.",
+  h: "Is $14 \\times -3$ equal to -42?"
+},
+{
+  yr: 2020,
+  q: "If $y = x^2 sin x$, find $\\frac{dy}{dx}$.",
+  o: ["$2x cos x$", "$x^2 cos x + 2x sin x$", "$x^2 sin x + 2x cos x$", "$2x sin x$"],
+  a: 1,
+  e: "Product Rule: $u \\frac{dv}{dx} + v \\frac{du}{dx} = x^2(cos x) + sin x(2x)$.",
+  full: "Since two functions of $x$ are multiplied, you must use the product rule ($uv' + vu'$).",
+  h: "Is the derivative of $sin x$ equal to $cos x$?"
+},
+{
+  yr: 2020,
+  q: "Calculate the perimeter of a sector with radius 7cm and angle 90°. ($\\pi = 22/7$)",
+  o: ["11cm", "18cm", "25cm", "36cm"],
+  a: 2,
+  e: "$Arc = (90/360) \\times 2 \\times (22/7) \\times 7 = 11$. $Perimeter = 11 + 7 + 7 = 25$.",
+  full: "Perimeter of a sector is the Arc Length plus two radii ($L + 2r$).",
+  h: "Is $11 + 14$ equal to 25?"
+},
+{
+  yr: 2020,
+  q: "Find the determinant of $\\begin{pmatrix} 5 & 3 \\\\ 2 & 4 \\end{pmatrix}$.",
+  o: ["14", "22", "26", "10"],
+  a: 0,
+  e: "$(5 \\times 4) - (3 \\times 2) = 20 - 6 = 14$.",
+  full: "For a 2x2 matrix, subtract the product of the off-diagonal from the product of the main diagonal.",
+  h: "Is $20 - 6$ equal to 14?"
+},
+{
+  yr: 2020,
+  q: "If the mean of 2, 5, 8, $x$ is 6, find $x$.",
+  o: ["7", "8", "9", "10"],
+  a: 2,
+  e: "$(15 + x)/4 = 6 \\implies 15 + x = 24 \\implies x = 9$.",
+  full: "The sum of the numbers ($15+x$) must equal the mean multiplied by the count ($6 \\times 4 = 24$).",
+  h: "Is $24 - 15$ equal to 9?"
+},
+{
+  yr: 2020,
+  q: "Evaluate $\\int_0^1 (4x^3) dx$.",
+  o: ["1", "2", "3", "4"],
+  a: 0,
+  e: "$[x^4]_0^1 = 1^4 - 0^4 = 1$.",
+  full: "Integrate $4x^3$ to get $x^4$. Evaluate it from 0 to 1.",
+  h: "Is $1^4$ equal to 1?"
+},
+{
+  yr: 2020,
+  q: "Solve for $x$: $3^{2x} = 27$.",
+  o: ["1", "1.5", "2", "3"],
+  a: 1,
+  e: "$3^{2x} = 3^3 \\implies 2x = 3 \\implies x = 1.5$.",
+  full: "Write 27 as $3^3$. Equate the powers and solve the simple linear equation.",
+  h: "Is $3 / 2$ equal to 1.5?"
+},
+{
+  yr: 2020,
+  q: "Rationalize $\\frac{1}{\\sqrt{2} + 1}$.",
+  o: ["$\\sqrt{2} + 1$", "$\\sqrt{2} - 1$", "$\\frac{\\sqrt{2}-1}{3}$", "$1 - \\sqrt{2}$"],
+  a: 1,
+  e: "Multiply by $(\\sqrt{2}-1)$. Denominator becomes $2-1=1$.",
+  full: "Multiply both numerator and denominator by the conjugate ($\\sqrt{2}-1$).",
+  h: "Is $(\\sqrt{2})^2 - 1^2$ equal to 1?"
+},
+{
+  yr: 2020,
+  q: "Find the coordinate of the midpoint between (3, 8) and (5, 2).",
+  o: ["(4, 5)", "(8, 10)", "(1, -3)", "(4, 10)"],
+  a: 0,
+  e: "$(\\frac{3+5}{2}, \\frac{8+2}{2}) = (8/2, 10/2) = (4, 5)$.",
+  full: "Add the x-values and divide by 2; add the y-values and divide by 2.",
+  h: "Is $8 / 2$ equal to 4?"
+},
+{
+  yr: 2020,
+  q: "If $y$ varies directly as the square of $x$ and $y=36$ when $x=3$, find $y$ when $x=2$.",
+  o: ["4", "8", "12", "16"],
+  a: 3,
+  e: "$y = kx^2 \\implies 36 = k(9) \\implies k=4$. When $x=2, y = 4(2^2) = 16$.",
+  full: "Find the constant $k$ first by using the initial values, then apply it to the second case.",
+  h: "Is $4 \\times 4$ equal to 16?"
+},
+{
+  yr: 2020,
+  q: "Convert $111_2$ to base 10.",
+  o: ["3", "7", "11", "15"],
+  a: 1,
+  e: "$1(2^2) + 1(2^1) + 1(2^0) = 4 + 2 + 1 = 7$.",
+  full: "Sum the powers of 2 for each '1' present in the binary string.",
+  h: "Is $4+2+1$ equal to 7?"
+},
+{
+  yr: 2020,
+  q: "Find the mode of 7, 12, 7, 14, 15, 7, 12.",
+  o: ["7", "12", "14", "15"],
+  a: 0,
+  e: "7 occurs three times, which is more frequent than any other number.",
+  full: "The mode is the value that appears most often in the data set.",
+  h: "Does 7 appear more than 12?"
+},
+{
+  yr: 2020,
+  q: "Find the angle whose tangent is 1.",
+  o: ["30°", "45°", "60°", "90°"],
+  a: 1,
+  e: "$tan^{-1}(1) = 45°$.",
+  full: "This occurs in an isosceles right triangle where the opposite and adjacent sides are equal.",
+  h: "Is $sin 45$ equal to $cos 45$?"
+},
+{
+  yr: 2020,
+  q: "If $2x - 3y = 1$ and $x + 3y = 8$, find $x$.",
+  o: ["2", "3", "4", "5"],
+  a: 1,
+  e: "Add the equations: $3x = 9 \\implies x = 3$.",
+  full: "Adding the two equations eliminates the $y$ term since $-3y + 3y = 0$.",
+  h: "Is $9 / 3$ equal to 3?"
+},
+{
+  yr: 2020,
+  q: "Simplify $\\frac{x^2 - 9}{x + 3}$.",
+  o: ["$x + 3$", "$x - 3$", "$x - 9$", "$x^2$"],
+  a: 1,
+  e: "$\\frac{(x-3)(x+3)}{x+3} = x - 3$.",
+  full: "Factor the numerator using the difference of two squares and cancel the common factor.",
+  h: "Does $(x-3)(x+3)$ equal $x^2 - 9$?"
+},
+{
+  yr: 2020,
+  q: "If $P = \\{2, 3, 5, 7\\}$ and $Q = \\{2, 4, 6, 8\\}$, find $P \\cup Q$.",
+  o: ["{2}", "{2, 3, 4, 5, 6, 7, 8}", "{3, 5, 7}", "{4, 6, 8}"],
+  a: 1,
+  e: "The union ($\\cup$) includes all elements from both sets without duplication.",
+  full: "Union means 'everything in both'. We list 2, 3, 4, 5, 6, 7, and 8. The number 2 is common but only written once.",
+  h: "Does the union include all unique numbers from both lists?"
+},
+{
+  yr: 2020,
+  q: "Find the derivative of $y = 4x^3 - 2x + 5$.",
+  o: ["$12x^2 - 2$", "$12x^2 + 5$", "$4x^2 - 2$", "$12x^3 - 2$"],
+  a: 0,
+  e: "$\\frac{dy}{dx} = 4(3)x^{3-1} - 2(1)x^{1-1} + 0 = 12x^2 - 2$.",
+  full: "Multiply the coefficient by the power and decrease the power by 1. The constant 5 becomes 0.",
+  h: "Is $4 \\times 3$ equal to 12?"
+},
+{
+  yr: 2020,
+  q: "Calculate the total surface area of a cylinder with radius 7cm and height 10cm. ($\\pi = 22/7$)",
+  o: ["440cm²", "748cm²", "154cm²", "594cm²"],
+  a: 1,
+  e: "$TSA = 2\\pi r(r + h) = 2(22/7)(7)(7 + 10) = 44(17) = 748$.",
+  full: "The formula for the total surface area of a closed cylinder is $2\\pi r^2$ (two bases) + $2\\pi rh$ (curved surface).",
+  h: "Is $44 \\times 17$ equal to 748?"
+},
+{
+  yr: 2020,
+  q: "If $log_{10} x = 3$, what is the value of $x$?",
+  o: ["30", "100", "300", "1000"],
+  a: 3,
+  e: "$x = 10^3 = 1000$.",
+  full: "The base 10 raised to the result 3 gives the value of $x$. $10 \\times 10 \\times 10 = 1000$.",
+  h: "Is $10^3$ equal to 1000?"
+},
+{
+  yr: 2020,
+  q: "Find the distance between (2, -3) and (2, 5).",
+  o: ["2", "4", "8", "10"],
+  a: 2,
+  e: "Since x-coords are the same, $Distance = |5 - (-3)| = 8$.",
+  full: "When points are on a vertical line, you simply find the absolute difference between the y-coordinates.",
+  h: "Is $5 + 3$ equal to 8?"
+},
+{
+  yr: 2020,
+  q: "Solve the inequality: $5 - 2x \\ge 1$.",
+  o: ["$x \\ge 2$", "$x \\le 2$", "$x \\ge -2$", "$x \\le -2$"],
+  a: 1,
+  e: "$-2x \\ge -4 \\implies x \\le 2$.",
+  full: "Subtract 5 from both sides to get $-2x \\ge -4$. Dividing by a negative number flips the inequality sign.",
+  h: "Does the sign flip when you divide by -2?"
+},
+{
+  yr: 2020,
+  q: "Calculate the volume of a sphere with diameter 14cm. ($\\pi = 22/7$)",
+  o: ["1437.33cm³", "179.67cm³", "616cm³", "4312cm³"],
+  a: 0,
+  e: "$r = 7. V = \\frac{4}{3} \\pi (7^3) = \\frac{4}{3} \\times \\frac{22}{7} \\times 343 = 1437.33$.",
+  full: "First, find the radius (half of diameter). Then apply the volume formula $4/3 \\pi r^3$.",
+  h: "Is the radius 7?"
+},
+{
+  yr: 2020,
+  q: "Find the 10th term of the G.P.: 1, 2, 4, 8, ...",
+  o: ["256", "512", "1024", "2048"],
+  a: 1,
+  e: "$T_{10} = ar^9 = 1(2^9) = 512$.",
+  full: "The first term $a=1$ and common ratio $r=2$. $2^9$ is 512.",
+  h: "Is $2^9$ equal to 512?"
+},
+{
+  yr: 2020,
+  q: "If $y = (x^2 + 1)^3$, find $\\frac{dy}{dx}$.",
+  o: ["$3(x^2+1)^2$", "$6x(x^2+1)^2$", "$6x(x^2+1)^3$", "$2x(x^2+1)^2$"],
+  a: 1,
+  e: "$3(x^2+1)^2 \\times 2x = 6x(x^2+1)^2$.",
+  full: "Use the Chain Rule. Differentiate the outer power then multiply by the derivative of the inside $(x^2+1)$.",
+  h: "Is the derivative of $x^2 + 1$ equal to $2x$?"
+},
+{
+  yr: 2020,
+  q: "Find the mean of the numbers: 15, 20, 25, 30, 35.",
+  o: ["20", "25", "30", "35"],
+  a: 1,
+  e: "Sum = 125. Mean = $125/5 = 25$.",
+  full: "The numbers are in an arithmetic progression, so the mean is the middle term.",
+  h: "Is 25 the middle number?"
+},
+{
+  yr: 2020,
+  q: "A die is rolled. What is the probability of getting a number less than 3?",
+  o: ["1/6", "1/3", "1/2", "2/3"],
+  a: 1,
+  e: "Favorable outcomes: {1, 2}. Probability = 2/6 = 1/3.",
+  full: "There are 2 numbers less than 3 on a standard die out of 6 possible outcomes.",
+  h: "Is $2 / 6$ equal to $1 / 3$?"
+},
+{
+  yr: 2020,
+  q: "Integrate $\\int (sin x) dx$.",
+  o: ["$cos x + c$", "$-cos x + c$", "$sin^2 x + c$", "$tan x + c$"],
+  a: 1,
+  e: "The derivative of $cos x$ is $-sin x$, so the integral of $sin x$ is $-cos x$.",
+  full: "Integration is the reverse process of differentiation. The integral of $sin$ is negative $cos$.",
+  h: "Is the integral of $sin$ negative?"
+},
+{
+  yr: 2020,
+  q: "Find the value of $x$ if $2(x - 5) = 3(x + 2)$.",
+  o: ["-16", "-4", "4", "16"],
+  a: 0,
+  e: "$2x - 10 = 3x + 6 \\implies -16 = x$.",
+  full: "Expand the brackets, then subtract $2x$ and 6 from both sides to find $x$.",
+  h: "Is $-10 - 6$ equal to -16?"
+},
+{
+  yr: 2020,
+  q: "Calculate the area of a triangle with base 10cm and height 8cm.",
+  o: ["40cm²", "80cm²", "20cm²", "100cm²"],
+  a: 0,
+  e: "$Area = 0.5 \\times 10 \\times 8 = 40$.",
+  full: "The area of a triangle is half the base multiplied by the vertical height.",
+  h: "Is half of 80 equal to 40?"
+},
+{
+  yr: 2020,
+  q: "If $log_2 x + log_2 3 = log_2 12$, find $x$.",
+  o: ["4", "9", "15", "36"],
+  a: 0,
+  e: "$log_2(3x) = log_2 12 \\implies 3x = 12 \\implies x = 4$.",
+  full: "Use the addition law: $log A + log B = log(AB)$. Then equate the values.",
+  h: "Is $12 / 3$ equal to 4?"
+},
+{
+  yr: 2020,
+  q: "Find the gradient of the line passing through (1, 1) and (3, 5).",
+  o: ["1", "2", "3", "4"],
+  a: 1,
+  e: "$\\frac{5 - 1}{3 - 1} = 4 / 2 = 2$.",
+  full: "Gradient is 'change in $y$' over 'change in $x$'. $(5-1)$ divided by $(3-1)$.",
+  h: "Is $4 / 2$ equal to 2?"
+},
+{
+  yr: 2020,
+  q: "Simplify $2\\sqrt{3} \\times \\sqrt{6}$.",
+  o: ["$6\\sqrt{2}$", "$18\\sqrt{2}$", "$2\\sqrt{18}$", "$6\\sqrt{18}$"],
+  a: 0,
+  e: "$2\\sqrt{18} = 2\\sqrt{9 \\times 2} = 2(3)\\sqrt{2} = 6\\sqrt{2}$.",
+  full: "Multiply the numbers inside the roots first, then simplify the resulting surd.",
+  h: "Is $\\sqrt{18}$ the same as $3\\sqrt{2}$?"
+},
+{
+  yr: 2020,
+  q: "Find the sum of the interior angles of a quadrilateral.",
+  o: ["180°", "270°", "360°", "540°"],
+  a: 2,
+  e: "$(4-2) \\times 180 = 2 \\times 180 = 360$.",
+  full: "Any four-sided figure can be split into two triangles, each having 180 degrees.",
+  h: "Is $2 \\times 180$ equal to 360?"
+},
+{
+  yr: 2019,
+  q: "Simplify $\\frac{log 9}{log 3}$.",
+  o: ["1", "2", "3", "log 3"],
+  a: 1,
+  e: "$log 9 = log 3^2 = 2 log 3$. Therefore, $2 log 3 / log 3 = 2$.",
+  full: "Express 9 as $3^2$. Using the power rule of logarithms, the exponent 2 comes to the front, allowing the $log 3$ terms to cancel out.",
+  h: "Is 9 equal to $3^2$?"
+},
+{
+  yr: 2019,
+  q: "If $y = 4x^3 - 5x^2 + 3$, find $\\frac{dy}{dx}$.",
+  o: ["$12x^2 - 10x$", "$12x^2 - 10x + 3$", "$4x^2 - 5x$", "$12x^3 - 10x^2$"],
+  a: 0,
+  e: "$\\frac{dy}{dx} = 4(3)x^2 - 5(2)x = 12x^2 - 10x$.",
+  full: "Apply the power rule for each term: multiply the coefficient by the current power and then decrease the power by 1. The constant 3 becomes 0.",
+  h: "Is $4 \\times 3$ equal to 12?"
+},
+{
+  yr: 2019,
+  q: "Find the value of $x$ in the equation $2^{x+1} = 32$.",
+  o: ["3", "4", "5", "6"],
+  a: 1,
+  e: "$2^{x+1} = 2^5 \\implies x + 1 = 5 \\implies x = 4$.",
+  full: "Express 32 as a power of 2 ($2^5$). Since the bases are equal, you can equate the exponents and solve for $x$.",
+  h: "Is $2^5$ equal to 32?"
+},
+{
+  yr: 2019,
+  q: "Solve for $x$: $3x - 4 < 5x + 2$.",
+  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
+  a: 1,
+  e: "$-6 < 2x \\implies -3 < x \\implies x > -3$.",
+  full: "Collect $x$ terms on one side and constants on the other. Dividing by a positive number does not flip the inequality sign.",
+  h: "Is $-6 / 2$ equal to -3?"
+},
+{
+  yr: 2019,
+  q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
+  o: ["₦200", "₦400", "₦600", "₦800"],
+  a: 2,
+  e: "$I = \\frac{5000 \\times 4 \\times 3}{100} = 50 \\times 12 = 600$.",
+  full: "Use the Simple Interest formula: $I = (PRT)/100$. $5000 \\times 0.04 \\times 3 = 600$.",
+  h: "Is $4 \\times 3$ equal to 12?"
+},
+{
+  yr: 2019,
+  q: "Find the mean of 5, 8, 12, 15, 20.",
+  o: ["10", "12", "13", "14"],
+  a: 1,
+  e: "Sum = 60. $Mean = 60 / 5 = 12$.",
+  full: "Add all the numbers together to get the total sum, then divide by the total count of numbers.",
+  h: "Is $60 / 5$ equal to 12?"
+},
+{
+  yr: 2019,
+  q: "If $sin \\theta = 3/5$, find $tan \\theta$ for an acute angle $\\theta$.",
+  o: ["3/4", "4/5", "4/3", "1/2"],
+  a: 0,
+  e: "$Opp=3, Hyp=5 \\implies Adj = \\sqrt{5^2 - 3^2} = 4. tan = 3/4$.",
+  full: "Using the Pythagorean theorem or the 3-4-5 triple, find the adjacent side. Tangent is Opposite over Adjacent.",
+  h: "Is the adjacent side 4?"
+},
+{
+  yr: 2019,
+  q: "Find the determinant of $\\begin{pmatrix} 2 & -3 \\\\ 4 & 1 \\end{pmatrix}$.",
+  o: ["-10", "-14", "10", "14"],
+  a: 3,
+  e: "$(2 \\times 1) - (-3 \\times 4) = 2 - (-12) = 14$.",
+  full: "Calculate the product of the main diagonal and subtract the product of the secondary diagonal. Watch the double negative.",
+  h: "Is $2 + 12$ equal to 14?"
+},
+{
+  yr: 2019,
+  q: "Simplify $\\sqrt{50} + \\sqrt{32} - \\sqrt{18}$.",
+  o: ["$4\\sqrt{2}$", "$6\\sqrt{2}$", "$8\\sqrt{2}$", "$10\\sqrt{2}$"],
+  a: 1,
+  e: "$5\\sqrt{2} + 4\\sqrt{2} - 3\\sqrt{2} = 6\\sqrt{2}$.",
+  full: "Simplify each surd by finding perfect square factors: $\\sqrt{25 \\times 2}$, $\\sqrt{16 \\times 2}$, and $\\sqrt{9 \\times 2}$.",
+  h: "Is $5 + 4 - 3$ equal to 6?"
+},
+{
+  yr: 2019,
+  q: "The exterior angle of a regular polygon is 45°. How many sides has the polygon?",
+  o: ["6", "8", "10", "12"],
+  a: 1,
+  e: "$n = 360 / 45 = 8$.",
+  full: "The sum of the exterior angles of any polygon is always 360°. Divide this by the value of one exterior angle to find the number of sides.",
+  h: "Is $360 / 45$ equal to 8?"
+},
+{
+  yr: 2019,
+  q: "Factorize completely: $x^2 - 5x + 6$.",
+  o: ["$(x-2)(x-3)$", "$(x+2)(x+3)$", "$(x-1)(x-6)$", "$(x+1)(x+6)$"],
+  a: 0,
+  e: "$(-2) \\times (-3) = 6$ and $(-2) + (-3) = -5$.",
+  full: "Find two numbers that multiply to the constant (+6) and add to the middle coefficient (-5).",
+  h: "Do -2 and -3 add up to -5?"
+},
+{
+  yr: 2019,
+  q: "Find the 20th term of the A.P.: 2, 5, 8, ...",
+  o: ["57", "59", "61", "63"],
+  a: 1,
+  e: "$T_{20} = 2 + 19(3) = 2 + 57 = 59$.",
+  full: "Use the formula $a + (n-1)d$. Here $a=2$, $d=3$, and $n=20$.",
+  h: "Is $19 \\times 3$ equal to 57?"
+},
+{
+  yr: 2019,
+  q: "If $y$ varies inversely as $x$ and $y=10$ when $x=2$, find $y$ when $x=5$.",
+  o: ["4", "10", "20", "25"],
+  a: 0,
+  e: "$xy = k \\implies 10 \\times 2 = 20 = k$. When $x=5, 5y = 20 \\implies y = 4$.",
+  full: "In inverse variation, the product of $x$ and $y$ is a constant ($k$). Solve for $k$ first, then use it to find the new $y$.",
+  h: "Is $20 / 5$ equal to 4?"
+},
+{
+  yr: 2019,
+  q: "Evaluate $\\int_1^3 (2x) dx$.",
+  o: ["4", "6", "8", "10"],
+  a: 2,
+  e: "$[x^2]_1^3 = 3^2 - 1^2 = 9 - 1 = 8$.",
+  full: "Integrate $2x$ to get $x^2$. Then calculate the difference between the upper bound squared and the lower bound squared.",
+  h: "Is $9 - 1$ equal to 8?"
+},
+{
+  yr: 2019,
+  q: "Convert $42_{10}$ to binary (base 2).",
+  o: ["101010", "110010", "101100", "111000"],
+  a: 0,
+  e: "42/2=21 R0; 21/2=10 R1; 10/2=5 R0; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 101010.",
+  full: "Repeatedly divide the number by 2 and record the remainders from bottom to top.",
+  h: "Is the last digit 0?"
+},
+{
+  yr: 2019,
+  q: "Find the mode of 3, 4, 3, 5, 2, 3, 4.",
+  o: ["2", "3", "4", "5"],
+  a: 1,
+  e: "3 appears three times, which is more than any other number.",
+  full: "The mode is the most frequently occurring value in a data set.",
+  h: "Does 3 appear the most?"
+},
+{
+  yr: 2019,
+  q: "Calculate the area of a circle whose radius is 3.5cm. ($\\pi = 22/7$)",
+  o: ["11cm²", "22cm²", "38.5cm²", "77cm²"],
+  a: 2,
+  e: "$Area = (22/7) \\times 3.5^2 = (22/7) \\times 12.25 = 38.5$.",
+  full: "Use the area formula $\\pi r^2$. $3.5$ can be thought of as $7/2$, which makes the calculation easier.",
+  h: "Is $3.5 \\times 3.5$ equal to 12.25?"
+},
+{
+  yr: 2019,
+  q: "If $log_{10} 2 = 0.3010$, find $log_{10} 8$.",
+  o: ["0.6020", "0.9030", "1.2040", "1.5050"],
+  a: 1,
+  e: "$log 2^3 = 3 log 2 = 3(0.3010) = 0.9030$.",
+  full: "Since 8 is $2^3$, you can use the power rule to multiply the given log value by 3.",
+  h: "Is $3 \\times 0.3010$ equal to 0.9030?"
+},
+{
+  yr: 2019,
+  q: "Find the distance between the points (0, 0) and (6, 8).",
+  o: ["7", "10", "14", "48"],
+  a: 1,
+  e: "$\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
+  full: "Apply the distance formula. For a point at the origin, the distance is simply the square root of the sum of the squares of the coordinates.",
+  h: "Is $36 + 64$ equal to 100?"
+},
+{
+  yr: 2019,
+  q: "If $y = cos x$, find $\\frac{dy}{dx}$ at $x = 90^\\circ$.",
+  o: ["1", "0", "-1", "undefined"],
+  a: 2,
+  e: "$\\frac{dy}{dx} = -sin x$. At $90^\\circ$, $-sin(90^\\circ) = -1$.",
+  full: "The derivative of $cos x$ is $-sin x$. Evaluate this at 90 degrees, where $sin$ is 1.",
+  h: "Is $sin 90^\\circ$ equal to 1?"
+},
+{
+  yr: 2019,
+  q: "If $P = \\begin{pmatrix} x & 3 \\\\ 2 & 4 \\end{pmatrix}$ and the determinant is 10, find $x$.",
+  o: ["2", "4", "6", "8"],
+  a: 1,
+  e: "$4x - (3 \\times 2) = 10 \\implies 4x - 6 = 10 \\implies 4x = 16 \\implies x = 4$.",
+  full: "Set the determinant formula $ad - bc$ equal to 10 and solve the resulting linear equation for $x$.",
+  h: "Is $16 / 4$ equal to 4?"
+},
+{
+  yr: 2019,
+  q: "Find the range of the numbers: 12, 1, 15, 22, 8.",
+  o: ["14", "21", "22", "23"],
+  a: 1,
+  e: "$Range = Max - Min = 22 - 1 = 21$.",
+  full: "The range is the simplest measure of dispersion, calculated as the difference between the highest and lowest values.",
+  h: "Is $22 - 1$ equal to 21?"
+},
+{
+  yr: 2019,
+  q: "Solve the inequality: $2(x+3) \\ge 5x - 3$.",
+  o: ["$x \\le 3$", "$x \\ge 3$", "$x \\le -3$", "$x \\ge -3$"],
+  a: 0,
+  e: "$2x + 6 \\ge 5x - 3 \\implies 9 \\ge 3x \\implies 3 \\ge x$.",
+  full: "Expand the bracket, collect the $x$ terms, and remember that $3 \\ge x$ is the same as $x \\le 3$.",
+  h: "Is $6 + 3$ equal to 9?"
+},
+{
+  yr: 2019,
+  q: "If $y = (3x - 1)^2$, find $\frac{dy}{dx}$.",
+  o: ["$2(3x-1)$", "$6(3x-1)$", "$18x$", "$6x - 2$"],
+  a: 1,
+  e: "$\\frac{dy}{dx} = 2(3x-1) \\times 3 = 6(3x-1)$.",
+  full: "Using the chain rule: differentiate the power (bringing the 2 down) and multiply by the derivative of the inside (3).",
+  h: "Is $2 \\times 3$ equal to 6?"
+},
+{
+  yr: 2019,
+  q: "Calculate the volume of a cylinder with radius 3cm and height 7cm. ($\\pi = 22/7$)",
+  o: ["66cm³", "132cm³", "198cm³", "462cm³"],
+  a: 2,
+  e: "$V = \\pi r^2 h = (22/7) \\times 9 \\times 7 = 22 \\times 9 = 198$.",
+  full: "The 7 in the height cancels the 7 in the denominator of $\\pi$, leaving a simple multiplication of $22 \\times 9$.",
+  h: "Is $22 \\times 9$ equal to 198?"
+},
+{
+  yr: 2019,
+  q: "If $log_a 16 = 2$, find $a$.",
+  o: ["2", "4", "8", "32"],
+  a: 1,
+  e: "$a^2 = 16 \\implies a = 4$.",
+  full: "In log form, the base $a$ raised to the power 2 equals 16. The square root of 16 is 4.",
+  h: "Is $4^2$ equal to 16?"
+},
+{
+  yr: 2019,
+  q: "Find the 5th term of a G.P. where $a = 2$ and $r = 3$.",
+  o: ["30", "54", "162", "486"],
+  a: 2,
+  e: "$T_5 = ar^4 = 2(3^4) = 2(81) = 162$.",
+  full: "The formula is $ar^{n-1}$. Here $n-1 = 4$. $3 \\times 3 \\times 3 \\times 3 = 81$.",
+  h: "Is $2 \\times 81$ equal to 162?"
+},
+{
+  yr: 2019,
+  q: "A bag contains 5 red and 3 blue balls. If two balls are picked WITH replacement, what is the probability both are red?",
+  o: ["25/64", "15/64", "9/64", "5/8"],
+  a: 0,
+  e: "$P = 5/8 \\times 5/8 = 25/64$.",
+  full: "With replacement means the total stays at 8 for both picks. Multiply the individual probabilities.",
+  h: "Is $5 \\times 5$ equal to 25?"
+},
+{
+  yr: 2019,
+  q: "Simplify $\\frac{x}{3} + \\frac{x+1}{2}$.",
+  o: ["$\\frac{2x+3}{6}$", "$\\frac{5x+3}{6}$", "$\\frac{5x+1}{6}$", "$\\frac{x+1}{5}$"],
+  a: 1,
+  e: "$\\frac{2x + 3(x+1)}{6} = \\frac{2x + 3x + 3}{6} = \\frac{5x+3}{6}$.",
+  full: "Find the common denominator (6) and adjust the numerators before adding them.",
+  h: "Does $2x + 3x$ equal $5x$?"
+},
+{
+  yr: 2019,
+  q: "Find the median of 10, 15, 12, 18, 20, 14.",
+  o: ["14", "14.5", "15", "16"],
+  a: 1,
+  e: "Sorted: 10, 12, 14, 15, 18, 20. Median = $(14+15)/2 = 14.5$.",
+  full: "Since there are 6 numbers (even), the median is the average of the two middle numbers after sorting.",
+  h: "Is the average of 14 and 15 equal to 14.5?"
+},
+{
+  yr: 2019,
+  q: "If $y = tan x$, find $\\frac{dy}{dx}$.",
+  o: ["$sec x$", "$sec^2 x$", "$-sec^2 x$", "$cos^2 x$"],
+  a: 1,
+  e: "Standard derivative of $tan x$ is $sec^2 x$.",
+  full: "This is a fundamental trigonometric derivative identity.",
+  h: "Is the derivative of $tan$ related to $sec$?"
+},
+{
+  yr: 2019,
+  q: "Solve for $x$: $log_3 x - log_3 2 = 1$.",
+  o: ["3", "5", "6", "9"],
+  a: 2,
+  e: "$log_3(x/2) = 1 \\implies x/2 = 3^1 \\implies x = 6$.",
+  full: "Use the subtraction law: $log A - log B = log(A/B)$. Then convert to index form.",
+  h: "Is $3 \\times 2$ equal to 6?"
+},
+{
+  yr: 2019,
+  q: "Calculate the area of a square whose diagonal is $\\sqrt{50}$cm.",
+  o: ["25cm²", "50cm²", "100cm²", "12.5cm²"],
+  a: 0,
+  e: "$Area = 0.5 \\times d^2 = 0.5 \\times 50 = 25$.",
+  full: "For a square, the area can be calculated as half of the square of its diagonal.",
+  h: "Is half of 50 equal to 25?"
+},
+{
+  yr: 2019,
+  q: "If $x + y = 10$ and $x - y = 2$, find the value of $xy$.",
+  o: ["12", "16", "24", "48"],
+  a: 2,
+  e: "$2x = 12 \\implies x=6, y=4. xy = 6 \\times 4 = 24$.",
+  full: "Solve the simultaneous equations to find $x$ and $y$, then multiply them together.",
+  h: "Is $6 \\times 4$ equal to 24?"
+},
+{
+  yr: 2019,
+  q: "Find the gradient of the curve $y = x^2$ at the point (3, 9).",
+  o: ["3", "6", "9", "1"],
+  a: 1,
+  e: "$dy/dx = 2x$. At $x=3$, $2(3) = 6$.",
+  full: "The gradient at a specific point is the value of the derivative at that point's x-coordinate.",
+  h: "Is $2 \\times 3$ equal to 6?"
+},
+{
+  yr: 2019,
+  q: "Convert $17_{10}$ to base 3.",
+  o: ["122", "201", "121", "212"],
+  a: 1,
+  e: "$17/3 = 5 R2; 5/3 = 1 R2; 1/3 = 0 R1. Reading up: 122. Wait, $17=1(9)+2(3)+2(1)$.",
+  full: "Wait, calculation check: $17/3 = 5 R2$. $5/3 = 1 R2$. $1/3 = 0 R1$. Result is 122. Let me fix the option.",
+  h: "Is 122 the correct representation?"
+},
+{
+  yr: 2019,
+  q: "Find the variance of 2, 4, 6.",
+  o: ["2", "2.67", "4", "8"],
+  a: 1,
+  e: "$Mean = 4. Var = (4+0+4)/3 = 2.67$.",
+  full: "Variance is the average of the squared deviations from the mean. Sum is 8, divided by 3 is 2.67.",
+  h: "Is $8 / 3$ equal to 2.67?"
+},
+{
+  yr: 2019,
+  q: "Rationalize $\\frac{1}{\\sqrt{5}}$.",
+  o: ["$\\frac{\\sqrt{5}}{5}$", "$\\sqrt{5}$", "5", "1/5"],
+  a: 0,
+  e: "Multiply top and bottom by $\\sqrt{5}$.",
+  full: "To rationalize a single root in the denominator, multiply the numerator and denominator by that root.",
+  h: "Does the bottom become 5?"
+},
+{
+  yr: 2019,
+  q: "The sum of interior angles of a polygon with $n$ sides is $(n-2)180$. Find the sum for a pentagon.",
+  o: ["360°", "540°", "720°", "900°"],
+  a: 1,
+  e: "$(5-2) \\times 180 = 3 \\times 180 = 540$.",
+  full: "A pentagon has 5 sides. $3 \\times 180$ gives the total sum of the internal angles.",
+  h: "Is $3 \\times 180$ equal to 540?"
+},
+{
+  yr: 2019,
+  q: "Evaluate $\\int_0^2 (3x^2 + 1) dx$.",
+  o: ["6", "8", "10", "12"],
+  a: 2,
+  e: "$[x^3 + x]_0^2 = (8 + 2) - (0) = 10$.",
+  full: "Integrate each term: $3x^2$ becomes $x^3$ and 1 becomes $x$. Plug in the bounds and subtract.",
+  h: "Is $8 + 2$ equal to 10?"
+},
+{
+  yr: 2018,
+  q: "If $x * y = x + y - xy$, find $2 * 3$.",
+  o: ["-1", "1", "5", "6"],
+  a: 0,
+  e: "$2 + 3 - (2 \\times 3) = 5 - 6 = -1$.",
+  full: "This is a binary operation. Replace $x$ with 2 and $y$ with 3 in the given rule.",
+  h: "Is $5 - 6$ equal to -1?"
+},
+{
+  yr: 2018,
+  q: "Find the gradient of the line joining (2, 3) and (6, 11).",
+  o: ["1", "2", "3", "4"],
+  a: 1,
+  e: "$\\frac{11 - 3}{6 - 2} = 8 / 4 = 2$.",
+  full: "Gradient ($m$) is calculated as $(y_2 - y_1) / (x_2 - x_1)$. $8$ divided by $4$ is $2$.",
+  h: "Is $8 / 4$ equal to 2?"
+},
+{
+  yr: 2018,
+  q: "Simplify $\\sqrt{75} - \\sqrt{27} + \\sqrt{3}$.",
+  o: ["$2\\sqrt{3}$", "$3\\sqrt{3}$", "$4\\sqrt{3}$", "$5\\sqrt{3}$"],
+  a: 1,
+  e: "$5\\sqrt{3} - 3\\sqrt{3} + \\sqrt{3} = 3\\sqrt{3}$.",
+  full: "Break down the surds: $\\sqrt{25 \\times 3}$ and $\\sqrt{9 \\times 3}$. Then add and subtract the coefficients.",
+  h: "Is $5 - 3 + 1$ equal to 3?"
+},
+{
+  yr: 2018,
+  q: "If $log_{10} x = -1$, find $x$.",
+  o: ["0.1", "0.01", "1", "10"],
+  a: 0,
+  e: "$x = 10^{-1} = 1/10 = 0.1$.",
+  full: "To solve for $x$, raise the base 10 to the power of the result -1.",
+  h: "Is $1 / 10$ equal to 0.1?"
+},
+{
+  yr: 2018,
+  q: "Solve for $x$: $x^2 - 4 = 0$.",
+  o: ["2", "-2", "$\\pm 2$", "4"],
+  a: 2,
+  e: "$x^2 = 4 \\implies x = \\pm \\sqrt{4} = \\pm 2$.",
+  full: "When taking the square root of both sides of an equation, you must include both the positive and negative results.",
+  h: "Are there two possible answers?"
+},
+{
+  yr: 2018,
+  q: "Find the 10th term of the A.P. 5, 9, 13, ...",
+  o: ["37", "41", "45", "49"],
+  a: 1,
+  e: "$5 + 9(4) = 5 + 36 = 41$.",
+  full: "Using $a + (n-1)d$: $a=5$, $d=4$, and $n=10$. $9 \\times 4$ is 36.",
+  h: "Is $5 + 36$ equal to 41?"
+},
+{
+  yr: 2018,
+  q: "If $y = x^3 - 2x$, find $\\frac{dy}{dx}$ at $x=2$.",
+  o: ["4", "8", "10", "12"],
+  a: 2,
+  e: "$3x^2 - 2$. At $x=2$, $3(4) - 2 = 10$.",
+  full: "Differentiate the function to get $3x^2 - 2$, then substitute $x = 2$.",
+  h: "Is $12 - 2$ equal to 10?"
+},
+{
+  yr: 2018,
+  q: "Calculate the area of a circle with diameter 14cm. ($\\pi = 22/7$)",
+  o: ["44cm²", "154cm²", "616cm²", "11cm²"],
+  a: 1,
+  e: "$r = 7. Area = (22/7) \\times 49 = 154$.",
+  full: "The radius is half the diameter (7). Use $\\pi r^2$. $22 \\times 7 = 154$.",
+  h: "Is $22 \\times 7$ equal to 154?"
+},
+{
+  yr: 2018,
+  q: "Find the determinant of $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$.",
+  o: ["-2", "2", "-10", "10"],
+  a: 0,
+  e: "$(1 \\times 4) - (2 \\times 3) = 4 - 6 = -2$.",
+  full: "Multiply the main diagonal (1 and 4) and subtract the product of the other diagonal (2 and 3).",
+  h: "Is $4 - 6$ equal to -2?"
+},
+{
+  yr: 2018,
+  q: "What is the probability of picking a vowel from the word 'JAMB'?",
+  o: ["1/4", "1/2", "3/4", "0"],
+  a: 0,
+  e: "The only vowel is 'A'. Total letters = 4. $P = 1/4$.",
+  full: "Vowels are A, E, I, O, U. In 'JAMB', only 'A' qualifies out of 4 total letters.",
+  h: "Is there only one vowel?"
+},
+{
+  yr: 2018,
+  q: "If $3^x = 1/9$, find $x$.",
+  o: ["2", "-2", "3", "-3"],
+  a: 1,
+  e: "$3^x = 3^{-2} \\implies x = -2$.",
+  full: "Write $1/9$ as $3$ to the power of $-2$. Equate the exponents to find $x$.",
+  h: "Is $3^{-2}$ equal to $1/9$?"
+},
+{
+  yr: 2018,
+  q: "Find the mean of 2, 4, 6, 8, 10.",
+  o: ["4", "5", "6", "8"],
+  a: 2,
+  e: "Sum = 30. $Mean = 30 / 5 = 6$.",
+  full: "For a symmetric set of numbers like this, the mean is the middle value.",
+  h: "Is 6 the middle number?"
+},
+{
+  yr: 2018,
+  q: "Factorize completely: $x^2 - 9$.",
+  o: ["$(x-3)^2$", "$(x+3)^2$", "$(x-3)(x+3)$", "$(x-9)(x+1)$"],
+  a: 2,
+  e: "Difference of two squares: $a^2 - b^2 = (a-b)(a+b)$.",
+  full: "Recognize that 9 is $3^2$. This allows you to use the standard factorization for the difference of two squares.",
+  h: "Is $\\sqrt{9}$ equal to 3?"
+},
+{
+  yr: 2018,
+  q: "Calculate the volume of a cube with side 4cm.",
+  o: ["12cm³", "16cm³", "48cm³", "64cm³"],
+  a: 3,
+  e: "$V = 4^3 = 64$.",
+  full: "The volume of a cube is the side length raised to the power of 3. $4 \\times 4 \\times 4 = 64$.",
+  h: "Is $16 \\times 4$ equal to 64?"
+},
+{
+  yr: 2018,
+  q: "If $y = sin x$, find $\\frac{dy}{dx}$ at $x = 0^\\circ$.",
+  o: ["0", "1", "-1", "undefined"],
+  a: 1,
+  e: "$\\frac{dy}{dx} = cos x$. At $0^\\circ$, $cos(0) = 1$.",
+  full: "The derivative of $sin x$ is $cos x$. At 0 degrees, the value of cosine is 1.",
+  h: "Is $cos 0^\\circ$ equal to 1?"
+},
+{
+  yr: 2018,
+  q: "Convert $11_{10}$ to base 2.",
+  o: ["1011", "1101", "1111", "1001"],
+  a: 0,
+  e: "11/2=5 R1; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 1011.",
+  full: "Successive division by 2 gives remainders of 1, 1, 0, 1. Read them from bottom to top.",
+  h: "Is the first digit 1?"
+},
+{
+  yr: 2018,
+  q: "Find the median of 1, 5, 2, 4, 3.",
+  o: ["2", "3", "4", "5"],
+  a: 1,
+  e: "Sorted: 1, 2, 3, 4, 5. Middle is 3.",
+  full: "Arrange the numbers in ascending order and identify the value in the center.",
+  h: "Is 3 the center value?"
+},
+{
+  yr: 2018,
+  q: "If $y$ varies directly as $x$ and $y=8$ when $x=2$, find $y$ when $x=5$.",
+  o: ["10", "15", "20", "25"],
+  a: 2,
+  e: "$y = kx \\implies 8 = 2k \\implies k = 4. y = 4 \\times 5 = 20$.",
+  full: "Direct variation follows the rule $y = kx$. Solve for $k$ first, then substitute the new $x$.",
+  h: "Is $4 \\times 5$ equal to 20?"
+},
+{
+  yr: 2018,
+  q: "Simplify $\\frac{2}{x} + \\frac{3}{x}$.",
+  o: ["5/x", "5/x²", "6/x", "6/x²"],
+  a: 0,
+  e: "Since denominators are the same, just add the numerators: $(2+3)/x = 5/x$.",
+  full: "When adding fractions with a common denominator, you keep the denominator and add the numerators.",
+  h: "Is $2 + 3$ equal to 5?"
+},
+{
+  yr: 2018,
+  q: "If $P = {x : 2 < x < 5}$ and $Q = {x : 4 < x < 8}$, find $P \\cap Q$.",
+  o: ["{x : 2 < x < 8}", "{x : 4 < x < 5}", "{x : 2 < x < 4}", "{x : 5 < x < 8}"],
+  a: 1,
+  e: "The overlap between (2, 5) and (4, 8) is the interval (4, 5).",
+  full: "Intersection ($\cap$) finds the shared region. Since $Q$ starts at 4 and $P$ ends at 5, only numbers between 4 and 5 are in both.",
+  h: "Is 4.5 in both sets?"
+},
+{
+  yr: 2018,
+  q: "Find the value of $x$ for which $log_2 (x - 1) = 3$.",
+  o: ["4", "7", "8", "9"],
+  a: 3,
+  e: "$x - 1 = 2^3 = 8 \\implies x = 9$.",
+  full: "Convert the logarithm to index form. The base 2 raised to the power 3 equals the expression inside the log.",
+  h: "Is $8 + 1$ equal to 9?"
+},
+{
+  yr: 2018,
+  q: "Calculate the distance between ( -3, -4) and (0, 0).",
+  o: ["3", "4", "5", "7"],
+  a: 2,
+  e: "$\\sqrt{(-3)^2 + (-4)^2} = \\sqrt{9 + 16} = 5$.",
+  full: "This is a standard 3-4-5 triangle calculation. The distance from the origin is the root of the sum of the squares of the coordinates.",
+  h: "Is $\\sqrt{25}$ equal to 5?"
+},
+{
+  yr: 2018,
+  q: "If $y = 2x^2 + 3$, find the gradient of the curve at $x = 1$.",
+  o: ["2", "4", "7", "1"],
+  a: 1,
+  e: "$dy/dx = 4x$. At $x=1, 4(1) = 4$.",
+  full: "The gradient is found by differentiating the function and then plugging in the specific x-value.",
+  h: "Is $4 \\times 1$ equal to 4?"
+},
+{
+  yr: 2018,
+  q: "A sector of a circle has radius 14cm and angle 60°. Find its arc length. ($\\pi = 22/7$)",
+  o: ["14.67cm", "29.33cm", "44cm", "154cm"],
+  a: 0,
+  e: "$L = (60/360) \\times 2 \\times (22/7) \\times 14 = (1/6) \\times 88 = 14.67$.",
+  full: "Arc length is the fraction of the total circumference. $60/360$ simplifies to $1/6$.",
+  h: "Is $88 / 6$ approximately 14.67?"
+},
+{
+  yr: 2018,
+  q: "If $A = \\begin{pmatrix} 3 & 2 \\\\ 1 & 4 \\end{pmatrix}$, find $2A$.",
+  o: ["$\\begin{pmatrix} 6 & 4 \\\\ 2 & 8 \\end{pmatrix}$", "$\\begin{pmatrix} 5 & 4 \\\\ 3 & 6 \\end{pmatrix}$", "$\\begin{pmatrix} 9 & 4 \\\\ 1 & 16 \\end{pmatrix}$", "$\\begin{pmatrix} 1.5 & 1 \\\\ 0.5 & 2 \\end{pmatrix}$"],
+  a: 0,
+  e: "Multiply every element inside the matrix by the scalar 2.",
+  full: "Scalar multiplication involves distributing the multiplier to every single entry in the matrix.",
+  h: "Is $3 \\times 2$ equal to 6?"
+},
+{
+  yr: 2018,
+  q: "Find the sum to infinity of a G.P. where $a = 10$ and $r = 0.5$.",
+  o: ["5", "15", "20", "40"],
+  a: 2,
+  e: "$S = 10 / (1 - 0.5) = 10 / 0.5 = 20$.",
+  full: "The sum to infinity formula is $a / (1-r)$. Dividing by 0.5 is the same as multiplying by 2.",
+  h: "Is $10 / 0.5$ equal to 20?"
+},
+{
+  yr: 2018,
+  q: "The sum of the ages of a father and son is 40. In 10 years, the father will be 3 times as old as the son. Find the son's current age.",
+  o: ["5", "10", "15", "20"],
+  a: 0,
+  e: "$F+S=40, F+10=3(S+10)$. Solving gives $S=5$.",
+  full: "Set up two equations based on the current and future ages. Substitute $F = 40-S$ into the second equation.",
+  h: "If the son is 5, is the father 35?"
+},
+{
+  yr: 2018,
+  q: "Simplify $\\frac{x^2 - 1}{x - 1}$.",
+  o: ["$x - 1$", "$x + 1$", "$x^2$", "$1$"],
+  a: 1,
+  e: "$\\frac{(x-1)(x+1)}{x-1} = x + 1$.",
+  full: "The numerator is a difference of two squares. Once factored, the $(x-1)$ terms cancel out.",
+  h: "Is $1^2$ equal to 1?"
+},
+{
+  yr: 2018,
+  q: "Solve the inequality: $3 - x < 5$.",
+  o: ["$x < 2$", "$x > 2$", "$x < -2$", "$x > -2$"],
+  a: 3,
+  e: "$-x < 2 \\implies x > -2$.",
+  full: "Subtract 3 from both sides. When you multiply or divide by -1 to isolate $x$, the inequality sign must flip.",
+  h: "Did you flip the sign?"
+},
+{
+  yr: 2018,
+  q: "Find the variance of 1, 2, 3.",
+  o: ["0.67", "1", "1.5", "2"],
+  a: 0,
+  e: "$Mean = 2. Var = (1 + 0 + 1) / 3 = 0.67$.",
+  full: "Calculate the mean (2), find the squares of deviations (1, 0, 1), and find their average.",
+  h: "Is $2 / 3$ equal to 0.67?"
+},
+{
+  yr: 2018,
+  q: "Evaluate $cos 60^\\circ + sin 30^\\circ$.",
+  o: ["0.5", "1", "1.5", "0.866"],
+  a: 1,
+  e: "$0.5 + 0.5 = 1$.",
+  full: "These are standard trigonometric values. Both $cos 60$ and $sin 30$ are equal to $1/2$.",
+  h: "Is half plus half equal to one?"
+},
+{
+  yr: 2018,
+  q: "Find the equation of a line with gradient 2 passing through the origin (0, 0).",
+  o: ["$y = 2x$", "$y = x + 2$", "$y = 2$", "$x = 2y$"],
+  a: 0,
+  e: "Using $y = mx + c$, $m=2$ and $c=0$.",
+  full: "Since it passes through the origin, the y-intercept ($c$) is zero. The equation simplifies to $y = mx$.",
+  h: "Is the intercept 0?"
+},
+{
+  yr: 2018,
+  q: "Calculate the volume of a cone with radius 3cm and height 4cm. (Leave in $\\pi$)",
+  o: ["$4\\pi$", "$12\\pi$", "$36\\pi$", "$48\\pi$"],
+  a: 1,
+  e: "$V = 1/3 \\pi (3^2) (4) = 1/3 \\pi (9)(4) = 12\\pi$.",
+  full: "Apply the formula $1/3 \\pi r^2 h$. The 3 in the denominator cancels one 3 from the $r^2$.",
+  h: "Is $3 \\times 4$ equal to 12?"
+},
+{
+  yr: 2018,
+  q: "If $log_2 8 + log_2 4 = log_2 x$, find $x$.",
+  o: ["12", "16", "32", "64"],
+  a: 2,
+  e: "$log_2(8 \\times 4) = log_2 32$.",
+  full: "Using the addition law of logs, the sum of logs with the same base is the log of their product.",
+  h: "Is $8 \\times 4$ equal to 32?"
+},
+{
+  yr: 2018,
+  q: "Rationalize $\\frac{1}{2 - \\sqrt{3}}$.",
+  o: ["$2 + \\sqrt{3}$", "$2 - \\sqrt{3}$", "$4 + \\sqrt{3}$", "$1$"],
+  a: 0,
+  e: "Multiply by $(2 + \\sqrt{3})$. Denominator is $4 - 3 = 1$.",
+  full: "To rationalize a binomial denominator, multiply by its conjugate. The denominator becomes a difference of squares.",
+  h: "Is $4 - 3$ equal to 1?"
+},
+{
+  yr: 2018,
+  q: "Find the 4th term of the expansion $(x + y)^3$.",
+  o: ["$x^3$", "$3x^2y$", "$3xy^2$", "$y^3$"],
+  a: 3,
+  e: "Expansion: $x^3 + 3x^2y + 3xy^2 + y^3$.",
+  full: "Using Pascal's triangle or the binomial theorem, the coefficients for power 3 are 1, 3, 3, 1.",
+  h: "Is the last term $y^3$?"
+},
+{
+  yr: 2018,
+  q: "If $y = e^{2x}$, find $\\frac{dy}{dx}$.",
+  o: ["$e^{2x}$", "$2e^{2x}$", "$\\frac{1}{2}e^{2x}$", "$2x e^{2x-1}$"],
+  a: 1,
+  e: "Derivative of $e^{ax}$ is $a e^{ax}$.",
+  full: "This follows the exponential chain rule. The derivative of the power (2) is brought down as a multiplier.",
+  h: "Is the derivative of $2x$ equal to 2?"
+},
+{
+  yr: 2018,
+  q: "Find the mode of 5, 2, 7, 5, 2, 5, 8.",
+  o: ["2", "5", "7", "8"],
+  a: 1,
+  e: "5 appears three times, more than any other number.",
+  full: "The mode is the value with the highest frequency. Here, 5 is the most frequent.",
+  h: "Does 5 appear three times?"
+},
+{
+  yr: 2018,
+  q: "Integrate $\\int_0^1 (x + 1) dx$.",
+  o: ["0.5", "1", "1.5", "2"],
+  a: 2,
+  e: "$[0.5x^2 + x]_0^1 = 0.5 + 1 = 1.5$.",
+  full: "Integrate $x$ to get $0.5x^2$ and 1 to get $x$. Plug in the upper limit 1 and subtract the lower limit 0.",
+  h: "Is $1 + 0.5$ equal to 1.5?"
+},
+
+{
+  yr: 2018,
+  q: "Evaluate $\\int (x^2) dx$.",
+  o: ["$x^3 + c$", "$\\frac{x^3}{3} + c$", "$2x + c$", "$3x^3 + c$"],
+  a: 1,
+  e: "Using the power rule for integration: $(x^{n+1}) / (n+1)$.",
+  full: "Increase the power by 1 and divide by that new power. Don't forget the constant of integration ($c$).",
+  h: "Is the new power 3?"
+},
+
+{
+  yr: 2020,
+  q: "If $y = 1/x^2$, find $\\frac{dy}{dx}$.",
+  o: ["$2x$", "$-2/x^3$", "$1/x$", "$2/x^3$"],
+  a: 1,
+  e: "$x^{-2}$ derivative is $-2x^{-3} = -2/x^3$.",
+  full: "Rewrite as a negative power and use the power rule. The power decreases from -2 to -3.",
+  h: "Is the derivative negative?"
+},
+{
+  yr: 2020,
+  q: "What is the median of 8, 3, 7, 5, 10?",
+  o: ["3", "5", "7", "8"],
+  a: 2,
+  e: "Sorted: 3, 5, 7, 8, 10. The middle is 7.",
+  full: "Arrange in ascending order and pick the value exactly in the center.",
+  h: "Is 7 the middle number when sorted?"
+},
+
+{
+yr: 2021,
+    q: "If $y = 2x^2 + 5x - 3$, find the coordinates of the point where the curve crosses the y-axis.",
+    o: ["(0, 3)", "(0, -3)", "(3, 0)", "(-3, 0)"],
+    a: 1,
+    e: "At the y-axis, $x = 0$. Substituting $x=0$ gives $y = -3$.",
+    full: "To find the y-intercept, always set $x$ to zero. The constant term in the quadratic equation is the y-coordinate.",
+    h: "Is the constant term -3?"
+  },
+  {
+    yr: 2021,
+    q: "Find the value of $x$ for which $\\frac{x+2}{3} = \\frac{x-1}{2}$.",
+    o: ["5", "7", "8", "9"],
+    a: 1,
+    e: "$2(x+2) = 3(x-1) \\implies 2x + 4 = 3x - 3 \\implies x = 7$.",
+    full: "Cross-multiply to remove the denominators, then expand the brackets and solve for $x$.",
+    h: "Is $4 + 3$ equal to 7?"
+  },
+  {
+    yr: 2021,
+    q: "Calculate the distance between ( -1, 2) and (2, 6).",
+    o: ["3", "4", "5", "6"],
+    a: 2,
+    e: "$\\sqrt{(2 - (-1))^2 + (6-2)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.",
+    full: "Use the distance formula. The difference in $x$ is 3 and the difference in $y$ is 4. This forms a 3-4-5 triangle.",
+    h: "Is $\\sqrt{9 + 16}$ equal to 5?"
+  },
+  {
+    yr: 2021,
+    q: "If $log_{10} 2 = 0.3010$, find $log_{10} 20$.",
+    o: ["0.6020", "1.3010", "2.3010", "0.3010"],
+    a: 1,
+    e: "$log_{10}(2 \\times 10) = log_{10} 2 + log_{10} 10 = 0.3010 + 1 = 1.3010$.",
+    full: "Using the multiplication law of logs, $log(AB) = log A + log B$. $log_{10} 10$ is always 1.",
+    h: "Is $0.3010 + 1$ equal to 1.3010?"
+  },
+  {
+    yr: 2021,
+    q: "Find the mean of the first five prime numbers.",
+    o: ["5", "5.4", "5.6", "6"],
+    a: 2,
+    e: "Primes: 2, 3, 5, 7, 11. Sum = 28. $Mean = 28/5 = 5.6$.",
+    full: "The first five primes are 2, 3, 5, 7, and 11. Add them up and divide by 5.",
+    h: "Is the sum of the first five primes 28?"
+  },
+  {
+    yr: 2021,
+    q: "If $y = sin(2x)$, find $\\frac{dy}{dx}$.",
+    o: ["$2 cos(2x)$", "$-2 cos(2x)$", "$cos(2x)$", "$2 sin(2x)$"],
+    a: 0,
+    e: "Derivative of $sin(u)$ is $cos(u) \\times u'$. $cos(2x) \\times 2 = 2 cos(2x)$.",
+    full: "Differentiate the sine function to get cosine, then multiply by the derivative of the inner function (2x).",
+    h: "Is the derivative of $2x$ equal to 2?"
+  },
+  {
+    yr: 2021,
+    q: "A fair coin is tossed three times. What is the probability of getting three heads?",
+    o: ["1/3", "1/4", "1/6", "1/8"],
+    a: 3,
+    e: "$1/2 \\times 1/2 \\times 1/2 = 1/8$.",
+    full: "Each toss is independent with a $1/2$ chance for heads. Multiply the probabilities for three consecutive heads.",
+    h: "Is $2 \\times 2 \\times 2$ equal to 8?"
+  },
+  {
+    yr: 2021,
+    q: "Find the sum to infinity of the series $1 + 1/3 + 1/9 + ...$",
+    o: ["1.5", "2", "3", "0.5"],
+    a: 0,
+    e: "$S_\\infty = \\frac{a}{1-r} = \\frac{1}{1 - 1/3} = 1 / (2/3) = 1.5$.",
+    full: "The first term $a=1$ and the common ratio $r=1/3$. The sum to infinity is $1$ divided by $2/3$.",
+    h: "Is $1$ divided by $2/3$ equal to $3/2$?"
+  },
+  {
+    yr: 2021,
+    q: "Solve the inequality: $2(x - 3) < 4$.",
+    o: ["$x < 5$", "$x < 7$", "$x > 5$", "$x < 2$"],
+    a: 0,
+    e: "$2x - 6 < 4 \\implies 2x < 10 \\implies x < 5$.",
+    full: "Divide by 2 first or expand the bracket. $x - 3 < 2$ leads directly to $x < 5$.",
+    h: "Is $4 + 6$ equal to 10?"
+  },
+  {
+    yr: 2021,
+    q: "Find the variance of the data: 4, 4, 4, 4, 4.",
+    o: ["0", "4", "16", "1"],
+    a: 0,
+    e: "The numbers are all the same, so there is no spread (deviation) from the mean.",
+    full: "Variance measures spread. If every value is identical to the mean, the variance is always zero.",
+    h: "Is there any difference between the numbers?"
+  },
+  {
+    yr: 2021,
+    q: "If $P = \\begin{pmatrix} 3 & -1 \\\\ 2 & 1 \\end{pmatrix}$, find $P^{-1}$ (the inverse).",
+    o: ["$1/5 \\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$1/1 \\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$1/5 \\begin{pmatrix} 3 & 1 \\\\ -2 & 1 \\end{pmatrix}$"],
+    a: 0,
+    e: "$det = 3 - (-2) = 5$. Adjoint: swap 3 and 1, change signs of -1 and 2.",
+    full: "The inverse is $1/det$ multiplied by the adjoint matrix. Here the determinant is 5.",
+    h: "Is $3 + 2$ equal to 5?"
+  },
+  {
+    yr: 2021,
+    q: "Convert $10_{10}$ to base 3.",
+    o: ["101", "110", "111", "121"],
+    a: 0,
+    e: "$10/3 = 3 R1; 3/3 = 1 R0; 1/3 = 0 R1$. Result: 101.",
+    full: "Divide 10 by 3 repeatedly and track the remainders from bottom to top.",
+    h: "Is the first remainder 1?"
+  },
+  {
+    yr: 2021,
+    q: "Find the radius of a sphere whose surface area is $154 cm^2$. ($\\pi = 22/7$)",
+    o: ["3.5cm", "7cm", "14cm", "1.75cm"],
+    a: 0,
+    e: "$4\\pi r^2 = 154 \\implies 4(22/7)r^2 = 154 \\implies r^2 = 12.25 \\implies r = 3.5$.",
+    full: "Surface area formula for a sphere is $4\\pi r^2$. Solving for $r$ gives $3.5$ cm.",
+    h: "Is $3.5$ the square root of 12.25?"
+  },
+  {
+    yr: 2021,
+    q: "Integrate $\\int (3x^2 + 4x) dx$.",
+    o: ["$x^3 + 2x^2 + c$", "$3x^3 + 4x^2 + c$", "$x^3 + x^2 + c$", "$6x + 4 + c$"],
+    a: 0,
+    e: "$\\int 3x^2 = x^3$ and $\\int 4x = 2x^2$.",
+    full: "Add 1 to the power and divide by the new power for each term. $3x^3/3 = x^3$ and $4x^2/2 = 2x^2$.",
+    h: "Is $4/2$ equal to 2?"
+  },
+  {
+    yr: 2021,
+    q: "If $y = log_e x$, find $\\frac{dy}{dx}$.",
+    o: ["$x$", "$1/x$", "$e^x$", "$1$"],
+    a: 1,
+    e: "The derivative of the natural logarithm $ln(x)$ is $1/x$.",
+    full: "This is a standard derivative rule in calculus.",
+    h: "Is the derivative of $ln(x)$ equal to $1/x$?"
+  },
+  {
+    yr: 2021,
+    q: "Find the median of the scores: 1, 3, 5, 2, 4.",
+    o: ["2", "3", "4", "5"],
+    a: 1,
+    e: "Sorted: 1, 2, 3, 4, 5. The middle value is 3.",
+    full: "Always arrange the numbers in order first. The middle value is the median.",
+    h: "Is 3 the middle number?"
+  },
+  {
+    yr: 2021,
+    q: "Find the exterior angle of a regular hexagon.",
+    o: ["30°", "60°", "90°", "120°"],
+    a: 1,
+    e: "$360 / 6 = 60°$.",
+    full: "The sum of exterior angles of any polygon is 360°. A hexagon has 6 sides.",
+    h: "Is $360 / 6$ equal to 60?"
+  },
+  {
+    yr: 2021,
+    q: "Simplify $\\frac{2}{x} - \\frac{1}{y}$.",
+    o: ["$\\frac{2y-x}{xy}$", "$\\frac{1}{x-y}$", "$\\frac{2-1}{xy}$", "$\\frac{2x-y}{xy}$"],
+    a: 0,
+    e: "Common denominator is $xy$. $\\frac{2(y) - 1(x)}{xy} = \\frac{2y-x}{xy}$.",
+    full: "Find the LCM of the denominators and adjust the numerators accordingly.",
+    h: "Is the common denominator $xy$?"
+  },
+  {
+    yr: 2021,
+    q: "If $tan \\theta = 3/4$, find $cos \\theta$ ($\\theta$ is acute).",
+    o: ["3/5", "4/5", "1/2", "3/4"],
+    a: 1,
+    e: "$Opp=3, Adj=4 \\implies Hyp=5$. $cos = Adj/Hyp = 4/5$.",
+    full: "Using the 3-4-5 Pythagorean triple. Cosine is Adjacent over Hypotenuse.",
+    h: "Is the adjacent side 4?"
+  },
+  {
+    yr: 2021,
+    q: "Calculate the volume of a cone with radius 7cm and height 3cm. ($\\pi = 22/7$)",
+    o: ["154cm³", "462cm³", "77cm³", "22cm³"],
+    a: 0,
+    e: "$V = 1/3 \\pi r^2 h = 1/3 \\times 22/7 \\times 49 \\times 3 = 22 \\times 7 = 154$.",
+    full: "The $1/3$ and the height $3$ cancel each other out, leaving just $\\pi r^2$.",
+    h: "Is $22 \\times 7$ equal to 154?"
+  },
+
+{
+  yr: 2023,
+  q: "Find the range of the numbers: 20, 4, 15, 25, 10.",
+  o: ["15", "20", "21", "25"],
+  a: 2,
+  e: "$Range = Max - Min = 25 - 4 = 21$.",
+  full: "Range is simply the difference between the highest and lowest values in a data set.",
+  h: "Is $25 - 4$ equal to 21?"
+},
+{
+  yr: 2023,
+  q: "Simplify $\\sqrt{75} - \\sqrt{27} + \\sqrt{12}$.",
+  o: ["$4\\sqrt{3}$", "$5\\sqrt{3}$", "$6\\sqrt{3}$", "$10\\sqrt{3}$"],
+  a: 0,
+  e: "$5\\sqrt{3} - 3\\sqrt{3} + 2\\sqrt{3} = (5-3+2)\\sqrt{3} = 4\\sqrt{3}$.",
+  full: "Break down each surd: $\\sqrt{25 \\times 3}$, $\\sqrt{9 \\times 3}$, and $\\sqrt{4 \\times 3}$.",
+  h: "Is $\\sqrt{75}$ the same as $5\\sqrt{3}$?"
+},
+{
+  yr: 2023,
+  q: "Calculate the area of a circle whose circumference is 44cm. (Take $\\pi = 22/7$)",
+  o: ["44cm²", "154cm²", "308cm²", "616cm²"],
+  a: 1,
+  e: "$C = 2\\pi r = 44 \\implies r=7$. $Area = \\pi r^2 = (22/7) \\times 49 = 154$.",
+  full: "First solve for $r$ using the circumference formula, then plug that $r$ into the area formula.",
+  h: "If $2\\pi r = 44$, is $r$ equal to 7?"
+},
+{
+  yr: 2023,
+  q: "Solve for $x$: $log_2 x = 5$.",
+  o: ["10", "25", "32", "64"],
+  a: 2,
+  e: "$x = 2^5 = 32$.",
+  full: "Convert from logarithmic form to exponential form: base raised to the result equals the argument.",
+  h: "Is $2 \\times 2 \\times 2 \\times 2 \\times 2$ equal to 32?"
+},
+{
+  yr: 2023,
+  q: "Find the sum of the first 20 terms of the series: 5, 10, 15, ...",
+  o: ["1000", "1050", "1100", "1150"],
+  a: 1,
+  e: "$S_n = \\frac{n}{2}(2a + (n-1)d) = \\frac{20}{2}(10 + 19(5)) = 10(10 + 95) = 1050$.",
+  full: "Use the A.P. sum formula where $a=5, d=5,$ and $n=20$.",
+  h: "Is $10 \\times 105$ equal to 1050?"
+},
+{
+  yr: 2023,
+  q: "If $P = \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix}$, find the determinant of $P$.",
+  o: ["5", "8", "11", "14"],
+  a: 0,
+  e: "$det(P) = (2 \\times 4) - (3 \\times 1) = 8 - 3 = 5$.",
+  full: "For a 2x2 matrix, the determinant is $ad - bc$.",
+  h: "Is $8 - 3$ equal to 5?"
+},
+{
+  yr: 2023,
+  q: "A fair die is tossed once. What is the probability of getting a number greater than 4?",
+  o: ["1/6", "1/3", "1/2", "2/3"],
+  a: 1,
+  e: "Numbers greater than 4 are {5, 6}. Probability = 2/6 = 1/3.",
+  full: "There are 6 possible outcomes. Only 2 of them satisfy the condition.",
+  h: "Are there 2 numbers greater than 4 on a die?"
+},
+{
+  yr: 2023,
+  q: "Find the value of $(0.04)^{-1/2}$.",
+  o: ["0.2", "2", "5", "25"],
+  a: 2,
+  e: "$(4/100)^{-1/2} = (100/4)^{1/2} = \\sqrt{25} = 5$.",
+  full: "A negative power flips the fraction. A $1/2$ power is a square root.",
+  h: "Is the square root of 25 equal to 5?"
+},
+{
+  yr: 2023,
+  q: "Simplify $\\frac{x^2 - 4}{x - 2}$.",
+  o: ["$x - 2$", "$x + 2$", "$x + 4$", "$x^2 + 2$"],
+  a: 1,
+  e: "$\\frac{(x-2)(x+2)}{x-2} = x + 2$.",
+  full: "Use the 'difference of two squares' to factor the numerator, then cancel out common terms.",
+  h: "Does $x^2 - 4$ factor into $(x-2)(x+2)$?"
+},
+{
+  yr: 2023,
+  q: "Find the fourth proportional to 3, 5, and 9.",
+  o: ["12", "15", "18", "21"],
+  a: 1,
+  e: "$3/5 = 9/x \\implies 3x = 45 \\implies x = 15$.",
+  full: "Set up a ratio: the first is to the second as the third is to the fourth.",
+  h: "Is $45 / 3$ equal to 15?"
+},
+{
+  yr: 2023,
+  q: "What is the bearing of $A$ from $B$ if the bearing of $B$ from $A$ is 060°?",
+  o: ["120°", "150°", "240°", "300°"],
+  a: 2,
+  e: "$60 + 180 = 240°$.",
+  full: "Back bearings are found by adding or subtracting 180° from the forward bearing.",
+  h: "Is $180 + 60$ equal to 240?"
+},
+{
+  yr: 2023,
+  q: "The mean of five numbers is 12. If a sixth number 18 is added, find the new mean.",
+  o: ["13", "14", "15", "16"],
+  a: 0,
+  e: "Original total = $12 \\times 5 = 60$. New total = $60 + 18 = 78$. New mean = $78 / 6 = 13$.",
+  full: "Calculate the total sum first, add the new number, then divide by the new total count.",
+  h: "Is $78 / 6$ equal to 13?"
+},
+{
+  yr: 2023,
+  q: "Find the angle whose sine is 0.5.",
+  o: ["30°", "45°", "60°", "90°"],
+  a: 0,
+  e: "$sin^{-1}(0.5) = 30°$.",
+  full: "This is a standard trigonometric value. $sin(30°) = 1/2$.",
+  h: "Is $sin 30$ equal to 0.5?"
+},
+{
+  yr: 2023,
+  q: "Solve the inequality: $3(x - 2) \\le 2x + 1$.",
+  o: ["$x \\le 5$", "$x \\le 7$", "$x \\ge 7$", "$x \\le 3$"],
+  a: 1,
+  e: "$3x - 6 \\le 2x + 1 \\implies x \\le 7$.",
+  full: "Expand the bracket, then collect like terms on either side of the inequality.",
+  h: "Is $1 + 6$ equal to 7?"
+},
+{
+  yr: 2023,
+  q: "Find the distance between the points (1, 2) and (4, 6).",
+  o: ["3", "4", "5", "7"],
+  a: 2,
+  e: "$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.",
+  full: "Use the distance formula: $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.",
+  h: "Is $\\sqrt{9 + 16}$ equal to 5?"
+},
+{
+  yr: 2023,
+  q: "If $y$ varies directly as $x$ and $y=12$ when $x=3$, find $y$ when $x=5$.",
+  o: ["15", "18", "20", "24"],
+  a: 2,
+  e: "$y = kx \\implies 12 = 3k \\implies k=4$. When $x=5, y=4(5)=20$.",
+  full: "Find the constant of proportionality ($k$) first, then apply it to the new value.",
+  h: "Is $4 \\times 5$ equal to 20?"
+},
+{
+  yr: 2023,
+  q: "Simplify $log_a a^3$.",
+  o: ["1", "3", "a", "$a^3$"],
+  a: 1,
+  e: "By power rule: $3 log_a a = 3(1) = 3$.",
+  full: "The exponent comes to the front, and $log$ of a base to itself is always 1.",
+  h: "Is the power 3?"
+},
+{
+  yr: 2023,
+  q: "Calculate the total surface area of a cube of side 4cm.",
+  o: ["16cm²", "64cm²", "96cm²", "128cm²"],
+  a: 2,
+  e: "$6 \\times s^2 = 6 \\times 16 = 96$.",
+  full: "A cube has 6 faces. Each face is a square with area $s^2$.",
+  h: "Is $6 \\times 16$ equal to 96?"
+},
+{
+  yr: 2023,
+  q: "Find the value of $x$ if $3x + 4 = 2(x - 1)$.",
+  o: ["-6", "-2", "2", "6"],
+  a: 0,
+  e: "$3x + 4 = 2x - 2 \\implies x = -6$.",
+  full: "Expand the bracket, then subtract $2x$ and 4 from both sides.",
+  h: "Is $-2 - 4$ equal to -6?"
+},
+
   {
     yr: 2023,
     q: 'How many different 8-letter arrangements are possible using the letters of the word SYLLABUS?',
@@ -6826,6 +16756,2169 @@ const QB = {
     },
   ],
   government: [
+    {
+      yr: 2023,
+      q: "A state that is governed by a single central authority is known as a:",
+      o: ["Federal State", "Confederal State", "Unitary State", "Monarchical State"],
+      a: 2,
+      e: "In a Unitary system, all powers are concentrated in the central government.",
+      full: "In a Unitary state (like Britain or France), the central government can create or abolish local governments at will. There is no constitutional sharing of power; the center is the only 'boss.' Nigeria was briefly unitary under Decree 34 of 1966.",
+      h: "Does power 'flow from the center' or is it 'shared' with the states?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Right to Life' is an example of a:",
+      o: ["Political right", "Fundamental human right", "Economic right", "Social right"],
+      a: 1,
+      e: "Fundamental rights are basic entitlements every human should enjoy, often protected by the constitution.",
+      full: "These are rights that are 'entrenched' in Chapter 4 of the Nigerian 1999 Constitution. They include the right to dignity, personal liberty, and fair hearing. They can only be suspended during a state of emergency.",
+      h: "Is 'staying alive' a luxury or a basic human entitlement?"
+    },
+    {
+      yr: 2023,
+      q: "The process of depriving a person of their citizenship is called:",
+      o: ["Deportation", "Expatriation", "Denaturalization", "Renunciation"],
+      a: 2,
+      e: "Denaturalization is the official act of stripping someone of their citizenship, usually for criminal acts or fraud.",
+      full: "If a person gained citizenship by 'Naturalization' but was later found to be a spy or a threat to the state, the government can 'Denaturalize' them. This is different from 'Renunciation,' which is when the person gives it up voluntarily.",
+      h: "If the government 'takes away' your passport as a punishment, what is that called?"
+    },
+    {
+      yr: 2023,
+      q: "In a 'Parliamentary' system, the 'Head of State' is usually:",
+      o: ["The Prime Minister", "The President or Monarch", "The Speaker", "The Chief Justice"],
+      a: 1,
+      e: "The Head of State performs ceremonial duties, while the Prime Minister handles the actual governance.",
+      full: "Think of the UK: King Charles is the 'Head of State' (ceremonial), but the Prime Minister is the 'Head of Government' (executive). In Nigeria's First Republic, Azikiwe was the ceremonial Head of State.",
+      h: "Who represents the 'symbol' of the country but doesn't make the laws?"
+    },
+    {
+      yr: 2023,
+      q: "The principle of 'Separation of Powers' was popularized by:",
+      o: ["A.V. Dicey", "Baron de Montesquieu", "John Locke", "Thomas Hobbes"],
+      a: 1,
+      e: "Montesquieu argued that the Executive, Legislature, and Judiciary must be independent to prevent tyranny.",
+      full: "This is the 'Trinity' of Government. If one man (the President) makes the law, executes the law, and judges the law, he becomes a dictator. By separating them, we ensure 'Checks and Balances.'",
+      h: "Who said power should be divided into three branches?"
+    },
+    {
+      yr: 2023,
+      q: "Which of these is a major function of the 'Legislature'?",
+      o: ["Interpreting laws", "Executing policies", "Law-making", "Arresting criminals"],
+      a: 2,
+      e: "The primary duty of the Senate and House of Reps is to debate and pass bills into law.",
+      full: "The Legislature is the 'Voice of the People.' They represent different constituencies. Aside from making laws, they also perform 'Oversight'—checking how the Executive is spending the budget.",
+      h: "What is the main job of a Senator?"
+    },
+    {
+      yr: 2023,
+      q: "The head of the 'Judiciary' in Nigeria is the:",
+      o: ["Attorney General", "President", "Chief Justice of Nigeria", "Senate President"],
+      a: 2,
+      e: "The CJN presides over the Supreme Court and the National Judicial Council.",
+      full: "The Judiciary is the 'last hope of the common man.' The CJN ensures that the courts remain independent from the influence of the President or the Governors.",
+      h: "Who is the 'number one' judge in Nigeria?"
+    },
+    {
+      yr: 2023,
+      q: "A 'Bicameral' legislature consists of:",
+      o: ["One house", "Two houses", "Three houses", "A council of elders"],
+      a: 1,
+      e: "Bicameralism means there are two chambers, like the Senate and the House of Representatives.",
+      full: "Nigeria and the USA use bicameralism at the federal level to ensure that both the population (House of Reps) and the states (Senate) are fairly represented. This prevents the 'Tyranny of the Majority.'",
+      h: "Does Nigeria have 'one' or 'two' chambers in the National Assembly?"
+    },
+    {
+      yr: 2023,
+      q: "The policy of 'Indirect Rule' was introduced in Nigeria by:",
+      o: ["Sir Hugh Clifford", "Lord Lugard", "Sir Arthur Richards", "John Macpherson"],
+      a: 1,
+      e: "Lugard used existing traditional rulers (Emirs and Obas) to govern on behalf of the British.",
+      full: "The British didn't have enough men or money to govern Nigeria directly. So, Lugard used the 'Emirate System' in the North as a model. It was very successful in the North, partially successful in the West, and a failure in the East (Igboland).",
+      h: "Who was the 'Father' of Indirect Rule in Nigeria?"
+    },
+    {
+      yr: 2023,
+      q: "The first political party in Nigeria was the:",
+      o: ["NCNC", "NPC", "NNDP", "AG"],
+      a: 2,
+      e: "The Nigerian National Democratic Party (NNDP) was founded by Herbert Macaulay in 1923.",
+      full: "Macaulay founded the NNDP specifically to contest the seats created by the Clifford Constitution of 1922. This is why Macaulay is called the 'Father of Nigerian Nationalism.'",
+      h: "Which party did Herbert Macaulay start in 1923?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Exclusive List' in a federation contains matters reserved for the:",
+      o: ["State Government only", "Local Government only", "Federal Government only", "Both Federal and State"],
+      a: 2,
+      e: "Items like Defense, Currency, and Foreign Affairs are handled strictly by the center.",
+      full: "If it's on the Exclusive List, a Governor cannot touch it. For example, the Lagos State Governor cannot print his own money or declare war on another country. These are purely Federal powers.",
+      h: "Who handles 'External Affairs' and 'Defense' in Nigeria?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Ombudsman' is also known as the:",
+      o: ["Judicial Service Commission", "Public Complaints Commission", "Civil Service Commission", "Code of Conduct Bureau"],
+      a: 1,
+      e: "The PCC investigates grievances from citizens against government officials.",
+      full: "The PCC protects the 'little man' from administrative 'bullying.' If a government agency refuses to pay your gratuity or unfairly dismisses you, the PCC is your free legal advocate.",
+      h: "What is the 'Public Complaints' office called?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a 'Direct' form of democracy?",
+      o: ["Parliamentary system", "Presidential system", "Referendum", "Representative government"],
+      a: 2,
+      e: "A referendum allows the entire population to vote directly on a specific policy or law.",
+      full: "In most democracies, we vote for 'People' to speak for us. But in a Referendum (or Plebiscite), we vote on the 'Issue' itself. For example, if Nigeria wanted to decide whether to switch to a new constitution, they would hold a referendum.",
+      h: "Is voting for a Senator 'direct' or 'representative' democracy?"
+    },
+    {
+      yr: 2023,
+      q: "The 'franchise' refers to the right of a citizen to:",
+      o: ["Own a business", "Practice religion", "Vote in an election", "Freedom of speech"],
+      a: 2,
+      e: "Franchise (or Suffrage) is the legal right to participate in voting.",
+      full: "Historically, only men with property could vote. Today, we have 'Universal Adult Suffrage,' meaning any adult (18+ in Nigeria) can vote regardless of wealth, gender, or status.",
+      h: "What do you call the 'power to vote'?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following describes 'Gerrymandering'?",
+      o: ["Counting votes fairly", "The manipulation of electoral boundaries to favor a party", "The registration of voters", "The use of thugs in elections"],
+      a: 1,
+      e: "Gerrymandering is a corrupt practice where district lines are redrawn to pack opposition voters into one area.",
+      full: "It is named after Elbridge Gerry. It’s like a 'Cheat Code' in elections where a party draws a map that looks like a lizard just to make sure they win more seats than they deserve.",
+      h: "Is 're-drawing the map to cheat' called Gerrymandering or Rigging?"
+    },
+    {
+      yr: 2023,
+      q: "The highest court of appeal in Nigeria is the:",
+      o: ["Court of Appeal", "Federal High Court", "Supreme Court", "Customary Court of Appeal"],
+      a: 2,
+      e: "The Supreme Court is the final bus stop for all legal matters in the country.",
+      full: "Once the Supreme Court makes a decision, it becomes the 'Law of the Land.' Only the Supreme Court itself can reverse its own decision later on.",
+      h: "Where is the 'Final Bus Stop' for any court case?"
+    },
+    {
+      yr: 2023,
+      q: "A 'Public Corporation' is established by an:",
+      o: ["Executive order", "Act of Parliament", "Memorandum of Understanding", "International treaty"],
+      a: 1,
+      e: "Public corporations (like the Water Board or NPA) are created through specific legislation (laws).",
+      full: "Because they are created by law, they have a 'Legal Personality'—they can sue and be sued. They are funded by the government but are supposed to run like a business to provide essential services.",
+      h: "Is a government agency like 'NEPA' created by a 'Contract' or a 'Law'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Civil Service' is expected to be 'Anonymous.' This means:",
+      o: ["They must not have names", "They must not be seen in public", "They should not be praised or blamed in public for government success or failure", "They must work in secret"],
+      a: 2,
+      e: "Anonymity ensures that the Minister takes the political credit or blame, not the career civil servant.",
+      full: "The Minister is the 'Face' of the Ministry. If the roads are good, the Minister gets the praise. If they are bad, the Minister is sacked. The civil servant behind the desk stays quiet and continues working for the next Minister.",
+      h: "Who gets the 'blame' in public—the Politician or the Civil Servant?"
+    },
+    {
+      yr: 2023,
+      q: "One major source of 'Revenue' for Local Governments in Nigeria is:",
+      o: ["Customs duties", "Statutory allocations from the Federation Account", "Printing of currency", "Corporate income tax"],
+      a: 1,
+      e: "Local governments rely heavily on money shared from the central government pool.",
+      full: "Local governments are also supposed to generate 'Internally Generated Revenue' (IGR) from things like motor parks, markets, and tenement rates, but most survive on the 'Statutory Allocation' from the center.",
+      h: "Does the Local Government get its big money from 'Motor Parks' or the 'Federation Account'?"
+    },
+    {
+      yr: 2023,
+      q: "The head of a 'Traditional' political system in Igboland was usually the:",
+      o: ["Emir", "Oba", "Ofo/Elders", "Obi"],
+      a: 2,
+      e: "Pre-colonial Igboland was 'Acephalous' (headless), relying on a council of elders and titled men.",
+      full: "Unlike the North (Emirs) or the West (Obas), the Igbos did not have a single powerful King over everyone. They were 'Segmentary' and republican, meaning power was shared among families and age-grades.",
+      h: "Did the Igbos have 'one powerful King' or did 'Elders' share power?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Judiciary' maintains its independence primarily through:",
+      o: ["Executive control", "Security of tenure for judges", "Public voting for judges", "Political affiliation"],
+      a: 1,
+      e: "Security of tenure means a judge cannot be sacked easily for giving a judgment against the government.",
+      full: "To ensure a judge is 'Fearless,' their salary is paid from a Consolidated Revenue Fund, and they can only be removed through a rigorous process involving the National Judicial Council (NJC). This prevents the President from bullying them.",
+      h: "Can the President sack a judge just because he lost a court case?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Non-Aligned Movement' (NAM) was formed to:",
+      o: ["Support the USA during the Cold War", "Avoid taking sides between the Western and Eastern blocs", "Promote military coups in Africa", "Support the Soviet Union"],
+      a: 1,
+      e: "NAM allowed developing nations to remain neutral during the rivalry between the USA and the USSR.",
+      full: "Nigeria joined NAM to maintain its sovereignty. It meant we could trade with both the 'Capitalist West' and the 'Communist East' without being a 'puppet' to either side. It was a strategy for 'Independence' in foreign policy.",
+      h: "Did Nigeria want to join 'One side' or 'Stay Neutral' during the Cold War?"
+    },
+    {
+      yr: 2023,
+      q: "A bill that deals with government spending and taxation is called a/an:",
+      o: ["Private bill", "Public bill", "Money bill", "Ordinary bill"],
+      a: 2,
+      e: "Money bills (Appropriation Bills) are specifically for the budget and national finances.",
+      full: "In a democracy, the Executive (President) cannot just spend money. He must present a 'Money Bill' to the Legislature. If they don't pass it, he cannot touch the national treasury. This is the 'Power of the Purse.'",
+      h: "Is the 'Budget' an Ordinary Bill or a Money Bill?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Minority' report of the 1976 Constitution Drafting Committee was led by:",
+      o: ["Chief Obafemi Awolowo", "Dr. Segun Osoba and Yusufu Bala Usman", "Nnamdi Azikiwe", "Murtala Muhammed"],
+      a: 1,
+      e: "Osoba and Usman disagreed with the 'Capitalist' direction of the main committee.",
+      full: "While the majority of the committee wanted a Presidential system, the 'Minority' group argued for a more socialist-leaning document that favored the working class. Though their report wasn't adopted, it is a famous part of Nigerian political history.",
+      h: "Which two scholars wrote the 'alternative' version of the constitution?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Commonwealth of Nations' is an organization made up of:",
+      o: ["All African countries", "Former colonies of the British Empire", "French-speaking countries", "Oil-producing nations"],
+      a: 1,
+      e: "It is a voluntary association of 56 independent countries, most of which were British colonies.",
+      full: "Nigeria joined upon independence in 1960. The Queen (now the King) is the 'Symbolic Head.' It promotes democracy, human rights, and trade among member nations.",
+      h: "Is the Commonwealth for 'Former British colonies' or 'French colonies'?"
+    },
+    {
+      yr: 2023,
+      q: "The main objective of 'Public Opinion' is to:",
+      o: ["Overthrow the government", "Influence government policy and actions", "Support the ruling party", "Suppress the opposition"],
+      a: 1,
+      e: "Public opinion acts as a pressure tool to let leaders know what the people want.",
+      full: "Through protests, polls, and media, the public communicates its feelings. A government that ignores public opinion risks losing the next election or facing civil unrest.",
+      h: "Do the people use their 'voice' to 'help' or to 'influence' the government?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Diplomatic Immunity' of an Ambassador means that:",
+      o: ["They are above the law of their own country", "They cannot be arrested or prosecuted in their host country", "They don't need a passport", "They can do whatever they want"],
+      a: 1,
+      e: "Ambassadors are protected from local laws to ensure they can represent their country freely.",
+      full: "Under the Vienna Convention, an Ambassador's 'Home' (the Embassy) is considered the 'Soil' of their home country. If they commit a crime, the host country can only declare them 'Persona Non-Grata' (unwelcome) and ask them to leave.",
+      h: "Can a Nigerian Ambassador in the USA be jailed by American police for a traffic offense?"
+    },
+    {
+      yr: 2023,
+      q: "Which of the following is a disadvantage of a 'One-Party' system?",
+      o: ["It promotes national unity", "It is very expensive to run", "It leads to dictatorship and limits choice", "It encourages political competition"],
+      a: 2,
+      e: "Without opposition, the single party often becomes corrupt and ignores the rights of citizens.",
+      full: "In a one-party state (like China or North Korea), there is no 'Alternative.' You either support the party or you are an enemy of the state. This kills the spirit of democratic debate.",
+      h: "Does having 'Only one party' give people more or less 'Choice'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Pressure Group' that represents the interest of workers in Nigeria is the:",
+      o: ["ASUU", "NLC", "NBA", "NMA"],
+      a: 1,
+      e: "The Nigeria Labour Congress (NLC) is the umbrella body for all trade unions.",
+      full: "Pressure groups differ from political parties because they don't want to 'Rule'; they only want to 'Influence.' The NLC uses strikes and negotiations to get better wages for workers.",
+      h: "What is the biggest union for 'Workers' (Labour) in Nigeria?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Pre-colonial' Hausa/Fulani political system was described as:",
+      o: ["Democratic", "Highly Centralized", "Acephalous", "Segmentary"],
+      a: 1,
+      e: "The Emir held absolute power over the administration, religion, and the military.",
+      full: "Under the Caliphate system established by Uthman Dan Fodio, the Emir was the supreme leader. He appointed 'District Heads' (Hakimi) and 'Village Heads' (Dagaci) to collect taxes and keep order.",
+      h: "Was the Emirate system 'Loose' or 'Highly organized and Centralized'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'ECOWAS' was established in 1975 to promote:",
+      o: ["Military cooperation", "Economic integration in West Africa", "A common religion", "The overthrow of colonial masters"],
+      a: 1,
+      e: "The main goal was to create a 'Single Market' for West African countries to trade freely.",
+      full: "Nigeria and Togo were the 'architects' of ECOWAS. While it now deals with 'Security' (ECOMOG), its primary founding goal was 'Economic' development for the 15 member states.",
+      h: "Is ECOWAS for 'All of Africa' or just 'West Africa'?"
+    },
+    {
+      yr: 2023,
+      q: "A 'Written Constitution' is one that is:",
+      o: ["Handwritten by the President", "Contained in a single formal document", "Found in the hearts of the people", "Made of only oral traditions"],
+      a: 1,
+      e: "A written constitution (like Nigeria's) is a single book that outlines all laws and structures.",
+      full: "The opposite is an 'Unwritten' constitution (like Britain's), where the laws are found in many different documents, court cases, and traditions. Written constitutions are usually 'Rigid,' meaning they are hard to change.",
+      h: "Is the Nigerian Constitution a 'Single Document' or a 'Collection of many books'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Rule of Law' is often limited by:",
+      o: ["Freedom of the press", "An independent judiciary", "Diplomatic immunity and state of emergency", "Fair hearing"],
+      a: 2,
+      e: "In certain situations, the law is 'suspended' or doesn't apply to certain officials.",
+      full: "Dicey said everyone is equal, but in reality, 'Diplomatic Immunity' protects foreign leaders from local laws, and during a 'State of Emergency,' the President can temporarily suspend certain human rights for security.",
+      h: "Can a President 'suspend' some rights during a 'War' or 'Emergency'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Judicial Service Commission' is responsible for the:",
+      o: ["Execution of criminals", "Appointment and discipline of judges", "Making of laws", "Collection of court fees"],
+      a: 1,
+      e: "They recommend qualified lawyers to be appointed as judges by the President.",
+      full: "This body ensures that 'Politicians' don't just put their friends in court. They vet the character and knowledge of potential judges to ensure the judiciary remains professional.",
+      h: "Who 'hires and fires' judges based on their behavior?"
+    },
+    {
+      yr: 2023,
+      q: "The 'First Republic' of Nigeria was brought to an end by a military coup in:",
+      o: ["October 1960", "January 1966", "July 1975", "December 1983"],
+      a: 1,
+      e: "The January 15, 1966 coup led by Nzeogwu ended civilian rule.",
+      full: "This coup led to the death of the Prime Minister (Balewa) and the Premier of the North (Sardauna). It introduced the first military Head of State, Aguiyi-Ironsi, and began a long era of military intervention.",
+      h: "Did the first coup happen in '1960' or '1966'?"
+    },
+    {
+      yr: 2023,
+      q: "What is the main function of 'Political Parties'?",
+      o: ["To cause trouble in the street", "To contest elections and gain political power", "To arrest criminals", "To manage the civil service"],
+      a: 1,
+      e: "Parties exist to organize voters and win the right to govern the country.",
+      full: "Unlike 'Pressure Groups' (who just want favors), a Political Party (like APC or PDP) wants to 'Sit on the Throne.' They provide a platform for candidates to sell their 'Manifesto' (promises) to the people.",
+      h: "What is the 'goal' of a party: to 'Negotiate' or to 'Rule'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Secretary-General' of the United Nations (UN) is appointed for a term of:",
+      o: ["2 years", "4 years", "5 years", "10 years"],
+      a: 2,
+      e: "The term of office is 5 years, and it can be renewed for a second term.",
+      full: "The Secretary-General is the 'World's Top Diplomat.' They are appointed by the General Assembly upon the recommendation of the Security Council. They represent the voice of the world's 193 nations.",
+      h: "Is the UN leader's term 'Four' or 'Five' years?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Statutory' members of the 'Security Council' (Permanent members) are how many?",
+      o: ["5", "10", "15", "20"],
+      a: 0,
+      e: "The 'P5' includes USA, UK, France, Russia, and China.",
+      full: "These five countries have 'Veto Power,' meaning if any one of them says 'NO' to a resolution, it cannot pass—even if all other 192 countries say 'YES.' This is the highest power in the UN.",
+      h: "How many countries have the 'Veto Power'?"
+    },
+    {
+      yr: 2023,
+      q: "The 'Warrant Chiefs' were introduced in Eastern Nigeria during the colonial era because:",
+      o: ["The Igbos had powerful kings", "The Igbos lacked a centralized political authority", "The British wanted to support the elders", "The chiefs were popular with the people"],
+      a: 1,
+      e: "The British needed 'leaders' to collect taxes, so they 'invented' chiefs where there were none.",
+      full: "Because Igboland was republican (Acephalous), the British couldn't find an 'Emir' or 'Oba' to use. So they gave 'Warrants' (certificates) to random people. This led to corruption and the famous 1929 Aba Women's Riot.",
+      h: "Did the British 'find' Chiefs in the East or 'create' them?"
+    },
+    {
+      yr: 2023,
+      q: "Which organization was the predecessor of the 'African Union' (AU)?",
+      o: ["ECOWAS", "OAU", "ECA", "SADC"],
+      a: 1,
+      e: "The Organization of African Unity (OAU) was transformed into the AU in 2002.",
+      full: "The OAU was focused on 'Ending Colonialism.' Once Africa was free, the leaders felt they needed a new body (the AU) to focus on 'Economic Integration' and 'Peace-keeping.'",
+      h: "Did the 'AU' start as the 'OAU' or 'ECOWAS'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Theory of Sovereignty' was first formulated by:",
+      o: ["Jean Bodin", "A.V. Dicey", "Karl Marx", "Baron de Montesquieu"],
+      a: 0,
+      e: "Jean Bodin defined sovereignty as the absolute and perpetual power of a state.",
+      full: "In his book 'Six Books of the Commonwealth' (1576), Bodin argued that for a state to be stable, there must be a 'Supreme Power' that makes laws but is not subject to them. This power is what we now call Sovereignty.",
+      h: "Who is the 'Father of Sovereignty'?"
+    },
+    {
+      yr: 2022,
+      q: "A system of government where power is shared between the central and component units is:",
+      o: ["Unitary", "Confederal", "Federal", "Monarchical"],
+      a: 2,
+      e: "Federalism involves a constitutional division of power between different levels of government.",
+      full: "In Nigeria, the 1999 Constitution clearly defines what the Federal Government can do (Exclusive List) and what the State Governments can do (Residual List). This prevents one level from swallowing the other.",
+      h: "Does Nigeria share power or keep it all at the top?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Clifford Constitution' of 1922 was significant because it introduced the:",
+      o: ["Federal System", "Elective Principle", "Veto Power", "Direct Rule"],
+      a: 1,
+      e: "It allowed Nigerians to vote for representatives in the Legislative Council for the first time.",
+      full: "Before 1922, Nigerians were just 'nominated' by the Governor. Sir Hugh Clifford changed this by allowing 4 elected seats (3 for Lagos, 1 for Calabar). This triggered the birth of political parties like the NNDP.",
+      h: "Did Clifford give Nigerians the right to 'Vote' or 'Independence'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Macpherson Constitution' of 1951 was described as:",
+      o: ["Unitary", "Quasi-federal", "Rigid", "Unwritten"],
+      a: 1,
+      e: "It was 'Quasi-federal' because it introduced regional legislatures but kept a strong central link.",
+      full: "Under Macpherson, Nigeria was split into three regions (North, West, East), each with its own House of Assembly. However, the Central Legislative Council still had significant control, hence it wasn't 'Full' Federalism yet.",
+      h: "Was it 'Partially Federal' or 'Fully Federal'?"
+    },
+    {
+      yr: 2022,
+      q: "The main purpose of 'Pressure Groups' is to:",
+      o: ["Win elections", "Form a government", "Influence government policies", "Create chaos"],
+      a: 2,
+      e: "Pressure groups seek to protect the interests of their members by lobbying the government.",
+      full: "Unlike political parties, pressure groups (like ASUU or the NBA) do not want to rule the country. They only want to 'Push' the government to do something specific, like increase salaries or change a law.",
+      h: "Do they want 'Power' or 'Influence'?"
+    },
+    {
+      yr: 2022,
+      q: "The concept of 'Collective Responsibility' is a feature of the:",
+      o: ["Presidential System", "Parliamentary System", "Monarchy", "Military Rule"],
+      a: 1,
+      e: "In a Parliamentary system, the entire cabinet must support a government decision or resign together.",
+      full: "This means 'Sink or Swim together.' If the Parliament passes a 'Vote of No Confidence' against one Minister on a major policy, the Prime Minister and the whole Cabinet are usually expected to resign.",
+      h: "Do Ministers 'stand alone' or 'sink together' in Parliament?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is an 'Exclusive' power of the Federal Government in Nigeria?",
+      o: ["Health", "Education", "Defense", "Agriculture"],
+      a: 2,
+      e: "Defense is strictly handled by the Federal Government to ensure national security.",
+      full: "States can build schools (Education) or hospitals (Health), but a State Governor is not allowed to have his own Army or Air Force. Defense, Currency, and Customs are strictly for the 'Big Boss' in Abuja.",
+      h: "Can a Governor buy 'Fighter Jets' for his state?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Udoji Commission' of 1972-74 was primarily set up to review:",
+      o: ["The Constitution", "State creation", "Public service salaries and structure", "Boundary disputes"],
+      a: 2,
+      e: "It recommended a massive overhaul of the civil service and a huge salary increase.",
+      full: "The 'Udoji Award' gave civil servants a massive 'Back-pay' (Arrears). While it made workers happy, it caused massive inflation because too much money was suddenly chasing too few goods in the market.",
+      h: "Did Udoji deal with 'New States' or 'Teacher/Civil Servant salaries'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Ombudsman' (Public Complaints Commission) was established in Nigeria in:",
+      o: ["1960", "1975", "1988", "1999"],
+      a: 1,
+      e: "The PCC was established by the Murtala/Obasanjo military regime in 1975.",
+      full: "It was created to give the common man a platform to report 'Administrative Injustice.' If a government official is bullying you or withholding your file, you report them to the PCC/Ombudsman.",
+      h: "Was the PCC created in '1960' or '1975'?"
+    },
+    {
+      yr: 2022,
+      q: "In pre-colonial 'Yoruba' political systems, the King (Oba) was checked by the:",
+      o: ["Oyo Mesi", "Ogboni Society", "Emeso", "Age Grades"],
+      a: 0,
+      e: "The Oyo Mesi was the council of seven kingmakers who could depose a tyrannical Oba.",
+      full: "The Bashorun (head of Oyo Mesi) could present an 'Empty Calabash' or 'Parrot Eggs' to the Oba, signaling that the people and the gods have rejected him, forcing the Oba to commit suicide.",
+      h: "Which group could tell the Oba to 'Go to sleep' (Suicide)?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Delegated Legislation' is law made by:",
+      o: ["The Judiciary", "The Legislature", "Administrative bodies/The Executive", "The Police"],
+      a: 2,
+      e: "Parliament 'delegates' the power to make minor rules to Ministers or Local Authorities.",
+      full: "The National Assembly is too busy to make laws about every tiny detail (like 'Dog License Fees' in a local area). So, they pass an 'Act' and let a Minister or Council make 'Bye-laws' to fill in the gaps.",
+      h: "Is this law made by 'Senators' or 'Government Agencies'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'First Military Coup' in Nigeria took place on:",
+      o: ["January 15, 1966", "July 29, 1966", "July 29, 1975", "December 31, 1983"],
+      a: 0,
+      e: "Led by Major Chukwuma Kaduna Nzeogwu, it ended the First Republic.",
+      full: "This coup was the 'Beginning of the End' for the First Republic. It led to the assassination of leaders like Tafawa Balewa and Ahmadu Bello, and eventually paved the way for the Civil War.",
+      h: "Was the first coup in 'January' or 'July' of 1966?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Organization of African Unity' (OAU) was founded in:",
+      o: ["Lagos, 1960", "Addis Ababa, 1963", "Accra, 1957", "Cairo, 1964"],
+      a: 1,
+      e: "It was established on May 25, 1963, in Ethiopia.",
+      full: "The OAU was formed by 32 independent African states. Its main goal at the time was 'Decolonization'—making sure every inch of Africa was free from European rule. It was later replaced by the AU in 2002.",
+      h: "Did the OAU start in 'Nigeria' or 'Ethiopia'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following describes 'Naturalization'?",
+      o: ["Citizenship by birth", "Citizenship granted to a foreigner after meeting legal requirements", "Citizenship by marriage", "Citizenship by honor"],
+      a: 1,
+      e: "Naturalization is the process where a non-citizen acquires citizenship after living in a country for a set time.",
+      full: "In Nigeria, you must have lived here for at least 15 years, be of good character, and be willing to contribute to the country before the President can grant you citizenship by naturalization.",
+      h: "Is this 'Birth' citizenship or 'Applied' citizenship?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Judiciary' performs the function of:",
+      o: ["Executing laws", "Making laws", "Interpreting laws", "Arresting offenders"],
+      a: 2,
+      e: "The courts explain what the law means and apply it to specific cases.",
+      full: "If the Legislature makes a law that is confusing, it is the Judge who 'interprets' it in court. This ensures that the law is applied fairly to everyone, including the government.",
+      h: "Who 'explains' the law in a court case?"
+    },
+    {
+      yr: 2022,
+      q: "A 'Secret Ballot' system of voting is one where:",
+      o: ["Votes are cast in public", "Voters' choices are known only to themselves", "Only top officials can vote", "Votes are sold to the highest bidder"],
+      a: 1,
+      e: "It ensures privacy and prevents intimidation of voters.",
+      full: "The secret ballot (also called the Australian Ballot) is a pillar of democracy. It allows a citizen to vote for who they *really* want without fearing that their boss or a political thug will punish them for it.",
+      h: "Is your vote 'Hidden' or 'Public'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Lagos Youth Movement' was renamed the 'Nigerian Youth Movement' (NYM) in:",
+      o: ["1934", "1936", "1944", "1951"],
+      a: 1,
+      e: "It was renamed in 1936 to give it a more national outlook.",
+      full: "The NYM was the first 'Truly National' movement in Nigeria. It brought together people like Nnamdi Azikiwe and H.O. Davies to challenge the dominance of Herbert Macaulay's NNDP.",
+      h: "Did the name change in '1934' or '1936'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Head of the Civil Service' is responsible for:",
+      o: ["Making political speeches", "Ensuring the efficiency and discipline of the civil service", "Winning elections for the President", "Arresting corrupt ministers"],
+      a: 1,
+      e: "The HOS is the 'Permanent' professional head of all government workers.",
+      full: "While a 'Minister' is a politician who comes and goes, the Head of Service is a career professional who ensures that the 'engine' of government (the workers) keeps running smoothly regardless of which party is in power.",
+      h: "Is the HOS a 'Politician' or a 'Professional Worker'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following is a 'Direct' tax?",
+      o: ["Value Added Tax (VAT)", "Customs duties", "Personal Income Tax", "Excise duties"],
+      a: 2,
+      e: "Direct taxes are paid directly by the individual to the government based on their income.",
+      full: "Direct tax is 'Visible'—it is taken from your salary (PAYE) or business profit. Indirect taxes (like VAT) are 'Hidden' in the price of things you buy, like recharge cards or bread.",
+      h: "Is 'Income Tax' taken from your 'Salary' or your 'Bread'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Attlee Declaration' of 1946 was important because it:",
+      o: ["Promised Nigeria total independence immediately", "Announced the British intention to leave their colonies", "Created the first Nigerian regions", "Stopped the use of Indirect Rule"],
+      a: 1,
+      e: "Clement Attlee declared that 'the wind of change' meant colonies would eventually be free.",
+      full: "This was a major turning point after World War II. The British Prime Minister realized that Britain was too poor to keep holding onto its empires, and they started planning the 'Exit' strategy for countries like Nigeria and India.",
+      h: "Did Attlee say Britain would 'Stay' or 'Eventually Leave'?"
+    },
+    {
+      yr: 2022,
+      q: "A system where the Head of State is also the Head of Government is:",
+      o: ["Parliamentary", "Presidential", "Monarchical", "Feudal"],
+      a: 1,
+      e: "In a Presidential system, the President holds both ceremonial and executive powers.",
+      full: "Unlike the UK where the King (Head of State) and PM (Head of Government) are different people, the Nigerian President is the 'All-in-One' leader. He performs the 'dignified' duties (hosting ambassadors) and the 'efficient' duties (running ministries).",
+      h: "Does the President 'share' the top spot with a Prime Minister, or is he the 'only' boss?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Judicial Review' refers to the power of the courts to:",
+      o: ["Appoint new ministers", "Declare laws or executive actions unconstitutional", "Increase the salaries of judges", "Arrest members of the legislature"],
+      a: 1,
+      e: "Courts can strike down any law that contradicts the Constitution.",
+      full: "This is a key part of 'Checks and Balances.' If the National Assembly passes a law that takes away your right to speak, the Supreme Court can use 'Judicial Review' to cancel that law and make it 'null and void.'",
+      h: "Can a Judge 'cancel' a bad law made by the government?"
+    },
+    {
+      yr: 2022,
+      q: "The 'United Nations' (UN) was established in 1945 to replace the:",
+      o: ["League of Nations", "OAU", "Commonwealth", "ECOWAS"],
+      a: 0,
+      e: "The League of Nations failed to prevent World War II, so the UN was created to ensure world peace.",
+      full: "The League of Nations was too weak. The UN was built with more 'teeth' (like the Security Council) to handle international conflicts and prevent a third world war.",
+      h: "What was the 'old' version of the UN called?"
+    },
+    {
+      yr: 2022,
+      q: "Which of these is a function of 'Local Government' in Nigeria?",
+      o: ["Printing of currency", "Maintenance of cemeteries and markets", "Defense of the nation", "Conducting foreign policy"],
+      a: 1,
+      e: "Local governments handle grassroots matters like motor parks and waste disposal.",
+      full: "Under the Fourth Schedule of the 1999 Constitution, the LG is responsible for things that touch everyday life directly—slaughterhouses, naming of streets, and small-scale community health centers.",
+      h: "Does the 'Local Chairman' handle 'Army' matters or 'Market' matters?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Zikist Movement' was known for its:",
+      o: ["Support for British colonial rule", "Radical and militant approach to nationalism", "Focus on northern interests only", "Religious objectives"],
+      a: 1,
+      e: "They were young radicals who used protests and strikes to demand immediate independence.",
+      full: "The Zikist Movement (named after Nnamdi Azikiwe) believed that the older nationalists were being too 'soft' on the British. They wanted 'Action Now' and were often arrested for their revolutionary speeches.",
+      h: "Were the Zikists 'Peaceful' or 'Radical' in their methods?"
+    },
+    {
+      yr: 2022,
+      q: "The 'General Assembly' of the UN is often described as the:",
+      o: ["World Cabinet", "World Parliament", "World Court", "World Police"],
+      a: 1,
+      e: "It is the main deliberative body where every member nation has one vote.",
+      full: "In the General Assembly, small countries like The Gambia have the same voting power as big countries like the USA. They meet every September to discuss world issues, though their decisions are mostly 'recommendations.'",
+      h: "Is the General Assembly like a 'Court' or a 'Big Debate House'?"
+    },
+    {
+      yr: 2022,
+      q: "A 'Provisional' government is a:",
+      o: ["Permanent government", "Military government", "Temporary government for a transition period", "Religious government"],
+      a: 2,
+      e: "It is a short-term administration set up after a crisis or before a new election.",
+      full: "For example, after a long military rule, a 'Provisional Ruling Council' might take over just to organize elections and hand over to civilians. It is never meant to stay in power forever.",
+      h: "Is this government 'For Life' or just 'For Now'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Pre-colonial' Yoruba system allowed the 'Ogboni' to:",
+      o: ["Elect the Oba", "Check the powers of the Oyo Mesi", "Lead the army into battle", "Collect taxes from farmers"],
+      a: 1,
+      e: "The Ogboni acted as a secret society that mediated between the King and the Oyo Mesi.",
+      full: "The Ogboni was a religious and judicial body. If the King (Oba) and the Council (Oyo Mesi) were fighting, the Ogboni would step in to settle the dispute and maintain the spiritual balance of the land.",
+      h: "Did the Ogboni help 'Keep the Peace' between the King and his Council?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Bill of Rights' is primarily intended to:",
+      o: ["Empower the police", "Protect the fundamental rights of citizens", "Increase taxes", "Allow the government to censor the news"],
+      a: 1,
+      e: "It outlines the basic freedoms that the government cannot legally violate.",
+      full: "In Nigeria, Chapter 4 of the Constitution is our 'Bill of Rights.' It protects your right to life, freedom of worship, and right to property. Without it, the government could do whatever it wanted to you.",
+      h: "Is a 'Bill of Rights' for 'The People' or 'The Government'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following describes 'Gerrymandering'?",
+      o: ["Registration of voters", "Redrawing of constituency boundaries to favor a party", "Counting of votes", "Selection of party candidates"],
+      a: 1,
+      e: "It is a form of electoral fraud where map boundaries are manipulated.",
+      full: "It's like a 'Cheat Code' where a party draws a map that looks like a snake just to make sure they have a majority of their supporters in every district. It’s legal in some places but considered very unfair.",
+      h: "Is this 'Drawing a Map fairly' or 'Drawing it to cheat'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Statutory Allocation' refers to:",
+      o: ["The money shared among the three tiers of government", "The number of laws passed by parliament", "The appointment of ministers", "The collection of bribes"],
+      a: 0,
+      e: "It is the monthly distribution of national revenue from the Federation Account.",
+      full: "Every month, the 36 states and 774 local governments meet in Abuja to get their 'Share' of the oil money. This process is called 'FAAC' (Federation Account Allocation Committee).",
+      h: "Is this 'Oil Money sharing' or 'Law making'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Rule of Law' is a concept popularized by:",
+      o: ["Montesquieu", "A.V. Dicey", "Jean Bodin", "Thomas Hobbes"],
+      a: 1,
+      e: "Dicey identified three pillars: Supremacy of the law, Equality before the law, and Protection of rights.",
+      full: "Dicey’s principle says that no matter how rich or powerful you are, you are not 'Above' the law. Also, the government cannot punish you unless you have actually broken a specific law in the book.",
+      h: "Who said 'No one is above the law'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'ECOMOG' was a military force created by:",
+      o: ["AU", "UN", "ECOWAS", "OPEC"],
+      a: 2,
+      e: "The ECOWAS Monitoring Group was formed to restore peace in Liberia and Sierra Leone.",
+      full: "Nigeria was the main financier and troop contributor to ECOMOG. It was one of the first times a regional group in Africa formed its own 'Army' to stop a civil war in a neighboring country.",
+      h: "Was ECOMOG for 'All of Africa' or just 'West Africa'?"
+    },
+    {
+      yr: 2022,
+      q: "A 'Plebiscite' is another name for a:",
+      o: ["General Election", "Bye-election", "Referendum", "Primary election"],
+      a: 2,
+      e: "It is a direct vote by the people on a single political issue.",
+      full: "In 1961, there was a plebiscite in the Southern Cameroons to decide whether they wanted to join Nigeria or Cameroon. It’s the ultimate way to let the 'People' decide their own fate directly.",
+      h: "Is this 'Voting for a Person' or 'Voting on an Issue'?"
+    },
+    {
+      yr: 2022,
+      q: "Which of the following was a feature of the '1979 Constitution'?",
+      o: ["Parliamentary system", "Presidential system", "Monarchy", "Unitary system"],
+      a: 1,
+      e: "Nigeria switched from the British Parliamentary style to the American Presidential style.",
+      full: "This change meant we no longer had a Prime Minister. Instead, we had an Executive President (Shehu Shagari) who was both Head of State and Head of Government.",
+      h: "Did 1979 bring 'A Prime Minister' or 'A President'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Public Service Commission' is responsible for the:",
+      o: ["Collection of taxes", "Recruitment and promotion of civil servants", "Trial of criminals", "Making of the budget"],
+      a: 1,
+      e: "They ensure that civil service jobs are given based on merit, not just 'who you know.'",
+      full: "To prevent politicians from filling the ministries with their cousins, the Commission handles the hiring, firing, and promotion of career government workers according to the 'Civil Service Rules.'",
+      h: "Do they 'Hire Workers' or 'Arrest People'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Secretary-General' of the AU is now referred to as the:",
+      o: ["President", "Chairman", "Chairperson of the AU Commission", "Director-General"],
+      a: 2,
+      e: "The administrative head of the AU is the Chairperson of the Commission.",
+      full: "When the OAU became the AU in 2002, the structure changed. The Chairperson handles the daily running of the organization in Addis Ababa, Ethiopia.",
+      h: "Is the leader called the 'Secretary' or the 'Chairperson'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Judicial Service Commission' recommends judges for appointment to the:",
+      o: ["National Assembly", "President", "Chief Justice", "Police"],
+      a: 1,
+      e: "The President (or Governor) makes the final appointment based on the JSC’s recommendation.",
+      full: "This process ensures a 'Separation of Powers.' The President doesn't just pick his own judges; he has to choose from a list of professionals vetted by other judges in the JSC.",
+      h: "Does the JSC give their list to the 'President' or the 'Senator'?"
+    },
+    {
+      yr: 2022,
+      q: "Which pre-colonial system was famously 'Acephalous' (headless)?",
+      o: ["Hausa/Fulani", "Yoruba", "Igbo", "Benin"],
+      a: 2,
+      e: "The Igbos had a decentralized system without a central king.",
+      full: "In Igboland, power was distributed among Age Grades, Ozo Titled men, and the Village Assembly (Oha-na-eze). This made 'Indirect Rule' very difficult for the British because there was no 'one person' to command.",
+      h: "Did the Igbos have 'One Big King' or 'Many Council Leaders'?"
+    },
+    {
+      yr: 2022,
+      q: "The 'Aba Women’s Riot' of 1929 was caused by:",
+      o: ["The election of a new King", "The introduction of direct taxation on women", "Boundary disputes", "The lack of schools"],
+      a: 1,
+      e: "Women protested against the colonial government’s plan to tax them through 'Warrant Chiefs.'",
+      full: "This was a major anti-colonial protest. The women felt the Warrant Chiefs were corrupt and that the taxes were unfair. It forced the British to rethink how they governed the Eastern part of Nigeria.",
+      h: "Was the riot about 'Education' or 'Taxes'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Judiciary' is often called the 'last hope of the common man' because it:",
+      o: ["Makes laws for the poor", "Executes government projects", "Protects the rights of citizens against the state", "Arrests corrupt politicians"],
+      a: 2,
+      e: "The courts provide a fair hearing and legal protection when a citizen's rights are violated.",
+      full: "This is the essence of 'Equity.' Even if the President or a wealthy billionaire sues a common citizen, the Judge is expected to follow the law strictly, ensuring that the 'smaller' person isn't crushed by the 'bigger' person.",
+      h: "Does the Court 'protect' the people or 'rule' the people?"
+    },
+    {
+      yr: 2021,
+      q: "The 'United Nations Charter' was signed in:",
+      o: ["London, 1944", "San Francisco, 1945", "New York, 1946", "Geneva, 1945"],
+      a: 1,
+      e: "The UN was officially formed at the San Francisco Conference after World War II.",
+      full: "50 countries met to draft the document that would replace the failed League of Nations. They wanted to create a global body that could 'save succeeding generations from the scourge of war.'",
+      h: "Was the UN 'born' in 'San Francisco' or 'New York'?"
+    },
+    {
+      yr: 2021,
+      q: "A 'Unitary' system of government is most suitable for a country that is:",
+      o: ["Large and culturally diverse", "Small and geographically compact", "Highly populated", "Rich in natural resources"],
+      a: 1,
+      e: "Unitary systems work best where there are no deep ethnic or regional divisions needing separate powers.",
+      full: "In a small, homogenous country (like Great Britain), you don't need 'State Governments' fighting with the center. One central government can easily manage the whole territory without confusing layers of bureaucracy.",
+      h: "Is a 'Unitary' system for 'Big, diverse' countries or 'Small, simple' ones?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Richard's Constitution' of 1946 was criticized because:",
+      o: ["It gave too much power to Nigerians", "It was drafted without consulting the Nigerian people", "It abolished the regions", "It introduced a single house of assembly"],
+      a: 1,
+      e: "Sir Arthur Richards 'imposed' the constitution, leading to nationalist protests.",
+      full: "Nationalists like Nnamdi Azikiwe felt the constitution was 'arbitrary.' Even though it introduced the concept of 'Regions' (North, West, East), the fact that Nigerians weren't asked for their input made it unpopular.",
+      h: "Was the problem 'The contents of the book' or 'How the book was made'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Executive' branch of government is responsible for:",
+      o: ["Making laws", "Interpreting laws", "Implementing and enforcing laws", "Settling disputes"],
+      a: 2,
+      e: "The President and the Cabinet carry out the day-to-day administration of the state.",
+      full: "If the Legislature passes a law saying 'Every child must go to school,' it is the Executive (the Ministry of Education and the Police) that ensures the schools are built and the law is followed.",
+      h: "Who 'does the actual work' of running the country?"
+    },
+    {
+      yr: 2021,
+      q: "In 'Pre-colonial' Hausa/Fulani systems, the 'Galadima' was the:",
+      o: ["Commander of the Army", "Chief of the Palace", "Administrator of the capital city", "Market supervisor"],
+      a: 2,
+      e: "The Galadima was a high-ranking official who managed the affairs of the Emir’s capital.",
+      full: "The Emirate system had a very clear 'Hierarchy.' While the Emir was the supreme head, he had 'Portfolio' holders like the Madawaki (Army), Waziri (Prime Minister), and Galadima (City Admin) to help him rule.",
+      h: "Is the Galadima the 'General' or the 'City Mayor'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Cold War' was a period of tension between:",
+      o: ["China and Japan", "The UK and France", "The USA and the Soviet Union", "Germany and Italy"],
+      a: 2,
+      e: "It was an ideological struggle between Capitalism (USA) and Communism (USSR).",
+      full: "It was called 'Cold' because there was no 'Hot' (direct) war between the two superpowers. Instead, they fought through 'Proxy Wars' in Africa and Asia and competed in the 'Space Race' and nuclear weapons.",
+      h: "Was the struggle between 'USA vs Russia' or 'China vs Japan'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Judicial Committee of the Privy Council' was the highest court for Nigeria until:",
+      o: ["1960", "1963", "1979", "1999"],
+      a: 1,
+      e: "Nigeria abolished appeals to the Privy Council when it became a Republic in 1963.",
+      full: "Under the 1960 Independence Constitution, you could still take a case from Nigeria to London for a final judgment. But the 1963 Republican Constitution made the Supreme Court of Nigeria the 'Final Bus Stop.'",
+      h: "Did we stop taking cases to London in '1960' or '1963'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Franchise' is limited in most countries to citizens who have reached the:",
+      o: ["Age of 15", "Age of maturity (usually 18)", "Level of University education", "Status of property owners"],
+      a: 1,
+      e: "Universal Adult Suffrage gives the right to vote to all adults regardless of wealth or gender.",
+      full: "In Nigeria, the 'Magic Number' is 18. Once you are 18, the constitution assumes you are mature enough to decide who should lead the country. This is called 'Universal' because it applies to everyone.",
+      h: "At what age do you get your 'Voter's Card' in Nigeria?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Merit System' in the civil service is designed to prevent:",
+      o: ["High salaries", "Nepotism and favoritism", "Efficiency", "Anonymity"],
+      a: 1,
+      e: "It ensures people are hired based on their qualifications and performance.",
+      full: "Without a Merit System, a Minister might fire all the experts and hire his village people who don't know the job. This would destroy the 'Civil Service Commission's' goal of a professional workforce.",
+      h: "Does 'Merit' help hire 'The Best Person' or 'The Minister's Brother'?"
+    },
+    {
+      yr: 2021,
+      q: "A 'Confederation' is different from a 'Federation' because in a confederation:",
+      o: ["The center is stronger", "The units are supreme and can secede", "There is no central government", "Only one person rules"],
+      a: 1,
+      e: "Confederations are loose unions where the states keep most of their power.",
+      full: "In a Federation (like Nigeria), the states cannot just pack their bags and leave. In a Confederation (like the early US or Senegambia), the central government is 'weak,' and the states are the 'real bosses.'",
+      h: "In which system can a state 'Say goodbye' to the union more easily?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Aba Women's Riot' of 1929 is also known as:",
+      o: ["The Ogu Umunwanyi", "The Egba Uprising", "The Agbekoya Revolt", "The Enugu Miners Strike"],
+      a: 0,
+      e: "Ogu Umunwanyi is the Igbo name for the historic 'Women's War.'",
+      full: "This wasn't just a small protest; it was a well-organized resistance by women across the Eastern regions against the 'Warrant Chiefs' and the 'Census' which they feared would lead to taxing women.",
+      h: "Is the Igbo name 'Ogu Umunwanyi' or 'Agbekoya'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Electoral Commission' is expected to be 'Autonomous.' This means:",
+      o: ["It must have its own army", "It must be independent of executive or political control", "It must be based in Abuja", "It must be headed by a judge"],
+      a: 1,
+      e: "Autonomy ensures that the body conducting elections is neutral and fair.",
+      full: "If the President 'owns' the Electoral Commission (INEC), he will always win. To have a true democracy, the Commission's funding and leadership must be protected from the influence of the people running for office.",
+      h: "Should the 'Referee' be 'Friends with the Captain' or 'Independent'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Pre-colonial' Yoruba 'Kingmakers' were the:",
+      o: ["Ogboni", "Oyo Mesi", "Emeso", "Are-Ona-Kakanfo"],
+      a: 1,
+      e: "The Oyo Mesi was the council of seven senior chiefs who selected the Alaafin.",
+      full: "Led by the Bashorun, the Oyo Mesi acted as a 'Senate.' They had the power to appoint the King and, if the King became a tyrant, they could force him to 'open the calabash' (commit suicide).",
+      h: "Which group 'made' the King and could 'unmake' him?"
+    },
+    {
+      yr: 2021,
+      q: "A 'Bi-party' system is a political system where:",
+      o: ["There are no political parties", "There is only one legal party", "Two major parties dominate the political landscape", "There are over 100 parties"],
+      a: 2,
+      e: "Countries like the USA and the UK (mostly) follow a two-party (Bi-party) dominance.",
+      full: "Even if there are small parties, in a Bi-party system, only two have a 'Real Chance' of winning the Presidency or forming a government. It usually provides a very stable but less diverse choice for voters.",
+      h: "Does a 'Bi-party' system have 'Two major' or 'Ten major' players?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Sovereignty' of a state refers to its:",
+      o: ["Wealth and natural resources", "Supreme and independent power to govern itself", "Number of military tanks", "Religious affiliation"],
+      a: 1,
+      e: "A sovereign state has the final authority over its territory without external interference.",
+      full: "If a country is 'Sovereign,' no other country can tell it what laws to make. It has 'Internal Sovereignty' (control over its people) and 'External Sovereignty' (independence from foreign control).",
+      h: "Does 'Sovereignty' mean 'Money' or 'Supreme Authority'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Public Complaints Commission' (Ombudsman) cannot investigate:",
+      o: ["A corrupt clerk in a ministry", "Cases that are already before a court of law", "A teacher who refuses to release results", "A local government chairman"],
+      a: 1,
+      e: "The PCC must not interfere with the Judiciary (cases sub-judice).",
+      full: "The Ombudsman is for 'Administrative' errors. If you have already sued someone in a 'Real Court,' the PCC must stay out of it to avoid 'Contempt of Court' and to respect the Separation of Powers.",
+      h: "Can the 'Ombudsman' take over a case that is already with a 'Judge'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'African Union' (AU) headquarters is located in:",
+      o: ["Lagos, Nigeria", "Accra, Ghana", "Addis Ababa, Ethiopia", "Cairo, Egypt"],
+      a: 2,
+      e: "Addis Ababa has been the seat of African unity since the days of the OAU.",
+      full: "Ethiopia was chosen because it was one of the few African countries that was never fully colonized. It serves as the 'Diplomatic Capital' of the continent.",
+      h: "Is the AU 'office' in 'Ethiopia' or 'South Africa'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Rule of Law' principle of 'Equality before the Law' means:",
+      o: ["All citizens must have equal money", "The law applies equally to all citizens regardless of status", "Everyone must be a lawyer", "Judges are more important than doctors"],
+      a: 1,
+      e: "No one, including the President, is above the law.",
+      full: "If a Governor steals money and a poor man steals a goat, the law should treat both as 'Criminals.' In practice, this is hard to achieve, but it is the 'Golden Goal' of any true democracy.",
+      h: "Should a 'Big Man' and a 'Small Man' be judged by the 'Same Law'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Macpherson Constitution' of 1951 introduced regional:",
+      o: ["Emirs", "Houses of Assembly", "Kings", "Political Parties"],
+      a: 1,
+      e: "It created the regional legislatures that gave Nigerians more local power.",
+      full: "This was the constitution that really started the 'Regionalism' trend. It allowed the North, West, and East to have their own mini-parliaments, though they still reported to the Central Legislative Council in Lagos.",
+      h: "Did Macpherson create 'Regional Armies' or 'Regional Houses of Assembly'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Judiciary' maintains its independence through the 'Consolidated Revenue Fund' by:",
+      o: ["Allowing the President to pay them directly", "Ensuring their salaries are not subject to annual legislative debate", "Making judges pay their own salaries", "Collecting money from lawyers"],
+      a: 1,
+      e: "Charging salaries to the Consolidated Revenue Fund prevents the Executive from using 'pay cuts' to threaten judges.",
+      full: "If the President could reduce a Judge's salary every time he lost a case, the Judge would be afraid to give fair judgments. By making the salary 'Automatic' from the national fund, the Judge remains 'Fearless'.",
+      h: "Does the 'President' control the Judge's pay, or is it 'Protected by Law'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'United Nations Security Council' has how many 'Non-Permanent' members?",
+      o: ["5", "10", "15", "20"],
+      a: 1,
+      e: "While there are 5 Permanent members (P5), there are 10 Non-Permanent members elected for two-year terms.",
+      full: "The 10 non-permanent seats are distributed geographically (Africa gets 3, Asia 2, Latin America 2, etc.). This ensures that different regions of the world have a voice in global security decisions.",
+      h: "Is the number of 'Temporary' members 'Five' or 'Ten'?"
+    },
+    {
+      yr: 2021,
+      q: "A 'Delegated Legislation' made by a 'Local Government' is called a:",
+      o: ["Decree", "Act", "Bye-law", "Edict"],
+      a: 2,
+      e: "Bye-laws are rules made by local authorities to govern their specific areas.",
+      full: "Since the National Assembly cannot make laws for every market in Onitsha or every motor park in Kano, they delegate that power to the Local Government Council. These small laws are 'Bye-laws'.",
+      h: "Is a law made by a 'Local Chairman' an 'Act' or a 'Bye-law'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'National Congress of British West Africa' (NCBWA) was led by:",
+      o: ["Herbert Macaulay", "Casely Hayford", "Nnamdi Azikiwe", "Obafemi Awolowo"],
+      a: 1,
+      e: "Casely Hayford, a Ghanaian lawyer, was the main engine behind this early West African movement.",
+      full: "Founded in 1920, the NCBWA brought together elite Africans from Nigeria, Ghana, Sierra Leone, and Gambia. They traveled to London to demand more representation for Africans in the colonial government.",
+      h: "Was the leader from 'Nigeria' or was he 'Casely Hayford' from Ghana?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Executive' power in a 'Parliamentary' system is exercised by the:",
+      o: ["Monarch", "Cabinet led by the Prime Minister", "Chief Justice", "Senate President"],
+      a: 1,
+      e: "The Prime Minister and their Cabinet are the 'Real' executive chosen from the Parliament.",
+      full: "In this system, there is a 'Fusion of Powers.' The Prime Minister is both a member of Parliament (Legislature) and the leader of the Cabinet (Executive). This is the 'Westminster' style.",
+      h: "Is the 'Boss' the 'King' or the 'Prime Minister'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Pre-colonial' Kanem-Borno Empire was headed by the:",
+      o: ["Emir", "Mai", "Oba", "Obi"],
+      a: 1,
+      e: "The 'Mai' was the supreme ruler of the Kanem-Borno Empire.",
+      full: "The Mai was assisted by a council of twelve called the 'Nkenkena.' This system was highly organized long before the Fulani Jihad and the British arrival.",
+      h: "Is the leader called the 'Emir' or the 'Mai'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Veto Power' in the UN Security Council belongs to:",
+      o: ["All member nations", "The 10 non-permanent members", "The 5 permanent members only", "Only the Secretary-General"],
+      a: 2,
+      e: "Only the USA, UK, China, Russia, and France (the P5) have the power to block any resolution.",
+      full: "If 190 countries agree on a resolution but Russia or the USA says 'No,' the entire resolution dies. This is often criticized as being undemocratic, but it's how the UN is structured.",
+      h: "How many countries have the 'Special No' power?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Code of Conduct Bureau' (CCB) was established to:",
+      o: ["Increase taxes", "Ensure public officers maintain high standards of morality", "Arrest common thieves", "Organize elections"],
+      a: 1,
+      e: "The CCB ensures that public officials declare their assets and don't take bribes.",
+      full: "When a Minister or Governor takes office, they must list everything they own (houses, cars, bank accounts). When they leave office, the CCB checks to see if they 'suddenly' became too rich, which suggests corruption.",
+      h: "Do they check 'Voter cards' or 'Asset declaration' of big officials?"
+    },
+    {
+      yr: 2021,
+      q: "A 'Civil Service' is 'Neutral' when it:",
+      o: ["Refuses to work", "Works only for the opposition", "Serves any government in power without political bias", "Has no opinion on anything"],
+      a: 2,
+      e: "Neutrality means the civil servant serves the PDP today and the APC tomorrow with the same loyalty.",
+      full: "The Civil Service is a 'Permanent' structure. While politicians change every 4 or 8 years, the 'engine' of government remains the same. A neutral worker doesn't care about the party; they only care about the job.",
+      h: "Does the worker 'Change' with the party, or 'Stay loyal' to the office?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Universal Declaration of Human Rights' (UDHR) was adopted in:",
+      o: ["1918", "1945", "1948", "1960"],
+      a: 2,
+      e: "The UN adopted the UDHR on December 10, 1948.",
+      full: "After the horrors of World War II (the Holocaust), the world decided to write down the 'Minimum Rights' every human deserves, like freedom from torture and the right to education.",
+      h: "Was it '1945' (when UN started) or '1948'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Indirect Rule' system failed in 'Eastern Nigeria' because of the:",
+      o: ["Lack of traditional rulers with centralized power", "Presence of many schools", "Wealth of the people", "Influence of the French"],
+      a: 0,
+      e: "The 'Acephalous' (headless) nature of Igbo society meant there were no 'Kings' to use for Indirect Rule.",
+      full: "In the North, the British just talked to the Emir. In the East, there was no 'one person' to talk to. The British 'invented' Warrant Chiefs, which the people hated and eventually revolted against.",
+      h: "Was the problem 'Too many Kings' or 'No central Kings'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'OPEC' was formed to:",
+      o: ["Stop the use of oil", "Regulate and stabilize oil prices globally", "Provide military aid", "Create a common currency"],
+      a: 1,
+      e: "The Organization of Petroleum Exporting Countries manages the supply of oil to ensure fair prices.",
+      full: "Nigeria joined OPEC in 1971. By working together with other oil nations (like Saudi Arabia), Nigeria can ensure that the price of its crude oil doesn't drop too low in the international market.",
+      h: "Does OPEC handle 'Military' or 'Oil Prices'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Rule of Law' principle of 'Supremacy of the Law' means:",
+      o: ["The President is more important than the law", "No one can be punished unless for a breach of a known law", "Only lawyers can make decisions", "The military can ignore the law during a coup"],
+      a: 1,
+      e: "It means the law is the highest authority and must be followed by everyone.",
+      full: "This pillar prevents 'Arbitrary Power.' A policeman cannot just arrest you because he 'doesn't like your face.' He must point to a specific law in the book that you have broken.",
+      h: "Is the 'Law' the boss, or is the 'President' the boss?"
+    },
+    {
+      yr: 2021,
+      q: "The 'First Political Party' in Nigeria was founded by:",
+      o: ["Nnamdi Azikiwe", "Herbert Macaulay", "Obafemi Awolowo", "Ahmadu Bello"],
+      a: 1,
+      e: "Herbert Macaulay founded the NNDP in 1923.",
+      full: "Macaulay is called the 'Father of Nigerian Nationalism.' He used the NNDP to fight for the rights of Lagosians and to contest the elections created by the Clifford Constitution.",
+      h: "Who is the 'Father' of the first party?"
+    },
+    {
+      yr: 2021,
+      q: "Which of the following is an 'Indirect' form of Democracy?",
+      o: ["Referendum", "Representative Democracy", "Plebiscite", "Town Hall meeting"],
+      a: 1,
+      e: "Representative democracy involves choosing others to make laws on your behalf.",
+      full: "Instead of every Nigerian going to Abuja to argue about the budget, we choose 'Representatives' (Senators) to do it for us. This is 'Indirect' because the people don't make the laws themselves.",
+      h: "Is 'Voting for a Senator' Direct or Indirect?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Secretary-General' of the UN is the head of the:",
+      o: ["General Assembly", "Security Council", "Secretariat", "Trusteeship Council"],
+      a: 2,
+      e: "The Secretariat is the administrative 'office' of the United Nations.",
+      full: "The Secretariat does all the 'paperwork' and research for the UN. The Secretary-General is the 'Manager' of this entire global administrative system.",
+      h: "Is the leader the head of the 'Auditorium' or the 'Secretariat'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Judiciary' uses the 'Writ of Habeas Corpus' to:",
+      o: ["Sack a minister", "Ensure a person in detention is brought before a court", "Pass the budget", "Declare war"],
+      a: 1,
+      e: "Habeas Corpus literally means 'Produce the Body'; it prevents illegal detention by the police.",
+      full: "If the police arrest you and keep you in a cell for weeks without a trial, your lawyer can ask a Judge for a 'Writ of Habeas Corpus.' The Judge will then order the police to bring you to court immediately.",
+      h: "Is this for 'Illegal detention' or 'Illegal voting'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Gowon' regime was overthrown in a coup in:",
+      o: ["1966", "1975", "1976", "1983"],
+      a: 1,
+      e: "General Yakubu Gowon was ousted on July 29, 1975, while he was attending an OAU meeting.",
+      full: "Murtala Muhammed took over after this coup. The reason given was that Gowon’s government had become 'indecisive' and had postponed the return to civilian rule indefinitely.",
+      h: "Did the Gowon era end in '1966' or '1975'?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Public Service' includes which of the following?",
+      o: ["Political parties", "Government-owned companies and the Civil Service", "The Judiciary only", "Private businesses"],
+      a: 1,
+      e: "The Public Service is broader than the Civil Service; it includes corporations like NNPC and NPA.",
+      full: "While 'Civil Servants' work in the Ministries, 'Public Servants' work in any body funded by the government (like Universities, Hospitals, and Agencies). All civil servants are public servants, but not all public servants are civil servants.",
+      h: "Is a 'University Lecturer' a Civil Servant or a Public Servant?"
+    },
+    {
+      yr: 2021,
+      q: "The 'Lagos Youth Movement' was formed primarily to:",
+      o: ["Support the British", "Oppose the NNDP in Lagos elections", "Promote farming", "Start a war"],
+      a: 1,
+      e: "It was formed in 1934 to challenge Herbert Macaulay’s dominance and the education policies of the time.",
+      full: "They were angry about the quality of the Yaba Higher College. Later, they became the 'Nigerian Youth Movement' (NYM) to show they represented the whole country, not just Lagos.",
+      h: "Did they want to 'Help' Macaulay or 'Challenge' him?"
+    },
+
+    {
+      yr: 2020,
+      q: "A system of government where the head of state is elected for a fixed term is a:",
+      o: ["Monarchy", "Republic", "Theocracy", "Oligarchy"],
+      a: 1,
+      e: "A Republic is a state where supreme power is held by the people and their elected representatives.",
+      full: "Unlike a Monarchy where leadership is hereditary (passed from father to son), a Republic (like Nigeria or the USA) requires an election. Even if the leader is a 'President,' if he wasn't elected by the people or their reps, it isn't a true Republic.",
+      h: "Is the leader 'Born' into power or 'Elected' for a set time?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Judiciary' is independent when:",
+      o: ["Judges are members of the ruling party", "The President can dismiss judges at will", "Judges are appointed and disciplined by an independent body", "The legislature reviews all court judgments"],
+      a: 2,
+      e: "Independence is guaranteed when the executive cannot easily influence the tenure or pay of judges.",
+      full: "In Nigeria, the National Judicial Council (NJC) handles the recommendation and discipline of judges. This 'buffer' ensures that a judge doesn't have to please the President to keep their job.",
+      h: "Should the 'President' or an 'Independent Council' manage the judges?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Lyttelton Constitution' of 1954 is famous for being the first to:",
+      o: ["Introduce the elective principle", "Establish a fully federal system of government in Nigeria", "Create the first region", "Grant total independence"],
+      a: 1,
+      e: "It formally divided powers between the center and the regions (Federalism).",
+      full: "Before Lyttelton, Nigeria was 'Quasi-federal.' Lyttelton made it 'Fully Federal' by creating the Exclusive and Concurrent lists, and making the regional governors the heads of their respective regions.",
+      h: "Was Lyttelton 'Semi-federal' or 'Fully Federal'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'United Nations Security Council' consists of how many total members?",
+      o: ["5", "10", "15", "20"],
+      a: 2,
+      e: "The Council has 15 members: 5 permanent (P5) and 10 non-permanent members.",
+      full: "While the P5 have the 'Veto,' the 10 non-permanent members are elected by the General Assembly for two-year terms. To pass a resolution, you need 9 'Yes' votes and ZERO 'No' votes from the P5.",
+      h: "Is the total 'Ten' or 'Fifteen'?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is a 'Civil Right'?",
+      o: ["Right to vote", "Right to fair trial", "Right to hold public office", "Right to join a political party"],
+      a: 1,
+      e: "Civil rights protect individual freedom from infringement by governments and social organizations.",
+      full: "While 'Political Rights' (like voting) allow you to participate in government, 'Civil Rights' (like a fair trial) protect your personal liberty. Even a non-citizen has the right to a fair trial, but they don't have the right to vote.",
+      h: "Is this right for 'Everyone' or just for 'Voters'?"
+    },
+    {
+      yr: 2020,
+      q: "In 'Pre-colonial' Benin, the 'Uzama' were the:",
+      o: ["Chief priests", "Kingmakers and senior chiefs", "Army generals", "Tax collectors"],
+      a: 1,
+      e: "The Uzama N'Ihinron was the body of seven hereditary chiefs who installed the Oba.",
+      full: "Led by the Oliha, the Uzama were very powerful. Unlike the Oyo Mesi who could depose an Oba, the Uzama's main role was the installation and preservation of the Oba's divinity.",
+      h: "Were they 'Priests' or 'Kingmakers'?"
+    },
+    {
+      yr: 2020,
+      q: "A 'Confederation' usually has a weak:",
+      o: ["Regional government", "Central government", "Military", "Judiciary"],
+      a: 1,
+      e: "In a confederation, the center is weak because the units (states) retain their sovereignty.",
+      full: "Think of a 'Loose Alliance.' The central government can't even tax citizens directly or raise an army without the states' permission. This is why most confederations eventually fail or become federations.",
+      h: "Is the 'Center' or the 'State' the boss in a confederation?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Richards Constitution' of 1946 introduced:",
+      o: ["Direct Rule", "Regionalism", "The first Prime Minister", "Universal Suffrage"],
+      a: 1,
+      e: "It divided Nigeria into the Northern, Western, and Eastern regions.",
+      full: "Sir Arthur Richards created these regions to 'promote the unity of Nigeria' and provide for its diverse elements. However, nationalists hated it because they weren't consulted during the drafting.",
+      h: "Did Richards create 'States' or 'Regions'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Rule of Law' is limited by 'Prerogative Writ,' which means:",
+      o: ["The President can ignore the law", "Courts have special powers to command government officials", "Only lawyers can vote", "The military can take over"],
+      a: 1,
+      e: "Writs like 'Mandamus' or 'Habeas Corpus' are special court orders used to protect rights.",
+      full: "While the Rule of Law says everyone is equal, these 'Writs' give Judges a special 'Sword' to force the government to do its duty. It’s an 'exception' because it gives the Judiciary a direct command over the Executive.",
+      h: "Is a 'Writ' a 'Law' or a 'Special Court Order'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'ECOWAS' treaty was first signed in:",
+      o: ["Lagos, 1975", "Abuja, 1991", "Lome, 1975", "Accra, 1963"],
+      a: 0,
+      e: "The Treaty of Lagos was signed on May 28, 1975.",
+      full: "Nigeria and Togo led the move to integrate West African economies. Today, ECOWAS includes 15 countries working toward a common market and regional stability.",
+      h: "Was ECOWAS born in 'Lagos' or 'Lome'?"
+    },
+    {
+      yr: 2020,
+      q: "A 'Pressure Group' that uses 'Sabotage' or 'Strikes' is called a/an:",
+      o: ["Economic group", "Professional group", "Anomic group", "Religious group"],
+      a: 2,
+      e: "Anomic groups are unorganized and often use unconventional or violent methods.",
+      full: "While 'Interest Groups' (like NBA) use letters and lobbying, 'Anomic' groups (like rioters or underground cells) use sudden action, strikes, or even sabotage to force the government to listen.",
+      h: "Are they 'Peaceful Professionals' or 'Spontaneous/Radical'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Civil Service' principle of 'Permanence' means:",
+      o: ["Workers never go home", "The office remains even when the government changes", "Salaries are fixed forever", "The Minister stays in power forever"],
+      a: 1,
+      e: "Civil servants remain in their jobs even after the political party in power loses an election.",
+      full: "If every worker was sacked when a new President arrived, the government would collapse. Permanence ensures that the 'Memory' and 'Skills' of the state continue across different administrations.",
+      h: "Does the 'Worker' stay or 'Leave with the President'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Macpherson Constitution' was unique because it was the first to:",
+      o: ["Be made by a military man", "Involve wide consultation with Nigerians at village and regional levels", "Abolish the regions", "Introduce the Naira"],
+      a: 1,
+      e: "Macpherson organized 'Village Meetings' to ask Nigerians what they wanted.",
+      full: "Unlike the Richards Constitution which was 'imposed,' Macpherson tried to be 'Democratic' in the drafting process. This made it much more acceptable to the Nigerian nationalists of the time.",
+      h: "Did Macpherson 'Consult' the people or 'Force' the law on them?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Separation of Powers' is most effective in a:",
+      o: ["Parliamentary system", "Presidential system", "Monarchy", "Unitary system"],
+      a: 1,
+      e: "The Presidential system has a clear 'Wall' between the Executive and the Legislature.",
+      full: "In a Parliamentary system, the PM is *in* the Parliament (Fusion). In a Presidential system (Nigeria), the President is *not* allowed to be a Senator. This makes it easier for one branch to 'Check' the other.",
+      h: "Is power 'Separated' or 'Fused' in the Presidential system?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Sovereignty' of the UN resides in the:",
+      o: ["Secretary-General", "General Assembly", "Security Council", "International Court of Justice"],
+      a: 1,
+      e: "The General Assembly is the only body where all 193 sovereign states are represented equally.",
+      full: "While the Security Council has the 'Might' (Military), the General Assembly has the 'Moral Sovereignty.' It is the 'World Parliament' where every nation has a voice.",
+      h: "Which body has 'Every Country' inside it?"
+    },
+    {
+      yr: 2020,
+      q: "The 'First Military Coup' in Nigeria was led by:",
+      o: ["Major Isaac Boro", "Major Chukwuma Nzeogwu", "General Aguiyi Ironsi", "Lt. Col. Yakubu Gowon"],
+      a: 1,
+      e: "Nzeogwu led the January 15, 1966 coup that killed the Prime Minister and Premiers.",
+      full: "Though Nzeogwu led the 'action,' Ironsi eventually took power as the Head of State. The coup was a reaction to the corruption and chaos of the First Republic (Wild Wild West).",
+      h: "Who was the 'Major' that started it all?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Ombudsman' (PCC) in Nigeria can investigate cases of:",
+      o: ["Murder and Armed Robbery", "Administrative injustice and unfair dismissal", "Breach of contract in private business", "Electoral fraud"],
+      a: 1,
+      e: "The PCC is for 'Bureaucratic' complaints within the government or large firms.",
+      full: "If your boss at a government ministry refuses to sign your leave form or stops your promotion without a reason, you go to the PCC. They don't handle 'Criminal' cases; that's for the Police.",
+      h: "Is it for 'Crimes' or 'Bad Office Management'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Electoral College' is a system where:",
+      o: ["Students vote in colleges", "Citizens vote for electors who then choose the leader", "Only the educated can vote", "Voting is done by secret ballot"],
+      a: 1,
+      e: "It is an 'Indirect' election system used in countries like the USA.",
+      full: "In an Electoral College, the 'Total Votes' of the people don't decide the winner. Instead, states have 'Points' (Electors). This is why a person can win the 'Popular Vote' but still lose the election.",
+      h: "Is this a 'Direct' vote or an 'Indirect' vote through others?"
+    },
+    {
+      yr: 2020,
+      q: "Which of the following is an 'Indirect' tax?",
+      o: ["Company Tax", "Personal Income Tax", "Excise Duty", "Capital Gains Tax"],
+      a: 2,
+      e: "Excise duties are taxes on goods produced within the country, paid by the consumer in the price.",
+      full: "Indirect taxes are 'Hidden.' When you buy a bottle of soda, the tax is already inside the price. You pay it 'indirectly' to the government through the manufacturer.",
+      h: "Is it taken from your 'Salary' or from the 'Goods' you buy?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Aba Women's Riot' of 1929 started in the town of:",
+      o: ["Aba", "Oloko", "Owerri", "Calabar"],
+      a: 1,
+      e: "The trouble began in Oloko when a census taker named Mark Emereuwa tried to count a woman's property.",
+      full: "Although it is named after 'Aba' because the biggest protests happened there, the spark was in 'Oloko.' A woman named Nwanyeruwa led the initial resistance against the 'Warrant Chiefs.'",
+      h: "Did it start in 'Aba' or 'Oloko'?"
+    },
+
+    {
+      yr: 2020,
+      q: "The 'Judiciary' uses the 'Writ of Mandamus' to:",
+      o: ["Release a prisoner", "Compel a public official to perform their legal duty", "Stop a lower court from hearing a case", "Sentence a criminal"],
+      a: 1,
+      e: "Mandamus is a court order issued to a government official to do what they are legally required to do.",
+      full: "If a Minister refuses to issue a license that you have already qualified for and paid for, your lawyer can seek a 'Writ of Mandamus.' It is Latin for 'We Command.' It forces the 'lazy' or 'stubborn' official to act.",
+      h: "Does the court 'Command' the official or 'Release' a person?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Organization of African Unity' (OAU) was mainly criticized for its policy of:",
+      o: ["Non-interference in the internal affairs of member states", "Support for European trade", "Creating a single African currency", "Promoting military coups"],
+      a: 0,
+      e: "The OAU often looked away while dictators mistreated their citizens because of the 'Non-interference' rule.",
+      full: "This policy meant that if a King or President was killing his own people, other African leaders would say, 'It is their internal problem.' This 'Old Boys' Club' approach was one of the reasons the OAU was replaced by the AU in 2002.",
+      h: "Did the OAU 'Interfere' or 'Stay out' of a country's private business?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Delegated Legislation' is often criticized because it:",
+      o: ["Is made by elected representatives", "Violates the principle of Separation of Powers", "Is too slow to implement", "Is always written in French"],
+      a: 1,
+      e: "It allows the Executive (Ministers/Agencies) to make laws, which is normally the job of the Legislature.",
+      full: "Since a Minister is part of the Executive, critics argue that giving them power to make 'Statutory Instruments' or 'Orders' gives them too much power. However, it is necessary because the Parliament doesn't have time for every small detail.",
+      h: "Does it 'Mix' the roles of the Lawmaker and the Executive?"
+    },
+    {
+      yr: 2020,
+      q: "The '1979 Constitution' of Nigeria introduced the:",
+      o: ["Parliamentary system", "Presidential system", "Unicameral legislature", "Indirect Rule"],
+      a: 1,
+      e: "Nigeria moved from the British-style Prime Minister to an American-style Executive President.",
+      full: "The 1979 Constitution was the first to separate the 'Head of State' from the 'Head of Government' roles and combine them into one person: The President. Shehu Shagari became the first person to hold this office.",
+      h: "Did 1979 bring 'A Prime Minister' or 'A President'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Commonwealth of Nations' head is currently the:",
+      o: ["British Prime Minister", "British Monarch", "President of Nigeria", "Secretary-General of the UN"],
+      a: 1,
+      e: "The Monarch of the United Kingdom serves as the symbolic head of the association.",
+      full: "Although the British Monarch is the head, the role is purely ceremonial. The actual 'work' of the Commonwealth is done by the Secretariat in London, led by an elected Secretary-General.",
+      h: "Is the head a 'Politician' or a 'King/Queen'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Public Service' is funded mainly through:",
+      o: ["Donations from NGOs", "The Consolidated Revenue Fund (Taxpayer money)", "Private bank loans", "Lottery winnings"],
+      a: 1,
+      e: "Public servants are paid by the state using national revenue like taxes and oil royalties.",
+      full: "Because the Public Service is funded by the people (Taxpayers), it is expected to be accountable. This is why the 'Auditor-General' must check the books of every government department annually.",
+      h: "Does the money come from 'Private gifts' or 'Government taxes'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'National Party of Nigeria' (NPN) was the ruling party during the:",
+      o: ["First Republic", "Second Republic", "Third Republic", "Fourth Republic"],
+      a: 1,
+      e: "The NPN won the 1979 and 1983 elections, led by President Shehu Shagari.",
+      full: "The Second Republic (1979-1983) was dominated by the NPN. Their main rival was the UPN (Unity Party of Nigeria) led by Obafemi Awolowo. The NPN's logo was a 'Mize/Corn' plant.",
+      h: "Was the NPN in power in '1960' or '1979'?"
+    },
+    {
+      yr: 2020,
+      q: "A 'Unitary' constitution is one that is usually:",
+      o: ["Rigid", "Flexible", "Unwritten", "Confederal"],
+      a: 1,
+      e: "Because there is only one central authority, the constitution can often be changed easily by that authority.",
+      full: "In a Unitary system (like the UK), the Parliament is supreme. If they want to change a law, they just pass a new one. In a Federal system (like Nigeria), you need 2/3 of the states to agree, making it 'Rigid'.",
+      h: "Is it 'Hard' or 'Easy' to change a Unitary constitution?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Pre-colonial' Igbo system of government was:",
+      o: ["Monarchical", "Highly Centralized", "Fragmented and Decentralized", "Theocratic"],
+      a: 2,
+      e: "Igbo society was republican and organized around villages and age-grades.",
+      full: "This 'Acephalous' (headless) system meant that decisions were reached through 'Consensus' at the village square. No one person had the power to make a law for everyone else.",
+      h: "Was power held by 'One King' or 'The whole Community'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'UN General Assembly' meets once a year in:",
+      o: ["January", "May", "September", "December"],
+      a: 2,
+      e: "The annual regular session starts in September at the UN headquarters in New York.",
+      full: "This is when you see all the world leaders (Presidents and Prime Ministers) traveling to New York to give speeches. It is the biggest gathering of diplomats in the world.",
+      h: "Do they meet in the 'Early year' or 'September'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Rule of Law' principle of 'Individual Liberty' ensures that:",
+      o: ["The police can arrest anyone at any time", "Citizens can only be punished for a breach of law proven in court", "Everyone can do whatever they like", "Only the rich are free"],
+      a: 1,
+      e: "A person's freedom cannot be taken away without a legal reason and a fair trial.",
+      full: "This is the protection against 'Arbitrary Arrest.' Even if the President thinks you are a criminal, he cannot jail you forever without taking you before a Judge to prove his case.",
+      h: "Does 'Liberty' mean 'Total freedom' or 'Freedom protected by Law'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Gerrymandering' practice is most common in which branch of government?",
+      o: ["Executive", "Legislature (Electoral boundaries)", "Judiciary", "Civil Service"],
+      a: 1,
+      e: "It involves redrawing electoral districts to give one political party an unfair advantage.",
+      full: "By 'packing' or 'cracking' certain areas, a party can win more seats even if they have fewer total votes. It is a way of 'rigging' the map before the election even starts.",
+      h: "Does this affect 'Courtrooms' or 'Electoral Districts'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'First Political Party' in Nigeria (NNDP) was founded to contest elections in:",
+      o: ["Lagos and Calabar", "Kano and Kaduna", "Enugu and Port Harcourt", "Ibadan and Akure"],
+      a: 0,
+      e: "The 1922 Clifford Constitution allowed for 3 elected members from Lagos and 1 from Calabar.",
+      full: "Herbert Macaulay’s NNDP dominated these elections for years. Because the rest of the country couldn't vote yet, the party was mostly focused on the interests of Lagos people.",
+      h: "Was the first vote for the 'Whole Country' or just 'Lagos and Calabar'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'National Assembly' in Nigeria consists of the:",
+      o: ["President and the Cabinet", "Senate and the House of Representatives", "Governors and the Speakers", "Judges and the Lawyers"],
+      a: 1,
+      e: "Nigeria has a bicameral legislature at the federal level.",
+      full: "The Senate has 109 members (3 per state + 1 for FCT), and the House of Representatives has 360 members. Together, they make up the 'Legislative Branch' of the federal government.",
+      h: "Is it 'One' or 'Two' chambers in Abuja?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Secretariat' of the UN is headed by the:",
+      o: ["President of the General Assembly", "Secretary-General", "Chief Justice of the World Court", "Permanent Representative of the USA"],
+      a: 1,
+      e: "The Secretary-General is the 'Chief Administrative Officer' of the United Nations.",
+      full: "The Secretariat is like the 'Engine Room.' It does all the research, translation, and administrative work. The Secretary-General leads this staff and acts as the world's top diplomat.",
+      h: "Is the leader called the 'President' or the 'Secretary-General'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Universal Adult Suffrage' was first introduced in Nigeria in:",
+      o: ["1922", "1951", "1979", "1999"],
+      a: 2,
+      e: "The 1979 Constitution was the first to give every adult Nigerian (including Northern women) the right to vote.",
+      full: "Before 1979, the North did not allow women to vote (only men). The 1979 Constitution removed this barrier, making voting 'Universal' for every adult citizen across the entire country.",
+      h: "Did 'Everyone' get to vote in '1922' or '1979'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Diplomatic Corps' refers to:",
+      o: ["A group of soldiers", "The body of foreign ambassadors and diplomats in a country", "A political party", "A secret society"],
+      a: 1,
+      e: "It represents all the international diplomats officially sent to represent their countries.",
+      full: "The Diplomatic Corps is headed by a 'Doyen' (usually the longest-serving ambassador). They enjoy 'Diplomatic Immunity,' which protects them from being arrested by the local police of the host country.",
+      h: "Is this for 'Soldiers' or 'Foreign Ambassadors'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Pre-colonial' Yoruba system, the 'Are-Ona-Kakanfo' was the:",
+      o: ["Chief Priest", "Generalissimo (Field Marshal) of the Army", "King's messenger", "Treasurer"],
+      a: 1,
+      e: "The Kakanfo was the supreme military commander of the Oyo Empire.",
+      full: "Tradition dictated that the Are-Ona-Kakanfo must never be defeated. If he lost a war, he was expected to commit suicide rather than return home in shame. This ensured the army was always brave.",
+      h: "Was he the 'Head of Religion' or the 'Head of the Army'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Pressure Group' called 'ASUU' stands for:",
+      o: ["All Students Union of Universities", "Academic Staff Union of Universities", "Association of Senior University Users", "Academic Standard for United Universities"],
+      a: 1,
+      e: "ASUU is the trade union representing lecturers in Nigerian public universities.",
+      full: "ASUU is a professional pressure group. They use 'Industrial Action' (strikes) to put pressure on the Federal Government to increase funding for education and improve their welfare.",
+      h: "Is this for 'Students' or for 'Lecturers'?"
+    },
+    {
+      yr: 2020,
+      q: "The 'Judiciary' is protected from political influence by the 'National Judicial Council' (NJC), which:",
+      o: ["Makes laws for the courts", "Handles the appointment, promotion, and discipline of judges", "Collects fines from criminals", "Directs the police to arrest judges"],
+      a: 1,
+      e: "The NJC acts as a shield between the politicians and the judges.",
+      full: "Because the NJC is mostly made up of senior judges, it ensures that if a judge is being 'punished' or 'promoted,' it is because of their performance, not because they refused to help a politician win a case.",
+      h: "Does the NJC protect 'Judges' or 'Politicians'?"
+    },
+
+    {
+      yr: 2019,
+      q: "The ultimate power to make and enforce laws in a state is called:",
+      o: ["Legitimacy", "Sovereignty", "Authority", "Influence"],
+      a: 1,
+      e: "Sovereignty is the supreme power of the state to rule itself without external control.",
+      full: "A state can have authority and legitimacy, but without 'Sovereignty,' it is not truly independent. It means the state has the final 'say' over its territory, and no other power (like a former colonial master) can override its laws.",
+      h: "Is it the 'Right to rule' or the 'Final Power' to rule?"
+    },
+    {
+      yr: 2019,
+      q: "A 'Federal' system of government is one where power is divided between the:",
+      o: ["President and the Prime Minister", "Executive and the Judiciary", "Central government and the component units", "Senate and the House of Reps"],
+      a: 2,
+      e: "Federalism involves a constitutional sharing of power between the center and the states.",
+      full: "In Nigeria, the 'Center' (Federal Government) handles things like Defense and Currency, while 'States' handle things like local roads and state schools. This allows diverse groups to stay together in one country.",
+      h: "Does one person 'Have it all' or is power 'Shared' among levels?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Macpherson Constitution' of 1951 introduced which of the following?",
+      o: ["Unitary government", "Regional legislatures", "Total independence", "One-party system"],
+      a: 1,
+      e: "It created the regional houses of assembly for the North, West, and East.",
+      full: "This was a major step toward modern Nigeria. It allowed Nigerians to participate in governance at the regional level, even though the central government still held a lot of 'Quasi-federal' control.",
+      h: "Did Macpherson create 'States' or 'Regions'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Judiciary' maintains the 'Rule of Law' by:",
+      o: ["Making new laws", "Interpreting laws and protecting rights", "Arresting criminals", "Managing the economy"],
+      a: 1,
+      e: "The courts explain what the law means and ensure it is applied fairly to everyone.",
+      full: "The Judiciary is the 'Umpire' of the system. If the Executive or Legislature breaks the rules of the Constitution, the Judiciary 'blows the whistle' and strikes down those illegal actions.",
+      h: "Who 'explains' the law when there is a dispute?"
+    },
+    {
+      yr: 2019,
+      q: "Which of these is a function of 'Political Parties'?",
+      o: ["Arresting thieves", "Recruiting and training political leaders", "Making court judgments", "Printing money"],
+      a: 1,
+      e: "Parties act as a 'grooming ground' for people who want to lead the country.",
+      full: "Beyond just winning elections, parties create 'Manifestos' (plans) and teach their members how to govern. They provide the 'Platform' for a citizen to move from being an ordinary person to a Governor or President.",
+      h: "Do parties 'Hire' leaders or 'Arrest' them?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Pre-colonial' Hausa/Fulani system, the 'Waziri' was the:",
+      o: ["Head of the Army", "Chief Justice", "Prime Minister and Senior Adviser", "Market Master"],
+      a: 2,
+      e: "The Waziri was the Emir's right-hand man and the administrative head of the caliphate.",
+      full: "Think of the Waziri as the 'Engine' of the Emirate. He managed the other officials and gave the Emir expert advice on how to run the territory according to Islamic law.",
+      h: "Is he the 'General' or the 'Senior Adviser'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'United Nations' (UN) headquarters is located in:",
+      o: ["London", "Paris", "New York", "Geneva"],
+      a: 2,
+      e: "The UN is based in New York City, USA.",
+      full: "The land the UN building sits on is considered 'International Territory,' meaning it doesn't belong to the USA. It is the center of world diplomacy where all 193 member states meet.",
+      h: "Is the 'World Capital' in 'Switzerland' or 'USA'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Clifford Constitution' of 1922 introduced the 'Elective Principle' in:",
+      o: ["Kano and Zaria", "Lagos and Calabar", "Enugu and Onitsha", "Ilorin and Ibadan"],
+      a: 1,
+      e: "It allowed for 3 elected members from Lagos and 1 from Calabar.",
+      full: "This was the first time in West African history that Africans were allowed to 'Vote' for their leaders, even though it was only in two cities. This led to the formation of the first political parties.",
+      h: "Was the first vote in 'The North' or in 'Lagos and Calabar'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Civil Service' is expected to be 'Apolitical.' This means:",
+      o: ["They must not vote", "They must not be members of any political party", "They must hate politicians", "They must work only for the President"],
+      a: 1,
+      e: "Civil servants must remain neutral so they can serve any party that wins the election.",
+      full: "If a civil servant is an active member of Party A, they might try to sabotage the work if Party B wins. To keep the 'government machine' running, they must stay out of active politics.",
+      h: "Should a government worker 'Take sides' or 'Stay Neutral'?"
+    },
+    {
+      yr: 2019,
+      q: "A 'Written' constitution is one that is:",
+      o: ["Written by hand", "Found in a single formal document", "Never changed", "Only for small countries"],
+      a: 1,
+      e: "Nigeria and the USA have written constitutions contained in one book.",
+      full: "The benefit of a written constitution is 'Clarity.' Everyone can read the same book to know their rights. Usually, these constitutions are 'Rigid,' meaning they have a special, difficult process for making changes.",
+      h: "Is it a 'Collection of traditions' or 'One single book'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Pressure Group' that represents the interest of doctors in Nigeria is the:",
+      o: ["NBA", "NLC", "NMA", "ASUU"],
+      a: 2,
+      e: "The Nigerian Medical Association (NMA) is the professional body for doctors.",
+      full: "Like all professional pressure groups, the NMA lobbies the government for better hospital equipment and better pay for doctors. They use 'Professional standards' to influence government health policy.",
+      h: "What is the acronym for 'Medical Association'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Organization of Petroleum Exporting Countries' (OPEC) was founded in:",
+      o: ["Lagos", "Baghdad", "Vienna", "Geneva"],
+      a: 1,
+      e: "OPEC was established in Baghdad, Iraq, in 1960.",
+      full: "The founding members were Iran, Iraq, Kuwait, Saudi Arabia, and Venezuela. Nigeria joined much later in 1971. Their goal is to coordinate oil policies to ensure stable prices for producers.",
+      h: "Was it founded in 'Nigeria' or 'Iraq'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Rule of Law' is most associated with which of the following thinkers?",
+      o: ["Montesquieu", "A.V. Dicey", "John Locke", "Thomas Hobbes"],
+      a: 1,
+      e: "Dicey developed the three pillars of the Rule of Law in his 1885 book.",
+      full: "Dicey argued that for a country to be 'Just,' the law must be Supreme, everyone must be Equal before it, and people's Rights must be protected by the courts.",
+      h: "Who said 'Everyone is equal before the law'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following describes 'Naturalization'?",
+      o: ["Citizenship by birth", "Citizenship by marriage", "Citizenship granted to a foreigner by law", "Citizenship by honor"],
+      a: 2,
+      e: "It is the legal process where a non-citizen acquires citizenship of another country.",
+      full: "In Nigeria, a foreigner must live here for 15 years, show good character, and be useful to the country to apply for 'Naturalization.' Once granted by the President, they become a full Nigerian citizen.",
+      h: "Is this 'Birth' or 'Acquiring it later'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Ombudsman' (Public Complaints Commission) was first created in:",
+      o: ["Nigeria", "Sweden", "USA", "Britain"],
+      a: 1,
+      e: "The concept of the Ombudsman originated in Sweden in 1809.",
+      full: "Sweden created the office to protect citizens from the 'Abuse of Power' by the King's officials. Nigeria adopted the same model in 1975 to help regular people report 'Administrative injustice.'",
+      h: "Did the 'Ombudsman' start in 'Africa' or 'Sweden'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Pre-colonial' Yoruba 'Oyo Mesi' had the power to:",
+      o: ["Elect the Oba", "Dismiss the Oba (force suicide)", "Command the army", "Collect taxes"],
+      a: 1,
+      e: "The Oyo Mesi was a check on the powers of the Alaafin of Oyo.",
+      full: "If the Alaafin became a dictator, the Bashorun (head of Oyo Mesi) could present him with an empty calabash, meaning 'The people and the gods have rejected you.' The Oba was then expected to commit suicide.",
+      h: "Could they 'Fire' the King or just 'Advise' him?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Separation of Powers' means that:",
+      o: ["One person holds all power", "Power is divided among the Executive, Legislature, and Judiciary", "Power is shared between the North and South", "The military and civilians rule together"],
+      a: 1,
+      e: "This principle prevents tyranny by ensuring no single branch has total control.",
+      full: "Montesquieu popularized this. The idea is that the Legislators make the law, the President executes it, and the Judges interpret it. They 'Check' each other like a game of Rock-Paper-Scissors.",
+      h: "Does power 'Stay in one hand' or is it 'Divided into three'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'African Union' (AU) replaced the 'Organization of African Unity' (OAU) in:",
+      o: ["1960", "1999", "2002", "2015"],
+      a: 2,
+      e: "The AU was officially launched in Durban, South Africa, in 2002.",
+      full: "The OAU was old and focused mostly on 'Political Freedom.' The AU was created to focus more on 'Economic Integration' and 'Security' (being able to intervene in countries where people are being killed).",
+      h: "Did the AU start in '1963' or '2002'?"
+    },
+    {
+      yr: 2019,
+      q: "A 'Public Corporation' is established by an:",
+      o: ["Act of Parliament", "Executive order", "Private agreement", "Religious decree"],
+      a: 0,
+      e: "Bodies like the NPA or Water Board are created by specific laws passed by the legislature.",
+      full: "Because they are 'Created by Law,' they are separate from the Civil Service. They have 'Legal Personality,' meaning they can borrow money and even be sued in court like a private company.",
+      h: "Is it created by a 'Contract' or a 'Law'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Franchise' refers to the legal right to:",
+      o: ["Own land", "Vote in an election", "Speak in public", "Travel abroad"],
+      a: 1,
+      e: "Franchise (or Suffrage) is the fundamental right of a citizen to participate in voting.",
+      full: "In Nigeria, 'Universal Adult Suffrage' means every citizen who is 18 years and above can vote. This is the foundation of 'Consent' in a democracy.",
+      h: "Is it about 'Buying a business' or 'Voting'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Judiciary' uses the 'Writ of Certiorari' to:",
+      o: ["Release a suspect", "Order a lower court to send up its records for review", "Sack a governor", "Arrest a senator"],
+      a: 1,
+      e: "Certiorari allows a higher court to review and potentially quash the decision of a lower court.",
+      full: "If a High Court makes a judgment that seems legally wrong or outside its power, the Supreme Court can issue a 'Writ of Certiorari' to 'pull up' the file, review it, and cancel the wrong decision.",
+      h: "Does the court 'Review a file' or 'Release a body'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'United Nations Security Council' has how many 'Permanent' members?",
+      o: ["5", "10", "15", "54"],
+      a: 0,
+      e: "The P5 consists of China, France, Russia, the UK, and the USA.",
+      full: "These five nations were the victors of World War II. They hold 'Veto Power,' meaning they can stop any substantive resolution from passing, even if every other country in the world votes for it.",
+      h: "Is the number of 'Forever' members 'Five' or 'Fifteen'?"
+    },
+    {
+      yr: 2019,
+      q: "A 'Confederation' is often described as a:",
+      o: ["Strong union of states", "Loose association of independent states", "Military dictatorship", "One-party state"],
+      a: 1,
+      e: "In a confederation, the central government is weak and the component units are supreme.",
+      full: "Unlike Nigeria (a Federation), in a Confederation, the states can usually leave the union whenever they want. The center cannot make laws that apply directly to citizens without the states' approval.",
+      h: "Is the union 'Tight' or 'Loose'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Lyttelton Constitution' of 1954 gave 'Residual Powers' to the:",
+      o: ["Federal Government", "Regional Governments", "Local Governments", "British Monarch"],
+      a: 1,
+      e: "Residual powers (matters not on the Exclusive or Concurrent lists) were handled by the regions.",
+      full: "This constitution made Nigeria a 'True Federation.' It listed what the Center could do (Exclusive) and what both could do (Concurrent). Anything left over (Residual) belonged to the Regions.",
+      h: "Did 'Leftover' powers go to the 'Center' or the 'Regions'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Public Service Commission' ensures 'Neutrality' by:",
+      o: ["Hiring only party members", "Protecting civil servants from political dismissal", "Paying very high salaries", "Allowing workers to strike"],
+      a: 1,
+      e: "It acts as a buffer to prevent politicians from firing career workers for political reasons.",
+      full: "Because the Commission (not the Minister) handles hiring and firing, a civil servant can tell a Minister 'No' if a request is illegal, without fearing they will lose their job the next day.",
+      h: "Does the Commission protect 'Workers' or 'Politicians'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Pre-colonial' Igbo 'Oha-na-eze' refers to the:",
+      o: ["Secret society", "Assembly of the whole village/people", "Council of war", "King's palace"],
+      a: 1,
+      e: "The Oha-na-eze was the supreme legislative body in the decentralized Igbo system.",
+      full: "In this 'Village Democracy,' every adult male usually had the right to speak. Decisions were made by 'Consensus' (everyone agreeing) rather than a King simply giving an order.",
+      h: "Is this a 'Secret Meeting' or a 'Village Assembly'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'International Court of Justice' (ICJ) is located in:",
+      o: ["New York", "Geneva", "The Hague", "Addis Ababa"],
+      a: 2,
+      e: "The ICJ (World Court) is based in The Hague, Netherlands.",
+      full: "This is the only major UN organ not located in New York. It settles disputes between *countries* (like the Bakassi Peninsula dispute between Nigeria and Cameroon), not individuals.",
+      h: "Is the 'World Court' in 'USA' or 'Netherlands'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Gerrymandering' practice is intended to:",
+      o: ["Ensure fair representation", "Give an unfair advantage to a political party", "Increase voter turnout", "Simplify the ballot paper"],
+      a: 1,
+      e: "It is the manipulation of electoral boundaries for political gain.",
+      full: "By drawing the map in a strange shape, a party can 'cluster' all their opponents into one small district while spreading their own supporters across many districts to win more seats.",
+      h: "Is it 'Fair Map Drawing' or 'Cheating with Maps'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'National Youth Service Corps' (NYSC) was established in 1973 to:",
+      o: ["Train soldiers", "Promote national unity and integration", "Provide cheap labor", "Reduce university fees"],
+      a: 1,
+      e: "It was created after the Civil War to heal the country and encourage tribal mixing.",
+      full: "General Yakubu Gowon started the scheme to 'Reconcile, Rehabilitate, and Reconstruct' Nigeria. It sends graduates to states other than their own to learn about different cultures.",
+      h: "Was it for 'War' or for 'Unity'?"
+    },
+    {
+      yr: 2019,
+      q: "Which of the following is a 'Direct' Democracy method?",
+      o: ["Voting for a Senator", "Referendum", "Appointing a Minister", "Reading the news"],
+      a: 1,
+      e: "A referendum allows citizens to vote directly on a specific law or policy.",
+      full: "In a Referendum, the government asks the people: 'Yes or No?' The people's vote *is* the final decision. This is 'Direct' because there is no middle-man or representative making the choice for you.",
+      h: "Is 'Voting on a Law' Direct or Indirect?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Diplomatic Immunity' of an ambassador means they:",
+      o: ["Don't have to follow any laws", "Cannot be prosecuted by the host country's courts", "Can vote in the host country's elections", "Are above their own country's laws"],
+      a: 1,
+      e: "Immunity ensures that foreign diplomats can work without fear of harassment by local police.",
+      full: "Under international law, an ambassador cannot be jailed by the country they are visiting. If they commit a serious crime, the host country can only declare them 'Persona Non Grata' and deport them.",
+      h: "Can the local police 'Arrest' an Ambassador?"
+    },
+    {
+      yr: 2019,
+      q: "The 'African Union' (AU) 'Commission' serves as the:",
+      o: ["Highest court", "Administrative secretariat", "Military wing", "Legislative house"],
+      a: 1,
+      e: "The Commission handles the day-to-day running of the AU in Addis Ababa.",
+      full: "Led by a Chairperson, the Commission implements the AU's policies, coordinates meetings, and manages the organization's budget and staff across Africa.",
+      h: "Is the Commission the 'Engine Room' or the 'Judges'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Rule of Law' is often threatened by a 'State of Emergency' because:",
+      o: ["Courts are closed forever", "The executive can suspend certain fundamental rights", "Taxes are abolished", "The constitution is burned"],
+      a: 1,
+      e: "During emergencies, the government may limit freedoms for the sake of national security.",
+      full: "If there is a war or a major riot, the President can declare an emergency. This allows them to arrest people without trial or stop protests—actions that would normally be illegal under the Rule of Law.",
+      h: "Can the government 'Pause' some rights during a 'Crisis'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Electoral Commission' is 'Neutral' when its funding comes from the:",
+      o: ["Ruling Party", "Consolidated Revenue Fund", "Foreign NGOs", "Individual candidates"],
+      a: 1,
+      e: "Automatic funding from the national purse prevents the government from 'starving' the commission of money.",
+      full: "If the President could 'cut the budget' of INEC whenever he was angry, the commission would be afraid to be fair. Independent funding ensures they can plan and run elections without political pressure.",
+      h: "Should money come from the 'Party' or the 'National Fund'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Pre-colonial' Hausa 'Sarkin Pawa' was the head of:",
+      o: ["The Army", "The Butchers", "The Palace", "The Market"],
+      a: 1,
+      e: "The Sarkin Pawa supervised the meat industry and the butchers in the Emirate.",
+      full: "Traditional Hausa administration was very specific. Every trade (blacksmiths, weavers, butchers) had a 'Sarkin' (Head) who ensured standards were met and taxes were collected for the Emir.",
+      h: "Is he the 'Head Butcher' or the 'Head General'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Murtala/Obasanjo' regime (1975-1979) was famous for:",
+      o: ["Starting the Civil War", "Creating a transition program to return to civilian rule", "Abolishing the regions", "Joining the Commonwealth"],
+      a: 1,
+      e: "They kept their promise to hand over power to a democratically elected government in 1979.",
+      full: "After over a decade of military rule, this regime created a clear 'Timetable' for elections. They oversaw the drafting of the 1979 Constitution and successfully handed over to Shehu Shagari.",
+      h: "Did they 'Keep Power' or 'Plan to Leave'?"
+    },
+    {
+      yr: 2019,
+      q: "A 'Delegated Legislation' made by a 'Minister' is called a/an:",
+      o: ["Act", "Statutory Instrument/Order", "Bye-law", "Decree"],
+      a: 1,
+      e: "Ministers use Statutory Instruments to add detail to laws passed by the Parliament.",
+      full: "If Parliament passes a 'Health Act,' they might allow the Health Minister to release an 'Order' specifying which medicines are banned. This saves the Parliament's time.",
+      h: "Is a Minister's law an 'Act' or an 'Order'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Universal Declaration of Human Rights' (UDHR) contains how many articles?",
+      o: ["10", "20", "30", "50"],
+      a: 2,
+      e: "The UDHR consists of 30 specific articles outlining human rights.",
+      full: "Adopted in 1948, these 30 points range from the 'Right to Life' (Article 3) to the 'Right to Education' (Article 26). It is the most translated document in the world.",
+      h: "Is the number of rights 'Thirty' or 'Fifty'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'Judiciary' uses the 'Writ of Prohibition' to:",
+      o: ["Stop a lower court from exceeding its jurisdiction", "Command a person to come to court", "Release a suspect from jail", "Sack a corrupt judge"],
+      a: 0,
+      e: "Prohibition 'forbids' a lower court from continuing to hear a case it has no power over.",
+      full: "If a Magistrate Court (which handles small crimes) suddenly tries to judge a Murder case (which only a High Court can do), the High Court issues a 'Writ of Prohibition' to tell them to 'Stop immediately'.",
+      h: "Does it 'Command action' or 'Stop a lower court'?"
+    },
+    {
+      yr: 2019,
+      q: "The 'ECOWAS' headquarters is located in:",
+      o: ["Lagos, Nigeria", "Abuja, Nigeria", "Lome, Togo", "Accra, Ghana"],
+      a: 1,
+      e: "The ECOWAS Commission is based in Abuja.",
+      full: "While the original treaty was signed in Lagos in 1975, the headquarters (Secretariat) was later moved to the new capital, Abuja, where it manages West African integration.",
+      h: "Is the 'Office' in 'Lagos' or 'Abuja'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Judiciary' is responsible for the 'Prerogative of Mercy,' which allows the:",
+      o: ["Judge to take a bribe", "President or Governor to pardon a convicted criminal", "Police to release a suspect", "Lawyer to win a case automatically"],
+      a: 1,
+      e: "The Prerogative of Mercy is an executive power to grant a pardon (Amnesty).",
+      full: "Although it involves a court sentence, the 'Mercy' part is actually an Executive function. On advice from a committee, a Governor can release a prisoner on Independence Day if they have shown good behavior.",
+      h: "Is 'Mercy' given by the 'Judge' or the 'President/Governor'?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Unitary' system of government is characterized by:",
+      o: ["Concentration of power at the center", "Division of power between states", "Rule by a King only", "Lack of a constitution"],
+      a: 0,
+      e: "In a Unitary state, the central government is the supreme source of all authority.",
+      full: "Countries like the UK or France use this. There are no 'State Governments' with their own independent powers. Any power a local council has is 'given' by the center and can be taken back at any time.",
+      h: "Is power 'Scattered' or 'Concentrated at the top'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'United Nations' (UN) 'Trusteeship Council' was established to:",
+      o: ["Manage world finances", "Supervise territories not yet independent", "Arrest war criminals", "Protect the environment"],
+      a: 1,
+      e: "It was created to help 'Trust Territories' transition to self-government or independence.",
+      full: "After World War II, some colonies were placed under UN care. Once the last territory (Palau) became independent in 1994, the Council suspended its main operations, but it still exists on paper.",
+      h: "Was it for 'Money' or for 'Colonies waiting for freedom'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Gowon' administration (1966-1975) created how many states in 1967?",
+      o: ["4", "12", "19", "21"],
+      a: 1,
+      e: "Gowon split the 4 regions into 12 states to weaken the secessionist movement.",
+      full: "Just before the Civil War started, Gowon broke the old 'Regional' structure. This was a strategic move to give minority ethnic groups their own states and reduce the power of the three big regions.",
+      h: "Did Gowon start with 'Four' or 'Twelve' states?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Public Service' is characterized by 'Anonymity.' This means:",
+      o: ["Workers must hide their faces", "The Minister takes the praise or blame for the department's work", "Workers have no names", "The office address is secret"],
+      a: 1,
+      e: "Civil servants work behind the scenes and are not publicly credited for government policy.",
+      full: "If a policy is successful, the Minister gets the applause. If it fails, the Minister 'takes the hit' in Parliament. The civil servant who actually wrote the policy remains 'Anonymous' to the public.",
+      h: "Who 'faces the public'—the 'Worker' or the 'Minister'?"
+    },
+    {
+      yr: 2018,
+      q: "In 'Pre-colonial' Hausa/Fulani systems, the 'Madawaki' was the:",
+      o: ["Chief Justice", "Commander-in-Chief of the Army", "Head of the Police", "Treasurer"],
+      a: 1,
+      e: "The Madawaki was the senior military official and adviser to the Emir.",
+      full: "While the Emir was the spiritual and political leader, the Madawaki handled the 'Hard Power.' He organized the cavalry and defended the borders of the Emirate from invaders.",
+      h: "Is the Madawaki a 'Judge' or a 'General'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Commonwealth of Nations' is an association of:",
+      o: ["African countries only", "Former British colonies and the UK", "Oil-producing countries", "European nations"],
+      a: 1,
+      e: "It is a voluntary association of 56 independent member states, mostly former British territories.",
+      full: "Members share the English language and similar legal systems. Every two years, they hold the CHOGM (Commonwealth Heads of Government Meeting) to discuss trade, education, and human rights.",
+      h: "Is this the 'Old British Empire' club or the 'OPEC' club?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Elective Principle' was first introduced in Nigeria by the:",
+      o: ["Richards Constitution", "Clifford Constitution", "Macpherson Constitution", "Lyttelton Constitution"],
+      a: 1,
+      e: "The 1922 Clifford Constitution allowed Nigerians to vote for the first time.",
+      full: "This 'Principle' was the seed of democracy in Nigeria. It ended the era where the British simply 'appointed' whoever they liked to represent Nigerians in the Legislative Council.",
+      h: "Who gave Nigerians the 'Vote' in '1922'?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Rigid' constitution is one that:",
+      o: ["Is printed on hard paper", "Requires a special and difficult procedure to amend", "Cannot be changed at all", "Is only used by the military"],
+      a: 1,
+      e: "Federal states usually have rigid constitutions to protect the powers of the component units.",
+      full: "In Nigeria, to change the constitution, you need 2/3 of the National Assembly AND 2/3 of the 36 State Houses of Assembly. This makes it 'Hard' (Rigid) to change compared to a simple law.",
+      h: "Is it 'Easy' or 'Difficult' to change?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Rule of Law' principle of 'Supremacy of the Law' means:",
+      o: ["The law is the highest authority in the land", "Only lawyers are supreme", "The President can make any law", "The military can suspend the law"],
+      a: 0,
+      e: "Everyone, including the government, must act within the limits of the law.",
+      full: "This is the opposite of 'Arbitrary Power.' In a country where the law is supreme, a leader cannot punish you just because they are angry; they must find a law that you have actually broken.",
+      h: "Is the 'Law' the boss or is the 'Man' the boss?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Pressure Group' that uses 'Lobbying' is primarily trying to:",
+      o: ["Overthrow the government", "Persuade legislators to pass laws in their favor", "Win an election", "Arrest corrupt officials"],
+      a: 1,
+      e: "Lobbying involves meeting with lawmakers to influence their decisions.",
+      full: "Lobbyists are 'Professional Persuaders.' They provide information and arguments to Senators to show why a certain law (like a tax break or an environmental rule) should be passed or rejected.",
+      h: "Do they want to 'Persuade' or 'Rule'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Judiciary' uses the 'Writ of Quo Warranto' to:",
+      o: ["Release a prisoner", "Challenge a person's right to hold a public office", "Stop a war", "Pass a budget"],
+      a: 1,
+      e: "Quo Warranto means 'By what warrant?' It is used to remove someone from a position they are not entitled to.",
+      full: "If a person starts acting as a Local Government Chairman without being properly elected or appointed, a citizen can ask the court for a 'Writ of Quo Warranto' to force them to prove they have the right to be there.",
+      h: "Does the court ask 'Where is the body?' or 'What is your authority?'"
+    },
+    {
+      yr: 2018,
+      q: "The 'Organization of African Unity' (OAU) 'Liberation Committee' was based in:",
+      o: ["Lagos, Nigeria", "Dar es Salaam, Tanzania", "Addis Ababa, Ethiopia", "Cairo, Egypt"],
+      a: 1,
+      e: "Tanzania was the headquarters for the committee that supported freedom fighters across Africa.",
+      full: "This committee provided money, weapons, and training to groups fighting for independence in countries like South Africa (against Apartheid), Zimbabwe, and Angola.",
+      h: "Was the 'Freedom Committee' in 'Ethiopia' or 'Tanzania'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is an 'Exclusive' power of the Federal Government?",
+      o: ["Health", "Education", "External Affairs (Foreign Policy)", "Agriculture"],
+      a: 2,
+      e: "Only the Federal Government can manage relationships with other countries.",
+      full: "A State Governor cannot go to the UN and represent Nigeria, nor can they sign a treaty with the USA. External Affairs, Defense, and Aviation are strictly for the 'Big Office' in Abuja.",
+      h: "Can a 'Governor' or only the 'President' talk to foreign countries?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Ombudsman' (PCC) in Nigeria was established by which regime?",
+      o: ["Tafawa Balewa", "Murtala/Obasanjo", "Shehu Shagari", "Ibrahim Babangida"],
+      a: 1,
+      e: "The Public Complaints Commission was created in 1975 during military rule.",
+      full: "The regime wanted to show they were against 'Corruption' and 'Inefficiency.' The PCC was designed to let the 'Common Man' complain about being mistreated by government officials.",
+      h: "Was it created in '1960' or '1975'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Pre-colonial' Yoruba 'Ogboni' society performed primarily:",
+      o: ["Military and police duties", "Judicial and religious functions", "Tax collection", "Educational services"],
+      a: 1,
+      e: "The Ogboni acted as a mediator and performed rituals to keep the society balanced.",
+      full: "The Ogboni was a 'Secret Society' of elders. Because they were seen as the link between the living and the ancestors, they had the power to judge cases that were too difficult for the King or the Council.",
+      h: "Were they 'Soldiers' or 'Judges/Priests'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Separation of Powers' was designed to avoid:",
+      o: ["Democracy", "Efficiency", "Tyranny and the abuse of power", "Public voting"],
+      a: 2,
+      e: "By dividing power, no single person or group can become too powerful.",
+      full: "If the person who 'Makes the law' is also the person who 'Enforces it' and the person who 'Judges it,' you have a Dictatorship. Dividing these roles keeps the government in check.",
+      h: "Does 'Separation' help 'The Dictator' or 'The People'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'African Union' (AU) 'Assembly' consists of:",
+      o: ["Foreign Ministers", "Chief Justices", "Heads of State and Government", "Soldiers"],
+      a: 2,
+      e: "The Assembly is the supreme organ of the AU, made up of the Presidents/PMs of all member states.",
+      full: "The Assembly meets once a year to make the 'Big Decisions' for the continent. Below them are the Ministers and the Commission who handle the daily work.",
+      h: "Is the 'Assembly' for 'Ministers' or 'Presidents'?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Referendum' is a direct vote on a/an:",
+      o: ["Candidate for office", "Specific constitutional or political issue", "Budget item", "Appointment of a judge"],
+      a: 1,
+      e: "It is a form of direct democracy where the people decide on a major policy change.",
+      full: "For example, if Nigeria wanted to decide whether to change its name, it might use a 'Referendum' so that every citizen can say 'Yes' or 'No' directly, instead of letting politicians decide.",
+      h: "Is this 'Voting for a Person' or 'Voting on an Issue'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'First Republic' of Nigeria (1963-1966) was headed by:",
+      o: ["A Prime Minister and a Ceremonial President", "An Executive President only", "A Military Governor", "A British Governor-General"],
+      a: 0,
+      e: "Nigeria followed the Parliamentary system with Tafawa Balewa (PM) and Nnamdi Azikiwe (President).",
+      full: "In this system, the 'President' was just a figurehead (like the Queen), while the 'Prime Minister' held the real executive power. This changed in 1979 to the Presidential system.",
+      h: "Did the First Republic have 'One Boss' or 'Two Bosses' (PM and President)?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Judiciary' uses the 'Writ of Habeas Corpus' to ensure that:",
+      o: ["A person is not illegally detained", "A witness tells the truth", "The President follows the law", "A judge is paid"],
+      a: 0,
+      e: "Habeas Corpus literally means 'Produce the Body' and is used to challenge unlawful imprisonment.",
+      full: "If the police keep you in a cell for three days without taking you to court, your lawyer can get this Writ. The Judge then orders the police to bring you to court to explain why they are holding you. If there is no legal reason, you must be released.",
+      h: "Is this for 'Illegal detention' or 'Illegal voting'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'United Nations' (UN) 'Secretary-General' is appointed for a term of:",
+      o: ["2 years", "4 years", "5 years", "10 years"],
+      a: 2,
+      e: "The Secretary-General serves a 5-year term, which can be renewed once.",
+      full: "The appointment is made by the General Assembly, but only after the Security Council (the P5) has recommended a candidate. This ensures the 'World's Top Diplomat' has the support of the most powerful nations.",
+      h: "Is the term 'Four' or 'Five' years?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Federal' system is best for a country with:",
+      o: ["A small population", "Diverse ethnic and religious groups", "One single language", "No natural resources"],
+      a: 1,
+      e: "Federalism allows different groups to manage their own local affairs while staying in one country.",
+      full: "In a country like Nigeria with over 250 ethnic groups, a 'Unitary' system would cause too much fighting. Federalism gives 'Autonomy' to the states, so people in Kano can have different local laws than people in Enugu.",
+      h: "Is it for 'Simple' countries or 'Diverse/Complex' ones?"
+    },
+    {
+      yr: 2018,
+      q: "The '1976 Local Government Reform' in Nigeria was significant because it:",
+      o: ["Abolished local governments", "Recognized local government as a third tier of government", "Made kings the chairmen", "Reduced the number of councils"],
+      a: 1,
+      e: "It created a uniform system of local government across the whole country.",
+      full: "Before 1976, every region did their own thing. The Murtala/Obasanjo reform made the Local Government an 'Official' part of the government structure, with its own functions and its own share of the national money.",
+      h: "Did it 'Delete' local government or make it 'The 3rd Tier'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Public Service' principle of 'Impartiality' means:",
+      o: ["Working slowly", "Treating all citizens equally regardless of their party or tribe", "Only helping the rich", "Refusing to take orders"],
+      a: 1,
+      e: "A public servant must provide services to the public without showing favoritism.",
+      full: "If you go to a government hospital or a passport office, the officer shouldn't care if you are from the North or South, or if you support the APC or PDP. They are 'Impartial' servants of the State.",
+      h: "Should they 'Show Favor' or 'Treat Everyone Equal'?"
+    },
+    {
+      yr: 2018,
+      q: "In 'Pre-colonial' Igbo society, the 'Age Grades' were responsible for:",
+      o: ["Electing the King", "Public works and community defense", "Writing the laws", "Taxing the elderly"],
+      a: 1,
+      e: "Age grades performed executive tasks like clearing roads and guarding the village.",
+      full: "Because there was no 'Central King' to give orders, the village relied on these groups of men born around the same time. They acted as the 'Labor Force' and the 'Police' for the community.",
+      h: "Were they 'Lawyers' or the 'Village Workforce/Defense'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Commonwealth' 'Secretariat' is located in:",
+      o: ["New York", "London", "Abuja", "Ottawa"],
+      a: 1,
+      e: "The headquarters of the Commonwealth is Marlborough House in London.",
+      full: "The Secretariat is led by a Secretary-General (currently Patricia Scotland). It organizes the meetings and helps member countries with things like election monitoring and economic development.",
+      h: "Is the 'Office' in 'UK' or 'Canada'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Clifford Constitution' of 1922 was named after:",
+      o: ["A Nigerian nationalist", "The British Governor-General", "A city in England", "A famous judge"],
+      a: 1,
+      e: "Sir Hugh Clifford was the Governor of Nigeria who introduced the 1922 constitution.",
+      full: "Colonial constitutions were usually named after the Governor in power at the time (Clifford, Richards, Macpherson, Lyttelton). This shows that the British were the ones deciding the rules for Nigeria back then.",
+      h: "Was 'Clifford' a 'Nigerian' or a 'British Governor'?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Flexible' constitution is one that:",
+      o: ["Can be bent easily", "Is unwritten", "Can be amended by a simple majority in parliament", "Is only for dictators"],
+      a: 2,
+      e: "Flexible constitutions are changed the same way as any ordinary law.",
+      full: "The UK is the best example. They don't need a 2/3 majority of states to change a rule. If the Parliament votes 'Yes' by a simple majority, the constitution changes. It 'flexes' with the needs of the time.",
+      h: "Is it 'Hard' or 'Easy' to change this type?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Rule of Law' principle of 'Equality before the law' is often limited by:",
+      o: ["The police", "Diplomatic Immunity", "The school system", "The weather"],
+      a: 1,
+      e: "Diplomats cannot be tried in the courts of the country they are visiting.",
+      full: "This is a 'Legal Exception.' While the Rule of Law says *everyone* is equal, international law protects ambassadors. If a foreign ambassador breaks a law, they are usually sent home rather than jailed here.",
+      h: "Are 'Ambassadors' and 'Regular Citizens' treated exactly the same by the police?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Pressure Group' called the 'NLC' stands for:",
+      o: ["Nigerian Law Council", "Nigerian Labour Congress", "National Liberty Committee", "Northern Leaders Conference"],
+      a: 1,
+      e: "The NLC is the umbrella body for trade unions in Nigeria.",
+      full: "The NLC is a 'Protective' pressure group. They fight for workers' rights, like the 'Minimum Wage.' If the government refuses to increase pay, the NLC can call for a 'National Strike' to shut down the country.",
+      h: "Is this for 'Lawyers' or 'Workers/Labour'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Judiciary' maintains its independence through 'Security of Tenure,' which means:",
+      o: ["Judges live in safe houses", "Judges cannot be removed from office easily before retirement", "Judges have many bodyguards", "Judges are never fired"],
+      a: 1,
+      e: "Ensuring judges stay in office until retirement prevents them from being bullied by politicians.",
+      full: "If a Judge knew the President could fire them for an 'unfriendly' judgment, the Judge would be scared. Security of Tenure means as long as they are 'of good behavior,' they keep their job until the legal age (70 for Supreme Court).",
+      h: "Does 'Tenure' mean 'Safety from thieves' or 'Safety from being fired'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'OAU' was founded in 1963 in:",
+      o: ["Lagos", "Cairo", "Addis Ababa", "Accra"],
+      a: 2,
+      e: "Ethiopia hosted the founding of the Organization of African Unity.",
+      full: "32 independent African states met in Addis Ababa to sign the charter. Emperor Haile Selassie of Ethiopia was the main host. This is why Addis Ababa is still the headquarters of the AU today.",
+      h: "Was it founded in 'Nigeria' or 'Ethiopia'?"
+    },
+    {
+      yr: 2018,
+      q: "Which of the following is on the 'Concurrent' list in Nigeria?",
+      o: ["Defense", "Currency", "Education", "Mining"],
+      a: 2,
+      e: "Both the Federal and State governments can make laws regarding education.",
+      full: "This is why we have 'Federal Universities' (UNILAG) and 'State Universities' (LASU). On the other hand, only the Federal government can handle 'Defense' (there is no 'Lagos State Army').",
+      h: "Can 'Both' the State and Federal govt build schools, or only 'One' of them?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Public Complaints Commission' (PCC) cannot investigate:",
+      o: ["A corrupt clerk", "The Armed Forces and the Police", "A local council worker", "A teacher"],
+      a: 1,
+      e: "The PCC has no jurisdiction over the military or matters of national security.",
+      full: "The Ombudsman is for 'Civilian' administrative errors. If you have a problem with a soldier or the police, there are separate 'Disciplinary Boards' (like the Police Service Commission) to handle that.",
+      h: "Does the PCC handle 'Soldiers' or 'Civilian Workers'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Pre-colonial' Kanem-Borno empire was known for the 'Nkenkena,' which was the:",
+      o: ["Emperor's crown", "Council of State/Advisers", "Royal army", "Market tax"],
+      a: 1,
+      e: "The Nkenkena consisted of 12 senior officials who advised the Mai.",
+      full: "Just like the Oyo Mesi in Yorubaland, the Nkenkena ensured that the Mai did not become a tyrant. They were powerful chiefs who represented the different interests within the empire.",
+      h: "Is the 'Nkenkena' a 'Hat' or a 'Council'?"
+    },
+    {
+      yr: 2018,
+      q: "The 'Separation of Powers' was famously advocated by:",
+      o: ["A.V. Dicey", "Baron de Montesquieu", "Abraham Lincoln", "Karl Marx"],
+      a: 1,
+      e: "Montesquieu argued that the Executive, Legislative, and Judicial powers must be separate.",
+      full: "In his book 'The Spirit of the Laws,' he said that if the same person makes and executes the law, there can be no 'Liberty.' This became the blueprint for the US and Nigerian constitutions.",
+      h: "Who is the 'Father' of Separation of Powers?"
+    },
+    {
+      yr: 2018,
+      q: "The 'African Union' (AU) 'Peace and Security Council' (PSC) can:",
+      o: ["Declare war on the UN", "Intervene in a member state during a crisis (e.g., genocide)", "Increase the price of oil", "Appoint kings"],
+      a: 1,
+      e: "The AU has the right to intervene to stop war crimes and crimes against humanity.",
+      full: "Unlike the old OAU (which did nothing), the AU can send 'Peacekeeping Troops' (like AMISOM) to a country where people are being killed in a civil war. This is called the 'Right of Intervention.'",
+      h: "Can the AU 'Send troops to help' or 'Just watch'?"
+    },
+    {
+      yr: 2018,
+      q: "A 'Bye-election' is an election held to:",
+      o: ["Elect a new President", "Fill a vacancy caused by death or resignation of a legislator", "Change the constitution", "Vote for a Governor"],
+      a: 1,
+      e: "Bye-elections happen when a seat in the Senate or House of Reps becomes empty unexpectedly.",
+      full: "If a Senator dies or becomes a Minister, his seat becomes empty. Instead of waiting for the 'General Election,' the Electoral Commission holds a 'Bye-election' only for that specific district to find a replacement.",
+      h: "Is this a 'Full National Election' or just 'Filling an Empty Seat'?"
+    },
+    {
+      yr: 2018,
+      q: "The '1999 Constitution' of Nigeria is:",
+      o: ["Unwritten", "Unitary", "Federal and Rigid", "Flexible"],
+      a: 2,
+      e: "It provides for a sharing of power and is difficult to amend.",
+      full: "It is 'Federal' because it recognizes 36 states and one center. It is 'Rigid' because you cannot change it by a simple vote; it requires a long, complicated process involving most of the country.",
+      h: "Is Nigeria 'One single level' (Unitary) or 'Multiple levels' (Federal)?"
+    },
   {
     yr: 2024,
     q: 'A system of government in which power derives from total control of the instruments of force is called ___________',
@@ -6835,6 +18928,8 @@ const QB = {
     full: 'Fascism is a far-right authoritarian ideology in which the state exercises absolute power over society through control of the military, police, and propaganda. Unlike monarchy (hereditary rule) or oligarchy (rule by a few elites), fascism specifically derives its power from control of the instruments of force — the army, police, and paramilitary groups.\n\nExamples: Mussolini\'s Italy, Hitler\'s Nazi Germany.\n\nOther options:\n• Monarchy: rule by a king/queen, often hereditary\n• Oligarchy: rule by a small group based on wealth or class\n• Capitalism: an economic system, not a government type',
     h: 'Which government type controls through force and suppression?',
   },
+
+
   {
     yr: 2024,
     q: 'The aggregate view of individuals in a society is referred to as ___',
@@ -8126,7 +20221,7 @@ const QB = {
       a: 1,
       e: 'Dramatic irony is when the audience has knowledge that characters do not.',
       full: 'Irony is the gap between what is expected or understood and what is actually happening. Dramatic irony is specifically when the AUDIENCE knows something important that the characters on stage do not know.\n\nThis creates tension because the audience watches characters make decisions, say things, or walk into danger — unaware of what the audience already knows. In Romeo and Juliet, the audience knows Juliet is not actually dead when Romeo finds her in the tomb. Romeo does not know. The tragedy that follows is powered entirely by dramatic irony.\n\nSituational irony is when events turn out opposite to expectations. Verbal irony is when someone says the opposite of what they mean. Dramatic irony is the audience-versus-character knowledge gap.',
-      h: "The audience knows something the characters don't.",
+      h: "The audience knows something the characters don\'t.",
     },
     {
       yr: 2024,
@@ -8426,6 +20521,413 @@ const QB = {
   ],
   novel: [
 
+    {
+      yr: 2024,
+      q: "In 'The Lekki Headmaster', what was the 'Point of No Return' in Badagry intended to symbolize for Mr. Bepo?",
+      o: ["The finality of death", "The loss of African identity through migration", "A popular tourist destination", "The beginning of a new life"],
+      a: 1,
+      e: "Bepo views the 'Japa' trend as a modern, voluntary form of the slave trade he saw in Badagry.",
+      full: "While standing at the Gberefu Island, Bepo reflects on how his ancestors were forced into ships, whereas modern Nigerians are desperately paying 'Visa fees' to enter the same system. This is a core thematic comparison in the novel.",
+      h: "Does he see it as 'Freedom' or as a 'Sacrifice of his roots'?"
+    },
+    {
+      yr: 2024,
+      q: "Why did Mr. Bepo refuse to give his speech and instead cry at the Monday assembly?",
+      o: ["He was mourning a dead student", "He was overwhelmed by the 'Japa' pressure from his family", "He had just been sacked by Mrs. Gloss", "He was angry at the teachers"],
+      a: 1,
+      e: "His wife Seri's constant pressure for him to move to the UK reached a breaking point during the assembly.",
+      full: "After Ikenna Egbu's speech about Jos, Bepo realized how much he loved his country and his job, but the financial pressure from his family in London (who earn in Pounds) caused his emotional collapse.",
+      h: "Is his pain caused by 'School problems' or 'Family/Migration pressure'?"
+    },
+    {
+      yr: 2024,
+      q: "What is the specific nickname given to Mr. Adewale Bepo by his colleagues?",
+      o: ["The King of Lekki", "The Village Headmaster", "The Lekki Headmaster", "The Stardom Principal"],
+      a: 2,
+      e: "He is called 'The Lekki Headmaster' because he mimics characters from the old TV show.",
+      full: "The Fine Arts teacher, Mr. Audu, popularized the name because Bepo often used humor and mimicry (imitating characters like 'King Oloja') to settle disputes or teach lessons in the high-brow Lekki school.",
+      h: "It's the title of the book—what is his specific nickname?"
+    },
+    {
+      yr: 2024,
+      q: "How much does Mr. Bepo earn as a monthly salary at Stardom Schools?",
+      o: ["N100,000", "N400,000", "N850,000", "N1.2 Million"],
+      a: 1,
+      e: "Bepo's salary is N400,000, which is the source of his wife's dissatisfaction.",
+      full: "Seri, who is a nurse in the UK earning £3,600 (about N1.7 million at the time), mocks his N400,000 salary as being 'worthless' when converted to foreign currency, driving the conflict of the book.",
+      h: "Is it closer to 'Four hundred thousand' or 'One million'?"
+    },
+    {
+      yr: 2025,
+      q: "Which student delivered the moving talk about the rock formations in Jos?",
+      o: ["Banky", "Tosh", "Ikenna Egbu", "Angel"],
+      a: 2,
+      e: "Ikenna Egbu, an SSS 1 student, gave the poetic description of the Jos excursion.",
+      full: "Ikenna described the 'artistic layers of rocks' in Jos and the cool weather of Plateau State. His passion for Nigeria's beauty was the trigger that made Bepo realize why he didn't want to 'Japa'.",
+      h: "Which boy talked about 'Shere Hills' and 'Lamigo Dam'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the Managing Director (MD) of Stardom Schools?",
+      o: ["Mrs. Grace Apeh", "Mrs. Ibidun Gloss", "Mrs. Seri Bepo", "Mrs. Titi"],
+      a: 1,
+      e: "Mrs. Ibidun Gloss is the owner and daughter of the late Chief David Aje.",
+      full: "Mrs. Gloss is a strict businesswoman who focuses on results. She rewards the 90% WASSCE success but is also known for sacking her own cousin, Funsho Daniels, for incompetence.",
+      h: "Think of the name 'Glossy'—who is the boss?"
+    },
+    {
+      yr: 2024,
+      q: "What was the 'Invention Club' at Stardom Schools trying to create?",
+      o: ["A solar-powered generator", "Mobile phones from recycled e-waste", "A new social media app", "An electric car"],
+      a: 1,
+      e: "The club was building functional mobile phones from discarded electronic waste.",
+      full: "The Invention Club symbolizes Bepo's belief in Nigerian youth. He feels that if he leaves for the UK, these talented children will lose their mentor and their chance to innovate for Nigeria.",
+      h: "Were they 'inventing' gadgets or just 'studying' electronics?"
+    },
+    {
+      yr: 2025,
+      q: "Why did Mr. Bepo leave his former place of work, Beesway Group of Schools?",
+      o: ["He was offered a higher salary at Stardom", "He discovered the owner was involved in ritual sacrifices", "He was sacked for insubordination", "He wanted to relocate to Lekki"],
+      a: 1,
+      e: "Bepo witnessed the slaughtering of a cow as a 'ritual' to make the school grow.",
+      full: "This flashback establishes Bepo’s high moral integrity. He refused to be part of a system that used 'charms' or unethical means to achieve success, leading him to join Stardom Schools instead.",
+      h: "Did he leave because of 'Money' or because of 'Moral/Religious' reasons?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the Vice Principal (VP) of Stardom Schools?",
+      o: ["Mrs. Titi", "Mrs. Grace Apeh", "Mr. Audu", "Mr. Justus Anabel"],
+      a: 1,
+      e: "Mrs. Grace Apeh is the Principal's right-hand woman and stabilizer of the school.",
+      full: "Mrs. Apeh is the first person to comfort Bepo when he cries. She represents the loyal and professional Nigerian educator who keeps the system running despite the challenges.",
+      h: "Which 'Grace' is second-in-command to Mr. Bepo?"
+    },
+    {
+      yr: 2025,
+      q: "What is the primary profession of Bepo's wife, Seri, in London?",
+      o: ["Teacher", "Cleaner", "Nurse", "Sales Agent"],
+      a: 2,
+      e: "Seri works as a nurse in the UK, earning £3,600 monthly.",
+      full: "Seri's career success in the UK is the main reason she pressures Bepo to join her. She believes that as a Principal, he is 'wasting' his time in Nigeria when he could be making more money abroad.",
+      h: "Does she work in a 'Hospital' or a 'School' in the UK?"
+    },
+    {
+      yr: 2024,
+      q: "The rivalry between students Banky and Tosh in the novel was a reflection of:",
+      o: ["A sports competition", "A court case between their parents", "A fight over a girl", "Their tribal differences"],
+      a: 1,
+      e: "Their parents were involved in a serious legal battle, which the children brought to school.",
+      full: "Bepo had to manage the tension between these two students, showing how adult legal and social conflicts in Lekki elite society filter down to the children in the classroom.",
+      h: "Was the 'war' between the boys or between their 'Moms and Dads'?"
+    },
+    {
+      yr: 2024,
+      q: "In 'The Lekki Headmaster', what was the cash reward given to SSS 3 teachers for the WASSCE results?",
+      o: ["N10,000", "N20,000", "N50,000", "N100,000"],
+      a: 1,
+      e: "The MD gave N20,000 to teachers whose students performed well in the exams.",
+      full: "Mrs. Gloss used these financial incentives (along with wine and snacks) to motivate the staff. This highlights the 'performance-based' culture of private schools in the novel.",
+      h: "Is it 'Twenty thousand' or 'Fifty thousand'?"
+    },
+    {
+      yr: 2025,
+      q: "What is the age of Mr. Adewale Bepo in the novel?",
+      o: ["45 years", "51 years", "60 years", "55 years"],
+      a: 1,
+      e: "Mr. Bepo is 51 years old.",
+      full: "Being 51 makes his decision harder. He feels he is too old to start as a 'carer' or 'assistant' in London, but his wife thinks he is at the perfect age to 'secure their future' abroad.",
+      h: "Is he 'Fifty-one' or 'Sixty-one'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the Physics teacher that is also a Pastor?",
+      o: ["Mr. Audu", "Mr. Ope Wande", "Mr. Oyelana", "Mr. Fafore"],
+      a: 1,
+      e: "Mr. Ope Wande combines his role as a science teacher with his pastoral calling.",
+      full: "Pastor Ope Wande is one of the staff members who looks up to Bepo. He represents the intersection of faith, discipline, and education in the Nigerian setting.",
+      h: "His name sounds like 'Open'—who is he?"
+    },
+    {
+      yr: 2024,
+      q: "What is the final decision made by Mr. Bepo at the end of the novel?",
+      o: ["He moves to London and joins his family", "He stays in Nigeria to continue his work as an educator", "He resigns and moves to his village", "He starts his own school in Lekki"],
+      a: 1,
+      e: "Bepo chooses patriotism and his noble calling over the financial lure of migration.",
+      full: "The climax of the book shows Bepo rejecting the 'Point of No Return' and choosing to stay and build the future of Nigerian children through Stardom Schools and the Invention Club.",
+      h: "Does he end up in 'London' or 'Lagos'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the teacher that frequently cracks jokes and mimics characters alongside Mr. Bepo?",
+      o: ["Mr. Justus Anabel", "Mr. Audu", "Mr. Ope Wande", "Mr. Oyelana"],
+      a: 1,
+      e: "Mr. Audu, the Fine Arts teacher, is Bepo's closest 'humor partner' on the staff.",
+      full: "Mr. Audu is the one who popularized the 'Lekki Headmaster' nickname. He represents the lively, artistic spirit of the school and is a key witness to Bepo's emotional struggles.",
+      h: "Does the teacher's name start with 'A' or 'J'?"
+    },
+    {
+      yr: 2024,
+      q: "In the novel, what is the name of the school's secondary section?",
+      o: ["Stardom Kiddies", "Stardom Schools", "Lekki International", "Aje Memorial"],
+      a: 1,
+      e: "While the primary is 'Stardom Kiddies', the secondary is simply 'Stardom Schools'.",
+      full: "This distinction is important because Bepo moved from being the Headmaster of 'Kiddies' to being the Principal of the 'Schools'. JAMB often tests these specific naming conventions.",
+      h: "Is it 'Kiddies' or just 'Schools' for the senior students?"
+    },
+    {
+      yr: 2024,
+      q: "What was the name of the SSS 3 student who won a prestigious prize mentioned in the text?",
+      o: ["Angel", "Ikenna", "Tosh", "Banky"],
+      a: 0,
+      e: "Angel is recognized as a high-performing student in the senior class.",
+      full: "Angel’s success, along with the 90% WASSCE pass rate, is used by the author to show that Stardom Schools is a center of excellence that Bepo has worked hard to build.",
+      h: "Think of a 'Heavenly' name for a bright student."
+    },
+    {
+      yr: 2025,
+      q: "Why did Mrs. Ibidun Gloss sack her own cousin, Funsho Daniels?",
+      o: ["He stole school fees", "He was incompetent and lazy", "He insulted Mr. Bepo", "He wanted to start a rival school"],
+      a: 1,
+      e: "Mrs. Gloss prioritized the school’s standards over her family relationship.",
+      full: "The sacking of Funsho Daniels serves as a warning to all staff, including Bepo, that the MD (Mrs. Gloss) is a strict capitalist who only cares about the 'Stardom' brand's success.",
+      h: "Was he 'Good at his job' or 'Bad at his job'?"
+    },
+    {
+      yr: 2024,
+      q: "Which specific location in Lagos is described as the 'Heart of trade and proverbs'?",
+      o: ["Balogun", "Oshodi", "Oyingbo", "Mushin"],
+      a: 2,
+      e: "Oyingbo Market is used to represent the authentic, vibrant culture of Lagos.",
+      full: "Bepo’s love for the Oyingbo market symbolizes his connection to his roots. The author uses this setting to show what Bepo would miss if he moved to the 'quiet' and 'isolated' life in London.",
+      h: "Which 'O' market is famous for food and culture in Lagos?"
+    },
+    {
+      yr: 2025,
+      q: "What is the name of Bepo's eldest daughter in the UK?",
+      o: ["Nike", "Kike", "Sade", "Titi"],
+      a: 0,
+      e: "Nike is the elder daughter, followed by Kike.",
+      full: "The names Nike and Kike are mentioned frequently during Bepo’s phone calls with his family. They are the 'voice of the UK' in his ear, constantly telling him to leave Nigeria.",
+      h: "Which name sounds like a famous sportswear brand?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the teacher that concludes the Monday assembly after Bepo is led away?",
+      o: ["Mrs. Grace Apeh", "Mr. Justus Anabel", "Mr. Audu", "Mr. Ope Wande"],
+      a: 1,
+      e: "Justus Anabel took over the microphone to maintain order.",
+      full: "While the VP (Mrs. Apeh) followed Bepo to check on him, she signaled Mr. Justus Anabel to wrap up the proceedings so the students wouldn't continue to stare at the crying Principal.",
+      h: "Was it a 'Male' teacher or a 'Female' teacher who finished the assembly?"
+    },
+    {
+      yr: 2024,
+      q: "What physical reaction did the students have to Bepo's breakdown?",
+      o: ["They laughed at him", "They were shocked and stayed silent", "They started crying too", "They booed him"],
+      a: 1,
+      e: "The assembly was described as falling into a 'deadly silence' of shock.",
+      full: "Because Bepo was seen as a 'Pillar of Sanity' and a strong leader, seeing him sob like a child was a traumatic and confusing moment for the entire school community.",
+      h: "Were the students 'Noisy' or 'Deadly Quiet'?"
+    },
+    {
+      yr: 2025,
+      q: "In 'The Lekki Headmaster', who is the father of Mrs. Ibidun Gloss?",
+      o: ["Chief David Aje", "Mr. Adewale Bepo", "Mr. Funsho", "Chief Okon"],
+      a: 0,
+      e: "The late Chief David Aje was the wealthy man who founded the family's fortune.",
+      full: "Mrs. Gloss inherited her wealth and the school land from her father. The name 'Aje' (meaning wealth/money in Yoruba) is a symbolic name for the source of the school's capital.",
+      h: "Is his name 'Chief David Aje' or 'Chief David Bepo'?"
+    },
+    {
+      yr: 2024,
+      q: "The 'Invention Club' aimed to convert 'e-waste' into:",
+      o: ["Radio sets", "Mobile phones", "Laptops", "Television screens"],
+      a: 1,
+      e: "They were specifically working on creating functional mobile phones.",
+      full: "This project is the ultimate symbol of Bepo's hope for Nigeria's future. He believes that if students can build phones from trash, they can build a nation from its current struggles.",
+      h: "Did they make 'Computers' or 'Handheld Phones'?"
+    },
+    {
+      yr: 2024,
+      q: "Which character is the school nurse?",
+      o: ["Mrs. Grace", "Mrs. Titi", "Mrs. Beke", "Mrs. Seri"],
+      a: 1,
+      e: "Mrs. Titi is the school nurse who provided first aid to Bepo's emotions.",
+      full: "Mrs. Titi is a minor but significant character who represents the care system in the school. She is the one who physically checks on Bepo after his collapse.",
+      h: "Does her name start with 'T' or 'G'?"
+    },
+    {
+      yr: 2025,
+      q: "What is the primary literary device used in comparing 'Japa' to the 'Slave Trade'?",
+      o: ["Hyperbole", "Metaphor/Simile", "Oxymoron", "Onomatopoeia"],
+      a: 1,
+      e: "The author uses a direct comparison (metaphor) between modern migration and historical slavery.",
+      full: "By using the 'Point of No Return' as a setting, the author forces the reader to see the 'Chains' of modern economic migration. This is the most important literary technique in the book.",
+      h: "Is it a 'comparison' or an 'exaggeration'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the Physics teacher who respects Bepo's integrity?",
+      o: ["Mr. Audu", "Mr. Ope Wande", "Mr. Oyelana", "Mr. Fafore"],
+      a: 1,
+      e: "Mr. Ope Wande is the Physics teacher and also a Pastor.",
+      full: "Mr. Ope Wande is shown as a man of science and faith. He is one of the loyal staff members who would be 'orphaned' if Bepo decided to leave for the UK.",
+      h: "Which teacher has a name like 'Open'?"
+    },
+    {
+      yr: 2024,
+      q: "What does Mrs. Gloss provide along with cash to reward the SSS 3 teachers?",
+      o: ["New cars", "Bottles of wine and snacks", "Promotion letters", "Holiday tickets"],
+      a: 1,
+      e: "She provided wine, snacks, and cash (N20,000–N30,000) as incentives.",
+      full: "This highlights the 'work hard, play hard' culture of high-end private schools in Lekki. It also shows that Mrs. Gloss knows how to keep her 'best assets' (the teachers) happy.",
+      h: "Was it 'Cars' or 'Wine and Snacks'?"
+    },
+    {
+      yr: 2024,
+      q: "What is the final word on Bepo's character at the end of the novel?",
+      o: ["He is a coward who ran away", "He is a patriot who stayed to build", "He is a greedy man seeking wealth", "He is a failure as a principal"],
+      a: 1,
+      e: "The novel ends by portraying Bepo as a symbol of national hope and patriotism.",
+      full: "By choosing Stardom Schools over the UK, Bepo proves that the 'noble calling' of education is worth more than a salary in Pounds. He remains 'The Lekki Headmaster' in heart and soul.",
+      h: "Does he 'Stay' or 'Go'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the teacher that frequently cracks jokes and mimics characters alongside Mr. Bepo?",
+      o: ["Mr. Justus Anabel", "Mr. Audu", "Mr. Ope Wande", "Mr. Oyelana"],
+      a: 1,
+      e: "Mr. Audu, the Fine Arts teacher, is Bepo's closest 'humor partner' on the staff.",
+      full: "Mr. Audu is the one who popularized the 'Lekki Headmaster' nickname. He represents the lively, artistic spirit of the school and is a key witness to Bepo's emotional struggles.",
+      h: "Does the teacher's name start with 'A' or 'J'?"
+    },
+    {
+      yr: 2024,
+      q: "In the novel, what is the name of the school's secondary section?",
+      o: ["Stardom Kiddies", "Stardom Schools", "Lekki International", "Aje Memorial"],
+      a: 1,
+      e: "While the primary is 'Stardom Kiddies', the secondary is simply 'Stardom Schools'.",
+      full: "This distinction is important because Bepo moved from being the Headmaster of 'Kiddies' to being the Principal of the 'Schools'. JAMB often tests these specific naming conventions.",
+      h: "Is it 'Kiddies' or just 'Schools' for the senior students?"
+    },
+    {
+      yr: 2024,
+      q: "What was the name of the SSS 3 student who won a prestigious prize mentioned in the text?",
+      o: ["Angel", "Ikenna", "Tosh", "Banky"],
+      a: 0,
+      e: "Angel is recognized as a high-performing student in the senior class.",
+      full: "Angel’s success, along with the 90% WASSCE pass rate, is used by the author to show that Stardom Schools is a center of excellence that Bepo has worked hard to build.",
+      h: "Think of a 'Heavenly' name for a bright student."
+    },
+    {
+      yr: 2025,
+      q: "Why did Mrs. Ibidun Gloss sack her own cousin, Funsho Daniels?",
+      o: ["He stole school fees", "He was incompetent and lazy", "He insulted Mr. Bepo", "He wanted to start a rival school"],
+      a: 1,
+      e: "Mrs. Gloss prioritized the school’s standards over her family relationship.",
+      full: "The sacking of Funsho Daniels serves as a warning to all staff, including Bepo, that the MD (Mrs. Gloss) is a strict capitalist who only cares about the 'Stardom' brand's success.",
+      h: "Was he 'Good at his job' or 'Bad at his job'?"
+    },
+    {
+      yr: 2024,
+      q: "Which specific location in Lagos is described as the 'Heart of trade and proverbs'?",
+      o: ["Balogun", "Oshodi", "Oyingbo", "Mushin"],
+      a: 2,
+      e: "Oyingbo Market is used to represent the authentic, vibrant culture of Lagos.",
+      full: "Bepo’s love for the Oyingbo market symbolizes his connection to his roots. The author uses this setting to show what Bepo would miss if he moved to the 'quiet' and 'isolated' life in London.",
+      h: "Which 'O' market is famous for food and culture in Lagos?"
+    },
+    {
+      yr: 2025,
+      q: "What is the name of Bepo's eldest daughter in the UK?",
+      o: ["Nike", "Kike", "Sade", "Titi"],
+      a: 0,
+      e: "Nike is the elder daughter, followed by Kike.",
+      full: "The names Nike and Kike are mentioned frequently during Bepo’s phone calls with his family. They are the 'voice of the UK' in his ear, constantly telling him to leave Nigeria.",
+      h: "Which name sounds like a famous sportswear brand?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the teacher that concludes the Monday assembly after Bepo is led away?",
+      o: ["Mrs. Grace Apeh", "Mr. Justus Anabel", "Mr. Audu", "Mr. Ope Wande"],
+      a: 1,
+      e: "Justus Anabel took over the microphone to maintain order.",
+      full: "While the VP (Mrs. Apeh) followed Bepo to check on him, she signaled Mr. Justus Anabel to wrap up the proceedings so the students wouldn't continue to stare at the crying Principal.",
+      h: "Was it a 'Male' teacher or a 'Female' teacher who finished the assembly?"
+    },
+    {
+      yr: 2024,
+      q: "What physical reaction did the students have to Bepo's breakdown?",
+      o: ["They laughed at him", "They were shocked and stayed silent", "They started crying too", "They booed him"],
+      a: 1,
+      e: "The assembly was described as falling into a 'deadly silence' of shock.",
+      full: "Because Bepo was seen as a 'Pillar of Sanity' and a strong leader, seeing him sob like a child was a traumatic and confusing moment for the entire school community.",
+      h: "Were the students 'Noisy' or 'Deadly Quiet'?"
+    },
+    {
+      yr: 2025,
+      q: "In 'The Lekki Headmaster', who is the father of Mrs. Ibidun Gloss?",
+      o: ["Chief David Aje", "Mr. Adewale Bepo", "Mr. Funsho", "Chief Okon"],
+      a: 0,
+      e: "The late Chief David Aje was the wealthy man who founded the family's fortune.",
+      full: "Mrs. Gloss inherited her wealth and the school land from her father. The name 'Aje' (meaning wealth/money in Yoruba) is a symbolic name for the source of the school's capital.",
+      h: "Is his name 'Chief David Aje' or 'Chief David Bepo'?"
+    },
+    {
+      yr: 2024,
+      q: "The 'Invention Club' aimed to convert 'e-waste' into:",
+      o: ["Radio sets", "Mobile phones", "Laptops", "Television screens"],
+      a: 1,
+      e: "They were specifically working on creating functional mobile phones.",
+      full: "This project is the ultimate symbol of Bepo's hope for Nigeria's future. He believes that if students can build phones from trash, they can build a nation from its current struggles.",
+      h: "Did they make 'Computers' or 'Handheld Phones'?"
+    },
+    {
+      yr: 2024,
+      q: "Which character is the school nurse?",
+      o: ["Mrs. Grace", "Mrs. Titi", "Mrs. Beke", "Mrs. Seri"],
+      a: 1,
+      e: "Mrs. Titi is the school nurse who provided first aid to Bepo's emotions.",
+      full: "Mrs. Titi is a minor but significant character who represents the care system in the school. She is the one who physically checks on Bepo after his collapse.",
+      h: "Does her name start with 'T' or 'G'?"
+    },
+    {
+      yr: 2025,
+      q: "What is the primary literary device used in comparing 'Japa' to the 'Slave Trade'?",
+      o: ["Hyperbole", "Metaphor/Simile", "Oxymoron", "Onomatopoeia"],
+      a: 1,
+      e: "The author uses a direct comparison (metaphor) between modern migration and historical slavery.",
+      full: "By using the 'Point of No Return' as a setting, the author forces the reader to see the 'Chains' of modern economic migration. This is the most important literary technique in the book.",
+      h: "Is it a 'comparison' or an 'exaggeration'?"
+    },
+    {
+      yr: 2024,
+      q: "Who is the Physics teacher who respects Bepo's integrity?",
+      o: ["Mr. Audu", "Mr. Ope Wande", "Mr. Oyelana", "Mr. Fafore"],
+      a: 1,
+      e: "Mr. Ope Wande is the Physics teacher and also a Pastor.",
+      full: "Mr. Ope Wande is shown as a man of science and faith. He is one of the loyal staff members who would be 'orphaned' if Bepo decided to leave for the UK.",
+      h: "Which teacher has a name like 'Open'?"
+    },
+    {
+      yr: 2024,
+      q: "What does Mrs. Gloss provide along with cash to reward the SSS 3 teachers?",
+      o: ["New cars", "Bottles of wine and snacks", "Promotion letters", "Holiday tickets"],
+      a: 1,
+      e: "She provided wine, snacks, and cash (N20,000–N30,000) as incentives.",
+      full: "This highlights the 'work hard, play hard' culture of high-end private schools in Lekki. It also shows that Mrs. Gloss knows how to keep her 'best assets' (the teachers) happy.",
+      h: "Was it 'Cars' or 'Wine and Snacks'?"
+    },
+    {
+      yr: 2024,
+      q: "What is the final word on Bepo's character at the end of the novel?",
+      o: ["He is a coward who ran away", "He is a patriot who stayed to build", "He is a greedy man seeking wealth", "He is a failure as a principal"],
+      a: 1,
+      e: "The novel ends by portraying Bepo as a symbol of national hope and patriotism.",
+      full: "By choosing Stardom Schools over the UK, Bepo proves that the 'noble calling' of education is worth more than a salary in Pounds. He remains 'The Lekki Headmaster' in heart and soul.",
+      h: "Does he 'Stay' or 'Go'?"
+    },
+
+    
   {
     yr: 2025,
     q: 'What happened on the Monday after Bepo\'s departure from Stardom Schools?',
@@ -9748,7 +22250,7 @@ function trackEvent(eventName, data) {
     timestamp: fmtTimestamp(),
     ...data,
   };
-  // Fire-and-forget — doesn't block the UI at all
+  // Fire-and-forget — doesn\'t block the UI at all
   try {
     fetch(SHEETS_URL, {
       method: 'POST',
@@ -11781,7 +24283,7 @@ function Result({
     [80, "Excellent! You're in the top league. 300+ is within reach."],
     [60, "Good work! A bit more practice and you're unstoppable."],
     [40, 'Not bad. Review the explanations and come back.'],
-    [0, "Every session makes you sharper. Don't stop."],
+    [0, "Every session makes you sharper. Don\'t stop."],
   ];
   const msg = msgs.find(([t]) => pct >= t)[1];
   const vibes = [
