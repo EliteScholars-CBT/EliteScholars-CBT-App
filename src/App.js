@@ -1291,7 +1291,7 @@ function Quiz({
   };
 
   const handleSubmit = () => {
-    triggerAdRefresh();
+    // triggerAdRefresh();
     if (sel === -1 || done) return;
     // NOTE: timer keeps running — do NOT stop it here
     stopSpeech();
@@ -1319,7 +1319,7 @@ function Quiz({
     stopSpeech();
     setSpeaking(false);
     setSHint(false);
-    triggerAdRefresh();
+    // triggerAdRefresh();
     if (isLast) {
       SFX.roundComplete();
       const finalRounds = Math.ceil(shuffled.length / ROUND_SIZE);
@@ -3402,7 +3402,7 @@ export default function App() {
     );
 
   const goHome = () => {
-    triggerAdRefresh();
+    // triggerAdRefresh();
     stopSpeech();
     setScreen('subjects');
   };
@@ -3423,7 +3423,7 @@ export default function App() {
   };
 
   const startQuiz = (sel) => {
-    triggerAdRefresh();
+    // triggerAdRefresh();
     // Check if user owes a share before playing
     try {
       const pending = localStorage.getItem(`ep_sharepending_${email}`);
