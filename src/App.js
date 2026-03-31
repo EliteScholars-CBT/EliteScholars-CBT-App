@@ -1298,6 +1298,7 @@ function Quiz({
   };
 
   const handleSubmit = () => {
+    triggerAdRefresh();
     if (sel === -1 || done) return;
     // NOTE: timer keeps running — do NOT stop it here
     stopSpeech();
@@ -1325,6 +1326,7 @@ function Quiz({
     stopSpeech();
     setSpeaking(false);
     setSHint(false);
+    triggerAdRefresh();
     if (isLast) {
       SFX.roundComplete();
       const finalRounds = Math.ceil(shuffled.length / ROUND_SIZE);
