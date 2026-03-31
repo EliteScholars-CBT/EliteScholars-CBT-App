@@ -9,6 +9,9 @@ import logo from './assets/elite-scholars-cbt-logo.png';
 const ROUND_SIZE = 20; // questions per quiz round
 const SHARE_GATE_EVERY = 4; // show "share to WhatsApp friends" gate every N quizzes
 
+// ── AD CONTROL ─────────────────────────────────────────────────────────────
+const SHOW_ADS = true; // Set to false to hide all ads, true to show them
+
 // When no share gate: alternate between showing Join Group and Join Channel.
 // Quizzes 1,3,5... (odd) → Group. Quizzes 2,4,6... (even) → Channel.
 // Neither shows when the share gate is active.
@@ -592,13 +595,15 @@ function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
         </div>
       </div>
 
-      {/* NATIVE BANNER - STRATEGICALLY PLACED BETWEEN HEADER AND CARDS */}
-      <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
-        <AdsterraBanner 
-          adKey="ec0487cde03d79b75629df8828d753f9" 
-          refreshTrigger={refreshTrigger} 
-        />
-      </div>
+      {/* NATIVE BANNER - Only shows if SHOW_ADS is true */}
+      {SHOW_ADS && (
+        <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
+          <AdsterraBanner 
+            adKey="ec0487cde03d79b75629df8828d753f9" 
+            refreshTrigger={refreshTrigger} 
+          />
+        </div>
+      )}
 
       {/* Scrollable subject cards */}
       <div className="scroll" style={{ flex: 1, padding: '0 16px 100px', overflowY: 'auto' }}>
@@ -784,7 +789,7 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
   };
 
   const handleSubmit = () => {
-    triggerAdRefresh();
+    if (SHOW_ADS) triggerAdRefresh();
     if (sel === -1 || done) return;
     stopSpeech();
     setSpeaking(false);
@@ -811,7 +816,7 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
     stopSpeech();
     setSpeaking(false);
     setSHint(false);
-    triggerAdRefresh();
+    if (SHOW_ADS) triggerAdRefresh();
     if (isLast) {
       SFX.roundComplete();
       const finalRounds = Math.ceil(shuffled.length / ROUND_SIZE);
@@ -1265,7 +1270,7 @@ export default function App() {
   const persist = (ns, nsc, nb, streak, lastDate) => saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak, lastDate }, email);
 
   const goHome = () => {
-    triggerAdRefresh();
+    if (SHOW_ADS) triggerAdRefresh();
     stopSpeech();
     setScreen('subjects');
   };
@@ -1286,7 +1291,7 @@ export default function App() {
   };
 
   const startQuiz = (sel) => {
-    triggerAdRefresh();
+    if (SHOW_ADS) triggerAdRefresh();
     try {
       const pending = localStorage.getItem(`ep_sharepending_${email}`);
       if (pending) {
@@ -1343,14 +1348,18 @@ export default function App() {
         {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} />}
         {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'subjects')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', marginTop: '10px', marginBottom: '20px' }}>
-        <AdsterraBanner adKey="3ac2ce320a30936c1cf44c1dc6af48b3" width={320} height={50} refreshTrigger={adRefresh} />
-        <AdsterraBanner adKey="acfeb6d2c7aa8faa701a1d3bd1b8e3ee" width={728} height={90} refreshTrigger={adRefresh} />
-        <AdsterraBanner adKey="6aeea40ea3fac071fc3c3d43fd2f1fe6" width={160} height={600} refreshTrigger={adRefresh} />
-        <AdsterraBanner adKey="c3797bda9331d8516f86837bb9068207" width={160} height={300} refreshTrigger={adRefresh} />
-        <AdsterraBanner adKey="fce61a93a320cdb7161fa006b20e7b00" width={468} height={60} refreshTrigger={adRefresh} />
-        <AdsterraBanner adKey="6eb8313e3d0a4c25d0e4d2c71e7ca69d" width={300} height={250} refreshTrigger={adRefresh} />
-      </div>
+      
+      {/* BOTTOM ADS - Only show if SHOW_ADS is true */}
+      {SHOW_ADS && (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', marginTop: '10px', marginBottom: '20px' }}>
+          <AdsterraBanner adKey="3ac2ce320a30936c1cf44c1dc6af48b3" width={320} height={50} refreshTrigger={adRefresh} />
+          <AdsterraBanner adKey="acfeb6d2c7aa8faa701a1d3bd1b8e3ee" width={728} height={90} refreshTrigger={adRefresh} />
+          <AdsterraBanner adKey="6aeea40ea3fac071fc3c3d43fd2f1fe6" width={160} height={600} refreshTrigger={adRefresh} />
+          <AdsterraBanner adKey="c3797bda9331d8516f86837bb9068207" width={160} height={300} refreshTrigger={adRefresh} />
+          <AdsterraBanner adKey="fce61a93a320cdb7161fa006b20e7b00" width={468} height={60} refreshTrigger={adRefresh} />
+          <AdsterraBanner adKey="6eb8313e3d0a4c25d0e4d2c71e7ca69d" width={300} height={250} refreshTrigger={adRefresh} />
+        </div>
+      )}
     </>
   );
 }
