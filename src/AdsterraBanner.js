@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
 
-const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
+const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.35 }) => {
   const adRef = useRef(null);
   
-  // Check if this is the native banner format (ec0487cde03d79b75629df8828d753f9)
+  // Check if this is the native banner format
   const isNativeBanner = adKey === 'ec0487cde03d79b75629df8828d753f9';
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
       adRef.current.innerHTML = '';
 
       if (isNativeBanner) {
-        // NATIVE BANNER FORMAT - uses invoke.js + container div pattern
+        // NATIVE BANNER FORMAT
         const containerDiv = document.createElement('div');
         containerDiv.id = `container-${adKey}`;
         
@@ -26,8 +26,7 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
         adRef.current.appendChild(containerDiv);
         adRef.current.appendChild(loader);
       } else {
-        // STANDARD BANNER FORMAT - uses atOptions + invoke.js pattern
-        // Create the config script
+        // STANDARD BANNER FORMAT
         const config = document.createElement('script');
         config.type = 'text/javascript';
         config.innerHTML = `
@@ -40,30 +39,30 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
           };
         `;
 
-        // Create the loader script
         const loader = document.createElement('script');
         loader.type = 'text/javascript';
         loader.src = `https://fixesconsessionconsession.com/${adKey}/invoke.js`;
 
-        // Append to the div
         adRef.current.appendChild(config);
         adRef.current.appendChild(loader);
       }
     }
   }, [adKey, refreshTrigger, width, height, isNativeBanner]);
 
-  // Different styling for native banner vs standard banners
+  // Different styling with scaling applied
   const containerStyle = isNativeBanner 
     ? {
         width: '100%',
-        minHeight: '120px',
+        minHeight: `${120 * scale}px`,
         margin: '10px auto',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f5f5f5',
         borderRadius: '8px',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        transform: `scale(${scale})`,
+        transformOrigin: 'center center',
       }
     : {
         width: `${width}px`,
@@ -71,14 +70,26 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
         margin: '10px auto',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       };
 
+  // For non-native banners, wrap in a scaled container
+  if (!isNativeBanner) {
+    return (
+      <div style={{
+        transform: `scale(${scale})`,
+        transformOrigin: 'center center',
+        width: `${width}px`,
+        height: `${height}px`,
+        margin: '0 auto',
+      }}>
+        <div ref={adRef} style={containerStyle} />
+      </div>
+    );
+  }
+
   return (
-    <div
-      ref={adRef}
-      style={containerStyle}
-    />
+    <div ref={adRef} style={containerStyle} />
   );
 };
 
