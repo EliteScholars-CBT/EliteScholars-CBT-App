@@ -10,7 +10,7 @@ const ROUND_SIZE = 20; // questions per quiz round
 const SHARE_GATE_EVERY = 4; // show "share to WhatsApp friends" gate every N quizzes
 
 // ── AD CONTROL ─────────────────────────────────────────────────────────────
-const SHOW_ADS = true; // Set to false to hide all ads, true to show them
+const SHOW_ADS = false; // Set to false to hide all ads, true to show them
 
 // When no share gate: alternate between showing Join Group and Join Channel.
 // Quizzes 1,3,5... (odd) → Group. Quizzes 2,4,6... (even) → Channel.
