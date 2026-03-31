@@ -9,10 +9,10 @@ import './style.css';
 // CONFIGURATION - EDIT THESE VALUES
 // ============================================================================
 
-const ROUND_SIZE = 2;                    // Questions per quiz round
-const SHARE_GATE_EVERY = 1;              // Show ad gate every N quizzes
+const ROUND_SIZE = 20;                    // Questions per quiz round
+const SHARE_GATE_EVERY = 4;              // Show ad gate every N quizzes
 const SHOW_ADS = false;                   // Set to false to hide all banner ads
-const SHOW_POPOVER_AD = true;            // Set to false to disable popover ads (shows share gate instead)
+const SHOW_POPOVER_AD = false;            // Set to false to disable popover ads (shows share gate instead)
 const POPOVER_AD_SCRIPT = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js"; // Popover ad script
 
 // ============================================================================
