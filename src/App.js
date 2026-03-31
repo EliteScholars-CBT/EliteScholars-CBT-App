@@ -1181,6 +1181,7 @@ function Quiz({
   totalQ,
   setTotalQ,
   onHome,
+  triggerAdRefresh
 }) {
   const [shuffled] = useState(() => sfl(QB[subjectId] || QB.economics));
   const [qi, setQi] = useState(0);
@@ -1319,7 +1320,7 @@ function Quiz({
     stopSpeech();
     setSpeaking(false);
     setSHint(false);
-    // triggerAdRefresh();
+    triggerAdRefresh();
     if (isLast) {
       SFX.roundComplete();
       const finalRounds = Math.ceil(shuffled.length / ROUND_SIZE);
@@ -3573,6 +3574,7 @@ export default function App() {
             totalQ={totalQ}
             setTotalQ={setTotalQ}
             onHome={goHome}
+              triggerAdRefresh={triggerAdRefresh}
           />
         )}
         {screen === 'result' && (
