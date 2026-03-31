@@ -3378,6 +3378,7 @@ export default function App() {
   const [pendingSubject, setPendingSubject] = useState('english');
   const [streak, setStreak] = useState(1);
   const [lastDate, setLastDate] = useState('');
+  const [adRefresh, setAdRefresh] = useState(0);
 
   useEffect(() => {
     const u = loadUser();
