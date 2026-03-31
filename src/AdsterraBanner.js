@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
 
-const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.45 }) => {
+const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.35 }) => {
   const adRef = useRef(null);
   
   // Check if this is the native banner format
