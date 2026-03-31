@@ -3408,6 +3408,7 @@ export default function App() {
     );
 
   const goHome = () => {
+    triggerAdRefresh();
     stopSpeech();
     setScreen('subjects');
   };
