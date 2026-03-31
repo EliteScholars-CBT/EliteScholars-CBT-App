@@ -10,7 +10,7 @@ import logo from './assets/elite-scholars-cbt-logo.png';
 
 const ROUND_SIZE = 20;                    // Questions per quiz round
 const SHARE_GATE_EVERY = 4;              // Share gate frequency
-const SHOW_ADS = true;                   // Set to false to hide all ads
+const SHOW_ADS = false;                   // Set to false to hide all ads
 
 // ============================================================================
 // CONSTANTS & LINKS
