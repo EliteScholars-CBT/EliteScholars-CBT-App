@@ -24,7 +24,7 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
       // 3. Create the loader script
       const loader = document.createElement('script');
       loader.type = 'text/javascript';
-      loader.src = `https://fixesconsessionconsession.com{adKey}/invoke.js`;
+      loader.src = `https://fixesconsessionconsession.com/${adKey}/invoke.js`;
 
       // 4. Append to the div
       adRef.current.appendChild(config);
@@ -33,9 +33,13 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger }) => {
   }, [adKey, refreshTrigger]); // Reloads when key or the trigger changes
 
   return (
-    <div 
-      ref={adRef} 
-      style={{ width: `${width}px`, minHeight: `${height}px`, margin: '10px auto' }} 
+    <div
+      ref={adRef}
+      style={{
+        width: `${width}px`,
+        minHeight: `${height}px`,
+        margin: '10px auto',
+      }}
     />
   );
 };
