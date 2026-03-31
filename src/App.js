@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import AdsterraBanner from './AdsterraBanner';
 import logo from './assets/elite-scholars-cbt-logo.png';
 
 // ── Config — edit these freely ─────────────────────────────────────────────
@@ -9,6 +10,14 @@ const SHARE_GATE_EVERY = 6; // show "share to WhatsApp friends" gate every N qui
 // When no share gate: alternate between showing Join Group and Join Channel.
 // Quizzes 1,3,5... (odd) → Group. Quizzes 2,4,6... (even) → Channel.
 // Neither shows when the share gate is active.
+
+const [adRefresh, setAdRefresh] = useState(0);
+
+  // THIS IS YOUR UNIVERSAL REFRESH FUNCTION
+  const triggerAdRefresh = () => {
+    setAdRefresh(prev => prev + 1);
+    console.log("Ads Refreshing...");
+  };
 
 function getTimerSecs(subjectId, questionCount) {
   const calcSubjects = ['mathematics', 'physics', 'chemistry'];
