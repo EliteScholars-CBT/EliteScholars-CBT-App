@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // ── Question bank ──────────────────────────────────────────────────────────
-const QB = {
+export const QB = {
   
   economics: [
   {
@@ -21979,4 +21979,3 @@ yr: 2021,
   }]
 };
 
-export default QB;
