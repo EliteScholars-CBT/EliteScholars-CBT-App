@@ -5,14 +5,6 @@ import { QB } from './QB';
 import logo from './assets/elite-scholars-cbt-logo.png';
 
 
-const [adRefresh, setAdRefresh] = useState(0);
-
-  // THIS IS YOUR UNIVERSAL REFRESH FUNCTION
-  const triggerAdRefresh = () => {
-    setAdRefresh(prev => prev + 1);
-    console.log("Ads Refreshing...");
-  };
-
 // ── Config — edit these freely ─────────────────────────────────────────────
 const ROUND_SIZE = 20; // questions per quiz round
 const SHARE_GATE_EVERY = 6; // show "share to WhatsApp friends" gate every N quizzes
