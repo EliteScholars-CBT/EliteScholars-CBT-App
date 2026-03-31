@@ -5102,12 +5102,12 @@ h: 'When you walk at the same speed as a friend, you keep pace ____ them.',
 },
 {
   yr: 2023,
-  q: 'The students are ______ for the long vacation.',
-  o: ['anticipating', 'expectant', 'hoping', 'waiting'],
-  a: 0,
-  e: '\'Anticipating\' means to look forward to something with excitement or to expect it.',
-  full: 'Option A (anticipating) is a transitive verb that fits the structure of the sentence well.\nWhile \'expectant\' is an adjective, it would usually be followed by \'of\'.',
-  h: 'Which word means to look forward to something?',
+  q: "The students are ______ for the long vacation.",
+  o: ["anticipating", "expectant", "hoping", "waiting"],
+  a: 3,
+  e: "'Waiting' is correct because it properly takes the preposition 'for' (waiting for something).",
+  full: "'Waiting' is correct because the sentence includes 'for', and 'waiting for something' is the correct grammatical structure. 'Anticipating' does not take 'for' (we say 'anticipating something'), so it is grammatically incorrect here. 'Expectant' would require 'of', and 'hoping' is less precise in this context.",
+  h: "Which option correctly fits with the preposition 'for'?"
 },
 {
   yr: 2023,
