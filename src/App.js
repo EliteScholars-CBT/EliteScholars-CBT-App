@@ -3428,6 +3428,7 @@ export default function App() {
   };
 
   const startQuiz = (sel) => {
+    triggerAdRefresh();
     // Check if user owes a share before playing
     try {
       const pending = localStorage.getItem(`ep_sharepending_${email}`);
