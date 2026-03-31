@@ -3491,6 +3491,12 @@ export default function App() {
     setScreen('result');
   };
 
+    // THIS IS YOUR UNIVERSAL REFRESH FUNCTION
+  const triggerAdRefresh = () => {
+    setAdRefresh(prev => prev + 1);
+    console.log("Ads Refreshing...");
+  }; 
+  
   return (
     <>
       <style>{GLOBAL_CSS}</style>
