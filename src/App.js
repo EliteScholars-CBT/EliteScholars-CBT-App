@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import AdsterraBanner from './AdsterraBanner';
 import { QB } from './QB';
 import logo from './assets/elite-scholars-cbt-logo.png';
+import './style.css';
 
 // ============================================================================
 // CONFIGURATION - EDIT THESE VALUES
@@ -274,57 +275,6 @@ function saveStats(s, email) {
   } catch {}
 }
 
-// ============================================================================
-// GLOBAL CSS
-// ============================================================================
-
-const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#F8F5FF;margin:0;padding:0;min-height:100dvh;display:flex;flex-direction:column;}
-.phone{width:100%;min-height:100dvh;background:#F8F5FF;position:relative;display:flex;flex-direction:column;overflow-x:hidden;}
-.scr{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:100dvh;max-height:100dvh}
-.scroll{overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.scroll::-webkit-scrollbar{width:3px;}
-.scroll::-webkit-scrollbar-thumb{background:rgba(75,0,130,.18);border-radius:2px;}
-@keyframes fd{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes su{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pi{from{opacity:0;transform:scale(.84)}to{opacity:1;transform:scale(1)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
-@keyframes loadBar{from{width:0}to{width:100%}}
-@keyframes fall{0%{transform:translateY(-10px) rotate(0);opacity:1}100%{transform:translateY(210px) rotate(360deg);opacity:0}}
-@keyframes timerPulse{0%,100%{color:#FF6B6B;transform:scale(1)}50%{color:#ff3333;transform:scale(1.12)}}
-@keyframes powerGlow{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}50%{box-shadow:0 0 10px 3px rgba(212,175,55,.35)}}
-@keyframes powerGlowP{0%,100%{box-shadow:0 0 0 0 rgba(75,0,130,0)}50%{box-shadow:0 0 10px 3px rgba(75,0,130,.35)}}
-@keyframes fadeUsed{from{opacity:1}to{opacity:.35}}
-@keyframes wrongShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
-.fd{animation:fd .3s ease both;}
-.su{animation:su .25s ease both;}
-.pi{animation:pi .25s ease both;}
-.correct-pop{animation:correctPop .3s ease;}
-.wrong-shake{animation:wrongShake .35s ease;}
-.star{position:absolute;width:3px;height:3px;background:#D4AF37;border-radius:50%;animation:twinkle 2s infinite;}
-input{font-family:'Poppins',sans-serif;}
-button{font-family:'Poppins',sans-serif;cursor:pointer;transition:all .18s;}
-button:active{transform:scale(.97);}
-html, body, #root {width:100%;max-width:100%;overflow-x:hidden;}
-.phone {width:100% !important;max-width:100% !important;min-height:100dvh;position:relative;}
-.scr {width:100%;max-width:100%;min-height:100dvh;position:relative;}
-* {max-width:100%;}
-img {max-width:100%;height:auto;display:block;}
-@media (min-width: 640px) {
-  body {background:#0d0018;display:flex;align-items:flex-start;justify-content:center;}
-  .phone {max-width:1200px !important;margin:0 auto;}
-  .scr {min-height:100dvh;max-height:100dvh;}
-  .scroll::-webkit-scrollbar {width:6px;}
-  .scroll::-webkit-scrollbar-track {background:rgba(75,0,130,.06);border-radius:3px;}
-  .scroll::-webkit-scrollbar-thumb {background:rgba(75,0,130,.28);border-radius:3px;}
-  button:hover:not(:disabled) {filter:brightness(1.08);transform:translateY(-1px);}
-  button:active {transform:scale(0.98) translateY(0) !important;}
-}
-`;
 
 // ============================================================================
 // SPLASH SCREEN
@@ -1154,7 +1104,6 @@ export default function App() {
 
   return (
     <>
-      <style>{GLOBAL_CSS}</style>
       <div className="phone">
         {screen === 'splash' && <Splash onDone={handleSplash} />}
         {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('subjects'); }} />}
