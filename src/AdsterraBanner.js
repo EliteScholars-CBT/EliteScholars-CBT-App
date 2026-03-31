@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
 
-const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.45 }) => {
+const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.25 }) => {
   const adRef = useRef(null);
   const isNativeBanner = adKey === 'ec0487cde03d79b75629df8828d753f9';
   const uniqueId = useRef(`ad-${Date.now()}-${Math.random()}`).current;
