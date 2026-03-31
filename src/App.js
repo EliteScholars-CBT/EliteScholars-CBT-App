@@ -9,8 +9,10 @@ import logo from './assets/elite-scholars-cbt-logo.png';
 // ============================================================================
 
 const ROUND_SIZE = 20;                    // Questions per quiz round
-const SHARE_GATE_EVERY = 4;              // Share gate frequency
-const SHOW_ADS = false;                   // Set to false to hide all ads
+const SHARE_GATE_EVERY = 4;              // Show ad gate every N quizzes (replaces share gate)
+const SHOW_ADS = false;                   // Set to false to hide all banner ads
+const SHOW_POPOVER_AD = show;            // Set to false to disable popover ads (shows share gate instead)
+const POPOVER_AD_SCRIPT = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js"; // Popover ad script
 
 // ============================================================================
 // CONSTANTS & LINKS
@@ -41,6 +43,42 @@ function sfl(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Popover Ad Functions
+let popoverScriptLoaded = false;
+
+function loadPopoverAd() {
+  if (!SHOW_POPOVER_AD) return;
+  if (popoverScriptLoaded) return;
+  
+  const script = document.createElement('script');
+  script.src = POPOVER_AD_SCRIPT;
+  script.async = true;
+  document.body.appendChild(script);
+  popoverScriptLoaded = true;
+  console.log("Popover ad script loaded");
+}
+
+function triggerPopoverAd() {
+  if (!SHOW_POPOVER_AD) return false;
+  
+  // Check if the ad network's popunder function exists
+  if (window.popunder && typeof window.popunder === 'function') {
+    window.popunder();
+    console.log("Popover ad triggered");
+    return true;
+  }
+  
+  // Alternative: Try to trigger via the ad key
+  if (window.Adsterra && typeof window.Adsterra.popunder === 'function') {
+    window.Adsterra.popunder();
+    console.log("Popover ad triggered via Adsterra");
+    return true;
+  }
+  
+  console.log("Popover ad function not found yet");
+  return false;
 }
 
 // ============================================================================
@@ -298,6 +336,11 @@ function Splash({ onDone }) {
     delay: Math.random() * 3, dur: 1.5 + Math.random() * 2
   }))).current;
   
+  // Load popover ad script on splash screen
+  useEffect(() => {
+    loadPopoverAd();
+  }, []);
+  
   useEffect(() => {
     const s = setTimeout(() => SFX.splash(), 300);
     const t = setTimeout(onDone, 2800);
@@ -476,6 +519,109 @@ function Ready({ subjectId, onGo, onBack }) {
         {['+10 pts correct', '50/50 lifeline', 'Hint lifeline', '🔊 Voice read'].map((t, i) => (
           <div key={i} style={{ background: i === 0 ? 'rgba(212,175,55,.2)' : 'rgba(255,255,255,.1)', border: `1px solid ${i === 0 ? GOLD : 'rgba(255,255,255,.2)'}`, color: i === 0 ? LGOLD : WHITE, fontSize: 10, fontWeight: 600, padding: '4px 10px', borderRadius: 16 }}>{t}</div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// AD GATE SCREEN (Replaces Share Gate with Popover Ad)
+// ============================================================================
+
+function AdGate({ name, email, totalSessions, onUnlocked }) {
+  const [countdown, setCountdown] = useState(5);
+  const [adTriggered, setAdTriggered] = useState(false);
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    // Trigger popover ad when component mounts
+    if (!adTriggered) {
+      setAdTriggered(true);
+      
+      // Small delay to ensure UI is ready
+      setTimeout(() => {
+        const adTriggered = triggerPopoverAd();
+        if (!adTriggered) {
+          // If ad function not ready, try again after 1 second
+          setTimeout(() => {
+            triggerPopoverAd();
+          }, 1000);
+        }
+      }, 500);
+      
+      trackEvent('ad_gate_shown', { name, email, totalSessions });
+    }
+  }, [name, email, totalSessions, adTriggered]);
+
+  // Countdown timer - ad is considered "watched" after countdown
+  useEffect(() => {
+    if (unlocked) return;
+    
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setUnlocked(true);
+          trackEvent('ad_gate_completed', { name, email, totalSessions });
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [unlocked, name, email, totalSessions]);
+
+  const vibe = [
+    'Thanks for supporting EliteScholars! 🎓',
+    'One quick ad keeps us running! 🙏',
+    'You\'re helping others learn for free! 💪',
+    'Almost there! Your next quiz awaits! 🔥',
+  ][Math.floor(Math.random() * 4)];
+
+  return (
+    <div className="scr fd" style={{ background: 'linear-gradient(160deg,#1a0030,#4B0082,#1a0030)', alignItems: 'center', justifyContent: 'center', padding: '40px 24px' }}>
+      <div style={{ width: '100%', maxWidth: 380 }}>
+        <div style={{ textAlign: 'center', marginBottom: 24 }}>
+          <div style={{ fontSize: 52, marginBottom: 8 }}>🎬</div>
+          <div style={{ fontSize: 20, fontWeight: 800, color: WHITE }}>Watch to Continue</div>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.55)', marginTop: 8, lineHeight: 1.5 }}>
+            {unlocked ? 'Ad complete! Ready to continue!' : 'Watch the ad to unlock your next quiz round'}
+          </div>
+        </div>
+
+        <div style={{ background: 'rgba(212,175,55,.1)', border: `1px solid rgba(212,175,55,.25)`, borderRadius: 14, padding: '16px', marginBottom: 22, textAlign: 'center' }}>
+          <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 8 }}>✨ FROM ELITE JAMB</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.85)', fontWeight: 500 }}>{vibe}</div>
+        </div>
+
+        {!unlocked ? (
+          <>
+            <div style={{ textAlign: 'center', marginBottom: 16 }}>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', marginBottom: 8 }}>Ad will unlock in</div>
+              <div style={{ fontSize: 48, fontWeight: 800, color: GOLD }}>{countdown}s</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 8 }}>Please wait for the ad to load</div>
+            </div>
+            
+            <div style={{ height: 4, background: 'rgba(255,255,255,.1)', borderRadius: 2, marginBottom: 16, overflow: 'hidden' }}>
+              <div style={{ height: '100%', background: GOLD, width: `${((5 - countdown) / 5) * 100}%`, transition: 'width 1s linear' }} />
+            </div>
+            
+            <button disabled style={{ width: '100%', padding: 15, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.2)', borderRadius: 13, fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,.4)', cursor: 'not-allowed' }}>
+              🔒 Waiting for Ad...
+            </button>
+          </>
+        ) : (
+          <div className="su">
+            <div style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 14 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Ad Complete!</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.7)' }}>Your next quiz is ready!</div>
+            </div>
+            <button onClick={() => onUnlocked(true)} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP, boxShadow: '0 8px 22px rgba(212,175,55,.4)' }}>
+              🚀 Continue to Quiz
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -738,33 +884,36 @@ function ScoreCard({ name, subjectId, score, correct, totalQ, onClose }) {
 // RESULT SCREEN
 // ============================================================================
 
-function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome, onProfile }) {
+function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome, onProfile, onAdGateComplete }) {
   const [showCard, setShowCard] = useState(false);
-  const [shared, setShared] = useState(false);
-  const [sharing, setSharing] = useState(false);
-  const [countdown, setCountdown] = useState(30);
+  const [adCompleted, setAdCompleted] = useState(false);
   const meta = SUBJ[subjectId] || SUBJ.economics;
   const pct = totalQ ? Math.round((correct / totalQ) * 100) : 0;
   const wrong = totalQ - correct;
 
-  const needShare = totalSessions > 0 && totalSessions % SHARE_GATE_EVERY === 0;
-  const showGroup = !needShare && totalSessions % 2 === 1;
-  const showChannel = !needShare && totalSessions % 2 === 0;
+  // Check if we need to show ad gate (replaces share gate)
+  const needAdGate = SHOW_POPOVER_AD && totalSessions > 0 && totalSessions % SHARE_GATE_EVERY === 0;
+  const showGroup = !needAdGate && !SHOW_POPOVER_AD && totalSessions % 2 === 1;
+  const showChannel = !needAdGate && !SHOW_POPOVER_AD && totalSessions % 2 === 0;
 
   const msgs = [[80, "Excellent! You're in the top league. 300+ is within reach."], [60, "Good work! A bit more practice and you're unstoppable."], [40, 'Not bad. Review the explanations and come back.'], [0, "Every session makes you sharper. Don't stop."]];
   const msg = msgs.find(([t]) => pct >= t)[1];
   const vibe = ['Your brain is literally built different right now!', 'Every question moved you closer to your dream school.', "This is what serious JAMB students look like!", "You're in Elite territory!"][Math.floor(Math.random() * 4)];
   const waShareText = shareMsg(name, meta.label, correct, totalQ);
 
-  useEffect(() => {
-    if (!sharing) return;
-    if (countdown <= 0) { setShared(true); setSharing(false); return; }
-    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
-    return () => clearTimeout(t);
-  }, [sharing, countdown]);
-
-  const doShare = () => { window.open(`https://wa.me/?text=${encodeURIComponent(waShareText)}`, '_blank'); setSharing(true); setCountdown(30); };
   useEffect(() => { setTimeout(() => SFX.roundComplete(), 400); }, []);
+
+  const handlePlayAgain = () => {
+    if (needAdGate && !adCompleted) {
+      // Show ad gate first
+      onAdGateComplete(() => {
+        setAdCompleted(true);
+        onHome();
+      });
+    } else {
+      onHome();
+    }
+  };
 
   return (
     <div className="scr fd" style={{ background: BG }}>
@@ -784,50 +933,59 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
 
         <button onClick={() => { SFX.select(); setShowCard(true); }} style={{ width: '100%', padding: '13px 16px', background: `linear-gradient(135deg,${meta.color},${DPURP})`, border: 'none', borderRadius: 13, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 12 }}>🖼️ Show Friends Your Score Card</button>
 
-        {needShare && (
+        {/* AD GATE SECTION - Replaces Share Gate */}
+        {needAdGate && !adCompleted && (
           <div style={{ background: `linear-gradient(135deg,${DPURP},#3d0070)`, borderRadius: 16, padding: '16px 18px', marginBottom: 12 }}>
-            <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 6 }}>✨ FROM ELITE JAMB</div>
+            <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 6 }}>🎬 UNLOCK NEXT ROUND</div>
             <div style={{ fontSize: 12, color: WHITE, marginBottom: 12, fontStyle: 'italic' }}>"{vibe}"</div>
-            {!shared && !sharing ? (
-              <>
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>Share your progress with friends on WhatsApp to unlock the next round 🔥</div>
-                <button onClick={doShare} style={{ width: '100%', padding: 14, background: '#25D366', border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 10 }}>💬 Share to WhatsApp Friends</button>
-                <button disabled style={{ width: '100%', padding: 13, background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12, fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.3)' }}>🔄 Play Again</button>
-                <div style={{ fontSize: 10, color: 'rgba(255,255,255,.35)', textAlign: 'center', marginTop: 6 }}>Share first to unlock →</div>
-              </>
-            ) : sharing ? (
-              <>
-                <div style={{ background: 'rgba(37,211,102,.1)', border: `1px solid rgba(37,211,102,.3)`, borderRadius: 11, padding: '13px 14px', textAlign: 'center', marginBottom: 10 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80' }}>✅ Verifying your share...</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,.45)' }}>Play Again unlocks in <span style={{ color: GOLD }}>{countdown}s</span></div>
-                </div>
-                <button disabled style={{ width: '100%', padding: 13, background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12, fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.3)' }}>🔄 Play Again ({countdown}s)</button>
-              </>
-            ) : (
-              <>
-                <div style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 11, padding: '11px 14px', textAlign: 'center', marginBottom: 10 }}><div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80' }}>✅ Shared! Your friends are about to thank you.</div></div>
-                <button onClick={onHome} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP }}>🔄 Play Again</button>
-              </>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12, textAlign: 'center' }}>
+              Watch a quick ad to unlock your next quiz round!<br />
+              This helps keep EliteScholars free for everyone. 🙏
+            </div>
+            <button onClick={() => onAdGateComplete(handlePlayAgain)} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP }}>
+              🎬 Watch Ad & Continue
+            </button>
+            <div style={{ fontSize: 10, color: 'rgba(255,255,255,.35)', textAlign: 'center', marginTop: 10 }}>
+              Ad supports free JAMB practice
+            </div>
+          </div>
+        )}
+
+        {needAdGate && adCompleted && (
+          <div className="su" style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 12 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Ad Complete! Next round unlocked!</div>
+            <button onClick={onHome} style={{ width: '100%', padding: 12, background: GOLD, border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: DPURP, marginTop: 10 }}>🔄 Play Again</button>
+          </div>
+        )}
+
+        {/* Legacy Share Gate (only if popover ads are disabled) */}
+        {!SHOW_POPOVER_AD && (
+          <>
+            {showGroup && (
+              <div style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})`, borderRadius: 16, padding: 16, textAlign: 'center', marginBottom: 10 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 4 }}>Join Our WhatsApp Group 💬</div>
+                <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12 }}>Practise with other serious JAMB students daily.</div>
+                <button onClick={() => window.open(WA_GROUP, '_blank')} style={{ width: '100%', padding: 12, background: '#25D366', border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 8 }}>💬 Join WhatsApp Group</button>
+                <button onClick={onHome} style={{ width: '100%', padding: 12, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE }}>🔄 Play Again</button>
+              </div>
             )}
-          </div>
+
+            {showChannel && (
+              <div style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})`, borderRadius: 16, padding: 16, textAlign: 'center', marginBottom: 10 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 4 }}>Follow Our WhatsApp Channel 📲</div>
+                <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12 }}>Daily questions, tips &amp; serious JAMB community.</div>
+                <button onClick={() => window.open(WA_CHANNEL, '_blank')} style={{ width: '100%', padding: 12, background: '#25D366', border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 8 }}>📢 Follow Elite JAMB Channel</button>
+                <button onClick={onHome} style={{ width: '100%', padding: 12, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE }}>🔄 Play Again</button>
+              </div>
+            )}
+          </>
         )}
 
-        {showGroup && (
-          <div style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})`, borderRadius: 16, padding: 16, textAlign: 'center', marginBottom: 10 }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 4 }}>Join Our WhatsApp Group 💬</div>
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12 }}>Practise with other serious JAMB students daily.</div>
-            <button onClick={() => window.open(WA_GROUP, '_blank')} style={{ width: '100%', padding: 12, background: '#25D366', border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 8 }}>💬 Join WhatsApp Group</button>
-            <button onClick={onHome} style={{ width: '100%', padding: 12, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE }}>🔄 Play Again</button>
-          </div>
-        )}
-
-        {showChannel && (
-          <div style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})`, borderRadius: 16, padding: 16, textAlign: 'center', marginBottom: 10 }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 4 }}>Follow Our WhatsApp Channel 📲</div>
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12 }}>Daily questions, tips &amp; serious JAMB community.</div>
-            <button onClick={() => window.open(WA_CHANNEL, '_blank')} style={{ width: '100%', padding: 12, background: '#25D366', border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 8 }}>📢 Follow Elite JAMB Channel</button>
-            <button onClick={onHome} style={{ width: '100%', padding: 12, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)', borderRadius: 11, fontSize: 13, fontWeight: 700, color: WHITE }}>🔄 Play Again</button>
-          </div>
+        {/* If no gate needed, show Play Again button */}
+        {!needAdGate && !showGroup && !showChannel && (
+          <button onClick={onHome} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP, marginBottom: 12 }}>
+            🔄 Play Again
+          </button>
         )}
 
         <button onClick={onProfile} style={{ width: '100%', padding: 13, background: WHITE, border: `2px solid ${PURPLE}`, borderRadius: 13, fontSize: 13, fontWeight: 700, color: PURPLE, marginBottom: 8 }}>📊 View My Profile</button>
@@ -877,58 +1035,6 @@ function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, 
 }
 
 // ============================================================================
-// SHARE GATE SCREEN
-// ============================================================================
-
-function ShareGate({ name, email, onUnlocked }) {
-  const [sharing, setSharing] = useState(false);
-  const [countdown, setCountdown] = useState(30);
-  const [done, setDone] = useState(false);
-  const shareText = `I'm seriously preparing for JAMB on EliteScholars CBT! 🔥\n\nFree practice at ${APP_URL} — come join me!`;
-
-  useEffect(() => {
-    if (!sharing) return;
-    if (countdown <= 0) { setDone(true); setSharing(false); return; }
-    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
-    return () => clearTimeout(t);
-  }, [sharing, countdown]);
-
-  const doShare = () => {
-    window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
-    setSharing(true);
-    setCountdown(30);
-    try { if (email) localStorage.removeItem(`ep_sharepending_${email}`); } catch {}
-  };
-
-  const vibe = ['Your brain is literally built different!', 'Every question moves you closer to your dream school.', "This is what serious JAMB students look like!"][Math.floor(Math.random() * 3)];
-
-  return (
-    <div className="scr fd" style={{ background: 'linear-gradient(160deg,#1a0030,#4B0082,#1a0030)', alignItems: 'center', justifyContent: 'center', padding: '40px 24px' }}>
-      <div style={{ width: '100%', maxWidth: 380 }}>
-        <div style={{ textAlign: 'center', marginBottom: 24 }}>
-          <div style={{ fontSize: 52 }}>📤</div>
-          <div style={{ fontSize: 20, fontWeight: 800, color: WHITE }}>Unlock Your Next Round</div>
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.55)', marginTop: 8 }}>Share EliteScholars with your friends on WhatsApp to keep playing. 🔥</div>
-        </div>
-        <div style={{ background: 'rgba(212,175,55,.1)', border: `1px solid rgba(212,175,55,.25)`, borderRadius: 14, padding: '13px 16px', marginBottom: 22, textAlign: 'center' }}>
-          <div style={{ fontSize: 9, fontWeight: 700, color: GOLD }}>✨ FROM ELITE JAMB</div>
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.75)', fontStyle: 'italic' }}>"{vibe}"</div>
-        </div>
-        {!done ? (
-          <>
-            <button onClick={doShare} disabled={sharing} style={{ width: '100%', padding: 15, background: sharing ? 'rgba(37,211,102,.5)' : '#25D366', border: 'none', borderRadius: 13, fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 12 }}>💬 {sharing ? `Verifying... ${countdown}s` : 'Share to WhatsApp Friends'}</button>
-            {sharing && <div style={{ height: 4, background: 'rgba(255,255,255,.1)', borderRadius: 2, marginBottom: 16, overflow: 'hidden' }}><div style={{ height: '100%', background: GREEN, width: `${((30-countdown)/30)*100}%`, transition: 'width 1s linear' }} /></div>}
-            <button disabled style={{ width: '100%', padding: 14, background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 13, fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,.25)' }}>🔒 Start Quiz — Share First</button>
-          </>
-        ) : (
-          <div><div style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 14 }}><div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80' }}>✅ Unlocked!</div></div><button onClick={onUnlocked} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP }}>🚀 Start Quiz Now</button></div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ============================================================================
 // MAIN APP COMPONENT
 // ============================================================================
 
@@ -949,6 +1055,9 @@ export default function App() {
   const [streak, setStreak] = useState(1);
   const [lastDate, setLastDate] = useState('');
   const [adRefresh, setAdRefresh] = useState(0);
+  const [showAdGate, setShowAdGate] = useState(false);
+  const [adGateCallback, setAdGateCallback] = useState(null);
+  const [totalSessionsForAd, setTotalSessionsForAd] = useState(0);
 
   useEffect(() => {
     const u = loadUser();
@@ -978,6 +1087,20 @@ export default function App() {
   
   const goHome = () => { if (SHOW_ADS) triggerAdRefresh(); stopSpeech(); setScreen('subjects'); };
   
+  const handleAdGateComplete = (callback) => {
+    setTotalSessionsForAd(sessions + 1);
+    setAdGateCallback(() => callback);
+    setShowAdGate(true);
+  };
+
+  const handleAdGateUnlocked = (adWatched) => {
+    setShowAdGate(false);
+    if (adGateCallback) {
+      adGateCallback();
+      setAdGateCallback(null);
+    }
+  };
+
   const handleSplash = () => {
     const u = loadUser();
     if (u.name) {
@@ -997,7 +1120,7 @@ export default function App() {
     if (SHOW_ADS) triggerAdRefresh();
     try {
       const pending = localStorage.getItem(`ep_sharepending_${email}`);
-      if (pending) { setPendingSubject(sel); setScreen('sharegate'); return; }
+      if (pending && !SHOW_POPOVER_AD) { setPendingSubject(sel); setScreen('sharegate'); return; }
     } catch {}
     setSubject(sel);
     setScore(0);
@@ -1021,7 +1144,7 @@ export default function App() {
     setStreak(newStreak);
     setLastDate(today);
     persist(ns, nsc, nb, newStreak, today);
-    if (ns % SHARE_GATE_EVERY === 0) {
+    if (ns % SHARE_GATE_EVERY === 0 && !SHOW_POPOVER_AD) {
       try { localStorage.setItem(`ep_sharepending_${email}`, ns.toString()); } catch {}
     }
     setRoundsPlayed(finalRoundsPlayed);
@@ -1037,9 +1160,10 @@ export default function App() {
         {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('subjects'); }} />}
         {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} refreshTrigger={adRefresh} />}
         {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
+        {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
         {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
         {screen === 'quiz' && <Quiz subjectId={subject} onAllDone={handleAllDone} score={score} setScore={setScore} correct={correct} setCorrect={setCorrect} totalQ={totalQ} setTotalQ={setTotalQ} onHome={goHome} triggerAdRefresh={triggerAdRefresh} />}
-        {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} />}
+        {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
         {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'subjects')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
       </div>
       
