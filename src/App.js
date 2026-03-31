@@ -7,7 +7,7 @@ import logo from './assets/elite-scholars-cbt-logo.png';
 
 // ── Config — edit these freely ─────────────────────────────────────────────
 const ROUND_SIZE = 20; // questions per quiz round
-const SHARE_GATE_EVERY = 6; // show "share to WhatsApp friends" gate every N quizzes
+const SHARE_GATE_EVERY = 4; // show "share to WhatsApp friends" gate every N quizzes
 
 // When no share gate: alternate between showing Join Group and Join Channel.
 // Quizzes 1,3,5... (odd) → Group. Quizzes 2,4,6... (even) → Channel.
@@ -686,7 +686,7 @@ function Onboard({ onDone }) {
 }
 
 // ── Subjects ───────────────────────────────────────────────────────────────
-function Subjects({ name, onStart, onProfile, onSignOut }) {
+function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
   const [sel, setSel] = useState();
 
   // Build subject entries — inject Lekki Headmaster as 3rd card (full-width)
@@ -810,10 +810,18 @@ function Subjects({ name, onStart, onProfile, onSignOut }) {
         </div>
       </div>
 
+      {/* NATIVE BANNER - STRATEGICALLY PLACED BETWEEN HEADER AND CARDS */}
+      <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
+        <AdsterraBanner 
+          adKey="ec0487cde03d79b75629df8828d753f9" 
+          refreshTrigger={refreshTrigger} 
+        />
+      </div>
+
       {/* Scrollable subject cards */}
       <div
         className="scroll"
-        style={{ flex: 1, padding: '24px 16px 100px', overflowY: 'auto' }}
+        style={{ flex: 1, padding: '0 16px 100px', overflowY: 'auto' }}
       >
         <div
           style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}
@@ -3531,6 +3539,7 @@ export default function App() {
               setLastDate('');
               setScreen('onboard');
             }}
+            refreshTrigger={adRefresh}
           />
         )}
 
@@ -3618,61 +3627,54 @@ export default function App() {
         )}
       </div>
       <div>
-  {/* Native Banner - NO width/height props */}
-  <AdsterraBanner 
-    adKey="ec0487cde03d79b75629df8828d753f9" 
-    refreshTrigger={adRefresh} 
-  />
+        {/* Mobile Leaderboard (320x50) */}
+        <AdsterraBanner 
+          adKey="3ac2ce320a30936c1cf44c1dc6af48b3" 
+          width={320} 
+          height={50} 
+          refreshTrigger={adRefresh} 
+        />
 
-  {/* Mobile Leaderboard (320x50) */}
-  <AdsterraBanner 
-    adKey="3ac2ce320a30936c1cf44c1dc6af48b3" 
-    width={320} 
-    height={50} 
-    refreshTrigger={adRefresh} 
-  />
+        {/* Leaderboard (728x90) */}
+        <AdsterraBanner 
+          adKey="acfeb6d2c7aa8faa701a1d3bd1b8e3ee" 
+          width={728} 
+          height={90} 
+          refreshTrigger={adRefresh} 
+        />
 
-  {/* Leaderboard (728x90) */}
-  <AdsterraBanner 
-    adKey="acfeb6d2c7aa8faa701a1d3bd1b8e3ee" 
-    width={728} 
-    height={90} 
-    refreshTrigger={adRefresh} 
-  />
+        {/* Wide Skyscraper (160x600) */}
+        <AdsterraBanner 
+          adKey="6aeea40ea3fac071fc3c3d43fd2f1fe6" 
+          width={160} 
+          height={600} 
+          refreshTrigger={adRefresh} 
+        />
 
-  {/* Wide Skyscraper (160x600) */}
-  <AdsterraBanner 
-    adKey="6aeea40ea3fac071fc3c3d43fd2f1fe6" 
-    width={160} 
-    height={600} 
-    refreshTrigger={adRefresh} 
-  />
+        {/* Skyscraper (160x300) */}
+        <AdsterraBanner 
+          adKey="c3797bda9331d8516f86837bb9068207" 
+          width={160} 
+          height={300} 
+          refreshTrigger={adRefresh} 
+        />
 
-  {/* Skyscraper (160x300) */}
-  <AdsterraBanner 
-    adKey="c3797bda9331d8516f86837bb9068207" 
-    width={160} 
-    height={300} 
-    refreshTrigger={adRefresh} 
-  />
+        {/* Full Banner (468x60) */}
+        <AdsterraBanner 
+          adKey="fce61a93a320cdb7161fa006b20e7b00" 
+          width={468} 
+          height={60} 
+          refreshTrigger={adRefresh} 
+        />
 
-  {/* Full Banner (468x60) */}
-  <AdsterraBanner 
-    adKey="fce61a93a320cdb7161fa006b20e7b00" 
-    width={468} 
-    height={60} 
-    refreshTrigger={adRefresh} 
-  />
-
-  {/* Medium Rectangle (300x250) */}
-  <AdsterraBanner 
-    adKey="6eb8313e3d0a4c25d0e4d2c71e7ca69d" 
-    width={300} 
-    height={250} 
-    refreshTrigger={adRefresh} 
-  />
-</div>
+        {/* Medium Rectangle (300x250) */}
+        <AdsterraBanner 
+          adKey="6eb8313e3d0a4c25d0e4d2c71e7ca69d" 
+          width={300} 
+          height={250} 
+          refreshTrigger={adRefresh} 
+        />
+      </div>
     </>
   );
 }
-
