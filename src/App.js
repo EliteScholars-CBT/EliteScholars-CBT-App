@@ -10,9 +10,9 @@ import './style.css';
 // ============================================================================
 
 const ROUND_SIZE = 20;                    // Questions per quiz round
-const SHARE_GATE_EVERY = 1;              // Show ad gate every N quizzes (replaces share gate)
-const SHOW_ADS = false;                   // Set to false to hide all banner ads
-const SHOW_POPOVER_AD = false;            // Set to false to disable popover ads (shows share gate instead)
+const SHARE_GATE_EVERY = 4;              // Show ad gate every N quizzes
+const SHOW_ADS = true;                   // Set to false to hide all banner ads
+const SHOW_POPOVER_AD = true;            // Set to false to disable popover ads (shows share gate instead)
 const POPOVER_AD_SCRIPT = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js"; // Popover ad script
 
 // ============================================================================
@@ -46,7 +46,10 @@ function sfl(arr) {
   return a;
 }
 
-// Popover Ad Functions
+// ============================================================================
+// POPOVER AD FUNCTIONS
+// ============================================================================
+
 let popoverScriptLoaded = false;
 
 function loadPopoverAd() {
@@ -56,30 +59,41 @@ function loadPopoverAd() {
   const script = document.createElement('script');
   script.src = POPOVER_AD_SCRIPT;
   script.async = true;
+  script.onload = () => console.log("Popover ad script loaded");
+  script.onerror = () => console.error("Failed to load popover ad script");
   document.body.appendChild(script);
   popoverScriptLoaded = true;
-  console.log("Popover ad script loaded");
 }
 
 function triggerPopoverAd() {
   if (!SHOW_POPOVER_AD) return false;
   
-  // Check if the ad network's popunder function exists
-  if (window.popunder && typeof window.popunder === 'function') {
-    window.popunder();
-    console.log("Popover ad triggered");
-    return true;
+  console.log("Triggering popover ad...");
+  
+  // Try to open as popunder using the ad URL
+  try {
+    const popunder = window.open('https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469', '_blank');
+    if (popunder) {
+      console.log("Popunder window opened");
+      return true;
+    }
+  } catch (e) {
+    console.log("Window.open popunder failed:", e);
   }
   
-  // Alternative: Try to trigger via the ad key
-  if (window.Adsterra && typeof window.Adsterra.popunder === 'function') {
-    window.Adsterra.popunder();
-    console.log("Popover ad triggered via Adsterra");
-    return true;
-  }
+  // Try to call existing functions
+  setTimeout(() => {
+    if (window.popunder && typeof window.popunder === 'function') {
+      window.popunder();
+      console.log("window.popunder() called");
+    }
+    if (window.Adsterra && typeof window.Adsterra.popunder === 'function') {
+      window.Adsterra.popunder();
+      console.log("Adsterra.popunder() called");
+    }
+  }, 100);
   
-  console.log("Popover ad function not found yet");
-  return false;
+  return true;
 }
 
 // ============================================================================
@@ -275,7 +289,6 @@ function saveStats(s, email) {
   } catch {}
 }
 
-
 // ============================================================================
 // SPLASH SCREEN
 // ============================================================================
@@ -286,7 +299,6 @@ function Splash({ onDone }) {
     delay: Math.random() * 3, dur: 1.5 + Math.random() * 2
   }))).current;
   
-  // Load popover ad script on splash screen
   useEffect(() => {
     loadPopoverAd();
   }, []);
@@ -475,7 +487,7 @@ function Ready({ subjectId, onGo, onBack }) {
 }
 
 // ============================================================================
-// AD GATE SCREEN (Replaces Share Gate with Popover Ad)
+// AD GATE SCREEN (Popover Ad)
 // ============================================================================
 
 function AdGate({ name, email, totalSessions, onUnlocked }) {
@@ -484,26 +496,17 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
-    // Trigger popover ad when component mounts
     if (!adTriggered) {
       setAdTriggered(true);
       
-      // Small delay to ensure UI is ready
       setTimeout(() => {
-        const adTriggered = triggerPopoverAd();
-        if (!adTriggered) {
-          // If ad function not ready, try again after 1 second
-          setTimeout(() => {
-            triggerPopoverAd();
-          }, 1000);
-        }
+        triggerPopoverAd();
       }, 500);
       
       trackEvent('ad_gate_shown', { name, email, totalSessions });
     }
   }, [name, email, totalSessions, adTriggered]);
 
-  // Countdown timer - ad is considered "watched" after countdown
   useEffect(() => {
     if (unlocked) return;
     
@@ -567,7 +570,7 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
               <div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Ad Complete!</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.7)' }}>Your next quiz is ready!</div>
             </div>
-            <button onClick={() => onUnlocked(true)} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP, boxShadow: '0 8px 22px rgba(212,175,55,.4)' }}>
+            <button onClick={() => onUnlocked(true)} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP, boxShadow: '0 8px 22px rgba(212,175,55,.4)', cursor: 'pointer' }}>
               🚀 Continue to Quiz
             </button>
           </div>
@@ -607,7 +610,6 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
-  // Auto-read question
   useEffect(() => {
     if (!q || !voiceEnabled) return;
     const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A', 'B', 'C', 'D'][i] + '. ' + opt).join('. ');
@@ -616,7 +618,6 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
     if (u) { utterRef.current = u; setSpeaking(true); u.onend = () => setSpeaking(false); }
   }, [qi, voiceEnabled, q]);
 
-  // Timer
   useEffect(() => {
     setTL(roundSecs);
     if (timerRef.current) clearInterval(timerRef.current);
@@ -706,7 +707,6 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
 
   return (
     <div className="scr" style={{ background: BG }}>
-      {/* Header */}
       <div style={{ background: `linear-gradient(135deg,${DPURP},${meta.color || PURPLE})`, padding: '38px 15px 13px', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 7 }}>
           <button onClick={() => { stopSpeech(); stopTimer(); onHome(); }} style={{ background: 'rgba(255,255,255,.12)', border: 'none', borderRadius: 8, padding: '5px 11px', color: 'rgba(255,255,255,.85)', fontSize: 11, fontWeight: 600 }}>⌂ Home</button>
@@ -724,9 +724,7 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
         </div>
       </div>
 
-      {/* Question Area */}
       <div ref={bodyRef} className="scroll" style={{ flex: 1, padding: '10px 13px 6px', display: 'flex', flexDirection: 'column', gap: 9 }}>
-        {/* Lifelines */}
         <div style={{ display: 'flex', gap: 7, flexShrink: 0 }}>
           <button onClick={doFifty} disabled={done} style={{ flex: 1, padding: '8px 8px', borderRadius: 10, border: usedF ? '1px solid #E5E7EB' : `1.5px solid ${GOLD}`, background: usedF ? '#f9f9f9' : WHITE, color: usedF ? '#ccc' : DGOLD, fontSize: 10, fontWeight: 700, opacity: usedF ? 0.38 : 1, cursor: usedF ? 'not-allowed' : 'pointer', animation: usedF ? 'fadeUsed .4s ease forwards' : 'powerGlow 2s ease-in-out infinite' }}>⚖️ 50/50</button>
           <button onClick={doHint} disabled={done} style={{ flex: 1, padding: '8px 8px', borderRadius: 10, border: usedH ? '1px solid #E5E7EB' : `1.5px solid ${PURPLE}`, background: usedH ? '#f9f9f9' : WHITE, color: usedH ? '#ccc' : PURPLE, fontSize: 10, fontWeight: 700, opacity: usedH ? 0.38 : 1, cursor: usedH ? 'not-allowed' : 'pointer', animation: usedH ? 'fadeUsed .4s ease forwards' : 'powerGlowP 2s ease-in-out infinite' }}>💡 Hint</button>
@@ -735,7 +733,6 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
 
         {showHint && <div className="su" style={{ background: '#FFFBEB', border: `1px solid ${GOLD}`, borderRadius: 11, padding: '9px 13px', flexShrink: 0 }}><div style={{ fontSize: 9, fontWeight: 700, color: DGOLD, letterSpacing: 1, marginBottom: 4 }}>HINT</div><div style={{ fontSize: 12, color: '#78350F', lineHeight: 1.55 }}>{q.h}</div></div>}
 
-        {/* Question Card */}
         <div key={qi} className={`su ${ansAnim === 'correct' ? 'correct-pop' : ansAnim === 'wrong' ? 'wrong-shake' : ''}`} style={{ background: WHITE, borderRadius: 16, padding: 15, boxShadow: '0 3px 14px rgba(0,0,0,.08)', border: `2px solid ${done ? (sel === q.a ? GREEN : RED) : LGRAY}`, flexShrink: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 8 }}>
             <div style={{ fontSize: 9, fontWeight: 700, color: meta.color, letterSpacing: 1, textTransform: 'uppercase' }}>Q{qi + 1}</div>
@@ -759,14 +756,12 @@ function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, tota
         )}
       </div>
 
-      {/* Action Bar */}
       <div style={{ padding: '9px 13px 18px', display: 'flex', alignItems: 'center', gap: 9, background: BG, borderTop: `1px solid ${LGRAY}`, flexShrink: 0 }}>
         {!done && sel !== -1 && <button onClick={() => setSel(-1)} style={{ padding: '10px 13px', background: WHITE, border: `2px solid ${LGRAY}`, borderRadius: 11, fontSize: 12, fontWeight: 600, color: GRAY }}>✕</button>}
         {!done && <button onClick={handleSubmit} style={{ flex: 1, padding: '11px 18px', background: sel === -1 ? LGRAY : PURPLE, border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: sel === -1 ? GRAY : WHITE, opacity: sel === -1 ? 0.55 : 1, cursor: sel === -1 ? 'not-allowed' : 'pointer', boxShadow: sel !== -1 ? '0 4px 14px rgba(75,0,130,.3)' : 'none' }}>Submit Answer</button>}
         {done && <button onClick={handleNext} style={{ marginLeft: 'auto', padding: '11px 20px', background: GOLD, border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: DPURP, boxShadow: '0 4px 14px rgba(212,175,55,.4)', display: 'flex', alignItems: 'center', gap: 5 }}>{isLastQ ? 'Final Results →' : isRoundEnd ? 'See Results →' : 'Next →'}</button>}
       </div>
 
-      {/* Modal */}
       {modal && (
         <div onClick={e => e.target === e.currentTarget && setModal(false)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,.6)', display: 'flex', alignItems: 'flex-end', zIndex: 100 }}>
           <div className="su" style={{ background: WHITE, borderRadius: '26px 26px 0 0', padding: '24px 22px 32px', width: '100%', maxHeight: '82%', overflowY: 'auto' }}>
@@ -841,7 +836,6 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
   const pct = totalQ ? Math.round((correct / totalQ) * 100) : 0;
   const wrong = totalQ - correct;
 
-  // Check if we need to show ad gate (replaces share gate)
   const needAdGate = SHOW_POPOVER_AD && totalSessions > 0 && totalSessions % SHARE_GATE_EVERY === 0;
   const showGroup = !needAdGate && !SHOW_POPOVER_AD && totalSessions % 2 === 1;
   const showChannel = !needAdGate && !SHOW_POPOVER_AD && totalSessions % 2 === 0;
@@ -855,7 +849,6 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
 
   const handlePlayAgain = () => {
     if (needAdGate && !adCompleted) {
-      // Show ad gate first
       onAdGateComplete(() => {
         setAdCompleted(true);
         onHome();
@@ -883,7 +876,6 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
 
         <button onClick={() => { SFX.select(); setShowCard(true); }} style={{ width: '100%', padding: '13px 16px', background: `linear-gradient(135deg,${meta.color},${DPURP})`, border: 'none', borderRadius: 13, fontSize: 13, fontWeight: 700, color: WHITE, marginBottom: 12 }}>🖼️ Show Friends Your Score Card</button>
 
-        {/* AD GATE SECTION - Replaces Share Gate */}
         {needAdGate && !adCompleted && (
           <div style={{ background: `linear-gradient(135deg,${DPURP},#3d0070)`, borderRadius: 16, padding: '16px 18px', marginBottom: 12 }}>
             <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 6 }}>🎬 UNLOCK NEXT ROUND</div>
@@ -908,7 +900,6 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
           </div>
         )}
 
-        {/* Legacy Share Gate (only if popover ads are disabled) */}
         {!SHOW_POPOVER_AD && (
           <>
             {showGroup && (
@@ -931,8 +922,13 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
           </>
         )}
 
-        {/* If no gate needed, show Play Again button */}
-        {!needAdGate && !showGroup && !showChannel && (
+        {!needAdGate && !showGroup && !showChannel && !SHOW_POPOVER_AD && (
+          <button onClick={onHome} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP, marginBottom: 12 }}>
+            🔄 Play Again
+          </button>
+        )}
+
+        {!needAdGate && !showGroup && !showChannel && SHOW_POPOVER_AD && !adCompleted && (
           <button onClick={onHome} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP, marginBottom: 12 }}>
             🔄 Play Again
           </button>
@@ -979,6 +975,58 @@ function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, 
           <div><div style={{ fontSize: 16, fontWeight: 800, color: GOLD }}>{streak}-Day Streak</div><div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)' }}>Come back daily to keep it alive!</div></div>
         </div>
         <button onClick={onSignOut} style={{ padding: 13, background: 'transparent', border: '1px solid rgba(220,38,38,.35)', borderRadius: 13, fontSize: 13, fontWeight: 700, color: '#DC2626' }}>↩ Sign Out</button>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// SHARE GATE SCREEN (Fallback when popover ads are disabled)
+// ============================================================================
+
+function ShareGate({ name, email, onUnlocked }) {
+  const [sharing, setSharing] = useState(false);
+  const [countdown, setCountdown] = useState(30);
+  const [done, setDone] = useState(false);
+  const shareText = `I'm seriously preparing for JAMB on EliteScholars CBT! 🔥\n\nFree practice at ${APP_URL} — come join me!`;
+
+  useEffect(() => {
+    if (!sharing) return;
+    if (countdown <= 0) { setDone(true); setSharing(false); return; }
+    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
+    return () => clearTimeout(t);
+  }, [sharing, countdown]);
+
+  const doShare = () => {
+    window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+    setSharing(true);
+    setCountdown(30);
+    try { if (email) localStorage.removeItem(`ep_sharepending_${email}`); } catch {}
+  };
+
+  const vibe = ['Your brain is literally built different!', 'Every question moves you closer to your dream school.', "This is what serious JAMB students look like!"][Math.floor(Math.random() * 3)];
+
+  return (
+    <div className="scr fd" style={{ background: 'linear-gradient(160deg,#1a0030,#4B0082,#1a0030)', alignItems: 'center', justifyContent: 'center', padding: '40px 24px' }}>
+      <div style={{ width: '100%', maxWidth: 380 }}>
+        <div style={{ textAlign: 'center', marginBottom: 24 }}>
+          <div style={{ fontSize: 52 }}>📤</div>
+          <div style={{ fontSize: 20, fontWeight: 800, color: WHITE }}>Unlock Your Next Round</div>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.55)', marginTop: 8 }}>Share EliteScholars with your friends on WhatsApp to keep playing. 🔥</div>
+        </div>
+        <div style={{ background: 'rgba(212,175,55,.1)', border: `1px solid rgba(212,175,55,.25)`, borderRadius: 14, padding: '13px 16px', marginBottom: 22, textAlign: 'center' }}>
+          <div style={{ fontSize: 9, fontWeight: 700, color: GOLD }}>✨ FROM ELITE JAMB</div>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.75)', fontStyle: 'italic' }}>"{vibe}"</div>
+        </div>
+        {!done ? (
+          <>
+            <button onClick={doShare} disabled={sharing} style={{ width: '100%', padding: 15, background: sharing ? 'rgba(37,211,102,.5)' : '#25D366', border: 'none', borderRadius: 13, fontSize: 14, fontWeight: 700, color: WHITE, marginBottom: 12 }}>💬 {sharing ? `Verifying... ${countdown}s` : 'Share to WhatsApp Friends'}</button>
+            {sharing && <div style={{ height: 4, background: 'rgba(255,255,255,.1)', borderRadius: 2, marginBottom: 16, overflow: 'hidden' }}><div style={{ height: '100%', background: GREEN, width: `${((30-countdown)/30)*100}%`, transition: 'width 1s linear' }} /></div>}
+            <button disabled style={{ width: '100%', padding: 14, background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 13, fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,.25)' }}>🔒 Start Quiz — Share First</button>
+          </>
+        ) : (
+          <div><div style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 14 }}><div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80' }}>✅ Unlocked!</div></div><button onClick={onUnlocked} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP }}>🚀 Start Quiz Now</button></div>
+        )}
       </div>
     </div>
   );
