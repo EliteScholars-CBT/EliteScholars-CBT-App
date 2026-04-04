@@ -14,6 +14,7 @@ const SHARE_GATE_EVERY = 4;              // Show ad gate every N quizzes
 const SHOW_ADS = false;                   // Set to false to hide all banner ads
 const SHOW_POPOVER_AD = false;            // Set to false to disable popover ads (shows share gate instead)
 const POPOVER_AD_SCRIPT = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js"; // Popover ad script
+const POPOVER_AD_URL = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469"; // Direct URL for popunder
 
 // ============================================================================
 // CONSTANTS & LINKS
@@ -70,28 +71,36 @@ function triggerPopoverAd() {
   
   console.log("Triggering popover ad...");
   
-  // Try to open as popunder using the ad URL
+  // Method 1: Open directly as popunder
   try {
-    const popunder = window.open('https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469', '_blank');
-    if (popunder) {
-      console.log("Popunder window opened");
+    const popunder = window.open(POPOVER_AD_URL, '_blank');
+    if (popunder && !popunder.closed) {
+      console.log("Popunder opened successfully");
       return true;
     }
   } catch (e) {
-    console.log("Window.open popunder failed:", e);
+    console.log("Direct popunder failed:", e);
   }
   
-  // Try to call existing functions
-  setTimeout(() => {
-    if (window.popunder && typeof window.popunder === 'function') {
-      window.popunder();
-      console.log("window.popunder() called");
-    }
-    if (window.Adsterra && typeof window.Adsterra.popunder === 'function') {
-      window.Adsterra.popunder();
-      console.log("Adsterra.popunder() called");
-    }
-  }, 100);
+  // Method 2: Create a click event to trigger popunder
+  try {
+    const anchor = document.createElement('a');
+    anchor.href = POPOVER_AD_URL;
+    anchor.target = '_blank';
+    anchor.rel = 'noopener noreferrer';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    console.log("Click event dispatched");
+  } catch (e) {
+    console.log("Click event method failed:", e);
+  }
+  
+  // Method 3: Reload the script
+  const script = document.createElement('script');
+  script.src = POPOVER_AD_SCRIPT;
+  script.async = true;
+  document.body.appendChild(script);
   
   return true;
 }
@@ -115,12 +124,13 @@ const BG = '#F8F5FF';
 const WHITE = '#FFFFFF';
 
 // ============================================================================
-// SUBJECT METADATA
+// SUBJECT METADATA (ADDED ACCOUNTING)
 // ============================================================================
 
 const SUBJ = {
   english: { icon: '📖', label: 'English', color: '#0369A1', bg: '#E0F2FE' },
   economics: { icon: '📊', label: 'Economics', color: '#7C3AED', bg: '#EDE9FE' },
+  accounting: { icon: '💰', label: 'Accounting', color: '#0F766E', bg: '#CCFBF1' },
   biology: { icon: '🔬', label: 'Biology', color: '#065F46', bg: '#DCFCE7' },
   chemistry: { icon: '⚗️', label: 'Chemistry', color: '#9A3412', bg: '#FEE2E2' },
   mathematics: { icon: '📐', label: 'Mathematics', color: '#1D4ED8', bg: '#DBEAFE' },
@@ -315,7 +325,7 @@ function Splash({ onDone }) {
       <img src={logo} alt="Elite Scholars CBT Logo" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover', boxShadow: '0 0 40px rgba(212,175,55,.5)', animation: 'pulse 2s infinite', zIndex: 1 }} />
       <div style={{ textAlign: 'center', zIndex: 1 }}>
         <div style={{ fontSize: 36, fontWeight: 900, color: WHITE, lineHeight: 1.1 }}>Elite<span style={{ color: GOLD }}>Scholars</span> CBT</div>
-        <div style={{ fontSize: 12, color: 'rgba(255,255,255,.6)', marginTop: 6 }}>JAMB Practice · 8 Subjects</div>
+        <div style={{ fontSize: 12, color: 'rgba(255,255,255,.6)', marginTop: 6 }}>JAMB Practice · 9 Subjects</div>
       </div>
       <div style={{ width: 180, height: 3, background: 'rgba(255,255,255,.15)', borderRadius: 2, overflow: 'hidden', zIndex: 1 }}>
         <div style={{ height: '100%', background: GOLD, animation: 'loadBar 2.5s ease forwards' }} />
@@ -369,9 +379,9 @@ function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
   const subjEntries = Object.entries(SUBJ).filter(([id]) => id !== 'novel');
   const lekkiCard = { id: '__lekki__', isLekki: true };
   const allCards = [
-    ...subjEntries.slice(0, 2).map(([id, meta]) => ({ id, meta })),
+    ...subjEntries.slice(0, 3).map(([id, meta]) => ({ id, meta })),
     lekkiCard,
-    ...subjEntries.slice(2).map(([id, meta]) => ({ id, meta })),
+    ...subjEntries.slice(3).map(([id, meta]) => ({ id, meta })),
   ];
 
   return (
@@ -491,9 +501,9 @@ function Ready({ subjectId, onGo, onBack }) {
 // ============================================================================
 
 function AdGate({ name, email, totalSessions, onUnlocked }) {
-  const [countdown, setCountdown] = useState(5);
-  const [adTriggered, setAdTriggered] = useState(false);
+  const [countdown, setCountdown] = useState(3);
   const [unlocked, setUnlocked] = useState(false);
+  const [adTriggered, setAdTriggered] = useState(false);
 
   useEffect(() => {
     if (!adTriggered) {
@@ -501,7 +511,7 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
       
       setTimeout(() => {
         triggerPopoverAd();
-      }, 500);
+      }, 300);
       
       trackEvent('ad_gate_shown', { name, email, totalSessions });
     }
@@ -525,6 +535,10 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
     return () => clearInterval(timer);
   }, [unlocked, name, email, totalSessions]);
 
+  const handleManualAd = () => {
+    window.open(POPOVER_AD_URL, '_blank');
+  };
+
   const vibe = [
     'Thanks for supporting EliteScholars! 🎓',
     'One quick ad keeps us running! 🙏',
@@ -537,9 +551,9 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
       <div style={{ width: '100%', maxWidth: 380 }}>
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <div style={{ fontSize: 52, marginBottom: 8 }}>🎬</div>
-          <div style={{ fontSize: 20, fontWeight: 800, color: WHITE }}>Watch to Continue</div>
+          <div style={{ fontSize: 20, fontWeight: 800, color: WHITE }}>Support EliteScholars</div>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.55)', marginTop: 8, lineHeight: 1.5 }}>
-            {unlocked ? 'Ad complete! Ready to continue!' : 'Watch the ad to unlock your next quiz round'}
+            {unlocked ? 'Thank you! Ready to continue!' : 'A quick ad helps keep this free for everyone'}
           </div>
         </div>
 
@@ -551,24 +565,44 @@ function AdGate({ name, email, totalSessions, onUnlocked }) {
         {!unlocked ? (
           <>
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
-              <div style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', marginBottom: 8 }}>Ad will unlock in</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', marginBottom: 8 }}>Unlocks in</div>
               <div style={{ fontSize: 48, fontWeight: 800, color: GOLD }}>{countdown}s</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 8 }}>Please wait for the ad to load</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 8 }}>
+                A new tab will open - close it to continue
+              </div>
             </div>
             
             <div style={{ height: 4, background: 'rgba(255,255,255,.1)', borderRadius: 2, marginBottom: 16, overflow: 'hidden' }}>
-              <div style={{ height: '100%', background: GOLD, width: `${((5 - countdown) / 5) * 100}%`, transition: 'width 1s linear' }} />
+              <div style={{ height: '100%', background: GOLD, width: `${((3 - countdown) / 3) * 100}%`, transition: 'width 1s linear' }} />
             </div>
             
+            <button 
+              onClick={handleManualAd}
+              style={{ 
+                width: '100%', 
+                padding: 12, 
+                background: 'rgba(212,175,55,.2)', 
+                border: `1px solid ${GOLD}`, 
+                borderRadius: 11, 
+                fontSize: 13, 
+                fontWeight: 600, 
+                color: GOLD,
+                marginBottom: 10,
+                cursor: 'pointer'
+              }}
+            >
+              🔄 Click here if ad doesn't open
+            </button>
+            
             <button disabled style={{ width: '100%', padding: 15, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.2)', borderRadius: 13, fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,.4)', cursor: 'not-allowed' }}>
-              🔒 Waiting for Ad...
+              🔒 Waiting...
             </button>
           </>
         ) : (
           <div className="su">
             <div style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 14 }}>
-              <div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Ad Complete!</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.7)' }}>Your next quiz is ready!</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Thank You!</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.7)' }}>Your support helps keep EliteScholars free</div>
             </div>
             <button onClick={() => onUnlocked(true)} style={{ width: '100%', padding: 15, background: GOLD, border: 'none', borderRadius: 13, fontSize: 15, fontWeight: 700, color: DPURP, boxShadow: '0 8px 22px rgba(212,175,55,.4)', cursor: 'pointer' }}>
               🚀 Continue to Quiz
@@ -842,8 +876,6 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
 
   const msgs = [[80, "Excellent! You're in the top league. 300+ is within reach."], [60, "Good work! A bit more practice and you're unstoppable."], [40, 'Not bad. Review the explanations and come back.'], [0, "Every session makes you sharper. Don't stop."]];
   const msg = msgs.find(([t]) => pct >= t)[1];
-  const vibe = ['Your brain is literally built different right now!', 'Every question moved you closer to your dream school.', "This is what serious JAMB students look like!", "You're in Elite territory!"][Math.floor(Math.random() * 4)];
-  const waShareText = shareMsg(name, meta.label, correct, totalQ);
 
   useEffect(() => { setTimeout(() => SFX.roundComplete(), 400); }, []);
 
@@ -878,24 +910,22 @@ function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome
 
         {needAdGate && !adCompleted && (
           <div style={{ background: `linear-gradient(135deg,${DPURP},#3d0070)`, borderRadius: 16, padding: '16px 18px', marginBottom: 12 }}>
-            <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 6 }}>🎬 UNLOCK NEXT ROUND</div>
-            <div style={{ fontSize: 12, color: WHITE, marginBottom: 12, fontStyle: 'italic' }}>"{vibe}"</div>
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)', marginBottom: 12, textAlign: 'center' }}>
-              Watch a quick ad to unlock your next quiz round!<br />
-              This helps keep EliteScholars free for everyone. 🙏
+            <div style={{ fontSize: 9, fontWeight: 700, color: GOLD, marginBottom: 6 }}>🎬 SUPPORT ELITESCHOLARS</div>
+            <div style={{ fontSize: 12, color: WHITE, marginBottom: 12, textAlign: 'center' }}>
+              Watch a quick ad to unlock your next quiz round and help keep this free!
             </div>
             <button onClick={() => onAdGateComplete(handlePlayAgain)} style={{ width: '100%', padding: 14, background: GOLD, border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, color: DPURP }}>
               🎬 Watch Ad & Continue
             </button>
             <div style={{ fontSize: 10, color: 'rgba(255,255,255,.35)', textAlign: 'center', marginTop: 10 }}>
-              Ad supports free JAMB practice
+              Ad supports free JAMB practice for everyone
             </div>
           </div>
         )}
 
         {needAdGate && adCompleted && (
           <div className="su" style={{ background: 'rgba(22,163,74,.18)', border: `1px solid ${GREEN}`, borderRadius: 13, padding: '13px 16px', textAlign: 'center', marginBottom: 12 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Ad Complete! Next round unlocked!</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80', marginBottom: 3 }}>✅ Thank you! Next round unlocked!</div>
             <button onClick={onHome} style={{ width: '100%', padding: 12, background: GOLD, border: 'none', borderRadius: 11, fontSize: 13, fontWeight: 700, color: DPURP, marginTop: 10 }}>🔄 Play Again</button>
           </div>
         )}
