@@ -379,9 +379,9 @@ function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
   const subjEntries = Object.entries(SUBJ).filter(([id]) => id !== 'novel');
   const lekkiCard = { id: '__lekki__', isLekki: true };
   const allCards = [
-    ...subjEntries.slice(0, 3).map(([id, meta]) => ({ id, meta })),
+    ...subjEntries.slice(0, 2).map(([id, meta]) => ({ id, meta })),
     lekkiCard,
-    ...subjEntries.slice(3).map(([id, meta]) => ({ id, meta })),
+    ...subjEntries.slice(2).map(([id, meta]) => ({ id, meta })),
   ];
 
   return (
