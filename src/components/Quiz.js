@@ -3,10 +3,10 @@ import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED } from '../utils/colors';
-import { SFX, speak, stopSpeech } from '../utils/sounds';  // Fixed: import from sounds
+import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
-export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh }) {
+export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, setQuizTimeRemaining }) {
   const [shuffled] = useState(() => sfl(QB[subjectId] || QB.economics));
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
@@ -32,6 +32,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
+  // Auto-read question
   useEffect(() => {
     if (!q || !voiceEnabled) return;
     const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A', 'B', 'C', 'D'][i] + '. ' + opt).join('. ');
@@ -40,6 +41,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     if (u) { utterRef.current = u; setSpeaking(true); u.onend = () => setSpeaking(false); }
   }, [qi, voiceEnabled, q]);
 
+  // Timer
   useEffect(() => {
     setTL(roundSecs);
     if (timerRef.current) clearInterval(timerRef.current);
@@ -92,7 +94,15 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const handleNext = () => {
     stopSpeech(); setSpeaking(false); setSHint(false);
     if (SHOW_ADS) triggerAdRefresh();
-    if (isLast) { SFX.roundComplete(); onAllDone(Math.ceil(shuffled.length / ROUND_SIZE)); return; }
+    if (isLast) { 
+      SFX.roundComplete(); 
+      // Pass remaining time for speed demon achievement
+      if (setQuizTimeRemaining) {
+        setQuizTimeRemaining(timeLeft);
+      }
+      onAllDone(Math.ceil(shuffled.length / ROUND_SIZE)); 
+      return; 
+    }
     const nextQi = qi + 1;
     if (isRoundEnd) { setUF(false); setUH(false); setHid([]); setSHint(false); }
     setQi(nextQi); setSel(-1); setDone(false); setAnsAnim('');
