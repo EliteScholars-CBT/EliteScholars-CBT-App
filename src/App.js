@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import AdsterraBanner from './AdsterraBanner';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
-import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE } from './utils/constants';
+import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
 import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
 import { stopSpeech } from './utils/sounds';
