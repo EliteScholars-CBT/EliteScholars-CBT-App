@@ -3,7 +3,7 @@ import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED } from '../utils/colors';
-import { SFX, speak, stopSpeech } from '../utils/sounds';
+import { SFX, speak, stopSpeech } from '../utils/sounds';  // Fixed: import from sounds
 import { sfl } from '../utils/helpers';
 
 export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh }) {
