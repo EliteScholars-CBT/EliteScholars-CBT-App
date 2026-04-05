@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import AdsterraBanner from '../AdsterraBanner';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
-import { SHOW_ADS, ROUND_SIZE } from '../utils/constants';
+import { SHOW_ADS } from '../utils/constants';
 import { PURPLE, DPURP, BG, LGRAY, WHITE, GRAY } from '../utils/colors';
-import { SFX } from '../utils/sounds';
+import { SFX } from '../utils/sounds';  // Fixed: only SFX from sounds
 
 export default function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
   const [sel, setSel] = useState();
