@@ -7,12 +7,9 @@ import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
 export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, setQuizTimeRemaining }) {
-  console.log("=== QUIZ COMPONENT MOUNTED ===");
-  console.log("Subject ID:", subjectId);
 
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
-    console.log("Loaded questions count:", questions?.length);
     return sfl(questions);
   });
   
