@@ -2,12 +2,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
-import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED } from '../utils/colors';
+import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
 export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, setQuizTimeRemaining }) {
-  const [shuffled] = useState(() => sfl(QB[subjectId] || QB.economics));
+  console.log("=== QUIZ COMPONENT MOUNTED ===");
+  console.log("Subject ID:", subjectId);
+
+  const [shuffled] = useState(() => {
+    const questions = QB[subjectId] || QB.economics;
+    console.log("Loaded questions count:", questions?.length);
+    return sfl(questions);
+  });
+  
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
   const [done, setDone] = useState(false);
@@ -96,7 +104,6 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     if (SHOW_ADS) triggerAdRefresh();
     if (isLast) { 
       SFX.roundComplete(); 
-      // Pass remaining time for speed demon achievement
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
       }
@@ -135,7 +142,20 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     return { width: 28, height: 28, borderRadius: '50%', background: bg, color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0, transition: 'all .18s' };
   };
 
-  if (!q) return null;
+  if (!q) {
+    return (
+      <div className="scr" style={{ background: BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 20 }}>
+        <div style={{ fontSize: 48 }}>❌</div>
+        <div style={{ fontSize: 18, fontWeight: 600, color: PURPLE }}>Error Loading Questions</div>
+        <div style={{ fontSize: 14, color: GRAY, textAlign: 'center', maxWidth: 300 }}>
+          No questions found for {subjectId}. Please check QB.js file.
+        </div>
+        <button onClick={onHome} style={{ padding: '10px 20px', background: PURPLE, color: WHITE, border: 'none', borderRadius: 8, cursor: 'pointer' }}>
+          Go Back
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="scr" style={{ background: BG }}>
