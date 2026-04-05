@@ -151,7 +151,7 @@ export default function App() {
   // Load user data on mount
   useEffect(() => {
   
-  console.log("Screen changed to:", screen);
+  // console.log("Screen changed to:", screen);
 
     const u = loadUser();
     if (u.name) {
