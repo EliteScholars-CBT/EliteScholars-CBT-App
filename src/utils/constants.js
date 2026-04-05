@@ -19,6 +19,33 @@ export const APP_URL = 'https://elitescholars.site';
 export const SHEETS_URL = 'https://script.google.com/macros/s/AKfycby59br8odWXDWQLkomFieaU-2aq_4wb5FiwzTiHkFgqztm0HqU5RShooJLeUANpF8sI/exec';
 
 // ============================================================================
+// ACHIEVEMENTS
+// ============================================================================
+
+export const ACHIEVEMENTS = {
+  firstQuiz: { id: 'firstQuiz', name: "🌟 Beginner", desc: "Complete your first quiz", icon: "🌟", requirement: { type: 'totalQuizzes', value: 1 } },
+  fiveQuizzes: { id: 'fiveQuizzes', name: "📚 Getting Started", desc: "Complete 5 quizzes", icon: "📚", requirement: { type: 'totalQuizzes', value: 5 } },
+  tenQuizzes: { id: 'tenQuizzes', name: "🎓 Dedicated Learner", desc: "Complete 10 quizzes", icon: "🎓", requirement: { type: 'totalQuizzes', value: 10 } },
+  perfectScore: { id: 'perfectScore', name: "🎯 Perfect", desc: "Score 100% on a quiz", icon: "🎯", requirement: { type: 'perfectScore', value: 1 } },
+  ninetyPlus: { id: 'ninetyPlus', name: "⭐ Excellence", desc: "Score 90% or higher on a quiz", icon: "⭐", requirement: { type: 'ninetyPlus', value: 1 } },
+  streak7: { id: 'streak7', name: "🔥 On Fire", desc: "7 day streak", icon: "🔥", requirement: { type: 'streak', value: 7 } },
+  streak30: { id: 'streak30', name: "💪 Dedicated", desc: "30 day streak", icon: "💪", requirement: { type: 'streak', value: 30 } },
+  allSubjects: { id: 'allSubjects', name: "📖 Scholar", desc: "Attempt all 9 subjects", icon: "📖", requirement: { type: 'subjectsAttempted', value: 9 } },
+  speedDemon: { id: 'speedDemon', name: "⚡ Speed Demon", desc: "Finish a quiz with 10+ seconds left per question", icon: "⚡", requirement: { type: 'speedDemon', value: 1 } },
+  mathematician: { id: 'mathematician', name: "🧮 Mathematician", desc: "Score 80%+ in Mathematics", icon: "🧮", requirement: { type: 'subjectMastery', subject: 'mathematics', value: 80 } },
+  physicist: { id: 'physicist', name: "⚛️ Physicist", desc: "Score 80%+ in Physics", icon: "⚛️", requirement: { type: 'subjectMastery', subject: 'physics', value: 80 } },
+  chemist: { id: 'chemist', name: "🧪 Chemist", desc: "Score 80%+ in Chemistry", icon: "🧪", requirement: { type: 'subjectMastery', subject: 'chemistry', value: 80 } },
+  biologist: { id: 'biologist', name: "🔬 Biologist", desc: "Score 80%+ in Biology", icon: "🔬", requirement: { type: 'subjectMastery', subject: 'biology', value: 80 } },
+  economist: { id: 'economist', name: "📊 Economist", desc: "Score 80%+ in Economics", icon: "📊", requirement: { type: 'subjectMastery', subject: 'economics', value: 80 } },
+  accountant: { id: 'accountant', name: "💰 Accountant", desc: "Score 80%+ in Accounting", icon: "💰", requirement: { type: 'subjectMastery', subject: 'accounting', value: 80 } },
+  literatureLover: { id: 'literatureLover', name: "📖 Literature Lover", desc: "Score 80%+ in Literature", icon: "📖", requirement: { type: 'subjectMastery', subject: 'literature', value: 80 } },
+  governmentGuru: { id: 'governmentGuru', name: "🏛️ Government Guru", desc: "Score 80%+ in Government", icon: "🏛️", requirement: { type: 'subjectMastery', subject: 'government', value: 80 } },
+  englishExpert: { id: 'englishExpert', name: "📝 English Expert", desc: "Score 80%+ in English", icon: "📝", requirement: { type: 'subjectMastery', subject: 'english', value: 80 } },
+  novelReader: { id: 'novelReader', name: "📗 Novel Reader", desc: "Score 80%+ in The Lekki Headmaster", icon: "📗", requirement: { type: 'subjectMastery', subject: 'novel', value: 80 } },
+  perfectWeek: { id: 'perfectWeek', name: "📅 Perfect Week", desc: "Complete a quiz every day for 7 days", icon: "📅", requirement: { type: 'perfectWeek', value: 1 } },
+};
+
+// ============================================================================
 // TIMER FUNCTION
 // ============================================================================
 
