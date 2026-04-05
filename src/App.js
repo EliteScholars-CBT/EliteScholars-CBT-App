@@ -1,12 +1,19 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import AdsterraBanner from './AdsterraBanner';
-import Toast from './components/Toast';
-import AchievementPopup from './components/AchievementPopup';
+import Splash from './components/Splash';
+import Onboard from './components/Onboard';
+import Subjects from './components/Subjects';
+import Ready from './components/Ready';
+import Quiz from './components/Quiz';
+import Result from './components/Result';
+import Profile from './components/Profile';
+import ShareGate from './components/ShareGate';
+import AdGate from './components/AdGate';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE } from './utils/constants';
-import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance } from './utils/storage';
+import { loadUser, loadStats, saveStats, saveUser } from './utils/storage';
 import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
-import { stopSpeech } from './utils/sounds';  // Fixed: import from sounds
-import { checkAndAwardAchievements } from './utils/achievements';
+import { stopSpeech } from './utils/sounds';
 import './style.css';
 
 export default function App() {
