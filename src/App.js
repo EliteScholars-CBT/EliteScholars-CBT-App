@@ -150,6 +150,9 @@ export default function App() {
 
   // Load user data on mount
   useEffect(() => {
+  
+  console.log("Screen changed to:", screen);
+
     const u = loadUser();
     if (u.name) {
       setName(u.name);
@@ -167,7 +170,7 @@ export default function App() {
       const userAchievements = loadAchievements(u.email);
       setAchievements(userAchievements);
     }
-  }, []);
+  }, [screen]);
 
   const showToast = (message, type = 'info') => {
     setToast({ show: true, message, type });
