@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs } from '../utils/constants';
 import { GOLD, LGOLD, WHITE } from '../utils/colors';
-import { SFX } from '../utils/sounds';  // Fixed: only SFX from sounds
+import { SFX } from '../utils/sounds';
 
 export default function Ready({ subjectId, onGo, onBack }) {
   const [count, setCount] = useState(3);
@@ -13,12 +13,16 @@ export default function Ready({ subjectId, onGo, onBack }) {
     const tick = (c) => {
       setCount(c);
       setOffset(283 * (1 - (4 - c) / 3));
-      if (c === 0) { setTimeout(onGo, 450); return; }
+      if (c === 0) { 
+        console.log("Countdown finished, calling onGo"); // Debug log
+        setTimeout(onGo, 450); 
+        return; 
+      }
       SFX.select();
       setTimeout(() => tick(c - 1), 1000);
     };
     setTimeout(() => tick(3), 200);
-  }, []);
+  }, [onGo]); // Added onGo to dependencies
   
   return (
     <div className="scr fd ready-container">
