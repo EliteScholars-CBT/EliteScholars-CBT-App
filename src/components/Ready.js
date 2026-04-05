@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs } from '../utils/constants';
 import { GOLD, LGOLD, WHITE } from '../utils/colors';
-import { SFX } from '../utils/sounds';
+import { SFX } from '../utils/sounds';  // Fixed: only SFX from sounds
 
 export default function Ready({ subjectId, onGo, onBack }) {
   const [count, setCount] = useState(3);
