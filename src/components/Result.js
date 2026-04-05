@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SUBJ } from '../data/subjects';
 import { SHOW_POPOVER_AD, SHARE_GATE_EVERY, WA_GROUP, WA_CHANNEL } from '../utils/constants';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGRAY, GREEN } from '../utils/colors';
-import { SFX } from '../utils/sounds';
+import { SFX } from '../utils/sounds';  // Fixed: only SFX from sounds
 import ScoreCard from './ScoreCard';
 
 export default function Result({ name, subjectId, score, correct, totalQ, totalSessions, onHome, onProfile, onAdGateComplete }) {
