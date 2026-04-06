@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from 'recharts';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGOLD } from '../utils/colors';
 import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
@@ -12,10 +12,21 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   const [performanceData, setPerformanceData] = useState([]);
   const [subjectChartData, setSubjectChartData] = useState([]);
   const { theme, toggleTheme } = useTheme();
+  const tabsContainerRef = useRef(null);
 
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
   const avg = allScores.length ? Math.round(allScores.reduce((a,b) => a+b, 0) / allScores.length) : 0;
   const rank = bestScore >= 38 ? '🏆 Elite Scholar' : bestScore >= 30 ? '⭐ Rising Star' : bestScore >= 20 ? '📚 Sharp Guy' : '🌱 Beginner';
+
+  // Scroll to active tab when it changes
+  useEffect(() => {
+    if (tabsContainerRef.current) {
+      const activeTabElement = tabsContainerRef.current.querySelector('.profile-tab.active');
+      if (activeTabElement) {
+        activeTabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     // Load achievements
@@ -50,7 +61,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   }, [email, allScores]);
 
   return (
-    <div className="scr fd" style={{ background: BG }}>
+    <div className="scr fd profile-page">
       <div className="profile-header" style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})` }}>
         <div style={{ position: 'absolute', bottom: -20, left: 0, right: 0, height: 40, background: BG, borderRadius: '24px 24px 0 0' }} />
         <div className="profile-back" onClick={onBack}>← Back</div>
@@ -63,24 +74,28 @@ export default function Profile({ name, email, sessions, streak, allScores, best
         </div>
       </div>
 
-      <div className="profile-tabs">
-        <button className={`profile-tab ${activeTab === 'stats' ? 'active' : ''}`} onClick={() => setActiveTab('stats')}>
-          📊 Stats
-        </button>
-        <button className={`profile-tab ${activeTab === 'subjects' ? 'active' : ''}`} onClick={() => setActiveTab('subjects')}>
-          📚 Subjects
-        </button>
-        <button className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`} onClick={() => setActiveTab('achievements')}>
-          🏆 Achievements ({achievements.length})
-        </button>
-        <button className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => setActiveTab('settings')}>
-          ⚙️ Settings
-        </button>
+      {/* Horizontally scrollable tabs */}
+      <div className="profile-tabs-wrapper">
+        <div className="profile-tabs-scroll" ref={tabsContainerRef}>
+          <button className={`profile-tab ${activeTab === 'stats' ? 'active' : ''}`} onClick={() => setActiveTab('stats')}>
+            📊 Stats
+          </button>
+          <button className={`profile-tab ${activeTab === 'subjects' ? 'active' : ''}`} onClick={() => setActiveTab('subjects')}>
+            📚 Subjects
+          </button>
+          <button className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`} onClick={() => setActiveTab('achievements')}>
+            🏆 Achievements ({achievements.length})
+          </button>
+          <button className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => setActiveTab('settings')}>
+            ⚙️ Settings
+          </button>
+        </div>
       </div>
 
-      <div className="profile-stats-section">
+      {/* Vertically scrollable content */}
+      <div className="profile-content-area">
         {activeTab === 'stats' && (
-          <>
+          <div className="profile-stats-section">
             <div className="profile-stats-title">Your Stats</div>
             <div className="profile-stats-grid">
               {[['Quizzes Done', sessions || 0], ['Avg Score', avg + '%'], ['Best Score', bestScore + '/' + ROUND_SIZE], ['Streak', streak + ' days']].map(([l, v]) => (
@@ -118,11 +133,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 <div className="profile-streak-text">Come back daily to keep it alive!</div>
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {activeTab === 'subjects' && (
-          <>
+          <div className="profile-stats-section">
             <div className="profile-stats-title">📚 Subject Performance</div>
             {subjectChartData.length > 0 ? (
               <div className="profile-chart-section">
@@ -149,11 +164,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 <div className="profile-empty-text">Complete quizzes to see subject performance!</div>
               </div>
             )}
-          </>
+          </div>
         )}
 
         {activeTab === 'achievements' && (
-          <>
+          <div className="profile-stats-section">
             <div className="profile-stats-title">🏆 Unlocked Achievements</div>
             {achievements.length > 0 ? (
               <div className="achievements-grid">
@@ -185,11 +200,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
 
         {activeTab === 'settings' && (
-          <>
+          <div className="profile-stats-section">
             <div className="profile-stats-title">⚙️ Appearance</div>
             <div className="settings-card" onClick={toggleTheme} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
@@ -225,7 +240,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
 
         <button className="profile-signout-btn" onClick={onSignOut}>↩ Sign Out</button>
