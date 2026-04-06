@@ -227,7 +227,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 <div className="settings-icon">🎓</div>
                 <div className="settings-info">
                   <div className="settings-name">EliteScholars CBT</div>
-                  <div className="settings-desc">Version 2.0.0</div>
+                  <div className="settings-desc">Version 1.0.0</div>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 <div className="settings-icon">📧</div>
                 <div className="settings-info">
                   <div className="settings-name">Contact Support</div>
-                  <div className="settings-desc">elitescholars@gmail.com</div>
+                  <div className="settings-desc">elitescholars.site@gmail.com</div>
                 </div>
               </div>
             </div>
