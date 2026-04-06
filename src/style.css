@@ -3175,18 +3175,15 @@ button,
   transition: all 0.2s ease;
 }
 
-/* Add top padding for sticky ad */
+/* Add bottom padding for sticky ad */
 .phone {
-  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
-/* When ad is showing, add padding */
-.phone.has-sticky-ad {
-  padding-top: 0;
-}
-
-/* Ensure content doesn't go under the sticky ad */
+/* Push content up, ad stays at bottom */
 .scr {
-  position: relative;
-  z-index: 100;
+  flex: 1;
 }
