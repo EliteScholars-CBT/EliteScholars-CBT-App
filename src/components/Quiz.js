@@ -7,7 +7,6 @@ import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
 export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, setQuizTimeRemaining }) {
-
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
     return sfl(questions);
@@ -83,7 +82,11 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     }
   };
 
-  const handleSelect = (i) => { if (done || hidden.includes(i)) return; SFX.select(); setSel(i); };
+  const handleSelect = (i) => { 
+    if (done || hidden.includes(i)) return; 
+    SFX.select(); 
+    setSel(i); 
+  };
   
   const handleSubmit = () => {
     if (SHOW_ADS) triggerAdRefresh();
@@ -113,30 +116,115 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     if (bodyRef.current) bodyRef.current.scrollTop = 0;
   };
 
-  const doFifty = () => { if (usedF || done) return; setUF(true); SFX.select(); const wrong = sfl([0,1,2,3].filter(i => i !== q.a)).slice(0,2); setHid(wrong); if (wrong.includes(sel)) setSel(-1); };
-  const doHint = () => { if (usedH || done) return; setUH(true); setSHint(true); SFX.select(); };
+  const doFifty = () => { 
+    if (usedF || done) return; 
+    setUF(true); 
+    SFX.select(); 
+    const wrong = sfl([0,1,2,3].filter(i => i !== q.a)).slice(0,2); 
+    setHid(wrong); 
+    if (wrong.includes(sel)) setSel(-1); 
+  };
+  
+  const doHint = () => { 
+    if (usedH || done) return; 
+    setUH(true); 
+    setSHint(true); 
+    SFX.select(); 
+  };
 
   const tw = timeLeft <= 10;
   const tc = timeLeft <= 10 ? '#FF6B6B' : timeLeft <= 20 ? LGOLD : GOLD;
 
-  const optStyle = (i) => {
-    if (hidden.includes(i)) return { display: 'none' };
-    let border = `2px solid ${LGRAY}`, bg = WHITE, color = '#1a0030';
-    if (!done && sel === i) { border = `2px solid ${meta.color}`; bg = meta.bg; color = meta.color; }
-    if (done) {
-      if (i === q.a) { border = `2px solid ${GREEN}`; bg = LGREEN; color = GREEN; }
-      else if (i === sel && i !== q.a) { border = `2px solid ${RED}`; bg = LRED; color = RED; }
+  const getOptionClass = (i) => {
+    if (hidden.includes(i)) return 'hidden';
+    let className = 'quiz-option';
+    
+    if (!done && sel === i) {
+      className += ' selected';
     }
-    return { border, background: bg, color, padding: '11px 13px', borderRadius: 11, display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, fontWeight: 500, cursor: done ? 'default' : 'pointer', transition: 'all .18s', marginBottom: 7 };
+    if (done) {
+      if (i === q.a) {
+        className += ' correct';
+      } else if (i === sel && i !== q.a) {
+        className += ' wrong';
+      }
+      className += ' disabled';
+    }
+    return className;
   };
 
-  const bubStyle = (i) => {
+  const getOptionStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let bg = LGRAY, color = GRAY;
-    if (!done && sel === i) { bg = meta.color; color = WHITE; }
-    if (done && i === q.a) { bg = GREEN; color = WHITE; }
-    if (done && i === sel && i !== q.a) { bg = RED; color = WHITE; }
-    return { width: 28, height: 28, borderRadius: '50%', background: bg, color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0, transition: 'all .18s' };
+    let border = `2px solid ${LGRAY}`;
+    let bg = WHITE;
+    let color = '#1a0030';
+    
+    if (!done && sel === i) {
+      border = `2px solid ${meta.color}`;
+      bg = meta.bg;
+      color = meta.color;
+    }
+    if (done) {
+      if (i === q.a) {
+        border = `2px solid ${GREEN}`;
+        bg = LGREEN;
+        color = GREEN;
+      } else if (i === sel && i !== q.a) {
+        border = `2px solid ${RED}`;
+        bg = LRED;
+        color = RED;
+      }
+    }
+    
+    return {
+      border,
+      background: bg,
+      color,
+      padding: '11px 13px',
+      borderRadius: 11,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 9,
+      fontSize: 13,
+      fontWeight: 500,
+      cursor: done ? 'default' : 'pointer',
+      transition: 'all .18s',
+      marginBottom: 7
+    };
+  };
+
+  const getLetterStyle = (i) => {
+    if (hidden.includes(i)) return { display: 'none' };
+    let bg = LGRAY;
+    let color = GRAY;
+    
+    if (!done && sel === i) {
+      bg = meta.color;
+      color = WHITE;
+    }
+    if (done && i === q.a) {
+      bg = GREEN;
+      color = WHITE;
+    }
+    if (done && i === sel && i !== q.a) {
+      bg = RED;
+      color = WHITE;
+    }
+    
+    return {
+      width: 28,
+      height: 28,
+      borderRadius: '50%',
+      background: bg,
+      color,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 11,
+      fontWeight: 700,
+      flexShrink: 0,
+      transition: 'all .18s'
+    };
   };
 
   if (!q) {
@@ -189,8 +277,13 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
           </div>
           <div className="question-text">{q.q}</div>
           {q.o.map((opt, i) => (
-            <div key={i} style={optStyle(i)} onClick={() => handleSelect(i)}>
-              <div style={bubStyle(i)}>{['A','B','C','D'][i]}</div>
+            <div 
+              key={i} 
+              className={getOptionClass(i)} 
+              style={getOptionStyle(i)} 
+              onClick={() => handleSelect(i)}
+            >
+              <div style={getLetterStyle(i)}>{['A','B','C','D'][i]}</div>
               <span>{opt}</span>
             </div>
           ))}
