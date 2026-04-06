@@ -354,26 +354,6 @@ export default function App() {
   return (
     <>
       <div className="phone">
-        {/* Top Sticky Ad - Fixed at top of viewport */}
-  {SHOW_ADS && (
-    <div style={{ 
-      position: 'sticky', 
-      top: 0, 
-      zIndex: 999,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      background: 'var(--bg-primary)',
-      padding: '5px 0',
-      borderBottom: '1px solid var(--border-color)'
-    }}>
-      <AdsterraBanner 
-        adKey="ec0487cde03d79b75629df8828d753f9" 
-        scale={0.2}
-        refreshTrigger={adRefresh} 
-      />
-    </div>
-  )}
         <Suspense fallback={<LoadingScreen />}>
   {screen === 'splash' && <Splash onDone={handleSplash} />}
   {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
@@ -419,6 +399,28 @@ export default function App() {
           onClose={() => setAchievementPopup({ show: false, achievement: null })} 
         />
       )}
+
+      {/* Bottom Sticky Ad */}
+  {SHOW_ADS && (
+    <div style={{ 
+      position: 'sticky', 
+      bottom: 0, 
+      zIndex: 999,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      background: 'var(--bg-primary)',
+      padding: '5px 0',
+      borderTop: '1px solid var(--border-color)',
+      marginTop: 'auto'
+    }}>
+      <AdsterraBanner 
+        adKey="ec0487cde03d79b75629df8828d753f9" 
+        scale={0.3}
+        refreshTrigger={adRefresh} 
+      />
+    </div>
+  )}
       
       {SHOW_ADS && (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', marginTop: '10px', marginBottom: '20px' }}>
