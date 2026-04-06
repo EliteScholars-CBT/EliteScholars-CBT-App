@@ -303,7 +303,6 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
           <div style={{ margin: '10px 0', padding: '0 13px' }}>
             <AdsterraBanner 
               adKey="ec0487cde03d79b75629df8828d753f9"
-              scale={0.04}
               refreshTrigger={adRefresh} 
             />
           </div>
