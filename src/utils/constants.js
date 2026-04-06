@@ -4,7 +4,7 @@
 
 export const ROUND_SIZE = 20;
 export const SHARE_GATE_EVERY = 6;
-export const SHOW_ADS = false;
+export const SHOW_ADS = true;
 export const SHOW_POPOVER_AD = false;
 export const POPOVER_AD_SCRIPT = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js";
 export const POPOVER_AD_URL = "https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469";
