@@ -3055,6 +3055,39 @@ body.dark-mode .quiz-option.hidden {
 }
 
 /* ============================================================================
+   DARK MODE - Subject Card Selected Background
+   ============================================================================ */
+
+/* Selected subject card in dark mode - force dark background */
+body.dark-mode .subject-card-selected {
+  background: #2d1b4e !important;
+  border-color: var(--gold) !important;
+}
+
+/* Selected Lekki card in dark mode */
+body.dark-mode .lekki-card-selected {
+  background: #2d1b4e !important;
+  border-color: var(--gold) !important;
+}
+
+/* Keep the icon colors visible */
+body.dark-mode .subject-card-selected .subject-icon {
+  background: var(--subject-color, #8B5CF6) !important;
+}
+
+body.dark-mode .lekki-card-selected .lekki-icon {
+  background: #8B5CF6 !important;
+}
+
+/* Keep text readable */
+body.dark-mode .subject-card-selected .subject-name,
+body.dark-mode .subject-card-selected .subject-status,
+body.dark-mode .lekki-card-selected .lekki-title,
+body.dark-mode .lekki-card-selected .lekki-badge {
+  color: var(--text-primary) !important;
+}
+
+/* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
 * {
