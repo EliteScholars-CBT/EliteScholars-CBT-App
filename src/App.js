@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import AdsterraBanner from './AdsterraBanner';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
+import ThemeToggle from './components/ThemeToggle';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
 import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
@@ -31,7 +32,7 @@ const LoadingScreen = () => (
 // Helper function to check and award achievements
 const checkAndAwardAchievements = (userStats, email, currentAchievements, showToast, showAchievement, subjectPerformance) => {
   const newAchievements = [];
-  const achievedIds = currentAchievements.map(a => a.id);
+  const achievedIds = currentAchievements.map(a => a?.id).filter(Boolean);
 
   // Total quizzes completed
   if (!achievedIds.includes('firstQuiz') && userStats.totalQuizzes >= 1) {
@@ -64,7 +65,7 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
 
   // All subjects attempted
   if (!achievedIds.includes('allSubjects')) {
-    const subjectsAttempted = Object.keys(subjectPerformance).filter(s => subjectPerformance[s]?.total > 0).length;
+    const subjectsAttempted = Object.keys(subjectPerformance || {}).filter(s => subjectPerformance[s]?.total > 0).length;
     if (subjectsAttempted >= 9) {
       newAchievements.push('allSubjects');
     }
@@ -92,7 +93,7 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
   Object.keys(masteryMap).forEach(subject => {
     const achievementKey = masteryMap[subject];
     if (!achievedIds.includes(achievementKey)) {
-      const perf = subjectPerformance[subject];
+      const perf = subjectPerformance?.[subject];
       if (perf && perf.bestScore >= 80) {
         newAchievements.push(achievementKey);
       }
@@ -101,7 +102,7 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
 
   // Save new achievements and show popups
   if (newAchievements.length > 0) {
-    const newAchievementObjects = newAchievements.map(id => ACHIEVEMENTS[id]);
+    const newAchievementObjects = newAchievements.map(id => ACHIEVEMENTS[id]).filter(a => a);
     const updatedAchievements = [...currentAchievements, ...newAchievementObjects];
     saveAchievements(updatedAchievements, email);
     
@@ -150,9 +151,6 @@ export default function App() {
 
   // Load user data on mount
   useEffect(() => {
-  
-  // console.log("Screen changed to:", screen);
-
     const u = loadUser();
     if (u.name) {
       setName(u.name);
@@ -170,7 +168,7 @@ export default function App() {
       const userAchievements = loadAchievements(u.email);
       setAchievements(userAchievements);
     }
-  }, [screen]);
+  }, []);
 
   const showToast = (message, type = 'info') => {
     setToast({ show: true, message, type });
@@ -273,7 +271,6 @@ export default function App() {
     // Check for perfect score and 90%+
     const isPerfect = pct === 100;
     const isNinetyPlus = pct >= 90;
-    const isSpeedDemon = quizTimeRemaining && quizTimeRemaining > 10 * ROUND_SIZE;
     
     // Update subject performance
     updateSubjectPerformance(subject, correct, totalQ, quizTimeRemaining, getTimerSecs(subject, ROUND_SIZE));
@@ -288,14 +285,13 @@ export default function App() {
     // Calculate user stats for achievements
     const perfectScoresCount = allScores.filter(s => s === 100).length + (isPerfect ? 1 : 0);
     const ninetyPlusCount = allScores.filter(s => s >= 90).length + (isNinetyPlus ? 1 : 0);
-    const speedDemonCount = 0; // Would need separate tracking
     
     const userStats = {
       totalQuizzes: ns,
       perfectScores: perfectScoresCount,
       ninetyPlusCount: ninetyPlusCount,
       streak: newStreak,
-      speedDemonCount: speedDemonCount,
+      speedDemonCount: 0,
     };
     
     // Check and award achievements
@@ -339,6 +335,9 @@ export default function App() {
           {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'subjects')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
         </Suspense>
       </div>
+      
+      {/* Theme Toggle Button */}
+      <ThemeToggle />
       
       {/* Toast Notifications */}
       {toast.show && (
