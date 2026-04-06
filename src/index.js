@@ -9,8 +9,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
