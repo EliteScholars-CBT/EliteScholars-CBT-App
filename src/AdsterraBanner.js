@@ -1,42 +1,38 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
 
-const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.25 }) => {
+const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.45 }) => {
   const adRef = useRef(null);
+  const timeoutRef = useRef(null);
+  
+  // Check if this is the native banner format
   const isNativeBanner = adKey === 'ec0487cde03d79b75629df8828d753f9';
-  const uniqueId = useRef(`ad-${Date.now()}-${Math.random()}`).current;
 
-  useEffect(() => {
+  const initializeAd = () => {
     if (!adRef.current) return;
     
-    // Clear previous content
+    // Clear everything
     adRef.current.innerHTML = '';
-    
+
     if (isNativeBanner) {
-      // NATIVE BANNER - direct approach
+      // NATIVE BANNER FORMAT
       const containerDiv = document.createElement('div');
       containerDiv.id = `container-${adKey}`;
+
       
       const loader = document.createElement('script');
-      loader.src = `https://fixesconsessionconsession.com/${adKey}/invoke.js`;
+      const cacheBuster = `?cb=${Date.now()}`;
+      loader.type = 'text/javascript';
+      loader.src = `https://fixesconsessionconsession.com/${adKey}/invoke.js${cacheBuster}`;
       loader.async = true;
       loader.setAttribute('data-cfasync', 'false');
       
       adRef.current.appendChild(containerDiv);
       adRef.current.appendChild(loader);
     } else {
-      // STANDARD BANNER - create wrapper with inline scaling
-      const wrapper = document.createElement('div');
-      wrapper.style.width = `${width}px`;
-      wrapper.style.height = `${height}px`;
-      wrapper.style.transform = `scale(${scale})`;
-      wrapper.style.transformOrigin = 'top left';
-      
-      const container = document.createElement('div');
-      wrapper.appendChild(container);
-      adRef.current.appendChild(wrapper);
-      
+      // STANDARD BANNER FORMAT
       const config = document.createElement('script');
+      config.type = 'text/javascript';
       config.innerHTML = `
         atOptions = {
           'key' : '${adKey}',
@@ -46,65 +42,38 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.25 }) 
           'params' : {}
         };
       `;
-      container.appendChild(config);
-      
+
       const loader = document.createElement('script');
+      loader.type = 'text/javascript';
       loader.src = `https://fixesconsessionconsession.com/${adKey}/invoke.js`;
-      container.appendChild(loader);
-      
-      // Force rescale after 500ms to catch any late-loading iframes
-      const timeout = setTimeout(() => {
-        const iframes = wrapper.querySelectorAll('iframe');
-        iframes.forEach(iframe => {
-          iframe.style.transform = `scale(${scale})`;
-          iframe.style.transformOrigin = 'top left';
-          iframe.style.width = `${width}px`;
-          iframe.style.height = `${height}px`;
-        });
-      }, 500);
-      
-      return () => clearTimeout(timeout);
-    }
-  }, [adKey, width, height, refreshTrigger, scale, isNativeBanner]);
 
-  // Add global CSS to force scale all iframes inside this ad container (backup method)
+      adRef.current.appendChild(config);
+      adRef.current.appendChild(loader);
+    }
+  };
+
   useEffect(() => {
-    const styleId = `ad-style-${uniqueId}`;
-    let styleElement = document.getElementById(styleId);
-    
-    if (!styleElement) {
-      styleElement = document.createElement('style');
-      styleElement.id = styleId;
-      document.head.appendChild(styleElement);
+    // Clear any pending timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
-    
-    if (!isNativeBanner) {
-      styleElement.textContent = `
-        #${uniqueId} iframe {
-          transform: scale(${scale}) !important;
-          transform-origin: top left !important;
-          width: ${width}px !important;
-          height: ${height}px !important;
-        }
-      `;
-    } else {
-      styleElement.textContent = `
-        #${uniqueId} {
-          transform: scale(${scale}) !important;
-          transform-origin: top center !important;
-        }
-      `;
-    }
-    
-    return () => {
-      if (styleElement) styleElement.remove();
-    };
-  }, [scale, width, height, isNativeBanner, uniqueId]);
 
+    // Small delay to ensure clean reload
+    timeoutRef.current = setTimeout(() => {
+      initializeAd();
+    }, 200);
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [adKey, refreshTrigger, width, height, isNativeBanner]);
+
+  // For native banner
   if (isNativeBanner) {
     return (
       <div 
-        id={uniqueId}
         ref={adRef} 
         style={{
           width: '100%',
@@ -113,7 +82,6 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.25 }) 
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#f5f5f5',
           borderRadius: '8px',
           overflow: 'hidden',
         }}
@@ -121,17 +89,20 @@ const AdsterraBanner = ({ adKey, width, height, refreshTrigger, scale = 0.25 }) 
     );
   }
 
+  // For standard banners - scale the actual content, not the wrapper
   const scaledWidth = Math.floor(width * scale);
   const scaledHeight = Math.floor(height * scale);
-
+  
   return (
     <div 
-      id={uniqueId}
       style={{
         width: `${scaledWidth}px`,
         height: `${scaledHeight}px`,
         margin: '5px auto',
         overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <div ref={adRef} />
