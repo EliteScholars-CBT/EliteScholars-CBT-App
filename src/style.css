@@ -3188,5 +3188,5 @@ button,
 /* Ensure content doesn't go under the sticky ad */
 .scr {
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
