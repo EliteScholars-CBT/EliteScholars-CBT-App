@@ -3088,6 +3088,78 @@ body.dark-mode .lekki-card-selected .lekki-badge {
 }
 
 /* ============================================================================
+   DARK MODE - Quiz Options Complete Fix
+   ============================================================================ */
+
+/* All quiz option containers */
+body.dark-mode .quiz-option {
+  background: #1a0030 !important;
+  border: 1px solid #3d2a5e !important;
+  color: #F3F4F6 !important;
+}
+
+/* Hover effect on options */
+body.dark-mode .quiz-option:hover:not(.disabled) {
+  background: #2d1b4e !important;
+  border-color: var(--gold) !important;
+  transform: translateX(4px);
+}
+
+/* Selected option before submission */
+body.dark-mode .quiz-option.selected {
+  background: var(--purple) !important;
+  border-color: var(--gold) !important;
+  color: white !important;
+}
+
+/* Correct answer after submission */
+body.dark-mode .quiz-option.correct {
+  background: rgba(22, 163, 74, 0.2) !important;
+  border-color: #16A34A !important;
+}
+
+/* Wrong answer after submission */
+body.dark-mode .quiz-option.wrong {
+  background: rgba(220, 38, 38, 0.2) !important;
+  border-color: #DC2626 !important;
+}
+
+/* Option letter circles */
+body.dark-mode .quiz-option-letter {
+  background: #3d2a5e !important;
+  color: #F3F4F6 !important;
+}
+
+/* Selected option letter circle */
+body.dark-mode .quiz-option.selected .quiz-option-letter {
+  background: var(--gold) !important;
+  color: #1a0030 !important;
+}
+
+/* Correct answer letter circle */
+body.dark-mode .quiz-option.correct .quiz-option-letter {
+  background: #16A34A !important;
+  color: white !important;
+}
+
+/* Wrong answer letter circle */
+body.dark-mode .quiz-option.wrong .quiz-option-letter {
+  background: #DC2626 !important;
+  color: white !important;
+}
+
+/* Disabled options */
+body.dark-mode .quiz-option.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hidden options (50/50 lifeline) */
+body.dark-mode .quiz-option.hidden {
+  display: none;
+}
+
+/* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
 * {
