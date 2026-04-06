@@ -415,10 +415,9 @@ export default function App() {
       marginTop: 'auto'
     }}>
       <AdsterraBanner 
-        adKey="ec0487cde03d79b75629df8828d753f9" 
-        scale={0.3}
-        refreshTrigger={adRefresh} 
-      />
+      enableRotation={true}
+      refreshTrigger={adRefresh} 
+    />
     </div>
   )}
     </>
