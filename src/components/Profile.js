@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, 
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGOLD } from '../utils/colors';
 import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut }) {
   const [activeTab, setActiveTab] = useState('stats');
@@ -10,6 +11,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   const [subjectPerformance, setSubjectPerformance] = useState({});
   const [performanceData, setPerformanceData] = useState([]);
   const [subjectChartData, setSubjectChartData] = useState([]);
+  const { theme, toggleTheme } = useTheme();
 
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
   const avg = allScores.length ? Math.round(allScores.reduce((a,b) => a+b, 0) / allScores.length) : 0;
@@ -30,7 +32,6 @@ export default function Profile({ name, email, sessions, streak, allScores, best
     const chartData = lastTenScores.map((score, index) => ({
       quiz: index + 1,
       score: score,
-      date: new Date(Date.now() - (lastTenScores.length - index) * 86400000).toLocaleDateString()
     }));
     setPerformanceData(chartData);
 
@@ -72,6 +73,9 @@ export default function Profile({ name, email, sessions, streak, allScores, best
         <button className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`} onClick={() => setActiveTab('achievements')}>
           🏆 Achievements ({achievements.length})
         </button>
+        <button className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => setActiveTab('settings')}>
+          ⚙️ Settings
+        </button>
       </div>
 
       <div className="profile-stats-section">
@@ -97,7 +101,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                       <YAxis domain={[0, 100]} stroke="#6B7280" fontSize={10} />
                       <Tooltip 
                         contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-                        labelStyle={{ color: WHITE }}
+                        labelStyle={{ color: '#FFFFFF' }}
                         itemStyle={{ color: GOLD }}
                       />
                       <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
@@ -130,7 +134,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                       <YAxis type="category" dataKey="subject" stroke="#6B7280" fontSize={10} width={80} />
                       <Tooltip 
                         contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-                        labelStyle={{ color: WHITE }}
+                        labelStyle={{ color: '#FFFFFF' }}
                         itemStyle={{ color: GOLD }}
                       />
                       <Bar dataKey="bestScore" name="Best Score" fill={GOLD} radius={[0, 4, 4, 0]} />
@@ -171,7 +175,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             )}
             <div className="profile-stats-title" style={{ marginTop: 20 }}>🔒 Locked Achievements</div>
             <div className="achievements-grid locked">
-              {Object.values(ACHIEVEMENTS).filter(a => !achievements.some(ach => ach.id === a.id)).slice(0, 6).map(achievement => (
+              {Object.values(ACHIEVEMENTS).filter(a => !achievements.some(ach => ach?.id === a.id)).slice(0, 6).map(achievement => (
                 <div key={achievement.id} className="achievement-card locked">
                   <div className="achievement-card-icon">🔒</div>
                   <div className="achievement-card-info">
@@ -180,6 +184,46 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                   </div>
                 </div>
               ))}
+            </div>
+          </>
+        )}
+
+        {activeTab === 'settings' && (
+          <>
+            <div className="profile-stats-title">⚙️ Appearance</div>
+            <div className="settings-card" onClick={toggleTheme} style={{ cursor: 'pointer' }}>
+              <div className="settings-item">
+                <div className="settings-icon">{theme === 'light' ? '🌙' : '☀️'}</div>
+                <div className="settings-info">
+                  <div className="settings-name">Dark Mode</div>
+                  <div className="settings-desc">Switch between light and dark theme</div>
+                </div>
+                <div className="settings-toggle">
+                  <div className={`toggle-switch ${theme === 'dark' ? 'active' : ''}`}>
+                    <div className="toggle-slider"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ About</div>
+            <div className="settings-card">
+              <div className="settings-item">
+                <div className="settings-icon">🎓</div>
+                <div className="settings-info">
+                  <div className="settings-name">EliteScholars CBT</div>
+                  <div className="settings-desc">Version 2.0.0</div>
+                </div>
+              </div>
+            </div>
+            <div className="settings-card">
+              <div className="settings-item">
+                <div className="settings-icon">📧</div>
+                <div className="settings-info">
+                  <div className="settings-name">Contact Support</div>
+                  <div className="settings-desc">elitescholars@gmail.com</div>
+                </div>
+              </div>
             </div>
           </>
         )}
