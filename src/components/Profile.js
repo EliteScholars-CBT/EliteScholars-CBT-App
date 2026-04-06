@@ -107,24 +107,29 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             </div>
 
             {performanceData.length > 0 && (
-              <div className="profile-chart-section">
-                <div className="profile-stats-title">📈 Performance Trend</div>
-                <div className="profile-chart-container">
-                  <ResponsiveContainer width="100%" height={200}>
-                    <LineChart data={performanceData}>
-                      <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
-                      <YAxis domain={[0, 100]} stroke="#6B7280" fontSize={10} />
-                      <Tooltip 
-                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-                        labelStyle={{ color: '#FFFFFF' }}
-                        itemStyle={{ color: GOLD }}
-                      />
-                      <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            )}
+  <div className="profile-chart-section">
+    <div className="profile-stats-title">📈 Performance Trend</div>
+    <div className="profile-chart-container">
+      <ResponsiveContainer width="100%" height={200}>
+        <LineChart data={performanceData}>
+          <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
+          <YAxis 
+            domain={[0, 100]} 
+            stroke="#6B7280" 
+            fontSize={10} 
+            tickFormatter={(value) => `${value}%`}
+          />
+          <Tooltip 
+            contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+            labelStyle={{ color: '#FFFFFF' }}
+            formatter={(value) => [`${value}%`, 'Score']}
+          />
+          <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
+)}
 
             <div className="profile-streak-card">
               <div className="profile-streak-icon">🔥</div>
@@ -146,12 +151,25 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                     <BarChart data={subjectChartData} layout="vertical" margin={{ left: 60 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
                       <XAxis type="number" domain={[0, 100]} stroke="#6B7280" fontSize={10} />
-                      <YAxis type="category" dataKey="subject" stroke="#6B7280" fontSize={10} width={80} />
-                      <Tooltip 
-                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-                        labelStyle={{ color: '#FFFFFF' }}
-                        itemStyle={{ color: GOLD }}
-                      />
+                      <YAxis 
+  type="category" 
+  dataKey="subject" 
+  stroke="#6B7280" 
+  fontSize={10} 
+  width={80} 
+/>
+<XAxis 
+  type="number" 
+  domain={[0, 100]} 
+  stroke="#6B7280" 
+  fontSize={10} 
+  tickFormatter={(value) => `${value}%`}
+/>
+<Tooltip 
+  contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+  labelStyle={{ color: '#FFFFFF' }}
+  formatter={(value) => [`${value}%`, 'Score']}
+/>
                       <Bar dataKey="bestScore" name="Best Score" fill={GOLD} radius={[0, 4, 4, 0]} />
                       <Bar dataKey="averageScore" name="Average Score" fill={PURPLE} radius={[0, 4, 4, 0]} />
                     </BarChart>
