@@ -4,10 +4,13 @@ import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { SHOW_ADS } from '../utils/constants';
 import { PURPLE, DPURP, BG, LGRAY, WHITE, GRAY } from '../utils/colors';
-import { SFX } from '../utils/sounds';  // Fixed: only SFX from sounds
+import { SFX } from '../utils/sounds';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Subjects({ name, onStart, onProfile, onSignOut, refreshTrigger }) {
   const [sel, setSel] = useState();
+  const { theme, toggleTheme } = useTheme();
+  
   const subjEntries = Object.entries(SUBJ).filter(([id]) => id !== 'novel');
   const lekkiCard = { id: '__lekki__', isLekki: true };
   const allCards = [
@@ -26,9 +29,20 @@ export default function Subjects({ name, onStart, onProfile, onSignOut, refreshT
             <div className="subjects-welcome-name">{name || 'Student'} 👋</div>
             <div className="subjects-welcome-text">Pick a subject to practise today</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6, marginTop: 2 }}>
-            <button className="subjects-profile-btn" onClick={onProfile}>👤 Profile</button>
-            <button className="subjects-signout-btn" onClick={onSignOut}>↩ Sign Out</button>
+          
+          {/* Settings Group - Profile + Theme Toggle */}
+          <div className="settings-group">
+            {/* Profile Button */}
+            <button className="settings-group-btn profile-btn" onClick={onProfile}>
+              <span className="settings-group-icon">👤</span>
+              <span className="settings-group-text">Profile</span>
+            </button>
+            
+            {/* Theme Toggle Button */}
+            <button className="settings-group-btn theme-btn" onClick={toggleTheme}>
+              <span className="settings-group-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
+              <span className="settings-group-text">{theme === 'light' ? 'Dark' : 'Light'}</span>
+            </button>
           </div>
         </div>
       </div>
