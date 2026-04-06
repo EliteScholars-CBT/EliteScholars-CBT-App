@@ -5,7 +5,6 @@ import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
-import AdsterraBanner from '../AdsterraBanner';
 
 export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining }) {
   const [shuffled] = useState(() => {
@@ -295,16 +294,6 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
             <div className="quick-take-title">QUICK TAKE</div>
             <div className="quick-take-text">{q.e.split('. ')[0]}.</div>
             <div className="quick-take-link" onClick={() => setModal(true)}>Read full explanation →</div>
-          </div>
-        )}
-
-        {/* NATIVE AD PLACEMENT - Between question card and action bar */}
-        {SHOW_ADS && (
-          <div style={{ margin: '10px 0', padding: '0 13px' }}>
-            <AdsterraBanner 
-              adKey="ec0487cde03d79b75629df8828d753f9"
-              refreshTrigger={adRefresh} 
-            />
           </div>
         )}
       </div>
