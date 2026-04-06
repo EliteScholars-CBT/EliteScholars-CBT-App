@@ -1,5 +1,5 @@
 import React from 'react';
-import { BG, PURPLE, GOLD, WHITE, LGRAY } from '../utils/colors';
+import { BG, PURPLE, GOLD, WHITE } from '../utils/colors';
 
 export default function ModeSelect({ onSelectMode }) {
   return (
@@ -56,4 +56,11 @@ export default function ModeSelect({ onSelectMode }) {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)' }}>Learn key concepts quickly with bite-sized cards</div>
           <div style={{ marginTop: 15, display: 'flex', gap: 10, justifyContent: 'center' }}>
             <span style={{ background: 'rgba(255,255,255,0.2)', padding: '4px 12px', borderRadius: 20, fontSize: 11 }}>🎴 Bite-sized</span>
-            <span style={{ background: 'rgba(255,255,255,0.2)', padding: '4px 12px', borderRadius: 20, fontSize: 11 }}
+            <span style={{ background: 'rgba(255,255,255,0.2)', padding: '4px 12px', borderRadius: 20, fontSize: 11 }}>⚡ Quick Learning</span>
+            <span style={{ background: 'rgba(255,255,255,0.2)', padding: '4px 12px', borderRadius: 20, fontSize: 11 }}>🔄 Swipe to Learn</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  );
+}
