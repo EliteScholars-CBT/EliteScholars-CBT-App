@@ -2943,6 +2943,30 @@ body.dark-mode .profile-content-area::-webkit-scrollbar-thumb {
 }
 
 /* ============================================================================
+   DARK MODE - Subject cards background layer
+   ============================================================================ */
+
+/* The main scrollable area behind subject cards */
+body.dark-mode .scroll {
+  background: var(--bg-primary);
+}
+
+/* The container that holds the subject cards grid */
+body.dark-mode .subjects-card-container {
+  background: transparent;
+}
+
+/* Any white background behind the cards */
+body.dark-mode .scr > .scroll {
+  background: var(--bg-primary);
+}
+
+/* The parent container */
+body.dark-mode .phone .scr {
+  background: var(--bg-primary);
+}
+
+/* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
 * {
