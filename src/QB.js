@@ -14561,2424 +14561,2412 @@ h: 'When you walk at the same speed as a friend, you keep pace ____ them.',
       h: 'Which atomic particle is electrically neutral?',
     },
   ],
-  mathematics: [
-
-
-
+ 
+mathematics: [
   {
     yr: 2023,
-    q: 'What is the general term of the sequence 3, 8, 13, 18, ...?',
+    q: "What is the general term of the sequence 3, 8, 13, 18, ...?",
     o: ['5n − 2', '5n + 2', '5', '5n'],
     a: 0,
     e: 'AP with a = 3, d = 5. Tₙ = a + (n−1)d = 3 + (n−1)5 = 3 + 5n − 5 = 5n − 2.',
     full: 'Arithmetic Progression (AP) nth term:\nTₙ = a + (n − 1)d\n\nFirst term a = 3\nCommon difference d = 8 − 3 = 5\n\nTₙ = 3 + (n − 1) × 5\n= 3 + 5n − 5\n= 5n − 2\n\nVerify:\nn=1: 5(1)−2 = 3 ✓\nn=2: 5(2)−2 = 8 ✓\nn=3: 5(3)−2 = 13 ✓',
-    h: 'AP formula: Tₙ = a + (n−1)d. With a=3 and d=5, simplify.',
+    h: 'AP formula: Tₙ = a + (n−1)d. With a=3 and d=5, simplify.'
   },
   {
     yr: 2023,
-    q: 'A bag contains 8 red balls and some white balls. The probability of drawing a white ball is half that of drawing a red ball. Find the probability of drawing one red and one white ball without replacement.',
+    q: "A bag contains 8 red balls and some white balls. The probability of drawing a white ball is half that of drawing a red ball. Find the probability of drawing one red and one white ball without replacement.",
     o: ['1/3', '2/9', '2/3', '8/33'],
     a: 3,
     e: 'White balls = 4 (since P(W) = ½P(R) → W/T = ½ × R/T → W = R/2 = 4). Total = 12. P(R then W) = (8/12) × (4/11) = 8/33.',
     full: 'Step 1: Find number of white balls\nP(W) = ½ × P(R)\nW/T = ½ × R/T\nW = R/2 = 8/2 = 4 white balls\nTotal T = 8 + 4 = 12\n\nStep 2: P(red then white) without replacement\nP = P(R) × P(W | after R removed)\n= 8/12 × 4/11\n= 2/3 × 4/11\n= 8/33 ✓',
-    h: 'Find white = 4 from the probability ratio. Then P(R)×P(W|no replacement) = ?',
+    h: 'Find white = 4 from the probability ratio. Then P(R)×P(W|no replacement) = ?'
   },
   {
     yr: 2023,
-    q: 'Solve: log₂(6 − x) = 3 − log₂x',
+    q: "Solve: log₂(6 − x) = 3 − log₂x",
     o: ['x = 4 or 2', 'x = −4 or −2', 'x = −4 or 2', 'x = 4 or −2'],
     a: 0,
     e: 'Rearrange: log₂(6−x) + log₂x = 3 → log₂[x(6−x)] = 3 → x(6−x) = 8 → x²−6x+8=0 → (x−4)(x−2)=0 → x=4 or x=2.',
     full: 'log₂(6−x) = 3 − log₂x\n\nMove log₂x to left:\nlog₂(6−x) + log₂x = 3\n\nProduct rule: log₂[x(6−x)] = 3\n\nConvert: x(6−x) = 2³ = 8\n6x − x² = 8\nx² − 6x + 8 = 0\n(x−4)(x−2) = 0\nx = 4 or x = 2\n\nCheck both are valid (must have 6−x > 0 and x > 0):\n• x=4: 6−4=2>0 ✓\n• x=2: 6−2=4>0 ✓',
-    h: 'Combine logs: log₂[x(6−x)] = 3 → x(6−x) = 8 → quadratic.',
+    h: 'Combine logs: log₂[x(6−x)] = 3 → x(6−x) = 8 → quadratic.'
   },
   {
     yr: 2023,
-    q: 'Find matrix A if A × [[0,1],[2,−1]] = [[2,−1],[1,0]]',
-    o: [
-      '[[2, 1],[−½, −½]]',
-      '[[0, 1],[½, ½]]',
-      '[[2, 1],[0, −1]]',
-      '[[2, 1],[½, −2]]',
-    ],
+    q: "Find matrix A if A × [[0,1],[2,−1]] = [[2,−1],[1,0]]",
+    o: ['[[2, 1],[−½, −½]]', '[[0, 1],[½, ½]]', '[[2, 1],[0, −1]]', '[[2, 1],[½, −2]]'],
     a: 1,
     e: 'Let A = [[a,b],[c,d]]. Multiply and equate: 2b=2→b=1; a−b=−1→a=0; 2d=1→d=½; c−d=0→c=½. So A = [[0,1],[½,½]].',
     full: 'Let A = [[a, b], [c, d]]\n\nA × [[0,1],[2,−1]] = [[2a·0+b·2, a·1+b·(−1)],[c·0+d·2, c·1+d·(−1)]]\n= [[2b, a−b],[2d, c−d]]\n\nSet equal to [[2,−1],[1,0]]:\n1. 2b = 2 → b = 1\n2. a − b = −1 → a = −1+1 = 0\n3. 2d = 1 → d = ½\n4. c − d = 0 → c = ½\n\nA = [[0, 1],[½, ½]] ✓',
-    h: 'Set up 4 equations from matrix multiplication and solve for a, b, c, d.',
+    h: 'Set up 4 equations from matrix multiplication and solve for a, b, c, d.'
   },
   {
     yr: 2023,
-    q: 'A boat sails 8 km north (P to Q), then 6 km west (Q to R). Calculate the bearing of R from P to the nearest degree.',
+    q: "A boat sails 8 km north (P to Q), then 6 km west (Q to R). Calculate the bearing of R from P to the nearest degree.",
     o: ['217°', '323°', '037°', '053°'],
     a: 1,
     e: 'tan θ = 6/8 → θ = 36.87° west of north. Bearing = 360° − 36.87° ≈ 323°.',
     full: 'Diagram: P is origin. Q is 8km due north. R is 6km west of Q.\n\nThe angle at P between north and line PR:\ntan θ = QR/PQ = 6/8 = 0.75\nθ = tan⁻¹(0.75) ≈ 36.87°\n\nR is to the north-west of P.\nBearing is measured clockwise from north:\nBearing = 360° − 36.87° = 323.13° ≈ 323° ✓\n\n(Alternative: bearing of R from P = 360° − θ where θ is west of north)',
-    h: 'Draw the triangle. Angle from north = arctan(6/8). Bearing = 360° − angle.',
+    h: 'Draw the triangle. Angle from north = arctan(6/8). Bearing = 360° − angle.'
   },
   {
     yr: 2023,
-    q: 'An article sold for ₦230.00 makes a 15% profit. Find the profit or loss % if sold for ₦180.00.',
+    q: "An article sold for ₦230.00 makes a 15% profit. Find the profit or loss % if sold for ₦180.00.",
     o: ['10% gain', '10% loss', '12% loss', '12% gain'],
     a: 1,
     e: 'Cost price = 230/1.15 = ₦200. Sold at ₦180: loss = 200−180 = ₦20. Loss% = (20/200)×100 = 10%.',
     full: 'Step 1: Find cost price (CP)\nSP = CP × (1 + profit%)\n230 = CP × 1.15\nCP = 230/1.15 = ₦200\n\nStep 2: New SP = ₦180\nLoss = CP − SP = 200 − 180 = ₦20\n\nStep 3: Loss% = (Loss/CP) × 100\n= (20/200) × 100\n= 10% loss ✓',
-    h: 'Find CP from first sale: 230 = 1.15×CP. Then find loss% for SP=₦180.',
+    h: 'Find CP from first sale: 230 = 1.15×CP. Then find loss% for SP=₦180.'
   },
   {
     yr: 2023,
-    q: 'A student measures water volume as 18 mL; the correct value is 18.4 mL. What is the percent error?',
+    q: "A student measures water volume as 18 mL; the correct value is 18.4 mL. What is the percent error?",
     o: ['2.17%', '1.73%', '2.23%', '1.96%'],
     a: 0,
     e: '% error = |measured − accepted| / accepted × 100 = |18 − 18.4| / 18.4 × 100 = 0.4/18.4 × 100 ≈ 2.17%.',
     full: 'Percent Error formula:\n% Error = |Measured − Accepted| / Accepted × 100\n\n= |18 − 18.4| / 18.4 × 100\n= 0.4 / 18.4 × 100\n= 0.021739 × 100\n= 2.174%\n≈ 2.17% ✓',
-    h: '% error = |measured − true| / true × 100 = 0.4/18.4 × 100.',
+    h: '% error = |measured − true| / true × 100 = 0.4/18.4 × 100.'
   },
   {
-  yr: 2023,
-  q: "If $y = cos(3x)$, find $\\frac{dy}{dx}$.",
-  o: ["$3 sin(3x)$", "$-3 sin(3x)$", "$-sin(3x)$", "$3 cos(3x)$"],
-  a: 1,
-  e: "Using chain rule: derivative of $cos(u)$ is $-sin(u) \\times u'$. So, $-sin(3x) \\times 3$.",
-  full: "The derivative of $cos$ is $-sin$. We then multiply by the derivative of the angle $(3x)$, which is 3.",
-  h: "Does the derivative of $cos$ involve a negative sign?"
-},
-{
-  yr: 2023,
-  q: "Evaluate $log_{10} 25 + log_{10} 4 + log_{10} 10$.",
-  o: ["2", "3", "4", "10"],
-  a: 1,
-  e: "Using $log A + log B = log(A \\times B)$. $log_{10}(25 \\times 4) + log_{10} 10 = log_{10} 100 + log_{10} 10 = 2 + 1 = 3$.",
-  full: "Since $10^2 = 100$, $log_{10} 100 = 2$. Since $10^1 = 10$, $log_{10} 10 = 1$. Total is 3.",
-  h: "Does $log 25 + log 4$ equal $log 100$?"
-},
-{
-  yr: 2023,
-  q: "Find the value of $x$ if $2^{x+1} = 32$.",
-  o: ["3", "4", "5", "6"],
-  a: 1,
-  e: "$32 = 2^5$. So, $2^{x+1} = 2^5 \\implies x+1 = 5 \\implies x = 4$.",
-  full: "In indices, if the bases are equal, the powers must be equal. $x + 1 = 5$ gives $x = 4$.",
-  h: "Is 32 equal to $2^4$ or $2^5$?"
-},
-{
-  yr: 2023,
-  q: "If $y = x^3 + 2x^2 - 5$, find $\\frac{dy}{dx}$ at $x = 1$.",
-  o: ["3", "5", "7", "9"],
-  a: 2,
-  e: "$\\frac{dy}{dx} = 3x^2 + 4x$. At $x=1$, $3(1)^2 + 4(1) = 3 + 4 = 7$.",
-  full: "Differentiate each term: $x^3$ becomes $3x^2$, $2x^2$ becomes $4x$, and $-5$ becomes 0. Substitute 1 for $x$.",
-  h: "Is the derivative of $x^3$ equal to $3x^2$?"
-},
-{
-  yr: 2023,
-  q: "Solve for $x$ in the equation $2x - 5 < 7$.",
-  o: ["$x < 1$", "$x < 6$", "$x > 6$", "$x < 12$"],
-  a: 1,
-  e: "$2x < 7 + 5 \\implies 2x < 12 \\implies x < 6$.",
-  full: "Add 5 to both sides to get $2x < 12$, then divide by 2 to isolate $x$.",
-  h: "Is $7 + 5$ equal to 12?"
-},
-{
-  yr: 2023,
-  q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
-  o: ["₦200", "₦400", "₦600", "₦800"],
-  a: 2,
-  e: "$I = \\frac{PRT}{100} = \\frac{5000 \\times 4 \\times 3}{100} = 50 \\times 12 = 600$.",
-  full: "Simple Interest formula is Principal $\\times$ Rate $\\times$ Time divided by 100. $5000 \\times 0.04 \\times 3 = 600$.",
-  h: "Is $50 \\times 12$ equal to 600?"
-},
-{
-  yr: 2023,
-  q: "Find the 10th term of the Arithmetic Progression (A.P.): 2, 5, 8, ...",
-  o: ["27", "29", "31", "33"],
-  a: 1,
-  e: "$a = 2, d = 3$. $T_{10} = a + 9d = 2 + 9(3) = 2 + 27 = 29$.",
-  full: "The formula for the $n^{th}$ term is $a + (n-1)d$. Here $n=10$, so we add 9 differences to the first term.",
-  h: "Is the common difference $d$ equal to 3?"
-},
-{
-  yr: 2023,
-  q: "If $sin \\theta = \\frac{3}{5}$, find $cos \\theta$ where $\\theta$ is acute.",
-  o: ["1/5", "2/5", "3/5", "4/5"],
-  a: 3,
-  e: "Using Pythagoras: $3^2 + x^2 = 5^2 \\implies 9 + x^2 = 25 \\implies x^2 = 16 \\implies x = 4$. $cos \\theta = 4/5$.",
-  full: "In a right-angled triangle, if opposite=3 and hypotenuse=5, the adjacent side must be 4. Cosine is Adjacent/Hypotenuse.",
-  h: "In a 3-4-5 triangle, is '4' the adjacent side?"
-},
-{
-  yr: 2023,
-  q: "Integrate $\\int (2x + 3) dx$.",
-  o: ["$x^2 + 3x + c$", "$2x^2 + 3x + c$", "$x^2 + c$", "$3x + c$"],
-  a: 0,
-  e: "$\\int 2x dx = x^2$ and $\\int 3 dx = 3x$. Add the constant $c$.",
-  full: "The rule for integration is $\\frac{x^{n+1}}{n+1}$. So $2x$ becomes $x^2$ and the constant 3 gains an $x$.",
-  h: "Does the integral of $2x$ result in $x^2$?"
-},
-{
-  yr: 2023,
-  q: "A bag contains 3 red and 5 blue balls. What is the probability of picking a red ball?",
-  o: ["3/5", "5/8", "3/8", "1/2"],
-  a: 2,
-  e: "Total balls = $3 + 5 = 8$. Red balls = 3. $P(Red) = 3/8$.",
-  full: "Probability is the number of favorable outcomes divided by the total number of possible outcomes.",
-  h: "Is the total number of balls 8?"
-},
-{
-  yr: 2023,
-  q: "Find the mean of the numbers: 10, 12, 14, 16, 18.",
-  o: ["12", "13", "14", "15"],
-  a: 2,
-  e: "Sum = $10+12+14+16+18 = 70$. $Mean = 70 / 5 = 14$.",
-  full: "Add all values and divide by the count (5). For an evenly spaced set, the mean is also the middle number.",
-  h: "Is the sum of these five numbers 70?"
-},
-{
-  yr: 2023,
-  q: "Express 0.0000427 in standard form.",
-  o: ["$4.27 \\times 10^{-4}$", "$4.27 \\times 10^{-5}$", "$42.7 \\times 10^{-6}$", "$4.27 \\times 10^5$"],
-  a: 1,
-  e: "Move the decimal 5 places to the right to get 4.27. Thus, $10^{-5}$.",
-  full: "Standard form is $a \\times 10^n$ where $1 \\le a < 10$. We moved the decimal past five zeros/digits.",
-  h: "Do you move the decimal 4 or 5 places?"
-},
-{
-  yr: 2023,
-  q: "The exterior angle of a regular polygon is 36°. How many sides does it have?",
-  o: ["8", "10", "12", "15"],
-  a: 1,
-  e: "Number of sides $n = 360 / \\text{Exterior Angle} = 360 / 36 = 10$.",
-  full: "The sum of exterior angles of any polygon is always 360°. Divide this by the value of one angle to find the number of sides.",
-  h: "Is $360 / 36$ equal to 10?"
-},
-{
-  yr: 2023,
-  q: "If $x^2 - 5x + 6 = 0$, find the values of $x$.",
-  o: ["(1, 6)", "(2, 3)", "(-2, -3)", "(5, 6)"],
-  a: 1,
-  e: "$(x - 2)(x - 3) = 0 \\implies x = 2$ or $x = 3$.",
-  full: "Factorize the quadratic. We need two numbers that multiply to $+6$ and add to $-5$. Those are $-2$ and $-3$.",
-  h: "Do $-2$ and $-3$ add up to $-5$?"
-},
-{
-  yr: 2023,
-  q: "Find the gradient (slope) of the line passing through (2, 3) and (4, 7).",
-  o: ["1", "2", "3", "4"],
-  a: 1,
-  e: "$m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{7 - 3}{4 - 2} = \\frac{4}{2} = 2$.",
-  full: "Gradient formula is the 'Rise over Run'. Difference in $y$ divided by difference in $x$.",
-  h: "Is $4 / 2$ equal to 2?"
-},
-{
-  yr: 2023,
-  q: "Convert 1101 in base 2 to base 10.",
-  o: ["11", "12", "13", "14"],
-  a: 2,
-  e: "$(1 \\times 2^3) + (1 \\times 2^2) + (0 \\times 2^1) + (1 \\times 2^0) = 8 + 4 + 0 + 1 = 13$.",
-  full: "Multiply each bit by the power of 2 corresponding to its position (starting from 0 on the right).",
-  h: "Is $8 + 4 + 1$ equal to 13?"
-},
-{
-  yr: 2023,
-  q: "Calculate the volume of a cylinder with radius 7cm and height 10cm. (Take $\\pi = 22/7$)",
-  o: ["770cm³", "1540cm³", "154cm³", "440cm³"],
-  a: 1,
-  e: "$V = \\pi r^2 h = (22/7) \\times 7 \\times 7 \\times 10 = 22 \\times 7 \\times 10 = 1540$.",
-  full: "Volume is the area of the circular base ($\\pi r^2$) multiplied by the height. One 7 cancels out from the denominator.",
-  h: "Is $154 \\times 10$ equal to 1540?"
-},
-{
-  yr: 2023,
-  q: "Rationalize the expression $\\frac{2}{\\sqrt{2}}$.",
-  o: ["1", "2", "$\\sqrt{2}$", "$2\\sqrt{2}$"],
-  a: 2,
-  e: "Multiply numerator and denominator by $\\sqrt{2}$. $\\frac{2\\sqrt{2}}{2} = \\sqrt{2}$.",
-  full: "To rationalize a denominator, multiply top and bottom by the root. The 2 in the numerator cancels the 2 in the denominator.",
-  h: "Does $\\sqrt{2} \\times \\sqrt{2}$ equal 2?"
-},
-{
-  yr: 2023,
-  q: "Find the Median of the set: 3, 7, 9, 4, 10, 2, 8.",
-  o: ["4", "7", "8", "9"],
-  a: 1,
-  e: "Sorted set: 2, 3, 4, 7, 8, 9, 10. The middle number is 7.",
-  full: "Always arrange the numbers in ascending or descending order first. Since there are 7 numbers, the 4th one is the median.",
-  h: "Is 7 the middle number when sorted?"
-},
-{
-  yr: 2023,
-  q: "If the binary operation $*$ is defined by $a * b = ab + a + b$, find $2 * 3$.",
-  o: ["6", "10", "11", "12"],
-  a: 2,
-  e: "$2 * 3 = (2 \\times 3) + 2 + 3 = 6 + 2 + 3 = 11$.",
-  full: "Substitute the values 2 and 3 into the given formula for $a$ and $b$.",
-  h: "Is $6 + 5$ equal to 11?"
-},
-{
-  yr: 2023,
-  q: "Find the sum of the interior angles of a pentagon.",
-  o: ["360°", "540°", "720°", "900°"],
-  a: 1,
-  e: "$(n - 2) \\times 180 = (5 - 2) \\times 180 = 3 \\times 180 = 540$.",
-  full: "The formula for the sum of interior angles is $(n-2) \\times 180$, where $n$ is the number of sides.",
-  h: "Is $3 \\times 180$ equal to 540?"
-},
-{
-  yr: 2022,
-  q: "If $y = 3x^2 - 5x + 2$, find the gradient of the curve at $x = 2$.",
-  o: ["2", "5", "7", "12"],
-  a: 2,
-  e: "$\\frac{dy}{dx} = 6x - 5$. At $x=2$, $6(2) - 5 = 12 - 5 = 7$.",
-  full: "The gradient of a curve at a point is the value of its first derivative at that point. $6x$ comes from $3x^2$ and $-5$ from $-5x$.",
-  h: "Is $12 - 5$ equal to 7?"
-},
-{
-  yr: 2022,
-  q: "Simplify $\\frac{log 8}{log 4}$.",
-  o: ["2", "1.5", "0.5", "4"],
-  a: 1,
-  e: "$\\frac{log 2^3}{log 2^2} = \\frac{3 log 2}{2 log 2} = 3/2 = 1.5$.",
-  full: "Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the $log 2$.",
-  h: "Is $log 8$ equal to $3 log 2$?"
-},
-{
-  yr: 2022,
-  q: "Find the value of $x$ for which $2^{2x-1} = 8$.",
-  o: ["1", "2", "3", "4"],
-  a: 1,
-  e: "$2^{2x-1} = 2^3 \\implies 2x - 1 = 3 \\implies 2x = 4 \\implies x = 2$.",
-  full: "Since the bases are both 2, equate the exponents. Solving $2x - 1 = 3$ gives $x = 2$.",
-  h: "Is $3 + 1$ equal to 4?"
-},
-{
-  yr: 2022,
-  q: "Solve for $x$ in $3x - 2 > 5x + 4$.",
-  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
-  a: 0,
-  e: "$-6 > 2x \\implies -3 > x \\implies x < -3$.",
-  full: "Subtract $3x$ from both sides and subtract 4 from both sides. Remember: dividing by a positive doesn't flip the sign.",
-  h: "Is $4 + 2$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "If $sin \\theta = cos \\theta$, find $\\theta$ for $0^\\circ \\le \\theta \\le 90^\\circ$.",
-  o: ["0°", "30°", "45°", "60°"],
-  a: 2,
-  e: "Divide by $cos \\theta$: $tan \\theta = 1 \\implies \\theta = 45^\\circ$.",
-  full: "The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).",
-  h: "Is $tan 45$ equal to 1?"
-},
-{
-  yr: 2022,
-  q: "Find the midpoint of the line joining ( -2, 4) and (6, 8).",
-  o: ["(2, 6)", "(4, 12)", "(2, 12)", "(4, 6)"],
-  a: 0,
-  e: "$M = (\\frac{-2+6}{2}, \\frac{4+8}{2}) = (4/2, 12/2) = (2, 6)$.",
-  full: "The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.",
-  h: "Is $4 / 2$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
-  o: ["₦500", "₦1,000", "₦1,500", "₦2,000"],
-  a: 1,
-  e: "$I = \\frac{10000 \\times 5 \\times 2}{100} = 100 \\times 10 = 1000$.",
-  full: "Interest is Principal $\\times$ Rate $\\times$ Time. $10,000 \\times 0.05 \\times 2 = 1,000$.",
-  h: "Is $5 \\times 2$ equal to 10?"
-},
-{
-  yr: 2022,
-  q: "Evaluate $\\int_1^2 3x^2 dx$.",
-  o: ["3", "5", "7", "9"],
-  a: 2,
-  e: "$[x^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$.",
-  full: "Integrate $3x^2$ to get $x^3$. Then substitute the upper limit (2) and subtract the lower limit (1).",
-  h: "Is $2^3$ equal to 8?"
-},
-{
-  yr: 2022,
-  q: "A circle has an area of 616cm². Find its radius. ($\\pi = 22/7$)",
-  o: ["7cm", "14cm", "21cm", "28cm"],
-  a: 1,
-  e: "$(22/7) r^2 = 616 \\implies r^2 = (616 \\times 7) / 22 = 28 \\times 7 = 196 \\implies r = 14$.",
-  full: "Set $\\pi r^2$ equal to 616 and solve for $r$. $196$ is the square of 14.",
-  h: "Is $14 \\times 14$ equal to 196?"
-},
-{
-  yr: 2022,
-  q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
-  o: ["2", "3", "5", "6"],
-  a: 0,
-  e: "The number 2 appears three times, which is more than any other number.",
-  full: "The mode is the value that occurs most frequently in a data set.",
-  h: "Does '2' appear more than '5'?"
-},
-{
-  yr: 2022,
-  q: "If $log_{10} x = -2$, find $x$.",
-  o: ["0.2", "0.02", "0.01", "100"],
-  a: 2,
-  e: "$x = 10^{-2} = 1/100 = 0.01$.",
-  full: "Logarithm to base 10 of $x = y$ means $x = 10^y$.",
-  h: "Is $10^{-2}$ the same as $1/100$?"
-},
-{
-  yr: 2022,
-  q: "Factorize completely: $4x^2 - 9y^2$.",
-  o: ["$(2x-3y)^2$", "$(2x+3y)^2$", "$(2x-3y)(2x+3y)$", "$(4x-9y)(x+y)$"],
-  a: 2,
-  e: "Using $a^2 - b^2 = (a-b)(a+b)$. Here $a=2x$ and $b=3y$.",
-  full: "This is a difference of two squares. $4x^2$ is $(2x)^2$ and $9y^2$ is $(3y)^2$.",
-  h: "Is the root of $4x^2$ equal to $2x$?"
-},
-{
-  yr: 2022,
-  q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
-  o: ["24", "48", "96", "120"],
-  a: 1,
-  e: "$T_5 = ar^4 = 3(2^4) = 3(16) = 48$.",
-  full: "The formula for the $n^{th}$ term of a G.P. is $ar^{n-1}$.",
-  h: "Is $2^4$ equal to 16?"
-},
-{
-  yr: 2022,
-  q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
-  o: ["0", "1.33", "2", "4"],
-  a: 1,
-  e: "$Mean = 4$. Deviations: $|2-4|=2, |4-4|=0, |6-4|=2$. $MD = (2+0+2)/3 = 4/3 = 1.33$.",
-  full: "Mean deviation is the average of the absolute differences between each value and the mean.",
-  h: "Is the mean of 2, 4, 6 equal to 4?"
-},
-{
-  yr: 2022,
-  q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
-  o: ["6", "7", "8", "10"],
-  a: 2,
-  e: "$(n-2)180 = 1080 \\implies n-2 = 6 \\implies n = 8$.",
-  full: "Divide 1080 by 180 to find $n-2$, then add 2 to find the number of sides.",
-  h: "Is $1080 / 180$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "If $y = 2x^3$, find $\\frac{dy}{dx}$.",
-  o: ["$2x^2$", "$6x^2$", "$6x^3$", "$x^2$"],
-  a: 1,
-  e: "$\\frac{dy}{dx} = 2(3)x^{3-1} = 6x^2$.",
-  full: "Multiply the coefficient by the power and decrease the power by 1.",
-  h: "Is $2 \\times 3$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. ($\\pi = 22/7$)",
-  o: ["3.33cm", "7.33cm", "14.67cm", "22cm"],
-  a: 1,
-  e: "$L = (\\theta/360) \\times 2\\pi r = (60/360) \\times 2 \\times (22/7) \\times 7 = (1/6) \\times 44 = 7.33$.",
-  full: "The length of an arc is a fraction of the total circumference based on the central angle.",
-  h: "Is $44 / 6$ approximately 7.33?"
-},
-{
-  yr: 2022,
-  q: "Rationalize $\\frac{1}{\\sqrt{3} - 1}$.",
-  o: ["$\\sqrt{3} + 1$", "$\\frac{\\sqrt{3} + 1}{2}$", "$\\sqrt{3} - 1$", "$\\frac{\\sqrt{3} - 1}{2}$"],
-  a: 1,
-  e: "Multiply by conjugate: $\\frac{\\sqrt{3}+1}{(\\sqrt{3}-1)(\\sqrt{3}+1)} = \\frac{\\sqrt{3}+1}{3-1} = \\frac{\\sqrt{3}+1}{2}$.",
-  full: "To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).",
-  h: "Is $(\\sqrt{3})^2 - 1^2$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "If $y = 3x^2 - 5x + 2$, find the gradient of the curve at $x = 2$.",
-  o: ["2", "5", "7", "12"],
-  a: 2,
-  e: "$\\frac{dy}{dx} = 6x - 5$. At $x=2$, $6(2) - 5 = 12 - 5 = 7$.",
-  full: "The gradient of a curve at a point is the value of its first derivative at that point. $6x$ comes from $3x^2$ and $-5$ from $-5x$.",
-  h: "Is $12 - 5$ equal to 7?"
-},
-{
-  yr: 2022,
-  q: "Simplify $\\frac{log 8}{log 4}$.",
-  o: ["2", "1.5", "0.5", "4"],
-  a: 1,
-  e: "$\\frac{log 2^3}{log 2^2} = \\frac{3 log 2}{2 log 2} = 3/2 = 1.5$.",
-  full: "Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the $log 2$.",
-  h: "Is $log 8$ equal to $3 log 2$?"
-},
-{
-  yr: 2022,
-  q: "Find the value of $x$ for which $2^{2x-1} = 8$.",
-  o: ["1", "2", "3", "4"],
-  a: 1,
-  e: "$2^{2x-1} = 2^3 \\implies 2x - 1 = 3 \\implies 2x = 4 \\implies x = 2$.",
-  full: "Since the bases are both 2, equate the exponents. Solving $2x - 1 = 3$ gives $x = 2$.",
-  h: "Is $3 + 1$ equal to 4?"
-},
-{
-  yr: 2022,
-  q: "Solve for $x$ in $3x - 2 > 5x + 4$.",
-  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
-  a: 0,
-  e: "$-6 > 2x \\implies -3 > x \\implies x < -3$.",
-  full: "Subtract $3x$ from both sides and subtract 4 from both sides. Remember: dividing by a positive doesn't flip the sign.",
-  h: "Is $4 + 2$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "If $sin \\theta = cos \\theta$, find $\\theta$ for $0^\\circ \\le \\theta \\le 90^\\circ$.",
-  o: ["0°", "30°", "45°", "60°"],
-  a: 2,
-  e: "Divide by $cos \\theta$: $tan \\theta = 1 \\implies \\theta = 45^\\circ$.",
-  full: "The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).",
-  h: "Is $tan 45$ equal to 1?"
-},
-{
-  yr: 2022,
-  q: "Find the midpoint of the line joining ( -2, 4) and (6, 8).",
-  o: ["(2, 6)", "(4, 12)", "(2, 12)", "(4, 6)"],
-  a: 0,
-  e: "$M = (\\frac{-2+6}{2}, \\frac{4+8}{2}) = (4/2, 12/2) = (2, 6)$.",
-  full: "The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.",
-  h: "Is $4 / 2$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
-  o: ["₦500", "₦1,000", "₦1,500", "₦2,000"],
-  a: 1,
-  e: "$I = \\frac{10000 \\times 5 \\times 2}{100} = 100 \\times 10 = 1000$.",
-  full: "Interest is Principal $\\times$ Rate $\\times$ Time. $10,000 \\times 0.05 \\times 2 = 1,000$.",
-  h: "Is $5 \\times 2$ equal to 10?"
-},
-{
-  yr: 2022,
-  q: "Evaluate $\\int_1^2 3x^2 dx$.",
-  o: ["3", "5", "7", "9"],
-  a: 2,
-  e: "$[x^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$.",
-  full: "Integrate $3x^2$ to get $x^3$. Then substitute the upper limit (2) and subtract the lower limit (1).",
-  h: "Is $2^3$ equal to 8?"
-},
-{
-  yr: 2022,
-  q: "A circle has an area of 616cm². Find its radius. ($\\pi = 22/7$)",
-  o: ["7cm", "14cm", "21cm", "28cm"],
-  a: 1,
-  e: "$(22/7) r^2 = 616 \\implies r^2 = (616 \\times 7) / 22 = 28 \\times 7 = 196 \\implies r = 14$.",
-  full: "Set $\\pi r^2$ equal to 616 and solve for $r$. $196$ is the square of 14.",
-  h: "Is $14 \\times 14$ equal to 196?"
-},
-{
-  yr: 2022,
-  q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
-  o: ["2", "3", "5", "6"],
-  a: 0,
-  e: "The number 2 appears three times, which is more than any other number.",
-  full: "The mode is the value that occurs most frequently in a data set.",
-  h: "Does '2' appear more than '5'?"
-},
-{
-  yr: 2022,
-  q: "If $log_{10} x = -2$, find $x$.",
-  o: ["0.2", "0.02", "0.01", "100"],
-  a: 2,
-  e: "$x = 10^{-2} = 1/100 = 0.01$.",
-  full: "Logarithm to base 10 of $x = y$ means $x = 10^y$.",
-  h: "Is $10^{-2}$ the same as $1/100$?"
-},
-{
-  yr: 2022,
-  q: "Factorize completely: $4x^2 - 9y^2$.",
-  o: ["$(2x-3y)^2$", "$(2x+3y)^2$", "$(2x-3y)(2x+3y)$", "$(4x-9y)(x+y)$"],
-  a: 2,
-  e: "Using $a^2 - b^2 = (a-b)(a+b)$. Here $a=2x$ and $b=3y$.",
-  full: "This is a difference of two squares. $4x^2$ is $(2x)^2$ and $9y^2$ is $(3y)^2$.",
-  h: "Is the root of $4x^2$ equal to $2x$?"
-},
-{
-  yr: 2022,
-  q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
-  o: ["24", "48", "96", "120"],
-  a: 1,
-  e: "$T_5 = ar^4 = 3(2^4) = 3(16) = 48$.",
-  full: "The formula for the $n^{th}$ term of a G.P. is $ar^{n-1}$.",
-  h: "Is $2^4$ equal to 16?"
-},
-{
-  yr: 2022,
-  q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
-  o: ["0", "1.33", "2", "4"],
-  a: 1,
-  e: "$Mean = 4$. Deviations: $|2-4|=2, |4-4|=0, |6-4|=2$. $MD = (2+0+2)/3 = 4/3 = 1.33$.",
-  full: "Mean deviation is the average of the absolute differences between each value and the mean.",
-  h: "Is the mean of 2, 4, 6 equal to 4?"
-},
-{
-  yr: 2022,
-  q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
-  o: ["6", "7", "8", "10"],
-  a: 2,
-  e: "$(n-2)180 = 1080 \\implies n-2 = 6 \\implies n = 8$.",
-  full: "Divide 1080 by 180 to find $n-2$, then add 2 to find the number of sides.",
-  h: "Is $1080 / 180$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "If $y = 2x^3$, find $\\frac{dy}{dx}$.",
-  o: ["$2x^2$", "$6x^2$", "$6x^3$", "$x^2$"],
-  a: 1,
-  e: "$\\frac{dy}{dx} = 2(3)x^{3-1} = 6x^2$.",
-  full: "Multiply the coefficient by the power and decrease the power by 1.",
-  h: "Is $2 \\times 3$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. ($\\pi = 22/7$)",
-  o: ["3.33cm", "7.33cm", "14.67cm", "22cm"],
-  a: 1,
-  e: "$L = (\\theta/360) \\times 2\\pi r = (60/360) \\times 2 \\times (22/7) \\times 7 = (1/6) \\times 44 = 7.33$.",
-  full: "The length of an arc is a fraction of the total circumference based on the central angle.",
-  h: "Is $44 / 6$ approximately 7.33?"
-},
-{
-  yr: 2022,
-  q: "Rationalize $\\frac{1}{\\sqrt{3} - 1}$.",
-  o: ["$\\sqrt{3} + 1$", "$\\frac{\\sqrt{3} + 1}{2}$", "$\\sqrt{3} - 1$", "$\\frac{\\sqrt{3} - 1}{2}$"],
-  a: 1,
-  e: "Multiply by conjugate: $\\frac{\\sqrt{3}+1}{(\\sqrt{3}-1)(\\sqrt{3}+1)} = \\frac{\\sqrt{3}+1}{3-1} = \\frac{\\sqrt{3}+1}{2}$.",
-  full: "To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).",
-  h: "Is $(\\sqrt{3})^2 - 1^2$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "Convert $25_{10}$ to binary (base 2).",
-  o: ["11001", "10110", "11101", "10011"],
-  a: 0,
-  e: "$25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1$. Reading up: 11001.",
-  full: "Successively divide the base 10 number by 2 and record the remainders from bottom to top.",
-  h: "Is the first remainder 1?"
-},
-{
-  yr: 2022,
-  q: "If $x$ varies inversely as $y$ and $x=4$ when $y=3$, find $x$ when $y=6$.",
-  o: ["2", "4", "8", "12"],
-  a: 0,
-  e: "$xy = k \\implies 4 \\times 3 = 12 = k$. When $y=6, 6x = 12 \\implies x = 2$.",
-  full: "In inverse variation, the product of the two variables remains constant ($k$).",
-  h: "Is $12 / 6$ equal to 2?"
-},
-
-{
-  yr: 2022,
-  q: "Find the value of $x$ in the equation $log_3(2x + 1) = 2$.",
-  o: ["2", "4", "8", "9"],
-  a: 1,
-  e: "$2x + 1 = 3^2 = 9 \\implies 2x = 8 \\implies x = 4$.",
-  full: "Convert the log to index form: the base 3 raised to the power of 2 equals the bracket $(2x+1)$.",
-  h: "Is $3^2$ equal to 9?"
-},
-{
-  yr: 2022,
-  q: "If $y = (2x + 3)^4$, find $\\frac{dy}{dx}$.",
-  o: ["$4(2x+3)^3$", "$8(2x+3)^3$", "$8(2x+3)^4$", "$2(2x+3)^3$"],
-  a: 1,
-  e: "$4(2x+3)^3 \\times 2 = 8(2x+3)^3$.",
-  full: "Using the function of a function rule (Chain Rule), differentiate the outer bracket and multiply by the derivative of the inside (2).",
-  h: "Is $4 \\times 2$ equal to 8?"
-},
-{
-  yr: 2022,
-  q: "Find the equation of the line passing through (0, 5) with gradient 3.",
-  o: ["$y = 3x - 5$", "$y = 5x + 3$", "$y = 3x + 5$", "$y = -3x + 5$"],
-  a: 2,
-  e: "Using $y = mx + c$, where $m=3$ and $c=5$.",
-  full: "The y-intercept ($c$) is 5 because the line passes through (0, 5). Substituting the gradient ($m=3$) gives the equation.",
-  h: "Is the constant term 5?"
-},
-{
-  yr: 2022,
-  q: "A bag contains 4 white and 6 black balls. If a ball is picked at random, what is the probability it is NOT white?",
-  o: ["2/5", "3/5", "1/2", "2/3"],
-  a: 1,
-  e: "Total = 10. Not white = Black = 6. $P = 6/10 = 3/5$.",
-  full: "The probability of an event 'not happening' is 1 minus the probability of it happening, or simply the count of the other outcomes.",
-  h: "Is $6 / 10$ the same as $3 / 5$?"
-},
-{
-  yr: 2022,
-  q: "If $sin \\theta = 0.8$, find $tan \\theta$ for an acute angle $\\theta$.",
-  o: ["0.6", "0.75", "1.33", "1.25"],
-  a: 2,
-  e: "$Opp=8, Hyp=10 \\implies Adj=6$. $tan \\theta = 8/6 = 1.33$.",
-  full: "In a right triangle, if $sin = 0.8 (4/5)$, the sides are 3, 4, 5. Tangent is Opposite (4) over Adjacent (3).",
-  h: "Is $4 / 3$ approximately 1.33?"
-},
-{
-  yr: 2022,
-  q: "Evaluate $110.11_2 + 10.01_2$.",
-  o: ["$1001.00_2$", "$1000.11_2$", "$101.00_2$", "$1001.11_2$"],
-  a: 0,
-  e: "$110.11 + 10.01 = 1001.00$ in base 2.",
-  full: "Line up the points and add. $1+1=10$ (write 0, carry 1). Carry the values over just like base 10 addition.",
-  h: "Does $1 + 1$ equal $10$ in base 2?"
-},
-{
-  yr: 2022,
-  q: "Find the variance of the numbers: 3, 5, 7.",
-  o: ["2", "2.67", "4", "8"],
-  a: 2,
-  e: "$Mean = 5$. $Var = ((3-5)^2 + (5-5)^2 + (7-5)^2)/3 = (4+0+4)/2$. Wait, sample variance is 4.",
-  full: "Calculate the mean (5), subtract from each number and square the result (4, 0, 4). The average of these squares is the variance.",
-  h: "Is $(4 + 4) / 2$ equal to 4?"
-},
-{
-  yr: 2022,
-  q: "Simplify $\\frac{x}{2} - \\frac{x-1}{3}$.",
-  o: ["$\\frac{x-2}{6}$", "$\\frac{x+2}{6}$", "$\\frac{5x-2}{6}$", "$\\frac{x+1}{6}$"],
-  a: 1,
-  e: "$\\frac{3x - 2(x-1)}{6} = \\frac{3x - 2x + 2}{6} = \\frac{x+2}{6}$.",
-  full: "Find a common denominator (6). Be careful with the negative sign when expanding $-2(x-1)$.",
-  h: "Does $-2 \\times -1$ equal $+2$?"
-},
-{
-  yr: 2022,
-  q: "If $M = \\begin{pmatrix} 1 & 2 \\\\ 0 & 3 \\end{pmatrix}$, find $M^2$.",
-  o: ["$\\begin{pmatrix} 1 & 4 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 8 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 6 \\\\ 0 & 9 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 2 \\\\ 0 & 3 \\end{pmatrix}$"],
-  a: 1,
-  e: "$Row1 \\times Col2 = (1 \\times 2) + (2 \\times 3) = 8$.",
-  full: "Multiply the matrix by itself. $M \\times M$. The top right element is 8, and the bottom right is 9.",
-  h: "Is $2 + 6$ equal to 8?"
-},
-{
-  yr: 2022,
-  q: "Find the sum to infinity of the G.P.: $1, 1/2, 1/4, ...$",
-  o: ["1.5", "2", "3", "$\\infty$"],
-  a: 1,
-  e: "$S_\\infty = \\frac{a}{1-r} = \\frac{1}{1 - 0.5} = 1 / 0.5 = 2$.",
-  full: "The sum to infinity formula applies because the common ratio $r$ is less than 1.",
-  h: "Is $1 / 0.5$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "How many ways can 3 students be seated in a row of 3 chairs?",
-  o: ["3", "6", "9", "27"],
-  a: 1,
-  e: "$3! = 3 \\times 2 \\times 1 = 6$.",
-  full: "This is a permutation of 3 items. $3$ choices for the first chair, $2$ for the second, and $1$ for the last.",
-  h: "Is $3 \\times 2$ equal to 6?"
-},
-{
-  yr: 2022,
-  q: "Find the derivative of $\\frac{1}{x}$.",
-  o: ["$log x$", "$1$", "$-x^{-2}$", "$x^2$"],
-  a: 2,
-  e: "$x^{-1}$ derivative is $-1x^{-2}$.",
-  full: "Rewrite $1/x$ as $x$ to the power of $-1$. Apply the power rule: multiply by the power and decrease it by 1.",
-  h: "Is $-1 - 1$ equal to -2?"
-},
-{
-  yr: 2022,
-  q: "If $2x + y = 7$ and $x - y = 2$, find $x$.",
-  o: ["1", "2", "3", "4"],
-  a: 2,
-  e: "Adding both equations: $3x = 9 \\implies x = 3$.",
-  full: "Use the elimination method. Adding the equations cancels out the $+y$ and $-y$.",
-  h: "Is $9 / 3$ equal to 3?"
-},
-{
-  yr: 2022,
-  q: "Calculate the volume of a sphere of radius 3cm. (Leave in $\\pi$)",
-  o: ["$12\\pi cm^3$", "$24\\pi cm^3$", "$36\\pi cm^3$", "$48\\pi cm^3$"],
-  a: 2,
-  e: "$V = \\frac{4}{3} \\pi r^3 = \\frac{4}{3} \\pi (27) = 4 \\times 9\\pi = 36\\pi$.",
-  full: "The formula is $4/3$ times $\\pi$ times the radius cubed. $3^3$ is 27.",
-  h: "Is $4 \\times 9$ equal to 36?"
-},
-{
-  yr: 2022,
-  q: "What is the value of $sin 120^\\circ$?",
-  o: ["0.5", "0.866", "-0.5", "-0.866"],
-  a: 1,
-  e: "$sin(180 - 60) = sin 60 = \\frac{\\sqrt{3}}{2} \\approx 0.866$.",
-  full: "Sine is positive in the second quadrant. $sin 120$ is equivalent to $sin 60$.",
-  h: "Is $sin 120$ positive?"
-},
-{
-  yr: 2022,
-  q: "Solve for $x$: $x^2 + 7x + 10 = 0$.",
-  o: ["(2, 5)", "(-2, -5)", "(1, 10)", "(-1, -10)"],
-  a: 1,
-  e: "$(x+2)(x+5) = 0 \\implies x = -2, -5$.",
-  full: "We need two numbers that multiply to 10 and add to 7. Those are 2 and 5. The roots are the negative of those factors.",
-  h: "Do 2 and 5 add to 7?"
-},
-{
-  yr: 2022,
-  q: "A pyramid has a square base of side 5cm and a height of 12cm. Find its volume.",
-  o: ["60cm³", "100cm³", "150cm³", "300cm³"],
-  a: 1,
-  e: "$V = \\frac{1}{3} \\times Area \\times h = \\frac{1}{3} \\times 25 \\times 12 = 25 \\times 4 = 100$.",
-  full: "The volume of a pyramid is one-third the base area times the vertical height.",
-  h: "Is $12 / 3$ equal to 4?"
-},
-{
-  yr: 2022,
-  q: "Simplify $(2^3)^2 \\times 2^{-4}$.",
-  o: ["2", "4", "8", "16"],
-  a: 1,
-  e: "$2^6 \\times 2^{-4} = 2^{6-4} = 2^2 = 4$.",
-  full: "Multiply powers when one is inside and one is outside the bracket. Then add powers when multiplying the same base.",
-  h: "Is $6 - 4$ equal to 2?"
-},
-{
-  yr: 2022,
-  q: "If the mean of 4, 7, $x$, and 9 is 7, find $x$.",
-  o: ["6", "7", "8", "10"],
-  a: 2,
-  e: "$(4+7+x+9)/4 = 7 \\implies 20+x = 28 \\implies x = 8$.",
-  full: "The sum of the four numbers must equal 4 times the mean (28).",
-  h: "Is $28 - 20$ equal to 8?"
-},
-{
-  yr: 2022,
-  q: "Find the simple interest on ₦2000 for 6 months at 10% per annum.",
-  o: ["₦100", "₦200", "₦10", "₦120"],
-  a: 0,
-  e: "$I = \\frac{2000 \\times 10 \\times 0.5}{100} = 100$.",
-  full: "6 months is $0.5$ years. Interest is Principal $\\times$ Rate $\\times$ Time in years.",
-  h: "Is half of 200 equal to 100?"
-},
-
-{
-  yr: 2022,
-  q: "Convert $25_{10}$ to binary (base 2).",
-  o: ["11001", "10110", "11101", "10011"],
-  a: 0,
-  e: "$25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1$. Reading up: 11001.",
-  full: "Successively divide the base 10 number by 2 and record the remainders from bottom to top.",
-  h: "Is the first remainder 1?"
-},
-{
-  yr: 2022,
-  q: "If $x$ varies inversely as $y$ and $x=4$ when $y=3$, find $x$ when $y=6$.",
-  o: ["2", "4", "8", "12"],
-  a: 0,
-  e: "$xy = k \\implies 4 \\times 3 = 12 = k$. When $y=6, 6x = 12 \\implies x = 2$.",
-  full: "In inverse variation, the product of the two variables remains constant ($k$).",
-  h: "Is $12 / 6$ equal to 2?"
-},
-{
-  yr: 2021,
-  q: "If $P = {1, 2, 3, 4, 5, 6}$ and $Q = {3, 4, 5, 6, 7, 8}$, find $P \\cap Q$.",
-  o: ["{1, 2, 7, 8}", "{3, 4, 5, 6}", "{1, 2, 3, 4, 5, 6, 7, 8}", "{ }"],
-  a: 1,
-  e: "The intersection ($\\cap$) consists of elements common to both sets: 3, 4, 5, and 6.",
-  full: "Intersection means 'and'—only the numbers that appear in both $P$ and $Q$ are included.",
-  h: "Are 3, 4, 5, and 6 in both lists?"
-},
-{
-  yr: 2021,
-  q: "Simplify $\\frac{\\sqrt{48}}{\\sqrt{3}}$.",
-  o: ["2", "4", "6", "16"],
-  a: 1,
-  e: "$\\sqrt{48/3} = \\sqrt{16} = 4$.",
-  full: "You can divide numbers under a square root just like regular numbers. 48 divided by 3 is 16.",
-  h: "Is the square root of 16 equal to 4?"
-},
-{
-  yr: 2021,
-  q: "Find the value of $x$ if $log_x 64 = 3$.",
-  o: ["2", "4", "8", "16"],
-  a: 1,
-  e: "$x^3 = 64 \\implies x = \\sqrt[3]{64} = 4$.",
-  full: "In log form, the base $x$ raised to the power 3 must equal 64. Since $4 \\times 4 \\times 4 = 64$, $x$ is 4.",
-  h: "Is $4^3$ equal to 64?"
-},
-{
-  yr: 2021,
-  q: "Solve the quadratic equation $x^2 - x - 6 = 0$.",
-  o: ["(2, 3)", "(-2, 3)", "(2, -3)", "(-2, -3)"],
-  a: 1,
-  e: "$(x+2)(x-3) = 0 \\implies x = -2, 3$.",
-  full: "Find two numbers that multiply to -6 and add to -1. These are +2 and -3. The roots are the opposite signs.",
-  h: "Does $2 - 3$ equal -1?"
-},
-{
-  yr: 2021,
-  q: "Calculate the area of a sector of a circle with radius 6cm and angle 70°. ($\\pi = 22/7$)",
-  o: ["22cm²", "44cm²", "11cm²", "33cm²"],
-  a: 0,
-  e: "$A = (70/360) \\times (22/7) \\times 36 = (1/360) \\times 10 \\times 22 \\times 36 = 22$.",
-  full: "The 36 from $r^2$ cancels nicely with the 360 denominator, leaving a very clean calculation.",
-  h: "Is $10 \\times 36$ equal to 360?"
-},
-{
-  yr: 2021,
-  q: "If $y = 5x^4 - x^2$, find $\\frac{d^2y}{dx^2}$.",
-  o: ["$20x^3 - 2x$", "$60x^2 - 2$", "$60x^2$", "$20x^3$"],
-  a: 1,
-  e: "$dy/dx = 20x^3 - 2x$. Differentiating again: $60x^2 - 2$.",
-  full: "This is the second derivative. Differentiate once, then differentiate that result again.",
-  h: "Is the derivative of $20x^3$ equal to $60x^2$?"
-},
-{
-  yr: 2021,
-  q: "Evaluate $sin^2 30^\\circ + cos^2 30^\\circ$.",
-  o: ["0.5", "1", "1.5", "2"],
-  a: 1,
-  e: "Trigonometric identity: $sin^2 \\theta + cos^2 \\theta = 1$ for any angle.",
-  full: "Even without calculating the specific values, this fundamental identity always equals 1.",
-  h: "Is the sum of $sin^2$ and $cos^2$ always 1?"
-},
-{
-  yr: 2021,
-  q: "Find the gradient of the line $2x + 3y = 6$.",
-  o: ["2", "3", "2/3", "-2/3"],
-  a: 3,
-  e: "$3y = -2x + 6 \\implies y = (-2/3)x + 2$. Gradient is $-2/3$.",
-  full: "Rearrange the equation into the slope-intercept form $y = mx + c$. The coefficient of $x$ is the gradient.",
-  h: "Is the gradient negative?"
-},
-{
-  yr: 2021,
-  q: "A boy is 5 years older than his sister. If the sum of their ages is 19, how old is the sister?",
-  o: ["7", "12", "5", "14"],
-  a: 0,
-  e: "$x + (x+5) = 19 \\implies 2x = 14 \\implies x = 7$.",
-  full: "Let the sister's age be $x$. The boy is $x+5$. Solving the simple equation gives 7.",
-  h: "Is $19 - 5$ equal to 14?"
-},
-{
-  yr: 2021,
-  q: "Find the mean of $x, x+2, x+4, x+6$.",
-  o: ["$x+2$", "$x+3$", "$x+4$", "$x+5$"],
-  a: 1,
-  e: "Sum = $4x + 12$. Mean = $(4x + 12) / 4 = x + 3$.",
-  full: "Add all four terms and divide by 4. $4x$ divided by 4 is $x$, and 12 divided by 4 is 3.",
-  h: "Is the middle of the set between $x+2$ and $x+4$?"
-},
-{
-  yr: 2021,
-  q: "Simplify $(3^0 + 3^{-1})^{-1}$.",
-  o: ["3/4", "4/3", "1/4", "3"],
-  a: 0,
-  e: "$(1 + 1/3)^{-1} = (4/3)^{-1} = 3/4$.",
-  full: "Anything to power 0 is 1. $3^{-1}$ is $1/3$. The final negative power flips the fraction.",
-  h: "Is $1 + 1/3$ equal to $4/3$?"
-},
-{
-  yr: 2021,
-  q: "Convert $101.1_2$ to base 10.",
-  o: ["5.1", "5.5", "6.5", "7.5"],
-  a: 1,
-  e: "$4 + 0 + 1 + 0.5 = 5.5$.",
-  full: "The digit after the decimal in base 2 represents $2^{-1}$, which is $0.5$.",
-  h: "Is $1/2$ equal to 0.5?"
-},
-{
-  yr: 2021,
-  q: "If $y$ is inversely proportional to $x^2$ and $y=2$ when $x=3$, find $y$ when $x=1$.",
-  o: ["6", "9", "18", "36"],
-  a: 2,
-  e: "$y = k/x^2 \\implies 2 = k/9 \\implies k=18$. When $x=1, y=18/1 = 18$.",
-  full: "The constant $k$ is $y \\times x^2$. Since $2 \\times 9 = 18$, the constant is 18.",
-  h: "Is $2 \\times 9$ equal to 18?"
-},
-{
-  yr: 2021,
-  q: "Find the 20th term of the A.P. $-5, -2, 1, ...$",
-  o: ["52", "55", "58", "61"],
-  a: 0,
-  e: "$a = -5, d = 3$. $T_{20} = -5 + 19(3) = -5 + 57 = 52$.",
-  full: "The common difference is positive 3. Add 19 of these differences to the starting value -5.",
-  h: "Is $19 \\times 3$ equal to 57?"
-},
-{
-  yr: 2021,
-  q: "What is the probability of picking a prime number from the set {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}?",
-  o: ["2/5", "1/2", "3/10", "4/5"],
-  a: 0,
-  e: "Primes are {2, 3, 5, 7}. Probability = 4/10 = 2/5.",
-  full: "Note that 1 is not a prime number. There are 4 primes in the first ten integers.",
-  h: "Is 4 out of 10 the same as 2/5?"
-},
-{
-  yr: 2021,
-  q: "Find the determinant of $\\begin{pmatrix} 4 & 2 \\\\ -3 & 1 \\end{pmatrix}$.",
-  o: ["2", "6", "10", "-2"],
-  a: 2,
-  e: "$(4 \\times 1) - (2 \\times -3) = 4 - (-6) = 10$.",
-  full: "Multiply the main diagonal and subtract the product of the other diagonal. Watch the signs!",
-  h: "Is $4 + 6$ equal to 10?"
-},
-{
-  yr: 2021,
-  q: "Integrate $\\int cos x dx$.",
-  o: ["$sin x + c$", "$-sin x + c$", "$tan x + c$", "$cos^2 x + c$"],
-  a: 0,
-  e: "The derivative of $sin x$ is $cos x$, so the integral of $cos x$ is $sin x$.",
-  full: "Integration is the reverse of differentiation. The integral of $cos$ is positive $sin$.",
-  h: "Is the integral of $cos$ positive or negative?"
-},
-{
-  yr: 2021,
-  q: "Rationalize $\\frac{\\sqrt{2}}{\\sqrt{3}}$.",
-  o: ["$\\frac{\\sqrt{6}}{2}$", "$\\frac{\\sqrt{6}}{3}$", "$\\sqrt{6}$", "$\\frac{2}{3}$"],
-  a: 1,
-  e: "Multiply top and bottom by $\\sqrt{3}$ to get $\\sqrt{6}/3$.",
-  full: "To remove the root from the bottom, multiply by that same root. $\\sqrt{2} \\times \\sqrt{3} = \\sqrt{6}$.",
-  h: "Is $2 \\times 3$ equal to 6?"
-},
-{
-  yr: 2021,
-  q: "Find the mode of 10, 11, 10, 12, 13, 11, 10.",
-  o: ["10", "11", "12", "13"],
-  a: 0,
-  e: "10 appears 3 times, which is more than any other value.",
-  full: "The mode is the most frequent number. 10 is the clear winner here.",
-  h: "Does 10 appear three times?"
-},
-{
-  yr: 2021,
-  q: "If $3^{x-1} = 9$, find $x$.",
-  o: ["1", "2", "3", "4"],
-  a: 2,
-  e: "$3^{x-1} = 3^2 \\implies x-1 = 2 \\implies x = 3$.",
-  full: "Since 9 is $3^2$, the powers must be equal. $x - 1 = 2$ means $x$ must be 3.",
-  h: "Is $2 + 1$ equal to 3?"
-},
-{
-  yr: 2020,
-  q: "If $f(x) = 2x^2 - 3x + 1$, find $f(-2)$.",
-  o: ["3", "7", "11", "15"],
-  a: 3,
-  e: "$2(-2)^2 - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15$.",
-  full: "Substitute -2 for every $x$ in the function. Remember that a negative number squared becomes positive ($(-2)^2 = 4$).",
-  h: "Is $8 + 7$ equal to 15?"
-},
-{
-  yr: 2020,
-  q: "Simplify $\\sqrt{98} - \\sqrt{50}$.",
-  o: ["$\\sqrt{2}$", "$2\\sqrt{2}$", "$3\\sqrt{2}$", "$4\\sqrt{2}$"],
-  a: 1,
-  e: "$\\sqrt{49 \\times 2} - \\sqrt{25 \\times 2} = 7\\sqrt{2} - 5\\sqrt{2} = 2\\sqrt{2}$.",
-  full: "Break the numbers into factors where one is a perfect square. $49$ and $25$ are the keys here.",
-  h: "Is $7 - 5$ equal to 2?"
-},
-{
-  yr: 2020,
-  q: "Find the value of $n$ if $log_2 32 = n$.",
-  o: ["3", "4", "5", "6"],
-  a: 2,
-  e: "$2^n = 32 \\implies 2^5 = 32 \\implies n = 5$.",
-  full: "Ask yourself: '2 raised to what power gives 32?' Since $2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$, the answer is 5.",
-  h: "Is $2^5$ equal to 32?"
-},
-{
-  yr: 2020,
-  q: "Make $t$ the subject of the formula: $v = u + at$.",
-  o: ["$t = v - u - a$", "$t = \\frac{v-u}{a}$", "$t = \\frac{v+u}{a}$", "$t = v - u + a$"],
-  a: 1,
-  e: "$v - u = at \\implies t = \\frac{v-u}{a}$.",
-  full: "Subtract $u$ from both sides first, then divide the entire result by $a$ to isolate $t$.",
-  h: "Do you subtract $u$ or add $u$ first?"
-},
-{
-  yr: 2020,
-  q: "The probability of an event happening is 0.35. What is the probability of it NOT happening?",
-  o: ["0.35", "0.55", "0.65", "0.75"],
-  a: 2,
-  e: "$1 - 0.35 = 0.65$.",
-  full: "The sum of the probability of an event occurring and not occurring is always 1.",
-  h: "Is $1.00 - 0.35$ equal to 0.65?"
-},
-{
-  yr: 2020,
-  q: "Find the 15th term of the A.P. 10, 7, 4, ...",
-  o: ["-32", "-35", "-42", "-45"],
-  a: 0,
-  e: "$a=10, d=-3$. $T_{15} = 10 + 14(-3) = 10 - 42 = -32$.",
-  full: "The common difference is negative 3. Use the formula $a + (n-1)d$ with $n=15$.",
-  h: "Is $14 \\times -3$ equal to -42?"
-},
-{
-  yr: 2020,
-  q: "If $y = x^2 sin x$, find $\\frac{dy}{dx}$.",
-  o: ["$2x cos x$", "$x^2 cos x + 2x sin x$", "$x^2 sin x + 2x cos x$", "$2x sin x$"],
-  a: 1,
-  e: "Product Rule: $u \\frac{dv}{dx} + v \\frac{du}{dx} = x^2(cos x) + sin x(2x)$.",
-  full: "Since two functions of $x$ are multiplied, you must use the product rule ($uv' + vu'$).",
-  h: "Is the derivative of $sin x$ equal to $cos x$?"
-},
-{
-  yr: 2020,
-  q: "Calculate the perimeter of a sector with radius 7cm and angle 90°. ($\\pi = 22/7$)",
-  o: ["11cm", "18cm", "25cm", "36cm"],
-  a: 2,
-  e: "$Arc = (90/360) \\times 2 \\times (22/7) \\times 7 = 11$. $Perimeter = 11 + 7 + 7 = 25$.",
-  full: "Perimeter of a sector is the Arc Length plus two radii ($L + 2r$).",
-  h: "Is $11 + 14$ equal to 25?"
-},
-{
-  yr: 2020,
-  q: "Find the determinant of $\\begin{pmatrix} 5 & 3 \\\\ 2 & 4 \\end{pmatrix}$.",
-  o: ["14", "22", "26", "10"],
-  a: 0,
-  e: "$(5 \\times 4) - (3 \\times 2) = 20 - 6 = 14$.",
-  full: "For a 2x2 matrix, subtract the product of the off-diagonal from the product of the main diagonal.",
-  h: "Is $20 - 6$ equal to 14?"
-},
-{
-  yr: 2020,
-  q: "If the mean of 2, 5, 8, $x$ is 6, find $x$.",
-  o: ["7", "8", "9", "10"],
-  a: 2,
-  e: "$(15 + x)/4 = 6 \\implies 15 + x = 24 \\implies x = 9$.",
-  full: "The sum of the numbers ($15+x$) must equal the mean multiplied by the count ($6 \\times 4 = 24$).",
-  h: "Is $24 - 15$ equal to 9?"
-},
-{
-  yr: 2020,
-  q: "Evaluate $\\int_0^1 (4x^3) dx$.",
-  o: ["1", "2", "3", "4"],
-  a: 0,
-  e: "$[x^4]_0^1 = 1^4 - 0^4 = 1$.",
-  full: "Integrate $4x^3$ to get $x^4$. Evaluate it from 0 to 1.",
-  h: "Is $1^4$ equal to 1?"
-},
-{
-  yr: 2020,
-  q: "Solve for $x$: $3^{2x} = 27$.",
-  o: ["1", "1.5", "2", "3"],
-  a: 1,
-  e: "$3^{2x} = 3^3 \\implies 2x = 3 \\implies x = 1.5$.",
-  full: "Write 27 as $3^3$. Equate the powers and solve the simple linear equation.",
-  h: "Is $3 / 2$ equal to 1.5?"
-},
-{
-  yr: 2020,
-  q: "Rationalize $\\frac{1}{\\sqrt{2} + 1}$.",
-  o: ["$\\sqrt{2} + 1$", "$\\sqrt{2} - 1$", "$\\frac{\\sqrt{2}-1}{3}$", "$1 - \\sqrt{2}$"],
-  a: 1,
-  e: "Multiply by $(\\sqrt{2}-1)$. Denominator becomes $2-1=1$.",
-  full: "Multiply both numerator and denominator by the conjugate ($\\sqrt{2}-1$).",
-  h: "Is $(\\sqrt{2})^2 - 1^2$ equal to 1?"
-},
-{
-  yr: 2020,
-  q: "Find the coordinate of the midpoint between (3, 8) and (5, 2).",
-  o: ["(4, 5)", "(8, 10)", "(1, -3)", "(4, 10)"],
-  a: 0,
-  e: "$(\\frac{3+5}{2}, \\frac{8+2}{2}) = (8/2, 10/2) = (4, 5)$.",
-  full: "Add the x-values and divide by 2; add the y-values and divide by 2.",
-  h: "Is $8 / 2$ equal to 4?"
-},
-{
-  yr: 2020,
-  q: "If $y$ varies directly as the square of $x$ and $y=36$ when $x=3$, find $y$ when $x=2$.",
-  o: ["4", "8", "12", "16"],
-  a: 3,
-  e: "$y = kx^2 \\implies 36 = k(9) \\implies k=4$. When $x=2, y = 4(2^2) = 16$.",
-  full: "Find the constant $k$ first by using the initial values, then apply it to the second case.",
-  h: "Is $4 \\times 4$ equal to 16?"
-},
-{
-  yr: 2020,
-  q: "Convert $111_2$ to base 10.",
-  o: ["3", "7", "11", "15"],
-  a: 1,
-  e: "$1(2^2) + 1(2^1) + 1(2^0) = 4 + 2 + 1 = 7$.",
-  full: "Sum the powers of 2 for each '1' present in the binary string.",
-  h: "Is $4+2+1$ equal to 7?"
-},
-{
-  yr: 2020,
-  q: "Find the mode of 7, 12, 7, 14, 15, 7, 12.",
-  o: ["7", "12", "14", "15"],
-  a: 0,
-  e: "7 occurs three times, which is more frequent than any other number.",
-  full: "The mode is the value that appears most often in the data set.",
-  h: "Does 7 appear more than 12?"
-},
-{
-  yr: 2020,
-  q: "Find the angle whose tangent is 1.",
-  o: ["30°", "45°", "60°", "90°"],
-  a: 1,
-  e: "$tan^{-1}(1) = 45°$.",
-  full: "This occurs in an isosceles right triangle where the opposite and adjacent sides are equal.",
-  h: "Is $sin 45$ equal to $cos 45$?"
-},
-{
-  yr: 2020,
-  q: "If $2x - 3y = 1$ and $x + 3y = 8$, find $x$.",
-  o: ["2", "3", "4", "5"],
-  a: 1,
-  e: "Add the equations: $3x = 9 \\implies x = 3$.",
-  full: "Adding the two equations eliminates the $y$ term since $-3y + 3y = 0$.",
-  h: "Is $9 / 3$ equal to 3?"
-},
-{
-  yr: 2020,
-  q: "Simplify $\\frac{x^2 - 9}{x + 3}$.",
-  o: ["$x + 3$", "$x - 3$", "$x - 9$", "$x^2$"],
-  a: 1,
-  e: "$\\frac{(x-3)(x+3)}{x+3} = x - 3$.",
-  full: "Factor the numerator using the difference of two squares and cancel the common factor.",
-  h: "Does $(x-3)(x+3)$ equal $x^2 - 9$?"
-},
-{
-  yr: 2020,
-  q: "If $P = \\{2, 3, 5, 7\\}$ and $Q = \\{2, 4, 6, 8\\}$, find $P \\cup Q$.",
-  o: ["{2}", "{2, 3, 4, 5, 6, 7, 8}", "{3, 5, 7}", "{4, 6, 8}"],
-  a: 1,
-  e: "The union ($\\cup$) includes all elements from both sets without duplication.",
-  full: "Union means 'everything in both'. We list 2, 3, 4, 5, 6, 7, and 8. The number 2 is common but only written once.",
-  h: "Does the union include all unique numbers from both lists?"
-},
-{
-  yr: 2020,
-  q: "Find the derivative of $y = 4x^3 - 2x + 5$.",
-  o: ["$12x^2 - 2$", "$12x^2 + 5$", "$4x^2 - 2$", "$12x^3 - 2$"],
-  a: 0,
-  e: "$\\frac{dy}{dx} = 4(3)x^{3-1} - 2(1)x^{1-1} + 0 = 12x^2 - 2$.",
-  full: "Multiply the coefficient by the power and decrease the power by 1. The constant 5 becomes 0.",
-  h: "Is $4 \\times 3$ equal to 12?"
-},
-{
-  yr: 2020,
-  q: "Calculate the total surface area of a cylinder with radius 7cm and height 10cm. ($\\pi = 22/7$)",
-  o: ["440cm²", "748cm²", "154cm²", "594cm²"],
-  a: 1,
-  e: "$TSA = 2\\pi r(r + h) = 2(22/7)(7)(7 + 10) = 44(17) = 748$.",
-  full: "The formula for the total surface area of a closed cylinder is $2\\pi r^2$ (two bases) + $2\\pi rh$ (curved surface).",
-  h: "Is $44 \\times 17$ equal to 748?"
-},
-{
-  yr: 2020,
-  q: "If $log_{10} x = 3$, what is the value of $x$?",
-  o: ["30", "100", "300", "1000"],
-  a: 3,
-  e: "$x = 10^3 = 1000$.",
-  full: "The base 10 raised to the result 3 gives the value of $x$. $10 \\times 10 \\times 10 = 1000$.",
-  h: "Is $10^3$ equal to 1000?"
-},
-{
-  yr: 2020,
-  q: "Find the distance between (2, -3) and (2, 5).",
-  o: ["2", "4", "8", "10"],
-  a: 2,
-  e: "Since x-coords are the same, $Distance = |5 - (-3)| = 8$.",
-  full: "When points are on a vertical line, you simply find the absolute difference between the y-coordinates.",
-  h: "Is $5 + 3$ equal to 8?"
-},
-{
-  yr: 2020,
-  q: "Solve the inequality: $5 - 2x \\ge 1$.",
-  o: ["$x \\ge 2$", "$x \\le 2$", "$x \\ge -2$", "$x \\le -2$"],
-  a: 1,
-  e: "$-2x \\ge -4 \\implies x \\le 2$.",
-  full: "Subtract 5 from both sides to get $-2x \\ge -4$. Dividing by a negative number flips the inequality sign.",
-  h: "Does the sign flip when you divide by -2?"
-},
-{
-  yr: 2020,
-  q: "Calculate the volume of a sphere with diameter 14cm. ($\\pi = 22/7$)",
-  o: ["1437.33cm³", "179.67cm³", "616cm³", "4312cm³"],
-  a: 0,
-  e: "$r = 7. V = \\frac{4}{3} \\pi (7^3) = \\frac{4}{3} \\times \\frac{22}{7} \\times 343 = 1437.33$.",
-  full: "First, find the radius (half of diameter). Then apply the volume formula $4/3 \\pi r^3$.",
-  h: "Is the radius 7?"
-},
-{
-  yr: 2020,
-  q: "Find the 10th term of the G.P.: 1, 2, 4, 8, ...",
-  o: ["256", "512", "1024", "2048"],
-  a: 1,
-  e: "$T_{10} = ar^9 = 1(2^9) = 512$.",
-  full: "The first term $a=1$ and common ratio $r=2$. $2^9$ is 512.",
-  h: "Is $2^9$ equal to 512?"
-},
-{
-  yr: 2020,
-  q: "If $y = (x^2 + 1)^3$, find $\\frac{dy}{dx}$.",
-  o: ["$3(x^2+1)^2$", "$6x(x^2+1)^2$", "$6x(x^2+1)^3$", "$2x(x^2+1)^2$"],
-  a: 1,
-  e: "$3(x^2+1)^2 \\times 2x = 6x(x^2+1)^2$.",
-  full: "Use the Chain Rule. Differentiate the outer power then multiply by the derivative of the inside $(x^2+1)$.",
-  h: "Is the derivative of $x^2 + 1$ equal to $2x$?"
-},
-{
-  yr: 2020,
-  q: "Find the mean of the numbers: 15, 20, 25, 30, 35.",
-  o: ["20", "25", "30", "35"],
-  a: 1,
-  e: "Sum = 125. Mean = $125/5 = 25$.",
-  full: "The numbers are in an arithmetic progression, so the mean is the middle term.",
-  h: "Is 25 the middle number?"
-},
-{
-  yr: 2020,
-  q: "A die is rolled. What is the probability of getting a number less than 3?",
-  o: ["1/6", "1/3", "1/2", "2/3"],
-  a: 1,
-  e: "Favorable outcomes: {1, 2}. Probability = 2/6 = 1/3.",
-  full: "There are 2 numbers less than 3 on a standard die out of 6 possible outcomes.",
-  h: "Is $2 / 6$ equal to $1 / 3$?"
-},
-{
-  yr: 2020,
-  q: "Integrate $\\int (sin x) dx$.",
-  o: ["$cos x + c$", "$-cos x + c$", "$sin^2 x + c$", "$tan x + c$"],
-  a: 1,
-  e: "The derivative of $cos x$ is $-sin x$, so the integral of $sin x$ is $-cos x$.",
-  full: "Integration is the reverse process of differentiation. The integral of $sin$ is negative $cos$.",
-  h: "Is the integral of $sin$ negative?"
-},
-{
-  yr: 2020,
-  q: "Find the value of $x$ if $2(x - 5) = 3(x + 2)$.",
-  o: ["-16", "-4", "4", "16"],
-  a: 0,
-  e: "$2x - 10 = 3x + 6 \\implies -16 = x$.",
-  full: "Expand the brackets, then subtract $2x$ and 6 from both sides to find $x$.",
-  h: "Is $-10 - 6$ equal to -16?"
-},
-{
-  yr: 2020,
-  q: "Calculate the area of a triangle with base 10cm and height 8cm.",
-  o: ["40cm²", "80cm²", "20cm²", "100cm²"],
-  a: 0,
-  e: "$Area = 0.5 \\times 10 \\times 8 = 40$.",
-  full: "The area of a triangle is half the base multiplied by the vertical height.",
-  h: "Is half of 80 equal to 40?"
-},
-{
-  yr: 2020,
-  q: "If $log_2 x + log_2 3 = log_2 12$, find $x$.",
-  o: ["4", "9", "15", "36"],
-  a: 0,
-  e: "$log_2(3x) = log_2 12 \\implies 3x = 12 \\implies x = 4$.",
-  full: "Use the addition law: $log A + log B = log(AB)$. Then equate the values.",
-  h: "Is $12 / 3$ equal to 4?"
-},
-{
-  yr: 2020,
-  q: "Find the gradient of the line passing through (1, 1) and (3, 5).",
-  o: ["1", "2", "3", "4"],
-  a: 1,
-  e: "$\\frac{5 - 1}{3 - 1} = 4 / 2 = 2$.",
-  full: "Gradient is 'change in $y$' over 'change in $x$'. $(5-1)$ divided by $(3-1)$.",
-  h: "Is $4 / 2$ equal to 2?"
-},
-{
-  yr: 2020,
-  q: "Simplify $2\\sqrt{3} \\times \\sqrt{6}$.",
-  o: ["$6\\sqrt{2}$", "$18\\sqrt{2}$", "$2\\sqrt{18}$", "$6\\sqrt{18}$"],
-  a: 0,
-  e: "$2\\sqrt{18} = 2\\sqrt{9 \\times 2} = 2(3)\\sqrt{2} = 6\\sqrt{2}$.",
-  full: "Multiply the numbers inside the roots first, then simplify the resulting surd.",
-  h: "Is $\\sqrt{18}$ the same as $3\\sqrt{2}$?"
-},
-{
-  yr: 2020,
-  q: "Find the sum of the interior angles of a quadrilateral.",
-  o: ["180°", "270°", "360°", "540°"],
-  a: 2,
-  e: "$(4-2) \\times 180 = 2 \\times 180 = 360$.",
-  full: "Any four-sided figure can be split into two triangles, each having 180 degrees.",
-  h: "Is $2 \\times 180$ equal to 360?"
-},
-{
-  yr: 2019,
-  q: "Simplify $\\frac{log 9}{log 3}$.",
-  o: ["1", "2", "3", "log 3"],
-  a: 1,
-  e: "$log 9 = log 3^2 = 2 log 3$. Therefore, $2 log 3 / log 3 = 2$.",
-  full: "Express 9 as $3^2$. Using the power rule of logarithms, the exponent 2 comes to the front, allowing the $log 3$ terms to cancel out.",
-  h: "Is 9 equal to $3^2$?"
-},
-{
-  yr: 2019,
-  q: "If $y = 4x^3 - 5x^2 + 3$, find $\\frac{dy}{dx}$.",
-  o: ["$12x^2 - 10x$", "$12x^2 - 10x + 3$", "$4x^2 - 5x$", "$12x^3 - 10x^2$"],
-  a: 0,
-  e: "$\\frac{dy}{dx} = 4(3)x^2 - 5(2)x = 12x^2 - 10x$.",
-  full: "Apply the power rule for each term: multiply the coefficient by the current power and then decrease the power by 1. The constant 3 becomes 0.",
-  h: "Is $4 \\times 3$ equal to 12?"
-},
-{
-  yr: 2019,
-  q: "Find the value of $x$ in the equation $2^{x+1} = 32$.",
-  o: ["3", "4", "5", "6"],
-  a: 1,
-  e: "$2^{x+1} = 2^5 \\implies x + 1 = 5 \\implies x = 4$.",
-  full: "Express 32 as a power of 2 ($2^5$). Since the bases are equal, you can equate the exponents and solve for $x$.",
-  h: "Is $2^5$ equal to 32?"
-},
-{
-  yr: 2019,
-  q: "Solve for $x$: $3x - 4 < 5x + 2$.",
-  o: ["$x < -3$", "$x > -3$", "$x < 3$", "$x > 3$"],
-  a: 1,
-  e: "$-6 < 2x \\implies -3 < x \\implies x > -3$.",
-  full: "Collect $x$ terms on one side and constants on the other. Dividing by a positive number does not flip the inequality sign.",
-  h: "Is $-6 / 2$ equal to -3?"
-},
-{
-  yr: 2019,
-  q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
-  o: ["₦200", "₦400", "₦600", "₦800"],
-  a: 2,
-  e: "$I = \\frac{5000 \\times 4 \\times 3}{100} = 50 \\times 12 = 600$.",
-  full: "Use the Simple Interest formula: $I = (PRT)/100$. $5000 \\times 0.04 \\times 3 = 600$.",
-  h: "Is $4 \\times 3$ equal to 12?"
-},
-{
-  yr: 2019,
-  q: "Find the mean of 5, 8, 12, 15, 20.",
-  o: ["10", "12", "13", "14"],
-  a: 1,
-  e: "Sum = 60. $Mean = 60 / 5 = 12$.",
-  full: "Add all the numbers together to get the total sum, then divide by the total count of numbers.",
-  h: "Is $60 / 5$ equal to 12?"
-},
-{
-  yr: 2019,
-  q: "If $sin \\theta = 3/5$, find $tan \\theta$ for an acute angle $\\theta$.",
-  o: ["3/4", "4/5", "4/3", "1/2"],
-  a: 0,
-  e: "$Opp=3, Hyp=5 \\implies Adj = \\sqrt{5^2 - 3^2} = 4. tan = 3/4$.",
-  full: "Using the Pythagorean theorem or the 3-4-5 triple, find the adjacent side. Tangent is Opposite over Adjacent.",
-  h: "Is the adjacent side 4?"
-},
-{
-  yr: 2019,
-  q: "Find the determinant of $\\begin{pmatrix} 2 & -3 \\\\ 4 & 1 \\end{pmatrix}$.",
-  o: ["-10", "-14", "10", "14"],
-  a: 3,
-  e: "$(2 \\times 1) - (-3 \\times 4) = 2 - (-12) = 14$.",
-  full: "Calculate the product of the main diagonal and subtract the product of the secondary diagonal. Watch the double negative.",
-  h: "Is $2 + 12$ equal to 14?"
-},
-{
-  yr: 2019,
-  q: "Simplify $\\sqrt{50} + \\sqrt{32} - \\sqrt{18}$.",
-  o: ["$4\\sqrt{2}$", "$6\\sqrt{2}$", "$8\\sqrt{2}$", "$10\\sqrt{2}$"],
-  a: 1,
-  e: "$5\\sqrt{2} + 4\\sqrt{2} - 3\\sqrt{2} = 6\\sqrt{2}$.",
-  full: "Simplify each surd by finding perfect square factors: $\\sqrt{25 \\times 2}$, $\\sqrt{16 \\times 2}$, and $\\sqrt{9 \\times 2}$.",
-  h: "Is $5 + 4 - 3$ equal to 6?"
-},
-{
-  yr: 2019,
-  q: "The exterior angle of a regular polygon is 45°. How many sides has the polygon?",
-  o: ["6", "8", "10", "12"],
-  a: 1,
-  e: "$n = 360 / 45 = 8$.",
-  full: "The sum of the exterior angles of any polygon is always 360°. Divide this by the value of one exterior angle to find the number of sides.",
-  h: "Is $360 / 45$ equal to 8?"
-},
-{
-  yr: 2019,
-  q: "Factorize completely: $x^2 - 5x + 6$.",
-  o: ["$(x-2)(x-3)$", "$(x+2)(x+3)$", "$(x-1)(x-6)$", "$(x+1)(x+6)$"],
-  a: 0,
-  e: "$(-2) \\times (-3) = 6$ and $(-2) + (-3) = -5$.",
-  full: "Find two numbers that multiply to the constant (+6) and add to the middle coefficient (-5).",
-  h: "Do -2 and -3 add up to -5?"
-},
-{
-  yr: 2019,
-  q: "Find the 20th term of the A.P.: 2, 5, 8, ...",
-  o: ["57", "59", "61", "63"],
-  a: 1,
-  e: "$T_{20} = 2 + 19(3) = 2 + 57 = 59$.",
-  full: "Use the formula $a + (n-1)d$. Here $a=2$, $d=3$, and $n=20$.",
-  h: "Is $19 \\times 3$ equal to 57?"
-},
-{
-  yr: 2019,
-  q: "If $y$ varies inversely as $x$ and $y=10$ when $x=2$, find $y$ when $x=5$.",
-  o: ["4", "10", "20", "25"],
-  a: 0,
-  e: "$xy = k \\implies 10 \\times 2 = 20 = k$. When $x=5, 5y = 20 \\implies y = 4$.",
-  full: "In inverse variation, the product of $x$ and $y$ is a constant ($k$). Solve for $k$ first, then use it to find the new $y$.",
-  h: "Is $20 / 5$ equal to 4?"
-},
-{
-  yr: 2019,
-  q: "Evaluate $\\int_1^3 (2x) dx$.",
-  o: ["4", "6", "8", "10"],
-  a: 2,
-  e: "$[x^2]_1^3 = 3^2 - 1^2 = 9 - 1 = 8$.",
-  full: "Integrate $2x$ to get $x^2$. Then calculate the difference between the upper bound squared and the lower bound squared.",
-  h: "Is $9 - 1$ equal to 8?"
-},
-{
-  yr: 2019,
-  q: "Convert $42_{10}$ to binary (base 2).",
-  o: ["101010", "110010", "101100", "111000"],
-  a: 0,
-  e: "42/2=21 R0; 21/2=10 R1; 10/2=5 R0; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 101010.",
-  full: "Repeatedly divide the number by 2 and record the remainders from bottom to top.",
-  h: "Is the last digit 0?"
-},
-{
-  yr: 2019,
-  q: "Find the mode of 3, 4, 3, 5, 2, 3, 4.",
-  o: ["2", "3", "4", "5"],
-  a: 1,
-  e: "3 appears three times, which is more than any other number.",
-  full: "The mode is the most frequently occurring value in a data set.",
-  h: "Does 3 appear the most?"
-},
-{
-  yr: 2019,
-  q: "Calculate the area of a circle whose radius is 3.5cm. ($\\pi = 22/7$)",
-  o: ["11cm²", "22cm²", "38.5cm²", "77cm²"],
-  a: 2,
-  e: "$Area = (22/7) \\times 3.5^2 = (22/7) \\times 12.25 = 38.5$.",
-  full: "Use the area formula $\\pi r^2$. $3.5$ can be thought of as $7/2$, which makes the calculation easier.",
-  h: "Is $3.5 \\times 3.5$ equal to 12.25?"
-},
-{
-  yr: 2019,
-  q: "If $log_{10} 2 = 0.3010$, find $log_{10} 8$.",
-  o: ["0.6020", "0.9030", "1.2040", "1.5050"],
-  a: 1,
-  e: "$log 2^3 = 3 log 2 = 3(0.3010) = 0.9030$.",
-  full: "Since 8 is $2^3$, you can use the power rule to multiply the given log value by 3.",
-  h: "Is $3 \\times 0.3010$ equal to 0.9030?"
-},
-{
-  yr: 2019,
-  q: "Find the distance between the points (0, 0) and (6, 8).",
-  o: ["7", "10", "14", "48"],
-  a: 1,
-  e: "$\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
-  full: "Apply the distance formula. For a point at the origin, the distance is simply the square root of the sum of the squares of the coordinates.",
-  h: "Is $36 + 64$ equal to 100?"
-},
-{
-  yr: 2019,
-  q: "If $y = cos x$, find $\\frac{dy}{dx}$ at $x = 90^\\circ$.",
-  o: ["1", "0", "-1", "undefined"],
-  a: 2,
-  e: "$\\frac{dy}{dx} = -sin x$. At $90^\\circ$, $-sin(90^\\circ) = -1$.",
-  full: "The derivative of $cos x$ is $-sin x$. Evaluate this at 90 degrees, where $sin$ is 1.",
-  h: "Is $sin 90^\\circ$ equal to 1?"
-},
-{
-  yr: 2019,
-  q: "If $P = \\begin{pmatrix} x & 3 \\\\ 2 & 4 \\end{pmatrix}$ and the determinant is 10, find $x$.",
-  o: ["2", "4", "6", "8"],
-  a: 1,
-  e: "$4x - (3 \\times 2) = 10 \\implies 4x - 6 = 10 \\implies 4x = 16 \\implies x = 4$.",
-  full: "Set the determinant formula $ad - bc$ equal to 10 and solve the resulting linear equation for $x$.",
-  h: "Is $16 / 4$ equal to 4?"
-},
-{
-  yr: 2019,
-  q: "Find the range of the numbers: 12, 1, 15, 22, 8.",
-  o: ["14", "21", "22", "23"],
-  a: 1,
-  e: "$Range = Max - Min = 22 - 1 = 21$.",
-  full: "The range is the simplest measure of dispersion, calculated as the difference between the highest and lowest values.",
-  h: "Is $22 - 1$ equal to 21?"
-},
-{
-  yr: 2019,
-  q: "Solve the inequality: $2(x+3) \\ge 5x - 3$.",
-  o: ["$x \\le 3$", "$x \\ge 3$", "$x \\le -3$", "$x \\ge -3$"],
-  a: 0,
-  e: "$2x + 6 \\ge 5x - 3 \\implies 9 \\ge 3x \\implies 3 \\ge x$.",
-  full: "Expand the bracket, collect the $x$ terms, and remember that $3 \\ge x$ is the same as $x \\le 3$.",
-  h: "Is $6 + 3$ equal to 9?"
-},
-{
-  yr: 2019,
-  q: "If $y = (3x - 1)^2$, find $\frac{dy}{dx}$.",
-  o: ["$2(3x-1)$", "$6(3x-1)$", "$18x$", "$6x - 2$"],
-  a: 1,
-  e: "$\\frac{dy}{dx} = 2(3x-1) \\times 3 = 6(3x-1)$.",
-  full: "Using the chain rule: differentiate the power (bringing the 2 down) and multiply by the derivative of the inside (3).",
-  h: "Is $2 \\times 3$ equal to 6?"
-},
-{
-  yr: 2019,
-  q: "Calculate the volume of a cylinder with radius 3cm and height 7cm. ($\\pi = 22/7$)",
-  o: ["66cm³", "132cm³", "198cm³", "462cm³"],
-  a: 2,
-  e: "$V = \\pi r^2 h = (22/7) \\times 9 \\times 7 = 22 \\times 9 = 198$.",
-  full: "The 7 in the height cancels the 7 in the denominator of $\\pi$, leaving a simple multiplication of $22 \\times 9$.",
-  h: "Is $22 \\times 9$ equal to 198?"
-},
-{
-  yr: 2019,
-  q: "If $log_a 16 = 2$, find $a$.",
-  o: ["2", "4", "8", "32"],
-  a: 1,
-  e: "$a^2 = 16 \\implies a = 4$.",
-  full: "In log form, the base $a$ raised to the power 2 equals 16. The square root of 16 is 4.",
-  h: "Is $4^2$ equal to 16?"
-},
-{
-  yr: 2019,
-  q: "Find the 5th term of a G.P. where $a = 2$ and $r = 3$.",
-  o: ["30", "54", "162", "486"],
-  a: 2,
-  e: "$T_5 = ar^4 = 2(3^4) = 2(81) = 162$.",
-  full: "The formula is $ar^{n-1}$. Here $n-1 = 4$. $3 \\times 3 \\times 3 \\times 3 = 81$.",
-  h: "Is $2 \\times 81$ equal to 162?"
-},
-{
-  yr: 2019,
-  q: "A bag contains 5 red and 3 blue balls. If two balls are picked WITH replacement, what is the probability both are red?",
-  o: ["25/64", "15/64", "9/64", "5/8"],
-  a: 0,
-  e: "$P = 5/8 \\times 5/8 = 25/64$.",
-  full: "With replacement means the total stays at 8 for both picks. Multiply the individual probabilities.",
-  h: "Is $5 \\times 5$ equal to 25?"
-},
-{
-  yr: 2019,
-  q: "Simplify $\\frac{x}{3} + \\frac{x+1}{2}$.",
-  o: ["$\\frac{2x+3}{6}$", "$\\frac{5x+3}{6}$", "$\\frac{5x+1}{6}$", "$\\frac{x+1}{5}$"],
-  a: 1,
-  e: "$\\frac{2x + 3(x+1)}{6} = \\frac{2x + 3x + 3}{6} = \\frac{5x+3}{6}$.",
-  full: "Find the common denominator (6) and adjust the numerators before adding them.",
-  h: "Does $2x + 3x$ equal $5x$?"
-},
-{
-  yr: 2019,
-  q: "Find the median of 10, 15, 12, 18, 20, 14.",
-  o: ["14", "14.5", "15", "16"],
-  a: 1,
-  e: "Sorted: 10, 12, 14, 15, 18, 20. Median = $(14+15)/2 = 14.5$.",
-  full: "Since there are 6 numbers (even), the median is the average of the two middle numbers after sorting.",
-  h: "Is the average of 14 and 15 equal to 14.5?"
-},
-{
-  yr: 2019,
-  q: "If $y = tan x$, find $\\frac{dy}{dx}$.",
-  o: ["$sec x$", "$sec^2 x$", "$-sec^2 x$", "$cos^2 x$"],
-  a: 1,
-  e: "Standard derivative of $tan x$ is $sec^2 x$.",
-  full: "This is a fundamental trigonometric derivative identity.",
-  h: "Is the derivative of $tan$ related to $sec$?"
-},
-{
-  yr: 2019,
-  q: "Solve for $x$: $log_3 x - log_3 2 = 1$.",
-  o: ["3", "5", "6", "9"],
-  a: 2,
-  e: "$log_3(x/2) = 1 \\implies x/2 = 3^1 \\implies x = 6$.",
-  full: "Use the subtraction law: $log A - log B = log(A/B)$. Then convert to index form.",
-  h: "Is $3 \\times 2$ equal to 6?"
-},
-{
-  yr: 2019,
-  q: "Calculate the area of a square whose diagonal is $\\sqrt{50}$cm.",
-  o: ["25cm²", "50cm²", "100cm²", "12.5cm²"],
-  a: 0,
-  e: "$Area = 0.5 \\times d^2 = 0.5 \\times 50 = 25$.",
-  full: "For a square, the area can be calculated as half of the square of its diagonal.",
-  h: "Is half of 50 equal to 25?"
-},
-{
-  yr: 2019,
-  q: "If $x + y = 10$ and $x - y = 2$, find the value of $xy$.",
-  o: ["12", "16", "24", "48"],
-  a: 2,
-  e: "$2x = 12 \\implies x=6, y=4. xy = 6 \\times 4 = 24$.",
-  full: "Solve the simultaneous equations to find $x$ and $y$, then multiply them together.",
-  h: "Is $6 \\times 4$ equal to 24?"
-},
-{
-  yr: 2019,
-  q: "Find the gradient of the curve $y = x^2$ at the point (3, 9).",
-  o: ["3", "6", "9", "1"],
-  a: 1,
-  e: "$dy/dx = 2x$. At $x=3$, $2(3) = 6$.",
-  full: "The gradient at a specific point is the value of the derivative at that point's x-coordinate.",
-  h: "Is $2 \\times 3$ equal to 6?"
-},
-{
-  yr: 2019,
-  q: "Convert $17_{10}$ to base 3.",
-  o: ["122", "201", "121", "212"],
-  a: 1,
-  e: "$17/3 = 5 R2; 5/3 = 1 R2; 1/3 = 0 R1. Reading up: 122. Wait, $17=1(9)+2(3)+2(1)$.",
-  full: "Wait, calculation check: $17/3 = 5 R2$. $5/3 = 1 R2$. $1/3 = 0 R1$. Result is 122. Let me fix the option.",
-  h: "Is 122 the correct representation?"
-},
-{
-  yr: 2019,
-  q: "Find the variance of 2, 4, 6.",
-  o: ["2", "2.67", "4", "8"],
-  a: 1,
-  e: "$Mean = 4. Var = (4+0+4)/3 = 2.67$.",
-  full: "Variance is the average of the squared deviations from the mean. Sum is 8, divided by 3 is 2.67.",
-  h: "Is $8 / 3$ equal to 2.67?"
-},
-{
-  yr: 2019,
-  q: "Rationalize $\\frac{1}{\\sqrt{5}}$.",
-  o: ["$\\frac{\\sqrt{5}}{5}$", "$\\sqrt{5}$", "5", "1/5"],
-  a: 0,
-  e: "Multiply top and bottom by $\\sqrt{5}$.",
-  full: "To rationalize a single root in the denominator, multiply the numerator and denominator by that root.",
-  h: "Does the bottom become 5?"
-},
-{
-  yr: 2019,
-  q: "The sum of interior angles of a polygon with $n$ sides is $(n-2)180$. Find the sum for a pentagon.",
-  o: ["360°", "540°", "720°", "900°"],
-  a: 1,
-  e: "$(5-2) \\times 180 = 3 \\times 180 = 540$.",
-  full: "A pentagon has 5 sides. $3 \\times 180$ gives the total sum of the internal angles.",
-  h: "Is $3 \\times 180$ equal to 540?"
-},
-{
-  yr: 2019,
-  q: "Evaluate $\\int_0^2 (3x^2 + 1) dx$.",
-  o: ["6", "8", "10", "12"],
-  a: 2,
-  e: "$[x^3 + x]_0^2 = (8 + 2) - (0) = 10$.",
-  full: "Integrate each term: $3x^2$ becomes $x^3$ and 1 becomes $x$. Plug in the bounds and subtract.",
-  h: "Is $8 + 2$ equal to 10?"
-},
-{
-  yr: 2018,
-  q: "If $x * y = x + y - xy$, find $2 * 3$.",
-  o: ["-1", "1", "5", "6"],
-  a: 0,
-  e: "$2 + 3 - (2 \\times 3) = 5 - 6 = -1$.",
-  full: "This is a binary operation. Replace $x$ with 2 and $y$ with 3 in the given rule.",
-  h: "Is $5 - 6$ equal to -1?"
-},
-{
-  yr: 2018,
-  q: "Find the gradient of the line joining (2, 3) and (6, 11).",
-  o: ["1", "2", "3", "4"],
-  a: 1,
-  e: "$\\frac{11 - 3}{6 - 2} = 8 / 4 = 2$.",
-  full: "Gradient ($m$) is calculated as $(y_2 - y_1) / (x_2 - x_1)$. $8$ divided by $4$ is $2$.",
-  h: "Is $8 / 4$ equal to 2?"
-},
-{
-  yr: 2018,
-  q: "Simplify $\\sqrt{75} - \\sqrt{27} + \\sqrt{3}$.",
-  o: ["$2\\sqrt{3}$", "$3\\sqrt{3}$", "$4\\sqrt{3}$", "$5\\sqrt{3}$"],
-  a: 1,
-  e: "$5\\sqrt{3} - 3\\sqrt{3} + \\sqrt{3} = 3\\sqrt{3}$.",
-  full: "Break down the surds: $\\sqrt{25 \\times 3}$ and $\\sqrt{9 \\times 3}$. Then add and subtract the coefficients.",
-  h: "Is $5 - 3 + 1$ equal to 3?"
-},
-{
-  yr: 2018,
-  q: "If $log_{10} x = -1$, find $x$.",
-  o: ["0.1", "0.01", "1", "10"],
-  a: 0,
-  e: "$x = 10^{-1} = 1/10 = 0.1$.",
-  full: "To solve for $x$, raise the base 10 to the power of the result -1.",
-  h: "Is $1 / 10$ equal to 0.1?"
-},
-{
-  yr: 2018,
-  q: "Solve for $x$: $x^2 - 4 = 0$.",
-  o: ["2", "-2", "$\\pm 2$", "4"],
-  a: 2,
-  e: "$x^2 = 4 \\implies x = \\pm \\sqrt{4} = \\pm 2$.",
-  full: "When taking the square root of both sides of an equation, you must include both the positive and negative results.",
-  h: "Are there two possible answers?"
-},
-{
-  yr: 2018,
-  q: "Find the 10th term of the A.P. 5, 9, 13, ...",
-  o: ["37", "41", "45", "49"],
-  a: 1,
-  e: "$5 + 9(4) = 5 + 36 = 41$.",
-  full: "Using $a + (n-1)d$: $a=5$, $d=4$, and $n=10$. $9 \\times 4$ is 36.",
-  h: "Is $5 + 36$ equal to 41?"
-},
-{
-  yr: 2018,
-  q: "If $y = x^3 - 2x$, find $\\frac{dy}{dx}$ at $x=2$.",
-  o: ["4", "8", "10", "12"],
-  a: 2,
-  e: "$3x^2 - 2$. At $x=2$, $3(4) - 2 = 10$.",
-  full: "Differentiate the function to get $3x^2 - 2$, then substitute $x = 2$.",
-  h: "Is $12 - 2$ equal to 10?"
-},
-{
-  yr: 2018,
-  q: "Calculate the area of a circle with diameter 14cm. ($\\pi = 22/7$)",
-  o: ["44cm²", "154cm²", "616cm²", "11cm²"],
-  a: 1,
-  e: "$r = 7. Area = (22/7) \\times 49 = 154$.",
-  full: "The radius is half the diameter (7). Use $\\pi r^2$. $22 \\times 7 = 154$.",
-  h: "Is $22 \\times 7$ equal to 154?"
-},
-{
-  yr: 2018,
-  q: "Find the determinant of $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$.",
-  o: ["-2", "2", "-10", "10"],
-  a: 0,
-  e: "$(1 \\times 4) - (2 \\times 3) = 4 - 6 = -2$.",
-  full: "Multiply the main diagonal (1 and 4) and subtract the product of the other diagonal (2 and 3).",
-  h: "Is $4 - 6$ equal to -2?"
-},
-{
-  yr: 2018,
-  q: "What is the probability of picking a vowel from the word 'JAMB'?",
-  o: ["1/4", "1/2", "3/4", "0"],
-  a: 0,
-  e: "The only vowel is 'A'. Total letters = 4. $P = 1/4$.",
-  full: "Vowels are A, E, I, O, U. In 'JAMB', only 'A' qualifies out of 4 total letters.",
-  h: "Is there only one vowel?"
-},
-{
-  yr: 2018,
-  q: "If $3^x = 1/9$, find $x$.",
-  o: ["2", "-2", "3", "-3"],
-  a: 1,
-  e: "$3^x = 3^{-2} \\implies x = -2$.",
-  full: "Write $1/9$ as $3$ to the power of $-2$. Equate the exponents to find $x$.",
-  h: "Is $3^{-2}$ equal to $1/9$?"
-},
-{
-  yr: 2018,
-  q: "Find the mean of 2, 4, 6, 8, 10.",
-  o: ["4", "5", "6", "8"],
-  a: 2,
-  e: "Sum = 30. $Mean = 30 / 5 = 6$.",
-  full: "For a symmetric set of numbers like this, the mean is the middle value.",
-  h: "Is 6 the middle number?"
-},
-{
-  yr: 2018,
-  q: "Factorize completely: $x^2 - 9$.",
-  o: ["$(x-3)^2$", "$(x+3)^2$", "$(x-3)(x+3)$", "$(x-9)(x+1)$"],
-  a: 2,
-  e: "Difference of two squares: $a^2 - b^2 = (a-b)(a+b)$.",
-  full: "Recognize that 9 is $3^2$. This allows you to use the standard factorization for the difference of two squares.",
-  h: "Is $\\sqrt{9}$ equal to 3?"
-},
-{
-  yr: 2018,
-  q: "Calculate the volume of a cube with side 4cm.",
-  o: ["12cm³", "16cm³", "48cm³", "64cm³"],
-  a: 3,
-  e: "$V = 4^3 = 64$.",
-  full: "The volume of a cube is the side length raised to the power of 3. $4 \\times 4 \\times 4 = 64$.",
-  h: "Is $16 \\times 4$ equal to 64?"
-},
-{
-  yr: 2018,
-  q: "If $y = sin x$, find $\\frac{dy}{dx}$ at $x = 0^\\circ$.",
-  o: ["0", "1", "-1", "undefined"],
-  a: 1,
-  e: "$\\frac{dy}{dx} = cos x$. At $0^\\circ$, $cos(0) = 1$.",
-  full: "The derivative of $sin x$ is $cos x$. At 0 degrees, the value of cosine is 1.",
-  h: "Is $cos 0^\\circ$ equal to 1?"
-},
-{
-  yr: 2018,
-  q: "Convert $11_{10}$ to base 2.",
-  o: ["1011", "1101", "1111", "1001"],
-  a: 0,
-  e: "11/2=5 R1; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 1011.",
-  full: "Successive division by 2 gives remainders of 1, 1, 0, 1. Read them from bottom to top.",
-  h: "Is the first digit 1?"
-},
-{
-  yr: 2018,
-  q: "Find the median of 1, 5, 2, 4, 3.",
-  o: ["2", "3", "4", "5"],
-  a: 1,
-  e: "Sorted: 1, 2, 3, 4, 5. Middle is 3.",
-  full: "Arrange the numbers in ascending order and identify the value in the center.",
-  h: "Is 3 the center value?"
-},
-{
-  yr: 2018,
-  q: "If $y$ varies directly as $x$ and $y=8$ when $x=2$, find $y$ when $x=5$.",
-  o: ["10", "15", "20", "25"],
-  a: 2,
-  e: "$y = kx \\implies 8 = 2k \\implies k = 4. y = 4 \\times 5 = 20$.",
-  full: "Direct variation follows the rule $y = kx$. Solve for $k$ first, then substitute the new $x$.",
-  h: "Is $4 \\times 5$ equal to 20?"
-},
-{
-  yr: 2018,
-  q: "Simplify $\\frac{2}{x} + \\frac{3}{x}$.",
-  o: ["5/x", "5/x²", "6/x", "6/x²"],
-  a: 0,
-  e: "Since denominators are the same, just add the numerators: $(2+3)/x = 5/x$.",
-  full: "When adding fractions with a common denominator, you keep the denominator and add the numerators.",
-  h: "Is $2 + 3$ equal to 5?"
-},
-{
-  yr: 2018,
-  q: "If $P = {x : 2 < x < 5}$ and $Q = {x : 4 < x < 8}$, find $P \\cap Q$.",
-  o: ["{x : 2 < x < 8}", "{x : 4 < x < 5}", "{x : 2 < x < 4}", "{x : 5 < x < 8}"],
-  a: 1,
-  e: "The overlap between (2, 5) and (4, 8) is the interval (4, 5).",
-  full: "Intersection ($\cap$) finds the shared region. Since $Q$ starts at 4 and $P$ ends at 5, only numbers between 4 and 5 are in both.",
-  h: "Is 4.5 in both sets?"
-},
-{
-  yr: 2018,
-  q: "Find the value of $x$ for which $log_2 (x - 1) = 3$.",
-  o: ["4", "7", "8", "9"],
-  a: 3,
-  e: "$x - 1 = 2^3 = 8 \\implies x = 9$.",
-  full: "Convert the logarithm to index form. The base 2 raised to the power 3 equals the expression inside the log.",
-  h: "Is $8 + 1$ equal to 9?"
-},
-{
-  yr: 2018,
-  q: "Calculate the distance between ( -3, -4) and (0, 0).",
-  o: ["3", "4", "5", "7"],
-  a: 2,
-  e: "$\\sqrt{(-3)^2 + (-4)^2} = \\sqrt{9 + 16} = 5$.",
-  full: "This is a standard 3-4-5 triangle calculation. The distance from the origin is the root of the sum of the squares of the coordinates.",
-  h: "Is $\\sqrt{25}$ equal to 5?"
-},
-{
-  yr: 2018,
-  q: "If $y = 2x^2 + 3$, find the gradient of the curve at $x = 1$.",
-  o: ["2", "4", "7", "1"],
-  a: 1,
-  e: "$dy/dx = 4x$. At $x=1, 4(1) = 4$.",
-  full: "The gradient is found by differentiating the function and then plugging in the specific x-value.",
-  h: "Is $4 \\times 1$ equal to 4?"
-},
-{
-  yr: 2018,
-  q: "A sector of a circle has radius 14cm and angle 60°. Find its arc length. ($\\pi = 22/7$)",
-  o: ["14.67cm", "29.33cm", "44cm", "154cm"],
-  a: 0,
-  e: "$L = (60/360) \\times 2 \\times (22/7) \\times 14 = (1/6) \\times 88 = 14.67$.",
-  full: "Arc length is the fraction of the total circumference. $60/360$ simplifies to $1/6$.",
-  h: "Is $88 / 6$ approximately 14.67?"
-},
-{
-  yr: 2018,
-  q: "If $A = \\begin{pmatrix} 3 & 2 \\\\ 1 & 4 \\end{pmatrix}$, find $2A$.",
-  o: ["$\\begin{pmatrix} 6 & 4 \\\\ 2 & 8 \\end{pmatrix}$", "$\\begin{pmatrix} 5 & 4 \\\\ 3 & 6 \\end{pmatrix}$", "$\\begin{pmatrix} 9 & 4 \\\\ 1 & 16 \\end{pmatrix}$", "$\\begin{pmatrix} 1.5 & 1 \\\\ 0.5 & 2 \\end{pmatrix}$"],
-  a: 0,
-  e: "Multiply every element inside the matrix by the scalar 2.",
-  full: "Scalar multiplication involves distributing the multiplier to every single entry in the matrix.",
-  h: "Is $3 \\times 2$ equal to 6?"
-},
-{
-  yr: 2018,
-  q: "Find the sum to infinity of a G.P. where $a = 10$ and $r = 0.5$.",
-  o: ["5", "15", "20", "40"],
-  a: 2,
-  e: "$S = 10 / (1 - 0.5) = 10 / 0.5 = 20$.",
-  full: "The sum to infinity formula is $a / (1-r)$. Dividing by 0.5 is the same as multiplying by 2.",
-  h: "Is $10 / 0.5$ equal to 20?"
-},
-{
-  yr: 2018,
-  q: "The sum of the ages of a father and son is 40. In 10 years, the father will be 3 times as old as the son. Find the son's current age.",
-  o: ["5", "10", "15", "20"],
-  a: 0,
-  e: "$F+S=40, F+10=3(S+10)$. Solving gives $S=5$.",
-  full: "Set up two equations based on the current and future ages. Substitute $F = 40-S$ into the second equation.",
-  h: "If the son is 5, is the father 35?"
-},
-{
-  yr: 2018,
-  q: "Simplify $\\frac{x^2 - 1}{x - 1}$.",
-  o: ["$x - 1$", "$x + 1$", "$x^2$", "$1$"],
-  a: 1,
-  e: "$\\frac{(x-1)(x+1)}{x-1} = x + 1$.",
-  full: "The numerator is a difference of two squares. Once factored, the $(x-1)$ terms cancel out.",
-  h: "Is $1^2$ equal to 1?"
-},
-{
-  yr: 2018,
-  q: "Solve the inequality: $3 - x < 5$.",
-  o: ["$x < 2$", "$x > 2$", "$x < -2$", "$x > -2$"],
-  a: 3,
-  e: "$-x < 2 \\implies x > -2$.",
-  full: "Subtract 3 from both sides. When you multiply or divide by -1 to isolate $x$, the inequality sign must flip.",
-  h: "Did you flip the sign?"
-},
-{
-  yr: 2018,
-  q: "Find the variance of 1, 2, 3.",
-  o: ["0.67", "1", "1.5", "2"],
-  a: 0,
-  e: "$Mean = 2. Var = (1 + 0 + 1) / 3 = 0.67$.",
-  full: "Calculate the mean (2), find the squares of deviations (1, 0, 1), and find their average.",
-  h: "Is $2 / 3$ equal to 0.67?"
-},
-{
-  yr: 2018,
-  q: "Evaluate $cos 60^\\circ + sin 30^\\circ$.",
-  o: ["0.5", "1", "1.5", "0.866"],
-  a: 1,
-  e: "$0.5 + 0.5 = 1$.",
-  full: "These are standard trigonometric values. Both $cos 60$ and $sin 30$ are equal to $1/2$.",
-  h: "Is half plus half equal to one?"
-},
-{
-  yr: 2018,
-  q: "Find the equation of a line with gradient 2 passing through the origin (0, 0).",
-  o: ["$y = 2x$", "$y = x + 2$", "$y = 2$", "$x = 2y$"],
-  a: 0,
-  e: "Using $y = mx + c$, $m=2$ and $c=0$.",
-  full: "Since it passes through the origin, the y-intercept ($c$) is zero. The equation simplifies to $y = mx$.",
-  h: "Is the intercept 0?"
-},
-{
-  yr: 2018,
-  q: "Calculate the volume of a cone with radius 3cm and height 4cm. (Leave in $\\pi$)",
-  o: ["$4\\pi$", "$12\\pi$", "$36\\pi$", "$48\\pi$"],
-  a: 1,
-  e: "$V = 1/3 \\pi (3^2) (4) = 1/3 \\pi (9)(4) = 12\\pi$.",
-  full: "Apply the formula $1/3 \\pi r^2 h$. The 3 in the denominator cancels one 3 from the $r^2$.",
-  h: "Is $3 \\times 4$ equal to 12?"
-},
-{
-  yr: 2018,
-  q: "If $log_2 8 + log_2 4 = log_2 x$, find $x$.",
-  o: ["12", "16", "32", "64"],
-  a: 2,
-  e: "$log_2(8 \\times 4) = log_2 32$.",
-  full: "Using the addition law of logs, the sum of logs with the same base is the log of their product.",
-  h: "Is $8 \\times 4$ equal to 32?"
-},
-{
-  yr: 2018,
-  q: "Rationalize $\\frac{1}{2 - \\sqrt{3}}$.",
-  o: ["$2 + \\sqrt{3}$", "$2 - \\sqrt{3}$", "$4 + \\sqrt{3}$", "$1$"],
-  a: 0,
-  e: "Multiply by $(2 + \\sqrt{3})$. Denominator is $4 - 3 = 1$.",
-  full: "To rationalize a binomial denominator, multiply by its conjugate. The denominator becomes a difference of squares.",
-  h: "Is $4 - 3$ equal to 1?"
-},
-{
-  yr: 2018,
-  q: "Find the 4th term of the expansion $(x + y)^3$.",
-  o: ["$x^3$", "$3x^2y$", "$3xy^2$", "$y^3$"],
-  a: 3,
-  e: "Expansion: $x^3 + 3x^2y + 3xy^2 + y^3$.",
-  full: "Using Pascal's triangle or the binomial theorem, the coefficients for power 3 are 1, 3, 3, 1.",
-  h: "Is the last term $y^3$?"
-},
-{
-  yr: 2018,
-  q: "If $y = e^{2x}$, find $\\frac{dy}{dx}$.",
-  o: ["$e^{2x}$", "$2e^{2x}$", "$\\frac{1}{2}e^{2x}$", "$2x e^{2x-1}$"],
-  a: 1,
-  e: "Derivative of $e^{ax}$ is $a e^{ax}$.",
-  full: "This follows the exponential chain rule. The derivative of the power (2) is brought down as a multiplier.",
-  h: "Is the derivative of $2x$ equal to 2?"
-},
-{
-  yr: 2018,
-  q: "Find the mode of 5, 2, 7, 5, 2, 5, 8.",
-  o: ["2", "5", "7", "8"],
-  a: 1,
-  e: "5 appears three times, more than any other number.",
-  full: "The mode is the value with the highest frequency. Here, 5 is the most frequent.",
-  h: "Does 5 appear three times?"
-},
-{
-  yr: 2018,
-  q: "Integrate $\\int_0^1 (x + 1) dx$.",
-  o: ["0.5", "1", "1.5", "2"],
-  a: 2,
-  e: "$[0.5x^2 + x]_0^1 = 0.5 + 1 = 1.5$.",
-  full: "Integrate $x$ to get $0.5x^2$ and 1 to get $x$. Plug in the upper limit 1 and subtract the lower limit 0.",
-  h: "Is $1 + 0.5$ equal to 1.5?"
-},
-
-{
-  yr: 2018,
-  q: "Evaluate $\\int (x^2) dx$.",
-  o: ["$x^3 + c$", "$\\frac{x^3}{3} + c$", "$2x + c$", "$3x^3 + c$"],
-  a: 1,
-  e: "Using the power rule for integration: $(x^{n+1}) / (n+1)$.",
-  full: "Increase the power by 1 and divide by that new power. Don't forget the constant of integration ($c$).",
-  h: "Is the new power 3?"
-},
-
-{
-  yr: 2020,
-  q: "If $y = 1/x^2$, find $\\frac{dy}{dx}$.",
-  o: ["$2x$", "$-2/x^3$", "$1/x$", "$2/x^3$"],
-  a: 1,
-  e: "$x^{-2}$ derivative is $-2x^{-3} = -2/x^3$.",
-  full: "Rewrite as a negative power and use the power rule. The power decreases from -2 to -3.",
-  h: "Is the derivative negative?"
-},
-{
-  yr: 2020,
-  q: "What is the median of 8, 3, 7, 5, 10?",
-  o: ["3", "5", "7", "8"],
-  a: 2,
-  e: "Sorted: 3, 5, 7, 8, 10. The middle is 7.",
-  full: "Arrange in ascending order and pick the value exactly in the center.",
-  h: "Is 7 the middle number when sorted?"
-},
-
-{
-yr: 2021,
-    q: "If $y = 2x^2 + 5x - 3$, find the coordinates of the point where the curve crosses the y-axis.",
-    o: ["(0, 3)", "(0, -3)", "(3, 0)", "(-3, 0)"],
+    yr: 2023,
+    q: "If y = cos(3x), find dy/dx.",
+    o: ['3 sin(3x)', '-3 sin(3x)', '-sin(3x)', '3 cos(3x)'],
     a: 1,
-    e: "At the y-axis, $x = 0$. Substituting $x=0$ gives $y = -3$.",
-    full: "To find the y-intercept, always set $x$ to zero. The constant term in the quadratic equation is the y-coordinate.",
-    h: "Is the constant term -3?"
+    e: 'Using chain rule: derivative of cos(u) is -sin(u) × u\'. So, -sin(3x) × 3.',
+    full: 'The derivative of cos is -sin. We then multiply by the derivative of the angle (3x), which is 3.',
+    h: 'Does the derivative of cos involve a negative sign?'
   },
   {
-    yr: 2021,
-    q: "Find the value of $x$ for which $\\frac{x+2}{3} = \\frac{x-1}{2}$.",
-    o: ["5", "7", "8", "9"],
+    yr: 2023,
+    q: "Evaluate log₁₀ 25 + log₁₀ 4 + log₁₀ 10.",
+    o: ['2', '3', '4', '10'],
     a: 1,
-    e: "$2(x+2) = 3(x-1) \\implies 2x + 4 = 3x - 3 \\implies x = 7$.",
-    full: "Cross-multiply to remove the denominators, then expand the brackets and solve for $x$.",
-    h: "Is $4 + 3$ equal to 7?"
+    e: 'Using log A + log B = log(A × B). log₁₀(25 × 4) + log₁₀ 10 = log₁₀ 100 + log₁₀ 10 = 2 + 1 = 3.',
+    full: 'Since 10² = 100, log₁₀ 100 = 2. Since 10¹ = 10, log₁₀ 10 = 1. Total is 3.',
+    h: 'Does log 25 + log 4 equal log 100?'
   },
   {
-    yr: 2021,
-    q: "Calculate the distance between ( -1, 2) and (2, 6).",
-    o: ["3", "4", "5", "6"],
+    yr: 2023,
+    q: "Find the value of x if 2ˣ⁺¹ = 32.",
+    o: ['3', '4', '5', '6'],
+    a: 1,
+    e: '32 = 2⁵. So, 2ˣ⁺¹ = 2⁵ → x+1 = 5 → x = 4.',
+    full: 'In indices, if the bases are equal, the powers must be equal. x + 1 = 5 gives x = 4.',
+    h: 'Is 32 equal to 2⁴ or 2⁵?'
+  },
+  {
+    yr: 2023,
+    q: "If y = x³ + 2x² - 5, find dy/dx at x = 1.",
+    o: ['3', '5', '7', '9'],
     a: 2,
-    e: "$\\sqrt{(2 - (-1))^2 + (6-2)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.",
-    full: "Use the distance formula. The difference in $x$ is 3 and the difference in $y$ is 4. This forms a 3-4-5 triangle.",
-    h: "Is $\\sqrt{9 + 16}$ equal to 5?"
+    e: 'dy/dx = 3x² + 4x. At x=1, 3(1)² + 4(1) = 3 + 4 = 7.',
+    full: 'Differentiate each term: x³ becomes 3x², 2x² becomes 4x, and -5 becomes 0. Substitute 1 for x.',
+    h: 'Is the derivative of x³ equal to 3x²?'
+  },
+  {
+    yr: 2023,
+    q: "Solve for x in the equation 2x - 5 < 7.",
+    o: ['x < 1', 'x < 6', 'x > 6', 'x < 12'],
+    a: 1,
+    e: '2x < 7 + 5 → 2x < 12 → x < 6.',
+    full: 'Add 5 to both sides to get 2x < 12, then divide by 2 to isolate x.',
+    h: 'Is 7 + 5 equal to 12?'
+  },
+  {
+    yr: 2023,
+    q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
+    o: ['₦200', '₦400', '₦600', '₦800'],
+    a: 2,
+    e: 'I = (PRT)/100 = (5000 × 4 × 3)/100 = 50 × 12 = 600.',
+    full: 'Simple Interest formula is Principal × Rate × Time divided by 100. 5000 × 0.04 × 3 = 600.',
+    h: 'Is 50 × 12 equal to 600?'
+  },
+  {
+    yr: 2023,
+    q: "Find the 10th term of the Arithmetic Progression (A.P.): 2, 5, 8, ...",
+    o: ['27', '29', '31', '33'],
+    a: 1,
+    e: 'a = 2, d = 3. T₁₀ = a + 9d = 2 + 9(3) = 2 + 27 = 29.',
+    full: 'The formula for the nth term is a + (n-1)d. Here n=10, so we add 9 differences to the first term.',
+    h: 'Is the common difference d equal to 3?'
+  },
+  {
+    yr: 2023,
+    q: "If sin θ = 3/5, find cos θ where θ is acute.",
+    o: ['1/5', '2/5', '3/5', '4/5'],
+    a: 3,
+    e: 'Using Pythagoras: 3² + x² = 5² → 9 + x² = 25 → x² = 16 → x = 4. cos θ = 4/5.',
+    full: 'In a right-angled triangle, if opposite=3 and hypotenuse=5, the adjacent side must be 4. Cosine is Adjacent/Hypotenuse.',
+    h: 'In a 3-4-5 triangle, is 4 the adjacent side?'
+  },
+  {
+    yr: 2023,
+    q: "Integrate ∫ (2x + 3) dx.",
+    o: ['x² + 3x + c', '2x² + 3x + c', 'x² + c', '3x + c'],
+    a: 0,
+    e: '∫ 2x dx = x² and ∫ 3 dx = 3x. Add the constant c.',
+    full: 'The rule for integration is xⁿ⁺¹/(n+1). So 2x becomes x² and the constant 3 gains an x.',
+    h: 'Does the integral of 2x result in x²?'
+  },
+  {
+    yr: 2023,
+    q: "A bag contains 3 red and 5 blue balls. What is the probability of picking a red ball?",
+    o: ['3/5', '5/8', '3/8', '1/2'],
+    a: 2,
+    e: 'Total balls = 3 + 5 = 8. Red balls = 3. P(Red) = 3/8.',
+    full: 'Probability is the number of favorable outcomes divided by the total number of possible outcomes.',
+    h: 'Is the total number of balls 8?'
+  },
+  {
+    yr: 2023,
+    q: "Find the mean of the numbers: 10, 12, 14, 16, 18.",
+    o: ['12', '13', '14', '15'],
+    a: 2,
+    e: 'Sum = 10+12+14+16+18 = 70. Mean = 70 / 5 = 14.',
+    full: 'Add all values and divide by the count (5). For an evenly spaced set, the mean is also the middle number.',
+    h: 'Is the sum of these five numbers 70?'
+  },
+  {
+    yr: 2023,
+    q: "Express 0.0000427 in standard form.",
+    o: ['4.27 × 10⁻⁴', '4.27 × 10⁻⁵', '42.7 × 10⁻⁶', '4.27 × 10⁵'],
+    a: 1,
+    e: 'Move the decimal 5 places to the right to get 4.27. Thus, 10⁻⁵.',
+    full: 'Standard form is a × 10ⁿ where 1 ≤ a < 10. We moved the decimal past five zeros/digits.',
+    h: 'Do you move the decimal 4 or 5 places?'
+  },
+  {
+    yr: 2023,
+    q: "The exterior angle of a regular polygon is 36°. How many sides does it have?",
+    o: ['8', '10', '12', '15'],
+    a: 1,
+    e: 'Number of sides n = 360 / Exterior Angle = 360 / 36 = 10.',
+    full: 'The sum of exterior angles of any polygon is always 360°. Divide this by the value of one angle to find the number of sides.',
+    h: 'Is 360 / 36 equal to 10?'
+  },
+  {
+    yr: 2023,
+    q: "If x² - 5x + 6 = 0, find the values of x.",
+    o: ['(1, 6)', '(2, 3)', '(-2, -3)', '(5, 6)'],
+    a: 1,
+    e: '(x - 2)(x - 3) = 0 → x = 2 or x = 3.',
+    full: 'Factorize the quadratic. We need two numbers that multiply to +6 and add to -5. Those are -2 and -3.',
+    h: 'Do -2 and -3 add up to -5?'
+  },
+  {
+    yr: 2023,
+    q: "Find the gradient (slope) of the line passing through (2, 3) and (4, 7).",
+    o: ['1', '2', '3', '4'],
+    a: 1,
+    e: 'm = (y₂ - y₁)/(x₂ - x₁) = (7 - 3)/(4 - 2) = 4/2 = 2.',
+    full: 'Gradient formula is the Rise over Run. Difference in y divided by difference in x.',
+    h: 'Is 4/2 equal to 2?'
+  },
+  {
+    yr: 2023,
+    q: "Convert 1101 in base 2 to base 10.",
+    o: ['11', '12', '13', '14'],
+    a: 2,
+    e: '(1 × 2³) + (1 × 2²) + (0 × 2¹) + (1 × 2⁰) = 8 + 4 + 0 + 1 = 13.',
+    full: 'Multiply each bit by the power of 2 corresponding to its position (starting from 0 on the right).',
+    h: 'Is 8 + 4 + 1 equal to 13?'
+  },
+  {
+    yr: 2023,
+    q: "Calculate the volume of a cylinder with radius 7cm and height 10cm. (Take π = 22/7)",
+    o: ['770cm³', '1540cm³', '154cm³', '440cm³'],
+    a: 1,
+    e: 'V = πr²h = (22/7) × 7 × 7 × 10 = 22 × 7 × 10 = 1540.',
+    full: 'Volume is the area of the circular base (πr²) multiplied by the height. One 7 cancels out from the denominator.',
+    h: 'Is 154 × 10 equal to 1540?'
+  },
+  {
+    yr: 2023,
+    q: "Rationalize the expression 2/√2.",
+    o: ['1', '2', '√2', '2√2'],
+    a: 2,
+    e: 'Multiply numerator and denominator by √2. (2√2)/2 = √2.',
+    full: 'To rationalize a denominator, multiply top and bottom by the root. The 2 in the numerator cancels the 2 in the denominator.',
+    h: 'Does √2 × √2 equal 2?'
+  },
+  {
+    yr: 2023,
+    q: "Find the Median of the set: 3, 7, 9, 4, 10, 2, 8.",
+    o: ['4', '7', '8', '9'],
+    a: 1,
+    e: 'Sorted set: 2, 3, 4, 7, 8, 9, 10. The middle number is 7.',
+    full: 'Always arrange the numbers in ascending or descending order first. Since there are 7 numbers, the 4th one is the median.',
+    h: 'Is 7 the middle number when sorted?'
+  },
+  {
+    yr: 2023,
+    q: "If the binary operation * is defined by a * b = ab + a + b, find 2 * 3.",
+    o: ['6', '10', '11', '12'],
+    a: 2,
+    e: '2 * 3 = (2 × 3) + 2 + 3 = 6 + 2 + 3 = 11.',
+    full: 'Substitute the values 2 and 3 into the given formula for a and b.',
+    h: 'Is 6 + 5 equal to 11?'
+  },
+  {
+    yr: 2023,
+    q: "Find the sum of the interior angles of a pentagon.",
+    o: ['360°', '540°', '720°', '900°'],
+    a: 1,
+    e: '(n - 2) × 180 = (5 - 2) × 180 = 3 × 180 = 540.',
+    full: 'The formula for the sum of interior angles is (n-2) × 180, where n is the number of sides.',
+    h: 'Is 3 × 180 equal to 540?'
+  },
+  {
+    yr: 2022,
+    q: "If y = 3x² - 5x + 2, find the gradient of the curve at x = 2.",
+    o: ['2', '5', '7', '12'],
+    a: 2,
+    e: 'dy/dx = 6x - 5. At x=2, 6(2) - 5 = 12 - 5 = 7.',
+    full: 'The gradient of a curve at a point is the value of its first derivative at that point. 6x comes from 3x² and -5 from -5x.',
+    h: 'Is 12 - 5 equal to 7?'
+  },
+  {
+    yr: 2022,
+    q: "Simplify (log 8)/(log 4).",
+    o: ['2', '1.5', '0.5', '4'],
+    a: 1,
+    e: '(log 2³)/(log 2²) = (3 log 2)/(2 log 2) = 3/2 = 1.5.',
+    full: 'Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the log 2.',
+    h: 'Is log 8 equal to 3 log 2?'
+  },
+  {
+    yr: 2022,
+    q: "Find the value of x for which 2²ˣ⁻¹ = 8.",
+    o: ['1', '2', '3', '4'],
+    a: 1,
+    e: '2²ˣ⁻¹ = 2³ → 2x - 1 = 3 → 2x = 4 → x = 2.',
+    full: 'Since the bases are both 2, equate the exponents. Solving 2x - 1 = 3 gives x = 2.',
+    h: 'Is 3 + 1 equal to 4?'
+  },
+  {
+    yr: 2022,
+    q: "Solve for x in 3x - 2 > 5x + 4.",
+    o: ['x < -3', 'x > -3', 'x < 3', 'x > 3'],
+    a: 0,
+    e: '-6 > 2x → -3 > x → x < -3.',
+    full: 'Subtract 3x from both sides and subtract 4 from both sides. Remember: dividing by a positive does not flip the sign.',
+    h: 'Is 4 + 2 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "If sin θ = cos θ, find θ for 0° ≤ θ ≤ 90°.",
+    o: ['0°', '30°', '45°', '60°'],
+    a: 2,
+    e: 'Divide by cos θ: tan θ = 1 → θ = 45°.',
+    full: 'The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).',
+    h: 'Is tan 45 equal to 1?'
+  },
+  {
+    yr: 2022,
+    q: "Find the midpoint of the line joining (-2, 4) and (6, 8).",
+    o: ['(2, 6)', '(4, 12)', '(2, 12)', '(4, 6)'],
+    a: 0,
+    e: 'M = ((-2+6)/2, (4+8)/2) = (4/2, 12/2) = (2, 6).',
+    full: 'The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.',
+    h: 'Is 4/2 equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
+    o: ['₦500', '₦1,000', '₦1,500', '₦2,000'],
+    a: 1,
+    e: 'I = (10000 × 5 × 2)/100 = 100 × 10 = 1000.',
+    full: 'Interest is Principal × Rate × Time. 10,000 × 0.05 × 2 = 1,000.',
+    h: 'Is 5 × 2 equal to 10?'
+  },
+  {
+    yr: 2022,
+    q: "Evaluate ∫₁² 3x² dx.",
+    o: ['3', '5', '7', '9'],
+    a: 2,
+    e: '[x³]₁² = 2³ - 1³ = 8 - 1 = 7.',
+    full: 'Integrate 3x² to get x³. Then substitute the upper limit (2) and subtract the lower limit (1).',
+    h: 'Is 2³ equal to 8?'
+  },
+  {
+    yr: 2022,
+    q: "A circle has an area of 616cm². Find its radius. (π = 22/7)",
+    o: ['7cm', '14cm', '21cm', '28cm'],
+    a: 1,
+    e: '(22/7)r² = 616 → r² = (616 × 7)/22 = 28 × 7 = 196 → r = 14.',
+    full: 'Set πr² equal to 616 and solve for r. 196 is the square of 14.',
+    h: 'Is 14 × 14 equal to 196?'
+  },
+  {
+    yr: 2022,
+    q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
+    o: ['2', '3', '5', '6'],
+    a: 0,
+    e: 'The number 2 appears three times, which is more than any other number.',
+    full: 'The mode is the value that occurs most frequently in a data set.',
+    h: 'Does 2 appear more than 5?'
+  },
+  {
+    yr: 2022,
+    q: "If log₁₀ x = -2, find x.",
+    o: ['0.2', '0.02', '0.01', '100'],
+    a: 2,
+    e: 'x = 10⁻² = 1/100 = 0.01.',
+    full: 'Logarithm to base 10 of x = y means x = 10ʸ.',
+    h: 'Is 10⁻² the same as 1/100?'
+  },
+  {
+    yr: 2022,
+    q: "Factorize completely: 4x² - 9y².",
+    o: ['(2x-3y)²', '(2x+3y)²', '(2x-3y)(2x+3y)', '(4x-9y)(x+y)'],
+    a: 2,
+    e: 'Using a² - b² = (a-b)(a+b). Here a=2x and b=3y.',
+    full: 'This is a difference of two squares. 4x² is (2x)² and 9y² is (3y)².',
+    h: 'Is the root of 4x² equal to 2x?'
+  },
+  {
+    yr: 2022,
+    q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
+    o: ['24', '48', '96', '120'],
+    a: 1,
+    e: 'T₅ = ar⁴ = 3(2⁴) = 3(16) = 48.',
+    full: 'The formula for the nth term of a G.P. is arⁿ⁻¹.',
+    h: 'Is 2⁴ equal to 16?'
+  },
+  {
+    yr: 2022,
+    q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
+    o: ['0', '1.33', '2', '4'],
+    a: 1,
+    e: 'Mean = 4. Deviations: |2-4|=2, |4-4|=0, |6-4|=2. MD = (2+0+2)/3 = 4/3 = 1.33.',
+    full: 'Mean deviation is the average of the absolute differences between each value and the mean.',
+    h: 'Is the mean of 2, 4, 6 equal to 4?'
+  },
+  {
+    yr: 2022,
+    q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
+    o: ['6', '7', '8', '10'],
+    a: 2,
+    e: '(n-2)180 = 1080 → n-2 = 6 → n = 8.',
+    full: 'Divide 1080 by 180 to find n-2, then add 2 to find the number of sides.',
+    h: 'Is 1080 / 180 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "If y = 2x³, find dy/dx.",
+    o: ['2x²', '6x²', '6x³', 'x²'],
+    a: 1,
+    e: 'dy/dx = 2(3)x³⁻¹ = 6x².',
+    full: 'Multiply the coefficient by the power and decrease the power by 1.',
+    h: 'Is 2 × 3 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. (π = 22/7)",
+    o: ['3.33cm', '7.33cm', '14.67cm', '22cm'],
+    a: 1,
+    e: 'L = (θ/360) × 2πr = (60/360) × 2 × (22/7) × 7 = (1/6) × 44 = 7.33.',
+    full: 'The length of an arc is a fraction of the total circumference based on the central angle.',
+    h: 'Is 44/6 approximately 7.33?'
+  },
+  {
+    yr: 2022,
+    q: "Rationalize 1/(√3 - 1).",
+    o: ['√3 + 1', '(√3 + 1)/2', '√3 - 1', '(√3 - 1)/2'],
+    a: 1,
+    e: 'Multiply by conjugate: (√3+1)/((√3-1)(√3+1)) = (√3+1)/(3-1) = (√3+1)/2.',
+    full: 'To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).',
+    h: 'Is (√3)² - 1² equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "If y = 3x² - 5x + 2, find the gradient of the curve at x = 2.",
+    o: ['2', '5', '7', '12'],
+    a: 2,
+    e: 'dy/dx = 6x - 5. At x=2, 6(2) - 5 = 12 - 5 = 7.',
+    full: 'The gradient of a curve at a point is the value of its first derivative at that point. 6x comes from 3x² and -5 from -5x.',
+    h: 'Is 12 - 5 equal to 7?'
+  },
+  {
+    yr: 2022,
+    q: "Simplify (log 8)/(log 4).",
+    o: ['2', '1.5', '0.5', '4'],
+    a: 1,
+    e: '(log 2³)/(log 2²) = (3 log 2)/(2 log 2) = 3/2 = 1.5.',
+    full: 'Express both numbers as powers of 2. Use the power rule to bring exponents to the front, then cancel the log 2.',
+    h: 'Is log 8 equal to 3 log 2?'
+  },
+  {
+    yr: 2022,
+    q: "Find the value of x for which 2²ˣ⁻¹ = 8.",
+    o: ['1', '2', '3', '4'],
+    a: 1,
+    e: '2²ˣ⁻¹ = 2³ → 2x - 1 = 3 → 2x = 4 → x = 2.',
+    full: 'Since the bases are both 2, equate the exponents. Solving 2x - 1 = 3 gives x = 2.',
+    h: 'Is 3 + 1 equal to 4?'
+  },
+  {
+    yr: 2022,
+    q: "Solve for x in 3x - 2 > 5x + 4.",
+    o: ['x < -3', 'x > -3', 'x < 3', 'x > 3'],
+    a: 0,
+    e: '-6 > 2x → -3 > x → x < -3.',
+    full: 'Subtract 3x from both sides and subtract 4 from both sides. Remember: dividing by a positive does not flip the sign.',
+    h: 'Is 4 + 2 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "If sin θ = cos θ, find θ for 0° ≤ θ ≤ 90°.",
+    o: ['0°', '30°', '45°', '60°'],
+    a: 2,
+    e: 'Divide by cos θ: tan θ = 1 → θ = 45°.',
+    full: 'The sine and cosine of an angle are equal only when the opposite and adjacent sides of the triangle are equal (an isosceles right triangle).',
+    h: 'Is tan 45 equal to 1?'
+  },
+  {
+    yr: 2022,
+    q: "Find the midpoint of the line joining (-2, 4) and (6, 8).",
+    o: ['(2, 6)', '(4, 12)', '(2, 12)', '(4, 6)'],
+    a: 0,
+    e: 'M = ((-2+6)/2, (4+8)/2) = (4/2, 12/2) = (2, 6).',
+    full: 'The midpoint formula is the average of the x-coordinates and the average of the y-coordinates.',
+    h: 'Is 4/2 equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "Calculate the simple interest on ₦10,000 for 2 years at 5% per annum.",
+    o: ['₦500', '₦1,000', '₦1,500', '₦2,000'],
+    a: 1,
+    e: 'I = (10000 × 5 × 2)/100 = 100 × 10 = 1000.',
+    full: 'Interest is Principal × Rate × Time. 10,000 × 0.05 × 2 = 1,000.',
+    h: 'Is 5 × 2 equal to 10?'
+  },
+  {
+    yr: 2022,
+    q: "Evaluate ∫₁² 3x² dx.",
+    o: ['3', '5', '7', '9'],
+    a: 2,
+    e: '[x³]₁² = 2³ - 1³ = 8 - 1 = 7.',
+    full: 'Integrate 3x² to get x³. Then substitute the upper limit (2) and subtract the lower limit (1).',
+    h: 'Is 2³ equal to 8?'
+  },
+  {
+    yr: 2022,
+    q: "A circle has an area of 616cm². Find its radius. (π = 22/7)",
+    o: ['7cm', '14cm', '21cm', '28cm'],
+    a: 1,
+    e: '(22/7)r² = 616 → r² = (616 × 7)/22 = 28 × 7 = 196 → r = 14.',
+    full: 'Set πr² equal to 616 and solve for r. 196 is the square of 14.',
+    h: 'Is 14 × 14 equal to 196?'
+  },
+  {
+    yr: 2022,
+    q: "Find the mode of the scores: 2, 5, 2, 3, 6, 2, 4, 5.",
+    o: ['2', '3', '5', '6'],
+    a: 0,
+    e: 'The number 2 appears three times, which is more than any other number.',
+    full: 'The mode is the value that occurs most frequently in a data set.',
+    h: 'Does 2 appear more than 5?'
+  },
+  {
+    yr: 2022,
+    q: "If log₁₀ x = -2, find x.",
+    o: ['0.2', '0.02', '0.01', '100'],
+    a: 2,
+    e: 'x = 10⁻² = 1/100 = 0.01.',
+    full: 'Logarithm to base 10 of x = y means x = 10ʸ.',
+    h: 'Is 10⁻² the same as 1/100?'
+  },
+  {
+    yr: 2022,
+    q: "Factorize completely: 4x² - 9y².",
+    o: ['(2x-3y)²', '(2x+3y)²', '(2x-3y)(2x+3y)', '(4x-9y)(x+y)'],
+    a: 2,
+    e: 'Using a² - b² = (a-b)(a+b). Here a=2x and b=3y.',
+    full: 'This is a difference of two squares. 4x² is (2x)² and 9y² is (3y)².',
+    h: 'Is the root of 4x² equal to 2x?'
+  },
+  {
+    yr: 2022,
+    q: "Find the 5th term of a Geometric Progression (G.P.) whose first term is 3 and common ratio is 2.",
+    o: ['24', '48', '96', '120'],
+    a: 1,
+    e: 'T₅ = ar⁴ = 3(2⁴) = 3(16) = 48.',
+    full: 'The formula for the nth term of a G.P. is arⁿ⁻¹.',
+    h: 'Is 2⁴ equal to 16?'
+  },
+  {
+    yr: 2022,
+    q: "Calculate the mean deviation of the numbers: 2, 4, 6.",
+    o: ['0', '1.33', '2', '4'],
+    a: 1,
+    e: 'Mean = 4. Deviations: |2-4|=2, |4-4|=0, |6-4|=2. MD = (2+0+2)/3 = 4/3 = 1.33.',
+    full: 'Mean deviation is the average of the absolute differences between each value and the mean.',
+    h: 'Is the mean of 2, 4, 6 equal to 4?'
+  },
+  {
+    yr: 2022,
+    q: "The sum of interior angles of a regular polygon is 1080°. Find the number of sides.",
+    o: ['6', '7', '8', '10'],
+    a: 2,
+    e: '(n-2)180 = 1080 → n-2 = 6 → n = 8.',
+    full: 'Divide 1080 by 180 to find n-2, then add 2 to find the number of sides.',
+    h: 'Is 1080 / 180 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "If y = 2x³, find dy/dx.",
+    o: ['2x²', '6x²', '6x³', 'x²'],
+    a: 1,
+    e: 'dy/dx = 2(3)x³⁻¹ = 6x².',
+    full: 'Multiply the coefficient by the power and decrease the power by 1.',
+    h: 'Is 2 × 3 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "Find the length of an arc that subtends an angle of 60° at the center of a circle of radius 7cm. (π = 22/7)",
+    o: ['3.33cm', '7.33cm', '14.67cm', '22cm'],
+    a: 1,
+    e: 'L = (θ/360) × 2πr = (60/360) × 2 × (22/7) × 7 = (1/6) × 44 = 7.33.',
+    full: 'The length of an arc is a fraction of the total circumference based on the central angle.',
+    h: 'Is 44/6 approximately 7.33?'
+  },
+  {
+    yr: 2022,
+    q: "Rationalize 1/(√3 - 1).",
+    o: ['√3 + 1', '(√3 + 1)/2', '√3 - 1', '(√3 - 1)/2'],
+    a: 1,
+    e: 'Multiply by conjugate: (√3+1)/((√3-1)(√3+1)) = (√3+1)/(3-1) = (√3+1)/2.',
+    full: 'To rationalize a binomial denominator, multiply the numerator and denominator by its conjugate (change the sign).',
+    h: 'Is (√3)² - 1² equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "Convert 25₁₀ to binary (base 2).",
+    o: ['11001', '10110', '11101', '10011'],
+    a: 0,
+    e: '25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1. Reading up: 11001.',
+    full: 'Successively divide the base 10 number by 2 and record the remainders from bottom to top.',
+    h: 'Is the first remainder 1?'
+  },
+  {
+    yr: 2022,
+    q: "If x varies inversely as y and x=4 when y=3, find x when y=6.",
+    o: ['2', '4', '8', '12'],
+    a: 0,
+    e: 'xy = k → 4 × 3 = 12 = k. When y=6, 6x = 12 → x = 2.',
+    full: 'In inverse variation, the product of the two variables remains constant (k).',
+    h: 'Is 12/6 equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "Find the value of x in the equation log₃(2x + 1) = 2.",
+    o: ['2', '4', '8', '9'],
+    a: 1,
+    e: '2x + 1 = 3² = 9 → 2x = 8 → x = 4.',
+    full: 'Convert the log to index form: the base 3 raised to the power of 2 equals the bracket (2x+1).',
+    h: 'Is 3² equal to 9?'
+  },
+  {
+    yr: 2022,
+    q: "If y = (2x + 3)⁴, find dy/dx.",
+    o: ['4(2x+3)³', '8(2x+3)³', '8(2x+3)⁴', '2(2x+3)³'],
+    a: 1,
+    e: '4(2x+3)³ × 2 = 8(2x+3)³.',
+    full: 'Using the function of a function rule (Chain Rule), differentiate the outer bracket and multiply by the derivative of the inside (2).',
+    h: 'Is 4 × 2 equal to 8?'
+  },
+  {
+    yr: 2022,
+    q: "Find the equation of the line passing through (0, 5) with gradient 3.",
+    o: ['y = 3x - 5', 'y = 5x + 3', 'y = 3x + 5', 'y = -3x + 5'],
+    a: 2,
+    e: 'Using y = mx + c, where m=3 and c=5.',
+    full: 'The y-intercept (c) is 5 because the line passes through (0, 5). Substituting the gradient (m=3) gives the equation.',
+    h: 'Is the constant term 5?'
+  },
+  {
+    yr: 2022,
+    q: "A bag contains 4 white and 6 black balls. If a ball is picked at random, what is the probability it is NOT white?",
+    o: ['2/5', '3/5', '1/2', '2/3'],
+    a: 1,
+    e: 'Total = 10. Not white = Black = 6. P = 6/10 = 3/5.',
+    full: 'The probability of an event not happening is 1 minus the probability of it happening, or simply the count of the other outcomes.',
+    h: 'Is 6/10 the same as 3/5?'
+  },
+  {
+    yr: 2022,
+    q: "If sin θ = 0.8, find tan θ for an acute angle θ.",
+    o: ['0.6', '0.75', '1.33', '1.25'],
+    a: 2,
+    e: 'Opp=8, Hyp=10 → Adj=6. tan θ = 8/6 = 1.33.',
+    full: 'In a right triangle, if sin = 0.8 (4/5), the sides are 3, 4, 5. Tangent is Opposite (4) over Adjacent (3).',
+    h: 'Is 4/3 approximately 1.33?'
+  },
+  {
+    yr: 2022,
+    q: "Evaluate 110.11₂ + 10.01₂.",
+    o: ['1001.00₂', '1000.11₂', '101.00₂', '1001.11₂'],
+    a: 0,
+    e: '110.11 + 10.01 = 1001.00 in base 2.',
+    full: 'Line up the points and add. 1+1=10 (write 0, carry 1). Carry the values over just like base 10 addition.',
+    h: 'Does 1 + 1 equal 10 in base 2?'
+  },
+  {
+    yr: 2022,
+    q: "Find the variance of the numbers: 3, 5, 7.",
+    o: ['2', '2.67', '4', '8'],
+    a: 2,
+    e: 'Mean = 5. Var = ((3-5)² + (5-5)² + (7-5)²)/3 = (4+0+4)/3 = 8/3 = 2.67.',
+    full: 'Calculate the mean (5), subtract from each number and square the result (4, 0, 4). The average of these squares is the variance.',
+    h: 'Is 8/3 approximately 2.67?'
+  },
+  {
+    yr: 2022,
+    q: "Simplify x/2 - (x-1)/3.",
+    o: ['(x-2)/6', '(x+2)/6', '(5x-2)/6', '(x+1)/6'],
+    a: 1,
+    e: '(3x - 2(x-1))/6 = (3x - 2x + 2)/6 = (x+2)/6.',
+    full: 'Find a common denominator (6). Be careful with the negative sign when expanding -2(x-1).',
+    h: 'Does -2 × -1 equal +2?'
+  },
+  {
+    yr: 2022,
+    q: "If M = [[1, 2], [0, 3]], find M².",
+    o: ['[[1, 4], [0, 9]]', '[[1, 8], [0, 9]]', '[[1, 6], [0, 9]]', '[[1, 2], [0, 3]]'],
+    a: 1,
+    e: 'Row1 × Col2 = (1 × 2) + (2 × 3) = 8.',
+    full: 'Multiply the matrix by itself. M × M. The top right element is 8, and the bottom right is 9.',
+    h: 'Is 2 + 6 equal to 8?'
+  },
+  {
+    yr: 2022,
+    q: "Find the sum to infinity of the G.P.: 1, 1/2, 1/4, ...",
+    o: ['1.5', '2', '3', '∞'],
+    a: 1,
+    e: 'S∞ = a/(1-r) = 1/(1 - 0.5) = 1/0.5 = 2.',
+    full: 'The sum to infinity formula applies because the common ratio r is less than 1.',
+    h: 'Is 1/0.5 equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "How many ways can 3 students be seated in a row of 3 chairs?",
+    o: ['3', '6', '9', '27'],
+    a: 1,
+    e: '3! = 3 × 2 × 1 = 6.',
+    full: 'This is a permutation of 3 items. 3 choices for the first chair, 2 for the second, and 1 for the last.',
+    h: 'Is 3 × 2 equal to 6?'
+  },
+  {
+    yr: 2022,
+    q: "Find the derivative of 1/x.",
+    o: ['log x', '1', '-x⁻²', 'x²'],
+    a: 2,
+    e: 'x⁻¹ derivative is -1x⁻².',
+    full: 'Rewrite 1/x as x to the power of -1. Apply the power rule: multiply by the power and decrease it by 1.',
+    h: 'Is -1 - 1 equal to -2?'
+  },
+  {
+    yr: 2022,
+    q: "If 2x + y = 7 and x - y = 2, find x.",
+    o: ['1', '2', '3', '4'],
+    a: 2,
+    e: 'Adding both equations: 3x = 9 → x = 3.',
+    full: 'Use the elimination method. Adding the equations cancels out the +y and -y.',
+    h: 'Is 9/3 equal to 3?'
+  },
+  {
+    yr: 2022,
+    q: "Calculate the volume of a sphere of radius 3cm. (Leave in π)",
+    o: ['12π cm³', '24π cm³', '36π cm³', '48π cm³'],
+    a: 2,
+    e: 'V = (4/3)πr³ = (4/3)π(27) = 4 × 9π = 36π.',
+    full: 'The formula is 4/3 times π times the radius cubed. 3³ is 27.',
+    h: 'Is 4 × 9 equal to 36?'
+  },
+  {
+    yr: 2022,
+    q: "What is the value of sin 120°?",
+    o: ['0.5', '0.866', '-0.5', '-0.866'],
+    a: 1,
+    e: 'sin(180 - 60) = sin 60 = √3/2 ≈ 0.866.',
+    full: 'Sine is positive in the second quadrant. sin 120 is equivalent to sin 60.',
+    h: 'Is sin 120 positive?'
+  },
+  {
+    yr: 2022,
+    q: "Solve for x: x² + 7x + 10 = 0.",
+    o: ['(2, 5)', '(-2, -5)', '(1, 10)', '(-1, -10)'],
+    a: 1,
+    e: '(x+2)(x+5) = 0 → x = -2, -5.',
+    full: 'We need two numbers that multiply to 10 and add to 7. Those are 2 and 5. The roots are the negative of those factors.',
+    h: 'Do 2 and 5 add to 7?'
+  },
+  {
+    yr: 2022,
+    q: "A pyramid has a square base of side 5cm and a height of 12cm. Find its volume.",
+    o: ['60cm³', '100cm³', '150cm³', '300cm³'],
+    a: 1,
+    e: 'V = (1/3) × Area × h = (1/3) × 25 × 12 = 25 × 4 = 100.',
+    full: 'The volume of a pyramid is one-third the base area times the vertical height.',
+    h: 'Is 12/3 equal to 4?'
+  },
+  {
+    yr: 2022,
+    q: "Simplify (2³)² × 2⁻⁴.",
+    o: ['2', '4', '8', '16'],
+    a: 1,
+    e: '2⁶ × 2⁻⁴ = 2⁶⁻⁴ = 2² = 4.',
+    full: 'Multiply powers when one is inside and one is outside the bracket. Then add powers when multiplying the same base.',
+    h: 'Is 6 - 4 equal to 2?'
+  },
+  {
+    yr: 2022,
+    q: "If the mean of 4, 7, x, and 9 is 7, find x.",
+    o: ['6', '7', '8', '10'],
+    a: 2,
+    e: '(4+7+x+9)/4 = 7 → 20+x = 28 → x = 8.',
+    full: 'The sum of the four numbers must equal 4 times the mean (28).',
+    h: 'Is 28 - 20 equal to 8?'
+  },
+  {
+    yr: 2022,
+    q: "Find the simple interest on ₦2000 for 6 months at 10% per annum.",
+    o: ['₦100', '₦200', '₦10', '₦120'],
+    a: 0,
+    e: 'I = (2000 × 10 × 0.5)/100 = 100.',
+    full: '6 months is 0.5 years. Interest is Principal × Rate × Time in years.',
+    h: 'Is half of 200 equal to 100?'
+  },
+  {
+    yr: 2022,
+    q: "Convert 25₁₀ to binary (base 2).",
+    o: ['11001', '10110', '11101', '10011'],
+    a: 0,
+    e: '25/2 = 12 R1; 12/2 = 6 R0; 6/2 = 3 R0; 3/2 = 1 R1; 1/2 = 0 R1. Reading up: 11001.',
+    full: 'Successively divide the base 10 number by 2 and record the remainders from bottom to top.',
+    h: 'Is the first remainder 1?'
+  },
+  {
+    yr: 2022,
+    q: "If x varies inversely as y and x=4 when y=3, find x when y=6.",
+    o: ['2', '4', '8', '12'],
+    a: 0,
+    e: 'xy = k → 4 × 3 = 12 = k. When y=6, 6x = 12 → x = 2.',
+    full: 'In inverse variation, the product of the two variables remains constant (k).',
+    h: 'Is 12/6 equal to 2?'
   },
   {
     yr: 2021,
-    q: "If $log_{10} 2 = 0.3010$, find $log_{10} 20$.",
-    o: ["0.6020", "1.3010", "2.3010", "0.3010"],
+    q: "If P = {1, 2, 3, 4, 5, 6} and Q = {3, 4, 5, 6, 7, 8}, find P ∩ Q.",
+    o: ['{1, 2, 7, 8}', '{3, 4, 5, 6}', '{1, 2, 3, 4, 5, 6, 7, 8}', '{}'],
     a: 1,
-    e: "$log_{10}(2 \\times 10) = log_{10} 2 + log_{10} 10 = 0.3010 + 1 = 1.3010$.",
-    full: "Using the multiplication law of logs, $log(AB) = log A + log B$. $log_{10} 10$ is always 1.",
-    h: "Is $0.3010 + 1$ equal to 1.3010?"
+    e: 'The intersection (∩) consists of elements common to both sets: 3, 4, 5, and 6.',
+    full: 'Intersection means and—only the numbers that appear in both P and Q are included.',
+    h: 'Are 3, 4, 5, and 6 in both lists?'
+  },
+  {
+    yr: 2021,
+    q: "Simplify √48 / √3.",
+    o: ['2', '4', '6', '16'],
+    a: 1,
+    e: '√(48/3) = √16 = 4.',
+    full: 'You can divide numbers under a square root just like regular numbers. 48 divided by 3 is 16.',
+    h: 'Is the square root of 16 equal to 4?'
+  },
+  {
+    yr: 2021,
+    q: "Find the value of x if logₓ 64 = 3.",
+    o: ['2', '4', '8', '16'],
+    a: 1,
+    e: 'x³ = 64 → x = ∛64 = 4.',
+    full: 'In log form, the base x raised to the power 3 must equal 64. Since 4 × 4 × 4 = 64, x is 4.',
+    h: 'Is 4³ equal to 64?'
+  },
+  {
+    yr: 2021,
+    q: "Solve the quadratic equation x² - x - 6 = 0.",
+    o: ['(2, 3)', '(-2, 3)', '(2, -3)', '(-2, -3)'],
+    a: 1,
+    e: '(x+2)(x-3) = 0 → x = -2, 3.',
+    full: 'Find two numbers that multiply to -6 and add to -1. These are +2 and -3. The roots are the opposite signs.',
+    h: 'Does 2 - 3 equal -1?'
+  },
+  {
+    yr: 2021,
+    q: "Calculate the area of a sector of a circle with radius 6cm and angle 70°. (π = 22/7)",
+    o: ['22cm²', '44cm²', '11cm²', '33cm²'],
+    a: 0,
+    e: 'A = (70/360) × (22/7) × 36 = (1/360) × 10 × 22 × 36 = 22.',
+    full: 'The 36 from r² cancels nicely with the 360 denominator, leaving a very clean calculation.',
+    h: 'Is 10 × 36 equal to 360?'
+  },
+  {
+    yr: 2021,
+    q: "If y = 5x⁴ - x², find d²y/dx².",
+    o: ['20x³ - 2x', '60x² - 2', '60x²', '20x³'],
+    a: 1,
+    e: 'dy/dx = 20x³ - 2x. Differentiating again: 60x² - 2.',
+    full: 'This is the second derivative. Differentiate once, then differentiate that result again.',
+    h: 'Is the derivative of 20x³ equal to 60x²?'
+  },
+  {
+    yr: 2021,
+    q: "Evaluate sin² 30° + cos² 30°.",
+    o: ['0.5', '1', '1.5', '2'],
+    a: 1,
+    e: 'Trigonometric identity: sin²θ + cos²θ = 1 for any angle.',
+    full: 'Even without calculating the specific values, this fundamental identity always equals 1.',
+    h: 'Is the sum of sin² and cos² always 1?'
+  },
+  {
+    yr: 2021,
+    q: "Find the gradient of the line 2x + 3y = 6.",
+    o: ['2', '3', '2/3', '-2/3'],
+    a: 3,
+    e: '3y = -2x + 6 → y = (-2/3)x + 2. Gradient is -2/3.',
+    full: 'Rearrange the equation into the slope-intercept form y = mx + c. The coefficient of x is the gradient.',
+    h: 'Is the gradient negative?'
+  },
+  {
+    yr: 2021,
+    q: "A boy is 5 years older than his sister. If the sum of their ages is 19, how old is the sister?",
+    o: ['7', '12', '5', '14'],
+    a: 0,
+    e: 'x + (x+5) = 19 → 2x = 14 → x = 7.',
+    full: 'Let the sister\'s age be x. The boy is x+5. Solving the simple equation gives 7.',
+    h: 'Is 19 - 5 equal to 14?'
+  },
+  {
+    yr: 2021,
+    q: "Find the mean of x, x+2, x+4, x+6.",
+    o: ['x+2', 'x+3', 'x+4', 'x+5'],
+    a: 1,
+    e: 'Sum = 4x + 12. Mean = (4x + 12)/4 = x + 3.',
+    full: 'Add all four terms and divide by 4. 4x divided by 4 is x, and 12 divided by 4 is 3.',
+    h: 'Is the middle of the set between x+2 and x+4?'
+  },
+  {
+    yr: 2021,
+    q: "Simplify (3⁰ + 3⁻¹)⁻¹.",
+    o: ['3/4', '4/3', '1/4', '3'],
+    a: 0,
+    e: '(1 + 1/3)⁻¹ = (4/3)⁻¹ = 3/4.',
+    full: 'Anything to power 0 is 1. 3⁻¹ is 1/3. The final negative power flips the fraction.',
+    h: 'Is 1 + 1/3 equal to 4/3?'
+  },
+  {
+    yr: 2021,
+    q: "Convert 101.1₂ to base 10.",
+    o: ['5.1', '5.5', '6.5', '7.5'],
+    a: 1,
+    e: '4 + 0 + 1 + 0.5 = 5.5.',
+    full: 'The digit after the decimal in base 2 represents 2⁻¹, which is 0.5.',
+    h: 'Is 1/2 equal to 0.5?'
+  },
+  {
+    yr: 2021,
+    q: "If y is inversely proportional to x² and y=2 when x=3, find y when x=1.",
+    o: ['6', '9', '18', '36'],
+    a: 2,
+    e: 'y = k/x² → 2 = k/9 → k=18. When x=1, y=18/1 = 18.',
+    full: 'The constant k is y × x². Since 2 × 9 = 18, the constant is 18.',
+    h: 'Is 2 × 9 equal to 18?'
+  },
+  {
+    yr: 2021,
+    q: "Find the 20th term of the A.P. -5, -2, 1, ...",
+    o: ['52', '55', '58', '61'],
+    a: 0,
+    e: 'a = -5, d = 3. T₂₀ = -5 + 19(3) = -5 + 57 = 52.',
+    full: 'The common difference is positive 3. Add 19 of these differences to the starting value -5.',
+    h: 'Is 19 × 3 equal to 57?'
+  },
+  {
+    yr: 2021,
+    q: "What is the probability of picking a prime number from the set {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}?",
+    o: ['2/5', '1/2', '3/10', '4/5'],
+    a: 0,
+    e: 'Primes are {2, 3, 5, 7}. Probability = 4/10 = 2/5.',
+    full: 'Note that 1 is not a prime number. There are 4 primes in the first ten integers.',
+    h: 'Is 4 out of 10 the same as 2/5?'
+  },
+  {
+    yr: 2021,
+    q: "Find the determinant of [[4, 2], [-3, 1]].",
+    o: ['2', '6', '10', '-2'],
+    a: 2,
+    e: '(4 × 1) - (2 × -3) = 4 - (-6) = 10.',
+    full: 'Multiply the main diagonal and subtract the product of the other diagonal. Watch the signs!',
+    h: 'Is 4 + 6 equal to 10?'
+  },
+  {
+    yr: 2021,
+    q: "Integrate ∫ cos x dx.",
+    o: ['sin x + c', '-sin x + c', 'tan x + c', 'cos² x + c'],
+    a: 0,
+    e: 'The derivative of sin x is cos x, so the integral of cos x is sin x.',
+    full: 'Integration is the reverse of differentiation. The integral of cos is positive sin.',
+    h: 'Is the integral of cos positive or negative?'
+  },
+  {
+    yr: 2021,
+    q: "Rationalize √2/√3.",
+    o: ['√6/2', '√6/3', '√6', '2/3'],
+    a: 1,
+    e: 'Multiply top and bottom by √3 to get √6/3.',
+    full: 'To remove the root from the bottom, multiply by that same root. √2 × √3 = √6.',
+    h: 'Is 2 × 3 equal to 6?'
+  },
+  {
+    yr: 2021,
+    q: "Find the mode of 10, 11, 10, 12, 13, 11, 10.",
+    o: ['10', '11', '12', '13'],
+    a: 0,
+    e: '10 appears 3 times, which is more than any other value.',
+    full: 'The mode is the most frequent number. 10 is the clear winner here.',
+    h: 'Does 10 appear three times?'
+  },
+  {
+    yr: 2021,
+    q: "If 3ˣ⁻¹ = 9, find x.",
+    o: ['1', '2', '3', '4'],
+    a: 2,
+    e: '3ˣ⁻¹ = 3² → x-1 = 2 → x = 3.',
+    full: 'Since 9 is 3², the powers must be equal. x - 1 = 2 means x must be 3.',
+    h: 'Is 2 + 1 equal to 3?'
+  },
+  {
+    yr: 2020,
+    q: "If f(x) = 2x² - 3x + 1, find f(-2).",
+    o: ['3', '7', '11', '15'],
+    a: 3,
+    e: '2(-2)² - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15.',
+    full: 'Substitute -2 for every x in the function. Remember that a negative number squared becomes positive ((-2)² = 4).',
+    h: 'Is 8 + 7 equal to 15?'
+  },
+  {
+    yr: 2020,
+    q: "Simplify √98 - √50.",
+    o: ['√2', '2√2', '3√2', '4√2'],
+    a: 1,
+    e: '√(49×2) - √(25×2) = 7√2 - 5√2 = 2√2.',
+    full: 'Break the numbers into factors where one is a perfect square. 49 and 25 are the keys here.',
+    h: 'Is 7 - 5 equal to 2?'
+  },
+  {
+    yr: 2020,
+    q: "Find the value of n if log₂ 32 = n.",
+    o: ['3', '4', '5', '6'],
+    a: 2,
+    e: '2ⁿ = 32 → 2⁵ = 32 → n = 5.',
+    full: 'Ask yourself: 2 raised to what power gives 32? Since 2 × 2 × 2 × 2 × 2 = 32, the answer is 5.',
+    h: 'Is 2⁵ equal to 32?'
+  },
+  {
+    yr: 2020,
+    q: "Make t the subject of the formula: v = u + at.",
+    o: ['t = v - u - a', 't = (v-u)/a', 't = (v+u)/a', 't = v - u + a'],
+    a: 1,
+    e: 'v - u = at → t = (v-u)/a.',
+    full: 'Subtract u from both sides first, then divide the entire result by a to isolate t.',
+    h: 'Do you subtract u or add u first?'
+  },
+  {
+    yr: 2020,
+    q: "The probability of an event happening is 0.35. What is the probability of it NOT happening?",
+    o: ['0.35', '0.55', '0.65', '0.75'],
+    a: 2,
+    e: '1 - 0.35 = 0.65.',
+    full: 'The sum of the probability of an event occurring and not occurring is always 1.',
+    h: 'Is 1.00 - 0.35 equal to 0.65?'
+  },
+  {
+    yr: 2020,
+    q: "Find the 15th term of the A.P. 10, 7, 4, ...",
+    o: ['-32', '-35', '-42', '-45'],
+    a: 0,
+    e: 'a=10, d=-3. T₁₅ = 10 + 14(-3) = 10 - 42 = -32.',
+    full: 'The common difference is negative 3. Use the formula a + (n-1)d with n=15.',
+    h: 'Is 14 × -3 equal to -42?'
+  },
+  {
+    yr: 2020,
+    q: "If y = x² sin x, find dy/dx.",
+    o: ['2x cos x', 'x² cos x + 2x sin x', 'x² sin x + 2x cos x', '2x sin x'],
+    a: 1,
+    e: 'Product Rule: u dv/dx + v du/dx = x²(cos x) + sin x(2x).',
+    full: 'Since two functions of x are multiplied, you must use the product rule (uv\' + vu\').',
+    h: 'Is the derivative of sin x equal to cos x?'
+  },
+  {
+    yr: 2020,
+    q: "Calculate the perimeter of a sector with radius 7cm and angle 90°. (π = 22/7)",
+    o: ['11cm', '18cm', '25cm', '36cm'],
+    a: 2,
+    e: 'Arc = (90/360) × 2 × (22/7) × 7 = 11. Perimeter = 11 + 7 + 7 = 25.',
+    full: 'Perimeter of a sector is the Arc Length plus two radii (L + 2r).',
+    h: 'Is 11 + 14 equal to 25?'
+  },
+  {
+    yr: 2020,
+    q: "Find the determinant of [[5, 3], [2, 4]].",
+    o: ['14', '22', '26', '10'],
+    a: 0,
+    e: '(5 × 4) - (3 × 2) = 20 - 6 = 14.',
+    full: 'For a 2x2 matrix, subtract the product of the off-diagonal from the product of the main diagonal.',
+    h: 'Is 20 - 6 equal to 14?'
+  },
+  {
+    yr: 2020,
+    q: "If the mean of 2, 5, 8, x is 6, find x.",
+    o: ['7', '8', '9', '10'],
+    a: 2,
+    e: '(15 + x)/4 = 6 → 15 + x = 24 → x = 9.',
+    full: 'The sum of the numbers (15+x) must equal the mean multiplied by the count (6 × 4 = 24).',
+    h: 'Is 24 - 15 equal to 9?'
+  },
+  {
+    yr: 2020,
+    q: "Evaluate ∫₀¹ (4x³) dx.",
+    o: ['1', '2', '3', '4'],
+    a: 0,
+    e: '[x⁴]₀¹ = 1⁴ - 0⁴ = 1.',
+    full: 'Integrate 4x³ to get x⁴. Evaluate it from 0 to 1.',
+    h: 'Is 1⁴ equal to 1?'
+  },
+  {
+    yr: 2020,
+    q: "Solve for x: 3²ˣ = 27.",
+    o: ['1', '1.5', '2', '3'],
+    a: 1,
+    e: '3²ˣ = 3³ → 2x = 3 → x = 1.5.',
+    full: 'Write 27 as 3³. Equate the powers and solve the simple linear equation.',
+    h: 'Is 3/2 equal to 1.5?'
+  },
+  {
+    yr: 2020,
+    q: "Rationalize 1/(√2 + 1).",
+    o: ['√2 + 1', '√2 - 1', '(√2-1)/3', '1 - √2'],
+    a: 1,
+    e: 'Multiply by (√2-1). Denominator becomes 2-1=1.',
+    full: 'Multiply both numerator and denominator by the conjugate (√2-1).',
+    h: 'Is (√2)² - 1² equal to 1?'
+  },
+  {
+    yr: 2020,
+    q: "Find the coordinate of the midpoint between (3, 8) and (5, 2).",
+    o: ['(4, 5)', '(8, 10)', '(1, -3)', '(4, 10)'],
+    a: 0,
+    e: '((3+5)/2, (8+2)/2) = (8/2, 10/2) = (4, 5).',
+    full: 'Add the x-values and divide by 2; add the y-values and divide by 2.',
+    h: 'Is 8/2 equal to 4?'
+  },
+  {
+    yr: 2020,
+    q: "If y varies directly as the square of x and y=36 when x=3, find y when x=2.",
+    o: ['4', '8', '12', '16'],
+    a: 3,
+    e: 'y = kx² → 36 = k(9) → k=4. When x=2, y = 4(2²) = 16.',
+    full: 'Find the constant k first by using the initial values, then apply it to the second case.',
+    h: 'Is 4 × 4 equal to 16?'
+  },
+  {
+    yr: 2020,
+    q: "Convert 111₂ to base 10.",
+    o: ['3', '7', '11', '15'],
+    a: 1,
+    e: '1(2²) + 1(2¹) + 1(2⁰) = 4 + 2 + 1 = 7.',
+    full: 'Sum the powers of 2 for each 1 present in the binary string.',
+    h: 'Is 4+2+1 equal to 7?'
+  },
+  {
+    yr: 2020,
+    q: "Find the mode of 7, 12, 7, 14, 15, 7, 12.",
+    o: ['7', '12', '14', '15'],
+    a: 0,
+    e: '7 occurs three times, which is more frequent than any other number.',
+    full: 'The mode is the value that appears most often in the data set.',
+    h: 'Does 7 appear more than 12?'
+  },
+  {
+    yr: 2020,
+    q: "Find the angle whose tangent is 1.",
+    o: ['30°', '45°', '60°', '90°'],
+    a: 1,
+    e: 'tan⁻¹(1) = 45°.',
+    full: 'This occurs in an isosceles right triangle where the opposite and adjacent sides are equal.',
+    h: 'Is sin 45 equal to cos 45?'
+  },
+  {
+    yr: 2020,
+    q: "If 2x - 3y = 1 and x + 3y = 8, find x.",
+    o: ['2', '3', '4', '5'],
+    a: 1,
+    e: 'Add the equations: 3x = 9 → x = 3.',
+    full: 'Adding the two equations eliminates the y term since -3y + 3y = 0.',
+    h: 'Is 9/3 equal to 3?'
+  },
+  {
+    yr: 2020,
+    q: "Simplify (x² - 9)/(x + 3).",
+    o: ['x + 3', 'x - 3', 'x - 9', 'x²'],
+    a: 1,
+    e: '((x-3)(x+3))/(x+3) = x - 3.',
+    full: 'Factor the numerator using the difference of two squares and cancel the common factor.',
+    h: 'Does (x-3)(x+3) equal x² - 9?'
+  },
+  {
+    yr: 2020,
+    q: "If P = {2, 3, 5, 7} and Q = {2, 4, 6, 8}, find P ∪ Q.",
+    o: ['{2}', '{2, 3, 4, 5, 6, 7, 8}', '{3, 5, 7}', '{4, 6, 8}'],
+    a: 1,
+    e: 'The union (∪) includes all elements from both sets without duplication.',
+    full: 'Union means everything in both. We list 2, 3, 4, 5, 6, 7, and 8. The number 2 is common but only written once.',
+    h: 'Does the union include all unique numbers from both lists?'
+  },
+  {
+    yr: 2020,
+    q: "Find the derivative of y = 4x³ - 2x + 5.",
+    o: ['12x² - 2', '12x² + 5', '4x² - 2', '12x³ - 2'],
+    a: 0,
+    e: 'dy/dx = 4(3)x³⁻¹ - 2(1)x¹⁻¹ + 0 = 12x² - 2.',
+    full: 'Multiply the coefficient by the power and decrease the power by 1. The constant 5 becomes 0.',
+    h: 'Is 4 × 3 equal to 12?'
+  },
+  {
+    yr: 2020,
+    q: "Calculate the total surface area of a cylinder with radius 7cm and height 10cm. (π = 22/7)",
+    o: ['440cm²', '748cm²', '154cm²', '594cm²'],
+    a: 1,
+    e: 'TSA = 2πr(r + h) = 2(22/7)(7)(7 + 10) = 44(17) = 748.',
+    full: 'The formula for the total surface area of a closed cylinder is 2πr² (two bases) + 2πrh (curved surface).',
+    h: 'Is 44 × 17 equal to 748?'
+  },
+  {
+    yr: 2020,
+    q: "If log₁₀ x = 3, what is the value of x?",
+    o: ['30', '100', '300', '1000'],
+    a: 3,
+    e: 'x = 10³ = 1000.',
+    full: 'The base 10 raised to the result 3 gives the value of x. 10 × 10 × 10 = 1000.',
+    h: 'Is 10³ equal to 1000?'
+  },
+  {
+    yr: 2020,
+    q: "Find the distance between (2, -3) and (2, 5).",
+    o: ['2', '4', '8', '10'],
+    a: 2,
+    e: 'Since x-coords are the same, Distance = |5 - (-3)| = 8.',
+    full: 'When points are on a vertical line, you simply find the absolute difference between the y-coordinates.',
+    h: 'Is 5 + 3 equal to 8?'
+  },
+  {
+    yr: 2020,
+    q: "Solve the inequality: 5 - 2x ≥ 1.",
+    o: ['x ≥ 2', 'x ≤ 2', 'x ≥ -2', 'x ≤ -2'],
+    a: 1,
+    e: '-2x ≥ -4 → x ≤ 2.',
+    full: 'Subtract 5 from both sides to get -2x ≥ -4. Dividing by a negative number flips the inequality sign.',
+    h: 'Does the sign flip when you divide by -2?'
+  },
+  {
+    yr: 2020,
+    q: "Calculate the volume of a sphere with diameter 14cm. (π = 22/7)",
+    o: ['1437.33cm³', '179.67cm³', '616cm³', '4312cm³'],
+    a: 0,
+    e: 'r = 7. V = (4/3)π(7³) = (4/3) × (22/7) × 343 = 1437.33.',
+    full: 'First, find the radius (half of diameter). Then apply the volume formula 4/3 πr³.',
+    h: 'Is the radius 7?'
+  },
+  {
+    yr: 2020,
+    q: "Find the 10th term of the G.P.: 1, 2, 4, 8, ...",
+    o: ['256', '512', '1024', '2048'],
+    a: 1,
+    e: 'T₁₀ = ar⁹ = 1(2⁹) = 512.',
+    full: 'The first term a=1 and common ratio r=2. 2⁹ is 512.',
+    h: 'Is 2⁹ equal to 512?'
+  },
+  {
+    yr: 2020,
+    q: "If y = (x² + 1)³, find dy/dx.",
+    o: ['3(x²+1)²', '6x(x²+1)²', '6x(x²+1)³', '2x(x²+1)²'],
+    a: 1,
+    e: '3(x²+1)² × 2x = 6x(x²+1)².',
+    full: 'Use the Chain Rule. Differentiate the outer power then multiply by the derivative of the inside (x²+1).',
+    h: 'Is the derivative of x² + 1 equal to 2x?'
+  },
+  {
+    yr: 2020,
+    q: "Find the mean of the numbers: 15, 20, 25, 30, 35.",
+    o: ['20', '25', '30', '35'],
+    a: 1,
+    e: 'Sum = 125. Mean = 125/5 = 25.',
+    full: 'The numbers are in an arithmetic progression, so the mean is the middle term.',
+    h: 'Is 25 the middle number?'
+  },
+  {
+    yr: 2020,
+    q: "A die is rolled. What is the probability of getting a number less than 3?",
+    o: ['1/6', '1/3', '1/2', '2/3'],
+    a: 1,
+    e: 'Favorable outcomes: {1, 2}. Probability = 2/6 = 1/3.',
+    full: 'There are 2 numbers less than 3 on a standard die out of 6 possible outcomes.',
+    h: 'Is 2/6 equal to 1/3?'
+  },
+  {
+    yr: 2020,
+    q: "Integrate ∫ (sin x) dx.",
+    o: ['cos x + c', '-cos x + c', 'sin² x + c', 'tan x + c'],
+    a: 1,
+    e: 'The derivative of cos x is -sin x, so the integral of sin x is -cos x.',
+    full: 'Integration is the reverse process of differentiation. The integral of sin is negative cos.',
+    h: 'Is the integral of sin negative?'
+  },
+  {
+    yr: 2020,
+    q: "Find the value of x if 2(x - 5) = 3(x + 2).",
+    o: ['-16', '-4', '4', '16'],
+    a: 0,
+    e: '2x - 10 = 3x + 6 → -16 = x.',
+    full: 'Expand the brackets, then subtract 2x and 6 from both sides to find x.',
+    h: 'Is -10 - 6 equal to -16?'
+  },
+  {
+    yr: 2020,
+    q: "Calculate the area of a triangle with base 10cm and height 8cm.",
+    o: ['40cm²', '80cm²', '20cm²', '100cm²'],
+    a: 0,
+    e: 'Area = 0.5 × 10 × 8 = 40.',
+    full: 'The area of a triangle is half the base multiplied by the vertical height.',
+    h: 'Is half of 80 equal to 40?'
+  },
+  {
+    yr: 2020,
+    q: "If log₂ x + log₂ 3 = log₂ 12, find x.",
+    o: ['4', '9', '15', '36'],
+    a: 0,
+    e: 'log₂(3x) = log₂ 12 → 3x = 12 → x = 4.',
+    full: 'Use the addition law: log A + log B = log(AB). Then equate the values.',
+    h: 'Is 12/3 equal to 4?'
+  },
+  {
+    yr: 2020,
+    q: "Find the gradient of the line passing through (1, 1) and (3, 5).",
+    o: ['1', '2', '3', '4'],
+    a: 1,
+    e: '(5 - 1)/(3 - 1) = 4/2 = 2.',
+    full: 'Gradient is change in y over change in x. (5-1) divided by (3-1).',
+    h: 'Is 4/2 equal to 2?'
+  },
+  {
+    yr: 2020,
+    q: "Simplify 2√3 × √6.",
+    o: ['6√2', '18√2', '2√18', '6√18'],
+    a: 0,
+    e: '2√18 = 2√(9×2) = 2(3)√2 = 6√2.',
+    full: 'Multiply the numbers inside the roots first, then simplify the resulting surd.',
+    h: 'Is √18 the same as 3√2?'
+  },
+  {
+    yr: 2020,
+    q: "Find the sum of the interior angles of a quadrilateral.",
+    o: ['180°', '270°', '360°', '540°'],
+    a: 2,
+    e: '(4-2) × 180 = 2 × 180 = 360.',
+    full: 'Any four-sided figure can be split into two triangles, each having 180 degrees.',
+    h: 'Is 2 × 180 equal to 360?'
+  },
+  {
+    yr: 2019,
+    q: "Simplify (log 9)/(log 3).",
+    o: ['1', '2', '3', 'log 3'],
+    a: 1,
+    e: 'log 9 = log 3² = 2 log 3. Therefore, 2 log 3 / log 3 = 2.',
+    full: 'Express 9 as 3². Using the power rule of logarithms, the exponent 2 comes to the front, allowing the log 3 terms to cancel out.',
+    h: 'Is 9 equal to 3²?'
+  },
+  {
+    yr: 2019,
+    q: "If y = 4x³ - 5x² + 3, find dy/dx.",
+    o: ['12x² - 10x', '12x² - 10x + 3', '4x² - 5x', '12x³ - 10x²'],
+    a: 0,
+    e: 'dy/dx = 4(3)x² - 5(2)x = 12x² - 10x.',
+    full: 'Apply the power rule for each term: multiply the coefficient by the current power and then decrease the power by 1. The constant 3 becomes 0.',
+    h: 'Is 4 × 3 equal to 12?'
+  },
+  {
+    yr: 2019,
+    q: "Find the value of x in the equation 2ˣ⁺¹ = 32.",
+    o: ['3', '4', '5', '6'],
+    a: 1,
+    e: '2ˣ⁺¹ = 2⁵ → x + 1 = 5 → x = 4.',
+    full: 'Express 32 as a power of 2 (2⁵). Since the bases are equal, you can equate the exponents and solve for x.',
+    h: 'Is 2⁵ equal to 32?'
+  },
+  {
+    yr: 2019,
+    q: "Solve for x: 3x - 4 < 5x + 2.",
+    o: ['x < -3', 'x > -3', 'x < 3', 'x > 3'],
+    a: 1,
+    e: '-6 < 2x → -3 < x → x > -3.',
+    full: 'Collect x terms on one side and constants on the other. Dividing by a positive number does not flip the inequality sign.',
+    h: 'Is -6/2 equal to -3?'
+  },
+  {
+    yr: 2019,
+    q: "Calculate the simple interest on ₦5000 for 3 years at 4% per annum.",
+    o: ['₦200', '₦400', '₦600', '₦800'],
+    a: 2,
+    e: 'I = (5000 × 4 × 3)/100 = 50 × 12 = 600.',
+    full: 'Use the Simple Interest formula: I = (PRT)/100. 5000 × 0.04 × 3 = 600.',
+    h: 'Is 4 × 3 equal to 12?'
+  },
+  {
+    yr: 2019,
+    q: "Find the mean of 5, 8, 12, 15, 20.",
+    o: ['10', '12', '13', '14'],
+    a: 1,
+    e: 'Sum = 60. Mean = 60/5 = 12.',
+    full: 'Add all the numbers together to get the total sum, then divide by the total count of numbers.',
+    h: 'Is 60/5 equal to 12?'
+  },
+  {
+    yr: 2019,
+    q: "If sin θ = 3/5, find tan θ for an acute angle θ.",
+    o: ['3/4', '4/5', '4/3', '1/2'],
+    a: 0,
+    e: 'Opp=3, Hyp=5 → Adj = √(5² - 3²) = 4. tan = 3/4.',
+    full: 'Using the Pythagorean theorem or the 3-4-5 triple, find the adjacent side. Tangent is Opposite over Adjacent.',
+    h: 'Is the adjacent side 4?'
+  },
+  {
+    yr: 2019,
+    q: "Find the determinant of [[2, -3], [4, 1]].",
+    o: ['-10', '-14', '10', '14'],
+    a: 3,
+    e: '(2 × 1) - (-3 × 4) = 2 - (-12) = 14.',
+    full: 'Calculate the product of the main diagonal and subtract the product of the secondary diagonal. Watch the double negative.',
+    h: 'Is 2 + 12 equal to 14?'
+  },
+  {
+    yr: 2019,
+    q: "Simplify √50 + √32 - √18.",
+    o: ['4√2', '6√2', '8√2', '10√2'],
+    a: 1,
+    e: '5√2 + 4√2 - 3√2 = 6√2.',
+    full: 'Simplify each surd by finding perfect square factors: √(25×2), √(16×2), and √(9×2).',
+    h: 'Is 5 + 4 - 3 equal to 6?'
+  },
+  {
+    yr: 2019,
+    q: "The exterior angle of a regular polygon is 45°. How many sides has the polygon?",
+    o: ['6', '8', '10', '12'],
+    a: 1,
+    e: 'n = 360 / 45 = 8.',
+    full: 'The sum of the exterior angles of any polygon is always 360°. Divide this by the value of one exterior angle to find the number of sides.',
+    h: 'Is 360/45 equal to 8?'
+  },
+  {
+    yr: 2019,
+    q: "Factorize completely: x² - 5x + 6.",
+    o: ['(x-2)(x-3)', '(x+2)(x+3)', '(x-1)(x-6)', '(x+1)(x+6)'],
+    a: 0,
+    e: '(-2) × (-3) = 6 and (-2) + (-3) = -5.',
+    full: 'Find two numbers that multiply to the constant (+6) and add to the middle coefficient (-5).',
+    h: 'Do -2 and -3 add up to -5?'
+  },
+  {
+    yr: 2019,
+    q: "Find the 20th term of the A.P.: 2, 5, 8, ...",
+    o: ['57', '59', '61', '63'],
+    a: 1,
+    e: 'T₂₀ = 2 + 19(3) = 2 + 57 = 59.',
+    full: 'Use the formula a + (n-1)d. Here a=2, d=3, and n=20.',
+    h: 'Is 19 × 3 equal to 57?'
+  },
+  {
+    yr: 2019,
+    q: "If y varies inversely as x and y=10 when x=2, find y when x=5.",
+    o: ['4', '10', '20', '25'],
+    a: 0,
+    e: 'xy = k → 10 × 2 = 20 = k. When x=5, 5y = 20 → y = 4.',
+    full: 'In inverse variation, the product of x and y is a constant (k). Solve for k first, then use it to find the new y.',
+    h: 'Is 20/5 equal to 4?'
+  },
+  {
+    yr: 2019,
+    q: "Evaluate ∫₁³ (2x) dx.",
+    o: ['4', '6', '8', '10'],
+    a: 2,
+    e: '[x²]₁³ = 3² - 1² = 9 - 1 = 8.',
+    full: 'Integrate 2x to get x². Then calculate the difference between the upper bound squared and the lower bound squared.',
+    h: 'Is 9 - 1 equal to 8?'
+  },
+  {
+    yr: 2019,
+    q: "Convert 42₁₀ to binary (base 2).",
+    o: ['101010', '110010', '101100', '111000'],
+    a: 0,
+    e: '42/2=21 R0; 21/2=10 R1; 10/2=5 R0; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 101010.',
+    full: 'Repeatedly divide the number by 2 and record the remainders from bottom to top.',
+    h: 'Is the last digit 0?'
+  },
+  {
+    yr: 2019,
+    q: "Find the mode of 3, 4, 3, 5, 2, 3, 4.",
+    o: ['2', '3', '4', '5'],
+    a: 1,
+    e: '3 appears three times, which is more than any other number.',
+    full: 'The mode is the most frequently occurring value in a data set.',
+    h: 'Does 3 appear the most?'
+  },
+  {
+    yr: 2019,
+    q: "Calculate the area of a circle whose radius is 3.5cm. (π = 22/7)",
+    o: ['11cm²', '22cm²', '38.5cm²', '77cm²'],
+    a: 2,
+    e: 'Area = (22/7) × 3.5² = (22/7) × 12.25 = 38.5.',
+    full: 'Use the area formula πr². 3.5 can be thought of as 7/2, which makes the calculation easier.',
+    h: 'Is 3.5 × 3.5 equal to 12.25?'
+  },
+  {
+    yr: 2019,
+    q: "If log₁₀ 2 = 0.3010, find log₁₀ 8.",
+    o: ['0.6020', '0.9030', '1.2040', '1.5050'],
+    a: 1,
+    e: 'log 2³ = 3 log 2 = 3(0.3010) = 0.9030.',
+    full: 'Since 8 is 2³, you can use the power rule to multiply the given log value by 3.',
+    h: 'Is 3 × 0.3010 equal to 0.9030?'
+  },
+  {
+    yr: 2019,
+    q: "Find the distance between the points (0, 0) and (6, 8).",
+    o: ['7', '10', '14', '48'],
+    a: 1,
+    e: '√(6² + 8²) = √(36 + 64) = √100 = 10.',
+    full: 'Apply the distance formula. For a point at the origin, the distance is simply the square root of the sum of the squares of the coordinates.',
+    h: 'Is 36 + 64 equal to 100?'
+  },
+  {
+    yr: 2019,
+    q: "If y = cos x, find dy/dx at x = 90°.",
+    o: ['1', '0', '-1', 'undefined'],
+    a: 2,
+    e: 'dy/dx = -sin x. At 90°, -sin(90°) = -1.',
+    full: 'The derivative of cos x is -sin x. Evaluate this at 90 degrees, where sin is 1.',
+    h: 'Is sin 90° equal to 1?'
+  },
+  {
+    yr: 2019,
+    q: "If P = [[x, 3], [2, 4]] and the determinant is 10, find x.",
+    o: ['2', '4', '6', '8'],
+    a: 1,
+    e: '4x - (3 × 2) = 10 → 4x - 6 = 10 → 4x = 16 → x = 4.',
+    full: 'Set the determinant formula ad - bc equal to 10 and solve the resulting linear equation for x.',
+    h: 'Is 16/4 equal to 4?'
+  },
+  {
+    yr: 2019,
+    q: "Find the range of the numbers: 12, 1, 15, 22, 8.",
+    o: ['14', '21', '22', '23'],
+    a: 1,
+    e: 'Range = Max - Min = 22 - 1 = 21.',
+    full: 'The range is the simplest measure of dispersion, calculated as the difference between the highest and lowest values.',
+    h: 'Is 22 - 1 equal to 21?'
+  },
+  {
+    yr: 2019,
+    q: "Solve the inequality: 2(x+3) ≥ 5x - 3.",
+    o: ['x ≤ 3', 'x ≥ 3', 'x ≤ -3', 'x ≥ -3'],
+    a: 0,
+    e: '2x + 6 ≥ 5x - 3 → 9 ≥ 3x → 3 ≥ x.',
+    full: 'Expand the bracket, collect the x terms, and remember that 3 ≥ x is the same as x ≤ 3.',
+    h: 'Is 6 + 3 equal to 9?'
+  },
+  {
+    yr: 2019,
+    q: "If y = (3x - 1)², find dy/dx.",
+    o: ['2(3x-1)', '6(3x-1)', '18x', '6x - 2'],
+    a: 1,
+    e: 'dy/dx = 2(3x-1) × 3 = 6(3x-1).',
+    full: 'Using the chain rule: differentiate the power (bringing the 2 down) and multiply by the derivative of the inside (3).',
+    h: 'Is 2 × 3 equal to 6?'
+  },
+  {
+    yr: 2019,
+    q: "Calculate the volume of a cylinder with radius 3cm and height 7cm. (π = 22/7)",
+    o: ['66cm³', '132cm³', '198cm³', '462cm³'],
+    a: 2,
+    e: 'V = πr²h = (22/7) × 9 × 7 = 22 × 9 = 198.',
+    full: 'The 7 in the height cancels the 7 in the denominator of π, leaving a simple multiplication of 22 × 9.',
+    h: 'Is 22 × 9 equal to 198?'
+  },
+  {
+    yr: 2019,
+    q: "If logₐ 16 = 2, find a.",
+    o: ['2', '4', '8', '32'],
+    a: 1,
+    e: 'a² = 16 → a = 4.',
+    full: 'In log form, the base a raised to the power 2 equals 16. The square root of 16 is 4.',
+    h: 'Is 4² equal to 16?'
+  },
+  {
+    yr: 2019,
+    q: "Find the 5th term of a G.P. where a = 2 and r = 3.",
+    o: ['30', '54', '162', '486'],
+    a: 2,
+    e: 'T₅ = ar⁴ = 2(3⁴) = 2(81) = 162.',
+    full: 'The formula is arⁿ⁻¹. Here n-1 = 4. 3 × 3 × 3 × 3 = 81.',
+    h: 'Is 2 × 81 equal to 162?'
+  },
+  {
+    yr: 2019,
+    q: "A bag contains 5 red and 3 blue balls. If two balls are picked WITH replacement, what is the probability both are red?",
+    o: ['25/64', '15/64', '9/64', '5/8'],
+    a: 0,
+    e: 'P = 5/8 × 5/8 = 25/64.',
+    full: 'With replacement means the total stays at 8 for both picks. Multiply the individual probabilities.',
+    h: 'Is 5 × 5 equal to 25?'
+  },
+  {
+    yr: 2019,
+    q: "Simplify x/3 + (x+1)/2.",
+    o: ['(2x+3)/6', '(5x+3)/6', '(5x+1)/6', '(x+1)/5'],
+    a: 1,
+    e: '(2x + 3(x+1))/6 = (2x + 3x + 3)/6 = (5x+3)/6.',
+    full: 'Find the common denominator (6) and adjust the numerators before adding them.',
+    h: 'Does 2x + 3x equal 5x?'
+  },
+  {
+    yr: 2019,
+    q: "Find the median of 10, 15, 12, 18, 20, 14.",
+    o: ['14', '14.5', '15', '16'],
+    a: 1,
+    e: 'Sorted: 10, 12, 14, 15, 18, 20. Median = (14+15)/2 = 14.5.',
+    full: 'Since there are 6 numbers (even), the median is the average of the two middle numbers after sorting.',
+    h: 'Is the average of 14 and 15 equal to 14.5?'
+  },
+  {
+    yr: 2019,
+    q: "If y = tan x, find dy/dx.",
+    o: ['sec x', 'sec² x', '-sec² x', 'cos² x'],
+    a: 1,
+    e: 'Standard derivative of tan x is sec² x.',
+    full: 'This is a fundamental trigonometric derivative identity.',
+    h: 'Is the derivative of tan related to sec?'
+  },
+  {
+    yr: 2019,
+    q: "Solve for x: log₃ x - log₃ 2 = 1.",
+    o: ['3', '5', '6', '9'],
+    a: 2,
+    e: 'log₃(x/2) = 1 → x/2 = 3¹ → x = 6.',
+    full: 'Use the subtraction law: log A - log B = log(A/B). Then convert to index form.',
+    h: 'Is 3 × 2 equal to 6?'
+  },
+  {
+    yr: 2019,
+    q: "Calculate the area of a square whose diagonal is √50 cm.",
+    o: ['25cm²', '50cm²', '100cm²', '12.5cm²'],
+    a: 0,
+    e: 'Area = 0.5 × d² = 0.5 × 50 = 25.',
+    full: 'For a square, the area can be calculated as half of the square of its diagonal.',
+    h: 'Is half of 50 equal to 25?'
+  },
+  {
+    yr: 2019,
+    q: "If x + y = 10 and x - y = 2, find the value of xy.",
+    o: ['12', '16', '24', '48'],
+    a: 2,
+    e: '2x = 12 → x=6, y=4. xy = 6 × 4 = 24.',
+    full: 'Solve the simultaneous equations to find x and y, then multiply them together.',
+    h: 'Is 6 × 4 equal to 24?'
+  },
+  {
+    yr: 2019,
+    q: "Find the gradient of the curve y = x² at the point (3, 9).",
+    o: ['3', '6', '9', '1'],
+    a: 1,
+    e: 'dy/dx = 2x. At x=3, 2(3) = 6.',
+    full: 'The gradient at a specific point is the value of the derivative at that point\'s x-coordinate.',
+    h: 'Is 2 × 3 equal to 6?'
+  },
+  {
+    yr: 2019,
+    q: "Convert 17₁₀ to base 3.",
+    o: ['122', '201', '121', '212'],
+    a: 0,
+    e: '17/3 = 5 R2; 5/3 = 1 R2; 1/3 = 0 R1. Reading up: 122.',
+    full: 'Wait, calculation check: 17 = 1(9) + 2(3) + 2(1) = 9+6+2=17. Result is 122.',
+    h: 'Is 122 the correct representation?'
+  },
+  {
+    yr: 2019,
+    q: "Find the variance of 2, 4, 6.",
+    o: ['2', '2.67', '4', '8'],
+    a: 1,
+    e: 'Mean = 4. Var = (4+0+4)/3 = 8/3 = 2.67.',
+    full: 'Variance is the average of the squared deviations from the mean. Sum is 8, divided by 3 is 2.67.',
+    h: 'Is 8/3 equal to 2.67?'
+  },
+  {
+    yr: 2019,
+    q: "Rationalize 1/√5.",
+    o: ['√5/5', '√5', '5', '1/5'],
+    a: 0,
+    e: 'Multiply top and bottom by √5.',
+    full: 'To rationalize a single root in the denominator, multiply the numerator and denominator by that root.',
+    h: 'Does the bottom become 5?'
+  },
+  {
+    yr: 2019,
+    q: "The sum of interior angles of a polygon with n sides is (n-2)180. Find the sum for a pentagon.",
+    o: ['360°', '540°', '720°', '900°'],
+    a: 1,
+    e: '(5-2) × 180 = 3 × 180 = 540.',
+    full: 'A pentagon has 5 sides. 3 × 180 gives the total sum of the internal angles.',
+    h: 'Is 3 × 180 equal to 540?'
+  },
+  {
+    yr: 2019,
+    q: "Evaluate ∫₀² (3x² + 1) dx.",
+    o: ['6', '8', '10', '12'],
+    a: 2,
+    e: '[x³ + x]₀² = (8 + 2) - (0) = 10.',
+    full: 'Integrate each term: 3x² becomes x³ and 1 becomes x. Plug in the bounds and subtract.',
+    h: 'Is 8 + 2 equal to 10?'
+  },
+  {
+    yr: 2018,
+    q: "If x * y = x + y - xy, find 2 * 3.",
+    o: ['-1', '1', '5', '6'],
+    a: 0,
+    e: '2 + 3 - (2 × 3) = 5 - 6 = -1.',
+    full: 'This is a binary operation. Replace x with 2 and y with 3 in the given rule.',
+    h: 'Is 5 - 6 equal to -1?'
+  },
+  {
+    yr: 2018,
+    q: "Find the gradient of the line joining (2, 3) and (6, 11).",
+    o: ['1', '2', '3', '4'],
+    a: 1,
+    e: '(11 - 3)/(6 - 2) = 8/4 = 2.',
+    full: 'Gradient (m) is calculated as (y₂ - y₁)/(x₂ - x₁). 8 divided by 4 is 2.',
+    h: 'Is 8/4 equal to 2?'
+  },
+  {
+    yr: 2018,
+    q: "Simplify √75 - √27 + √3.",
+    o: ['2√3', '3√3', '4√3', '5√3'],
+    a: 1,
+    e: '5√3 - 3√3 + √3 = 3√3.',
+    full: 'Break down the surds: √(25×3) and √(9×3). Then add and subtract the coefficients.',
+    h: 'Is 5 - 3 + 1 equal to 3?'
+  },
+  {
+    yr: 2018,
+    q: "If log₁₀ x = -1, find x.",
+    o: ['0.1', '0.01', '1', '10'],
+    a: 0,
+    e: 'x = 10⁻¹ = 1/10 = 0.1.',
+    full: 'To solve for x, raise the base 10 to the power of the result -1.',
+    h: 'Is 1/10 equal to 0.1?'
+  },
+  {
+    yr: 2018,
+    q: "Solve for x: x² - 4 = 0.",
+    o: ['2', '-2', '±2', '4'],
+    a: 2,
+    e: 'x² = 4 → x = ±√4 = ±2.',
+    full: 'When taking the square root of both sides of an equation, you must include both the positive and negative results.',
+    h: 'Are there two possible answers?'
+  },
+  {
+    yr: 2018,
+    q: "Find the 10th term of the A.P. 5, 9, 13, ...",
+    o: ['37', '41', '45', '49'],
+    a: 1,
+    e: '5 + 9(4) = 5 + 36 = 41.',
+    full: 'Using a + (n-1)d: a=5, d=4, and n=10. 9 × 4 is 36.',
+    h: 'Is 5 + 36 equal to 41?'
+  },
+  {
+    yr: 2018,
+    q: "If y = x³ - 2x, find dy/dx at x=2.",
+    o: ['4', '8', '10', '12'],
+    a: 2,
+    e: '3x² - 2. At x=2, 3(4) - 2 = 10.',
+    full: 'Differentiate the function to get 3x² - 2, then substitute x = 2.',
+    h: 'Is 12 - 2 equal to 10?'
+  },
+  {
+    yr: 2018,
+    q: "Calculate the area of a circle with diameter 14cm. (π = 22/7)",
+    o: ['44cm²', '154cm²', '616cm²', '11cm²'],
+    a: 1,
+    e: 'r = 7. Area = (22/7) × 49 = 154.',
+    full: 'The radius is half the diameter (7). Use πr². 22 × 7 = 154.',
+    h: 'Is 22 × 7 equal to 154?'
+  },
+  {
+    yr: 2018,
+    q: "Find the determinant of [[1, 2], [3, 4]].",
+    o: ['-2', '2', '-10', '10'],
+    a: 0,
+    e: '(1 × 4) - (2 × 3) = 4 - 6 = -2.',
+    full: 'Multiply the main diagonal (1 and 4) and subtract the product of the other diagonal (2 and 3).',
+    h: 'Is 4 - 6 equal to -2?'
+  },
+  {
+    yr: 2018,
+    q: "What is the probability of picking a vowel from the word 'JAMB'?",
+    o: ['1/4', '1/2', '3/4', '0'],
+    a: 0,
+    e: 'The only vowel is A. Total letters = 4. P = 1/4.',
+    full: 'Vowels are A, E, I, O, U. In JAMB, only A qualifies out of 4 total letters.',
+    h: 'Is there only one vowel?'
+  },
+  {
+    yr: 2018,
+    q: "If 3ˣ = 1/9, find x.",
+    o: ['2', '-2', '3', '-3'],
+    a: 1,
+    e: '3ˣ = 3⁻² → x = -2.',
+    full: 'Write 1/9 as 3 to the power of -2. Equate the exponents to find x.',
+    h: 'Is 3⁻² equal to 1/9?'
+  },
+  {
+    yr: 2018,
+    q: "Find the mean of 2, 4, 6, 8, 10.",
+    o: ['4', '5', '6', '8'],
+    a: 2,
+    e: 'Sum = 30. Mean = 30/5 = 6.',
+    full: 'For a symmetric set of numbers like this, the mean is the middle value.',
+    h: 'Is 6 the middle number?'
+  },
+  {
+    yr: 2018,
+    q: "Factorize completely: x² - 9.",
+    o: ['(x-3)²', '(x+3)²', '(x-3)(x+3)', '(x-9)(x+1)'],
+    a: 2,
+    e: 'Difference of two squares: a² - b² = (a-b)(a+b).',
+    full: 'Recognize that 9 is 3². This allows you to use the standard factorization for the difference of two squares.',
+    h: 'Is √9 equal to 3?'
+  },
+  {
+    yr: 2018,
+    q: "Calculate the volume of a cube with side 4cm.",
+    o: ['12cm³', '16cm³', '48cm³', '64cm³'],
+    a: 3,
+    e: 'V = 4³ = 64.',
+    full: 'The volume of a cube is the side length raised to the power of 3. 4 × 4 × 4 = 64.',
+    h: 'Is 16 × 4 equal to 64?'
+  },
+  {
+    yr: 2018,
+    q: "If y = sin x, find dy/dx at x = 0°.",
+    o: ['0', '1', '-1', 'undefined'],
+    a: 1,
+    e: 'dy/dx = cos x. At 0°, cos(0) = 1.',
+    full: 'The derivative of sin x is cos x. At 0 degrees, the value of cosine is 1.',
+    h: 'Is cos 0° equal to 1?'
+  },
+  {
+    yr: 2018,
+    q: "Convert 11₁₀ to base 2.",
+    o: ['1011', '1101', '1111', '1001'],
+    a: 0,
+    e: '11/2=5 R1; 5/2=2 R1; 2/2=1 R0; 1/2=0 R1. Result: 1011.',
+    full: 'Successive division by 2 gives remainders of 1, 1, 0, 1. Read them from bottom to top.',
+    h: 'Is the first digit 1?'
+  },
+  {
+    yr: 2018,
+    q: "Find the median of 1, 5, 2, 4, 3.",
+    o: ['2', '3', '4', '5'],
+    a: 1,
+    e: 'Sorted: 1, 2, 3, 4, 5. Middle is 3.',
+    full: 'Arrange the numbers in ascending order and identify the value in the center.',
+    h: 'Is 3 the center value?'
+  },
+  {
+    yr: 2018,
+    q: "If y varies directly as x and y=8 when x=2, find y when x=5.",
+    o: ['10', '15', '20', '25'],
+    a: 2,
+    e: 'y = kx → 8 = 2k → k = 4. y = 4 × 5 = 20.',
+    full: 'Direct variation follows the rule y = kx. Solve for k first, then substitute the new x.',
+    h: 'Is 4 × 5 equal to 20?'
+  },
+  {
+    yr: 2018,
+    q: "Simplify 2/x + 3/x.",
+    o: ['5/x', '5/x²', '6/x', '6/x²'],
+    a: 0,
+    e: 'Since denominators are the same, just add the numerators: (2+3)/x = 5/x.',
+    full: 'When adding fractions with a common denominator, you keep the denominator and add the numerators.',
+    h: 'Is 2 + 3 equal to 5?'
+  },
+  {
+    yr: 2018,
+    q: "If P = {x : 2 < x < 5} and Q = {x : 4 < x < 8}, find P ∩ Q.",
+    o: ['{x : 2 < x < 8}', '{x : 4 < x < 5}', '{x : 2 < x < 4}', '{x : 5 < x < 8}'],
+    a: 1,
+    e: 'The overlap between (2, 5) and (4, 8) is the interval (4, 5).',
+    full: 'Intersection (∩) finds the shared region. Since Q starts at 4 and P ends at 5, only numbers between 4 and 5 are in both.',
+    h: 'Is 4.5 in both sets?'
+  },
+  {
+    yr: 2018,
+    q: "Find the value of x for which log₂ (x - 1) = 3.",
+    o: ['4', '7', '8', '9'],
+    a: 3,
+    e: 'x - 1 = 2³ = 8 → x = 9.',
+    full: 'Convert the logarithm to index form. The base 2 raised to the power 3 equals the expression inside the log.',
+    h: 'Is 8 + 1 equal to 9?'
+  },
+  {
+    yr: 2018,
+    q: "Calculate the distance between (-3, -4) and (0, 0).",
+    o: ['3', '4', '5', '7'],
+    a: 2,
+    e: '√((-3)² + (-4)²) = √(9 + 16) = 5.',
+    full: 'This is a standard 3-4-5 triangle calculation. The distance from the origin is the root of the sum of the squares of the coordinates.',
+    h: 'Is √25 equal to 5?'
+  },
+  {
+    yr: 2018,
+    q: "If y = 2x² + 3, find the gradient of the curve at x = 1.",
+    o: ['2', '4', '7', '1'],
+    a: 1,
+    e: 'dy/dx = 4x. At x=1, 4(1) = 4.',
+    full: 'The gradient is found by differentiating the function and then plugging in the specific x-value.',
+    h: 'Is 4 × 1 equal to 4?'
+  },
+  {
+    yr: 2018,
+    q: "A sector of a circle has radius 14cm and angle 60°. Find its arc length. (π = 22/7)",
+    o: ['14.67cm', '29.33cm', '44cm', '154cm'],
+    a: 0,
+    e: 'L = (60/360) × 2 × (22/7) × 14 = (1/6) × 88 = 14.67.',
+    full: 'Arc length is the fraction of the total circumference. 60/360 simplifies to 1/6.',
+    h: 'Is 88/6 approximately 14.67?'
+  },
+  {
+    yr: 2018,
+    q: "If A = [[3, 2], [1, 4]], find 2A.",
+    o: ['[[6, 4], [2, 8]]', '[[5, 4], [3, 6]]', '[[9, 4], [1, 16]]', '[[1.5, 1], [0.5, 2]]'],
+    a: 0,
+    e: 'Multiply every element inside the matrix by the scalar 2.',
+    full: 'Scalar multiplication involves distributing the multiplier to every single entry in the matrix.',
+    h: 'Is 3 × 2 equal to 6?'
+  },
+  {
+    yr: 2018,
+    q: "Find the sum to infinity of a G.P. where a = 10 and r = 0.5.",
+    o: ['5', '15', '20', '40'],
+    a: 2,
+    e: 'S = 10/(1 - 0.5) = 10/0.5 = 20.',
+    full: 'The sum to infinity formula is a/(1-r). Dividing by 0.5 is the same as multiplying by 2.',
+    h: 'Is 10/0.5 equal to 20?'
+  },
+  {
+    yr: 2018,
+    q: "The sum of the ages of a father and son is 40. In 10 years, the father will be 3 times as old as the son. Find the son's current age.",
+    o: ['5', '10', '15', '20'],
+    a: 0,
+    e: 'F+S=40, F+10=3(S+10). Solving gives S=5.',
+    full: 'Set up two equations based on the current and future ages. Substitute F = 40-S into the second equation.',
+    h: 'If the son is 5, is the father 35?'
+  },
+  {
+    yr: 2018,
+    q: "Simplify (x² - 1)/(x - 1).",
+    o: ['x - 1', 'x + 1', 'x²', '1'],
+    a: 1,
+    e: '((x-1)(x+1))/(x-1) = x + 1.',
+    full: 'The numerator is a difference of two squares. Once factored, the (x-1) terms cancel out.',
+    h: 'Is 1² equal to 1?'
+  },
+  {
+    yr: 2018,
+    q: "Solve the inequality: 3 - x < 5.",
+    o: ['x < 2', 'x > 2', 'x < -2', 'x > -2'],
+    a: 3,
+    e: '-x < 2 → x > -2.',
+    full: 'Subtract 3 from both sides. When you multiply or divide by -1 to isolate x, the inequality sign must flip.',
+    h: 'Did you flip the sign?'
+  },
+  {
+    yr: 2018,
+    q: "Find the variance of 1, 2, 3.",
+    o: ['0.67', '1', '1.5', '2'],
+    a: 0,
+    e: 'Mean = 2. Var = (1 + 0 + 1)/3 = 0.67.',
+    full: 'Calculate the mean (2), find the squares of deviations (1, 0, 1), and find their average.',
+    h: 'Is 2/3 equal to 0.67?'
+  },
+  {
+    yr: 2018,
+    q: "Evaluate cos 60° + sin 30°.",
+    o: ['0.5', '1', '1.5', '0.866'],
+    a: 1,
+    e: '0.5 + 0.5 = 1.',
+    full: 'These are standard trigonometric values. Both cos 60 and sin 30 are equal to 1/2.',
+    h: 'Is half plus half equal to one?'
+  },
+  {
+    yr: 2018,
+    q: "Find the equation of a line with gradient 2 passing through the origin (0, 0).",
+    o: ['y = 2x', 'y = x + 2', 'y = 2', 'x = 2y'],
+    a: 0,
+    e: 'Using y = mx + c, m=2 and c=0.',
+    full: 'Since it passes through the origin, the y-intercept (c) is zero. The equation simplifies to y = mx.',
+    h: 'Is the intercept 0?'
+  },
+  {
+    yr: 2018,
+    q: "Calculate the volume of a cone with radius 3cm and height 4cm. (Leave in π)",
+    o: ['4π', '12π', '36π', '48π'],
+    a: 1,
+    e: 'V = 1/3 π (3²) (4) = 1/3 π (9)(4) = 12π.',
+    full: 'Apply the formula 1/3 πr²h. The 3 in the denominator cancels one 3 from the r².',
+    h: 'Is 3 × 4 equal to 12?'
+  },
+  {
+    yr: 2018,
+    q: "If log₂ 8 + log₂ 4 = log₂ x, find x.",
+    o: ['12', '16', '32', '64'],
+    a: 2,
+    e: 'log₂(8 × 4) = log₂ 32.',
+    full: 'Using the addition law of logs, the sum of logs with the same base is the log of their product.',
+    h: 'Is 8 × 4 equal to 32?'
+  },
+  {
+    yr: 2018,
+    q: "Rationalize 1/(2 - √3).",
+    o: ['2 + √3', '2 - √3', '4 + √3', '1'],
+    a: 0,
+    e: 'Multiply by (2 + √3). Denominator is 4 - 3 = 1.',
+    full: 'To rationalize a binomial denominator, multiply by its conjugate. The denominator becomes a difference of squares.',
+    h: 'Is 4 - 3 equal to 1?'
+  },
+  {
+    yr: 2018,
+    q: "Find the 4th term of the expansion (x + y)³.",
+    o: ['x³', '3x²y', '3xy²', 'y³'],
+    a: 3,
+    e: 'Expansion: x³ + 3x²y + 3xy² + y³.',
+    full: 'Using Pascal\'s triangle or the binomial theorem, the coefficients for power 3 are 1, 3, 3, 1.',
+    h: 'Is the last term y³?'
+  },
+  {
+    yr: 2018,
+    q: "If y = e²ˣ, find dy/dx.",
+    o: ['e²ˣ', '2e²ˣ', '(1/2)e²ˣ', '2x e²ˣ⁻¹'],
+    a: 1,
+    e: 'Derivative of eᵃˣ is a eᵃˣ.',
+    full: 'This follows the exponential chain rule. The derivative of the power (2) is brought down as a multiplier.',
+    h: 'Is the derivative of 2x equal to 2?'
+  },
+  {
+    yr: 2018,
+    q: "Find the mode of 5, 2, 7, 5, 2, 5, 8.",
+    o: ['2', '5', '7', '8'],
+    a: 1,
+    e: '5 appears three times, more than any other number.',
+    full: 'The mode is the value with the highest frequency. Here, 5 is the most frequent.',
+    h: 'Does 5 appear three times?'
+  },
+  {
+    yr: 2018,
+    q: "Integrate ∫₀¹ (x + 1) dx.",
+    o: ['0.5', '1', '1.5', '2'],
+    a: 2,
+    e: '[0.5x² + x]₀¹ = 0.5 + 1 = 1.5.',
+    full: 'Integrate x to get 0.5x² and 1 to get x. Plug in the upper limit 1 and subtract the lower limit 0.',
+    h: 'Is 1 + 0.5 equal to 1.5?'
+  },
+  {
+    yr: 2018,
+    q: "Evaluate ∫ (x²) dx.",
+    o: ['x³ + c', 'x³/3 + c', '2x + c', '3x³ + c'],
+    a: 1,
+    e: 'Using the power rule for integration: (xⁿ⁺¹)/(n+1).',
+    full: 'Increase the power by 1 and divide by that new power. Don\'t forget the constant of integration (c).',
+    h: 'Is the new power 3?'
+  },
+  {
+    yr: 2020,
+    q: "If y = 1/x², find dy/dx.",
+    o: ['2x', '-2/x³', '1/x', '2/x³'],
+    a: 1,
+    e: 'x⁻² derivative is -2x⁻³ = -2/x³.',
+    full: 'Rewrite as a negative power and use the power rule. The power decreases from -2 to -3.',
+    h: 'Is the derivative negative?'
+  },
+  {
+    yr: 2020,
+    q: "What is the median of 8, 3, 7, 5, 10?",
+    o: ['3', '5', '7', '8'],
+    a: 2,
+    e: 'Sorted: 3, 5, 7, 8, 10. The middle is 7.',
+    full: 'Arrange in ascending order and pick the value exactly in the center.',
+    h: 'Is 7 the middle number when sorted?'
+  },
+  {
+    yr: 2021,
+    q: "If y = 2x² + 5x - 3, find the coordinates of the point where the curve crosses the y-axis.",
+    o: ['(0, 3)', '(0, -3)', '(3, 0)', '(-3, 0)'],
+    a: 1,
+    e: 'At the y-axis, x = 0. Substituting x=0 gives y = -3.',
+    full: 'To find the y-intercept, always set x to zero. The constant term in the quadratic equation is the y-coordinate.',
+    h: 'Is the constant term -3?'
+  },
+  {
+    yr: 2021,
+    q: "Find the value of x for which (x+2)/3 = (x-1)/2.",
+    o: ['5', '7', '8', '9'],
+    a: 1,
+    e: '2(x+2) = 3(x-1) → 2x + 4 = 3x - 3 → x = 7.',
+    full: 'Cross-multiply to remove the denominators, then expand the brackets and solve for x.',
+    h: 'Is 4 + 3 equal to 7?'
+  },
+  {
+    yr: 2021,
+    q: "Calculate the distance between (-1, 2) and (2, 6).",
+    o: ['3', '4', '5', '6'],
+    a: 2,
+    e: '√((2 - (-1))² + (6-2)²) = √(3² + 4²) = √25 = 5.',
+    full: 'Use the distance formula. The difference in x is 3 and the difference in y is 4. This forms a 3-4-5 triangle.',
+    h: 'Is √(9 + 16) equal to 5?'
+  },
+  {
+    yr: 2021,
+    q: "If log₁₀ 2 = 0.3010, find log₁₀ 20.",
+    o: ['0.6020', '1.3010', '2.3010', '0.3010'],
+    a: 1,
+    e: 'log₁₀(2 × 10) = log₁₀ 2 + log₁₀ 10 = 0.3010 + 1 = 1.3010.',
+    full: 'Using the multiplication law of logs, log(AB) = log A + log B. log₁₀ 10 is always 1.',
+    h: 'Is 0.3010 + 1 equal to 1.3010?'
   },
   {
     yr: 2021,
     q: "Find the mean of the first five prime numbers.",
-    o: ["5", "5.4", "5.6", "6"],
+    o: ['5', '5.4', '5.6', '6'],
     a: 2,
-    e: "Primes: 2, 3, 5, 7, 11. Sum = 28. $Mean = 28/5 = 5.6$.",
-    full: "The first five primes are 2, 3, 5, 7, and 11. Add them up and divide by 5.",
-    h: "Is the sum of the first five primes 28?"
+    e: 'Primes: 2, 3, 5, 7, 11. Sum = 28. Mean = 28/5 = 5.6.',
+    full: 'The first five primes are 2, 3, 5, 7, and 11. Add them up and divide by 5.',
+    h: 'Is the sum of the first five primes 28?'
   },
   {
     yr: 2021,
-    q: "If $y = sin(2x)$, find $\\frac{dy}{dx}$.",
-    o: ["$2 cos(2x)$", "$-2 cos(2x)$", "$cos(2x)$", "$2 sin(2x)$"],
+    q: "If y = sin(2x), find dy/dx.",
+    o: ['2 cos(2x)', '-2 cos(2x)', 'cos(2x)', '2 sin(2x)'],
     a: 0,
-    e: "Derivative of $sin(u)$ is $cos(u) \\times u'$. $cos(2x) \\times 2 = 2 cos(2x)$.",
-    full: "Differentiate the sine function to get cosine, then multiply by the derivative of the inner function (2x).",
-    h: "Is the derivative of $2x$ equal to 2?"
+    e: 'Derivative of sin(u) is cos(u) × u\'. cos(2x) × 2 = 2 cos(2x).',
+    full: 'Differentiate the sine function to get cosine, then multiply by the derivative of the inner function (2x).',
+    h: 'Is the derivative of 2x equal to 2?'
   },
   {
     yr: 2021,
     q: "A fair coin is tossed three times. What is the probability of getting three heads?",
-    o: ["1/3", "1/4", "1/6", "1/8"],
+    o: ['1/3', '1/4', '1/6', '1/8'],
     a: 3,
-    e: "$1/2 \\times 1/2 \\times 1/2 = 1/8$.",
-    full: "Each toss is independent with a $1/2$ chance for heads. Multiply the probabilities for three consecutive heads.",
-    h: "Is $2 \\times 2 \\times 2$ equal to 8?"
+    e: '1/2 × 1/2 × 1/2 = 1/8.',
+    full: 'Each toss is independent with a 1/2 chance for heads. Multiply the probabilities for three consecutive heads.',
+    h: 'Is 2 × 2 × 2 equal to 8?'
   },
   {
     yr: 2021,
-    q: "Find the sum to infinity of the series $1 + 1/3 + 1/9 + ...$",
-    o: ["1.5", "2", "3", "0.5"],
+    q: "Find the sum to infinity of the series 1 + 1/3 + 1/9 + ...",
+    o: ['1.5', '2', '3', '0.5'],
     a: 0,
-    e: "$S_\\infty = \\frac{a}{1-r} = \\frac{1}{1 - 1/3} = 1 / (2/3) = 1.5$.",
-    full: "The first term $a=1$ and the common ratio $r=1/3$. The sum to infinity is $1$ divided by $2/3$.",
-    h: "Is $1$ divided by $2/3$ equal to $3/2$?"
+    e: 'S∞ = a/(1-r) = 1/(1 - 1/3) = 1/(2/3) = 1.5.',
+    full: 'The first term a=1 and the common ratio r=1/3. The sum to infinity is 1 divided by 2/3.',
+    h: 'Is 1 divided by 2/3 equal to 3/2?'
   },
   {
     yr: 2021,
-    q: "Solve the inequality: $2(x - 3) < 4$.",
-    o: ["$x < 5$", "$x < 7$", "$x > 5$", "$x < 2$"],
+    q: "Solve the inequality: 2(x - 3) < 4.",
+    o: ['x < 5', 'x < 7', 'x > 5', 'x < 2'],
     a: 0,
-    e: "$2x - 6 < 4 \\implies 2x < 10 \\implies x < 5$.",
-    full: "Divide by 2 first or expand the bracket. $x - 3 < 2$ leads directly to $x < 5$.",
-    h: "Is $4 + 6$ equal to 10?"
+    e: '2x - 6 < 4 → 2x < 10 → x < 5.',
+    full: 'Divide by 2 first or expand the bracket. x - 3 < 2 leads directly to x < 5.',
+    h: 'Is 4 + 6 equal to 10?'
   },
   {
     yr: 2021,
     q: "Find the variance of the data: 4, 4, 4, 4, 4.",
-    o: ["0", "4", "16", "1"],
+    o: ['0', '4', '16', '1'],
     a: 0,
-    e: "The numbers are all the same, so there is no spread (deviation) from the mean.",
-    full: "Variance measures spread. If every value is identical to the mean, the variance is always zero.",
-    h: "Is there any difference between the numbers?"
+    e: 'The numbers are all the same, so there is no spread (deviation) from the mean.',
+    full: 'Variance measures spread. If every value is identical to the mean, the variance is always zero.',
+    h: 'Is there any difference between the numbers?'
   },
   {
     yr: 2021,
-    q: "If $P = \\begin{pmatrix} 3 & -1 \\\\ 2 & 1 \\end{pmatrix}$, find $P^{-1}$ (the inverse).",
-    o: ["$1/5 \\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$1/1 \\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 1 \\\\ -2 & 3 \\end{pmatrix}$", "$1/5 \\begin{pmatrix} 3 & 1 \\\\ -2 & 1 \\end{pmatrix}$"],
+    q: "If P = [[3, -1], [2, 1]], find P⁻¹ (the inverse).",
+    o: ['(1/5)[[1, 1], [-2, 3]]', '(1/1)[[1, 1], [-2, 3]]', '[[1, 1], [-2, 3]]', '(1/5)[[3, 1], [-2, 1]]'],
     a: 0,
-    e: "$det = 3 - (-2) = 5$. Adjoint: swap 3 and 1, change signs of -1 and 2.",
-    full: "The inverse is $1/det$ multiplied by the adjoint matrix. Here the determinant is 5.",
-    h: "Is $3 + 2$ equal to 5?"
+    e: 'det = 3 - (-2) = 5. Adjoint: swap 3 and 1, change signs of -1 and 2.',
+    full: 'The inverse is 1/det multiplied by the adjoint matrix. Here the determinant is 5.',
+    h: 'Is 3 + 2 equal to 5?'
   },
   {
     yr: 2021,
-    q: "Convert $10_{10}$ to base 3.",
-    o: ["101", "110", "111", "121"],
+    q: "Convert 10₁₀ to base 3.",
+    o: ['101', '110', '111', '121'],
     a: 0,
-    e: "$10/3 = 3 R1; 3/3 = 1 R0; 1/3 = 0 R1$. Result: 101.",
-    full: "Divide 10 by 3 repeatedly and track the remainders from bottom to top.",
-    h: "Is the first remainder 1?"
+    e: '10/3 = 3 R1; 3/3 = 1 R0; 1/3 = 0 R1. Result: 101.',
+    full: 'Divide 10 by 3 repeatedly and track the remainders from bottom to top.',
+    h: 'Is the first remainder 1?'
   },
   {
     yr: 2021,
-    q: "Find the radius of a sphere whose surface area is $154 cm^2$. ($\\pi = 22/7$)",
-    o: ["3.5cm", "7cm", "14cm", "1.75cm"],
+    q: "Find the radius of a sphere whose surface area is 154 cm². (π = 22/7)",
+    o: ['3.5cm', '7cm', '14cm', '1.75cm'],
     a: 0,
-    e: "$4\\pi r^2 = 154 \\implies 4(22/7)r^2 = 154 \\implies r^2 = 12.25 \\implies r = 3.5$.",
-    full: "Surface area formula for a sphere is $4\\pi r^2$. Solving for $r$ gives $3.5$ cm.",
-    h: "Is $3.5$ the square root of 12.25?"
+    e: '4πr² = 154 → 4(22/7)r² = 154 → r² = 12.25 → r = 3.5.',
+    full: 'Surface area formula for a sphere is 4πr². Solving for r gives 3.5 cm.',
+    h: 'Is 3.5 the square root of 12.25?'
   },
   {
     yr: 2021,
-    q: "Integrate $\\int (3x^2 + 4x) dx$.",
-    o: ["$x^3 + 2x^2 + c$", "$3x^3 + 4x^2 + c$", "$x^3 + x^2 + c$", "$6x + 4 + c$"],
+    q: "Integrate ∫ (3x² + 4x) dx.",
+    o: ['x³ + 2x² + c', '3x³ + 4x² + c', 'x³ + x² + c', '6x + 4 + c'],
     a: 0,
-    e: "$\\int 3x^2 = x^3$ and $\\int 4x = 2x^2$.",
-    full: "Add 1 to the power and divide by the new power for each term. $3x^3/3 = x^3$ and $4x^2/2 = 2x^2$.",
-    h: "Is $4/2$ equal to 2?"
+    e: '∫ 3x² = x³ and ∫ 4x = 2x².',
+    full: 'Add 1 to the power and divide by the new power for each term. 3x³/3 = x³ and 4x²/2 = 2x².',
+    h: 'Is 4/2 equal to 2?'
   },
   {
     yr: 2021,
-    q: "If $y = log_e x$, find $\\frac{dy}{dx}$.",
-    o: ["$x$", "$1/x$", "$e^x$", "$1$"],
+    q: "If y = logₑ x, find dy/dx.",
+    o: ['x', '1/x', 'eˣ', '1'],
     a: 1,
-    e: "The derivative of the natural logarithm $ln(x)$ is $1/x$.",
-    full: "This is a standard derivative rule in calculus.",
-    h: "Is the derivative of $ln(x)$ equal to $1/x$?"
+    e: 'The derivative of the natural logarithm ln(x) is 1/x.',
+    full: 'This is a standard derivative rule in calculus.',
+    h: 'Is the derivative of ln(x) equal to 1/x?'
   },
   {
     yr: 2021,
     q: "Find the median of the scores: 1, 3, 5, 2, 4.",
-    o: ["2", "3", "4", "5"],
+    o: ['2', '3', '4', '5'],
     a: 1,
-    e: "Sorted: 1, 2, 3, 4, 5. The middle value is 3.",
-    full: "Always arrange the numbers in order first. The middle value is the median.",
-    h: "Is 3 the middle number?"
+    e: 'Sorted: 1, 2, 3, 4, 5. The middle value is 3.',
+    full: 'Always arrange the numbers in order first. The middle value is the median.',
+    h: 'Is 3 the middle number?'
   },
   {
     yr: 2021,
     q: "Find the exterior angle of a regular hexagon.",
-    o: ["30°", "60°", "90°", "120°"],
+    o: ['30°', '60°', '90°', '120°'],
     a: 1,
-    e: "$360 / 6 = 60°$.",
-    full: "The sum of exterior angles of any polygon is 360°. A hexagon has 6 sides.",
-    h: "Is $360 / 6$ equal to 60?"
+    e: '360 / 6 = 60°.',
+    full: 'The sum of exterior angles of any polygon is 360°. A hexagon has 6 sides.',
+    h: 'Is 360/6 equal to 60?'
   },
   {
     yr: 2021,
-    q: "Simplify $\\frac{2}{x} - \\frac{1}{y}$.",
-    o: ["$\\frac{2y-x}{xy}$", "$\\frac{1}{x-y}$", "$\\frac{2-1}{xy}$", "$\\frac{2x-y}{xy}$"],
+    q: "Simplify 2/x - 1/y.",
+    o: ['(2y-x)/xy', '1/(x-y)', '(2-1)/xy', '(2x-y)/xy'],
     a: 0,
-    e: "Common denominator is $xy$. $\\frac{2(y) - 1(x)}{xy} = \\frac{2y-x}{xy}$.",
-    full: "Find the LCM of the denominators and adjust the numerators accordingly.",
-    h: "Is the common denominator $xy$?"
+    e: 'Common denominator is xy. (2(y) - 1(x))/(xy) = (2y-x)/xy.',
+    full: 'Find the LCM of the denominators and adjust the numerators accordingly.',
+    h: 'Is the common denominator xy?'
   },
   {
     yr: 2021,
-    q: "If $tan \\theta = 3/4$, find $cos \\theta$ ($\\theta$ is acute).",
-    o: ["3/5", "4/5", "1/2", "3/4"],
+    q: "If tan θ = 3/4, find cos θ (θ is acute).",
+    o: ['3/5', '4/5', '1/2', '3/4'],
     a: 1,
-    e: "$Opp=3, Adj=4 \\implies Hyp=5$. $cos = Adj/Hyp = 4/5$.",
-    full: "Using the 3-4-5 Pythagorean triple. Cosine is Adjacent over Hypotenuse.",
-    h: "Is the adjacent side 4?"
+    e: 'Opp=3, Adj=4 → Hyp=5. cos = Adj/Hyp = 4/5.',
+    full: 'Using the 3-4-5 Pythagorean triple. Cosine is Adjacent over Hypotenuse.',
+    h: 'Is the adjacent side 4?'
   },
   {
     yr: 2021,
-    q: "Calculate the volume of a cone with radius 7cm and height 3cm. ($\\pi = 22/7$)",
-    o: ["154cm³", "462cm³", "77cm³", "22cm³"],
+    q: "Calculate the volume of a cone with radius 7cm and height 3cm. (π = 22/7)",
+    o: ['154cm³', '462cm³', '77cm³', '22cm³'],
     a: 0,
-    e: "$V = 1/3 \\pi r^2 h = 1/3 \\times 22/7 \\times 49 \\times 3 = 22 \\times 7 = 154$.",
-    full: "The $1/3$ and the height $3$ cancel each other out, leaving just $\\pi r^2$.",
-    h: "Is $22 \\times 7$ equal to 154?"
+    e: 'V = 1/3 πr²h = 1/3 × 22/7 × 49 × 3 = 22 × 7 = 154.',
+    full: 'The 1/3 and the height 3 cancel each other out, leaving just πr².',
+    h: 'Is 22 × 7 equal to 154?'
+  },
+  {
+    yr: 2023,
+    q: "Find the range of the numbers: 20, 4, 15, 25, 10.",
+    o: ['15', '20', '21', '25'],
+    a: 2,
+    e: 'Range = Max - Min = 25 - 4 = 21.',
+    full: 'Range is simply the difference between the highest and lowest values in a data set.',
+    h: 'Is 25 - 4 equal to 21?'
+  },
+  {
+    yr: 2023,
+    q: "Simplify √75 - √27 + √12.",
+    o: ['4√3', '5√3', '6√3', '10√3'],
+    a: 0,
+    e: '5√3 - 3√3 + 2√3 = (5-3+2)√3 = 4√3.',
+    full: 'Break down each surd: √(25×3), √(9×3), and √(4×3).',
+    h: 'Is √75 the same as 5√3?'
+  },
+  {
+    yr: 2023,
+    q: "Calculate the area of a circle whose circumference is 44cm. (Take π = 22/7)",
+    o: ['44cm²', '154cm²', '308cm²', '616cm²'],
+    a: 1,
+    e: 'C = 2πr = 44 → r=7. Area = πr² = (22/7) × 49 = 154.',
+    full: 'First solve for r using the circumference formula, then plug that r into the area formula.',
+    h: 'If 2πr = 44, is r equal to 7?'
+  },
+  {
+    yr: 2023,
+    q: "Solve for x: log₂ x = 5.",
+    o: ['10', '25', '32', '64'],
+    a: 2,
+    e: 'x = 2⁵ = 32.',
+    full: 'Convert from logarithmic form to exponential form: base raised to the result equals the argument.',
+    h: 'Is 2 × 2 × 2 × 2 × 2 equal to 32?'
+  },
+  {
+    yr: 2023,
+    q: "Find the sum of the first 20 terms of the series: 5, 10, 15, ...",
+    o: ['1000', '1050', '1100', '1150'],
+    a: 1,
+    e: 'Sₙ = n/2(2a + (n-1)d) = 20/2(10 + 19(5)) = 10(10 + 95) = 1050.',
+    full: 'Use the A.P. sum formula where a=5, d=5, and n=20.',
+    h: 'Is 10 × 105 equal to 1050?'
+  },
+  {
+    yr: 2023,
+    q: "If P = [[2, 3], [1, 4]], find the determinant of P.",
+    o: ['5', '8', '11', '14'],
+    a: 0,
+    e: 'det(P) = (2 × 4) - (3 × 1) = 8 - 3 = 5.',
+    full: 'For a 2x2 matrix, the determinant is ad - bc.',
+    h: 'Is 8 - 3 equal to 5?'
+  },
+  {
+    yr: 2023,
+    q: "A fair die is tossed once. What is the probability of getting a number greater than 4?",
+    o: ['1/6', '1/3', '1/2', '2/3'],
+    a: 1,
+    e: 'Numbers greater than 4 are {5, 6}. Probability = 2/6 = 1/3.',
+    full: 'There are 6 possible outcomes. Only 2 of them satisfy the condition.',
+    h: 'Are there 2 numbers greater than 4 on a die?'
+  },
+  {
+    yr: 2023,
+    q: "Find the value of (0.04)⁻¹/².",
+    o: ['0.2', '2', '5', '25'],
+    a: 2,
+    e: '(4/100)⁻¹/² = (100/4)¹/² = √25 = 5.',
+    full: 'A negative power flips the fraction. A 1/2 power is a square root.',
+    h: 'Is the square root of 25 equal to 5?'
+  },
+  {
+    yr: 2023,
+    q: "Simplify (x² - 4)/(x - 2).",
+    o: ['x - 2', 'x + 2', 'x + 4', 'x² + 2'],
+    a: 1,
+    e: '((x-2)(x+2))/(x-2) = x + 2.',
+    full: 'Use the difference of two squares to factor the numerator, then cancel out common terms.',
+    h: 'Does x² - 4 factor into (x-2)(x+2)?'
+  },
+  {
+    yr: 2023,
+    q: "Find the fourth proportional to 3, 5, and 9.",
+    o: ['12', '15', '18', '21'],
+    a: 1,
+    e: '3/5 = 9/x → 3x = 45 → x = 15.',
+    full: 'Set up a ratio: the first is to the second as the third is to the fourth.',
+    h: 'Is 45/3 equal to 15?'
+  },
+  {
+    yr: 2023,
+    q: "What is the bearing of A from B if the bearing of B from A is 060°?",
+    o: ['120°', '150°', '240°', '300°'],
+    a: 2,
+    e: '60 + 180 = 240°.',
+    full: 'Back bearings are found by adding or subtracting 180° from the forward bearing.',
+    h: 'Is 180 + 60 equal to 240?'
+  },
+  {
+    yr: 2023,
+    q: "The mean of five numbers is 12. If a sixth number 18 is added, find the new mean.",
+    o: ['13', '14', '15', '16'],
+    a: 0,
+    e: 'Original total = 12 × 5 = 60. New total = 60 + 18 = 78. New mean = 78/6 = 13.',
+    full: 'Calculate the total sum first, add the new number, then divide by the new total count.',
+    h: 'Is 78/6 equal to 13?'
+  },
+  {
+    yr: 2023,
+    q: "Find the angle whose sine is 0.5.",
+    o: ['30°', '45°', '60°', '90°'],
+    a: 0,
+    e: 'sin⁻¹(0.5) = 30°.',
+    full: 'This is a standard trigonometric value. sin(30°) = 1/2.',
+    h: 'Is sin 30 equal to 0.5?'
+  },
+  {
+    yr: 2023,
+    q: "Solve the inequality: 3(x - 2) ≤ 2x + 1.",
+    o: ['x ≤ 5', 'x ≤ 7', 'x ≥ 7', 'x ≤ 3'],
+    a: 1,
+    e: '3x - 6 ≤ 2x + 1 → x ≤ 7.',
+    full: 'Expand the bracket, then collect like terms on either side of the inequality.',
+    h: 'Is 1 + 6 equal to 7?'
+  },
+  {
+    yr: 2023,
+    q: "Find the distance between the points (1, 2) and (4, 6).",
+    o: ['3', '4', '5', '7'],
+    a: 2,
+    e: '√((4-1)² + (6-2)²) = √(3² + 4²) = √25 = 5.',
+    full: 'Use the distance formula: √((x₂-x₁)² + (y₂-y₁)²).',
+    h: 'Is √(9 + 16) equal to 5?'
+  },
+  {
+    yr: 2023,
+    q: "If y varies directly as x and y=12 when x=3, find y when x=5.",
+    o: ['15', '18', '20', '24'],
+    a: 2,
+    e: 'y = kx → 12 = 3k → k=4. When x=5, y=4(5)=20.',
+    full: 'Find the constant of proportionality (k) first, then apply it to the new value.',
+    h: 'Is 4 × 5 equal to 20?'
+  },
+  {
+    yr: 2023,
+    q: "Simplify logₐ a³.",
+    o: ['1', '3', 'a', 'a³'],
+    a: 1,
+    e: 'By power rule: 3 logₐ a = 3(1) = 3.',
+    full: 'The exponent comes to the front, and log of a base to itself is always 1.',
+    h: 'Is the power 3?'
+  },
+  {
+    yr: 2023,
+    q: "Calculate the total surface area of a cube of side 4cm.",
+    o: ['16cm²', '64cm²', '96cm²', '128cm²'],
+    a: 2,
+    e: '6 × s² = 6 × 16 = 96.',
+    full: 'A cube has 6 faces. Each face is a square with area s².',
+    h: 'Is 6 × 16 equal to 96?'
+  },
+  {
+    yr: 2023,
+    q: "Find the value of x if 3x + 4 = 2(x - 1).",
+    o: ['-6', '-2', '2', '6'],
+    a: 0,
+    e: '3x + 4 = 2x - 2 → x = -6.',
+    full: 'Expand the bracket, then subtract 2x and 4 from both sides.',
+    h: 'Is -2 - 4 equal to -6?'
   },
 
-{
-  yr: 2023,
-  q: "Find the range of the numbers: 20, 4, 15, 25, 10.",
-  o: ["15", "20", "21", "25"],
-  a: 2,
-  e: "$Range = Max - Min = 25 - 4 = 21$.",
-  full: "Range is simply the difference between the highest and lowest values in a data set.",
-  h: "Is $25 - 4$ equal to 21?"
-},
-{
-  yr: 2023,
-  q: "Simplify $\\sqrt{75} - \\sqrt{27} + \\sqrt{12}$.",
-  o: ["$4\\sqrt{3}$", "$5\\sqrt{3}$", "$6\\sqrt{3}$", "$10\\sqrt{3}$"],
-  a: 0,
-  e: "$5\\sqrt{3} - 3\\sqrt{3} + 2\\sqrt{3} = (5-3+2)\\sqrt{3} = 4\\sqrt{3}$.",
-  full: "Break down each surd: $\\sqrt{25 \\times 3}$, $\\sqrt{9 \\times 3}$, and $\\sqrt{4 \\times 3}$.",
-  h: "Is $\\sqrt{75}$ the same as $5\\sqrt{3}$?"
-},
-{
-  yr: 2023,
-  q: "Calculate the area of a circle whose circumference is 44cm. (Take $\\pi = 22/7$)",
-  o: ["44cm²", "154cm²", "308cm²", "616cm²"],
-  a: 1,
-  e: "$C = 2\\pi r = 44 \\implies r=7$. $Area = \\pi r^2 = (22/7) \\times 49 = 154$.",
-  full: "First solve for $r$ using the circumference formula, then plug that $r$ into the area formula.",
-  h: "If $2\\pi r = 44$, is $r$ equal to 7?"
-},
-{
-  yr: 2023,
-  q: "Solve for $x$: $log_2 x = 5$.",
-  o: ["10", "25", "32", "64"],
-  a: 2,
-  e: "$x = 2^5 = 32$.",
-  full: "Convert from logarithmic form to exponential form: base raised to the result equals the argument.",
-  h: "Is $2 \\times 2 \\times 2 \\times 2 \\times 2$ equal to 32?"
-},
-{
-  yr: 2023,
-  q: "Find the sum of the first 20 terms of the series: 5, 10, 15, ...",
-  o: ["1000", "1050", "1100", "1150"],
-  a: 1,
-  e: "$S_n = \\frac{n}{2}(2a + (n-1)d) = \\frac{20}{2}(10 + 19(5)) = 10(10 + 95) = 1050$.",
-  full: "Use the A.P. sum formula where $a=5, d=5,$ and $n=20$.",
-  h: "Is $10 \\times 105$ equal to 1050?"
-},
-{
-  yr: 2023,
-  q: "If $P = \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix}$, find the determinant of $P$.",
-  o: ["5", "8", "11", "14"],
-  a: 0,
-  e: "$det(P) = (2 \\times 4) - (3 \\times 1) = 8 - 3 = 5$.",
-  full: "For a 2x2 matrix, the determinant is $ad - bc$.",
-  h: "Is $8 - 3$ equal to 5?"
-},
-{
-  yr: 2023,
-  q: "A fair die is tossed once. What is the probability of getting a number greater than 4?",
-  o: ["1/6", "1/3", "1/2", "2/3"],
-  a: 1,
-  e: "Numbers greater than 4 are {5, 6}. Probability = 2/6 = 1/3.",
-  full: "There are 6 possible outcomes. Only 2 of them satisfy the condition.",
-  h: "Are there 2 numbers greater than 4 on a die?"
-},
-{
-  yr: 2023,
-  q: "Find the value of $(0.04)^{-1/2}$.",
-  o: ["0.2", "2", "5", "25"],
-  a: 2,
-  e: "$(4/100)^{-1/2} = (100/4)^{1/2} = \\sqrt{25} = 5$.",
-  full: "A negative power flips the fraction. A $1/2$ power is a square root.",
-  h: "Is the square root of 25 equal to 5?"
-},
-{
-  yr: 2023,
-  q: "Simplify $\\frac{x^2 - 4}{x - 2}$.",
-  o: ["$x - 2$", "$x + 2$", "$x + 4$", "$x^2 + 2$"],
-  a: 1,
-  e: "$\\frac{(x-2)(x+2)}{x-2} = x + 2$.",
-  full: "Use the 'difference of two squares' to factor the numerator, then cancel out common terms.",
-  h: "Does $x^2 - 4$ factor into $(x-2)(x+2)$?"
-},
-{
-  yr: 2023,
-  q: "Find the fourth proportional to 3, 5, and 9.",
-  o: ["12", "15", "18", "21"],
-  a: 1,
-  e: "$3/5 = 9/x \\implies 3x = 45 \\implies x = 15$.",
-  full: "Set up a ratio: the first is to the second as the third is to the fourth.",
-  h: "Is $45 / 3$ equal to 15?"
-},
-{
-  yr: 2023,
-  q: "What is the bearing of $A$ from $B$ if the bearing of $B$ from $A$ is 060°?",
-  o: ["120°", "150°", "240°", "300°"],
-  a: 2,
-  e: "$60 + 180 = 240°$.",
-  full: "Back bearings are found by adding or subtracting 180° from the forward bearing.",
-  h: "Is $180 + 60$ equal to 240?"
-},
-{
-  yr: 2023,
-  q: "The mean of five numbers is 12. If a sixth number 18 is added, find the new mean.",
-  o: ["13", "14", "15", "16"],
-  a: 0,
-  e: "Original total = $12 \\times 5 = 60$. New total = $60 + 18 = 78$. New mean = $78 / 6 = 13$.",
-  full: "Calculate the total sum first, add the new number, then divide by the new total count.",
-  h: "Is $78 / 6$ equal to 13?"
-},
-{
-  yr: 2023,
-  q: "Find the angle whose sine is 0.5.",
-  o: ["30°", "45°", "60°", "90°"],
-  a: 0,
-  e: "$sin^{-1}(0.5) = 30°$.",
-  full: "This is a standard trigonometric value. $sin(30°) = 1/2$.",
-  h: "Is $sin 30$ equal to 0.5?"
-},
-{
-  yr: 2023,
-  q: "Solve the inequality: $3(x - 2) \\le 2x + 1$.",
-  o: ["$x \\le 5$", "$x \\le 7$", "$x \\ge 7$", "$x \\le 3$"],
-  a: 1,
-  e: "$3x - 6 \\le 2x + 1 \\implies x \\le 7$.",
-  full: "Expand the bracket, then collect like terms on either side of the inequality.",
-  h: "Is $1 + 6$ equal to 7?"
-},
-{
-  yr: 2023,
-  q: "Find the distance between the points (1, 2) and (4, 6).",
-  o: ["3", "4", "5", "7"],
-  a: 2,
-  e: "$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$.",
-  full: "Use the distance formula: $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.",
-  h: "Is $\\sqrt{9 + 16}$ equal to 5?"
-},
-{
-  yr: 2023,
-  q: "If $y$ varies directly as $x$ and $y=12$ when $x=3$, find $y$ when $x=5$.",
-  o: ["15", "18", "20", "24"],
-  a: 2,
-  e: "$y = kx \\implies 12 = 3k \\implies k=4$. When $x=5, y=4(5)=20$.",
-  full: "Find the constant of proportionality ($k$) first, then apply it to the new value.",
-  h: "Is $4 \\times 5$ equal to 20?"
-},
-{
-  yr: 2023,
-  q: "Simplify $log_a a^3$.",
-  o: ["1", "3", "a", "$a^3$"],
-  a: 1,
-  e: "By power rule: $3 log_a a = 3(1) = 3$.",
-  full: "The exponent comes to the front, and $log$ of a base to itself is always 1.",
-  h: "Is the power 3?"
-},
-{
-  yr: 2023,
-  q: "Calculate the total surface area of a cube of side 4cm.",
-  o: ["16cm²", "64cm²", "96cm²", "128cm²"],
-  a: 2,
-  e: "$6 \\times s^2 = 6 \\times 16 = 96$.",
-  full: "A cube has 6 faces. Each face is a square with area $s^2$.",
-  h: "Is $6 \\times 16$ equal to 96?"
-},
-{
-  yr: 2023,
-  q: "Find the value of $x$ if $3x + 4 = 2(x - 1)$.",
-  o: ["-6", "-2", "2", "6"],
-  a: 0,
-  e: "$3x + 4 = 2x - 2 \\implies x = -6$.",
-  full: "Expand the bracket, then subtract $2x$ and 4 from both sides.",
-  h: "Is $-2 - 4$ equal to -6?"
-},
 
   {
     yr: 2023,
