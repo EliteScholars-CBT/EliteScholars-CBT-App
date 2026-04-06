@@ -363,7 +363,6 @@ export default function App() {
           {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
           {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
           {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
-          adRefresh={adRefresh}
           {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
           {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
           {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
