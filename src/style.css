@@ -3049,6 +3049,11 @@ body.dark-mode .quiz-option.disabled {
   cursor: not-allowed;
 }
 
+/* Hidden options (50/50 lifeline) */
+body.dark-mode .quiz-option.hidden {
+  display: none;
+}
+
 /* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
