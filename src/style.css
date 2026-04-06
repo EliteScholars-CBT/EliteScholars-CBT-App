@@ -2679,3 +2679,349 @@ img {
   font-size: 14px;
   color: #6B7280;
 }
+
+/* ============================================================================
+   CSS VARIABLES (Light Mode Default)
+   ============================================================================ */
+:root {
+  --bg-primary: #F8F5FF;
+  --bg-secondary: #FFFFFF;
+  --bg-header: linear-gradient(135deg, #280050, #4B0082);
+  --text-primary: #1a0030;
+  --text-secondary: #6B7280;
+  --text-white: #FFFFFF;
+  --border-color: #E5E7EB;
+  --card-bg: #FFFFFF;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --purple: #4B0082;
+  --dpurp: #280050;
+  --gold: #D4AF37;
+}
+
+/* ============================================================================
+   DARK MODE VARIABLES
+   ============================================================================ */
+body.dark-mode {
+  --bg-primary: #0a0015;
+  --bg-secondary: #1a0030;
+  --bg-header: linear-gradient(135deg, #0a0015, #1a0030);
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-white: #FFFFFF;
+  --border-color: #2d1b4e;
+  --card-bg: #1a0030;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --purple: #8B5CF6;
+  --dpurp: #4C1D95;
+}
+
+/* Apply variables to body */
+body {
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================================================
+   DARK MODE OVERRIDES - Components
+   ============================================================================ */
+body.dark-mode .phone {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .subjects-header {
+  background: var(--bg-header);
+}
+
+body.dark-mode .subject-card-unselected {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .subject-card-selected {
+  background: var(--subject-bg, #1a0030);
+  border-color: var(--subject-color, #8B5CF6);
+}
+
+body.dark-mode .subject-name,
+body.dark-mode .lekki-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .subject-question-count,
+body.dark-mode .lekki-author,
+body.dark-mode .lekki-question-count div:last-child {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .start-button-container {
+  background: var(--bg-primary);
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .quiz-header {
+  background: var(--bg-header);
+}
+
+body.dark-mode .quiz-action-bar {
+  background: var(--bg-primary);
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .question-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .question-text {
+  color: var(--text-primary);
+}
+
+body.dark-mode .quiz-option {
+  background: var(--card-bg);
+}
+
+body.dark-mode .quiz-clear-btn {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .result-stat-card,
+body.dark-mode .profile-stat-card,
+body.dark-mode .achievement-card {
+  background: var(--card-bg);
+}
+
+body.dark-mode .result-stat-value,
+body.dark-mode .profile-stat-value,
+body.dark-mode .achievement-card-name {
+  color: var(--text-primary);
+}
+
+body.dark-mode .result-stat-label,
+body.dark-mode .profile-stat-label,
+body.dark-mode .achievement-card-desc {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .profile-tabs {
+  background: var(--bg-primary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .profile-tab {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .profile-tab.active {
+  background: var(--purple);
+  color: white;
+}
+
+body.dark-mode .profile-streak-card {
+  background: var(--bg-header);
+}
+
+body.dark-mode .profile-streak-text {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .profile-chart-section {
+  background: var(--card-bg);
+}
+
+body.dark-mode .profile-empty-state {
+  background: var(--card-bg);
+}
+
+body.dark-mode .profile-empty-text {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .join-card {
+  background: var(--bg-header);
+}
+
+body.dark-mode .gate-container {
+  background: var(--bg-header);
+}
+
+body.dark-mode .modal-content {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .modal-question {
+  color: var(--text-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .modal-explanation {
+  color: var(--text-primary);
+}
+
+body.dark-mode .modal-close-btn {
+  background: var(--purple);
+}
+
+body.dark-mode .adgate-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+body.dark-mode .adgate-vibe {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+body.dark-mode .adgate-waiting-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .splash-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+body.dark-mode .onboard-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+body.dark-mode .ready-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+body.dark-mode .sharegate-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+/* ============================================================================
+   THEME TOGGLE BUTTON
+   ============================================================================ */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--purple);
+  border: 2px solid var(--gold);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Mobile adjustment */
+@media (max-width: 640px) {
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* ============================================================================
+   SETTINGS CARD STYLES
+   ============================================================================ */
+.settings-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.settings-card:hover {
+  transform: translateY(-2px);
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.settings-icon {
+  font-size: 32px;
+}
+
+.settings-info {
+  flex: 1;
+}
+
+.settings-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.settings-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.settings-toggle {
+  flex-shrink: 0;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background: var(--border-color);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-switch.active {
+  background: var(--gold);
+}
+
+.toggle-slider {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+.toggle-switch.active .toggle-slider {
+  transform: translateX(22px);
+}
+
+/* ============================================================================
+   SMOOTH THEME TRANSITIONS
+   ============================================================================ */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Don't transition everything for performance - exclude transforms and opacity */
+button, .theme-toggle, .toggle-switch, .toggle-slider {
+  transition: all 0.2s ease;
+}
