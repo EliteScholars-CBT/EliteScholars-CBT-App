@@ -47,12 +47,6 @@ export default function Subjects({ name, onStart, onProfile, onSignOut, refreshT
         </div>
       </div>
 
-      {SHOW_ADS && (
-        <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
-          <AdsterraBanner adKey="ec0487cde03d79b75629df8828d753f9" refreshTrigger={refreshTrigger} />
-        </div>
-      )}
-
       <div className="scroll" style={{ flex: 1, padding: '0 16px 100px', overflowY: 'auto' }}>
         <div className="subjects-card-container">
           {allCards.map((card) => {
