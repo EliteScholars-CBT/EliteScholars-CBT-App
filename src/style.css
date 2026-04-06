@@ -337,279 +337,6 @@ img {
 }
 
 /* ============================================================================
-   UTILITY CLASSES
-   ============================================================================ */
-.text-gold {
-  color: #D4AF37;
-}
-
-.bg-gold {
-  background: #D4AF37;
-}
-
-.text-purple {
-  color: #4B0082;
-}
-
-.bg-purple {
-  background: #4B0082;
-}
-
-.text-white {
-  color: #FFFFFF;
-}
-
-.text-gray {
-  color: #6B7280;
-}
-
-/* ============================================================================
-   AD CONTAINER STYLES
-   ============================================================================ */
-.ad-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
-  overflow: hidden;
-}
-
-.ad-container iframe {
-  max-width: 100%;
-}
-
-/* ============================================================================
-   QUIZ SPECIFIC STYLES
-   ============================================================================ */
-.quiz-option {
-  transition: all 0.18s;
-}
-
-.quiz-option:hover:not(.disabled) {
-  transform: translateX(4px);
-}
-
-.timer-warning {
-  animation: timerPulse 0.6s infinite;
-}
-
-/* ============================================================================
-   SCROLLBAR CUSTOMIZATION
-   ============================================================================ */
-::-webkit-scrollbar {
-  width: 3px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(75, 0, 130, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(75, 0, 130, 0.2);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(75, 0, 130, 0.4);
-}
-
-
-/* ============================================================================
-   ADDITIONAL CLASSES FROM App.jsx COMPONENTS
-   ============================================================================ */
-
-/* Star animation for splash screen */
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #D4AF37;
-  border-radius: 50%;
-  animation: twinkle 2s infinite;
-}
-
-/* Pulse animation for logo */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.04);
-  }
-}
-
-/* Bounce animation */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-/* Load bar animation */
-@keyframes loadBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* Fall animation for result screen dots */
-@keyframes fall {
-  0% {
-    transform: translateY(-10px) rotate(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(210px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Timer pulse animation */
-@keyframes timerPulse {
-  0%, 100% {
-    color: #FF6B6B;
-    transform: scale(1);
-  }
-  50% {
-    color: #ff3333;
-    transform: scale(1.12);
-  }
-}
-
-/* Power glow animations for lifelines */
-@keyframes powerGlow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-  }
-  50% {
-    box-shadow: 0 0 10px 3px rgba(212, 175, 55, 0.35);
-  }
-}
-
-@keyframes powerGlowP {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(75, 0, 130, 0);
-  }
-  50% {
-    box-shadow: 0 0 10px 3px rgba(75, 0, 130, 0.35);
-  }
-}
-
-/* Fade used animation for lifelines after use */
-@keyframes fadeUsed {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.35;
-  }
-}
-
-/* Wrong answer shake animation */
-@keyframes wrongShake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-5px);
-  }
-  40% {
-    transform: translateX(5px);
-  }
-  60% {
-    transform: translateX(-4px);
-  }
-  80% {
-    transform: translateX(4px);
-  }
-}
-
-/* Correct answer pop animation */
-@keyframes correctPop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Fade in animation */
-@keyframes fd {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Slide up animation */
-@keyframes su {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Pop in animation */
-@keyframes pi {
-  from {
-    opacity: 0;
-    transform: scale(0.84);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Animation classes */
-.fd {
-  animation: fd 0.3s ease both;
-}
-
-.su {
-  animation: su 0.25s ease both;
-}
-
-.pi {
-  animation: pi 0.25s ease both;
-}
-
-.correct-pop {
-  animation: correctPop 0.3s ease;
-}
-
-.wrong-shake {
-  animation: wrongShake 0.35s ease;
-}
-
-/* ============================================================================
    SPLASH SCREEN STYLES
    ============================================================================ */
 .splash-container {
@@ -2700,52 +2427,58 @@ img {
 }
 
 /* ============================================================================
-   DARK MODE VARIABLES
+   DARK MODE VARIABLES - Only overrides bright/white backgrounds
    ============================================================================ */
 body.dark-mode {
+  /* Backgrounds - change bright/white to dark */
   --bg-primary: #0a0015;
   --bg-secondary: #1a0030;
-  --bg-header: linear-gradient(135deg, #0a0015, #1a0030);
-  --text-primary: #FFFFFF;
-  --text-secondary: #9CA3AF;
-  --text-white: #FFFFFF;
-  --border-color: #2d1b4e;
   --card-bg: #1a0030;
+  
+  /* Text colors - ensure readability */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B4B4B4;
+  
+  /* Borders - slightly lighter for visibility */
+  --border-color: #3d2a5e;
+  
+  /* Shadows - darker for dark mode */
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.4);
-  --purple: #8B5CF6;
-  --dpurp: #4C1D95;
-}
-
-/* Apply variables to body */
-body {
-  background: var(--bg-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  /* Header gradient - keep but darker */
+  --bg-header: linear-gradient(135deg, #0a0015, #1a0030);
 }
 
 /* ============================================================================
-   DARK MODE OVERRIDES - Components
+   DARK MODE - Component Overrides
    ============================================================================ */
+
+/* Phone container */
 body.dark-mode .phone {
   background: var(--bg-primary);
 }
 
+/* Subjects Header - already has gradient, keep it */
 body.dark-mode .subjects-header {
   background: var(--bg-header);
 }
 
+/* Subject Cards - white background changes to dark */
 body.dark-mode .subject-card-unselected {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
 body.dark-mode .subject-card-selected {
-  background: var(--subject-bg, #1a0030);
+  background: var(--subject-bg, #2a1a4e);
   border-color: var(--subject-color, #8B5CF6);
 }
 
+/* Text colors */
 body.dark-mode .subject-name,
-body.dark-mode .lekki-title {
+body.dark-mode .lekki-title,
+body.dark-mode .subject-status {
   color: var(--text-primary);
 }
 
@@ -2755,20 +2488,24 @@ body.dark-mode .lekki-question-count div:last-child {
   color: var(--text-secondary);
 }
 
+/* Start Button Container */
 body.dark-mode .start-button-container {
   background: var(--bg-primary);
   border-top-color: var(--border-color);
 }
 
+/* Quiz Header */
 body.dark-mode .quiz-header {
   background: var(--bg-header);
 }
 
+/* Quiz Action Bar */
 body.dark-mode .quiz-action-bar {
   background: var(--bg-primary);
   border-top-color: var(--border-color);
 }
 
+/* Question Card - white background changes */
 body.dark-mode .question-card {
   background: var(--card-bg);
   box-shadow: var(--shadow);
@@ -2778,34 +2515,53 @@ body.dark-mode .question-text {
   color: var(--text-primary);
 }
 
+/* Options - white background changes */
 body.dark-mode .quiz-option {
   background: var(--card-bg);
 }
 
+body.dark-mode .quiz-option-letter {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Clear button */
 body.dark-mode .quiz-clear-btn {
   background: var(--card-bg);
   border-color: var(--border-color);
   color: var(--text-secondary);
 }
 
-body.dark-mode .result-stat-card,
+/* Result Screen - stat cards */
+body.dark-mode .result-stat-card {
+  background: var(--card-bg);
+}
+
+body.dark-mode .result-stat-value {
+  color: var(--text-primary);
+}
+
+body.dark-mode .result-stat-label {
+  color: var(--text-secondary);
+}
+
+/* Profile Screen */
 body.dark-mode .profile-stat-card,
 body.dark-mode .achievement-card {
   background: var(--card-bg);
 }
 
-body.dark-mode .result-stat-value,
 body.dark-mode .profile-stat-value,
 body.dark-mode .achievement-card-name {
   color: var(--text-primary);
 }
 
-body.dark-mode .result-stat-label,
 body.dark-mode .profile-stat-label,
 body.dark-mode .achievement-card-desc {
   color: var(--text-secondary);
 }
 
+/* Profile Tabs */
 body.dark-mode .profile-tabs {
   background: var(--bg-primary);
   border-bottom-color: var(--border-color);
@@ -2821,6 +2577,7 @@ body.dark-mode .profile-tab.active {
   color: white;
 }
 
+/* Streak Card */
 body.dark-mode .profile-streak-card {
   background: var(--bg-header);
 }
@@ -2829,10 +2586,12 @@ body.dark-mode .profile-streak-text {
   color: var(--text-secondary);
 }
 
+/* Charts Section */
 body.dark-mode .profile-chart-section {
   background: var(--card-bg);
 }
 
+/* Empty State */
 body.dark-mode .profile-empty-state {
   background: var(--card-bg);
 }
@@ -2841,14 +2600,13 @@ body.dark-mode .profile-empty-text {
   color: var(--text-secondary);
 }
 
-body.dark-mode .join-card {
-  background: var(--bg-header);
-}
-
+/* Join Cards & Gate Containers */
+body.dark-mode .join-card,
 body.dark-mode .gate-container {
   background: var(--bg-header);
 }
 
+/* Modal */
 body.dark-mode .modal-content {
   background: var(--bg-secondary);
 }
@@ -2866,6 +2624,7 @@ body.dark-mode .modal-close-btn {
   background: var(--purple);
 }
 
+/* Ad Gate Screen */
 body.dark-mode .adgate-container {
   background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
 }
@@ -2880,20 +2639,45 @@ body.dark-mode .adgate-waiting-btn {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .splash-container {
-  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
-}
-
-body.dark-mode .onboard-container {
-  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
-}
-
-body.dark-mode .ready-container {
-  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
-}
-
+/* Splash, Onboard, Ready, ShareGate screens - gradient backgrounds */
+body.dark-mode .splash-container,
+body.dark-mode .onboard-container,
+body.dark-mode .ready-container,
 body.dark-mode .sharegate-container {
   background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+/* Quick Take Box - purple gradient */
+body.dark-mode .quick-take {
+  background: linear-gradient(135deg, #1a0030, #2a1a4e);
+}
+
+body.dark-mode .quick-take-text {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Hint Box */
+body.dark-mode .hint-box {
+  background: #2a1a2e;
+  border-color: var(--gold);
+}
+
+body.dark-mode .hint-text {
+  color: #FFD6A5;
+}
+
+/* Settings Card */
+body.dark-mode .settings-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .settings-name {
+  color: var(--text-primary);
+}
+
+body.dark-mode .settings-desc {
+  color: var(--text-secondary);
 }
 
 /* ============================================================================
@@ -2928,7 +2712,6 @@ body.dark-mode .sharegate-container {
   transform: scale(0.95);
 }
 
-/* Mobile adjustment */
 @media (max-width: 640px) {
   .theme-toggle {
     width: 45px;
@@ -3021,7 +2804,161 @@ body.dark-mode .sharegate-container {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Don't transition everything for performance - exclude transforms and opacity */
-button, .theme-toggle, .toggle-switch, .toggle-slider {
+/* Optimize performance - skip transitions on transforms and opacity for frequently animated elements */
+button, 
+.theme-toggle, 
+.toggle-switch, 
+.toggle-slider,
+.quiz-option,
+.subject-card,
+.achievement-card {
   transition: all 0.2s ease;
+}
+
+
+/* ============================================================================
+   PROFILE PAGE - SCROLLABLE TABS & CONTENT
+   ============================================================================ */
+
+/* Profile page container */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Horizontally scrollable tabs wrapper */
+.profile-tabs-wrapper {
+  flex-shrink: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.profile-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+/* Hide scrollbar on Firefox and Edge but keep functionality */
+.profile-tabs-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--border-color);
+}
+
+.profile-tabs-scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.profile-tabs-scroll::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.profile-tabs-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Individual tab buttons */
+.profile-tab {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.profile-tab:hover {
+  transform: translateY(-2px);
+}
+
+.profile-tab.active {
+  background: var(--purple);
+  border-color: var(--gold);
+  color: white;
+}
+
+/* Vertically scrollable content area */
+.profile-content-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-content-area::-webkit-scrollbar {
+  width: 4px;
+}
+
+.profile-content-area::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.profile-content-area::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+/* Stats section - already has padding from existing styles */
+.profile-stats-section {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Ensure charts are responsive */
+.profile-chart-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .profile-tab {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .profile-tabs-scroll {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  
+  .profile-stats-section {
+    padding: 16px 12px;
+  }
+}
+
+/* Dark mode scrollbar overrides */
+body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-track {
+  background: var(--border-color);
+}
+
+body.dark-mode .profile-content-area::-webkit-scrollbar-track {
+  background: var(--border-color);
+}
+
+body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold);
+}
+
+body.dark-mode .profile-content-area::-webkit-scrollbar-thumb {
+  background: var(--gold);
 }
