@@ -508,29 +508,85 @@ img {
   margin-top: 2px;
 }
 
-.subjects-profile-btn {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 5px 12px;
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
+/* Settings Group */
+.settings-group {
   display: flex;
+  gap: 8px;
   align-items: center;
-  gap: 5px;
 }
 
-.subjects-signout-btn {
-  background: rgba(220, 38, 38, 0.18);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 10px;
-  padding: 5px 12px;
-  color: #fca5a5;
-  font-size: 11px;
-  font-weight: 700;
+.settings-group-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 6px 14px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.settings-group-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.settings-group-btn:active {
+  transform: scale(0.97);
+}
+
+.settings-group-icon {
+  font-size: 14px;
+}
+
+.settings-group-text {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profile-btn {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.profile-btn:hover {
+  background: rgba(212, 175, 55, 0.35);
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 640px) {
+  .settings-group {
+    gap: 6px;
+  }
+  .settings-group-btn {
+    padding: 5px 10px;
+  }
+  .settings-group-icon {
+    font-size: 12px;
+  }
+  .settings-group-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-group-text {
+    display: none;
+  }
+  .settings-group-btn {
+    padding: 8px 10px;
+  }
+  .settings-group-icon {
+    font-size: 16px;
+  }
 }
 
 .subjects-card-container {
@@ -592,7 +648,6 @@ img {
   align-self: flex-start;
 }
 
-/* Lekki Headmaster special card */
 .lekki-card {
   grid-column: 1 / -1;
   border-radius: 16px;
@@ -661,7 +716,6 @@ img {
   font-weight: 700;
 }
 
-/* Start button */
 .start-button-container {
   padding: 8px 16px 24px;
   flex-shrink: 0;
@@ -840,7 +894,6 @@ img {
   transition: width 0.4s ease;
 }
 
-/* Lifeline buttons */
 .lifeline-button {
   flex: 1;
   padding: 8px 8px;
@@ -892,7 +945,6 @@ img {
   color: #6B7280;
 }
 
-/* Hint box */
 .hint-box {
   background: #FFFBEB;
   border: 1px solid #D4AF37;
@@ -915,7 +967,6 @@ img {
   line-height: 1.55;
 }
 
-/* Question card */
 .question-card {
   background: #FFFFFF;
   border-radius: 16px;
@@ -956,7 +1007,6 @@ img {
   margin-bottom: 12px;
 }
 
-/* Option styles */
 .quiz-option {
   padding: 11px 13px;
   border-radius: 11px;
@@ -983,7 +1033,6 @@ img {
   transition: all 0.18s;
 }
 
-/* Quick take box */
 .quick-take {
   background: linear-gradient(135deg, #280050, #4B0082);
   border-radius: 14px;
@@ -1019,7 +1068,6 @@ img {
   background: rgba(212, 175, 55, 0.08);
 }
 
-/* Action bar */
 .quiz-action-bar {
   padding: 9px 13px 18px;
   display: flex;
@@ -1084,7 +1132,6 @@ img {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Modal styles */
 .modal-overlay {
   position: absolute;
   inset: 0;
@@ -1275,7 +1322,6 @@ img {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Share gate / Ad gate styles */
 .gate-container {
   background: linear-gradient(135deg, #280050, #3d0070);
   border-radius: 16px;
@@ -1400,7 +1446,6 @@ img {
   color: #4ade80;
 }
 
-/* Join Group / Channel buttons */
 .join-card {
   background: linear-gradient(135deg, #280050, #4B0082);
   border-radius: 16px;
@@ -1453,7 +1498,6 @@ img {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Profile buttons */
 .profile-view-btn {
   width: 100%;
   padding: 13px;
@@ -1680,9 +1724,17 @@ img {
 /* ============================================================================
    PROFILE SCREEN STYLES
    ============================================================================ */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
 .profile-header {
   padding: 44px 20px 68px;
   position: relative;
+  flex-shrink: 0;
 }
 
 .profile-back {
@@ -1751,12 +1803,94 @@ img {
   color: #FFFFFF;
 }
 
-.profile-stats-section {
+.profile-tabs-wrapper {
+  flex-shrink: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.profile-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.profile-tabs-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--border-color);
+}
+
+.profile-tabs-scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.profile-tabs-scroll::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.profile-tabs-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+.profile-tab {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.profile-tab:hover {
+  transform: translateY(-2px);
+}
+
+.profile-tab.active {
+  background: var(--purple);
+  border-color: var(--gold);
+  color: white;
+}
+
+.profile-content-area {
   flex: 1;
-  padding: 28px 16px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-content-area::-webkit-scrollbar {
+  width: 4px;
+}
+
+.profile-content-area::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.profile-content-area::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+.profile-stats-section {
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 16px;
 }
 
 .profile-stats-title {
@@ -1819,15 +1953,105 @@ img {
 }
 
 .profile-signout-btn {
-  padding: 13px;
-  background: transparent;
-  border: 1px solid rgba(220, 38, 38, 0.35);
+  padding: 14px;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.05));
+  border: 1px solid rgba(220, 38, 38, 0.5);
   border-radius: 13px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #DC2626;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
+  transition: all 0.2s;
+  margin-top: 20px;
+}
+
+.profile-signout-btn:hover {
+  background: rgba(220, 38, 38, 0.25);
+  transform: translateY(-1px);
+}
+
+.profile-signout-btn:active {
+  transform: scale(0.98);
+}
+
+.profile-chart-section {
+  margin-top: 20px;
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-chart-container {
+  margin-top: 12px;
+  height: auto;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-2px);
+}
+
+.achievement-card.locked {
+  opacity: 0.5;
+  filter: grayscale(0.3);
+}
+
+.achievement-card-icon {
+  font-size: 32px;
+}
+
+.achievement-card-info {
+  flex: 1;
+}
+
+.achievement-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a0030;
+  margin-bottom: 2px;
+}
+
+.achievement-card-desc {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+.profile-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 16px;
+}
+
+.profile-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.profile-empty-text {
+  font-size: 14px;
+  color: #6B7280;
 }
 
 /* ============================================================================
@@ -2293,436 +2517,6 @@ img {
 }
 
 /* ============================================================================
-   PROFILE TABS
-   ============================================================================ */
-.profile-tabs {
-  display: flex;
-  gap: 10px;
-  padding: 16px;
-  background: white;
-  border-bottom: 1px solid #E5E7EB;
-}
-
-.profile-tab {
-  flex: 1;
-  padding: 10px;
-  background: #F3F4F6;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #6B7280;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.profile-tab.active {
-  background: #4B0082;
-  color: white;
-}
-
-/* ============================================================================
-   CHARTS
-   ============================================================================ */
-.profile-chart-section {
-  margin-top: 20px;
-  background: white;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.profile-chart-container {
-  margin-top: 12px;
-  height: auto;
-}
-
-/* ============================================================================
-   ACHIEVEMENTS GRID
-   ============================================================================ */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.achievement-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: white;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.achievement-card:hover {
-  transform: translateY(-2px);
-}
-
-.achievement-card.locked {
-  opacity: 0.5;
-  filter: grayscale(0.3);
-}
-
-.achievement-card-icon {
-  font-size: 32px;
-}
-
-.achievement-card-info {
-  flex: 1;
-}
-
-.achievement-card-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a0030;
-  margin-bottom: 2px;
-}
-
-.achievement-card-desc {
-  font-size: 11px;
-  color: #6B7280;
-}
-
-/* ============================================================================
-   EMPTY STATE
-   ============================================================================ */
-.profile-empty-state {
-  text-align: center;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 16px;
-}
-
-.profile-empty-icon {
-  font-size: 48px;
-  margin-bottom: 12px;
-}
-
-.profile-empty-text {
-  font-size: 14px;
-  color: #6B7280;
-}
-
-/* ============================================================================
-   CSS VARIABLES (Light Mode Default)
-   ============================================================================ */
-:root {
-  --bg-primary: #F8F5FF;
-  --bg-secondary: #FFFFFF;
-  --bg-header: linear-gradient(135deg, #280050, #4B0082);
-  --text-primary: #1a0030;
-  --text-secondary: #6B7280;
-  --text-white: #FFFFFF;
-  --border-color: #E5E7EB;
-  --card-bg: #FFFFFF;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.1);
-  --purple: #4B0082;
-  --dpurp: #280050;
-  --gold: #D4AF37;
-}
-
-/* ============================================================================
-   DARK MODE VARIABLES - Only overrides bright/white backgrounds
-   ============================================================================ */
-body.dark-mode {
-  /* Backgrounds - change bright/white to dark */
-  --bg-primary: #0a0015;
-  --bg-secondary: #1a0030;
-  --card-bg: #1a0030;
-  
-  /* Text colors - ensure readability */
-  --text-primary: #FFFFFF;
-  --text-secondary: #B4B4B4;
-  
-  /* Borders - slightly lighter for visibility */
-  --border-color: #3d2a5e;
-  
-  /* Shadows - darker for dark mode */
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.4);
-  
-  /* Header gradient - keep but darker */
-  --bg-header: linear-gradient(135deg, #0a0015, #1a0030);
-}
-
-/* ============================================================================
-   DARK MODE - Component Overrides
-   ============================================================================ */
-
-/* Phone container */
-body.dark-mode .phone {
-  background: var(--bg-primary);
-}
-
-/* Subjects Header - already has gradient, keep it */
-body.dark-mode .subjects-header {
-  background: var(--bg-header);
-}
-
-/* Subject Cards - white background changes to dark */
-body.dark-mode .subject-card-unselected {
-  background: var(--card-bg);
-  border-color: var(--border-color);
-}
-
-body.dark-mode .subject-card-selected {
-  background: var(--subject-bg, #2a1a4e);
-  border-color: var(--subject-color, #8B5CF6);
-}
-
-/* Text colors */
-body.dark-mode .subject-name,
-body.dark-mode .lekki-title,
-body.dark-mode .subject-status {
-  color: var(--text-primary);
-}
-
-body.dark-mode .subject-question-count,
-body.dark-mode .lekki-author,
-body.dark-mode .lekki-question-count div:last-child {
-  color: var(--text-secondary);
-}
-
-/* Start Button Container */
-body.dark-mode .start-button-container {
-  background: var(--bg-primary);
-  border-top-color: var(--border-color);
-}
-
-/* Quiz Header */
-body.dark-mode .quiz-header {
-  background: var(--bg-header);
-}
-
-/* Quiz Action Bar */
-body.dark-mode .quiz-action-bar {
-  background: var(--bg-primary);
-  border-top-color: var(--border-color);
-}
-
-/* Question Card - white background changes */
-body.dark-mode .question-card {
-  background: var(--card-bg);
-  box-shadow: var(--shadow);
-}
-
-body.dark-mode .question-text {
-  color: var(--text-primary);
-}
-
-/* Options - white background changes */
-body.dark-mode .quiz-option {
-  background: var(--card-bg);
-}
-
-body.dark-mode .quiz-option-letter {
-  background: var(--border-color);
-  color: var(--text-primary);
-}
-
-/* Clear button */
-body.dark-mode .quiz-clear-btn {
-  background: var(--card-bg);
-  border-color: var(--border-color);
-  color: var(--text-secondary);
-}
-
-/* Result Screen - stat cards */
-body.dark-mode .result-stat-card {
-  background: var(--card-bg);
-}
-
-body.dark-mode .result-stat-value {
-  color: var(--text-primary);
-}
-
-body.dark-mode .result-stat-label {
-  color: var(--text-secondary);
-}
-
-/* Profile Screen */
-body.dark-mode .profile-stat-card,
-body.dark-mode .achievement-card {
-  background: var(--card-bg);
-}
-
-body.dark-mode .profile-stat-value,
-body.dark-mode .achievement-card-name {
-  color: var(--text-primary);
-}
-
-body.dark-mode .profile-stat-label,
-body.dark-mode .achievement-card-desc {
-  color: var(--text-secondary);
-}
-
-/* Profile Tabs */
-body.dark-mode .profile-tabs {
-  background: var(--bg-primary);
-  border-bottom-color: var(--border-color);
-}
-
-body.dark-mode .profile-tab {
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-}
-
-body.dark-mode .profile-tab.active {
-  background: var(--purple);
-  color: white;
-}
-
-/* Streak Card */
-body.dark-mode .profile-streak-card {
-  background: var(--bg-header);
-}
-
-body.dark-mode .profile-streak-text {
-  color: var(--text-secondary);
-}
-
-/* Charts Section */
-body.dark-mode .profile-chart-section {
-  background: var(--card-bg);
-}
-
-/* Empty State */
-body.dark-mode .profile-empty-state {
-  background: var(--card-bg);
-}
-
-body.dark-mode .profile-empty-text {
-  color: var(--text-secondary);
-}
-
-/* Join Cards & Gate Containers */
-body.dark-mode .join-card,
-body.dark-mode .gate-container {
-  background: var(--bg-header);
-}
-
-/* Modal */
-body.dark-mode .modal-content {
-  background: var(--bg-secondary);
-}
-
-body.dark-mode .modal-question {
-  color: var(--text-secondary);
-  border-bottom-color: var(--border-color);
-}
-
-body.dark-mode .modal-explanation {
-  color: var(--text-primary);
-}
-
-body.dark-mode .modal-close-btn {
-  background: var(--purple);
-}
-
-/* Ad Gate Screen */
-body.dark-mode .adgate-container {
-  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
-}
-
-body.dark-mode .adgate-vibe {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: rgba(139, 92, 246, 0.25);
-}
-
-body.dark-mode .adgate-waiting-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Splash, Onboard, Ready, ShareGate screens - gradient backgrounds */
-body.dark-mode .splash-container,
-body.dark-mode .onboard-container,
-body.dark-mode .ready-container,
-body.dark-mode .sharegate-container {
-  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
-}
-
-/* Quick Take Box - purple gradient */
-body.dark-mode .quick-take {
-  background: linear-gradient(135deg, #1a0030, #2a1a4e);
-}
-
-body.dark-mode .quick-take-text {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-/* Hint Box */
-body.dark-mode .hint-box {
-  background: #2a1a2e;
-  border-color: var(--gold);
-}
-
-body.dark-mode .hint-text {
-  color: #FFD6A5;
-}
-
-/* Settings Card */
-body.dark-mode .settings-card {
-  background: var(--card-bg);
-  box-shadow: var(--shadow);
-}
-
-body.dark-mode .settings-name {
-  color: var(--text-primary);
-}
-
-body.dark-mode .settings-desc {
-  color: var(--text-secondary);
-}
-
-/* ============================================================================
-   THEME TOGGLE BUTTON
-   ============================================================================ */
-.theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--purple);
-  border: 2px solid var(--gold);
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
-}
-
-@media (max-width: 640px) {
-  .theme-toggle {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    bottom: 15px;
-    right: 15px;
-  }
-}
-
-/* ============================================================================
    SETTINGS CARD STYLES
    ============================================================================ */
 .settings-card {
@@ -2798,167 +2592,368 @@ body.dark-mode .settings-desc {
 }
 
 /* ============================================================================
+   CSS VARIABLES (Light Mode Default)
+   ============================================================================ */
+:root {
+  --bg-primary: #F8F5FF;
+  --bg-secondary: #FFFFFF;
+  --bg-header: linear-gradient(135deg, #280050, #4B0082);
+  --text-primary: #1a0030;
+  --text-secondary: #6B7280;
+  --text-white: #FFFFFF;
+  --border-color: #E5E7EB;
+  --card-bg: #FFFFFF;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --purple: #4B0082;
+  --dpurp: #280050;
+  --gold: #D4AF37;
+}
+
+/* ============================================================================
+   DARK MODE VARIABLES - Complete overhaul for all white backgrounds
+   ============================================================================ */
+body.dark-mode {
+  /* Backgrounds - all bright/white become dark */
+  --bg-primary: #0a0015;
+  --bg-secondary: #1a0030;
+  --card-bg: #1a0030;
+  
+  /* Text colors - ensure readability */
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  
+  /* Borders - subtle but visible */
+  --border-color: #3d2a5e;
+  
+  /* Shadows - deeper for dark mode */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.4);
+  
+  /* Header gradient - darker */
+  --bg-header: linear-gradient(135deg, #0a0015, #1a0030);
+}
+
+/* ============================================================================
+   DARK MODE - Complete Component Overrides
+   ============================================================================ */
+
+/* Main containers */
+body.dark-mode .phone,
+body.dark-mode .scr {
+  background: var(--bg-primary);
+}
+
+/* Subjects screen */
+body.dark-mode .subjects-header-curve {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .subject-card-unselected {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .subject-card-selected {
+  background: var(--subject-bg, #2a1a4e);
+  border-color: var(--subject-color, #8B5CF6);
+}
+
+body.dark-mode .subject-name,
+body.dark-mode .lekki-title,
+body.dark-mode .subject-status {
+  color: var(--text-primary);
+}
+
+body.dark-mode .subject-question-count,
+body.dark-mode .lekki-author,
+body.dark-mode .lekki-question-count div:last-child {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .lekki-card-unselected {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .lekki-card-selected {
+  background: #2a1a3e;
+  border-color: #8B5CF6;
+}
+
+body.dark-mode .start-button-container {
+  background: var(--bg-primary);
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .start-button-inactive {
+  background: #2d1b4e;
+  color: var(--text-secondary);
+}
+
+/* Quiz screen - Question cards and options */
+body.dark-mode .quiz-header {
+  background: var(--bg-header);
+}
+
+body.dark-mode .quiz-action-bar {
+  background: var(--bg-primary);
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .question-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .question-text {
+  color: var(--text-primary);
+}
+
+/* Quiz options - IMPORTANT: these were white before */
+body.dark-mode .quiz-option {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .quiz-option-letter {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .quiz-option:hover:not(.disabled) {
+  background: #2d1b4e;
+}
+
+body.dark-mode .quiz-clear-btn {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Lifeline buttons */
+body.dark-mode .lifeline-fifty {
+  background: var(--card-bg);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+body.dark-mode .lifeline-fifty-used {
+  background: #2d1b4e;
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .lifeline-hint {
+  background: var(--card-bg);
+  border-color: #8B5CF6;
+  color: #8B5CF6;
+}
+
+body.dark-mode .lifeline-hint-used {
+  background: #2d1b4e;
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .lifeline-voice {
+  background: #1a3a2a;
+  border-color: #16A34A;
+  color: #16A34A;
+}
+
+body.dark-mode .lifeline-voice-off {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Hint box */
+body.dark-mode .hint-box {
+  background: #2a1a2e;
+  border-color: var(--gold);
+}
+
+body.dark-mode .hint-title {
+  color: var(--gold);
+}
+
+body.dark-mode .hint-text {
+  color: #FFD6A5;
+}
+
+/* Quick take box */
+body.dark-mode .quick-take {
+  background: linear-gradient(135deg, #1a0030, #2a1a4e);
+}
+
+body.dark-mode .quick-take-text {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.dark-mode .quick-take-link {
+  color: var(--gold);
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .modal-title {
+  color: var(--gold);
+}
+
+body.dark-mode .modal-question {
+  color: var(--text-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .modal-explanation {
+  color: var(--text-primary);
+}
+
+body.dark-mode .modal-answer-box {
+  background: #2d1b4e;
+  border-color: var(--gold);
+}
+
+body.dark-mode .modal-answer-title {
+  color: var(--gold);
+}
+
+body.dark-mode .modal-answer-text {
+  color: var(--text-primary);
+}
+
+body.dark-mode .modal-close-btn {
+  background: var(--purple);
+}
+
+/* Result screen */
+body.dark-mode .result-stat-card {
+  background: var(--card-bg);
+}
+
+body.dark-mode .result-stat-value {
+  color: var(--text-primary);
+}
+
+body.dark-mode .result-stat-label {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .gate-container,
+body.dark-mode .join-card {
+  background: var(--bg-header);
+}
+
+/* Profile screen */
+body.dark-mode .profile-tabs {
+  background: var(--bg-primary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .profile-tab {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .profile-tab.active {
+  background: var(--purple);
+  color: white;
+}
+
+body.dark-mode .profile-stat-card,
+body.dark-mode .achievement-card,
+body.dark-mode .settings-card {
+  background: var(--card-bg);
+}
+
+body.dark-mode .profile-stat-value,
+body.dark-mode .achievement-card-name,
+body.dark-mode .settings-name {
+  color: var(--text-primary);
+}
+
+body.dark-mode .profile-stat-label,
+body.dark-mode .achievement-card-desc,
+body.dark-mode .settings-desc {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .profile-streak-card {
+  background: var(--bg-header);
+}
+
+body.dark-mode .profile-chart-section,
+body.dark-mode .profile-empty-state {
+  background: var(--card-bg);
+}
+
+body.dark-mode .profile-empty-text {
+  color: var(--text-secondary);
+}
+
+/* Scorecard */
+body.dark-mode .scorecard-container {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .scorecard-stats {
+  background: #0a0015;
+}
+
+body.dark-mode .scorecard-quote {
+  background: #0a0015;
+}
+
+body.dark-mode .scorecard-footer {
+  background: #0a0015;
+}
+
+/* Splash, Onboard, Ready, ShareGate screens */
+body.dark-mode .splash-container,
+body.dark-mode .onboard-container,
+body.dark-mode .ready-container,
+body.dark-mode .sharegate-container,
+body.dark-mode .adgate-container {
+  background: linear-gradient(160deg, #0a0015, #1a0030, #0a0015);
+}
+
+body.dark-mode .adgate-vibe {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+body.dark-mode .adgate-waiting-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar overrides for dark mode */
+body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-track,
+body.dark-mode .profile-content-area::-webkit-scrollbar-track {
+  background: var(--border-color);
+}
+
+body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-thumb,
+body.dark-mode .profile-content-area::-webkit-scrollbar-thumb {
+  background: var(--gold);
+}
+
+/* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Optimize performance - skip transitions on transforms and opacity for frequently animated elements */
+/* Optimize performance */
 button, 
-.theme-toggle, 
-.toggle-switch, 
-.toggle-slider,
 .quiz-option,
 .subject-card,
-.achievement-card {
+.achievement-card,
+.settings-card {
   transition: all 0.2s ease;
-}
-
-
-/* ============================================================================
-   PROFILE PAGE - SCROLLABLE TABS & CONTENT
-   ============================================================================ */
-
-/* Profile page container */
-.profile-page {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  overflow: hidden;
-}
-
-/* Horizontally scrollable tabs wrapper */
-.profile-tabs-wrapper {
-  flex-shrink: 0;
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
-  position: relative;
-}
-
-.profile-tabs-scroll {
-  display: flex;
-  gap: 8px;
-  padding: 12px 16px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-}
-
-/* Hide scrollbar on Firefox and Edge but keep functionality */
-.profile-tabs-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) var(--border-color);
-}
-
-.profile-tabs-scroll::-webkit-scrollbar {
-  height: 3px;
-}
-
-.profile-tabs-scroll::-webkit-scrollbar-track {
-  background: var(--border-color);
-  border-radius: 3px;
-}
-
-.profile-tabs-scroll::-webkit-scrollbar-thumb {
-  background: var(--gold);
-  border-radius: 3px;
-}
-
-/* Individual tab buttons */
-.profile-tab {
-  flex-shrink: 0;
-  padding: 10px 20px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.profile-tab:hover {
-  transform: translateY(-2px);
-}
-
-.profile-tab.active {
-  background: var(--purple);
-  border-color: var(--gold);
-  color: white;
-}
-
-/* Vertically scrollable content area */
-.profile-content-area {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-bottom: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.profile-content-area::-webkit-scrollbar {
-  width: 4px;
-}
-
-.profile-content-area::-webkit-scrollbar-track {
-  background: var(--border-color);
-  border-radius: 4px;
-}
-
-.profile-content-area::-webkit-scrollbar-thumb {
-  background: var(--gold);
-  border-radius: 4px;
-}
-
-/* Stats section - already has padding from existing styles */
-.profile-stats-section {
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Ensure charts are responsive */
-.profile-chart-container {
-  width: 100%;
-  overflow-x: auto;
-}
-
-/* Mobile optimizations */
-@media (max-width: 640px) {
-  .profile-tab {
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-  
-  .profile-tabs-scroll {
-    padding: 10px 12px;
-    gap: 6px;
-  }
-  
-  .profile-stats-section {
-    padding: 16px 12px;
-  }
-}
-
-/* Dark mode scrollbar overrides */
-body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-track {
-  background: var(--border-color);
-}
-
-body.dark-mode .profile-content-area::-webkit-scrollbar-track {
-  background: var(--border-color);
-}
-
-body.dark-mode .profile-tabs-scroll::-webkit-scrollbar-thumb {
-  background: var(--gold);
-}
-
-body.dark-mode .profile-content-area::-webkit-scrollbar-thumb {
-  background: var(--gold);
 }
