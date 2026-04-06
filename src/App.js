@@ -2,6 +2,8 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import AdsterraBanner from './AdsterraBanner';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
+import ModeSelect from './components/ModeSelect';
+import Flashcards from './components/Flashcards';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
 import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
@@ -147,6 +149,10 @@ export default function App() {
   
   // Subject performance tracking
   const [subjectPerformance, setSubjectPerformance] = useState({});
+  
+  // Study mode state
+  const [studyMode, setStudyMode] = useState(null); // 'cbt' or 'flashcard'
+  const [flashcardSubject, setFlashcardSubject] = useState(null);
 
   // Load user data on mount
   useEffect(() => {
@@ -213,7 +219,13 @@ export default function App() {
   const persist = (ns, nsc, nb, streak, lastDate) => saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak, lastDate }, email);
   const triggerAdRefresh = () => { setAdRefresh(prev => prev + 1); console.log("Ads Refreshing..."); };
   
-  const goHome = () => { if (SHOW_ADS) triggerAdRefresh(); stopSpeech(); setScreen('subjects'); };
+  const goHome = () => { 
+    if (SHOW_ADS) triggerAdRefresh(); 
+    stopSpeech(); 
+    setStudyMode(null);
+    setFlashcardSubject(null);
+    setScreen('modeSelect'); 
+  };
   
   const handleAdGateComplete = (callback) => {
     setTotalSessionsForAd(sessions + 1);
@@ -240,8 +252,28 @@ export default function App() {
       if (s.bestScore) setBestScore(s.bestScore);
       if (s.streak) setStreak(s.streak);
       if (s.lastDate) setLastDate(s.lastDate);
-      setScreen('subjects');
+      setScreen('modeSelect');
     } else setScreen('onboard');
+  };
+
+  const handleModeSelect = (mode) => {
+    setStudyMode(mode);
+    if (mode === 'cbt') {
+      setScreen('subjects');
+    } else if (mode === 'flashcard') {
+      setScreen('flashcardSubjects');
+    }
+  };
+
+  const handleFlashcardSubjectSelect = (subjectId) => {
+    setFlashcardSubject(subjectId);
+    setScreen('flashcards');
+  };
+
+  const handleBackToModeSelect = () => {
+    setStudyMode(null);
+    setFlashcardSubject(null);
+    setScreen('modeSelect');
   };
 
   const startQuiz = (sel) => {
@@ -324,14 +356,17 @@ export default function App() {
       <div className="phone">
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
-          {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('subjects'); }} />}
-          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} />}
+          {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
+          {screen === 'modeSelect' && <ModeSelect onSelectMode={handleModeSelect} />}
+          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
+          {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
           {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
           {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
           {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
           {screen === 'quiz' && <Quiz subjectId={subject} onAllDone={handleAllDone} setQuizTimeRemaining={setQuizTimeRemaining} score={score} setScore={setScore} correct={correct} setCorrect={setCorrect} totalQ={totalQ} setTotalQ={setTotalQ} onHome={goHome} triggerAdRefresh={triggerAdRefresh} />}
           {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
-          {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'subjects')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
+          {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
+          {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
         </Suspense>
       </div>
       
