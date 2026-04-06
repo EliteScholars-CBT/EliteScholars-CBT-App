@@ -2966,6 +2966,89 @@ body.dark-mode .phone .scr {
   background: var(--bg-primary);
 }
 
+body.dark-mode .subject-card-unselected {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Add this hover effect right after */
+body.dark-mode .subject-card-unselected:hover {
+  background: #2d1b4e;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .lekki-card-unselected:hover {
+  background: #2d1b4e;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ============================================================================
+   DARK MODE - Quiz Options (Choices)
+   ============================================================================ */
+
+/* Unselected quiz options in dark mode */
+body.dark-mode .quiz-option {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Selected option in dark mode (before submission) */
+body.dark-mode .quiz-option.selected {
+  background: var(--purple);
+  border-color: var(--gold);
+  color: white;
+}
+
+/* Hover effect on options in dark mode */
+body.dark-mode .quiz-option:hover:not(.disabled) {
+  background: #2d1b4e;
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+
+/* Option letter circle in dark mode */
+body.dark-mode .quiz-option-letter {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Selected option letter circle */
+body.dark-mode .quiz-option.selected .quiz-option-letter {
+  background: var(--gold);
+  color: #1a0030;
+}
+
+/* Correct answer option after submission in dark mode */
+body.dark-mode .quiz-option.correct {
+  background: rgba(22, 163, 74, 0.2);
+  border-color: #16A34A;
+}
+
+body.dark-mode .quiz-option.correct .quiz-option-letter {
+  background: #16A34A;
+  color: white;
+}
+
+/* Wrong answer option after submission in dark mode */
+body.dark-mode .quiz-option.wrong {
+  background: rgba(220, 38, 38, 0.2);
+  border-color: #DC2626;
+}
+
+body.dark-mode .quiz-option.wrong .quiz-option-letter {
+  background: #DC2626;
+  color: white;
+}
+
+/* Disabled options in dark mode */
+body.dark-mode .quiz-option.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* ============================================================================
    SMOOTH THEME TRANSITIONS
    ============================================================================ */
