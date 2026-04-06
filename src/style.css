@@ -3174,3 +3174,19 @@ button,
 .settings-card {
   transition: all 0.2s ease;
 }
+
+/* Add top padding for sticky ad */
+.phone {
+  padding-top: 0;
+}
+
+/* When ad is showing, add padding */
+.phone.has-sticky-ad {
+  padding-top: 0;
+}
+
+/* Ensure content doesn't go under the sticky ad */
+.scr {
+  position: relative;
+  z-index: 1;
+}
