@@ -22062,6 +22062,691 @@ mathematics: [
     },
   ],
   literature: [
+
+  {
+    yr: 2024,
+    q: "The village where only women lived in the novel is called?",
+    o: ["Koidu", "Talaba", "Musudugu", "Musugudu"],
+    a: 3,
+    e: "Musugudu is the village where only women lived.",
+    full: "In the novel, Musugudu is established as a community that consists solely of women. This setting serves as a key location for exploring themes of female autonomy and community away from patriarchal structures.",
+    h: "Think about the mythical village associated with women."
+  },
+  {
+    yr: 2024,
+    q: "According to the novel, the children who are meant to show the path are called?",
+    o: ["Dybo", "Breech", "Danketin", "Masuba"],
+    a: 2,
+    e: "The children are called Danketin.",
+    full: "In the narrative, 'Danketin' refers to the designated children who guide or show the path, symbolizing the transmission of culture and knowledge to the next generation.",
+    h: "Look for the term used for spiritual guides."
+  },
+  {
+    yr: 2024,
+    q: "So the Path Does Not Die is an example of a?",
+    o: ["Historical novel", "Autobiographical novel", "Bildungsroman", "Gothic novel"],
+    a: 2,
+    e: "The novel is a Bildungsroman.",
+    full: "A Bildungsroman focuses on the psychological and moral growth of the protagonist from youth to adulthood. 'So the Path Does Not Die' traces Finaba's journey, making it a classic example of this genre.",
+    h: "The novel focuses on the growth of the main character."
+  },
+  {
+    yr: 2024,
+    q: "The protagonist of the novel is?",
+    o: ["Finaba", "Nabou", "Cammy", "Baramusu"],
+    a: 0,
+    e: "Finaba is the protagonist.",
+    full: "Finaba is the central character whose experiences, struggles, and development form the core narrative of the story.",
+    h: "The story follows a young girl's journey."
+  },
+  {
+    yr: 2024,
+    q: "Finaba belongs to which ethnic group?",
+    o: ["Temne", "Mende", "Fula", "Kono"],
+    a: 2,
+    e: "Finaba is a Fula.",
+    full: "Finaba's Fula heritage is a significant aspect of her identity, influencing her experiences with tradition, migration, and belonging.",
+    h: "She belongs to a pastoralist group often found across West Africa."
+  },
+  {
+    yr: 2024,
+    q: "Finaba and her parents were exiled from their village because?",
+    o: ["they insisted on female circumcision", "they innocently killed Dimusu", "they could not conform to the traditions of the village", "they wanted Finaba to go to school"],
+    a: 1,
+    e: "They were exiled for innocently killing Dimusu.",
+    full: "The accidental death of Dimusu leads to the family's exile, setting the stage for their subsequent migrations and struggles.",
+    h: "The exile was caused by an accidental death."
+  },
+  {
+    yr: 2024,
+    q: "The setting of the novel includes?",
+    o: ["Nigeria and Sierra Leone", "Liberia and Sierra Leone", "Sierra Leone and the United States", "Sierra Leone and the United Kingdom"],
+    a: 2,
+    e: "The novel is set in Sierra Leone and the United States.",
+    full: "The narrative spans multiple locations, primarily shifting between the protagonist's homeland of Sierra Leone and her new life in the United States, highlighting the immigrant experience.",
+    h: "The protagonist migrates to a Western country."
+  },
+  {
+    yr: 2024,
+    q: "The narrative technique used in the novel is mainly?",
+    o: ["First person", "Second person", "Third person omniscient", "Third person limited"],
+    a: 2,
+    e: "The novel uses third person omniscient.",
+    full: "The narrator knows the thoughts and feelings of multiple characters, providing a broad perspective on events and the internal lives of the cast.",
+    h: "The narrator knows what many characters are thinking."
+  },
+  {
+    yr: 2024,
+    q: "The man who claims to be Cammy's son is?",
+    o: ["Donovan, 21", "Gibson Glen, 22", "Glen Donovan, 21", "Glen Gibson, 21"],
+    a: 3,
+    e: "Glen Gibson, 21 is the man who claims to be Cammy's son.",
+    full: "This character's claim adds complexity to the familial relationships and themes of paternity and legacy within the novel.",
+    h: "The name has two parts."
+  },
+  {
+    yr: 2024,
+    q: "The character born breech in the prologue is?",
+    o: ["Fina", "Masuba", "Kumba Kargbo", "Dimusu-Celeste"],
+    a: 3,
+    e: "Dimusu-Celeste is born breech.",
+    full: "The circumstances of Dimusu-Celeste's birth are significant, marking her as a special or unusual character from the very beginning of the story.",
+    h: "The character has a hyphenated name."
+  },
+  {
+    yr: 2024,
+    q: "In the novel, the Fulas are treated?",
+    o: ["with love and respect", "as second-class citizens", "as innocent and kindly", "as political leaders"],
+    a: 1,
+    e: "The Fulas are treated as second-class citizens.",
+    full: "The discrimination faced by the Fula people in the novel is a central theme, highlighting ethnic prejudice and marginalization.",
+    h: "They face discrimination."
+  },
+  {
+    yr: 2024,
+    q: "The path in the novel symbolizes?",
+    o: ["cultural continuity", "political authority", "economic growth", "religious freedom"],
+    a: 0,
+    e: "The path symbolizes cultural continuity.",
+    full: "The 'path' is a powerful metaphor for the passage of traditions, customs, and a way of life from one generation to the next.",
+    h: "It represents the preservation of heritage."
+  },
+  {
+    yr: 2024,
+    q: "Amazinga's original name is?",
+    o: ["Anushka Muktari", "Celeste Priddy", "Elizabeth Anushka", "Dimusu-Celeste"],
+    a: 0,
+    e: "Amazinga's original name is Anushka Muktari.",
+    full: "The choice to adopt a new name, 'Amazinga,' reflects her personal transformation and connection to a different identity.",
+    h: "Her original name sounds South Asian."
+  },
+  {
+    yr: 2024,
+    q: "Amazinga's character is significant because?",
+    o: ["she rejects African culture", "she accepts foreign culture", "she represents Africans who value and embrace their heritage", "she represents Americans who reject Africa"],
+    a: 2,
+    e: "She represents Africans who value and embrace their heritage.",
+    full: "Amazinga serves as a positive model for the diaspora, demonstrating a conscious choice to connect with and honor her ancestral roots.",
+    h: "She embraces her origins."
+  },
+  {
+    yr: 2024,
+    q: "The character who suffers sexual assault by a lecturer during her student years is?",
+    o: ["Amazinga", "MawaF", "Edna", "Fina"],
+    a: 1,
+    e: "MawaF suffers sexual assault.",
+    full: "MawaF's traumatic experience is a critical plot point that highlights issues of power, abuse, and vulnerability within academic and social institutions.",
+    h: "The victim is not the main protagonist."
+  },
+  {
+    yr: 2024,
+    q: "MawaF's experience with Captain highlights?",
+    o: ["the power of men over women", "the economic constraints in Africa", "sexual violence against women during the civil war", "the influence of Western culture"],
+    a: 2,
+    e: "It highlights sexual violence against women during the civil war.",
+    full: "MawaF's story is used to draw attention to the widespread and brutal use of sexual violence as a weapon during the Sierra Leone civil war.",
+    h: "This is connected to a major historical event in the novel."
+  },
+  {
+    yr: 2024,
+    q: "Fina marries Jemal mainly for?",
+    o: ["love", "green card and immigration residency", "wealth", "companionship"],
+    a: 1,
+    e: "Fina marries Jemal mainly for a green card and immigration residency.",
+    full: "This marriage of convenience underscores the desperate lengths immigrants may go to in order to secure legal status and a future in a new country.",
+    h: "It's related to her legal status in America."
+  },
+  {
+    yr: 2024,
+    q: "Meredith's relationship with Fina in the novel can best be described as?",
+    o: ["distant and formal", "hostile and competitive", "supportive and friendly", "strictly professional"],
+    a: 2,
+    e: "Their relationship is supportive and friendly.",
+    full: "Meredith acts as a mentor and friend to Fina, providing crucial support and guidance as she navigates her new life.",
+    h: "Meredith is a positive influence."
+  },
+  {
+    yr: 2024,
+    q: "The revelation that Meredith and Chip may have accepted a bribe from Sidibe Kakay suggests?",
+    o: ["corruption is normal in Africa", "foreigners always reject corruption", "moral ideals may be compromised under pressure", "bribery is acceptable in politics"],
+    a: 2,
+    e: "It suggests that moral ideals may be compromised under pressure.",
+    full: "This morally ambiguous situation shows that even principled characters can face dilemmas where their ideals conflict with practical or financial pressures.",
+    h: "It's about a character's moral failing under pressure."
+  },
+  {
+    yr: 2024,
+    q: "Fina's journey to Kizzy's apartment symbolizes?",
+    o: ["spiritual calling", "the curse from Baramusu", "psychological confusion and trauma", "the excitement of city life"],
+    a: 2,
+    e: "It symbolizes psychological confusion and trauma.",
+    full: "The journey represents Fina's disoriented mental state as she grapples with past abuse and present uncertainties, marking a low point in her psychological arc.",
+    h: "It's related to her mental state."
+  },
+  {
+    yr: 2024,
+    q: "The contrast between Kumba Kargbo and Finaba mainly illustrates?",
+    o: ["myth versus realism", "tradition versus modernity", "destruction versus renewal", "power of women in nature"],
+    a: 1,
+    e: "It illustrates tradition versus modernity.",
+    full: "Kumba Kargbo, a figure from legend, represents the old ways, while Finaba, living in the modern world, embodies the new, creating a central tension in the novel.",
+    h: "This is a comparison of a legendary figure and a modern woman."
+  },
+  {
+    yr: 2024,
+    q: "Fina's decision to forgive Kizzy despite his abuse reflects?",
+    o: ["weakness", "desire for revenge", "reconciliation and personal growth", "dependence on men"],
+    a: 2,
+    e: "It reflects reconciliation and personal growth.",
+    full: "This difficult act of forgiveness is portrayed as a strength, allowing Fina to move past her trauma and achieve a more profound sense of peace and maturity.",
+    h: "It's a sign of emotional maturity."
+  },
+  {
+    yr: 2024,
+    q: "The dominant motif in the novel is?",
+    o: ["tourism and leisure", "communal love", "migration and identity struggle", "patriarchy and patriarchy"],
+    a: 2,
+    e: "The dominant motif is migration and identity struggle.",
+    full: "The novel repeatedly explores the challenges of leaving one's homeland, adapting to new cultures, and the resulting questions of personal and cultural identity.",
+    h: "This relates to moving between countries and finding oneself."
+  },
+  {
+    yr: 2024,
+    q: "Isa and her family become refugees mainly because of?",
+    o: ["economic hardship", "religious persecution", "cultural disintegration", "civil war"],
+    a: 3,
+    e: "They become refugees because of the civil war.",
+    full: "The brutal civil war in Sierra Leone is the primary catalyst that forces many characters, including Isa and her family, to flee their homes and seek safety elsewhere.",
+    h: "This is caused by a major national conflict."
+  },
+  {
+    yr: 2024,
+    q: "Baramusu's position in Talaba symbolizes?",
+    o: ["authority of traditional wisdom", "power of culture", "power of women", "colonial influence"],
+    a: 0,
+    e: "It symbolizes the authority of traditional wisdom.",
+    full: "Baramusu acts as a respected elder and custodian of custom, his authority derived from his knowledge of traditional laws and spiritual matters.",
+    h: "He is an elder who holds traditional knowledge."
+  },
+  {
+    yr: 2024,
+    q: "Isa and her husband sought refuge during the civil war in?",
+    o: ["Nigeria", "Ivory Coast", "Guinea", "Ghana"],
+    a: 2,
+    e: "They sought refuge in Guinea.",
+    full: "Guinea serves as a neighboring safe haven for those escaping the conflict in Sierra Leone.",
+    h: "The country borders Sierra Leone."
+  },
+  {
+    yr: 2024,
+    q: "Fina's adoption of Mama Yegbe and Mafaw symbolizes?",
+    o: ["cultural alienation", "emotional detachment", "cultural conservation", "nationalist ideology"],
+    a: 2,
+    e: "It symbolizes cultural conservation.",
+    full: "By caring for the elderly Mama Yegbe, Fina actively preserves a link to her heritage and cares for the vulnerable, embodying a form of cultural preservation.",
+    h: "It's about caring for elders and preserving a link to the past."
+  },
+  {
+    yr: 2024,
+    q: "The character who believes women are trophies that can be bought is?",
+    o: ["Chip", "Sidibe Kakay", "Cammy", "Hassan"],
+    a: 1,
+    e: "Sidibe Kakay believes women are trophies.",
+    full: "Sidibe Kakay's character is used to critique patriarchal attitudes that treat women as commodities to be owned and displayed.",
+    h: "This character is depicted as corrupt and misogynistic."
+  },
+  {
+    yr: 2024,
+    q: "Anushka Muktari is?",
+    o: ["Fina's best friend", "a colleague at Crowther College", "the woman impregnated by Cammy", "Cammy's elder sister"],
+    a: 2,
+    e: "Anushka Muktari is the woman impregnated by Cammy.",
+    full: "Her pregnancy by Cammy is a significant plot point, affecting relationships and revealing character motivations.",
+    h: "Her relationship with Cammy has major consequences."
+  },
+  {
+    yr: 2024,
+    q: "Fafei is regarded as?",
+    o: ["a place where only men enter", "a place where only women enter", "a place where destinies are perfected by Atala", "circumcision hut"],
+    a: 3,
+    e: "Fafei is the circumcision hut.",
+    full: "This location is central to the traditional ritual of female circumcision, a major point of conflict in the novel.",
+    h: "It's the location for a controversial traditional practice."
+  },
+  {
+    yr: 2024,
+    q: "Fina's struggle to belong in different places highlights?",
+    o: ["heroism", "love for Sierra Leone", "migration and identity struggle", "love and nationalism"],
+    a: 2,
+    e: "It highlights migration and identity struggle.",
+    full: "Her repeated feelings of being an outsider—in Talaba, Freetown, and America—drive the novel's central exploration of how migration creates complex, often painful, questions of belonging.",
+    h: "This is the core theme of the book."
+  },
+  {
+    yr: 2024,
+    q: "The death of Dimusu represents?",
+    o: ["religious conflict", "cultural crisis", "ethnic prejudice", "political tension"],
+    a: 1,
+    e: "The death of Dimusu represents cultural crisis.",
+    full: "The accidental killing and its aftermath expose deep fissures in the community, forcing a confrontation between traditional law and personal tragedy.",
+    h: "The event triggers a major conflict with the community's laws."
+  },
+  {
+    yr: 2024,
+    q: "The hostility and discrimination faced by Fulas in the novel reflects?",
+    o: ["cultural pride", "ethnic prejudice", "economic hardship", "cultural preservation"],
+    a: 1,
+    e: "It reflects ethnic prejudice.",
+    full: "The treatment of the Fula characters serves as a direct commentary on the realities of ethnic discrimination and xenophobia within African societies.",
+    h: "This is about unfair treatment based on a person's ethnic group."
+  },
+  {
+    yr: 2024,
+    q: "Baramusu's firm defense of circumcision represents?",
+    o: ["resistance to Western culture", "political power of traditional leaders", "religious authority", "strict adherence to traditional beliefs"],
+    a: 3,
+    e: "It represents strict adherence to traditional beliefs.",
+    full: "Baramusu is portrayed as an unwavering defender of custom, prioritizing the perceived spiritual and social necessity of the practice over individual well-being.",
+    h: "He is a staunch traditionalist."
+  },
+  {
+    yr: 2024,
+    q: "Bayo's decision to return to Nigeria after studying abroad reflects?",
+    o: ["cultural alienation", "the spirit of individualism", "the spirit of nationalism", "Western education influence"],
+    a: 2,
+    e: "It reflects the spirit of nationalism.",
+    full: "Bayo's choice represents a commitment to use his education for the benefit of his home country, embodying a sense of patriotic duty.",
+    h: "He wants to contribute to his homeland."
+  },
+  {
+    yr: 2024,
+    q: "The myth of Kumba Kargbo explores?",
+    o: ["economic hardship", "acceptance of foreign traditions", "importance of proverbs", "resistance to oppressive traditions"],
+    a: 3,
+    e: "It explores resistance to oppressive traditions.",
+    full: "The legendary figure of Kumba Kargbo is used to subtly critique and resist harmful traditional practices, offering a mythical precedent for change.",
+    h: "The myth provides a framework for questioning certain customs."
+  },
+  {
+    yr: 2024,
+    q: "The refinement of the Musudugu legend suggests that?",
+    o: ["traditions must never change", "change destroys communities", "modernity always wins", "traditions can be refined for better society"],
+    a: 3,
+    e: "It suggests traditions can be refined for a better society.",
+    full: "The novel advocates for a dynamic view of culture, where traditions are not static but can be adapted and improved to serve the needs of a changing world.",
+    h: "The novel suggests that customs should evolve."
+  },
+  {
+    yr: 2024,
+    q: "The title So the Path Does Not Die suggests that?",
+    o: ["African traditions must remain unchanged", "migration solves African problems", "Africans should abandon bad practices", "cultural heritage should be preserved with reform"],
+    a: 3,
+    e: "It suggests cultural heritage should be preserved with reform.",
+    full: "The title is a metaphor for keeping a culture alive, not by freezing it, but by allowing it to adapt and continue—thus, the 'path' of tradition continues.",
+    h: "It's about the continuity of culture through adaptation."
+  },
+  {
+    yr: 2024,
+    q: "Finaba's experiences in Talaba, Freetown and America highlight that?",
+    o: ["traditions must be challenged", "consequences of challenging traditions", "migration guarantees happiness", "belonging is a complex cultural struggle"],
+    a: 3,
+    e: "They highlight that belonging is a complex cultural struggle.",
+    full: "Her journey across these different locations reveals that a sense of home is not easily found and is constantly negotiated through cultural, social, and personal conflicts.",
+    h: "This is the ultimate lesson of the protagonist's journey."
+  },
+  {
+    yr: 2024,
+    q: "The conflict between Baramusu and Nabou represents?",
+    o: ["myth versus reality", "culture versus religion", "tradition versus modernity", "political rivalry"],
+    a: 2,
+    e: "It represents tradition versus modernity.",
+    full: "Their opposing views on practices like circumcision and the value of formal education embody the central clash between upholding the old ways and embracing the new.",
+    h: "They disagree on the value of new ideas."
+  },
+  {
+    yr: 2024,
+    q: "Through Bayo and Finaba, the author suggests Africa's development requires?",
+    o: ["rejection of Western ideas", "abandoning African practices", "nationalist commitment to rebuild Africa", "rejection of everything foreign"],
+    a: 2,
+    e: "It requires a nationalist commitment to rebuild Africa.",
+    full: "By having educated characters like Bayo and Finaba return or wish to contribute to their home countries, the novel argues for a homegrown, dedicated effort towards Africa's progress.",
+    h: "The characters show a dedication to their home countries."
+  },
+  {
+    yr: 2024,
+    q: "Amadu stops the circumcision ceremony because?",
+    o: ["he fears punishment", "he believes Fina must go to school", "he dislikes villagers", "he believes the ritual is dangerous"],
+    a: 1,
+    e: "He stops it because he believes Fina must go to school.",
+    full: "Amadu's intervention prioritizes Fina's education over the immediate demands of tradition, representing a modern, pragmatic perspective.",
+    h: "He values formal education."
+  },
+  {
+    yr: 2024,
+    q: "Amazinga's adoption of an African name shows?",
+    o: ["rejection of modern life", "admiration for African culture", "desire to belong to Africa", "academic research interest"],
+    a: 2,
+    e: "It shows admiration for African culture.",
+    full: "Her choice is a deliberate act of identification with her African roots, demonstrating a respect and affection for the continent's heritage.",
+    h: "It's about connecting with ancestral roots."
+  },
+  {
+    yr: 2024,
+    q: "Bayo represents Africans in the diaspora who?",
+    o: ["totally reject Africa", "completely accept Africa", "feel responsible for developing Africa", "prefer Western culture"],
+    a: 2,
+    e: "He feels responsible for developing Africa.",
+    full: "Bayo is a model of diasporic engagement, believing that those who have gained knowledge and skills abroad have a duty to return and contribute to the continent's betterment.",
+    h: "He believes in giving back to his homeland."
+  },
+  {
+    yr: 2024,
+    q: "Mawa's character is important because she symbolizes?",
+    o: ["survival and resilience after war trauma", "rebellion against traditions", "political activism", "corruption in African government"],
+    a: 0,
+    e: "She symbolizes survival and resilience after war trauma.",
+    full: "Mawa's character arc, though marred by horrific violence, is ultimately one of survival, representing the strength of those who lived through the civil war.",
+    h: "She is a survivor of terrible violence."
+  },
+  {
+    yr: 2024,
+    q: "Jemal's relationship with Fina mainly illustrates?",
+    o: ["economic hardship", "struggles of love", "domestic violence", "immigration technicalities"],
+    a: 3,
+    e: "It mainly illustrates immigration technicalities.",
+    full: "Their transactional marriage is a plot device used to explore the bureaucratic and legal hurdles faced by immigrants, rather than a relationship based on emotional connection.",
+    h: "The relationship is a practical arrangement for legal status."
+  },
+  {
+    yr: 2024,
+    q: "The attempt to circumcise Fina is strongly supported by?",
+    o: ["Baramusu", "Nabou", "Mama Jinah", "Mama Yegbe"],
+    a: 0,
+    e: "It is strongly supported by Baramusu.",
+    full: "As the staunch traditionalist, Baramusu is the primary advocate for upholding the practice, placing him in direct opposition to Fina's future.",
+    h: "This character is the main enforcer of tradition."
+  },
+  {
+    yr: 2024,
+    q: "Folklore elements in the novel help to?",
+    o: ["reduce tension", "reinforce cultural identity", "weaken realism", "simplify plot"],
+    a: 1,
+    e: "They help to reinforce cultural identity.",
+    full: "The integration of myths, legends, and proverbs grounds the story in a rich cultural heritage, affirming the value and continuity of these traditions.",
+    h: "These elements connect the characters to their past."
+  },
+  {
+    yr: 2024,
+    q: "Judge and Celeste Priddy represent parents who?",
+    o: ["enforce strict discipline", "prefer Western culture", "value reputation over morality", "oppose inequality"],
+    a: 2,
+    e: "They value reputation over morality.",
+    full: "Their concern with public image, even when it requires covering up wrongdoing, is a critique of superficial values within certain social circles.",
+    h: "They are concerned with how things look."
+  },
+  {
+    yr: 2024,
+    q: "Cutting the rope metaphorically refers to?",
+    o: ["destroying family ties", "abandoning cultural connections", "breaking traditional laws", "escaping oppression"],
+    a: 1,
+    e: "It refers to abandoning cultural connections.",
+    full: "The metaphor of cutting a rope symbolizes the severing of ties with one's heritage, traditions, and community, a central dilemma for many characters.",
+    h: "It's about severing a link to one's past."
+  },
+  {
+    yr: 2024,
+    q: "The allegory of Musudugu mainly explores?",
+    o: ["matriarchal possibility", "women can rule", "belonging and identity", "religious authority"],
+    a: 2,
+    e: "It mainly explores belonging and identity.",
+    full: "The myth of the all-female village is an allegorical exploration of creating a space for female identity and community outside of patriarchal norms.",
+    h: "It's about a community of women."
+  },
+  {
+    yr: 2024,
+    q: "The proverb Each plant and animal follows its own path emphasizes?",
+    o: ["social order", "importance of farming", "strength of men", "rebellion"],
+    a: 0,
+    e: "It emphasizes social order.",
+    full: "This proverb reinforces the idea that everyone has a prescribed role and destiny within the traditional social hierarchy.",
+    h: "It's about accepting one's place."
+  },
+  {
+    yr: 2024,
+    q: "The proverb comparing men to elephant grass suggests?",
+    o: ["men must dominate", "men disrupt women's growth", "men must guide women", "men always rule"],
+    a: 1,
+    e: "It suggests men disrupt women's growth.",
+    full: "This proverb is used to illustrate how patriarchal power can overshadow and stunt the development and potential of women.",
+    h: "It's about men getting in the way of women."
+  },
+  {
+    yr: 2024,
+    q: "The song sung by Kumba Kargbo after destruction of her village is an example of?",
+    o: ["hymn", "satire", "dirge", "anthem"],
+    a: 2,
+    e: "It is an example of a dirge.",
+    full: "A dirge is a lament for the dead, and the song serves as a mourning for the loss of her community and way of life.",
+    h: "It's a song of mourning."
+  },
+  {
+    yr: 2024,
+    q: "Songs in the novel function mainly as?",
+    o: ["historical documentation", "entertainment", "cultural preservation", "religious rituals"],
+    a: 2,
+    e: "They function mainly as cultural preservation.",
+    full: "Songs are used to transmit history, values, and emotions across generations, acting as a living archive of the culture.",
+    h: "They are a way to keep traditions alive."
+  },
+  {
+    yr: 2024,
+    q: "All the following are used in the novel except?",
+    o: ["legend", "proverbs", "songs", "caricature"],
+    a: 3,
+    e: "Caricature is not a primary device used.",
+    full: "While the novel uses rich folklore and oral traditions, it does not rely on exaggerated character portrayals or caricature as a main literary technique.",
+    h: "This is not a form of oral tradition."
+  },
+  {
+    yr: 2024,
+    q: "The central motif of the novel is?",
+    o: ["cultural assimilation", "rebellion", "migration and displacement", "corruption"],
+    a: 2,
+    e: "The central motif is migration and displacement.",
+    full: "The physical and psychological movement of characters away from their homes and the resulting sense of dislocation is the most persistent and unifying theme.",
+    h: "This is the core experience of the main character."
+  },
+  {
+    yr: 2024,
+    q: "Yoruba heritage in Sierra Leone highlights?",
+    o: ["religious conversion", "political alliances", "colonial administration", "cultural migration during slave trade"],
+    a: 3,
+    e: "It highlights cultural migration during the slave trade.",
+    full: "The presence of Yoruba culture in Sierra Leone is a historical legacy of the transatlantic slave trade and the subsequent settlement of liberated Africans in Freetown.",
+    h: "It's a result of historical population movements."
+  },
+  {
+    yr: 2024,
+    q: "Dimusu-Celeste's dual names symbolize?",
+    o: ["religious conversion", "political independence", "fusion of tradition and modernity", "social conflict"],
+    a: 2,
+    e: "They symbolize the fusion of tradition and modernity.",
+    full: "The combination of a traditional African name (Dimusu) and a Western name (Celeste) represents the blending of two worlds and the dual identity of the character.",
+    h: "It's a mix of an African and a Western name."
+  },
+  {
+    yr: 2024,
+    q: "The symbolic conflict between tradition and change is best illustrated through?",
+    o: ["imagery", "dialogue", "proverbs", "legend of Kumba Kargbo"],
+    a: 3,
+    e: "It is best illustrated through the legend of Kumba Kargbo.",
+    full: "The mythical story is the primary vessel for exploring the tension between adhering to custom and the need for reform, offering a framework for this central debate.",
+    h: "This is a story from the past that comments on the present."
+  },
+  {
+    yr: 2024,
+    q: "Abandoning the path implies?",
+    o: ["embracing modernity", "embracing education", "rejecting cultural identity", "travelling abroad"],
+    a: 2,
+    e: "Abandoning the path implies rejecting cultural identity.",
+    full: "In the novel's central metaphor, leaving the 'path' means forsaking one's heritage, customs, and communal ties, leading to a loss of identity.",
+    h: "This is about turning your back on your heritage."
+  },
+  {
+    yr: 2024,
+    q: "The symbolic meaning of the rope relates to?",
+    o: ["cultural bondage", "physical bondage", "cultural roots", "migration"],
+    a: 2,
+    e: "It relates to cultural roots.",
+    full: "The rope represents the connection to one's ancestors, traditions, and community—the ties that bind a person to their cultural identity.",
+    h: "It's a metaphor for a connection to one's past."
+  },
+  {
+    yr: 2024,
+    q: "Baramusu insists female circumcision is?",
+    o: ["unnecessary", "harmful", "compulsory rite of passage", "transition to manhood"],
+    a: 2,
+    e: "He insists it is a compulsory rite of passage.",
+    full: "For Baramusu, the practice is an essential and non-negotiable tradition, a necessary step for a girl to become a full member of the community.",
+    h: "He sees it as an obligatory custom."
+  },
+  {
+    yr: 2024,
+    q: "Finaba's parents leave Talaba because?",
+    o: ["they want better future", "escape civil war", "better opportunities", "hostility from villagers"],
+    a: 3,
+    e: "They leave because of hostility from the villagers.",
+    full: "The exile is a direct result of the villagers' antagonism following the accidental death of Dimusu, forcing them to flee their home.",
+    h: "They were forced out by their community."
+  },
+  {
+    yr: 2024,
+    q: "Kizzy works at Crowther College as?",
+    o: ["lecturer", "security guard", "administrator", "lab technician"],
+    a: 1,
+    e: "Kizzy works as a security guard.",
+    full: "This job position reflects his social and economic standing within the American context, contrasting with his life in Sierra Leone.",
+    h: "He has a low-wage job at the college."
+  },
+  {
+    yr: 2024,
+    q: "Koidu is famous for?",
+    o: ["agriculture", "oil production", "fishing", "diamond mining"],
+    a: 3,
+    e: "Koidu is famous for diamond mining.",
+    full: "The reference to Koidu grounds the novel in a real-world context, as the town is a known center for diamond mining in Sierra Leone, an industry linked to conflict.",
+    h: "This is a resource-rich area."
+  },
+  {
+    yr: 2024,
+    q: "Jemal is portrayed as?",
+    o: ["businessman", "drug addict", "diplomat", "soldier"],
+    a: 0,
+    e: "Jemal is portrayed as a businessman.",
+    full: "His character is defined by his professional and entrepreneurial activities in the United States, which shapes his motivations and interactions.",
+    h: "He is involved in commerce."
+  },
+  {
+    yr: 2024,
+    q: "Finaba argues Western condemnation of circumcision is?",
+    o: ["hypocritical and culturally biased", "politically motivated", "exaggerated", "overstated"],
+    a: 0,
+    e: "She argues it is hypocritical and culturally biased.",
+    full: "Finaba challenges the Western perspective by pointing out its own cultural biases and failures, arguing for a more nuanced understanding of the practice.",
+    h: "She believes Westerners judge without understanding."
+  },
+  {
+    yr: 2024,
+    q: "Finaba later works in Freetown as?",
+    o: ["politician", "akara seller", "rehabilitation centre manager", "women's rights activist"],
+    a: 2,
+    e: "She works as a rehabilitation centre manager.",
+    full: "This job is a direct response to the social problems caused by the war, allowing her to contribute to the healing of her community.",
+    h: "She manages a facility to help people."
+  },
+  {
+    yr: 2024,
+    q: "Cammy eventually decides to?",
+    o: ["return to America", "abandon Finaba", "join Finaba in Sierra Leone", "marry Amazinga"],
+    a: 2,
+    e: "He decides to join Finaba in Sierra Leone.",
+    full: "Cammy's decision to move to Sierra Leone represents a commitment to Finaba and her world, bridging the gap between their different backgrounds.",
+    h: "He makes a major life change to be with her."
+  },
+  {
+    yr: 2024,
+    q: "Kumba Kargbo in the legend was said to be?",
+    o: ["born blind", "born after prayer", "born during ritual", "born breech"],
+    a: 3,
+    e: "She was said to be born breech.",
+    full: "This unusual birth detail marks Kumba Kargbo as a special or chosen figure from the very start, setting her apart in the legend.",
+    h: "Her birth was not the normal way."
+  },
+  {
+    yr: 2024,
+    q: "Kumba Kargbo leaves Musudugu to?",
+    o: ["find enemies", "live in city", "escape punishment", "search for knowledge"],
+    a: 3,
+    e: "She leaves to search for knowledge.",
+    full: "Her quest is for understanding and wisdom, making her a figure of enlightenment and change, rather than a mere rebel.",
+    h: "She is on a quest for understanding."
+  },
+  {
+    yr: 2024,
+    q: "The novel spans roughly from?",
+    o: ["1960s-70s", "1970s-early 2000s", "1990s-2010s", "colonial era"],
+    a: 1,
+    e: "The novel spans roughly from the 1970s to the early 2000s.",
+    full: "This timeframe allows the narrative to encompass the pre-war period, the civil war itself, and the subsequent diaspora experience.",
+    h: "This covers the period before, during, and after the civil war."
+  },
+  {
+    yr: 2024,
+    q: "The Sierra Leone war lasted?",
+    o: ["5 years", "6 years", "11 years", "20 years"],
+    a: 2,
+    e: "The Sierra Leone war lasted 11 years.",
+    full: "The brutal civil war in Sierra Leone is a historical fact that lasted from 1991 to 2002, a period of 11 years.",
+    h: "This is a real historical fact."
+  },
+  {
+    yr: 2024,
+    q: "Freetown was historically established by the British as?",
+    o: ["trading post", "military base", "settlement for freed slaves", "slave market"],
+    a: 2,
+    e: "It was established as a settlement for freed slaves.",
+    full: "The founding of Freetown is a key historical event, making it a unique city for former slaves from the British Empire and the Americas.",
+    h: "The city was founded as a home for liberated people."
+  },
+  {
+    yr: 2024,
+    q: "Crowther College symbolically represents?",
+    o: ["Fourah Bay College", "Oxford", "Harvard", "University of Sierra Leone"],
+    a: 0,
+    e: "Crowther College symbolically represents Fourah Bay College.",
+    full: "Fourah Bay College is a real and prestigious institution in Freetown, and the fictional Crowther College serves as its analogue within the novel.",
+    h: "This is a well-known university in Freetown."
+  },
   {
     yr: 2023,
     q: 'This question is based on RAIDER OF THE TREASURE TROVE.\nThe poetic device in the expression "Rage is chief" is ___',
