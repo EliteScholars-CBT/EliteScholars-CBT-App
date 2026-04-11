@@ -1,12 +1,15 @@
 import React from 'react';
-import { BG, PURPLE, GOLD, WHITE, LGRAY, GRAY } from '../utils/colors';
+import { useNavigate } from 'react-router-dom';
+import { BG, PURPLE, GOLD, WHITE } from '../utils/colors';
 
-export default function About({ onBack }) {
+export default function About() {
+  const navigate = useNavigate();
+
   return (
     <div className="scr fd about-page">
       {/* Header */}
       <div className="about-header-section">
-        <button className="about-back-btn" onClick={onBack}>
+        <button className="about-back-btn" onClick={() => navigate(-1)}>
           ← Back
         </button>
         <div className="about-header-content">
@@ -103,7 +106,7 @@ export default function About({ onBack }) {
       {/* Footer */}
       <div className="about-footer">
         <p>© 2026 EliteScholars CBT. All rights reserved.</p>
-        <p className="about-version">Version 2.0.0</p>
+        <p className="about-version">Version 1.0.0</p>
       </div>
     </div>
   );
