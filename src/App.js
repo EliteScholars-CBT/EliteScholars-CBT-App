@@ -4,6 +4,9 @@ import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import ModeSelect from './components/ModeSelect';
 import Flashcards from './components/Flashcards';
+import About from './pages/About';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
 import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
@@ -138,6 +141,11 @@ export default function App() {
   const [showAdGate, setShowAdGate] = useState(false);
   const [adGateCallback, setAdGateCallback] = useState(null);
   const [totalSessionsForAd, setTotalSessionsForAd] = useState(0);
+  
+  // Legal pages states
+  const [showAbout, setShowAbout] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   
   // Toast and Achievement states
   const [toast, setToast] = useState({ show: false, message: '', type: 'info' });
@@ -276,6 +284,14 @@ export default function App() {
     setScreen('modeSelect');
   };
 
+  // Legal page handlers
+  const handleAbout = () => setShowAbout(true);
+  const handleCloseAbout = () => setShowAbout(false);
+  const handleTerms = () => setShowTerms(true);
+  const handleCloseTerms = () => setShowTerms(false);
+  const handlePrivacy = () => setShowPrivacy(true);
+  const handleClosePrivacy = () => setShowPrivacy(false);
+
   const startQuiz = (sel) => {
     if (SHOW_ADS) triggerAdRefresh();
     try {
@@ -355,32 +371,55 @@ export default function App() {
     <>
       <div className="phone">
         <Suspense fallback={<LoadingScreen />}>
-  {screen === 'splash' && <Splash onDone={handleSplash} />}
-  {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
-  {screen === 'modeSelect' && <ModeSelect onSelectMode={handleModeSelect} />}
-  {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
-  {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
-  {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
-  {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
-  {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
-  {screen === 'quiz' && <Quiz 
-    subjectId={subject} 
-    onAllDone={handleAllDone} 
-    setQuizTimeRemaining={setQuizTimeRemaining} 
-    score={score} 
-    setScore={setScore} 
-    correct={correct} 
-    setCorrect={setCorrect} 
-    totalQ={totalQ} 
-    setTotalQ={setTotalQ} 
-    onHome={goHome} 
-    triggerAdRefresh={triggerAdRefresh}
-    adRefresh={adRefresh}
-  />}
-  {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
-  {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
-  {screen === 'profile' && <Profile name={name} email={email} sessions={sessions} streak={streak} allScores={allScores} bestScore={bestScore} onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} onSignOut={() => { stopSpeech(); localStorage.removeItem('ep_user'); setName(''); setEmail(''); setSessions(0); setAllScores([]); setBestScore(0); setStreak(1); setLastDate(''); setScreen('onboard'); }} />}
-</Suspense>
+          {screen === 'splash' && <Splash onDone={handleSplash} />}
+          {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
+          {screen === 'modeSelect' && <ModeSelect onSelectMode={handleModeSelect} />}
+          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
+          {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
+          {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
+          {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
+          {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
+          {screen === 'quiz' && <Quiz 
+            subjectId={subject} 
+            onAllDone={handleAllDone} 
+            setQuizTimeRemaining={setQuizTimeRemaining} 
+            score={score} 
+            setScore={setScore} 
+            correct={correct} 
+            setCorrect={setCorrect} 
+            totalQ={totalQ} 
+            setTotalQ={setTotalQ} 
+            onHome={goHome} 
+            triggerAdRefresh={triggerAdRefresh}
+            adRefresh={adRefresh}
+          />}
+          {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
+          {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
+          {screen === 'profile' && <Profile 
+            name={name} 
+            email={email} 
+            sessions={sessions} 
+            streak={streak} 
+            allScores={allScores} 
+            bestScore={bestScore} 
+            onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} 
+            onSignOut={() => { 
+              stopSpeech(); 
+              localStorage.removeItem('ep_user'); 
+              setName(''); 
+              setEmail(''); 
+              setSessions(0); 
+              setAllScores([]); 
+              setBestScore(0); 
+              setStreak(1); 
+              setLastDate(''); 
+              setScreen('onboard'); 
+            }} 
+            onAbout={handleAbout}
+            onTerms={handleTerms}
+            onPrivacy={handlePrivacy}
+          />}
+        </Suspense>
       </div>
       
       {/* Toast Notifications */}
@@ -400,26 +439,31 @@ export default function App() {
         />
       )}
 
+      {/* Legal Pages Modals */}
+      {showAbout && <About onBack={handleCloseAbout} />}
+      {showTerms && <TermsOfService onBack={handleCloseTerms} />}
+      {showPrivacy && <PrivacyPolicy onBack={handleClosePrivacy} />}
+
       {/* Bottom Sticky Ad */}
-  {SHOW_ADS && (
-    <div style={{ 
-      position: 'sticky', 
-      bottom: 0, 
-      zIndex: 999,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      background: 'var(--bg-primary)',
-      padding: '5px 0',
-      borderTop: '1px solid var(--border-color)',
-      marginTop: 'auto'
-    }}>
-      <AdsterraBanner 
-      enableRotation={true}
-      refreshTrigger={adRefresh} 
-    />
-    </div>
-  )}
+      {SHOW_ADS && (
+        <div style={{ 
+          position: 'sticky', 
+          bottom: 0, 
+          zIndex: 999,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'var(--bg-primary)',
+          padding: '5px 0',
+          borderTop: '1px solid var(--border-color)',
+          marginTop: 'auto'
+        }}>
+          <AdsterraBanner 
+            enableRotation={true}
+            refreshTrigger={adRefresh} 
+          />
+        </div>
+      )}
     </>
   );
 }
