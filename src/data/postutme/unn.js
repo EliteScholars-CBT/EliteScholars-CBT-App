@@ -1,6 +1,111 @@
+// UNN.js - University of Nigeria, Nsukka
+// Post UTME Questions 2005-2007
+
 export const UNN = {
+  mathematics: [
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "Find n if 314₁₀ - 256₇ = 340ₙ",
+      o: ["7", "8", "9", "10"],
+      a: 0,
+      e: "Convert 256₇ to base 10: 2×7² + 5×7 + 6 = 98+35+6=139. 314 - 139 = 175. Convert 175 to base n where 340ₙ = 3n² + 4n = 175 → 3n²+4n-175=0 → n=7.",
+      full: "The correct answer is A (7). First convert 256₇ to base 10: 2×7² = 2×49 = 98, 5×7 = 35, plus 6 = 139. Then 314 - 139 = 175. The number 340ₙ means 3×n² + 4×n + 0 = 3n² + 4n. Set this equal to 175: 3n² + 4n = 175 → 3n² + 4n - 175 = 0. Solve using quadratic formula or factoring: (3n + 25)(n - 7) = 0 → n = 7 or n = -25/3. Since n must be positive and greater than the digits (0-6 for base 7), n = 7 is the answer. Understanding number base conversion is essential for solving such problems.",
+      h: "Convert to base 10, solve quadratic equation"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "What is the difference between 1.867551 correct to four significant figures and 1.867551 correct to four decimal places?",
+      o: ["5×10⁻³", "4×10⁻⁴", "5×10⁻⁴", "10×10⁻³"],
+      a: 1,
+      e: "1.867551 to 4 s.f. = 1.868. To 4 d.p. = 1.8676. Difference = 0.0004 = 4×10⁻⁴.",
+      full: "The correct answer is B (4×10⁻⁴). Rounding to four significant figures: 1.867551 - look at the first four digits (1.867) then the next digit is 5, so we round up: 1.868. Rounding to four decimal places: 1.867551 - look at the fourth decimal place (position 4: 1.8675) then the next digit is 5, so round up: 1.8676. The difference: 1.8676 - 1.8680 = -0.0004. Absolute difference = 0.0004 = 4×10⁻⁴. Option A (5×10⁻³ = 0.005) is too large. Option C (5×10⁻⁴ = 0.0005) is close but incorrect. Option D (10×10⁻³ = 0.01) is much larger. Understanding significant figures and decimal places is crucial for scientific measurement and reporting.",
+      h: "Significant figures: count all non-zero digits; decimal places: count after decimal point"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "In an examination, all the candidates offered at least one of English and French. If 52% offered French and 65% offered English, what percentage offered French only?",
+      o: ["17%", "35%", "48%", "45%"],
+      a: 1,
+      e: "Let x = % offering both. Then (52-x) + x + (65-x) = 100 → 117 - x = 100 → x = 17%. French only = 52% - 17% = 35%.",
+      full: "The correct answer is B (35%). This is a Venn diagram problem. Total = 100%. Let the percentage offering both subjects be x. Then: French only = 52% - x, English only = 65% - x, Both = x. Sum = (52-x) + (65-x) + x = 117 - x = 100. Therefore x = 17%. French only = 52% - 17% = 35%. Option A (17%) is the percentage offering both subjects. Option C (48%) is too high. Option D (45%) is incorrect. This type of problem is common in set theory and probability. Understanding how to use inclusion-exclusion principle (|A∪B| = |A| + |B| - |A∩B|) is key: 100 = 52 + 65 - x → x = 17, then French only = 52 - 17 = 35.",
+      h: "French only = French total - both"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "Simplify (6x³+5x²-8x-3)/(2x²+x-3)",
+      o: ["3x-1", "1-3x", "3x+1", "-(3x-1)"],
+      a: 2,
+      e: "Perform polynomial long division: quotient = 3x + 1 with remainder 0.",
+      full: "The correct answer is C (3x+1). Perform polynomial long division: Divide the leading term 6x³ by 2x² to get 3x. Multiply (2x²+x-3) by 3x: 6x³+3x²-9x. Subtract from the original: (6x³+5x²-8x-3) - (6x³+3x²-9x) = 2x²+x-3. Now divide 2x² by 2x² to get 1. Multiply (2x²+x-3) by 1: 2x²+x-3. Subtract to get remainder 0. So quotient = 3x+1. Option A (3x-1) would give a different remainder. Option B (1-3x) is negative. Option D (-(3x-1)) = -3x+1. Factoring the denominator: 2x²+x-3 = (2x+3)(x-1). The numerator factors to (2x+3)(x-1)(3x+1). Canceling gives 3x+1. Understanding polynomial division is essential for simplifying rational expressions.",
+      h: "Factor numerator and denominator, cancel common factors"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "Find the range of values of x satisfying the inequalities 2x-5 < 7 and 25+2x > 15",
+      o: ["5 < x < 6", "-5 < x < 6", "-6 < x < 5", "-6 < x < -5"],
+      a: 1,
+      e: "First: 2x-5 < 7 → x < 6. Second: 25+2x > 15 → x > -5. Combined: -5 < x < 6.",
+      full: "The correct answer is B (-5 < x < 6). Solve each inequality separately: 2x - 5 < 7 → add 5 to both sides: 2x < 12 → divide by 2: x < 6. 25 + 2x > 15 → subtract 25: 2x > -10 → divide by 2: x > -5. Combine both conditions: x must satisfy both x < 6 AND x > -5. This gives the compound inequality -5 < x < 6. Option A (5 < x < 6) uses the wrong boundary (5 instead of -5). Option C (-6 < x < 5) has reversed boundaries. Option D (-6 < x < -5) is a different interval entirely. Understanding how to solve linear inequalities and combine them using 'and' (intersection) is fundamental to algebra.",
+      h: "Solve each inequality separately, then combine with 'and'"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "If the 8th term of an A.P is three times the second term and the sum of the first three terms is 18, find the first term of the A.P.",
+      o: ["4", "2", "8", "3"],
+      a: 0,
+      e: "U₈ = a+7d, U₂ = a+d. a+7d = 3(a+d) → 2d = a. S₃ = 3(a+d)=18 → a+d=6. Substitute a=2d: 2d+d=6 → d=2, a=4.",
+      full: "The correct answer is A (4). Let the first term be a and common difference be d. The nth term of an AP is a + (n-1)d. So U₈ = a+7d and U₂ = a+d. Given U₈ = 3×U₂: a+7d = 3(a+d) → a+7d = 3a+3d → 7d-3d = 3a-a → 4d = 2a → 2d = a. Sum of first three terms: S₃ = 3/2[2a + (3-1)d] = 3/2[2a+2d] = 3(a+d) = 18. So a+d = 6. Substitute a = 2d: 2d + d = 6 → 3d = 6 → d = 2. Then a = 2d = 4. Option B (2) is incorrect. Option C (8) is too high. Option D (3) is close but wrong. Understanding arithmetic progressions and their properties is essential for sequence problems.",
+      h: "Use AP formulas: Uₙ = a+(n-1)d, Sₙ = n/2[2a+(n-1)d]"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "Find the sum to infinity of the series 4 + 3 + 9/4 + 27/16 + ...",
+      o: ["16", "16/3", "1", "8"],
+      a: 0,
+      e: "GP: a=4, r=3/4. Sum to infinity = a/(1-r) = 4/(1-0.75) = 16.",
+      full: "The correct answer is A (16). Identify the series: 4, 3, 9/4, 27/16,... Check ratios: 3/4 = 0.75, (9/4)/3 = 9/12 = 3/4, (27/16)/(9/4) = (27/16)×(4/9) = 108/144 = 3/4. So common ratio r = 3/4, which is between -1 and 1, so the sum to infinity exists. First term a = 4. Sum to infinity S∞ = a/(1-r) = 4/(1 - 3/4) = 4/(1/4) = 16. Option B (16/3 ≈ 5.33) would be for a=4, r=1/4. Option C (1) is too small. Option D (8) is half of the correct answer. Understanding geometric progressions and the condition for convergence (|r|<1) is crucial.",
+      h: "S∞ = a/(1-r) for |r| < 1"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "A chord of a circle of radius 10cm is drawn 8cm from the centre of the circle. Find the length of the chord.",
+      o: ["6cm", "2√14 cm", "12cm", "√41 cm"],
+      a: 2,
+      e: "Half-chord = √(r² - d²) = √(100 - 64) = 6cm. Full chord = 12cm.",
+      full: "The correct answer is C (12cm). For a circle, the perpendicular from the center to a chord bisects the chord. The distance from the center to the chord (d) is 8cm, and the radius (r) is 10cm. Half the chord length (x) satisfies x² + d² = r² (Pythagorean theorem). So x² = r² - d² = 100 - 64 = 36, so x = 6cm. The full chord length is 2x = 12cm. Option A (6cm) is only half the chord. Option B (2√14 ≈ 7.48cm) is incorrect. Option D (√41 ≈ 6.4cm) is incorrect. Understanding circle geometry and the relationship between radius, chord, and perpendicular distance is important for solving such problems.",
+      h: "Chord length = 2√(r² - d²), where d = distance from center"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "Find the equation of the line which passes through (-2,1) and is perpendicular to the line 4x - 2y + 1 = 0",
+      o: ["2y - x - 4 = 0", "2y + x = 0", "2y - x = 0", "y - 2x - 5 = 0"],
+      a: 1,
+      e: "Given line slope m₁=2, perpendicular slope m₂=-1/2. Through (-2,1): y-1 = -½(x+2) → 2y + x = 0.",
+      full: "The correct answer is B (2y + x = 0). First, find the slope of the given line: 4x - 2y + 1 = 0 → -2y = -4x - 1 → y = 2x + 0.5. So slope m₁ = 2. For perpendicular lines, m₁×m₂ = -1, so m₂ = -1/2. The required line passes through (-2,1). Using point-slope form: y - y₁ = m(x - x₁) → y - 1 = -½(x - (-2)) = -½(x + 2). Multiply both sides by 2: 2y - 2 = -(x + 2) = -x - 2. So 2y - 2 = -x - 2 → 2y = -x → 2y + x = 0. Option A (2y - x - 4 = 0) has slope 1/2, not perpendicular. Option C (2y - x = 0) has slope 1/2. Option D (y - 2x - 5 = 0) has slope 2, which is parallel, not perpendicular. Understanding slope relationships and line equations is fundamental.",
+      h: "Perpendicular slopes: m₁×m₂ = -1"
+    },
+    {
+      yr: 2005,
+      university: "UNN",
+      q: "The distribution below shows the scores of sixty students in a class test. What percentage of the students scored at least 3? (Score: 0,1,2,3,4,5; Frequency: 2,8,14,16,12,8)",
+      o: ["60%", "36%", "66%", "40%"],
+      a: 0,
+      e: "Students scoring ≥3 = 16+12+8 = 36. Percentage = 36/60 × 100% = 60%.",
+      full: "The correct answer is A (60%). Total students = sum of frequencies = 2+8+14+16+12+8 = 60. Students scoring at least 3 (score ≥ 3) are those with scores 3, 4, and 5: frequencies 16 + 12 + 8 = 36. Percentage = (36/60) × 100% = 60%. Option B (36%) is the actual count, not the percentage. Option C (66%) is too high. Option D (40%) would be for 24 students. Understanding how to calculate percentages from frequency distributions is essential for data analysis.",
+      h: "Percentage = (number meeting condition ÷ total) × 100%"
+    }
+  ],
+
   english: [
-    // UNN English - Fill in the gaps
     {
       yr: 2005,
       university: "UNN",
@@ -10,16 +115,6 @@ export const UNN = {
       e: "Intent on is the correct prepositional phrase.",
       full: "The correct phrase is 'intent on', meaning determined to do something. 'Intent on continuing' is standard English. The other prepositions do not form this idiomatic expression. Option A is correct.",
       h: "Intent on = determined to"
-    },
-    {
-      yr: 2005,
-      university: "UNN",
-      q: "_____ equations use letters to stand for numbers.",
-      o: ["Simultaneous", "Simultaneous", "Simultaneous", "Simultaneous"],
-      a: 0,
-      e: "Algebraic equations use letters (variables) to represent numbers.",
-      full: "The options all show 'Simultaneous' but the intended answer is 'Algebraic' equations. Given the options, 'Simultaneous' refers to equations solved together. Option A is correct by default.",
-      h: "Algebraic equations use variables"
     },
     {
       yr: 2005,
@@ -111,7 +206,6 @@ export const UNN = {
       full: "Bush burning destroys vegetation and reduces forest resources. 'Deplete' means to reduce in quantity or use up. Option C is correct.",
       h: "Deplete = use up/destroy"
     },
-    // UNN 2005/2006 - Lexis and Structure
     {
       yr: 2005,
       university: "UNN",
@@ -211,27 +305,6 @@ export const UNN = {
       e: "Mixed up in politics means involved in.",
       full: "The idiom is 'get mixed up in' meaning to become involved in (often with negative connotation). 'Mixed up in politics' is correct. Option C is correct.",
       h: "Mixed up in = involved in"
-    },
-    // UNN 2005/2006 Section Two
-    {
-      yr: 2005,
-      university: "UNN",
-      q: "According to the passage on the market scene, the woman with half a dozen eggs came purposely to",
-      o: ["do earnest business", "enjoy herself", "trade like others", "avoid her husband"],
-      a: 1,
-      e: "She used the eggs as an excuse to socialize.",
-      full: "The passage indicates she would refuse to sell her eggs until it was time to leave—the eggs were just an excuse to be at the market and enjoy herself. Option B is correct.",
-      h: "Eggs = excuse to socialize"
-    },
-    {
-      yr: 2005,
-      university: "UNN",
-      q: "Which of the following titles BEST reflects the content of the passage?",
-      o: ["Market scene", "An African market scene", "Trading in the market", "An African shopping centre"],
-      a: 1,
-      e: "The passage describes a specific African market atmosphere.",
-      full: "The passage describes the unique atmosphere of a traditional African market—loud, crowded, social, and free. 'An African market scene' best captures this specific cultural context. Option B is correct.",
-      h: "African market scene"
     },
     {
       yr: 2005,
@@ -334,7 +407,7 @@ export const UNN = {
       h: "Stress on time → contrast with other time"
     }
   ],
-  
+
   government: [
     {
       yr: 2005,
@@ -486,7 +559,6 @@ export const UNN = {
       full: "Nigeria was a British colony until 1960. Former British colonies are eligible to join the Commonwealth of Nations. Option D is correct.",
       h: "Commonwealth = former British colonies"
     },
-    // UNN 2006/2007 Government
     {
       yr: 2006,
       university: "UNN",
@@ -637,7 +709,6 @@ export const UNN = {
       full: "OPEC's primary objective is to coordinate and unify petroleum policies to stabilize oil prices, ensure efficient supply, and provide fair returns to producers. Option D is correct.",
       h: "OPEC = price stabilization"
     },
-    // UNN 2006/2007 Government Session 2
     {
       yr: 2006,
       university: "UNN",
@@ -789,7 +860,7 @@ export const UNN = {
       h: "General Assembly elects non-permanent SC members"
     }
   ],
-  
+
   crs: [
     {
       yr: 2005,
@@ -861,7 +932,6 @@ export const UNN = {
       full: "Genesis 2:2-3 states that God rested on the seventh day from His work of creation, blessed it, and made it holy. Option A is correct.",
       h: "Seventh day = God rested"
     },
-    // UNN 2006/2007 CRS
     {
       yr: 2006,
       university: "UNN",
@@ -1013,7 +1083,7 @@ export const UNN = {
       h: "Isaiah 1:19 = eat good of land"
     }
   ],
-  
+
   literature: [
     {
       yr: 2006,
@@ -1166,7 +1236,7 @@ export const UNN = {
       h: "Subplot = secondary plot"
     }
   ],
-  
+
   economics: [
     {
       yr: 2005,
@@ -1224,7 +1294,7 @@ export const UNN = {
       q: "The migration of young people from rural areas in Nigeria should help to raise the _____.",
       o: ["standard of living in urban areas", "total productivity of labour in rural areas", "marginal productivity of labour in rural areas", "marginal productivity of labour in urban areas"],
       a: 3,
-      e: "Migration increases labour supply in cities, initially reducing MP but then increasing with complementarity?",
+      e: "Migration increases labour supply in cities, raising marginal productivity with capital investment.",
       full: "The question is tricky. Migration of young people increases labour supply in urban areas, which can initially lower marginal productivity, but with capital investment can raise it. Given options, migration typically raises urban labour productivity as workers find more productive jobs. Option D is correct.",
       h: "Rural-urban migration → urban labour productivity"
     },
@@ -1277,16 +1347,6 @@ export const UNN = {
       e: "Tax avoidance uses legal methods; tax evasion is illegal.",
       full: "Tax avoidance is the legal minimization of tax liability through legitimate deductions, credits, and loopholes. Tax evasion is illegal concealment of income. Option B is correct.",
       h: "Avoidance = legal, evasion = illegal"
-    },
-    {
-      yr: 2005,
-      university: "UNN",
-      q: "The greatest proportion of government revenue in Nigeria comes from _____.",
-      o: ["export of raw materials", "income taxes", "custom duties and excise taxes", "loans and grants"],
-      a: 2,
-      e: "Nigeria's government relies heavily on oil revenues (export of crude oil).",
-      full: "Nigeria's federal revenue is dominated by oil exports (petroleum profits tax and royalties). Among options, 'export of raw materials' (crude oil) is the largest source. Option A is correct, but given options show 'custom duties' as C. The key may indicate C. Let me check: Oil revenue is from exports. Option A is 'export of raw materials' which is correct. Option C is customs duties which are smaller. The correct answer should be A.",
-      h: "Oil exports = main revenue"
     },
     {
       yr: 2005,
