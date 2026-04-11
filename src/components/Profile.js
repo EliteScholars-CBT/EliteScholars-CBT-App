@@ -5,7 +5,7 @@ import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut }) {
+export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut, onAbout }) {
   const [activeTab, setActiveTab] = useState('stats');
   const [achievements, setAchievements] = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
@@ -107,29 +107,29 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             </div>
 
             {performanceData.length > 0 && (
-  <div className="profile-chart-section">
-    <div className="profile-stats-title">📈 Performance Trend</div>
-    <div className="profile-chart-container">
-      <ResponsiveContainer width="100%" height={200}>
-        <LineChart data={performanceData}>
-          <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
-          <YAxis 
-            domain={[0, 100]} 
-            stroke="#6B7280" 
-            fontSize={10} 
-            tickFormatter={(value) => `${value}%`}
-          />
-          <Tooltip 
-            contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-            labelStyle={{ color: '#FFFFFF' }}
-            formatter={(value) => [`${value}%`, 'Score']}
-          />
-          <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  </div>
-)}
+              <div className="profile-chart-section">
+                <div className="profile-stats-title">📈 Performance Trend</div>
+                <div className="profile-chart-container">
+                  <ResponsiveContainer width="100%" height={200}>
+                    <LineChart data={performanceData}>
+                      <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
+                      <YAxis 
+                        domain={[0, 100]} 
+                        stroke="#6B7280" 
+                        fontSize={10} 
+                        tickFormatter={(value) => `${value}%`}
+                      />
+                      <Tooltip 
+                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+                        labelStyle={{ color: '#FFFFFF' }}
+                        formatter={(value) => [`${value}%`, 'Score']}
+                      />
+                      <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            )}
 
             <div className="profile-streak-card">
               <div className="profile-streak-icon">🔥</div>
@@ -152,24 +152,24 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                       <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
                       <XAxis type="number" domain={[0, 100]} stroke="#6B7280" fontSize={10} />
                       <YAxis 
-  type="category" 
-  dataKey="subject" 
-  stroke="#6B7280" 
-  fontSize={10} 
-  width={80} 
-/>
-<XAxis 
-  type="number" 
-  domain={[0, 100]} 
-  stroke="#6B7280" 
-  fontSize={10} 
-  tickFormatter={(value) => `${value}%`}
-/>
-<Tooltip 
-  contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
-  labelStyle={{ color: '#FFFFFF' }}
-  formatter={(value) => [`${value}%`, 'Score']}
-/>
+                        type="category" 
+                        dataKey="subject" 
+                        stroke="#6B7280" 
+                        fontSize={10} 
+                        width={80} 
+                      />
+                      <XAxis 
+                        type="number" 
+                        domain={[0, 100]} 
+                        stroke="#6B7280" 
+                        fontSize={10} 
+                        tickFormatter={(value) => `${value}%`}
+                      />
+                      <Tooltip 
+                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+                        labelStyle={{ color: '#FFFFFF' }}
+                        formatter={(value) => [`${value}%`, 'Score']}
+                      />
                       <Bar dataKey="bestScore" name="Best Score" fill={GOLD} radius={[0, 4, 4, 0]} />
                       <Bar dataKey="averageScore" name="Average Score" fill={PURPLE} radius={[0, 4, 4, 0]} />
                     </BarChart>
@@ -240,15 +240,19 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             </div>
 
             <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ About</div>
-            <div className="settings-card">
+            
+            {/* About Card - Clickable to open About page */}
+            <div className="settings-card about-settings-card" onClick={onAbout} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
                 <div className="settings-icon">🎓</div>
                 <div className="settings-info">
                   <div className="settings-name">EliteScholars CBT</div>
-                  <div className="settings-desc">Version 1.0.0</div>
+                  <div className="settings-desc">Version 2.0.0 — Tap to learn more</div>
                 </div>
+                <div className="settings-arrow">→</div>
               </div>
             </div>
+
             <div className="settings-card">
               <div className="settings-item">
                 <div className="settings-icon">📧</div>
