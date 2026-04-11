@@ -5,7 +5,7 @@ import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut, onAbout }) {
+export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut, onAbout, onTerms, onPrivacy }) {
   const [activeTab, setActiveTab] = useState('stats');
   const [achievements, setAchievements] = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
@@ -239,20 +239,45 @@ export default function Profile({ name, email, sessions, streak, allScores, best
               </div>
             </div>
 
-            <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ About</div>
+            <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ Information</div>
             
-            {/* About Card - Clickable to open About page */}
+            {/* About Card */}
             <div className="settings-card about-settings-card" onClick={onAbout} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
                 <div className="settings-icon">🎓</div>
                 <div className="settings-info">
-                  <div className="settings-name">EliteScholars CBT</div>
-                  <div className="settings-desc">Version 2.0.0 — Tap to learn more</div>
+                  <div className="settings-name">About EliteScholars CBT</div>
+                  <div className="settings-desc">Learn about our mission and features</div>
                 </div>
                 <div className="settings-arrow">→</div>
               </div>
             </div>
 
+            {/* Terms of Service Card */}
+            <div className="settings-card terms-settings-card" onClick={onTerms} style={{ cursor: 'pointer' }}>
+              <div className="settings-item">
+                <div className="settings-icon">📜</div>
+                <div className="settings-info">
+                  <div className="settings-name">Terms of Service</div>
+                  <div className="settings-desc">Rules and guidelines for using EliteScholars</div>
+                </div>
+                <div className="settings-arrow">→</div>
+              </div>
+            </div>
+
+            {/* Privacy Policy Card */}
+            <div className="settings-card privacy-settings-card" onClick={onPrivacy} style={{ cursor: 'pointer' }}>
+              <div className="settings-item">
+                <div className="settings-icon">🔒</div>
+                <div className="settings-info">
+                  <div className="settings-name">Privacy Policy</div>
+                  <div className="settings-desc">How we protect your data and privacy</div>
+                </div>
+                <div className="settings-arrow">→</div>
+              </div>
+            </div>
+
+            {/* Contact Support */}
             <div className="settings-card">
               <div className="settings-item">
                 <div className="settings-icon">📧</div>
