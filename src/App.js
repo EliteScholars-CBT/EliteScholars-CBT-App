@@ -360,8 +360,8 @@ export default function App() {
           {screen === 'splash' && <Splash onDone={handleSplash} />}
           {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
           {screen === 'modeSelect' && <ModeSelect onSelectMode={handleModeSelect} />}
-          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); navigate('/profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
-          {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); navigate('/profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
+          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
+          {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
           {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
           {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
           {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
@@ -379,7 +379,7 @@ export default function App() {
             triggerAdRefresh={triggerAdRefresh}
             adRefresh={adRefresh}
           />}
-          {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); navigate('/profile'); }} onAdGateComplete={handleAdGateComplete} />}
+          {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
           {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
           {screen === 'profile' && <Profile 
             name={name} 
