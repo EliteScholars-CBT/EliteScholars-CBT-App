@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from 'recharts';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGOLD } from '../utils/colors';
 import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut, onAbout, onTerms, onPrivacy }) {
+export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut }) {
   const [activeTab, setActiveTab] = useState('stats');
   const [achievements, setAchievements] = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
@@ -13,6 +14,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   const [subjectChartData, setSubjectChartData] = useState([]);
   const { theme, toggleTheme } = useTheme();
   const tabsContainerRef = useRef(null);
+  const navigate = useNavigate();
 
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
   const avg = allScores.length ? Math.round(allScores.reduce((a,b) => a+b, 0) / allScores.length) : 0;
@@ -241,8 +243,8 @@ export default function Profile({ name, email, sessions, streak, allScores, best
 
             <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ Information</div>
             
-            {/* About Card */}
-            <div className="settings-card about-settings-card" onClick={onAbout} style={{ cursor: 'pointer' }}>
+            {/* About Card - Navigate to /about */}
+            <div className="settings-card about-settings-card" onClick={() => navigate('/about')} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
                 <div className="settings-icon">🎓</div>
                 <div className="settings-info">
@@ -253,8 +255,8 @@ export default function Profile({ name, email, sessions, streak, allScores, best
               </div>
             </div>
 
-            {/* Terms of Service Card */}
-            <div className="settings-card terms-settings-card" onClick={onTerms} style={{ cursor: 'pointer' }}>
+            {/* Terms of Service Card - Navigate to /terms */}
+            <div className="settings-card terms-settings-card" onClick={() => navigate('/terms')} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
                 <div className="settings-icon">📜</div>
                 <div className="settings-info">
@@ -265,8 +267,8 @@ export default function Profile({ name, email, sessions, streak, allScores, best
               </div>
             </div>
 
-            {/* Privacy Policy Card */}
-            <div className="settings-card privacy-settings-card" onClick={onPrivacy} style={{ cursor: 'pointer' }}>
+            {/* Privacy Policy Card - Navigate to /privacy */}
+            <div className="settings-card privacy-settings-card" onClick={() => navigate('/privacy')} style={{ cursor: 'pointer' }}>
               <div className="settings-item">
                 <div className="settings-icon">🔒</div>
                 <div className="settings-info">
