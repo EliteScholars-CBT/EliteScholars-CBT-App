@@ -2113,6 +2113,46 @@ img { max-width: 100%; height: auto; display: block; }
   filter: brightness(0.9);
 }
 
+/* Settings Card Hover - Make text visible on hover */
+.settings-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.settings-card:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+}
+
+.settings-card:hover .settings-name,
+.settings-card:hover .settings-desc,
+.settings-card:hover .settings-arrow {
+  color: #1a0030;
+}
+
+.settings-card:hover .settings-icon {
+  filter: brightness(0.9);
+}
+
+/* Dark mode hover for settings cards */
+body.dark-mode .settings-card:hover {
+  background: var(--gold);
+}
+
+body.dark-mode .settings-card:hover .settings-name,
+body.dark-mode .settings-card:hover .settings-desc,
+body.dark-mode .settings-card:hover .settings-arrow {
+  color: #1a0030;
+}
+
+body.dark-mode .settings-card:hover .settings-icon {
+  filter: brightness(0.9);
+}
+
 /* ============================================================================
    CSS VARIABLES (Light Mode Default)
    ============================================================================ */
@@ -2957,4 +2997,28 @@ body.dark-mode .legal-card { background: var(--card-bg); }
 /* Dark Mode Adjustments */
 body.dark-mode .flashcards-card-front {
   background: linear-gradient(135deg, var(--card-bg), #1a0030);
+}
+
+/* ============================================================================
+   FLASHCARDS DARK MODE
+   ============================================================================ */
+body.dark-mode .flashcards-card-sub-label {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .flashcards-card-example,
+body.dark-mode .flashcards-card-tip-text {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .flashcards-card-definition {
+  color: var(--text-primary);
+}
+
+body.dark-mode .flashcards-card-term {
+  color: var(--text-primary);
+}
+
+body.dark-mode .flashcards-card-label {
+  color: var(--gold);
 }
