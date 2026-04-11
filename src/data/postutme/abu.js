@@ -176,10 +176,10 @@ export const ABU = {
         "Momentum and work done",
         "Momentum and mass"
       ],
-      a: 1,
-      e: "Fundamental quantities are mass, length, time, temperature, electric current, luminous intensity, and amount of substance.",
-      full: "The correct answer is not clearly listed but analyzing options: Fundamental quantities are base quantities that cannot be derived from others. Mass is fundamental, but momentum (mass×velocity) is derived. Acceleration (length/time²) and field strength are derived. The question likely expects understanding that mass, length, and time are fundamental. Option D contains momentum (derived) and mass (fundamental). Option A has velocity (derived). Option B has acceleration (derived). Option C has work done (derived). None of these pairs consist solely of fundamental quantities. The question may have a typo - possibly option D 'momentum and mass' with a different intended answer.",
-      h: "Fundamental = cannot be broken down further (mass, length, time)"
+      a: 3,
+      e: "Fundamental quantities are base quantities like mass, length, time. Mass is fundamental; momentum (mass×velocity) is derived.",
+      full: "The correct answer is D (Momentum and mass) only if we consider that mass is fundamental. However, momentum is derived (mass × velocity). Fundamental quantities (base quantities) include mass, length, time, temperature, electric current, luminous intensity, and amount of substance. All other quantities are derived from these. Option A has velocity (derived) and gravitational potential (derived). Option B has acceleration (derived) and field strength (derived). Option C has momentum (derived) and work done (derived). Option D has momentum (derived) and mass (fundamental) - but the question asks for 'fundamental quantities only,' so technically none are correct. The best answer among poor options is D as it contains at least one fundamental quantity.",
+      h: "Fundamental = base quantities (mass, length, time, etc.)"
     },
     {
       yr: 2005,
@@ -466,158 +466,6 @@ export const ABU = {
       e: "Meiosis occurs in the anther to produce haploid pollen grains (male gametophytes).",
       full: "The correct answer is A (anther). Meiosis is the cell division that reduces chromosome number by half, producing haploid cells from diploid cells. In flowering plants (angiosperms), meiosis occurs in two locations: the anthers (to produce microspores that develop into pollen grains containing male gametophytes) and the ovules within the ovary (to produce megaspores that develop into female gametophytes containing egg cells). Petals (B) are modified leaves for attracting pollinators - they undergo mitosis for growth. The receptacle (C) is the enlarged stem tip where floral parts attach - it undergoes mitosis. The style (D) is the tube connecting stigma to ovary - it also undergoes mitosis. Understanding where meiosis occurs is fundamental to plant reproduction and genetics.",
       h: "Meiosis in anthers (pollen) and ovules (eggs)"
-    }
-  ]
-};
-
-// ABU.js - Ahmadu Bello University, Zaria
-// Post UTME Questions 2005-2012
-
-export const ABU = {
-  english: [
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "Which of the following is not true about semi-conductor?",
-      o: [
-        "moving holes are equivalent to moving positive charges",
-        "there is two kinds of charge carried a free electron and a hole",
-        "the escape of a valence electron from an atom produces electron hole pair charge carriers",
-        "increases in temperature increases its electrical resistance"
-      ],
-      a: 3,
-      e: "For semiconductors, increasing temperature actually decreases electrical resistance, making option D the false statement.",
-      full: "The correct answer is D because semiconductors behave opposite to conductors. In semiconductors, as temperature increases, more electrons gain enough energy to jump from the valence band to the conduction band, creating more charge carriers. This increases conductivity and decreases resistance. Options A, B, and C are all true statements about semiconductor behavior. The concept of holes as positive charge carriers is fundamental to semiconductor physics, and the escape of valence electrons creates electron-hole pairs.",
-      h: "Remember: Semiconductors conduct MORE when hot (resistance decreases)"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "The minimum energy necessary to remove an electron from a given atom to infinity is called",
-      o: [
-        "Excitation energy",
-        "ground state energy",
-        "ionization energy",
-        "binding energy"
-      ],
-      a: 2,
-      e: "Ionization energy is the energy required to remove an electron completely from an atom.",
-      full: "The correct answer is ionization energy. This is a fundamental concept in atomic physics. Excitation energy (A) refers to energy needed to move an electron to a higher energy level within the atom, not to remove it completely. Ground state energy (B) is the lowest energy state of an atom. Binding energy (D) generally refers to energy holding nucleons together in the nucleus. Ionization energy specifically describes the energy needed to overcome the electrostatic attraction between the electron and the nucleus to remove it entirely.",
-      h: "Ionization = removing an electron completely"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "Find the de Broglie wavelength of a 0.01kg pellet having a velocity 10m/s (h = 6.63 x 10^-34 Js)",
-      o: [
-        "6.63 x 10^-34 m",
-        "6.63 x 10^-33 m",
-        "6.63 x 10^-32 m",
-        "6.63 x 10^-33 m"
-      ],
-      a: 1,
-      e: "λ = h/mv = 6.63×10^-34 / (0.01 × 10) = 6.63×10^-33 m",
-      full: "The correct answer is B. The de Broglie wavelength is calculated using the formula λ = h/p, where p = mv (momentum). Here, m = 0.01 kg, v = 10 m/s, so p = 0.1 kg·m/s. Then λ = 6.63×10^-34 / 0.1 = 6.63×10^-33 m. This demonstrates that even though the pellet has a very small mass, its wavelength is extremely small (much smaller than an atomic nucleus), which is why we don't observe wave behavior in everyday objects. The other options have incorrect exponents.",
-      h: "λ = h/mv - the smaller the mass, the larger the wavelength"
-    }
-  ],
-
-  physics: [
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "Which of the following pairs consists of fundamental quantities only?",
-      o: [
-        "Velocity and gravitational potential",
-        "Acceleration and field strength",
-        "Momentum and work done",
-        "Momentum and mass"
-      ],
-      a: 3,
-      e: "Fundamental quantities are base quantities like mass, length, time. Mass is fundamental; momentum (mass×velocity) is derived.",
-      full: "The correct answer is D (Momentum and mass) only if we consider that mass is fundamental. However, momentum is derived (mass × velocity). Fundamental quantities (base quantities) include mass, length, time, temperature, electric current, luminous intensity, and amount of substance. All other quantities are derived from these. Option A has velocity (derived) and gravitational potential (derived). Option B has acceleration (derived) and field strength (derived). Option C has momentum (derived) and work done (derived). Option D has momentum (derived) and mass (fundamental) - but the question asks for 'fundamental quantities only,' so technically none are correct. The best answer among poor options is D as it contains at least one fundamental quantity.",
-      h: "Fundamental = base quantities (mass, length, time, etc.)"
-    }
-  ],
-
-  chemistry: [
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "If 50cm³ of CO₂ gas and 50cm³ of another gas are measured at S.T.P, calculate the amount of gas in moles (molar gas volume = 22.4 dm³)",
-      o: ["0.023 mol", "0.0222 mol", "0.0002 mol", "0.0022 mol"],
-      a: 3,
-      e: "At STP, 1 mole occupies 22.4 dm³ = 22400 cm³. 50 cm³ = 50/22400 = 0.002232 mol ≈ 0.0022 mol.",
-      full: "The correct answer is D (0.0022 mol). At Standard Temperature and Pressure (STP), one mole of any ideal gas occupies 22.4 dm³ (which equals 22400 cm³). Using the formula: moles = volume in dm³ ÷ 22.4, or moles = volume in cm³ ÷ 22400. So moles = 50 ÷ 22400 = 0.002232 mol ≈ 0.0022 mol. Option A (0.023 mol) would be for 500 cm³, option B (0.0222 mol) would be for about 500 cm³ as well, option C (0.0002 mol) is too small. Note that at STP, equal volumes of gases contain equal numbers of molecules (Avogadro's law), so the CO₂ and the other gas have the same number of moles.",
-      h: "Moles = volume(cm³) ÷ 22400 at STP"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "How much volume of ethane would be required to produce 1.12 dm³ of carbon(IV) oxide on combustion? 2C₂H₆(g) + 7O₂(g) → 4CO₂(g) + 6H₂O(g)",
-      o: ["5.6 dm³", "2.24 dm³", "0.56 dm³", "56 dm³"],
-      a: 2,
-      e: "From equation: 2 mol C₂H₆ produces 4 mol CO₂. Ratio = 1:2. So volume C₂H₆ = 1.12/2 = 0.56 dm³.",
-      full: "The correct answer is C (0.56 dm³). The balanced equation shows that 2 volumes of ethane produce 4 volumes of carbon(IV) oxide (assuming all gases are at same temperature and pressure, volumes are proportional to moles). The volume ratio of C₂H₆ : CO₂ = 2:4 = 1:2. Therefore, to produce 1.12 dm³ of CO₂, the volume of ethane needed = 1.12 ÷ 2 = 0.56 dm³. Option A (5.6 dm³) would produce 11.2 dm³ of CO₂, option B (2.24 dm³) would produce 4.48 dm³ of CO₂, and option D (56 dm³) is far too large. This uses Gay-Lussac's law of combining volumes: at constant temperature and pressure, gases combine in simple whole-number ratios by volume.",
-      h: "Volume ratio = mole ratio from balanced equation"
-    }
-  ],
-
-  biology: [
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "When two genes for the same character (alleles) are contained in the same individual, the character that shows is known as",
-      o: [
-        "important character",
-        "dominant character",
-        "superior character",
-        "controlling character"
-      ],
-      a: 1,
-      e: "The allele that expresses itself in the presence of another allele is called dominant.",
-      full: "The correct answer is B (dominant character). In Mendelian genetics, when an individual has two different alleles for a trait (heterozygous), the allele that is expressed in the phenotype is called dominant, while the allele that is masked is called recessive. For example, in pea plants, the allele for tallness (T) is dominant over the allele for shortness (t), so Tt plants are tall. Option A (important character) is not a genetic term. Option C (superior character) is subjective and not scientifically accurate. Option D (controlling character) is not standard terminology. The concept of dominance explains why some traits appear in offspring even when only one parent contributes the allele for that trait.",
-      h: "Dominant = shows up, recessive = hides"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "In Nigeria, a tropical rain forest can be found in",
-      o: ["Sokoto", "Kaduna", "Abuja", "Abia"],
-      a: 3,
-      e: "Tropical rainforests in Nigeria are found in the southern states with high rainfall, including Abia State.",
-      full: "The correct answer is D (Abia). Nigeria's tropical rainforest belt runs through the southern part of the country, including states like Abia, Cross River, Akwa Ibom, Rivers, Delta, Edo, Ondo, Ogun, Osun, and Lagos. These areas receive high annual rainfall (over 1500mm) and have high humidity. Sokoto (A) is in the dry Sahel region. Kaduna (B) is in the Guinea savanna zone. Abuja (C) is in the savanna region. Abia State, located in southeastern Nigeria, falls within the rainforest zone, with cities like Umuahia and Aba having rainforest vegetation characterized by tall trees, dense undergrowth, high biodiversity, and high rainfall throughout the year.",
-      h: "Rainforest = south/southeast Nigeria"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "The sum total of the biotic and abiotic factors that affect living things is referred to as:",
-      o: ["environment", "lithosphere", "hydrosphere", "atmosphere"],
-      a: 0,
-      e: "The environment includes all living (biotic) and non-living (abiotic) factors surrounding an organism.",
-      full: "The correct answer is A (environment). The environment is the sum total of all external conditions and influences affecting the life, development, and survival of an organism. It includes both biotic factors (other organisms, competition, predation, symbiosis) and abiotic factors (temperature, water, sunlight, soil, pH). The lithosphere (B) refers only to the Earth's solid outer layer (rocks and soil). The hydrosphere (C) refers only to water bodies. The atmosphere (D) refers only to the gaseous layer surrounding Earth. Each of these is a component of the environment, but none alone encompasses both biotic and abiotic factors. Ecology is the study of how organisms interact with their environment.",
-      h: "Environment = everything around an organism"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "Hygrometer is an ecological instrument that measures",
-      o: ["rainfall", "humidity", "temperature", "light"],
-      a: 1,
-      e: "A hygrometer measures the humidity (moisture content) of air.",
-      full: "The correct answer is B (humidity). A hygrometer is specifically designed to measure the amount of water vapor in the air, i.e., relative humidity. Different types include hair hygrometers (using human hair that expands/contracts with humidity) and psychrometers (using wet-bulb and dry-bulb thermometers). Rainfall (A) is measured with a rain gauge. Temperature (C) is measured with a thermometer. Light intensity (D) is measured with a light meter or photometer. Humidity is an important abiotic factor in ecology because it affects transpiration rates in plants, water loss in animals, and the distribution of species in different habitats.",
-      h: "Hygrometer = humidity (think 'hydro' = water)"
-    },
-    {
-      yr: 2005,
-      university: "ABU",
-      q: "Which one of the following is air-borne?",
-      o: ["malaria", "yellow fever", "cholera", "tuberculosis"],
-      a: 3,
-      e: "Tuberculosis is transmitted through airborne droplets when an infected person coughs or sneezes.",
-      full: "The correct answer is D (tuberculosis). Tuberculosis (TB) is caused by the bacterium Mycobacterium tuberculosis and spreads through the air when an infected person coughs, sneezes, or talks, releasing tiny droplets containing the bacteria. Malaria (A) is transmitted by the bite of infected Anopheles mosquitoes (vector-borne, not airborne). Yellow fever (B) is also transmitted by mosquitoes (Aedes aegypti). Cholera (C) is water-borne, transmitted through contaminated water or food containing Vibrio cholerae. Airborne diseases spread through respiratory droplets and include TB, influenza, COVID-19, measles, and chickenpox. Understanding transmission routes is crucial for disease prevention and control measures.",
-      h: "TB = airborne (coughs and sneezes)"
     }
   ]
 };
