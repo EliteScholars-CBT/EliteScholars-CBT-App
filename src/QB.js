@@ -19072,6 +19072,2273 @@ mathematics: [
     },
   ],
   government: [
+  {
+    yr: 1978,
+    q: "The treaty establishing the Economic Community of West African States (ECOWAS) was",
+    o: [
+      "concluded in Lome (Togo) in December, 1976 after hard and extensive negotiations.",
+      "designed as the main pillar on which an eventual African common market would be built.",
+      "the brain-child of Togo and Ghana.",
+      "signed in Lagos in May, 1975, to promote trade and other economic co-operation in the region as a whole."
+    ],
+    a: 3,
+    e: "ECOWAS was established by the Treaty of Lagos signed on May 28, 1975.",
+    full: "The Economic Community of West African States (ECOWAS) was founded on May 28, 1975, with the signing of the Treaty of Lagos. Its primary goal was to promote economic integration and cooperation among West African states.",
+    h: "The treaty is named after the city where it was signed."
+  },
+  {
+    yr: 1979,
+    q: "ECOWAS represents",
+    o: [
+      "the English-speaking equivalent of the Francophone economic community in West Africa.",
+      "an attempt to progressively eliminate obstacles to free movement of goods, services and people throughout West Africa.",
+      "a continent-wide economic dimension of pan-Africanism.",
+      "a concrete achievement by the Economic Community for Africa (ECA)."
+    ],
+    a: 1,
+    e: "ECOWAS aims to eliminate trade barriers and promote the free movement of people, goods, and services.",
+    full: "A core objective of ECOWAS, as outlined in its treaty (Article 3), is the elimination of customs duties and other barriers to trade, as well as the abolition of obstacles to the free movement of persons, goods, services, and capital within the West African region.",
+    h: "Think about what 'economic community' implies for movement across borders."
+  },
+  {
+    yr: 1981,
+    q: "Where is the Headquarters of the fund of the Economic Community of West African States (ECOWAS)?",
+    o: ["Lagos.", "Accra.", "Cotonou.", "Lome."],
+    a: 2,
+    e: "The ECOWAS Fund for Cooperation, Compensation and Development is headquartered in Lome, Togo.",
+    full: "While the ECOWAS Commission is headquartered in Abuja, Nigeria, the ECOWAS Fund for Cooperation, Compensation and Development (now known as the ECOWAS Bank for Investment and Development - EBID) is located in Lome, Togo.",
+    h: "This is a specific fact about the location of the fund."
+  },
+  {
+    yr: 1982,
+    q: "The ECOWAS treaty was signed in",
+    o: ["Abidjan.", "Lome.", "Lagos.", "Accra."],
+    a: 2,
+    e: "The ECOWAS treaty was signed in Lagos in May 1975.",
+    full: "The founding treaty of ECOWAS was signed in Lagos, Nigeria on May 28, 1975.",
+    h: "Nigeria hosted the signing — which city was Nigeria's capital then?"
+  },
+  {
+    yr: 1983,
+    q: "The administrative headquarters of ECOWAS is in",
+    o: ["Abidjan.", "Lome.", "Accra.", "Abidjan."],
+    a: 1,
+    e: "The administrative headquarters of ECOWAS is in Abuja (formerly Lagos).",
+    full: "ECOWAS secretariat was originally in Lagos, Nigeria, but was later moved to Abuja, Nigeria.",
+    h: "The host country of ECOWAS is Nigeria — where is its capital?"
+  },
+  {
+    yr: 1985,
+    q: "The administrative headquarters of ECOWAS is in",
+    o: ["Freetown.", "Lome.", "Abidjan.", "Lagos."],
+    a: 3,
+    e: "ECOWAS administrative HQ was in Lagos at the time of this question.",
+    full: "When ECOWAS was founded in 1975, its secretariat was based in Lagos, Nigeria, which was then the federal capital.",
+    h: "Where was Nigeria's capital in 1985?"
+  },
+  {
+    yr: 1987,
+    q: "Which of the following is NOT a member of ECOWAS?",
+    o: ["Nigeria.", "Togo.", "Ghana.", "Cameroon."],
+    a: 3,
+    e: "Cameroon is not a member of ECOWAS; it belongs to ECCAS (Central African region).",
+    full: "ECOWAS is a regional bloc of West African nations. Cameroon is a Central African country and belongs to the Economic Community of Central African States (ECCAS), not ECOWAS.",
+    h: "Which country is geographically in Central Africa rather than West Africa?"
+  },
+  {
+    yr: 1988,
+    q: "Which of the following pairs are members of ECOWAS?",
+    o: ["Nigeria and Cameroon.", "Nigeria and Cameroon.", "Congo and Cameroon.", "Nigeria and Cameroon."],
+    a: 0,
+    e: "Only Nigeria and other West African states are ECOWAS members.",
+    full: "ECOWAS membership is restricted to West African nations. Nigeria is a founding member. Congo and Cameroon are Central African states.",
+    h: "Focus on which countries fall within the West African subregion."
+  },
+  {
+    yr: 1990,
+    q: "The ECOWAS trade liberalization programme excludes trade in",
+    o: ["unprocessed goods.", "crude oil.", "traditional crafts.", "industrial products."],
+    a: 1,
+    e: "ECOWAS trade liberalization originally excluded crude oil from its free trade provisions.",
+    full: "Under the ECOWAS Trade Liberalization Scheme (ETLS), crude oil was among the goods initially excluded from the provisions of duty-free trade within the community.",
+    h: "Think about which commodity is so economically sensitive that nations initially kept it outside free trade rules."
+  },
+  {
+    yr: 1991,
+    q: "ECOWAS is aimed at uniting the West African states",
+    o: ["politically.", "socially.", "culturally.", "economically."],
+    a: 3,
+    e: "ECOWAS is primarily an economic integration body.",
+    full: "ECOWAS — Economic Community of West African States — was established with the primary objective of promoting economic cooperation and integration among West African countries.",
+    h: "What does the 'E' in ECOWAS stand for?"
+  },
+  {
+    yr: 1995,
+    q: "One of the achievements of ECOWAS is",
+    o: [
+      "adoption of colonialism.",
+      "respect for human rights.",
+      "settlement of Liberian refugees.",
+      "eradication of vehicle insurance scheme."
+    ],
+    a: 2,
+    e: "ECOWAS achieved notable success in peacekeeping, including managing Liberian refugee crises through ECOMOG.",
+    full: "ECOWAS deployed its military monitoring group ECOMOG in Liberia during the civil war, and played a central role in managing refugee flows and restoring peace in the subregion.",
+    h: "Think about ECOMOG's role in West African conflicts in the 1990s."
+  },
+  {
+    yr: 1998,
+    q: "The organ responsible for the general administration of ECOWAS is the",
+    o: [
+      "Executive Secretariat.",
+      "Council of Ministers.",
+      "Authority of Heads of State and Government.",
+      "Tribunal of the Community."
+    ],
+    a: 2,
+    e: "The general administration of ECOWAS falls under its Executive Secretariat (now called the Commission).",
+    full: "The ECOWAS Secretariat, headed by the Executive Secretary, is responsible for the general administration and day-to-day running of the community's affairs.",
+    h: "Which organ handles the administrative rather than political leadership of ECOWAS?"
+  },
+  {
+    yr: 1997,
+    q: "Nations join international organizations so that they could",
+    o: ["advance their interests.", "get foreign aid.", "form alliances.", "become more developed."],
+    a: 0,
+    e: "The primary motivation for joining international organizations is to advance national interests.",
+    full: "Nations participate in international organizations primarily as a means of promoting and protecting their national interests, including economic development, security, and diplomatic influence.",
+    h: "What is the fundamental driver of a state's foreign policy decisions?"
+  },
+  {
+    yr: 2003,
+    q: "The activities of Nigeria in the international community are primarily influenced by",
+    o: ["propaganda.", "national interest.", "military power.", "diplomacy."],
+    a: 1,
+    e: "National interest is the primary driver of any country's international activities.",
+    full: "Like all sovereign states, Nigeria's foreign policy and international activities are fundamentally shaped by her national interest, which encompasses her political, economic, and security objectives.",
+    h: "What fundamental principle guides every state's international conduct?"
+  },
+  {
+    yr: 1987,
+    q: "An important factor that brought about the introduction of federalism in Nigeria was the",
+    o: [
+      "existence of three regions.",
+      "diversity and complexity in social and cultural patterns.",
+      "existence of cultural patterns.",
+      "division of powers between the federal and state governments."
+    ],
+    a: 1,
+    e: "Nigeria's ethnic, cultural, and social diversity made federalism the most suitable form of government.",
+    full: "Nigeria adopted federalism primarily because of its enormous ethnic, linguistic, and cultural diversity. A unitary system would have been unsuitable for a country with over 250 ethnic groups and distinct regional identities.",
+    h: "What feature of Nigerian society made a single centralized government impractical?"
+  },
+  {
+    yr: 1995,
+    q: "The first restructuring of the Nigerian Federation took place with the",
+    o: [
+      "creation of the Mid-West Region.",
+      "abolition of federalism in 1966.",
+      "military counter-coup of 1966.",
+      "creation of states in 1967."
+    ],
+    a: 0,
+    e: "The Mid-Western Region was carved out of the Western Region in 1963, marking the first restructuring.",
+    full: "In 1963, the Mid-Western Region was created from part of the Western Region, becoming Nigeria's fourth region and constituting the first major restructuring of the Nigerian federation.",
+    h: "Which region was split to create a new one before the 1967 state creation exercise?"
+  },
+  {
+    yr: 2001,
+    q: "The Land Use Decree of 1970 vested the ownership of land in Nigeria in the",
+    o: ["local chiefs.", "local governments.", "state governments.", "federal government."],
+    a: 2,
+    e: "The Land Use Act vested land ownership in state governments.",
+    full: "The Land Use Decree (later Act) vested all land in each state in the Governor of that state, to be held in trust for the people. This effectively transferred land ownership from individuals and communities to state governments.",
+    h: "Which tier of government holds land 'in trust' under Nigerian law?"
+  },
+  {
+    yr: 2011,
+    q: "The principle of federal character was adopted in order to promote equitable allocation of",
+    o: [
+      "opportunities between males and females.",
+      "revenue between groups in the country.",
+      "positions and appointments among people of various regions.",
+      "appointments between the North and the South."
+    ],
+    a: 2,
+    e: "Federal character ensures that appointments and positions reflect Nigeria's diversity across regions and states.",
+    full: "The Federal Character Principle, enshrined in the Nigerian Constitution, was adopted to ensure that appointments into federal institutions reflect the diversity of the country, with no state or region dominating.",
+    h: "What problem of regional imbalance was the federal character principle designed to solve?"
+  },
+  {
+    yr: 1993,
+    q: "Which of the following advocates equitable distribution of wealth?",
+    o: ["Plutocracy.", "Capitalism.", "Socialism.", "Aristocracy."],
+    a: 2,
+    e: "Socialism advocates for equitable distribution of wealth among all citizens.",
+    full: "Socialism is an economic and political system that advocates collective or state ownership of the means of production, and aims for an equitable distribution of wealth and resources among all members of society.",
+    h: "Which ideology prioritizes collective ownership and reducing wealth inequality?"
+  },
+  {
+    yr: 1989,
+    q: "Liberalism is a philosophy underlying",
+    o: ["socialism.", "capitalism.", "feudalism.", "nazism."],
+    a: 1,
+    e: "Liberalism underpins capitalism, emphasizing individual freedom and free markets.",
+    full: "Liberalism, with its emphasis on individual rights, free markets, private property, and limited government intervention, forms the philosophical foundation of capitalism.",
+    h: "Which economic system emphasizes individual freedom, private enterprise, and market competition?"
+  },
+  {
+    yr: 1990,
+    q: "Governments whose central concern is the equitable distribution of wealth are said to be",
+    o: ["feudalist.", "capitalist.", "socialist.", "fascist."],
+    a: 2,
+    e: "Socialist governments focus on equitable wealth distribution.",
+    full: "Socialism is characterized by government concern for equitable distribution of resources and wealth, often through collective ownership or regulation of the means of production.",
+    h: "Which ideology places the redistribution of wealth at the center of its governance philosophy?"
+  },
+  {
+    yr: 1984,
+    q: "Nazism as a doctrine was proposed by",
+    o: ["Benito Stalin.", "Adolf Hitler.", "Karl Marx.", "Josef Stalin."],
+    a: 1,
+    e: "Adolf Hitler was the leading proponent of Nazism in Germany.",
+    full: "National Socialism (Nazism) was the ideology of the National Socialist German Workers' Party led by Adolf Hitler. It combined extreme nationalism, racism, and totalitarianism.",
+    h: "Which German leader became synonymous with National Socialism in the 20th century?"
+  },
+  {
+    yr: 1994,
+    q: "Privatization and commercialization of public enterprises in Nigeria will lead to further",
+    o: ["socialism.", "capitalism.", "communalism.", "fascism."],
+    a: 1,
+    e: "Privatization moves ownership to private hands, which is a hallmark of capitalism.",
+    full: "When government transfers ownership and control of public enterprises to private individuals or groups through privatization and commercialization, the economy moves in the direction of capitalism, which favors private ownership and market-driven operations.",
+    h: "Which economic system is characterized by private ownership of enterprises?"
+  },
+  {
+    yr: 1979,
+    q: "The major role of national legislature is to",
+    o: [
+      "scrutinize and criticize the executive branch.",
+      "step into political vacuum created by weak executives.",
+      "make laws for the general welfare of citizens.",
+      "find ways and means to get money for governments."
+    ],
+    a: 2,
+    e: "The primary function of any legislature is lawmaking.",
+    full: "The legislature's main role is to enact laws for the peace, order, and good governance of the country. All other functions, such as oversight, are secondary to this core lawmaking mandate.",
+    h: "What is the most fundamental purpose of a parliament or national assembly?"
+  },
+  {
+    yr: 1979,
+    q: "The main function of the legislature is",
+    o: ["To implement law.", "to enforce law.", "to make law.", "to interpret law."],
+    a: 2,
+    e: "Making law is the primary function of the legislature.",
+    full: "The legislature is the arm of government constitutionally empowered to make laws. Implementation is the executive's role, and interpretation belongs to the judiciary.",
+    h: "Match each arm of government to its core function: make, implement, or interpret."
+  },
+  {
+    yr: 1986,
+    q: "The main function of the upper chamber in a parliamentary system of government is to",
+    o: [
+      "initiate new legislation.",
+      "execute laws.",
+      "act as a check on the lower chamber.",
+      "direct the activities of the lower chamber."
+    ],
+    a: 2,
+    e: "The upper house serves as a revising and checking body over the lower house.",
+    full: "In a bicameral parliament, the upper chamber (such as a Senate or House of Lords) primarily serves as a revising body that reviews, amends, and acts as a check on legislation passed by the lower chamber.",
+    h: "Why have two chambers? What does the second one add to the legislative process?"
+  },
+  {
+    yr: 1987,
+    q: "Bicameral legislature exists",
+    o: [
+      "where cameramen are allowed to cover the proceedings of the legislature.",
+      "to prevent the concentration of power in one legislative house.",
+      "to provide jobs for more politicians.",
+      "to ensure that just laws are passed."
+    ],
+    a: 1,
+    e: "Bicameralism prevents concentration of legislative power in one house.",
+    full: "A bicameral legislature is established to distribute legislative power between two chambers, thereby preventing any single body from dominating the lawmaking process and providing checks and balances within the legislature itself.",
+    h: "What principle does having two legislative chambers serve in governance?"
+  },
+  {
+    yr: 1988,
+    q: "A major weakness of unicameral legislature is that it",
+    o: [
+      "delays legislation.",
+      "is unsuitable for a unitary state.",
+      "breeds struggle for power.",
+      "does not provide a check against hasty legislation."
+    ],
+    a: 3,
+    e: "Without a second chamber, hasty or poorly considered laws can pass without adequate review.",
+    full: "A unicameral legislature lacks the checks provided by a second chamber. This means legislation can be passed hastily without the additional scrutiny and revision that a bicameral system provides.",
+    h: "What safeguard does a second legislative chamber provide that a single chamber lacks?"
+  },
+  {
+    yr: 1985,
+    q: "The supreme power of a state to make and enforce laws within its jurisdiction is called",
+    o: ["decolonization.", "independence.", "nationalism.", "sovereignty."],
+    a: 3,
+    e: "Sovereignty refers to the supreme authority of a state over its territory.",
+    full: "Sovereignty is the principle that a state has absolute and supreme authority to govern itself, make and enforce laws within its borders, and conduct its affairs without interference from external powers.",
+    h: "What concept captures a state's absolute supreme authority within its own borders?"
+  },
+  {
+    yr: 1984,
+    q: "Government means the machinery established by",
+    o: ["rulers.", "aliens.", "civil servants.", "people."],
+    a: 3,
+    e: "Government is machinery established by the people to manage their affairs.",
+    full: "Government refers to the institution and machinery established by the people of a state to manage their collective affairs, maintain order, and provide public services through the exercise of authority.",
+    h: "In a democratic framework, who is the ultimate source of governmental authority?"
+  },
+  {
+    yr: 1988,
+    q: "A major difference between power and authority is that authority is",
+    o: [
+      "popularly acquired.",
+      "more frequently exercised.",
+      "less dependent on costly exercise.",
+      "subject to no other authority."
+    ],
+    a: 0,
+    e: "Authority is legitimate power that is recognized and accepted by the people.",
+    full: "While power is the ability to compel obedience, authority is legitimate power that is voluntarily recognized and accepted by those over whom it is exercised. Authority is thus 'popularly acquired' through legitimacy.",
+    h: "What makes authority different from mere force or coercion?"
+  },
+  {
+    yr: 1990,
+    q: "Political authority is vested in the",
+    o: ["state.", "judiciary.", "government.", "armed forces."],
+    a: 2,
+    e: "Political authority resides in the government acting on behalf of the state.",
+    full: "While sovereignty belongs to the state, political authority — the right to govern and make binding decisions — is exercised by the government, which acts as the agent of the state.",
+    h: "Which institution formally holds and exercises political decision-making power?"
+  },
+  {
+    yr: 1991,
+    q: "The unrestrained power of a state over its citizens defines the concept of",
+    o: ["nationalism.", "self-determination.", "nation-state.", "sovereignty."],
+    a: 3,
+    e: "Sovereignty denotes the unrestricted supreme power of a state.",
+    full: "Sovereignty represents the absolute, supreme, and unrestrained authority of a state to govern within its own territory, free from external interference or internal challenge.",
+    h: "Which concept in political science describes absolute, unrestrained state power?"
+  },
+  {
+    yr: 1991,
+    q: "Political authority refers to the",
+    o: [
+      "ability to effect political action.",
+      "capacity to produce desired political results.",
+      "capacity to reshape the political behaviour of citizens.",
+      "recognized right to exercise political power."
+    ],
+    a: 3,
+    e: "Authority is the recognized and legitimate right to exercise power.",
+    full: "Political authority is defined as the legitimate and recognized right to exercise power over others. It is distinguished from mere force or coercion by its acceptance and recognition by those subject to it.",
+    h: "What makes political power 'authoritative' rather than merely forceful?"
+  },
+  {
+    yr: 1993,
+    q: "The sovereignty of a state is determined by",
+    o: [
+      "social and political aspects.",
+      "economic aspects.",
+      "political and legal aspects.",
+      "economic and political aspects."
+    ],
+    a: 2,
+    e: "Sovereignty is understood through political and legal dimensions.",
+    full: "Sovereignty is fundamentally a political and legal concept. It is established through legal frameworks (constitutions and international law) and exercised through political institutions and processes.",
+    h: "In what two related disciplines is sovereignty primarily defined and studied?"
+  },
+  {
+    yr: 1978,
+    q: "The major function of the legislative assembly is to",
+    o: [
+      "debate on committee reports.",
+      "represent the people.",
+      "make laws.",
+      "vote on bills."
+    ],
+    a: 2,
+    e: "Lawmaking is the fundamental function of the legislature.",
+    full: "The primary and most important function of any legislative assembly is to make laws. All other activities — debating, representing constituents, and approving budgets — serve this overarching legislative mandate.",
+    h: "What does the word 'legislature' itself tell you about its primary role?"
+  },
+  {
+    yr: 1982,
+    q: "Which of the following governs a state in-between meetings of the legislature?",
+    o: [
+      "The Legislative Organ.",
+      "a committee of the legislature.",
+      "The Lower House.",
+      "The Executive."
+    ],
+    a: 3,
+    e: "The Executive governs continuously, including when the legislature is not in session.",
+    full: "The Executive arm of government is responsible for the day-to-day administration and governance of the state. It operates continuously and does not depend on the legislature being in session.",
+    h: "Which arm of government has continuous governing responsibility?"
+  },
+  {
+    yr: 1978,
+    q: "All members of the government councils in the newly constituted local government councils in Nigeria were",
+    o: [
+      "directly elected.",
+      "indirectly elected.",
+      "appointed by the Head of State.",
+      "appointed by the Governor."
+    ],
+    a: 0,
+    e: "Members of the new local government councils were directly elected by the people.",
+    full: "Under the 1976 local government reforms in Nigeria, local government councils were to be composed of directly elected members, establishing a democratic basis for grassroots governance.",
+    h: "What democratic principle guided the composition of local government councils after the 1976 reforms?"
+  },
+  {
+    yr: 1983,
+    q: "Rates are generally collected in Nigeria by the",
+    o: [
+      "the Inland Revenue.",
+      "the Department of Finance.",
+      "the Emirate or Traditional Council.",
+      "State Ministry of Finance."
+    ],
+    a: 0,
+    e: "Rates (local taxes) are collected by local government bodies, often through inland revenue departments.",
+    full: "In Nigeria, rates — which are local government levies on property and residents — are typically assessed and collected through the Inland Revenue service at the local government level.",
+    h: "Which level of government is primarily responsible for collecting rates as a source of revenue?"
+  },
+  {
+    yr: 1979,
+    q: "The primary function of the judiciary is to",
+    o: ["interpret the law.", "make laws.", "regulate behaviour.", "execute laws."],
+    a: 0,
+    e: "The judiciary's primary role is the interpretation and application of the law.",
+    full: "The judiciary is responsible for interpreting the law and applying it to specific cases brought before the courts. This distinguishes it from the legislature (which makes laws) and the executive (which implements them).",
+    h: "Which of the three core legal functions — make, implement, or interpret — belongs to the judiciary?"
+  },
+  {
+    yr: 2000,
+    q: "The Supreme Court through its interpretations of the constitution, is a",
+    o: [
+      "protector of the state.",
+      "guardian of freedom.",
+      "participator in the politics of the state.",
+      "preserver of the status quo."
+    ],
+    a: 1,
+    e: "The Supreme Court acts as a guardian of constitutional freedoms and rights.",
+    full: "Through constitutional interpretation, the Supreme Court protects citizens' fundamental rights and freedoms from infringement by the government or other parties, making it the ultimate guardian of individual liberties.",
+    h: "What does constitutional review by a supreme court primarily protect?"
+  },
+  {
+    yr: 1997,
+    q: "Judicial independence in a modern democracy can be ensured by",
+    o: [
+      "the confirmation of the appointment of judges by the legislature.",
+      "the provision that judges can only be removed from office by the president-in-council.",
+      "making judges independent of the ministry of justice.",
+      "safeguarding the security of tenure of judges."
+    ],
+    a: 3,
+    e: "Security of tenure protects judges from political pressure and ensures their independence.",
+    full: "Security of tenure — ensuring that judges cannot be arbitrarily removed from office — is one of the most critical safeguards of judicial independence. It protects judges from political interference in their decision-making.",
+    h: "What protects a judge from being pressured or removed for delivering unpopular judgments?"
+  },
+  {
+    yr: 2004,
+    q: "Independence of the judiciary is pertinent because it accords the judiciary the power to",
+    o: [
+      "dismiss any judge who has breached the judicial code of conduct.",
+      "determine a fixed salary for judges.",
+      "determine a fixed term of office for the judges.",
+      "enable the judges to try and decide cases without bias."
+    ],
+    a: 3,
+    e: "Judicial independence ensures judges decide cases without external bias or interference.",
+    full: "The independence of the judiciary is essential because it allows judges to hear and determine cases based purely on the law and facts, without fear of reprisal or external pressure from the government or other powerful interests.",
+    h: "What is the ultimate purpose of protecting the judiciary from political interference?"
+  },
+  {
+    yr: 2009,
+    q: "In order to dispense justice impartially, the judiciary primarily needs",
+    o: ["discipline.", "logistics.", "motivation.", "independence."],
+    a: 3,
+    e: "Independence is the most essential requirement for impartial justice.",
+    full: "For a judiciary to dispense justice impartially, it must be independent of the executive and legislature. Without independence, judges may be susceptible to political pressure, undermining fair adjudication.",
+    h: "What single quality ensures a court can rule fairly regardless of who the parties are?"
+  },
+  {
+    yr: 2014,
+    q: "The court that has ultimate power to interpret the constitution is the",
+    o: ["High Court.", "Court of Appeal.", "Supreme Court.", "Magistrate Court."],
+    a: 2,
+    e: "The Supreme Court is the apex court with final authority on constitutional interpretation.",
+    full: "In Nigeria and most federal systems, the Supreme Court is the highest judicial authority and has the final say on the interpretation of the constitution. Its decisions are binding on all lower courts.",
+    h: "Which court sits at the apex of the judicial hierarchy?"
+  },
+  {
+    yr: 1978,
+    q: "The executive performs legislative functions such as",
+    o: [
+      "approval of annual budgets.",
+      "assenting bills into laws.",
+      "formulating policies.",
+      "screening of ministerial nominees."
+    ],
+    a: 1,
+    e: "Assenting to bills — giving them presidential or royal approval — is a legislative function performed by the executive.",
+    full: "While lawmaking is primarily a legislative function, the executive participates by assenting to (signing) bills passed by the legislature, thereby giving them the force of law.",
+    h: "What final step does the executive take that formally turns a bill into law?"
+  },
+  {
+    yr: 1980,
+    q: "The executive arm of government includes the",
+    o: ["police.", "courts.", "national assembly.", "senate."],
+    a: 0,
+    e: "The police are part of the executive arm, being instruments of law enforcement.",
+    full: "The executive arm of government includes the President/Head of State, Cabinet, Ministries, the Civil Service, and enforcement agencies such as the police and military, which carry out executive decisions.",
+    h: "Which institution enforces laws and maintains order as part of the executive function?"
+  },
+  {
+    yr: 1985,
+    q: "The executive arm of government is mainly concerned with the",
+    o: ["approval of appointments.", "approval of budgets.", "implementation of policies.", "implementation of policies."],
+    a: 2,
+    e: "Policy implementation is the primary concern of the executive.",
+    full: "The executive branch is primarily responsible for implementing and enforcing laws and government policies. While the legislature makes laws, it is the executive that carries them out through its ministries and agencies.",
+    h: "What does the 'executive' arm of government actually 'execute'?"
+  },
+  {
+    yr: 1983,
+    q: "The arm of government mainly responsible for the implementation of law in Nigeria is the",
+    o: ["judiciary.", "police.", "legislature.", "executive."],
+    a: 3,
+    e: "The executive is responsible for implementing laws in Nigeria.",
+    full: "In Nigeria's constitutional framework, the executive arm — comprising the President, Governors, Ministers, and civil service — is primarily responsible for the implementation and enforcement of laws made by the legislature.",
+    h: "Which arm of government 'executes' or carries out the laws?"
+  },
+  {
+    yr: 1978,
+    q: "To raise funds, local governments can levy",
+    o: ["import duties.", "income taxes.", "excise duties.", "rates."],
+    a: 3,
+    e: "Rates are the primary form of taxation available to local governments.",
+    full: "Local governments in Nigeria are empowered to levy rates on property and residents within their jurisdiction. Import duties, income taxes, and excise duties are reserved for federal and state governments.",
+    h: "Which form of levy is specifically within the jurisdiction of local government authorities?"
+  },
+  {
+    yr: 1982,
+    q: "The transfer of authority to local government councils is known as",
+    o: ["demarcation.", "delegation.", "devolution.", "fusion."],
+    a: 2,
+    e: "Devolution refers to the transfer of powers from central to local government.",
+    full: "Devolution is the process by which the central or state government transfers certain powers, responsibilities, and resources to local government authorities, enabling them to govern their localities more effectively.",
+    h: "What term describes the transfer of governmental power downwards to lower tiers?"
+  },
+  {
+    yr: 1983,
+    q: "Local governments in Nigeria are created by",
+    o: [
+      "the Inland Revenue.",
+      "the Local Government Council.",
+      "the State Ministry of Finance.",
+      "Federal Military Government."
+    ],
+    a: 3,
+    e: "Local governments in Nigeria are created by the state or federal government.",
+    full: "In Nigeria, local government areas are created by the state governments, subject to approval by the National Assembly. During military rule, the Federal Military Government exercised this power directly.",
+    h: "Which level of government has the authority to create or dissolve local government areas?"
+  },
+  {
+    yr: 1985,
+    q: "The term Chief-in-Council in Nigeria means that the",
+    o: [
+      "Chief is elected by the council.",
+      "is superior to the council.",
+      "cannot oppose the decision of the council.",
+      "is nominated by the government."
+    ],
+    a: 0,
+    e: "Chief-in-Council implies the chief governs with and through a council.",
+    full: "The concept of Chief-in-Council in Nigerian traditional governance means that the traditional ruler (chief) exercises authority in conjunction with a council. The council's role means the chief is in effect chosen and constrained by it.",
+    h: "What does the phrase 'in council' suggest about the relationship between a chief and the council?"
+  },
+  {
+    yr: 1991,
+    q: "The primary function of a pressure group is to",
+    o: [
+      "win elections.",
+      "elect their officials.",
+      "organize and fight corrupt officials.",
+      "influence the Legislature and the Executive to make decisions favourable to them."
+    ],
+    a: 3,
+    e: "Pressure groups aim to influence government policy and decisions in their favour.",
+    full: "Pressure groups are organizations that seek to influence the policies and decisions of government without seeking direct control of political power. Their primary tool is lobbying the legislature and executive to act in their members' interests.",
+    h: "What distinguishes a pressure group from a political party in its relationship to government?"
+  },
+  {
+    yr: 1992,
+    q: "The major distinguishing factor between a pressure group and a political party is that while the former",
+    o: [
+      "is effectively organized, the latter is not.",
+      "influences the policies of the government, the latter does not.",
+      "does not form a government, the latter does.",
+      "seeks power, the latter influences it."
+    ],
+    a: 2,
+    e: "Pressure groups influence government but do not seek to form one; political parties aim to govern.",
+    full: "The fundamental distinction is that political parties contest elections and seek to control government, while pressure groups only seek to influence those in power without themselves seeking office or forming a government.",
+    h: "Does a pressure group ever field candidates to actually run the government?"
+  },
+  {
+    yr: 1987,
+    q: "The major aim of pressure groups is to",
+    o: ["influence government policy.", "form a government.", "win elections.", "capture political power."],
+    a: 0,
+    e: "Influencing government policy is the core aim of pressure groups.",
+    full: "Pressure groups exist primarily to influence government policy in favor of their members or causes. They employ various strategies such as lobbying, public campaigns, and strikes, but unlike political parties, they do not aim to capture or exercise political power themselves.",
+    h: "What is the difference between 'influencing' power and 'capturing' power?"
+  },
+  {
+    yr: 1991,
+    q: "The primary function of a pressure group is to",
+    o: [
+      "win elections.",
+      "elect their officials.",
+      "organize and fight corrupt government.",
+      "influence government policy."
+    ],
+    a: 3,
+    e: "Pressure groups seek to influence, not capture, government.",
+    full: "The primary purpose of pressure groups is to advocate for their interests by influencing the decisions and policies of government. They achieve this through lobbying, public campaigns, media engagement, and other forms of advocacy.",
+    h: "Does a pressure group seek to replace the government or just influence it?"
+  },
+  {
+    yr: 1987,
+    q: "Groups which seek to bring about changes in government policies without actually controlling the government are known as",
+    o: ["trade unions.", "pressure groups.", "secret societies.", "elite groups."],
+    a: 1,
+    e: "Pressure groups aim to change policies without seeking governmental control.",
+    full: "Pressure groups are defined as organizations that seek to influence government policy without seeking to capture governmental power. This distinguishes them from political parties, which actively compete for control of government.",
+    h: "What is the defining feature of a group that wants policy change but not political office?"
+  },
+  {
+    yr: 1995,
+    q: "The feature which best differentiates pressure groups from political parties is that they do not",
+    o: [
+      "lack of an acceptable revenue allocation formula.",
+      "inability to conduct a successful census.",
+      "high cost of administration.",
+      "frequent change of government."
+    ],
+    a: 0,
+    e: "Pressure groups do not seek to capture political power, unlike political parties.",
+    full: "The most fundamental distinction between pressure groups and political parties is that pressure groups do not contest elections or seek to form a government. They only seek to influence those who hold power.",
+    h: "What is the one thing a pressure group never does that a political party always does?"
+  },
+  {
+    yr: 2000,
+    q: "A major issue that distinguishes pressure groups from political parties is",
+    o: ["membership.", "ideology.", "the objective.", "articulation."],
+    a: 2,
+    e: "The objective — influencing vs. controlling government — is the key distinction.",
+    full: "While both pressure groups and political parties may have ideologies and memberships, the critical distinguishing factor is their objective. Political parties seek to control government; pressure groups only seek to influence it.",
+    h: "In comparing the two types of organizations, which characteristic is most definitively different?"
+  },
+  {
+    yr: 1998,
+    q: "The feature which best differentiates pressure groups from political parties is that they do not",
+    o: [
+      "have interest in politics.",
+      "have permanent organization.",
+      "seek to influence public opinion.",
+      "seek to capture government power."
+    ],
+    a: 3,
+    e: "Pressure groups do not seek to capture government power, unlike political parties.",
+    full: "The defining characteristic that sets pressure groups apart from political parties is that pressure groups do not contest elections or seek to hold governmental office. Their goal is solely to influence those who govern.",
+    h: "What single ambition does a political party have that a pressure group deliberately avoids?"
+  },
+  {
+    yr: 1999,
+    q: "Pressure groups harmonize different individual concerns through",
+    o: [
+      "Have interest in politics.",
+      "Seek to influence public opinion.",
+      "Have permanent organization.",
+      "articulation."
+    ],
+    a: 3,
+    e: "Pressure groups harmonize individual interests through the articulation of collective demands.",
+    full: "One of the key functions of pressure groups is interest articulation — aggregating and expressing the diverse concerns of their members in a coherent form that can be effectively presented to government decision-makers.",
+    h: "What political process involves gathering and expressing members' interests to government?"
+  },
+  {
+    yr: 2011,
+    q: "In a unitary system of government, power is concentrated at the centre",
+    o: ["with devolution.", "without residual functions.", "without devolution.", "with residual functions."],
+    a: 2,
+    e: "In a unitary system, power is centralized without devolution to constituent units.",
+    full: "A unitary state centralizes all significant governmental powers at the national level. There is no constitutionally guaranteed devolution of power to regions or localities — any powers held by lower units are granted by the centre and can be revoked.",
+    h: "What happens to power in a unitary state — is it spread out or concentrated?"
+  },
+  {
+    yr: 2000,
+    q: "One main weakness of a unitary system of government is that",
+    o: [
+      "it facilitates the domination of minority groups.",
+      "the constitution can be amended easily.",
+      "it is run as a single entity.",
+      "carpet-crossing and opposition are made difficult."
+    ],
+    a: 0,
+    e: "Unitary systems can allow majority groups to dominate minorities due to centralized power.",
+    full: "A major criticism of unitary government is that concentration of power at the center can allow majority ethnic, regional, or political groups to dominate and marginalize minorities, as there are no constitutionally protected regional power bases for minority groups.",
+    h: "How might centralized power disadvantage groups that are not in the political majority?"
+  },
+  {
+    yr: 2011,
+    q: "Which of the following countries is a unitary state?",
+    o: ["United States of America.", "Ghana.", "Nigeria.", "India."],
+    a: 1,
+    e: "Ghana operates as a unitary state with centralized governance.",
+    full: "Ghana is a unitary republic where governmental authority is centralized. The USA, Nigeria, and India are all federal states where power is constitutionally divided between central and regional governments.",
+    h: "Which of these countries does not have a federal constitution dividing power between central and regional governments?"
+  },
+  {
+    yr: 1997,
+    q: "Federalism was adopted in Nigeria as a",
+    o: [
+      "educational imbalance.",
+      "national identity.",
+      "constitutional response to the problem of ethnic pluralism.",
+      "manpower and resources."
+    ],
+    a: 2,
+    e: "Nigeria adopted federalism to manage its ethnic diversity and prevent domination.",
+    full: "Nigeria adopted federalism as the appropriate constitutional response to its enormous ethnic diversity. With hundreds of ethnic groups, a federal structure allowed for the accommodation of different regional identities while maintaining national unity.",
+    h: "What problem was federalism specifically designed to solve in the Nigerian context?"
+  },
+  {
+    yr: 2009,
+    q: "Nigeria's foreign policy is primarily influenced by",
+    o: ["boundary disputes.", "fiscal allocation.", "national interest.", "population and geographical location."],
+    a: 2,
+    e: "Nigeria's foreign policy, like that of every state, is primarily driven by national interest.",
+    full: "Nigeria's foreign policy is fundamentally shaped by her national interest, which includes economic development, regional security, continental leadership in Africa, and the welfare of her citizens abroad.",
+    h: "What is the universal primary driver of any state's foreign policy?"
+  },
+  {
+    yr: 2019,
+    q: "The focus of Nigeria's foreign policy is",
+    o: [
+      "Commonwealth as its centerpiece.",
+      "African Union as its centerpiece.",
+      "African as its centerpiece.",
+      "ECOWAS as its centerpiece."
+    ],
+    a: 2,
+    e: "Africa is the centerpiece of Nigeria's foreign policy.",
+    full: "Nigeria's foreign policy has consistently identified Africa as its centerpiece. This Afrocentric posture means Nigeria prioritizes African affairs, pan-African solidarity, and the welfare of African peoples in its international relations.",
+    h: "Nigeria identifies itself as a 'giant' of which continent, making it central to her foreign policy?"
+  },
+  {
+    yr: 2021,
+    q: "The policy that encapsulates the actions of a state towards others is",
+    o: ["International policy.", "Foreign policy.", "Foreign relations.", "Diplomatic policy."],
+    a: 1,
+    e: "Foreign policy is the term for a state's guidelines governing its actions towards other states.",
+    full: "Foreign policy is the set of principles, strategies, and decisions that guide a country's interactions with other nations and international organizations. It encapsulates how a state pursues its interests on the international stage.",
+    h: "What is the general term for the strategies a country uses to interact with the rest of the world?"
+  },
+  {
+    yr: 2021,
+    q: "The decision and actions taken by a state to pursue her interests in relation to other states is referred to as",
+    o: ["Non-alignment.", "proto-nationalism.", "foreign policy.", "decolonization."],
+    a: 2,
+    e: "Foreign policy encompasses all decisions and actions a state takes in pursuit of its international interests.",
+    full: "Foreign policy refers to the totality of a government's decisions and actions that shape its relationships and interactions with foreign states and international organizations in pursuit of national interests.",
+    h: "What two-word term describes how a state manages its external relationships?"
+  },
+  {
+    yr: 2006,
+    q: "Nigeria became a frontline state in the Southern African liberation struggle because of her",
+    o: [
+      "influence on African proxy wars.",
+      "commitment to end colonialism.",
+      "anti-apartheid stance.",
+      "nations south of the equator."
+    ],
+    a: 2,
+    e: "Nigeria's strong anti-apartheid stance made her a frontline state in the liberation struggle.",
+    full: "Nigeria was recognized as a frontline state in the struggle against apartheid and colonialism in Southern Africa due to her strong and consistent anti-apartheid stance, financial support for liberation movements, and diplomatic pressure against South Africa's racist regime.",
+    h: "What specific policy of the South African government did Nigeria most actively oppose?"
+  },
+  {
+    yr: 2005,
+    q: "Nigeria's commitment to the liberation of Africa could best be seen in her policy towards South Africa",
+    o: [
+      "influence on African proxy wars.",
+      "commitment to end colonialism.",
+      "anti-apartheid stance.",
+      "nations south of the equator."
+    ],
+    a: 2,
+    e: "Nigeria's anti-apartheid policy was the clearest expression of her commitment to African liberation.",
+    full: "Nigeria's opposition to apartheid in South Africa — including supporting sanctions, liberation movements, and boycotting the 1976 Olympics — was the most concrete demonstration of her policy of supporting the liberation of Africa from racial oppression.",
+    h: "Which specific South African policy did Nigeria most vigorously oppose on the world stage?"
+  },
+  {
+    yr: 2014,
+    q: "Nigeria is regarded as a frontline state because",
+    o: [
+      "she assisted ECOMOG troops in Liberia.",
+      "she sent policemen to Somalia.",
+      "she sent troops to Southern Africa.",
+      "she promoted peace in Liberia."
+    ],
+    a: 2,
+    e: "Nigeria sent troops and provided material support to liberation struggles in Southern Africa.",
+    full: "Nigeria earned frontline state status primarily because of her active material, military, and diplomatic support for liberation movements in Southern Africa, particularly against apartheid South Africa, in the struggle for African independence and dignity.",
+    h: "In which part of Africa was Nigeria most actively involved in supporting liberation movements?"
+  },
+  {
+    yr: 2009,
+    q: "The granting of asylum to Charles Taylor by Nigeria was to",
+    o: [
+      "defy the western powers.",
+      "protect Nigerians in Liberia.",
+      "promote peace in Liberia.",
+      "control the liberation struggle."
+    ],
+    a: 2,
+    e: "Nigeria granted Taylor asylum as part of its role in promoting peace in Liberia.",
+    full: "Nigeria's decision to grant asylum to former Liberian president Charles Taylor in 2003 was part of the peace process brokered to end the Liberian civil war. The offer of asylum was intended to facilitate Taylor's departure from power and bring peace to Liberia.",
+    h: "What broader peace objective was Nigeria trying to achieve by granting Taylor asylum?"
+  },
+  {
+    yr: 2004,
+    q: "The concept of non-alignment means that Nigeria should A",
+    o: [
+      "have nothing to do with the super-powers.",
+      "not take sides in international issues.",
+      "avoid dealing with any country with ideological considerations.",
+      "relate only with member countries of the Non-Aligned Movement."
+    ],
+    a: 1,
+    e: "Non-alignment means not taking sides in Cold War bloc rivalries.",
+    full: "Non-alignment, as practiced by Nigeria and other developing nations, means maintaining independence in international affairs by not formally aligning with either the Western or Eastern Cold War blocs, while reserving the right to engage with all nations based on national interest.",
+    h: "What did 'non-aligned' countries refuse to do during the Cold War?"
+  },
+  {
+    yr: 2007,
+    q: "A self-articulated strategy chose by a state to protect national interest is it's",
+    o: ["foreign diplomacy.", "foreign policy.", "foreign relation.", "foreign investment."],
+    a: 1,
+    e: "Foreign policy is the self-determined strategy through which a state protects and promotes its national interest.",
+    full: "Foreign policy is the body of strategies, objectives, and actions that a state designs and implements to protect its national interest in its dealings with other states and international actors.",
+    h: "What is the formal term for a country's self-designed international strategy?"
+  },
+  {
+    yr: 2000,
+    q: "Nigeria's quest for a leadership role in Africa hinges principally on her",
+    o: ["military might.", "economic strength.", "size and population.", "generosity."],
+    a: 2,
+    e: "Nigeria's claim to African leadership is primarily grounded in her size and population.",
+    full: "Nigeria's aspiration to lead Africa draws principally from her status as the most populous African nation and one of the largest in terms of territory, giving her a natural claim to continental leadership.",
+    h: "What demographic and geographic features distinguish Nigeria on the African continent?"
+  },
+  {
+    yr: 1988,
+    q: "One of the functions of the ministry of external affairs is the",
+    o: [
+      "deportation of illegal aliens.",
+      "issuance of passports.",
+      "defence of the country's borders.",
+      "promotion of national interest."
+    ],
+    a: 3,
+    e: "The ministry of external/foreign affairs primarily works to promote national interest abroad.",
+    full: "The Ministry of External Affairs (now Foreign Affairs) is responsible for formulating and implementing foreign policy. Its core mandate is the promotion and protection of Nigeria's national interest in its relations with other countries.",
+    h: "What is the ultimate purpose behind all activities of a ministry responsible for foreign affairs?"
+  },
+  {
+    yr: 1990,
+    q: "In international relations, countries have a right to",
+    o: ["export oil.", "create more states.", "diplomatic immunity of their envoys.", "own a police force."],
+    a: 2,
+    e: "Diplomatic immunity is a recognized right of states in international relations.",
+    full: "Under the Vienna Convention on Diplomatic Relations, countries have the right to have their diplomatic envoys and representatives granted immunity from the jurisdiction of the receiving state, protecting them from prosecution while carrying out diplomatic duties.",
+    h: "What internationally recognized protection do diplomats enjoy in foreign countries?"
+  },
+  {
+    yr: 2008,
+    q: "A virile foreign policy is one characterized by",
+    o: [
+      "a vibrant press, vibrant public opinion and a dynamic civil society.",
+      "propaganda, espionage and economic embargoes.",
+      "a stable polity, buoyant economy and visionary leadership.",
+      "the nature and dynamics of the international system."
+    ],
+    a: 2,
+    e: "A strong, effective foreign policy requires a stable home base, economic strength, and good leadership.",
+    full: "A virile (strong and effective) foreign policy is characterized by domestic stability, a robust economy that provides resources and leverage, and visionary leadership capable of articulating and pursuing national interests on the world stage.",
+    h: "What domestic conditions must exist for a country to project power internationally?"
+  },
+  {
+    yr: 2021,
+    q: "Nigeria chose Africa as the center piece of her foreign policy because",
+    o: [
+      "She wants to promote friendly relations among independent African states.",
+      "She wants to sustain her dominance over other African states.",
+      "Her economy cannot grow without the support of other African States.",
+      "She wanted to promote sports and cultural relations among African states."
+    ],
+    a: 0,
+    e: "Nigeria prioritizes Africa to promote solidarity and friendly relations among African states.",
+    full: "Nigeria's Afrocentric foreign policy is rooted in the desire to foster unity, peace, and friendly relations among African states, reflecting the pan-African ideals that have guided Nigerian foreign policy since independence.",
+    h: "What pan-African ideal motivates Nigeria's focus on the African continent in its foreign policy?"
+  },
+  {
+    yr: 2005,
+    q: "One of the following major problems of Nigerian federalism is majorly based on",
+    o: [
+      "national interest, population and landmass.",
+      "derivation, school enrolment and geographical stability.",
+      "landmass, school enrolment and geographical location.",
+      "inadequate manpower to fill vacancies."
+    ],
+    a: 0,
+    e: "Revenue allocation disputes in Nigerian federalism are largely based on national interest, population, and landmass.",
+    full: "Nigeria's revenue allocation formula controversies primarily revolve around the principles of national interest, population, and landmass/terrain as bases for distributing federally collected revenue among states and the federal government.",
+    h: "What three criteria are central to revenue allocation disputes in Nigeria's federalism?"
+  },
+  {
+    yr: 2008,
+    q: "One of the features of a sovereign state is that it",
+    o: [
+      "practises the presidential system.",
+      "has a large number of soldiers.",
+      "is not indebted to other countries.",
+      "is not indebted to other countries."
+    ],
+    a: 2,
+    e: "A sovereign state is not subject to external authority or control.",
+    full: "A key feature of state sovereignty is that the state is not answerable to any external authority in its internal governance. A sovereign state has the supreme right to govern itself without external interference.",
+    h: "What does 'sovereign' mean in terms of a state's relationship with other states?"
+  },
+  {
+    yr: 1994,
+    q: "The most distinguishing characteristic of the state is",
+    o: ["government.", "more organized system.", "well-defined territory.", "population."],
+    a: 2,
+    e: "A defined territory is what most distinctly characterizes a state.",
+    full: "Among all the elements of a state (population, government, sovereignty, territory), a well-defined territory is the most distinctive characteristic because without territory there can be no state — it is the physical foundation upon which the state is built.",
+    h: "Which element of statehood is most uniquely physical and geographical?"
+  },
+  {
+    yr: 2002,
+    q: "The principle of federal character was adopted in order to promote equitable allocation of",
+    o: ["Ashby Commission.", "Adedeji Commission.", "Udoji Commission.", "Phillipson Commission."],
+    a: 3,
+    e: "The Phillipson Commission was an ad hoc Revenue Allocation Commission.",
+    full: "The Phillipson Commission of 1946 was an early ad hoc body set up to recommend a revenue allocation formula for Nigeria. It was one of several commissions established to address the complex question of revenue sharing in the Nigerian federation.",
+    h: "Which of these commissions predated Nigerian independence and was among the earliest revenue allocation bodies?"
+  },
+  {
+    yr: 2013,
+    q: "The intergovernmental relationship between the tiers of government where taxing powers are defined is",
+    o: [
+      "promote sectional interests.",
+      "address minorities.",
+      "ensure equitable relations.",
+      "consolidate federal system of government."
+    ],
+    a: 2,
+    e: "Cooperative/dual federalism describes the relationship between tiers of government regarding taxation.",
+    full: "In Nigerian federalism, the intergovernmental relationship between federal, state, and local governments regarding taxation is defined through constitutional provisions and fiscal federalism arrangements that aim to ensure equitable distribution of revenue.",
+    h: "What type of federalism describes the formal relationship between different tiers of government?"
+  },
+  {
+    yr: 2021,
+    q: "One of the reasons for creating states in Nigeria is",
+    o: [
+      "promote sectional interests.",
+      "address minorities.",
+      "ensure equitable relations.",
+      "consolidate federal system of government."
+    ],
+    a: 1,
+    e: "State creation in Nigeria was partly motivated by the need to address minority concerns.",
+    full: "State creation in Nigeria has been driven largely by the demands of minority ethnic groups who felt dominated within larger regions. Creating more states was seen as a way to address minority grievances and give smaller groups greater political representation.",
+    h: "What political problem were minority groups experiencing that state creation was meant to solve?"
+  },
+  {
+    yr: 1982,
+    q: "Federal Military Government Reforms were carried out in",
+    o: ["1970.", "1976.", "1979.", "1967."],
+    a: 0,
+    e: "Major local government reforms were carried out in 1976 under the military.",
+    full: "The comprehensive local government reforms in Nigeria were carried out in 1976 under the Murtala-Obasanjo military regime. These reforms standardized the structure of local government across the country and gave local councils greater autonomy.",
+    h: "Under which military administration were the landmark local government reforms conducted?"
+  },
+  {
+    yr: 2024,
+    q: "NEPAD stands for",
+    o: [
+      "New Economic Programmes for Africa.",
+      "New Economic Partnerships for Africa.",
+      "New Partnerships for Africa's Development.",
+      "New Economic Programmes for African Development."
+    ],
+    a: 2,
+    e: "NEPAD stands for New Partnership for Africa's Development.",
+    full: "NEPAD — New Partnership for Africa's Development — is a development program of the African Union launched in 2001 to promote sustainable development, eradicate poverty, and integrate Africa into the global economy.",
+    h: "The 'P' in NEPAD stands for 'Partnership' — which option reflects this accurately?"
+  },
+  {
+    yr: 2012,
+    q: "NEPAD stands for",
+    o: [
+      "reliance on Western donors for youth.",
+      "New Economic Partnerships for Africa.",
+      "New Partnerships for Africa's Development.",
+      "New Economic Programmes for African Development."
+    ],
+    a: 2,
+    e: "NEPAD stands for New Partnership for Africa's Development.",
+    full: "NEPAD is the African Union's strategic framework for pan-African development, aiming to promote socioeconomic development, democracy, and good governance across the continent.",
+    h: "Remember: NEPAD is a 'Partnership' for 'Development' — not a 'Programme' or 'Economic Partnership'."
+  },
+  {
+    yr: 2006,
+    q: "NEPAD was adopted during the OAU summit held in",
+    o: ["Tunis.", "Lusaka.", "Cairo.", "Abuja."],
+    a: 1,
+    e: "NEPAD was formally adopted at the OAU summit in Lusaka, Zambia in 2001.",
+    full: "NEPAD was formally adopted by African heads of state at the 37th OAU Summit held in Lusaka, Zambia in July 2001, consolidating earlier African development initiatives into one framework.",
+    h: "Which Zambian capital hosted the OAU summit where NEPAD was formally adopted?"
+  },
+  {
+    yr: 2007,
+    q: "A major drawback to the NEPAD initiative is",
+    o: [
+      "articulation by few African leaders.",
+      "affiliation.",
+      "inability to empower the African Union.",
+      "failure."
+    ],
+    a: 0,
+    e: "NEPAD's major drawback has been its promotion by only a few African leaders without broad grassroots ownership.",
+    full: "Critics of NEPAD have argued that it was driven by a small group of African leaders without sufficient consultation with civil society or ordinary Africans, giving it a top-down character that limited popular ownership and effectiveness.",
+    h: "What organizational weakness made NEPAD difficult to implement broadly across Africa?"
+  },
+  {
+    yr: 2024,
+    q: "The body established by the federal government of Nigeria with the responsibility to promote, monitor and enforce compliance with the principles of proportional sharing of all bureaucratic, economic, media and political posts at all levels of government is the",
+    o: [
+      "Corporate Affairs Commission.",
+      "National Planning Commission.",
+      "Nigeria Investment Promotion Commission.",
+      "Federal Character Commission."
+    ],
+    a: 3,
+    e: "The Federal Character Commission enforces the federal character principle in appointments.",
+    full: "The Federal Character Commission was established to ensure that the composition of federal institutions, government agencies, and parastatals reflects Nigeria's federal character by ensuring equitable representation of all states and ethnic groups.",
+    h: "Which commission specifically monitors appointments to ensure they reflect Nigeria's diversity?"
+  },
+  {
+    yr: 2013,
+    q: "The rationale behind the adoption of a federal system of government in Nigeria is to",
+    o: [
+      "Promote unity in diversity.",
+      "Establish a powerful central government.",
+      "Create more states.",
+      "Unification for natural resources."
+    ],
+    a: 0,
+    e: "Federalism in Nigeria is designed to promote unity while accommodating diversity.",
+    full: "Nigeria adopted federalism to reconcile its enormous ethnic, cultural, and religious diversity with the need for national unity. The federal structure allows different groups to maintain their identities while cooperating under a common national framework.",
+    h: "What is the classic justification for adopting federalism in a diverse multi-ethnic country?"
+  },
+  {
+    yr: 2023,
+    q: "Which of the following is a major reason for the adoption of Nigerian Federalism?",
+    o: [
+      "Availability of natural resources.",
+      "Size of the country.",
+      "Heterogeneous ethnic diversity.",
+      "Unification for natural resources."
+    ],
+    a: 2,
+    e: "Ethnic heterogeneity is the primary reason Nigeria adopted federalism.",
+    full: "Nigeria's adoption of federalism was fundamentally driven by the need to accommodate its extraordinary ethnic heterogeneity. With hundreds of distinct ethnic groups, a federal structure provided the mechanism to distribute power and prevent domination.",
+    h: "What aspect of Nigeria's population made centralized unitary government impractical?"
+  },
+  {
+    yr: 2008,
+    q: "The Nigeria-Cameroun crisis over the Bakassi peninsula occurred owing to the interpretation of the treaty of 1913 and the",
+    o: ["Maroua Accord.", "Treaty of Lagos.", "ECOWAS Treaty.", "Anglo-Nigerian Defence Pact."],
+    a: 0,
+    e: "The Bakassi crisis was linked to the interpretation of the 1913 treaty and the Maroua Accord.",
+    full: "The territorial dispute between Nigeria and Cameroon over the Bakassi Peninsula arose from competing interpretations of colonial-era agreements, including the Anglo-German treaty of 1906/1913 and the Maroua Declaration of 1975 signed by Gowon and Ahidjo.",
+    h: "Which bilateral accord, signed in 1975, was central to the Bakassi territorial dispute?"
+  },
+  {
+    yr: 1986,
+    q: "Traditional rulers under the 1976 Local Government Reforms had",
+    o: ["executive powers.", "Chief-in-council status.", "limited powers.", "legislative powers."],
+    a: 2,
+    e: "Under the 1976 reforms, traditional rulers had only limited and advisory powers.",
+    full: "The 1976 local government reforms in Nigeria significantly curtailed the powers of traditional rulers. They were given only limited, primarily ceremonial and advisory roles, with executive powers transferred to elected local government councils.",
+    h: "Did the 1976 reforms strengthen or weaken the position of traditional rulers?"
+  },
+  {
+    yr: 1990,
+    q: "The most important challenge facing the Fourth Republic is",
+    o: [
+      "ethnicity.",
+      "politicization.",
+      "lopsided size of the component units.",
+      "rigging of elections."
+    ],
+    a: 3,
+    e: "Electoral rigging was identified as the most pressing challenge facing Nigeria's Fourth Republic.",
+    full: "Nigeria's Fourth Republic, which began in 1999, has been persistently challenged by the problem of electoral malpractice and rigging. Free, fair, and credible elections have been a recurring challenge threatening the stability and legitimacy of democratic governance.",
+    h: "What electoral problem has most directly threatened the credibility of Nigeria's Fourth Republic?"
+  },
+  {
+    yr: 1984,
+    q: "One of the general features of a totalitarian state is the existence of",
+    o: [
+      "a government that aspires to control every aspect of a citizen's life.",
+      "the rule of the few.",
+      "the elimination of all forms of competition.",
+      "privately owned."
+    ],
+    a: 0,
+    e: "Totalitarianism seeks total control over all aspects of citizens' lives.",
+    full: "A totalitarian state is characterized by the government's aspiration to control all aspects of public and private life — including politics, economy, culture, and personal behavior — leaving no sphere of life outside state authority.",
+    h: "What does the word 'total' in 'totalitarianism' tell you about the scope of government control?"
+  },
+  {
+    yr: 1982,
+    q: "Fascism is a system of government which",
+    o: [
+      "encourages political dissent and opposition.",
+      "promotes the international brotherhood of man.",
+      "promotes equality.",
+      "encourages opposition."
+    ],
+    a: 0,
+    e: "Fascism suppresses political dissent and opposition, not encourages it.",
+    full: "Fascism is an authoritarian and nationalistic political ideology that suppresses opposition and dissent. It is characterized by dictatorial power, forcible suppression of opposition, and strong regimentation of society and the economy.",
+    h: "Is fascism compatible with political opposition and free expression?"
+  },
+  {
+    yr: 2000,
+    q: "A political ideology that advocates extreme nationalism and suppression of individual liberties is",
+    o: ["socialism.", "communism.", "feudalism.", "totalitarianism."],
+    a: 3,
+    e: "Fascism (totalitarianism) advocates extreme nationalism and suppression of individual liberties.",
+    full: "Fascism is a political ideology characterized by extreme nationalism, authoritarianism, and the suppression of individual liberties in the interest of the state. It rejects liberal democracy, socialism, and communism in favor of totalitarian national unity.",
+    h: "Which ideology combines extreme nationalism with the forceful suppression of individual freedom?"
+  },
+  {
+    yr: 2007,
+    q: "A characteristic of a fascist state is the existence of a",
+    o: ["zero-party system.", "two-party system.", "multi-party system.", "one-party system."],
+    a: 3,
+    e: "Fascist states typically operate with a single party controlling all political power.",
+    full: "Fascist states are characterized by a one-party system in which the ruling fascist party monopolizes political power, banning or suppressing all opposition parties. This is a hallmark of fascism's totalitarian nature.",
+    h: "How many political parties does a fascist state typically permit?"
+  },
+  {
+    yr: 1989,
+    q: "Which of the following is NOT a member of ECOWAS?",
+    o: ["Nigeria.", "Burkina Faso.", "Senegal and South Africa.", "Tanzania."],
+    a: 2,
+    e: "South Africa is a Southern African country and is not a member of ECOWAS.",
+    full: "ECOWAS membership is restricted to West African nations. South Africa is a Southern African country and is not a member of ECOWAS. Tanzania is an East African nation also outside ECOWAS.",
+    h: "Which of these countries is located outside the West African subregion?"
+  },
+  {
+    yr: 2019,
+    q: "Centralization of state authority is closely associated with",
+    o: ["Unitary system.", "Presidential system.", "Parliamentary system.", "Federal system."],
+    a: 0,
+    e: "A unitary system centralizes state authority at the national level.",
+    full: "The unitary system of government is defined by the centralization of governmental authority in one supreme national government. Unlike federalism, there is no constitutional division of powers between the national and sub-national governments.",
+    h: "Which system of government concentrates power at a single central point?"
+  },
+  {
+    yr: 2024,
+    q: "Absence of Red-tape is a merit of",
+    o: [
+      "federal government structure.",
+      "unitary structure.",
+      "confederal structure.",
+      "republican structure."
+    ],
+    a: 1,
+    e: "The unitary system avoids bureaucratic duplication, reducing red tape.",
+    full: "In a unitary system, because there is only one tier of government making decisions, there is less bureaucratic complexity and duplication compared to a federal system where multiple layers of government may be involved. This makes administration more streamlined, reducing red tape.",
+    h: "Which system of government has fewer layers of bureaucracy — unitary or federal?"
+  },
+  {
+    yr: 2002,
+    q: "The body set up to review the revenue allocation formula in 1980 was the",
+    o: ["Udoji Commission.", "Dina Commission.", "Okigbo Commission.", "Adebo Commission."],
+    a: 2,
+    e: "The Okigbo Commission was set up to review the revenue allocation formula in 1980.",
+    full: "The Okigbo Commission (Presidential Commission on Revenue Allocation) was established in 1980 under President Shehu Shagari to review and recommend a new revenue allocation formula for Nigeria.",
+    h: "Which commission, named after a famous Nigerian economist, reviewed revenue allocation in 1980?"
+  },
+  {
+    yr: 2003,
+    q: "A problem of Nigerian federalism that was resolved by the Supreme Court between the federal government and the littoral states centered on resource",
+    o: ["maximization.", "generation.", "derivation.", "control."],
+    a: 2,
+    e: "The Supreme Court ruled on revenue derivation and resource control between the federal government and littoral states.",
+    full: "The Supreme Court of Nigeria adjudicated a major dispute between the federal government and oil-producing coastal states regarding the ownership and derivation benefits from offshore oil resources, affirming federal ownership of offshore resources beyond certain limits.",
+    h: "What revenue principle was at the heart of the dispute between the federal government and oil-producing coastal states?"
+  },
+  {
+    yr: 1998,
+    q: "The sovereignty of a state is determined by",
+    o: ["sovereignty.", "the rule of law.", "legitimacy.", "obedience."],
+    a: 0,
+    e: "Sovereignty is the supreme power of a state over its territory and people.",
+    full: "Sovereignty is the defining characteristic of a state's supreme authority. It encompasses both internal sovereignty (supreme power within the territory) and external sovereignty (independence from foreign control).",
+    h: "What single concept captures a state's ultimate supreme authority?"
+  },
+  {
+    yr: 1992,
+    q: "Sovereignty is limited by",
+    o: ["the legal system.", "Legitimate.", "Sovereign.", "international law."],
+    a: 3,
+    e: "International law places limits on the exercise of state sovereignty.",
+    full: "While sovereignty implies supreme authority, it is constrained in practice by international law, treaties, and the obligations states assume as members of the international community.",
+    h: "What body of law governs how sovereign states relate to and constrain each other?"
+  },
+  {
+    yr: 2008,
+    q: "An indispensable feature of any government is",
+    o: [
+      "a written constitution.",
+      "the independence of the judiciary.",
+      "the separation of powers.",
+      "political power."
+    ],
+    a: 3,
+    e: "Political power is the one indispensable feature of any government.",
+    full: "Every government, regardless of its form or type, must possess and exercise political power. Without power, a government cannot enforce decisions, maintain order, or govern effectively. All other features may vary across systems.",
+    h: "What is the one element without which no government can function?"
+  },
+  {
+    yr: 1984,
+    q: "One of the greatest advocates of socialism was",
+    o: ["Adam Smith.", "Karl Marx.", "A.V. Dicey.", "Baron de Montesquieu."],
+    a: 1,
+    e: "Karl Marx is the most famous advocate and theorist of socialism and communism.",
+    full: "Karl Marx, together with Friedrich Engels, laid the intellectual foundations of scientific socialism and communism. His works, particularly the Communist Manifesto and Das Kapital, remain the most influential texts in socialist thought.",
+    h: "Which 19th century German philosopher wrote the Communist Manifesto?"
+  },
+  {
+    yr: 2005,
+    q: "Fascism originated from",
+    o: ["Italy.", "Greece.", "Germany.", "China."],
+    a: 0,
+    e: "Fascism originated in Italy under Benito Mussolini.",
+    full: "Fascism as an organized political movement originated in Italy after World War I, led by Benito Mussolini who founded the Fascist Party and became Italy's dictator. The term 'fascism' itself derives from the Italian word 'fascio'.",
+    h: "Which European country did Mussolini rule and where did fascism first emerge as a formal movement?"
+  },
+  {
+    yr: 2006,
+    q: "Serfs are the dominated class under",
+    o: ["fascism.", "capitalism.", "feudalism.", "socialism."],
+    a: 2,
+    e: "Serfs were the dominated laboring class under the feudal system.",
+    full: "In the feudal system, serfs were peasants bound to the land owned by lords. They formed the lowest and most exploited class, required to work the lord's land in exchange for protection and the use of a small plot for their own subsistence.",
+    h: "Under which historical economic system were peasants bound to the land as serfs?"
+  },
+  {
+    yr: 2012,
+    q: "An ideology is essentially",
+    o: [
+      "a guide to political action.",
+      "a manual for revolution.",
+      "a curse on political actors.",
+      "a non-political concept."
+    ],
+    a: 0,
+    e: "An ideology is fundamentally a guide to political action and decision-making.",
+    full: "A political ideology is a coherent set of beliefs, values, and ideas that provides a framework for understanding society and a guide for political action. It shapes how individuals and groups perceive political reality and what policies they advocate.",
+    h: "What practical purpose does a political ideology serve for those who hold it?"
+  },
+  {
+    yr: 2015,
+    q: "Capitalism is an economic system in which",
+    o: [
+      "market forces are allowed to determine prices.",
+      "there is strong individual motive to make profit.",
+      "priority is given to the needs of the people.",
+      "there is freedom for economic competition."
+    ],
+    a: 0,
+    e: "Capitalism is characterized by market forces determining prices through supply and demand.",
+    full: "Capitalism is an economic system in which private individuals own the means of production and market forces — the interaction of supply and demand — determine prices, production, and the distribution of goods and services with minimal government interference.",
+    h: "What mechanism, rather than central planning, determines prices in a capitalist system?"
+  },
+  {
+    yr: 2013,
+    q: "One of the essential principles of communism is",
+    o: ["Plutocracy.", "Capitalism.", "Socialism.", "Aristocracy."],
+    a: 2,
+    e: "Socialism is the transitional stage and an essential principle within communist theory.",
+    full: "In Marxist theory, socialism is the intermediate stage between capitalism and full communism. It is an essential principle of communism, representing the period of collective ownership and state control that precedes the eventual classless communist society.",
+    h: "In Marxist theory, what stage must society pass through before reaching full communism?"
+  },
+  {
+    yr: 2011,
+    q: "In a feudal system, the two major classes are the",
+    o: ["masses.", "vassals.", "lords.", "elite."],
+    a: 2,
+    e: "The two major classes in feudalism were the lords (nobles) and serfs (peasants).",
+    full: "Feudalism was organized around a hierarchical system of land ownership. The two principal classes were the lords (nobles and clergy) who owned the land, and the serfs (peasants) who were bound to the land and obligated to work for the lords.",
+    h: "In a feudal system, who owned the land and who worked it?"
+  },
+  {
+    yr: 1983,
+    q: "A social system in which power is derived from control over land is called",
+    o: ["oligarchy.", "feudalism.", "proletariat.", "feudal lords."],
+    a: 1,
+    e: "Feudalism is the system where power is derived from land ownership and control.",
+    full: "Feudalism is a social, economic, and political system in which power and status are derived from the ownership of land. Lords who controlled large estates wielded political and economic power over the peasants and serfs who worked that land.",
+    h: "In which historical system was land the primary basis of political and economic power?"
+  },
+  {
+    yr: 1986,
+    q: "A social system in which power is derived from control over land is called. Those who live by selling their labour are referred to as the",
+    o: ["bourgeoisie.", "proletariats.", "feudal lords.", "slaves."],
+    a: 1,
+    e: "In Marxist theory, the proletariat are those who sell their labor to survive.",
+    full: "In Marxist class analysis, the proletariat (working class) are those who do not own the means of production and must sell their labor power to the bourgeoisie (capitalist class) in exchange for wages in order to survive.",
+    h: "What does Marx call the working class who must sell their labor to earn a living?"
+  },
+  {
+    yr: 1990,
+    q: "Marxism is directed against",
+    o: [
+      "state ownership of the means of production.",
+      "materialism.",
+      "the means of production is based on agriculture.",
+      "socialism."
+    ],
+    a: 1,
+    e: "Marxism is directed against capitalism and the material exploitation it produces.",
+    full: "Marxism is fundamentally a critique of capitalism and its exploitative material conditions. Marx argued that capitalism generates class conflict through the bourgeoisie's exploitation of the proletariat, and called for the revolutionary overthrow of capitalist material relations.",
+    h: "What economic system did Marx primarily critique and oppose?"
+  },
+  {
+    yr: 1989,
+    q: "Which of the following is the correct order in which societies progress, according to Marx?",
+    o: [
+      "Capitalism, feudalism, communism, socialism.",
+      "Feudalism, capitalism, socialism, communism.",
+      "Communism, capitalism, feudalism, socialism.",
+      "Socialism, communism, capitalism, feudalism."
+    ],
+    a: 1,
+    e: "Marx's historical materialism placed the order as feudalism → capitalism → socialism → communism.",
+    full: "Karl Marx's theory of historical materialism proposed that human societies inevitably progress through stages: from primitive communism through slavery, feudalism, capitalism, and socialism, finally reaching the classless communist society.",
+    h: "In Marx's view, which system comes before capitalism and which comes after it?"
+  },
+  {
+    yr: 1994,
+    q: "According to Marxist theory, those who live by selling their labour are referred to as the",
+    o: ["feudal lords.", "proletariats.", "bourgeoisie.", "feudal lords."],
+    a: 1,
+    e: "The proletariat are wage laborers who sell their labor in Marxist theory.",
+    full: "In Marxist terminology, the proletariat refers to the working class — those who own no means of production and must sell their labor power to capitalists (the bourgeoisie) in exchange for wages.",
+    h: "What class name does Marx give to those who must work for wages because they own nothing else?"
+  },
+  {
+    yr: 2002,
+    q: "Capitalism is based on",
+    o: [
+      "a mixed economic system that takes all interests into consideration.",
+      "individual ownership of the means of production.",
+      "very fair distribution of items of trade.",
+      "trading among people who own and control their items of trade."
+    ],
+    a: 1,
+    e: "Capitalism is fundamentally based on private/individual ownership of the means of production.",
+    full: "The defining feature of capitalism is the private ownership of the means of production — factories, land, machinery, and capital — by individuals or corporations. These private owners employ workers and produce goods for profit in competitive markets.",
+    h: "Who owns the means of production in a capitalist system?"
+  },
+  {
+    yr: 2019,
+    q: "Capitalism is a system of economic organization that takes",
+    o: ["Class interest.", "Public ownership.", "Collective ownership.", "national ownership."],
+    a: 0,
+    e: "Capitalism is organized around class interests, particularly those of the owning class.",
+    full: "In Marxist analysis, capitalism is an economic system organized around and serving the class interests of the bourgeoisie (capitalist owning class), who control the means of production and accumulate surplus value from workers' labor.",
+    h: "Whose interests does capitalism primarily serve according to political economy analysis?"
+  },
+  {
+    yr: 2022,
+    q: "Capitalism is a system of economic organization based on",
+    o: ["communism.", "communalism.", "feudalism.", "capitalism."],
+    a: 3,
+    e: "Capitalism is based on private ownership and free market enterprise.",
+    full: "Capitalism is an economic system characterized by private ownership of the means of production, free market competition, the profit motive, and wage labor. It is distinct from communism, communalism, and feudalism.",
+    h: "Which option names the system itself, matching the question's subject?"
+  },
+  {
+    yr: 2023,
+    q: "An economic system that seeks complete control over the means of production by the state and its people is",
+    o: ["A. socialism.", "B. communism.", "C. totalitarian state.", "D. unitary state."],
+    a: 1,
+    e: "Communism seeks total state and collective control over all means of production.",
+    full: "Communism is the political and economic ideology that calls for the abolition of private property and complete collective or state control of the means of production, with the aim of creating a classless, stateless society where resources are distributed according to need.",
+    h: "Which ideology advocates for complete collective ownership of all productive resources?"
+  },
+  {
+    yr: 2024,
+    q: "Socialism is",
+    o: [
+      "own and control their means of production.",
+      "public ownership of means of production.",
+      "means of production based on collective.",
+      "individual ownership of the state."
+    ],
+    a: 1,
+    e: "Socialism is characterized by public or collective ownership of the means of production.",
+    full: "Socialism is an economic and political system in which the means of production — industries, factories, and resources — are owned collectively or by the state, rather than by private individuals, with the goal of producing for social need rather than private profit.",
+    h: "Who owns the means of production under socialism — private individuals or the public/state?"
+  },
+  {
+    yr: 2020,
+    q: "A form of government which depended on land ownership is",
+    o: ["Communism.", "Feudalism.", "Capitalism.", "Communalism."],
+    a: 1,
+    e: "Feudalism was the system where political and economic power depended on land ownership.",
+    full: "Feudalism was a medieval political and economic system based on land tenure. Those who owned land (lords and nobles) held political power, while those who did not (serfs and peasants) were politically and economically subordinate.",
+    h: "Which historical system made land ownership the basis of all power and status?"
+  },
+  {
+    yr: 2021,
+    q: "A form of government which ownership and control is",
+    o: ["Communism.", "Socialism.", "Feudalism.", "Communalism."],
+    a: 0,
+    e: "Communism advocates for collective ownership and control of all means of production.",
+    full: "Communism is the system in which productive property is collectively owned and controlled, with no private ownership of the means of production. All production is theoretically organized for the common good.",
+    h: "Which system abolishes all private ownership in favor of collective control?"
+  },
+  {
+    yr: 1979,
+    q: "The highest legislative body in Nigeria is the",
+    o: ["National Council of States.", "Senate.", "House of Representatives.", "National Assembly."],
+    a: 3,
+    e: "The National Assembly is the highest legislative body in Nigeria.",
+    full: "Nigeria's National Assembly, comprising the Senate and the House of Representatives, is the supreme legislative body of the Federal Republic. It has the constitutional power to make laws for the peace, order, and good governance of the federation.",
+    h: "What is the collective name for both chambers of Nigeria's federal legislature?"
+  },
+  {
+    yr: 1980,
+    q: "The legislative arm of a government is always",
+    o: ["the Parliament.", "the Cabinet.", "the highest organ of government.", "the body that makes laws."],
+    a: 3,
+    e: "The legislature is always the body that makes laws.",
+    full: "By definition and constitutional design, the legislative arm of government is the body vested with the power to make laws. This is its primary and universal function across all systems of government.",
+    h: "What does the term 'legislative' itself tell you about what this arm of government does?"
+  },
+  {
+    yr: 1980,
+    q: "Which of the following governs a state in-between meetings of the legislature?",
+    o: [
+      "The Legislative Organ.",
+      "a committee of the legislature.",
+      "The Lower House.",
+      "The Executive."
+    ],
+    a: 3,
+    e: "The Executive governs continuously regardless of whether the legislature is in session.",
+    full: "While the legislature meets periodically, the executive branch of government operates continuously, governing the state and implementing policies between legislative sessions.",
+    h: "Which arm of government has continuous, day-to-day responsibility for running the state?"
+  },
+  {
+    yr: 1985,
+    q: "Which of the following is NOT a member of the Judiciary?",
+    o: ["The chief justice.", "A high court judge.", "A magistrate.", "A lawyer."],
+    a: 3,
+    e: "A lawyer is a legal practitioner but is not a member of the judiciary.",
+    full: "The judiciary comprises judicial officers — judges, magistrates, and justices — who sit and adjudicate cases. Lawyers are legal practitioners who appear before courts but are not themselves part of the judicial branch of government.",
+    h: "Who argues cases before the judiciary versus who actually makes judicial decisions?"
+  },
+  {
+    yr: 1990,
+    q: "The pronouncement of judges which have the force of law are called",
+    o: ["judgements.", "Judicial oaths.", "orders-in-council.", "judicial precedents."],
+    a: 3,
+    e: "Judicial precedents (case law) have the force of law and bind lower courts.",
+    full: "Judicial precedents — also known as case law or judge-made law — are decisions of superior courts that establish legal principles binding on lower courts when deciding similar cases. They have the force of law through the doctrine of stare decisis.",
+    h: "What legal doctrine makes past judicial decisions binding on future cases?"
+  },
+  {
+    yr: 1991,
+    q: "Which of the following undermines the independence of the judiciary?",
+    o: [
+      "The confirmation of the appointment of the chief justice by the legislature.",
+      "Wide-spread use of tribunals.",
+      "Payment of the salaries of judicial officers by government.",
+      "Making the minister of justice the attorney-general."
+    ],
+    a: 2,
+    e: "Government payment of judicial salaries creates potential dependence on the executive.",
+    full: "When the government controls the payment of judges' salaries, it creates a potential financial dependency that could compromise judicial independence. Judges who fear salary cuts or delays may be reluctant to rule against government interests.",
+    h: "How might financial control over judges affect their ability to rule impartially?"
+  },
+  {
+    yr: 1998,
+    q: "The Judiciary assigns clear meaning to the laws by",
+    o: ["interpretation.", "enforcement.", "adjudication.", "Revision."],
+    a: 0,
+    e: "The judiciary interprets laws to give them clear and applicable meaning.",
+    full: "One of the judiciary's core functions is the interpretation of laws — giving them precise meaning when applied to specific facts and circumstances. This interpretive function clarifies legislative intent and ensures consistent application of the law.",
+    h: "What does a court do to a law when it applies it to a specific case?"
+  },
+  {
+    yr: 2005,
+    q: "In judicial administration, the term bench refers to the",
+    o: ["judges.", "lawyers.", "litigants.", "registrars."],
+    a: 0,
+    e: "The 'bench' in judicial terminology refers to the judges.",
+    full: "In legal parlance, the 'bench' refers collectively to judges and the judicial office. When lawyers are said to 'approach the bench,' they are approaching the judge. The phrase 'bench and bar' refers to judges and lawyers respectively.",
+    h: "In the phrase 'bench and bar,' what does 'bench' refer to?"
+  },
+  {
+    yr: 2013,
+    q: "The appropriate bill is initiated by the",
+    o: ["executive.", "legislature.", "speaker.", "chief justice."],
+    a: 0,
+    e: "The Prerogative (appropriation) bill is initiated by the executive.",
+    full: "Appropriation bills — which authorize government spending — are initiated by the executive branch (specifically the presidency or ministry of finance) and then submitted to the legislature for approval as part of the budget process.",
+    h: "Which arm of government prepares the budget and initiates spending proposals?"
+  },
+  {
+    yr: 2023,
+    q: "The executive branch of government is headed by the",
+    o: ["speaker.", "senate president.", "chief justice.", "president."],
+    a: 3,
+    e: "The president heads the executive branch of government.",
+    full: "In a presidential system like Nigeria's, the President is the head of the executive branch of government, serving as both head of state and head of government, and responsible for the implementation of laws and policies.",
+    h: "Who is the constitutional head of the executive arm in a presidential system?"
+  },
+  {
+    yr: 2024,
+    q: "The power of Prerogative of mercy rests with the",
+    o: ["executive.", "bureaucracy.", "judiciary.", "national assembly."],
+    a: 0,
+    e: "The prerogative of mercy — pardoning convicted persons — rests with the executive.",
+    full: "The prerogative of mercy is an executive power that allows the President or Governor to grant pardons, commute sentences, or grant reprieves to convicted persons. In Nigeria, this power is exercised on the advice of the relevant Council of State.",
+    h: "Which arm of government has the constitutional power to pardon convicted criminals?"
+  },
+  {
+    yr: 1991,
+    q: "The major function of the legislative assembly is to",
+    o: [
+      "debate on committee reports.",
+      "represent the people.",
+      "make laws.",
+      "vote on bills."
+    ],
+    a: 2,
+    e: "Making laws is the primary function of the legislative assembly.",
+    full: "The legislature's fundamental purpose is lawmaking. All other activities — debating, scrutinizing the executive, and approving budgets — are secondary to and in service of this core constitutional mandate.",
+    h: "What is the single most important purpose of a legislative assembly?"
+  },
+  {
+    yr: 2013,
+    q: "The major function of the legislature is to",
+    o: ["win elections.", "elect their officials.", "organize government.", "make laws."],
+    a: 3,
+    e: "Making laws is the primary function of the legislature.",
+    full: "The primary constitutional function of any legislature is to make laws for the governance of the state. This lawmaking mandate is the core purpose that distinguishes the legislature from the executive and judiciary.",
+    h: "What function is unique to the legislature among all three arms of government?"
+  },
+  {
+    yr: 2008,
+    q: "Unicameralism is a feature of the legislature in",
+    o: ["Ghana.", "Nigeria.", "Sierra Leone.", "the United Kingdom."],
+    a: 0,
+    e: "Ghana operates a unicameral legislature — the Parliament of Ghana.",
+    full: "Ghana has a unicameral legislature, with a single chamber called the Parliament of Ghana. Nigeria, the United Kingdom, and Sierra Leone all have bicameral (two-chamber) legislatures.",
+    h: "Which of these West African countries has a single-chamber parliament?"
+  },
+  {
+    yr: 2004,
+    q: "The Nigerian Federal Legislature is",
+    o: ["Bicameral.", "Unicameral.", "Tricameral.", "Multicameral."],
+    a: 0,
+    e: "Nigeria's National Assembly is bicameral, consisting of the Senate and House of Representatives.",
+    full: "Nigeria operates a bicameral legislature called the National Assembly, which consists of two chambers: the Senate (upper house with 109 senators) and the House of Representatives (lower house with 360 members).",
+    h: "How many chambers does Nigeria's National Assembly have?"
+  },
+  {
+    yr: 1982,
+    q: "Bicameralism refers to",
+    o: [
+      "a one chamber legislature.",
+      "the process of voting in the legislature.",
+      "The House of Representatives.",
+      "a two chamber legislature."
+    ],
+    a: 3,
+    e: "Bicameralism means a legislature with two chambers.",
+    full: "Bicameralism refers to a legislative system composed of two separate chambers or houses. Typically, these consist of an upper house (Senate) and a lower house (House of Representatives or Parliament), each with distinct roles in the legislative process.",
+    h: "What does the prefix 'bi-' tell you about the number of chambers in this system?"
+  },
+  {
+    yr: 2010,
+    q: "An exception to the mandate of bicameral legislature is the",
+    o: [
+      "enactment of laws.",
+      "representation of the citizenry.",
+      "oversight of the executive.",
+      "external relations."
+    ],
+    a: 3,
+    e: "External relations (foreign affairs) are typically an executive, not a legislative, function.",
+    full: "While bicameral legislatures are mandated to make laws, represent citizens, and oversee the executive, the conduct of foreign affairs and external relations is an executive function. The legislature may ratify treaties but does not conduct foreign policy.",
+    h: "Which of these functions falls outside the core mandate of a legislature and belongs to the executive?"
+  },
+  {
+    yr: 1997,
+    q: "In 1979, the second republic in Nigeria, the branch of the legislature responsible for ratifying presidential nominees is the",
+    o: ["Senate.", "Public Service Commission.", "House of States.", "House of Representatives."],
+    a: 0,
+    e: "The Senate ratifies presidential nominees in Nigeria's presidential system.",
+    full: "Under Nigeria's 1979 constitution (Second Republic), the Senate was vested with the power to confirm presidential appointments, including ministers and other key government officials. This is analogous to the role of the US Senate.",
+    h: "In a presidential system, which legislative chamber typically confirms executive appointments?"
+  },
+  {
+    yr: 2009,
+    q: "The committee that scrutinizes budget proposals in the legislature is the",
+    o: [
+      "Rules and Business Committee.",
+      "Public Accounts Committee.",
+      "Finance Committee.",
+      "Appropriation Committee."
+    ],
+    a: 2,
+    e: "The Finance Committee scrutinizes budget proposals in the Nigerian Federal Legislature.",
+    full: "The Finance Committee of the National Assembly is responsible for scrutinizing and reviewing budget proposals and financial matters submitted to the legislature, ensuring fiscal accountability and proper appropriation of public funds.",
+    h: "Which committee's name most directly relates to money and budget scrutiny?"
+  },
+  {
+    yr: 1984,
+    q: "With whom is fascism associated?",
+    o: ["Adolf Hitler.", "Karl Marx.", "John Locke.", "Benito Mussolini."],
+    a: 3,
+    e: "Fascism is most directly associated with Benito Mussolini who coined the term.",
+    full: "Benito Mussolini is the founding figure of fascism as a formal political movement. He established the first fascist party in Italy in 1919 and the word 'fascism' itself derives from his organization. While Hitler adopted similar ideas, Mussolini is the original architect of fascism.",
+    h: "Who founded the original Fascist Party in Italy and coined the term 'fascism'?"
+  },
+  {
+    yr: 2007,
+    q: "In a feudal system, the two major classes are the",
+    o: ["masses.", "vassals.", "lords.", "elite."],
+    a: 2,
+    e: "Feudalism was structured around lords who owned land and serfs who worked it.",
+    full: "The feudal system was organized into a rigid hierarchy dominated by two main classes: the lords (landed nobility and clergy) who controlled the land, and the serfs or peasants who were bound to the land and obligated to provide labor and goods to their lords.",
+    h: "In feudalism, who holds land (the source of power) and who is bound to work it?"
+  },
+  {
+    yr: 1980,
+    q: "The second republic in Nigeria began in the year",
+    o: ["1960.", "1965.", "1979.", "1982."],
+    a: 2,
+    e: "Nigeria's Second Republic began in 1979 with the inauguration of President Shehu Shagari.",
+    full: "Nigeria's Second Republic commenced on October 1, 1979 when Shehu Shagari was inaugurated as the first executive president under the new constitution, transitioning from military rule that had lasted since 1966.",
+    h: "In which year did civilian presidential rule return to Nigeria after the first military era?"
+  },
+  {
+    yr: 2020,
+    q: "The second republic of Nigeria began in the year",
+    o: ["1960.", "1965.", "1979.", "1984."],
+    a: 2,
+    e: "Nigeria's Second Republic began in 1979.",
+    full: "The Second Republic of Nigeria was inaugurated on October 1, 1979 with the election of Shehu Shagari as executive president under a new presidential constitution modeled on the American system.",
+    h: "When did President Shagari's elected civilian government begin in Nigeria?"
+  },
+  {
+    yr: 1965,
+    q: "The second republic of Nigeria began in the year",
+    o: ["1979.", "1984.", "1990.", "1992."],
+    a: 0,
+    e: "Nigeria's Second Republic started in 1979.",
+    full: "The Second Republic of Nigeria was established in 1979 when Shehu Shagari assumed the presidency, ending thirteen years of military rule that had begun after the coup of January 1966.",
+    h: "Which year marked the transition from Nigeria's first post-independence military era to a new civilian government?"
+  },
+  {
+    yr: 2021,
+    q: "The most popular political party in Eastern Nigeria in the Second Republic was",
+    o: ["APP.", "NPP.", "NRC.", "GDM."],
+    a: 1,
+    e: "The Nigeria People's Party (NPP) was most popular in Eastern Nigeria during the Second Republic.",
+    full: "During the Second Republic (1979–1983), the Nigeria People's Party (NPP), led by Nnamdi Azikiwe, was the dominant political party in Eastern Nigeria, reflecting the Igbo political tradition and Azikiwe's historical leadership of the Igbo-speaking east.",
+    h: "Which party was associated with Nnamdi Azikiwe and had its stronghold in Eastern Nigeria?"
+  },
+  {
+    yr: 2004,
+    q: "A major issue in the second republic was",
+    o: ["A. Great Nigeria.", "C. Unity.", "B. National Party of Nigeria.", "D. diverse membership."],
+    a: 1,
+    e: "Sokoto and Bendel regions were contested areas during the Second Republic.",
+    full: "During Nigeria's Second Republic, the contest for political control of states like Sokoto and Bendel (now Edo and Delta) was a major political issue, reflecting intense interparty rivalry between the NPN, NPP, and other parties.",
+    h: "Which regions became politically contested flashpoints during the Second Republic elections?"
+  },
+  {
+    yr: 1999,
+    q: "The party that did not control any state in the Second Republic was",
+    o: ["NAP.", "PRP.", "NPP.", "NPN."],
+    a: 0,
+    e: "The Nigeria Advance Party (NAP) did not control any state in the Second Republic.",
+    full: "During the Second Republic, five main parties competed: NPN, NPP, UPN, GNPP, and PRP. The Nigeria Advance Party (NAP) did not control any state, while the other parties each had strongholds in different regions of Nigeria.",
+    h: "Which of the smaller parties in the Second Republic failed to win gubernatorial control in any state?"
+  },
+  {
+    yr: 1987,
+    q: "The first state creation in Nigeria was done in",
+    o: ["1958.", "1967.", "1979.", "1982."],
+    a: 1,
+    e: "The first major state creation exercise in Nigeria was in 1967 when 12 states were created.",
+    full: "In May 1967, General Yakubu Gowon divided Nigeria's four regions into 12 states — the first major state creation exercise in the country's history. This was partly aimed at preventing the secession of the Eastern Region and accommodating minority groups.",
+    h: "In which year did Gowon's military government dissolve Nigeria's regional structure into 12 states?"
+  },
+  {
+    yr: 1995,
+    q: "The component units of the Nigerian federation",
+    o: ["1963.", "1966.", "1976.", "1979."],
+    a: 2,
+    e: "The comprehensive state restructuring of Nigeria into 19 states occurred in 1976.",
+    full: "Under the Murtala Mohammed/Obasanjo military government, Nigeria was divided into 19 states in 1976, increasing from the 12 states created in 1967. This was another significant restructuring of the Nigerian federation.",
+    h: "Under which military government was Nigeria divided into 19 states?"
+  },
+  {
+    yr: 1990,
+    q: "In the first republic, the major problem of the Nigerian federal structure was",
+    o: ["ethnicity.", "politicization.", "lopsided size of the component units.", "rigging of elections."],
+    a: 2,
+    e: "The lopsided sizes of the three regions created structural imbalance in the First Republic.",
+    full: "A fundamental structural problem of Nigeria's First Republic was the lopsided size of its three regions. The Northern Region was larger than the Eastern and Western regions combined, giving it an inherent political dominance that bred resentment and instability.",
+    h: "What geographic-political imbalance made governance in the First Republic so contentious?"
+  },
+  {
+    yr: 1983,
+    q: "Local governments in Nigeria are created by",
+    o: [
+      "the Inland Revenue.",
+      "the Local Government Council.",
+      "the State Ministry of Finance.",
+      "Federal Military Government."
+    ],
+    a: 3,
+    e: "Local government areas are created by state governments (or federal military governments).",
+    full: "In Nigeria, local government areas are created by state governments subject to National Assembly approval. During military rule, the Federal Military Government exercised this power. Local governments are the third tier of government in Nigeria's federal structure.",
+    h: "Which level of government exercises the authority to create local government areas?"
+  },
+  {
+    yr: 2015,
+    q: "The most important challenge facing the Fourth Republic is",
+    o: ["ethnicity.", "politicization.", "lopsided size of the component units.", "rigging of elections."],
+    a: 3,
+    e: "Electoral rigging has been the most persistent and damaging challenge of Nigeria's Fourth Republic.",
+    full: "Electoral malpractice, particularly the rigging of elections, has been widely identified as the most important challenge confronting Nigeria's Fourth Republic since 1999. It undermines democratic legitimacy, fuels post-election violence, and weakens public trust in democratic institutions.",
+    h: "What electoral problem most directly threatens the credibility of Nigeria's democratic process?"
+  },
+  {
+    yr: 2009,
+    q: "Revenue allocation in Nigeria is majorly based on",
+    o: [
+      "national interest, population and landmass.",
+      "derivation, school enrolment and geographical stability.",
+      "landmass, school enrolment and geographical location.",
+      "inadequate manpower to fill vacancies."
+    ],
+    a: 0,
+    e: "Nigeria's revenue allocation is primarily based on national interest, population, and landmass.",
+    full: "Nigeria's revenue allocation formula uses several criteria including national interest (minimum responsibility of government), population, landmass/terrain, social development, and derivation. National interest, population, and landmass are among the most weighted factors.",
+    h: "Which three demographic and geographic factors most heavily influence Nigeria's revenue sharing formula?"
+  },
+  {
+    yr: 2013,
+    q: "Which of the following is NOT a pressure group in Nigeria?",
+    o: [
+      "Farmers.",
+      "The Nigerian Union of Teachers.",
+      "The Catholic Church.",
+      "Academic Staff Union of Universities (ASUU)."
+    ],
+    a: 2,
+    e: "The Catholic Church is a religious institution, not a pressure group in the political sense.",
+    full: "While the Catholic Church may occasionally take positions on public policy matters, it is primarily a religious institution rather than a pressure group. NUT, Farmers associations, and ASUU are organizations specifically constituted to influence government policy on behalf of their members.",
+    h: "Which of these institutions exists primarily for religious rather than interest-group political purposes?"
+  },
+  {
+    yr: 1983,
+    q: "The most basic property of pressure groups which differentiates them from political parties is that",
+    o: [
+      "they do not form a government.",
+      "they seek to influence public opinion.",
+      "they do not nominate candidates.",
+      "they are not interested in politics."
+    ],
+    a: 0,
+    e: "Pressure groups do not form or seek to form a government.",
+    full: "The most fundamental distinction is that pressure groups never seek to capture governmental power or form a government. They only seek to influence those who govern. Political parties, by contrast, are explicitly designed to contest elections and assume power.",
+    h: "What governmental ambition does a political party have that a pressure group deliberately avoids?"
+  },
+  {
+    yr: 2011,
+    q: "The pressure groups through which concerns are expressed are known as",
+    o: ["lobbying.", "memorandum.", "electioneering campaign.", "trade unions."],
+    a: 0,
+    e: "Lobbying is the primary method through which pressure groups express their concerns to government.",
+    full: "Lobbying is the process by which pressure groups communicate their interests and concerns to legislators and government officials, seeking to influence policy decisions in their favor. It is the most recognized method of pressure group activity.",
+    h: "What is the term for the direct communication of interests to government decision-makers?"
+  },
+  {
+    yr: 2010,
+    q: "The tactic employed by pressure groups to achieve their objectives is called",
+    o: ["lobbying.", "memorandum.", "electioneering campaign.", "anomic."],
+    a: 0,
+    e: "Lobbying is the primary tactic used by pressure groups to achieve their objectives.",
+    full: "Pressure groups primarily use lobbying as their main tactic — directly engaging with legislators, ministers, and government officials to advocate for policies favorable to their members' interests. Other tactics include strikes, protests, and media campaigns.",
+    h: "What is the name given to the direct advocacy work pressure groups do with government officials?"
+  },
+  {
+    yr: 2003,
+    q: "The pressure group that resorts to unconventional methods to achieve its objectives is called",
+    o: ["communal groups.", "trade unions.", "political groups.", "institutional groups."],
+    a: 0,
+    e: "Anomic or communal groups use unconventional and sometimes disruptive methods.",
+    full: "Anomic pressure groups are those that use unconventional methods such as riots, demonstrations, or spontaneous protests to express their grievances. Communal groups often fall into this category when they resort to disruptive means outside normal political channels.",
+    h: "Which type of group is least likely to use formal lobbying and most likely to use disruptive tactics?"
+  },
+  {
+    yr: 2005,
+    q: "The primary aim of pressure groups is to",
+    o: ["attract members.", "protect the interests of its members.", "prepare the budget.", "nominate the president."],
+    a: 1,
+    e: "Protecting and advancing the interests of members is the primary aim of pressure groups.",
+    full: "The fundamental purpose of a pressure group is to protect and promote the interests of its members by influencing government policy and public opinion. All activities of a pressure group — lobbying, strikes, campaigns — serve this core objective.",
+    h: "Who do pressure groups primarily exist to serve and protect?"
+  },
+  {
+    yr: 2012,
+    q: "The main objective of pressure groups is to",
+    o: [
+      "attract members.",
+      "nominate the president.",
+      "articulate the opinion of their members.",
+      "fight corrupt officials."
+    ],
+    a: 2,
+    e: "Articulating and representing members' opinions is the core objective of pressure groups.",
+    full: "Pressure groups exist to aggregate and articulate the interests and opinions of their members to government. Through this articulation function, they serve as intermediaries between citizens and the state, ensuring particular interests are heard in the policymaking process.",
+    h: "What communication role do pressure groups play between their members and the government?"
+  },
+  {
+    yr: 2013,
+    q: "The main objective of pressure groups is to",
+    o: [
+      "nominate the president.",
+      "protect the interest of the country against foreigners.",
+      "articulate the opinion of their members.",
+      "fight corrupt government officials."
+    ],
+    a: 2,
+    e: "Articulating member interests is the primary objective of pressure groups.",
+    full: "Pressure groups' main objective is to articulate and advance the interests of their members before government and the public. This interest articulation function is what gives pressure groups their political significance and justifies their existence.",
+    h: "Whose interests and opinions are pressure groups specifically organized to represent?"
+  },
+  {
+    yr: 2014,
+    q: "The main objective of pressure groups is to",
+    o: [
+      "win elections.",
+      "win elections for members.",
+      "attract members.",
+      "win favourable government decisions for members."
+    ],
+    a: 3,
+    e: "Winning favorable government decisions for their members is the core aim of pressure groups.",
+    full: "Pressure groups are formed to secure favorable government policies, decisions, and allocations for their members. Every activity of a pressure group — lobbying, strikes, campaigns — is ultimately aimed at achieving beneficial outcomes from the government.",
+    h: "What specific outcome from government are pressure groups ultimately trying to achieve for their members?"
+  },
+  {
+    yr: 2021,
+    q: "The membership of pressure groups is limited because they",
+    o: [
+      "pursue specific and narrow interests.",
+      "are mainly concerned with public objectives.",
+      "promote other people's interests.",
+      "are not friendly."
+    ],
+    a: 0,
+    e: "Pressure groups have limited membership because they focus on specific, narrow interests.",
+    full: "Unlike political parties which seek broad membership across society, pressure groups are limited in membership because they represent specific, narrow sectoral interests. Membership is typically restricted to those who share the particular interest the group represents.",
+    h: "Why would someone who is not a teacher join the Nigerian Union of Teachers?"
+  },
+  {
+    yr: 2019,
+    q: "The anomic pressure groups usually adopt",
+    o: ["strike.", "lobbying approach.", "petition option.", "spontaneous strategy."],
+    a: 0,
+    e: "Anomic pressure groups often resort to strikes and other disruptive spontaneous actions.",
+    full: "Anomic pressure groups are characterized by their use of unconventional, often spontaneous methods of protest such as strikes, riots, and demonstrations rather than formal lobbying channels. Their actions tend to be reactive and disruptive.",
+    h: "What disruptive industrial action is most commonly associated with anomic group tactics?"
+  },
+  {
+    yr: 2009,
+    q: "The anomic factor that hinders the operation of pressure groups in Nigeria is",
+    o: ["Dialogue.", "Leadership.", "Objectives.", "spontaneous strategy."],
+    a: 1,
+    e: "Poor leadership has been an anomic factor hindering pressure group effectiveness in Nigeria.",
+    full: "One of the major factors hindering the effective operation of pressure groups in Nigeria is poor and self-serving leadership. When pressure group leaders pursue personal interests rather than those of their members, the organization loses focus and effectiveness.",
+    h: "What internal organizational problem most undermines a pressure group's ability to achieve its objectives?"
+  },
+  {
+    yr: 2020,
+    q: "The major aim of pressure group is to",
+    o: [
+      "to educate the electorate through campaigns.",
+      "protect the interest of its members.",
+      "interpret the law D. control the executive."
+    ],
+    a: 1,
+    e: "Protecting member interests is the major aim of pressure groups.",
+    full: "The fundamental reason pressure groups exist is to protect and advance the interests of their members in relation to government policies and decisions. All pressure group activities serve this primary purpose.",
+    h: "What is the single most important purpose that motivates people to form and join pressure groups?"
+  },
+  {
+    yr: 2024,
+    q: "Pressure groups are more concerned with winning election, pressure groups are more concerned with",
+    o: ["members' welfare.", "finance.", "aggregate interests.", "contest elections."],
+    a: 0,
+    e: "Pressure groups are primarily concerned with the welfare of their members.",
+    full: "While political parties are concerned with winning elections, pressure groups are more concerned with the welfare and interests of their members. They seek to ensure that government policies are favorable to their members rather than seeking governmental power themselves.",
+    h: "What do pressure groups prioritize if not winning elections?"
+  },
+  {
+    yr: 2001,
+    q: "An interest group that admits members and conducts its affairs according to stated rules is",
+    o: [
+      "further the interests of members.",
+      "lobby the government.",
+      "specifically support the government.",
+      "achieve goals affecting other associations."
+    ],
+    a: 0,
+    e: "An associational interest group formally admits members and operates by stated rules to advance member interests.",
+    full: "An associational interest group is a formally organized pressure group with a constitution, stated rules, defined membership criteria, and structures. It focuses specifically on furthering the interests of its members through organized, institutionalized means.",
+    h: "What term describes a formally organized interest group with membership rules and a constitution?"
+  },
+  {
+    yr: 2009,
+    q: "Nations join international organizations so that they could",
+    o: ["advance their interests.", "get foreign aid.", "form alliances.", "become more developed."],
+    a: 0,
+    e: "Nations join international organizations primarily to advance their national interests.",
+    full: "The primary motivation for nations to join international organizations is to advance their national interests — whether economic, security, or political. Membership provides platforms for cooperation, influence, and the achievement of goals that cannot be attained unilaterally.",
+    h: "What fundamental principle of foreign policy explains why nations join any international body?"
+  },
+  {
+    yr: 2012,
+    q: "By Africa as the Centre Piece of Nigeria's foreign policy we mean",
+    o: [
+      "that Nigeria will financially support other Africa states.",
+      "that Nigeria is ready to defend other African states.",
+      "that Africa other African states legislature.",
+      "that Nigeria will only trade with African countries."
+    ],
+    a: 0,
+    e: "Nigeria's Africa-centred policy includes financial support for other African nations.",
+    full: "Declaring Africa as the centrepiece of her foreign policy means Nigeria places the welfare, liberation, and development of Africa at the heart of her international engagements. This has included financial contributions to liberation movements, peacekeeping, and development assistance across the continent.",
+    h: "In practical terms, what has Nigeria's Africa-centred foreign policy involved doing for other African states?"
+  },
+  {
+    yr: 2014,
+    q: "The fundamental objective guiding a nation's foreign policy is",
+    o: ["national interest.", "foreign interest.", "African interest.", "colonial interest."],
+    a: 0,
+    e: "National interest is the fundamental objective guiding every nation's foreign policy.",
+    full: "National interest is the ultimate objective and primary determinant of a state's foreign policy. Every foreign policy decision — from forming alliances to joining international organizations — is ultimately driven by what best serves the state's national interest.",
+    h: "What concept, placed before the word 'interest', captures what any government primarily serves?"
+  },
+  {
+    yr: 2023,
+    q: "One of the most commonly used tool for foreign policy is",
+    o: ["embassy.", "foreign aid.", "espionage.", "physical force."],
+    a: 0,
+    e: "Embassies are the primary institutional tool for conducting foreign policy.",
+    full: "Embassies are the most commonly used instruments of foreign policy, serving as the official representative offices of a state in foreign countries. They facilitate diplomacy, protect citizens abroad, gather intelligence, and promote bilateral relations.",
+    h: "What institution does a country establish in another country to conduct its day-to-day foreign relations?"
+  },
+  {
+    yr: 2021,
+    q: "Nigeria chose Africa as the centre piece of her foreign policy because",
+    o: [
+      "she wants to promote friendly relations among independent African states.",
+      "she wants to sustain dominance over other African states.",
+      "her economy cannot grow without the support of African states.",
+      "she wants to promote sports and cultural relations among African states."
+    ],
+    a: 0,
+    e: "Nigeria's Afrocentric policy is driven by the desire to promote unity and friendly relations among African states.",
+    full: "Nigeria's choice of Africa as the centrepiece of her foreign policy is motivated by pan-African solidarity — the desire to promote cooperation, unity, and friendly relations among independent African states in the interest of collective African development and dignity.",
+    h: "What pan-African ideal best explains Nigeria's commitment to prioritizing Africa in her foreign policy?"
+  },
+  {
+    yr: 1998,
+    q: "An indication that Africa is still the centre-piece of Nigeria's foreign policy",
+    o: [
+      "Nigerian Institute of Foreign Affairs.",
+      "Ministry of Foreign Affairs.",
+      "Nigeria Institute of Integration and Cooperation in Africa.",
+      "Ministry of International Affairs."
+    ],
+    a: 2,
+    e: "The Nigeria Institute of Integration and Cooperation in Africa demonstrates Nigeria's Afrocentric policy commitment.",
+    full: "The Nigeria Institute of Integration and Cooperation in Africa was established as an institutional expression of Nigeria's commitment to African integration and cooperation, serving as evidence that Africa remains central to Nigeria's foreign policy framework.",
+    h: "Which Nigerian institution's name most explicitly reflects a commitment to African cooperation?"
+  },
+  {
+    yr: 2019,
+    q: "One of the objectives of Nigerian foreign policy is",
+    o: [
+      "defending Nigeria's friends in Africa globally.",
+      "promoting political instability globally.",
+      "approving the annual budget of other African states.",
+      "promoting world peace with justice."
+    ],
+    a: 3,
+    e: "Promoting world peace with justice is a stated objective of Nigeria's foreign policy.",
+    full: "Among the major objectives of Nigeria's foreign policy is the promotion of international peace and security with justice. This is reflected in Nigeria's active participation in UN peacekeeping missions and ECOWAS peace operations across Africa.",
+    h: "What universal value, beyond just African affairs, does Nigeria's foreign policy also seek to advance globally?"
+  },
+  {
+    yr: 2021,
+    q: "Africa as the centre piece of Nigeria's foreign policy simply means that Nigeria's foreign policy will",
+    o: [
+      "involve other African states in the ideological rivalries between the socialist and capitalist states.",
+      "foreign policy will protect the scientific and technological interests of African states only.",
+      "cementing Nigeria's foreign relations.",
+      "promoting world peace."
+    ],
+    a: 3,
+    e: "Nigeria's Africa-centred policy aims to promote peace and development, not ideological rivalry.",
+    full: "Making Africa the centrepiece of Nigeria's foreign policy means channeling diplomatic energy toward the promotion of peace, unity, development, and the interests of African peoples — not drawing African states into Cold War ideological conflicts.",
+    h: "What positive goal for Africa does Nigeria's Afrocentric foreign policy prioritize?"
+  },
+  {
+    yr: 2024,
+    q: "The fundamental objective guiding a nation's foreign policy is",
+    o: ["national interest.", "foreign interest.", "African interest.", "colonial interest."],
+    a: 0,
+    e: "National interest is the bedrock objective of every nation's foreign policy.",
+    full: "National interest — the aggregate of a nation's goals and ambitions — is the fundamental and universal objective that drives foreign policy. All diplomatic, economic, and security decisions in the international arena are ultimately grounded in the pursuit of national interest.",
+    h: "Before the word 'interest,' what adjective captures what a government is constitutionally meant to serve?"
+  },
+  {
+    yr: 1984,
+    q: "One of the features of capitalism sector is",
+    o: [
+      "that the major sectors of the economy are publicly owned.",
+      "the predominance of the public sector in the economy.",
+      "the elimination of all forms of competition.",
+      "privately owned."
+    ],
+    a: 3,
+    e: "Private ownership of the means of production is a defining feature of capitalism.",
+    full: "Capitalism is characterized by the private ownership of the means of production — factories, land, and capital. The private sector dominates the economy, with market competition and the profit motive driving economic activity.",
+    h: "Who owns the productive resources in a capitalist economy — the state or private individuals?"
+  },
+  {
+    yr: 1997,
+    q: "In 1975/76 Nigeria's foreign policy lacked real substance because of her",
+    o: [
+      "Afrocentrism.",
+      "close ties with Britain.",
+      "partnership with Asian countries.",
+      "poor economic policy."
+    ],
+    a: 1,
+    e: "Nigeria's close ties with Britain in the 1960s undermined the substance of her non-aligned and Afrocentric foreign policy.",
+    full: "In the 1960s, Nigeria's non-alignment policy lacked real substance because of her strong economic and political ties with Britain, her former colonial power. These ties constrained Nigeria's ability to act independently in international affairs.",
+    h: "Which country's lingering influence over Nigeria most undermined her declared independent foreign policy?"
+  },
+  {
+    yr: 1994,
+    q: "Nigeria's foreign policy during the civil war expressed moral support for",
+    o: ["France.", "Britain.", "the United States.", "Great Britain."],
+    a: 1,
+    e: "Britain provided material support to the Nigerian federal government during the civil war.",
+    full: "During the Nigerian Civil War (1967–1970), Britain provided military and diplomatic support to the Nigerian federal government against Biafra. This support was significant in the federal government's eventual victory.",
+    h: "Which major Western power supplied arms to the Nigerian federal government during the Biafra war?"
+  },
+  {
+    yr: 2001,
+    q: "Which of the following principles does NOT govern Nigeria's foreign policy?",
+    o: ["A. National Interests.", "B. Non-alignment.", "C. African Interests.", "D. International Interests."],
+    a: 3,
+    e: "International interest as a generic concept is not a stated principle of Nigeria's foreign policy.",
+    full: "Nigeria's foreign policy is governed by principles including national interest, non-alignment, African centrepiece, respect for sovereignty, and peaceful resolution of conflicts. 'International interests' as a generic category is not among the stated governing principles.",
+    h: "Which of these options is too vague and general to be a specific principle of Nigeria's foreign policy?"
+  },
+  {
+    yr: 2014,
+    q: "The Nigeria-Cameroun crisis over the Bakassi Peninsula occurred owing to the interpretation of the treaty of 1913 and the",
+    o: ["Maroua Accord.", "Treaty of Lagos.", "ECOWAS Treaty.", "Non-Proliferation Treaty."],
+    a: 0,
+    e: "The Bakassi crisis involved disputed interpretation of the 1913 colonial treaty and the Maroua Accord.",
+    full: "The Bakassi Peninsula dispute between Nigeria and Cameroon arose from competing claims based on the Anglo-German Agreement of 1906 and the subsequent 1913 treaty, as well as the Maroua Declaration of 1975 between Gowon and Ahidjo. The ICJ ultimately ruled in Cameroon's favour in 2002.",
+    h: "Which bilateral 1975 agreement between Nigerian and Cameroonian leaders was central to the Bakassi dispute?"
+  },
+  {
+    yr: 2000,
+    q: "Nigeria's liberal posture to the communist bloc was a result of",
+    o: ["the Murtala Mohammed regime.", "the Soviet Union.", "the Babangida Regime.", "the Shagari Regime."],
+    a: 0,
+    e: "The Murtala Mohammed regime shifted Nigeria's posture toward a more balanced engagement with the communist bloc.",
+    full: "Under the Murtala Mohammed/Obasanjo administration (1975–1979), Nigeria took a more assertive and independent foreign policy stance, including recognizing the MPLA government in Angola against US wishes and adopting a more balanced approach toward communist bloc countries.",
+    h: "Which military regime is associated with Nigeria's most assertive and independent foreign policy stance?"
+  },
+  {
+    yr: 2003,
+    q: "Nigeria's South-South cooperation",
+    o: [
+      "cultural affinities.",
+      "economic considerations.",
+      "expectations of political support from outside Africa.",
+      "perceived political communities outside Africa."
+    ],
+    a: 0,
+    e: "Nigeria's South-South relations are built on shared cultural affinities with other developing nations.",
+    full: "Nigeria's South-South cooperation with other developing countries in Africa, Asia, and Latin America is grounded in shared historical experiences of colonialism, cultural affinities, and common development challenges rather than ideological alignment.",
+    h: "What shared historical and cultural experiences bond Nigeria to other countries in the Global South?"
+  },
+  {
+    yr: 2000,
+    q: "Nigeria's foreign policy is essentially based and centred on issues and affairs affecting the",
+    o: ["UN.", "Commonwealth.", "OAU.", "continent of Africa."],
+    a: 3,
+    e: "Nigeria's foreign policy is centred on African affairs.",
+    full: "Nigeria's Afrocentric foreign policy places the affairs and interests of Africa at the centre of its international engagements. All of Nigeria's major foreign policy activities — peacekeeping, liberation support, diplomacy — have Africa as their primary focus.",
+    h: "On which continent does Nigeria's foreign policy concentrate its primary attention?"
+  },
+  {
+    yr: 2013,
+    q: "Nigeria's opposition to apartheid was demonstrated in",
+    o: ["South Africa.", "Tanzania.", "Zambia.", "Somalia."],
+    a: 0,
+    e: "Nigeria's opposition to apartheid was directed specifically at South Africa.",
+    full: "Nigeria was one of the most vocal and active opponents of the apartheid system in South Africa, providing financial support to the ANC, lobbying for international sanctions, and boycotting events (like the 1976 Olympics) that included apartheid South Africa.",
+    h: "In which country was the apartheid system practiced that Nigeria so strongly opposed?"
+  },
+  {
+    yr: 2001,
+    q: "Which of the following does NOT govern Nigeria's foreign policy?",
+    o: [
+      "African Interests.",
+      "Non-alignment.",
+      "National Interests.",
+      "parliamentary system."
+    ],
+    a: 3,
+    e: "Parliamentary system of government does not govern foreign policy — it is a domestic governmental structure.",
+    full: "Nigeria's foreign policy is governed by principles such as national interest, non-alignment, respect for sovereignty, peaceful coexistence, and placing Africa as its centrepiece. The parliamentary system is a form of domestic government organization, not a foreign policy principle.",
+    h: "Which option describes a system of internal government rather than a principle of international relations?"
+  },
+  {
+    yr: 2021,
+    q: "The first state creation was done in Nigeria in the year",
+    o: ["1958.", "1967.", "1979.", "1982."],
+    a: 1,
+    e: "The first state creation in Nigeria occurred in 1967 under Gowon's government.",
+    full: "In May 1967, General Yakubu Gowon created 12 states from Nigeria's existing four regions, marking the first exercise in state creation in Nigeria. This was done partly to forestall the secession of Eastern Nigeria.",
+    h: "In which year did Nigeria transition from a regional to a state-based federal structure?"
+  },
+  {
+    yr: 2021,
+    q: "The first state creation was done in Nigeria in the year",
+    o: ["36 states.", "20 states.", "19 states.", "21 states."],
+    a: 1,
+    e: "The 1999 constitution recognized 36 states in Nigeria.",
+    full: "Nigeria currently has 36 states and the Federal Capital Territory of Abuja. This structure has been in place since 1996 when Abacha created 6 additional states from the existing 30, bringing the total to 36.",
+    h: "How many states does Nigeria currently have under the 1999 constitution?"
+  },
+  {
+    yr: 1978,
+    q: "The new Local Government Reforms in Nigeria",
+    o: [
+      "directly elected.",
+      "indirectly elected.",
+      "appointed by the Head of State.",
+      "appointed by the Governor."
+    ],
+    a: 0,
+    e: "The 1976 reforms introduced direct elections for local government councils.",
+    full: "A key feature of the 1976 local government reforms under the Murtala-Obasanjo regime was the introduction of direct elections for local government councils, democratizing grassroots governance for the first time in a systematic way.",
+    h: "What democratic mechanism did the 1976 reforms introduce for selecting local government councillors?"
+  },
+  {
+    yr: 1980,
+    q: "The 1976 local government reforms in Nigeria provide for a term of office of",
+    o: ["4-year.", "5-year.", "2-year.", "3-year."],
+    a: 3,
+    e: "The 1976 reforms provided for a 3-year term of office for local government councils.",
+    full: "Under the 1976 Local Government Reforms, elected local government councils were to serve a term of three years. This was designed to ensure regular democratic renewal at the grassroots level while allowing sufficient time for councils to implement their programs.",
+    h: "How long was the term of office prescribed for local government councillors by the 1976 reforms?"
+  },
+  {
+    yr: 2019,
+    q: "Which of the following is not a pressure group in Nigeria?",
+    o: [
+      "Nigeria Military.",
+      "National Union of Nigeria.",
+      "The Nigeria Union of Teachers.",
+      "Academic Staff Union of Universities."
+    ],
+    a: 0,
+    e: "The Nigeria Military is not a pressure group — it is an instrument of state power.",
+    full: "The Nigerian military is an arm of the executive branch of government and an instrument of state power, not a pressure group. NUT, NANS, and ASUU are civil society organizations that seek to influence government policy through advocacy and collective action.",
+    h: "Which of these organizations is part of government itself rather than a group trying to influence government?"
+  },
+  {
+    yr: 2019,
+    q: "The concept of Africa as the centre-piece of Nigeria's foreign policy implies that Nigeria A. should",
+    o: [
+      "should interfere in the internal affairs of other African states.",
+      "support secessionist movements in Africa.",
+      "lay more emphasis on African issues.",
+      "participate in any peace-keeping operation in Africa."
+    ],
+    a: 2,
+    e: "Africa as the centrepiece means Nigeria gives priority emphasis to African issues in her foreign policy.",
+    full: "The concept of Africa as the centrepiece of Nigeria's foreign policy means that African affairs receive the highest priority in Nigeria's international engagements. Nigeria is expected to lead diplomatic efforts, provide resources, and champion African causes on the world stage.",
+    h: "If Africa is the 'centrepiece,' what does that imply about its position relative to other foreign policy concerns?"
+  },
     {
       yr: 2023,
       q: "A state that is governed by a single central authority is known as a:",
