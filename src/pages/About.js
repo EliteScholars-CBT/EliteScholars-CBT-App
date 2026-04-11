@@ -102,7 +102,7 @@ export default function About({ onBack }) {
 
       {/* Footer */}
       <div className="about-footer">
-        <p>© 2024 EliteScholars CBT. All rights reserved.</p>
+        <p>© 2026 EliteScholars CBT. All rights reserved.</p>
         <p className="about-version">Version 2.0.0</p>
       </div>
     </div>
