@@ -37,21 +37,16 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
   // Reset visual states when moving to next question
-  // hidden and showHint should reset for each new question
   useEffect(() => {
-    // Reset selection and answer state
     setSel(-1);
     setDone(false);
     setAnsAnim('');
-    // IMPORTANT: Reset hidden options and hint for the new question
     setHid([]);
     setSHint(false);
-    // DO NOT reset usedF or usedH - they persist through the round
   }, [qi]);
 
   // Reset lifelines ONLY when a new ROUND starts
   useEffect(() => {
-    console.log('New round started! Resetting lifelines for round:', roundNum + 1);
     setUF(false);
     setUH(false);
   }, [roundNum]);
@@ -137,24 +132,17 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   };
 
   const doFifty = () => { 
-    console.log('50/50 clicked - usedF:', usedF, 'done:', done);
-    // Can only use ONCE per round
     if (usedF || done) return; 
     setUF(true); 
     SFX.select(); 
-    // Get two wrong answers to hide (excluding the correct answer)
     const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
     const shuffledWrong = sfl(wrongOptions);
     const toHide = shuffledWrong.slice(0, 2);
-    console.log('Hiding options:', toHide);
     setHid(toHide); 
-    // If the currently selected option is being hidden, clear selection
     if (toHide.includes(sel)) setSel(-1); 
   };
   
   const doHint = () => { 
-    console.log('Hint clicked - usedH:', usedH, 'done:', done);
-    // Can only use ONCE per round
     if (usedH || done) return; 
     setUH(true); 
     setSHint(true); 
@@ -295,14 +283,14 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
             disabled={usedF || done} 
             className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}
           >
-            ⚖️ 50/50 {usedF && '(Used this round)'}
+            ⚖️ 50/50
           </button>
           <button 
             onClick={doHint} 
             disabled={usedH || done} 
             className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}
           >
-            💡 Hint {usedH && '(Used this round)'}
+            💡 Hint
           </button>
           <button onClick={toggleVoice} className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}>
             {speaking ? '🔊 Stop' : voiceEnabled ? '🔊 On' : '🔊 Off'}
@@ -368,4 +356,4 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       )}
     </div>
   );
-                                 }
+}
