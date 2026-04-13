@@ -3022,3 +3022,470 @@ body.dark-mode .flashcards-card-term {
 body.dark-mode .flashcards-card-label {
   color: var(--gold);
 }
+/* ============================================================================
+   EXAM TYPE SELECT PAGE
+   ============================================================================ */
+.exam-type-page {
+  background: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.exam-type-header-section {
+  background: linear-gradient(135deg, #280050, #4B0082);
+  padding: 30px 20px 40px;
+  position: relative;
+  text-align: center;
+}
+
+.exam-type-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.exam-type-back-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-2px);
+}
+
+.exam-type-header-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.exam-type-icon {
+  font-size: 64px;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite;
+}
+
+.exam-type-header-content h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.exam-type-header-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.exam-type-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.exam-type-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 30px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.exam-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.exam-type-card-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+
+.exam-type-card-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.jamb-card .exam-type-card-title {
+  color: var(--gold);
+}
+
+.postutme-card .exam-type-card-title {
+  color: var(--purple);
+}
+
+.exam-type-card-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.exam-type-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.exam-type-card-features span {
+  background: var(--border-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.exam-type-card-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.jamb-card .exam-type-card-badge,
+.postutme-card .exam-type-card-badge {
+  background: var(--gold);
+  color: #1a0030;
+}
+
+/* ============================================================================
+   UNIVERSITY SELECT PAGE
+   ============================================================================ */
+.university-select-page {
+  background: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.university-header-section {
+  background: linear-gradient(135deg, #280050, #4B0082);
+  padding: 30px 20px 40px;
+  position: relative;
+  text-align: center;
+}
+
+.university-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.university-back-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-2px);
+}
+
+.university-header-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.university-icon {
+  font-size: 64px;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite;
+}
+
+.university-header-content h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.university-header-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.university-grid-container {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.university-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.university-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.university-card.available {
+  cursor: pointer;
+}
+
+.university-card.available:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--gold);
+}
+
+.university-card.coming-soon {
+  opacity: 0.6;
+  filter: grayscale(0.2);
+}
+
+.university-card-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.university-card-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.university-card-fullname {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.university-card-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.university-card-badge.available {
+  background: var(--gold);
+  color: #1a0030;
+}
+
+.university-card-badge.coming {
+  background: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.university-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.university-footer p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Mode Select Page Styles */
+.mode-select-page {
+  background: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.mode-select-header-section {
+  background: linear-gradient(135deg, #280050, #4B0082);
+  padding: 30px 20px 40px;
+  position: relative;
+  text-align: center;
+}
+
+.mode-select-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.mode-select-back-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-2px);
+}
+
+.mode-select-header-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.mode-select-icon {
+  font-size: 64px;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite;
+}
+
+.mode-select-header-content h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.mode-select-header-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mode-select-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mode-select-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 30px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-select-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.mode-select-card-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+
+.mode-select-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cbt-mode .mode-select-card-title {
+  color: var(--gold);
+}
+
+.flashcard-mode .mode-select-card-title {
+  color: var(--purple);
+}
+
+.mode-select-card-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.mode-select-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mode-select-card-features span {
+  background: var(--border-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mode-select-card-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--gold);
+  color: #1a0030;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .university-card,
+body.dark-mode .exam-type-card,
+body.dark-mode .mode-select-card {
+  background: var(--card-bg);
+}
+
+@media (max-width: 640px) {
+  .exam-type-container,
+  .mode-select-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .exam-type-card,
+  .mode-select-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .university-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exam-type-header-content h1,
+  .university-header-content h1,
+  .mode-select-header-content h1 {
+    font-size: 24px;
+  }
+  
+  .exam-type-icon,
+  .university-icon,
+  .mode-select-icon {
+    font-size: 48px;
+  }
+}
