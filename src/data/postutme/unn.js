@@ -1,5 +1,6 @@
 // UNN.js - University of Nigeria, Nsukka
-// Post UTME Questions 2005-2007
+// Post UTME Questions 2005-2008
+// Subjects: Mathematics, English, Government, CRS, Literature, Economics
 
 export const UNN = {
   mathematics: [
@@ -1234,6 +1235,446 @@ export const UNN = {
       e: "A subplot is a secondary plot in a narrative.",
       full: "A subplot is a secondary strand of the plot that runs parallel to the main plot, often involving minor characters. Option D is correct.",
       h: "Subplot = secondary plot"
+    },
+    // 2007/2008 Literature Questions
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "White ball of fire tore through dome of the night. It exploded into the branches of a colossal tree of fire - whose stem instantly leap towards the earth. The passage directs its appeal primarily to the sense of",
+      o: ["hearing", "sight", "touch", "smell"],
+      a: 1,
+      e: "The passage appeals primarily to the sense of sight (visual imagery).",
+      full: "The correct answer is 'sight'. The passage uses vivid visual imagery: 'white ball of fire', 'dome of the night', 'colossal tree of fire', 'leap towards the earth'. These descriptions create a mental picture that appeals to the reader's sense of sight. There is no emphasis on sound (hearing), touch, or smell in this passage. Therefore, sight is the correct answer.",
+      h: "Visual imagery = descriptions that create pictures in the mind (sight)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "What happens to a dream deferred? Does it dry up Like a raisin in the sun Or fester like a sore in the sun? And then run? In the above lines, the poet achieves special effect by use of",
+      o: ["transferred epithet", "synecdoche", "alliteration", "simile"],
+      a: 3,
+      e: "The poet uses similes comparing a deferred dream to a raisin and a sore.",
+      full: "The correct answer is 'simile'. A simile is a figure of speech that compares two different things using 'like' or 'as'. In these lines (from Langston Hughes' 'Harlem'), the poet asks: 'Does it dry up like a raisin in the sun? Or fester like a sore in the sun?' Both comparisons use 'like', making them similes. Transferred epithet (option A) moves an adjective from one noun to another. Synecdoche (option B) uses a part to represent the whole. Alliteration (option C) repeats initial consonant sounds. Therefore, simile is correct.",
+      h: "Simile = comparison using 'like' or 'as' (e.g., 'dry up LIKE a raisin')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "She said you just had to make an emotional commitment in marriage. It was like skiing, you couldn't see in advance what would happen but you had to let go. Maybe that was why I failed, because I didn't know what I had to let go of. For me it hadn't been like skiing, it was more like jumping off a cliff. That was the feeling I had all the time I was married, in the air, going down, waiting for the smash at the bottom. The passage indicates that the author's experience in marriage was",
+      o: [
+        "exhilarating like skiing",
+        "steeped in boredom and monotony",
+        "full of fear of the unknown",
+        "fraught with grief and despair"
+      ],
+      a: 2,
+      e: "The author's marriage felt like 'jumping off a cliff' - waiting for disaster, full of fear of the unknown.",
+      full: "The correct answer is 'full of fear of the unknown'. The author contrasts the advice that marriage is 'like skiing' (requiring letting go despite uncertainty) with her own experience: 'it was more like jumping off a cliff... waiting for the smash at the bottom.' This imagery conveys constant fear, anticipation of disaster, and the terror of not knowing when the crash will come. Option A (exhilarating) is the opposite of her experience. Option B (boredom) is not indicated. Option D (grief and despair) is close but 'fear of the unknown' more precisely captures the 'waiting for the smash' feeling.",
+      h: "Jumping off a cliff = fear, anticipation of disaster, uncertainty."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "___ her vesper done of all its wreathed peals her hair she frees. Unclasps her warmed jewels one by one; loosens her fragrant bodice; by degrees rich attire creeps rustling to her knees. The passage gives ample evidence of the poet's",
+      o: [
+        "sensuous description",
+        "meticulous attention to matters concerning women",
+        "mastery of the Spenserian stanza",
+        "sensual feelings and emotions"
+      ],
+      a: 0,
+      e: "The passage is rich in sensuous description (appealing to the senses).",
+      full: "The correct answer is 'sensuous description'. Sensuous description appeals to the physical senses - sight, touch, smell. The passage describes: 'warmed jewels' (touch), 'fragrant bodice' (smell), 'rich attire creeps rustling' (sound and movement), 'hair she frees' (sight). These vivid sensory details create a luxurious, tactile experience. Option B (meticulous attention to women) is too narrow. Option C (Spenserian stanza) refers to a specific poetic form not evident here. Option D (sensual feelings) relates to the poet's emotions, not the descriptive quality. Therefore, 'sensuous description' is correct.",
+      h: "Sensuous description = appeals to physical senses (touch, smell, sight, sound)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "For I have known them all already, known them all. Have known the evenings, mornings, afternoons, I have measured out my life with coffee spoons. The tone in these lines suggests",
+      o: [
+        "the author's desire to accomplish more in life",
+        "anxiety and tension",
+        "tediousness and boredom",
+        "anger and exasperation"
+      ],
+      a: 2,
+      e: "Measuring life with coffee spoons suggests a mundane, repetitive, boring existence.",
+      full: "The correct answer is 'tediousness and boredom'. These lines from T.S. Eliot's 'The Love Song of J. Alfred Prufrock' convey a sense of monotony and meaninglessness. 'Measuring out life with coffee spoons' suggests a life reduced to trivial, repetitive daily rituals - each day blending into the next with no significance. The repetition of 'known them all' emphasizes weariness. Option A (desire to accomplish more) is not evident - he seems resigned, not aspirational. Option B (anxiety/tension) is present elsewhere in the poem but not the dominant tone here. Option D (anger) is not expressed. Therefore, tediousness and boredom is correct.",
+      h: "Measuring life with coffee spoons = mundane, repetitive, boring existence."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Olu hissed, slammed the door and dashed out screaming. The dominant figure of speech in the above sentence is",
+      o: ["zeugma", "oxymoron", "hyperbole", "onomatopoeia"],
+      a: 3,
+      e: "The words 'hissed' and 'screaming' imitate the sounds they describe (onomatopoeia).",
+      full: "The correct answer is 'onomatopoeia'. Onomatopoeia is the use of words that imitate the sounds they describe. 'Hissed' imitates the sound of a sharp exhalation or snake sound. 'Screaming' imitates the sound of a loud, high-pitched cry. These sound-imitating words dominate the sentence. Zeugma (option A) uses one word to modify two others in different ways. Oxymoron (option B) combines contradictory terms. Hyperbole (option C) is exaggeration. Therefore, onomatopoeia is correct.",
+      h: "Onomatopoeia = words that sound like what they describe (hiss, scream, bang, buzz)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "A dungeon horrible, on all sides round. As one great furnace flamed, and yet from those flames, no light, but rather darkness visible. The phrase 'darkness visible' in the above lines is an example of",
+      o: ["metaphor", "hyperbole", "oxymoron", "litotes"],
+      a: 2,
+      e: "'Darkness visible' combines two contradictory terms (darkness cannot be seen), making an oxymoron.",
+      full: "The correct answer is 'oxymoron'. An oxymoron is a figure of speech that combines two contradictory or opposite terms. 'Darkness' (absence of light) and 'visible' (able to be seen) are contradictory - normally darkness is NOT visible. The phrase creates a striking paradox. Metaphor (option A) is a direct comparison without 'like' or 'as'. Hyperbole (option B) is exaggeration. Litotes (option D) uses understatement by negating the opposite. Therefore, 'oxymoron' is correct.",
+      h: "Oxymoron = contradictory terms combined (e.g., 'darkness visible', 'deafening silence')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Was it for this you took such constant care. The bodkin, comb and essence to prepare? For this torturing iron wreathed round? The dominant figure of speech in above passage is",
+      o: ["synecdoche", "rhetorical question", "parody", "apostrophe"],
+      a: 1,
+      e: "The speaker asks questions that expect no answer - rhetorical questions.",
+      full: "The correct answer is 'rhetorical question'. A rhetorical question is asked not to get an answer but to make a point or create emphasis. The speaker asks 'Was it for this you took such constant care?' and 'For this torturing iron wreathed round?' - these questions are not meant to be answered but to express dismay and frustration. Synecdoche (option A) uses a part for the whole. Parody (option C) imitates another work for comic effect. Apostrophe (option D) addresses an absent person or abstract idea. Therefore, rhetorical question is correct.",
+      h: "Rhetorical question = question asked for effect, not expecting an answer."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "The early morning smoke had now gone off the eyes of the day. Trees and houses were still wet from last night's rain, but a cool breeze caressed the world like a gentle hand. The dominant literary device in this passage is",
+      o: ["metaphor", "oxymoron", "synecdoche", "personification"],
+      a: 3,
+      e: "The breeze 'caressed the world like a gentle hand' - giving human qualities to the breeze.",
+      full: "The correct answer is 'personification'. Personification gives human characteristics or actions to non-human things. In this passage, the 'cool breeze caressed the world like a gentle hand' - 'caressed' is a human action (affectionate touching). Also, 'the eyes of the day' personifies the day as having eyes. Metaphor (option A) is direct comparison without 'like'/'as' - present but not dominant. Oxymoron (option B) is contradictory terms. Synecdoche (option C) is part for whole. Personification is the dominant device.",
+      h: "Personification = giving human qualities to non-human things (breeze 'caresses')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Have you got hands today? No, I am working alone. My helpers are on strike. Would you like to engage me? My fees are reasonable. No thank you. In this brief dialogue, the first line contains the device known as",
+      o: ["synecdoche", "paradox", "oxymoron", "hyperbole"],
+      a: 0,
+      e: "'Hands' is used to represent workers (part for whole - synecdoche).",
+      full: "The correct answer is 'synecdoche'. Synecdoche is a figure of speech where a part of something represents the whole, or the whole represents a part. Here, 'hands' (part of the body) is used to mean 'workers' (the whole person). The speaker asks 'Have you got hands today?' meaning 'Do you have workers/helpers today?' Paradox (option B) is a seemingly contradictory statement. Oxymoron (option C) combines contradictory terms. Hyperbole (option D) is exaggeration. Therefore, synecdoche is correct.",
+      h: "Synecdoche = part for whole (e.g., 'hands' meaning workers, 'wheels' meaning car)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "An ode is best described as",
+      o: [
+        "story told in poetic form",
+        "poetic composition of fourteen lines",
+        "narration about nature and natural objects",
+        "lyrical poem addressed to some person or thing"
+      ],
+      a: 3,
+      e: "An ode is a lyrical poem that addresses or celebrates a person, thing, or abstract idea.",
+      full: "The correct answer is 'lyrical poem addressed to some person or thing'. An ode is a formal, often ceremonious lyric poem that addresses and often praises a person, place, thing, or idea. Famous examples include Keats' 'Ode to a Nightingale' and 'Ode on a Grecian Urn'. Option A describes narrative poetry. Option B describes a sonnet (14 lines). Option C is too narrow. Therefore, option D is correct.",
+      h: "Ode = lyric poem addressing/praising a specific subject."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Alliteration is",
+      o: [
+        "the use of figures of speech to achieve poetic effect",
+        "the repetition of two or more words having the same initial consonant sound",
+        "usually employed to set the scene for a conflict"
+      ],
+      a: 1,
+      e: "Alliteration is the repetition of initial consonant sounds in nearby words.",
+      full: "The correct answer is 'the repetition of two or more words having the same initial consonant sound'. Alliteration is a sound device where the same consonant sound appears at the beginning of stressed syllables in nearby words (e.g., 'Peter Piper picked', 'wild and woolly'). Option A is too broad (describes figurative language generally). Option C is not accurate - alliteration has many uses beyond setting conflict scenes. Therefore, option B is correct.",
+      h: "Alliteration = same starting consonant sound repeated (e.g., 'big blue balloon')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "An allegory is a story",
+      o: [
+        "in which people or things or events have another meaning",
+        "which aims at teaching a moral lesson",
+        "in which allegations are made about the characters",
+        "told in verse"
+      ],
+      a: 0,
+      e: "An allegory uses symbolic characters/events to represent abstract ideas or hidden meanings.",
+      full: "The correct answer is 'in which people or things or events have another meaning'. An allegory is a narrative in which characters, settings, and events symbolize abstract concepts or moral qualities, creating a second hidden meaning beneath the literal story. Examples include Orwell's 'Animal Farm' (representing the Russian Revolution) and Bunyan's 'The Pilgrim's Progress'. Option B (teaching moral lesson) is often a purpose of allegory but not the definition. Option C confuses 'allegory' with 'allegation'. Option D is incorrect - allegories can be prose or verse. Therefore, option A is correct.",
+      h: "Allegory = story with hidden symbolic meaning (literal + figurative levels)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "A couplet is a",
+      o: [
+        "succession of three rhyming lines",
+        "succession of two rhyming lines",
+        "poem of two stanzas",
+        "poem of three stanzas"
+      ],
+      a: 1,
+      e: "A couplet consists of two consecutive lines that rhyme.",
+      full: "The correct answer is 'succession of two rhyming lines'. A couplet is a pair of successive lines of verse, typically rhyming and having the same meter. Shakespearean sonnets end with a rhyming couplet. Option A describes a triplet (tercet). Options C and D describe stanza counts, not couplets. Therefore, option B is correct.",
+      h: "Couplet = two rhyming lines of poetry (e.g., 'So long as men can breathe or eyes can see, / So long lives this, and this gives life to thee.')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "A sonnet is a poem of",
+      o: ["fourteen lines", "ten lines", "seven stanzas", "six stanzas"],
+      a: 0,
+      e: "A sonnet is a 14-line poem, typically in iambic pentameter.",
+      full: "The correct answer is 'fourteen lines'. A sonnet is a poetic form consisting of 14 lines, traditionally written in iambic pentameter. Two main types exist: the Italian (Petrarchan) sonnet with an octave (8 lines) and sestet (6 lines); and the English (Shakespearean) sonnet with three quatrains (12 lines) and a final couplet (2 lines). Options B, C, and D are incorrect. Therefore, option A is correct.",
+      h: "Sonnet = 14-line poem (Shakespearean or Petrarchan)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "An antagonist is the character in a narrative who",
+      o: [
+        "uses abusive language to antagonize other characters",
+        "works against the interest of the protagonist",
+        "works against the interest of other characters",
+        "champions the cause of the protagonist"
+      ],
+      a: 1,
+      e: "The antagonist opposes the protagonist (main character).",
+      full: "The correct answer is 'works against the interest of the protagonist'. In narrative, the protagonist is the main character. The antagonist is the character or force that opposes the protagonist, creating conflict. The antagonist is not necessarily villainous (could be an opposing force or rival). Option A describes an insulting character but is not the definition. Option C is too broad. Option D describes the ally or sidekick, not antagonist. Therefore, option B is correct.",
+      h: "Antagonist = opposes protagonist (main character). Protagonist vs. Antagonist."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "The novel, the novella and the short story are the major sub-genres of",
+      o: ["nonfiction", "prose-fiction", "poetry", "drama"],
+      a: 1,
+      e: "The novel, novella, and short story are all forms of prose fiction.",
+      full: "The correct answer is 'prose-fiction'. Prose fiction is narrative writing in prose (not poetry) that tells imagined stories. The three main lengths are: short story (brief), novella (medium-length), and novel (long). Nonfiction (option A) deals with factual information. Poetry (option C) uses verse and figurative language. Drama (option D) is written for performance. Therefore, prose-fiction is correct.",
+      h: "Prose fiction = novel, novella, short story (imagined narratives in prose)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Any work of literature which sets out to instruct may be called",
+      o: ["dialectic", "decadent", "definitive", "didactic"],
+      a: 3,
+      e: "Didactic literature is intended to teach or instruct.",
+      full: "The correct answer is 'didactic'. Didactic literature is designed to teach a moral, ethical, or practical lesson. It emphasizes instruction and education. Dialectic (option A) relates to logical argumentation. Decadent (option B) refers to moral decline or artistic excess. Definitive (option C) means authoritative or final. Therefore, 'didactic' is correct.",
+      h: "Didactic = intended to instruct/teach (often moral lessons)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "The substitution of a mild and pleasant expression for a harsh and blunt one is called",
+      o: ["ambiguity", "climax", "peripety", "euphemism"],
+      a: 3,
+      e: "Euphemism replaces harsh/direct terms with milder alternatives.",
+      full: "The correct answer is 'euphemism'. Euphemism is a figure of speech where an unpleasant, harsh, or blunt word/phrase is replaced with a milder, more pleasant one (e.g., 'passed away' instead of 'died', 'downsizing' instead of 'firing'). Ambiguity (option A) means having multiple meanings. Climax (option B) is the point of highest tension. Peripety (option C) is a sudden reversal of fortune. Therefore, euphemism is correct.",
+      h: "Euphemism = mild expression for harsh truth (e.g., 'passed away' for 'died')."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Caricature is used to",
+      o: [
+        "ridicule a person by distorting his most prominent features",
+        "censure an individual by emphasizing his weakness",
+        "expose the folly in literature",
+        "elicit the artistic potential of dramatists"
+      ],
+      a: 0,
+      e: "Caricature exaggerates prominent features for comic or satirical effect.",
+      full: "The correct answer is 'ridicule a person by distorting his most prominent features'. Caricature is a representation (often in visual art or writing) that exaggerates certain characteristics or features of a person for comic effect or ridicule. Political cartoons often use caricature. Option B (censure) is possible but not the definition. Option C and D are too broad. Therefore, option A is correct.",
+      h: "Caricature = exaggerated depiction of prominent features for comic/satirical effect."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "Pip's flippant remarks concerning the tombstones in the opening chapter of Great Expectations indicate",
+      o: [
+        "his longing for death",
+        "the child's inability to understand death",
+        "his yearning for his parents",
+        "his fascination with inscriptions on stonework"
+      ],
+      a: 1,
+      e: "Pip's casual remarks about tombstones show he doesn't grasp the gravity of death.",
+      full: "The correct answer is 'the child's inability to understand death'. At the beginning of Charles Dickens' 'Great Expectations', young Pip is in the churchyard looking at his parents' tombstones. His flippant, matter-of-fact remarks show that as a young child, he does not fully comprehend the finality and emotional weight of death. He sees the tombstones as objects of curiosity rather than markers of loss. Option A (longing for death) is not indicated. Option C (yearning for parents) - he never knew them, so his feelings are detached. Option D is too literal. Therefore, option B is correct.",
+      h: "Young Pip's flippant remarks = childish inability to understand death's gravity."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "In Great Expectations, while Pip was going away from home to take the coach to London, Joe and Biddy threw old shoes at him because",
+      o: [
+        "Pip had in haste forgotten to pack those old shoes of his",
+        "they wanted to play a practical joke on Pip for the last time",
+        "Pip had made them angry by his joy to leave home",
+        "they believed that the act would bring him good luck"
+      ],
+      a: 3,
+      e: "Throwing old shoes after someone was a traditional good luck custom.",
+      full: "The correct answer is 'they believed that the act would bring him good luck'. In English folklore and tradition, throwing old shoes after someone who is leaving on a journey is considered a good luck charm. Joe and Biddy perform this act affectionately, wishing Pip well as he departs for London. Options A, B, and C misinterpret the gesture as negative or practical joking. Therefore, option D is correct.",
+      h: "Throwing old shoes after departing person = traditional good luck custom."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "His mouth was such a post-office of a mouth that he had a mechanical appearance of smiling. This description in Great Expectations refers to",
+      o: ["Mr. Pumblechook", "Mr. Wemmick", "Estella", "Mr. Drummle"],
+      a: 1,
+      e: "This description of a mechanical, post-office-like mouth refers to Mr. Wemmick.",
+      full: "The correct answer is 'Mr. Wemmick'. In Dickens' 'Great Expectations', Mr. Wemmick is Jaggers' clerk. He is described as having a 'post-office of a mouth' - a mouth that opens and closes mechanically like a letter slot. This reflects his compartmentalized personality: formal at work, warm at home in his 'Castle'. Mr. Pumblechook (option A) is pompous but not described this way. Estella (option C) is beautiful and cold. Mr. Drummle (option D) is brutish. Therefore, Mr. Wemmick is correct.",
+      h: "Mr. Wemmick = 'post-office mouth' (mechanical, slot-like)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "At the very end of Great Expectations, Estella disclosed to Pip that the sources of her present maturity and wisdom was",
+      o: [
+        "the sound education she had at school",
+        "her pleasant association with Miss Havisham",
+        "the suffering she had experienced in life",
+        "her long exposure to high society"
+      ],
+      a: 2,
+      e: "Estella's suffering (especially her abusive marriage to Drummle) made her wise.",
+      full: "The correct answer is 'the suffering she had experienced in life'. At the end of 'Great Expectations', Estella has been humbled by her miserable marriage to the brutish Bentley Drummle, who mistreated her. This suffering has broken down her coldness and given her wisdom and empathy. Option A (education) - she was educated but remained cold. Option B (association with Miss Havisham) - Miss Havisham raised her to be cold and vengeful. Option D (high society) - she was always in high society. Therefore, suffering is correct.",
+      h: "Estella's wisdom came from suffering (abusive marriage to Drummle)."
+    },
+    {
+      yr: 2007,
+      university: "UNN",
+      q: "In Great Expectations, Pip's nursing of Magwitch is significant because it",
+      o: [
+        "prevents Magwitch from confirming Pip as his heir",
+        "recalls Herbert's nursing of Pip",
+        "shows Pip's gratitude and humanity",
+        "her long exposure to high society"
+      ],
+      a: 2,
+      e: "Pip nursing the dying Magwitch shows his moral growth and gratitude.",
+      full: "The correct answer is 'shows Pip's gratitude and humanity'. After discovering that Magwitch (the escaped convict) is his secret benefactor, Pip initially feels revulsion. However, he comes to care for Magwitch, nursing him during his final illness and trial. This demonstrates Pip's moral development from a snob who was ashamed of his humble origins to a compassionate human being who shows gratitude to the man who made his 'great expectations' possible. Option A is incorrect. Option B is not the primary significance. Option D is garbled. Therefore, option C (showing gratitude and humanity) is correct.",
+      h: "Pip nursing Magwitch = moral growth, gratitude, humanity."
+    },
+    // 2008/2009 Arrow of God Questions
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "When he came back from Okperi, I went to his house and he talked like a sane man. I reminded him of saying that a man must dance the dance prevailing in his time. The above statement was made by Ofoka about",
+      o: ["Nwaka", "Akuebue", "Ezeulu", "Obika"],
+      a: 2,
+      e: "Ofoka is speaking about Ezeulu, the Chief Priest of Ulu.",
+      full: "The correct answer is 'Ezeulu'. In Chinua Achebe's 'Arrow of God', Ezeulu is the Chief Priest of Ulu. Ofoka, his friend, tries to counsel him about adapting to changing times. The phrase 'a man must dance the dance prevailing in his time' is key advice given to Ezeulu, who struggles to adapt to colonial rule. Nwaka (option A) is Ezeulu's rival. Akuebue (option B) is another friend of Ezeulu. Obika (option D) is Ezeulu's son. Therefore, Ezeulu is correct.",
+      h: "Ezeulu = Chief Priest of Ulu in 'Arrow of God' - struggles to adapt to change."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "A man who brings ant-ridden faggots into his hut should expect the visit of lizards. What does Nwaka refer to as 'ant-ridden faggots' in this context?",
+      o: [
+        "the visit of the court messenger",
+        "the unexpected consultation of Ezeulu with the Chiefs of Umuaro",
+        "the friendship between Ezeulu and the white man",
+        "Ezeulu's rejection of the kind gesture of some Chiefs to accompany him to Okperi"
+      ],
+      a: 2,
+      e: "Nwaka criticizes Ezeulu's friendship with the white man as 'ant-ridden faggots'.",
+      full: "The correct answer is 'the friendship between Ezeulu and the white man'. In 'Arrow of God', Nwaka uses this proverb to criticize Ezeulu's association with the white colonial administration. 'Ant-ridden faggots' (firewood infested with ants) attract lizards. Similarly, Ezeulu's relationship with the white man will bring trouble. Nwaka is Ezeulu's rival and opposes his influence. Options A, B, and D are not what Nwaka refers to. Therefore, option C is correct.",
+      h: "Ant-ridden faggots = Ezeulu's friendship with white man (brings trouble)."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "The lesson which emerges from the fate of Ezeulu is that",
+      o: [
+        "the will of the priest is the will of his god",
+        "Christianity is superior to traditional religion",
+        "no man ever won judgement against his clan",
+        "Captain Winterbottom was right after all"
+      ],
+      a: 2,
+      e: "Ezeulu's tragedy shows that an individual cannot win against his community.",
+      full: "The correct answer is 'no man ever won judgement against his clan'. Ezeulu's downfall comes when he defies his community by refusing to eat the sacred yams and declare the harvest. His rigidity isolates him from his people. The novel demonstrates that even a powerful priest cannot stand against the collective will of the clan. Option A (priest's will = god's will) - Ezeulu believes this but is proven wrong. Option B (Christianity superior) - not the lesson. Option D is incorrect. Therefore, option C is the central theme.",
+      h: "Ezeulu's fate = 'no man wins judgement against his clan' (community over individual)."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "Ezeulu sent his son, Oduche, to join the Christians because",
+      o: [
+        "of his great love for the white man",
+        "he had come to distrust the power of Ulu",
+        "he did not want Oduche to succeed him as Chief priest",
+        "he wanted a representative in the group in case they became powerful"
+      ],
+      a: 3,
+      e: "Ezeulu sends Oduche to learn the white man's ways to have an insider.",
+      full: "The correct answer is 'he wanted a representative in the group in case they became powerful'. In 'Arrow of God', Ezeulu sends his son Oduche to learn the ways of the Christians. He explains that he wants to have one of his sons inside the new system to understand it and protect the clan's interests - 'to be our eye there'. It is a strategic decision, not out of love for whites (option A), distrust of Ulu (option B), or dislike of Oduche as successor (option C). Therefore, option D is correct.",
+      h: "Ezeulu sends Oduche to Christians = strategic - 'to be our eye there'."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "Nwaka's hostility to Ezeulu is attributed to",
+      o: [
+        "his great wealth and sense of importance",
+        "the rivalry between Umuueroa and Umuachala",
+        "the instigation of Ezeulu's mysterious powers"
+      ],
+      a: 0,
+      e: "Nwaka is wealthy and proud, which fuels his opposition to Ezeulu.",
+      full: "The correct answer is 'his great wealth and sense of importance'. In 'Arrow of God', Nwaka is a wealthy man who resents Ezeulu's spiritual authority. His wealth gives him a sense of importance and the confidence to challenge the Chief Priest. Option B (rivalry between villages) - Nwaka is from Umuachala, Ezeulu from Umuueroa, but this is not the primary cause. Option C (Ezeulu's powers) - Nwaka doubts Ezeulu's powers. Therefore, his wealth and pride are the main drivers of his hostility.",
+      h: "Nwaka's hostility = wealth + pride (challenges Ezeulu's authority)."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "Kwesi Brew's 'The Dry Season' shows that",
+      o: [
+        "destruction is present in almost every action",
+        "nature is the sole destructive force",
+        "animals are the sole destructive force",
+        "birds are the sole destruction force"
+      ],
+      a: 0,
+      e: "The poem depicts destruction as pervasive in human and natural actions.",
+      full: "The correct answer is 'destruction is present in almost every action'. In Kwesi Brew's poem 'The Dry Season', the poet observes that during the dry season, everything seems to lead to destruction - the sun scorches, fires break out, vegetation dies. The poem suggests that destruction is inherent in many actions, not limited to nature alone. Options B, C, and D are too narrow and absolute. Therefore, option A captures the poem's theme.",
+      h: "Kwesi Brew's 'The Dry Season' = destruction pervades actions."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "And we learn to sing half familiar half strange songs. We learn to dance half familiar half strange rhythms. The repetition of 'half familiar half strange' emphasizes the",
+      o: [
+        "songs' compositional complexity",
+        "singer's weakness of perception",
+        "singer's cultural problems",
+        "singer's innate stupidity"
+      ],
+      a: 2,
+      e: "The repetition highlights the cultural dislocation and hybridity experienced by the singer.",
+      full: "The correct answer is 'singer's cultural problems'. The phrase 'half familiar half strange' reflects the experience of cultural hybridity, alienation, and identity confusion often faced by people caught between two cultures (e.g., through colonialism or diaspora). The songs and rhythms are neither fully familiar nor fully foreign - this in-betweenness creates cultural problems. Option A focuses on the songs rather than the singer's experience. Options B and D are incorrect. Therefore, 'singer's cultural problems' is correct.",
+      h: "'Half familiar half strange' = cultural hybridity, identity confusion."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "Horrors were your flowers then, the bright red Bougainvillea. The above lines from Kwesi Brew's 'The Executioner's Dream' depict the executioner's",
+      o: ["attractiveness", "beauty consciousness", "gentleness", "callousness"],
+      a: 3,
+      e: "The executioner sees horrors as flowers - showing his callousness to violence.",
+      full: "The correct answer is 'callousness'. The executioner's dream presents horrors as beautiful flowers (bright red Bougainvillea). This juxtaposition of violence ('horrors') with beauty ('flowers') reveals the executioner's emotional numbness and indifference to suffering. He has become so desensitized that he finds beauty in horror. Options A, B, and C are not supported - the line does not show attractiveness, beauty consciousness, or gentleness. Therefore, callousness is correct.",
+      h: "Horrors as flowers = desensitization/callousness to violence."
+    },
+    {
+      yr: 2008,
+      university: "UNN",
+      q: "J.P. Clark's 'Streamside Exchange' depicts an interplay of",
+      o: [
+        "anxiety and passion",
+        "ignorance and wisdom",
+        "excitement and passion",
+        "anxiety and ignorance"
+      ],
+      a: 1,
+      e: "The poem contrasts the child's ignorance with the bird's wisdom.",
+      full: "The correct answer is 'ignorance and wisdom'. In J.P. Clark's 'Streamside Exchange', a child questions a bird about its activities. The child's naive questions represent ignorance, while the bird's responses (or lack thereof) represent a deeper wisdom about nature and existence. The poem creates an interplay between these two states. Options A, C, and D do not capture the central contrast. Therefore, 'ignorance and wisdom' is correct.",
+      h: "'Streamside Exchange' = child's ignorance vs. bird's wisdom."
     }
   ],
 
