@@ -1,4 +1,3 @@
-// src/components/ModeSelect.jsx
 import React from 'react';
 import { BG, PURPLE, GOLD, WHITE } from '../utils/colors';
 
@@ -29,11 +28,6 @@ export default function ModeSelect({ onSelectMode, onBack, examType }) {
           <div className="mode-select-card-description">
             Take timed quizzes with multiple choice questions
           </div>
-          <div className="mode-select-card-features">
-            <span>⏱️ Timed</span>
-            <span>📊 Track Progress</span>
-            <span>🏆 Achievements</span>
-          </div>
           <div className="mode-select-card-badge">Start →</div>
         </div>
 
@@ -48,11 +42,6 @@ export default function ModeSelect({ onSelectMode, onBack, examType }) {
             <div className="mode-select-card-description">
               Learn key concepts quickly with bite-sized cards
             </div>
-            <div className="mode-select-card-features">
-              <span>🎴 Bite-sized</span>
-              <span>⚡ Quick Learning</span>
-              <span>🔄 Swipe to Learn</span>
-            </div>
             <div className="mode-select-card-badge">Start →</div>
           </div>
         )}
@@ -66,4 +55,4 @@ export default function ModeSelect({ onSelectMode, onBack, examType }) {
       )}
     </div>
   );
-}
+    }
