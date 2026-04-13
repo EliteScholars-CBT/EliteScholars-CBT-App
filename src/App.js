@@ -1,9 +1,10 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AdsterraBanner from './AdsterraBanner';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import ModeSelect from './components/ModeSelect';
+import ExamTypeSelect from './components/ExamTypeSelect';
+import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
@@ -120,7 +121,6 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
 };
 
 export default function App() {
-  const navigate = useNavigate();
   const [screen, setScreen] = useState('splash');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -155,6 +155,10 @@ export default function App() {
   // Study mode state
   const [studyMode, setStudyMode] = useState(null); // 'cbt' or 'flashcard'
   const [flashcardSubject, setFlashcardSubject] = useState(null);
+  
+  // POST UTME states
+  const [examType, setExamType] = useState(null); // 'jamb' or 'postutme'
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
 
   // Load user data on mount
   useEffect(() => {
@@ -226,7 +230,9 @@ export default function App() {
     stopSpeech(); 
     setStudyMode(null);
     setFlashcardSubject(null);
-    setScreen('modeSelect'); 
+    setExamType(null);
+    setSelectedUniversity(null);
+    setScreen('examType'); 
   };
   
   const handleAdGateComplete = (callback) => {
@@ -254,8 +260,29 @@ export default function App() {
       if (s.bestScore) setBestScore(s.bestScore);
       if (s.streak) setStreak(s.streak);
       if (s.lastDate) setLastDate(s.lastDate);
-      setScreen('modeSelect');
+      setScreen('examType');
     } else setScreen('onboard');
+  };
+
+  const handleExamTypeSelect = (type) => {
+    setExamType(type);
+    if (type === 'postutme') {
+      setScreen('universitySelect');
+    } else {
+      // JAMB goes directly to mode select
+      setScreen('modeSelect');
+    }
+  };
+
+  const handleUniversitySelect = (university) => {
+    setSelectedUniversity(university);
+    setScreen('modeSelect');
+  };
+
+  const handleBackToExamType = () => {
+    setExamType(null);
+    setSelectedUniversity(null);
+    setScreen('examType');
   };
 
   const handleModeSelect = (mode) => {
@@ -289,7 +316,11 @@ export default function App() {
     setCorrect(0);
     setTotalQ(0);
     setRoundsPlayed(0);
-    trackEvent('quiz_start', { name, email, subject: sel, timestamp2: fmtTimestamp(), ...getDeviceInfo() });
+    trackEvent('quiz_start', { 
+      name, email, subject: sel, 
+      examType, university: selectedUniversity,
+      timestamp2: fmtTimestamp(), ...getDeviceInfo() 
+    });
     setScreen('ready');
   };
 
@@ -349,7 +380,12 @@ export default function App() {
       showToast(`Keep practicing! ${pct}% - Every session makes you better! 💪`, 'warning');
     }
     
-    trackEvent('quiz_complete', { name, email, subject, score, correct, totalQ, pct: pct + '%', rounds: finalRoundsPlayed, totalSessions: ns, timestamp2: fmtTimestamp() });
+    trackEvent('quiz_complete', { 
+      name, email, subject, score, correct, totalQ, pct: pct + '%', 
+      rounds: finalRoundsPlayed, totalSessions: ns, 
+      examType, university: selectedUniversity,
+      timestamp2: fmtTimestamp() 
+    });
     setScreen('result');
   };
 
@@ -358,50 +394,129 @@ export default function App() {
       <div className="phone">
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
-          {screen === 'onboard' && <Onboard onDone={(n, e) => { setName(n); setEmail(e); const s = loadStats(e); if (s.sessions) setSessions(s.sessions); if (s.allScores) setAllScores(s.allScores); if (s.bestScore) setBestScore(s.bestScore); if (s.streak) setStreak(s.streak); if (s.lastDate) setLastDate(s.lastDate); setScreen('modeSelect'); }} />}
-          {screen === 'modeSelect' && <ModeSelect onSelectMode={handleModeSelect} />}
-          {screen === 'subjects' && <Subjects name={name} onStart={startQuiz} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="cbt" />}
-          {screen === 'flashcardSubjects' && <Subjects name={name} onStart={handleFlashcardSubjectSelect} onProfile={() => { setFromResult(false); setScreen('profile'); }} refreshTrigger={adRefresh} mode="flashcard" />}
-          {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { setSubject(pendingSubject); setScore(0); setCorrect(0); setTotalQ(0); setRoundsPlayed(0); trackEvent('quiz_start', { name, email, subject: pendingSubject, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); setScreen('ready'); }} />}
+          {screen === 'onboard' && <Onboard onDone={(n, e) => { 
+            setName(n); 
+            setEmail(e); 
+            const s = loadStats(e); 
+            if (s.sessions) setSessions(s.sessions); 
+            if (s.allScores) setAllScores(s.allScores); 
+            if (s.bestScore) setBestScore(s.bestScore); 
+            if (s.streak) setStreak(s.streak); 
+            if (s.lastDate) setLastDate(s.lastDate); 
+            setScreen('examType'); 
+          }} />}
+          
+          {/* Exam Type Selection */}
+          {screen === 'examType' && <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />}
+          
+          {/* University Selection (POST UTME only) */}
+          {screen === 'universitySelect' && <UniversitySelect onSelectUniversity={handleUniversitySelect} onBack={handleBackToExamType} />}
+          
+          {/* Mode Selection */}
+          {screen === 'modeSelect' && (
+            <ModeSelect 
+              onSelectMode={handleModeSelect} 
+              onBack={examType === 'postutme' ? handleBackToExamType : () => setScreen('examType')}
+              examType={examType}
+            />
+          )}
+          
+          {/* Subjects for CBT */}
+          {screen === 'subjects' && (
+            <Subjects 
+              name={name} 
+              onStart={startQuiz} 
+              onProfile={() => { setFromResult(false); setScreen('profile'); }} 
+              refreshTrigger={adRefresh} 
+              mode="cbt"
+              examType={examType}
+              university={selectedUniversity}
+            />
+          )}
+          
+          {/* Subjects for Flashcards (JAMB only) */}
+          {screen === 'flashcardSubjects' && (
+            <Subjects 
+              name={name} 
+              onStart={handleFlashcardSubjectSelect} 
+              onProfile={() => { setFromResult(false); setScreen('profile'); }} 
+              refreshTrigger={adRefresh} 
+              mode="flashcard"
+              examType={examType}
+              university={selectedUniversity}
+            />
+          )}
+          
+          {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { 
+            setSubject(pendingSubject); 
+            setScore(0); 
+            setCorrect(0); 
+            setTotalQ(0); 
+            setRoundsPlayed(0); 
+            trackEvent('quiz_start', { name, email, subject: pendingSubject, examType, university: selectedUniversity, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); 
+            setScreen('ready'); 
+          }} />}
+          
           {screen === 'adgate' && <AdGate name={name} email={email} totalSessions={totalSessionsForAd} onUnlocked={handleAdGateUnlocked} />}
+          
           {screen === 'ready' && <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />}
-          {screen === 'quiz' && <Quiz 
-            subjectId={subject} 
-            onAllDone={handleAllDone} 
-            setQuizTimeRemaining={setQuizTimeRemaining} 
-            score={score} 
-            setScore={setScore} 
-            correct={correct} 
-            setCorrect={setCorrect} 
-            totalQ={totalQ} 
-            setTotalQ={setTotalQ} 
-            onHome={goHome} 
-            triggerAdRefresh={triggerAdRefresh}
-            adRefresh={adRefresh}
-          />}
-          {screen === 'result' && <Result name={name} subjectId={subject} score={score} correct={correct} totalQ={totalQ} totalSessions={sessions} onHome={goHome} onProfile={() => { setFromResult(true); setScreen('profile'); }} onAdGateComplete={handleAdGateComplete} />}
+          
+          {screen === 'quiz' && (
+            <Quiz 
+              subjectId={subject} 
+              onAllDone={handleAllDone} 
+              setQuizTimeRemaining={setQuizTimeRemaining} 
+              score={score} 
+              setScore={setScore} 
+              correct={correct} 
+              setCorrect={setCorrect} 
+              totalQ={totalQ} 
+              setTotalQ={setTotalQ} 
+              onHome={goHome} 
+              triggerAdRefresh={triggerAdRefresh}
+              adRefresh={adRefresh}
+            />
+          )}
+          
+          {screen === 'result' && (
+            <Result 
+              name={name} 
+              subjectId={subject} 
+              score={score} 
+              correct={correct} 
+              totalQ={totalQ} 
+              totalSessions={sessions} 
+              onHome={goHome} 
+              onProfile={() => { setFromResult(true); setScreen('profile'); }} 
+              onAdGateComplete={handleAdGateComplete} 
+            />
+          )}
+          
           {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
-          {screen === 'profile' && <Profile 
-            name={name} 
-            email={email} 
-            sessions={sessions} 
-            streak={streak} 
-            allScores={allScores} 
-            bestScore={bestScore} 
-            onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} 
-            onSignOut={() => { 
-              stopSpeech(); 
-              localStorage.removeItem('ep_user'); 
-              setName(''); 
-              setEmail(''); 
-              setSessions(0); 
-              setAllScores([]); 
-              setBestScore(0); 
-              setStreak(1); 
-              setLastDate(''); 
-              setScreen('onboard'); 
-            }} 
-          />}
+          
+          {screen === 'profile' && (
+            <Profile 
+              name={name} 
+              email={email} 
+              sessions={sessions} 
+              streak={streak} 
+              allScores={allScores} 
+              bestScore={bestScore} 
+              onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} 
+              onSignOut={() => { 
+                stopSpeech(); 
+                localStorage.removeItem('ep_user'); 
+                setName(''); 
+                setEmail(''); 
+                setSessions(0); 
+                setAllScores([]); 
+                setBestScore(0); 
+                setStreak(1); 
+                setLastDate(''); 
+                setScreen('onboard'); 
+              }} 
+            />
+          )}
         </Suspense>
       </div>
       
