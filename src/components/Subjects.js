@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import AdsterraBanner from '../AdsterraBanner';
 import { QB } from '../QB';
-import { POST_UTME, getPostUtmeQuestions } from '../data/postutme';
-import { getFlashcardsForSubject, getPostUtmeFlashcardsForSubject } from '../data/flashcards';
+import { POST_UTME } from '../data/postutme';
+import { getFlashcardsForSubject } from '../data/flashcards';
 import { SUBJ } from '../data/subjects';
 import { SHOW_ADS } from '../utils/constants';
 import { PURPLE, DPURP, BG, LGRAY, WHITE, GRAY } from '../utils/colors';
@@ -43,24 +43,20 @@ export default function Subjects({
   // Get count based on mode and exam type
   const getItemCount = (subjectId) => {
     if (mode === 'flashcard') {
-      // FLASHCARD MODE
-      if (examType === 'postutme' && university) {
-        // POST UTME Flashcards
-        const flashcards = getPostUtmeFlashcardsForSubject(university, subjectId);
-        return flashcards.length;
-      } else {
-        // JAMB Flashcards
-        if (subjectId === 'novel') {
-          return getFlashcardsForSubject('novel').length;
-        }
-        return getFlashcardsForSubject(subjectId).length;
+      // FLASHCARD MODE (JAMB only - POST UTME doesn't use flashcards)
+      if (subjectId === 'novel') {
+        return getFlashcardsForSubject('novel').length;
       }
+      return getFlashcardsForSubject(subjectId).length;
     } else {
       // CBT MODE
       if (examType === 'postutme' && university) {
         // POST UTME CBT Questions
-        const questions = getPostUtmeQuestions(university, subjectId);
-        return questions.length;
+        const uniData = POST_UTME[university?.toUpperCase()];
+        if (uniData && uniData[subjectId]) {
+          return uniData[subjectId].length;
+        }
+        return 0;
       } else {
         // JAMB CBT Questions
         if (subjectId === 'novel') {
@@ -74,6 +70,20 @@ export default function Subjects({
   // Get label based on mode
   const getItemLabel = () => {
     return mode === 'flashcard' ? 'cards' : 'questions';
+  };
+
+  // Get header text based on exam type
+  const getHeaderText = () => {
+    if (examType === 'postutme' && university) {
+      const uniNames = {
+        unilag: 'UNILAG', lasu: 'LASU', unn: 'UNN', uniben: 'UNIBEN',
+        abu: 'ABU', buk: 'BUK', funaab: 'FUNAAB', lautech: 'LAUTECH',
+        unical: 'UNICAL', unilorin: 'UNILORIN', uniuyo: 'UNIUYO',
+        oau: 'OAU', uniport: 'UNIPORT', ui: 'UI'
+      };
+      return `${uniNames[university] || university.toUpperCase()} POST UTME`;
+    }
+    return mode === 'flashcard' ? 'Flashcard Study Mode' : 'CBT Practice Mode';
   };
 
   // Filter subjects that actually have questions
@@ -120,27 +130,21 @@ export default function Subjects({
   const allCards = buildSubjectGrid();
   const hasAnyQuestions = allCards.length > 0;
 
-  // Get header text based on exam type
-  const getHeaderText = () => {
-    if (examType === 'postutme' && university) {
-      const uniName = university.toUpperCase();
-      return `${uniName} - ${mode === 'flashcard' ? 'Flashcards' : 'CBT Practice'}`;
-    }
-    return mode === 'flashcard' ? 'Pick a subject to study flashcards' : 'Pick a subject to practise today';
-  };
-
-  // Get welcome text based on exam type
-  const getWelcomeText = () => {
-    if (examType === 'postutme' && university) {
-      const uniNames = {
-        unilag: 'UNILAG', lasu: 'LASU', unn: 'UNN', uniben: 'UNIBEN',
-        abu: 'ABU', buk: 'BUK', funaab: 'FUNAAB', lautech: 'LAUTECH',
-        unical: 'UNICAL', unilorin: 'UNILORIN', uniuyo: 'UNIUYO'
-      };
-      return `Practising ${uniNames[university] || university.toUpperCase()} POST UTME`;
-    }
-    return mode === 'flashcard' ? 'Flashcard Study Mode' : 'CBT Practice Mode';
-  };
+  // Guard for POST UTME trying to use flashcards (should never happen, but safe)
+  if (mode === 'flashcard' && examType === 'postutme') {
+    return (
+      <div className="scr fd" style={{ background: BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 20, padding: 40 }}>
+        <div style={{ fontSize: 64 }}>📚</div>
+        <div style={{ fontSize: 20, fontWeight: 700, textAlign: 'center', color: 'var(--text-primary)' }}>Flashcards Coming Soon for POST UTME</div>
+        <div style={{ fontSize: 14, color: GRAY, textAlign: 'center', maxWidth: 280 }}>
+          POST UTME focuses on CBT practice with past questions. Check back later for flashcards!
+        </div>
+        <button onClick={onProfile} style={{ padding: '10px 24px', background: PURPLE, color: WHITE, border: 'none', borderRadius: 30, cursor: 'pointer' }}>
+          Back to Home
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="scr fd" style={{ background: BG, display: 'flex', flexDirection: 'column', height: '100dvh' }}>
@@ -152,8 +156,7 @@ export default function Subjects({
               {examType === 'postutme' ? 'POST UTME' : 'JAMB'} • {mode.toUpperCase()}
             </div>
             <div className="subjects-welcome-name">{name || 'Student'} 👋</div>
-            <div className="subjects-welcome-text">{getWelcomeText()}</div>
-            <div className="subjects-welcome-subtext">{getHeaderText()}</div>
+            <div className="subjects-welcome-text">{getHeaderText()}</div>
           </div>
           
           {/* Settings Group - Profile + Theme Toggle */}
