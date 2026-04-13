@@ -17,8 +17,8 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);
-  const [usedH, setUH] = useState(false);
+  const [usedF, setUF] = useState(false);      // Used once per ROUND
+  const [usedH, setUH] = useState(false);      // Used once per ROUND
   const [hidden, setHid] = useState([]);
   const [showHint, setSHint] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
@@ -35,6 +35,21 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
+
+  // Reset lifelines ONLY when a new ROUND starts
+  useEffect(() => {
+    setUF(false);
+    setUH(false);
+    setHid([]);
+    setSHint(false);
+  }, [roundNum]);
+
+  // Reset selection and done state when moving to next question
+  useEffect(() => {
+    setSel(-1);
+    setDone(false);
+    setAnsAnim('');
+  }, [qi]);
 
   // Auto-read question
   useEffect(() => {
@@ -100,7 +115,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   };
 
   const handleNext = () => {
-    stopSpeech(); setSpeaking(false); setSHint(false);
+    stopSpeech(); setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     if (isLast) { 
       SFX.roundComplete(); 
@@ -111,12 +126,11 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       return; 
     }
     const nextQi = qi + 1;
-    if (isRoundEnd) { setUF(false); setUH(false); setHid([]); setSHint(false); }
-    setQi(nextQi); setSel(-1); setDone(false); setAnsAnim('');
-    if (bodyRef.current) bodyRef.current.scrollTop = 0;
+    setQi(nextQi);
   };
 
   const doFifty = () => { 
+    // Can only use ONCE per round
     if (usedF || done) return; 
     setUF(true); 
     SFX.select(); 
@@ -126,6 +140,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   };
   
   const doHint = () => { 
+    // Can only use ONCE per round
     if (usedH || done) return; 
     setUH(true); 
     setSHint(true); 
@@ -261,13 +276,30 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
 
       <div ref={bodyRef} className="scroll" style={{ flex: 1, padding: '10px 13px 6px', display: 'flex', flexDirection: 'column', gap: 9 }}>
         <div style={{ display: 'flex', gap: 7, flexShrink: 0 }}>
-          <button onClick={doFifty} disabled={done} className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}>⚖️ 50/50</button>
-          <button onClick={doHint} disabled={done} className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}>💡 Hint</button>
-          <button onClick={toggleVoice} className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}>{speaking ? '🔊 Stop' : voiceEnabled ? '🔊 On' : '🔊 Off'}</button>
+          <button 
+            onClick={doFifty} 
+            disabled={done || usedF} 
+            className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}
+          >
+            ⚖️ 50/50 {usedF && '(Used)'}
+          </button>
+          <button 
+            onClick={doHint} 
+            disabled={done || usedH} 
+            className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}
+          >
+            💡 Hint {usedH && '(Used)'}
+          </button>
+          <button onClick={toggleVoice} className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}>
+            {speaking ? '🔊 Stop' : voiceEnabled ? '🔊 On' : '🔊 Off'}
+          </button>
         </div>
 
         {showHint && (
-          <div className="hint-box"><div className="hint-title">HINT</div><div className="hint-text">{q.h}</div></div>
+          <div className="hint-box">
+            <div className="hint-title">HINT</div>
+            <div className="hint-text">{q.h}</div>
+          </div>
         )}
 
         <div key={qi} className={`su ${ansAnim === 'correct' ? 'correct-pop' : ansAnim === 'wrong' ? 'wrong-shake' : ''} question-card ${done ? (sel === q.a ? 'question-card-correct' : 'question-card-wrong') : ''}`}>
