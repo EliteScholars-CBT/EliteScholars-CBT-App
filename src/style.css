@@ -3489,3 +3489,846 @@ body.dark-mode .mode-select-card {
     font-size: 48px;
   }
 }
+
+
+/* ============================================================
+   BOTTOM NAVIGATION
+   ============================================================ */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 8px 16px 20px;
+  z-index: 100;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.bottom-nav-icon {
+  font-size: 24px;
+}
+
+.bottom-nav-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+  color: var(--gold);
+}
+
+.bottom-nav-item.active {
+  background: var(--gold)20;
+}
+
+/* Notification Bell */
+.notification-bell {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #FF4444;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.notification-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  background: var(--card-bg);
+  border-left: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow);
+  z-index: 200;
+  animation: slideInRight 0.3s ease;
+}
+
+.notification-popup .popup-icon {
+  font-size: 28px;
+}
+
+.notification-popup .popup-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notification-popup .popup-text strong {
+  font-size: 14px;
+  color: var(--gold);
+}
+
+.notification-popup .popup-text span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   LEADERBOARD PAGE
+   ============================================================ */
+.leaderboard-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.leaderboard-header {
+  background: linear-gradient(135deg, #280050, var(--purple));
+  padding: 30px 20px 40px;
+  text-align: center;
+}
+
+.leaderboard-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.leaderboard-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.leaderboard-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: var(--gold);
+  color: #1a0030;
+  border-color: var(--gold);
+}
+
+.leaderboard-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-secondary);
+}
+
+.leaderboard-list {
+  padding: 8px 16px;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+}
+
+.leaderboard-item.is-current-user {
+  border: 2px solid var(--gold);
+  background: var(--gold)10;
+}
+
+.leaderboard-rank {
+  width: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.leaderboard-avatar {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--purple), #280050);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.leaderboard-info {
+  flex: 1;
+}
+
+.leaderboard-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.leaderboard-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.leaderboard-score {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.leaderboard-user-rank {
+  margin: 20px 16px;
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.user-rank-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.user-rank-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   CHALLENGES PAGE
+   ============================================================ */
+.challenges-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.challenges-header {
+  background: linear-gradient(135deg, #280050, var(--purple));
+  padding: 30px 20px 40px;
+  text-align: center;
+}
+
+.challenges-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.challenges-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
+}
+
+.create-challenge-btn {
+  background: var(--gold);
+  color: #1a0030;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-challenge-btn:hover {
+  transform: scale(1.02);
+}
+
+.challenges-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+.challenges-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-secondary);
+}
+
+.challenges-list {
+  padding: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-action {
+  margin-top: 16px;
+  background: var(--gold);
+  color: #1a0030;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.challenge-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.challenger-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.challenger-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.challenge-subject {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: var(--gold)20;
+  color: var(--gold);
+  border-radius: 20px;
+}
+
+.badge-pending, .badge-accepted, .badge-completed, .badge-expired {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background: #FFA50020;
+  color: #FFA500;
+}
+
+.badge-accepted {
+  background: #4CAF5020;
+  color: #4CAF50;
+}
+
+.badge-completed {
+  background: #9C27B020;
+  color: #9C27B0;
+}
+
+.badge-expired {
+  background: #FF444420;
+  color: #FF4444;
+}
+
+.challenge-details {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.challenge-message {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-primary);
+  padding: 10px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.decline-btn, .accept-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.decline-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.accept-btn {
+  background: var(--gold);
+  border: none;
+  color: #1a0030;
+}
+
+.history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+
+.history-opponent {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.history-result {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.history-result.win {
+  color: #4CAF50;
+}
+
+.history-result.loss {
+  color: #FF4444;
+}
+
+.history-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.history-date {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   CREATE CHALLENGE MODAL
+   ============================================================ */
+.create-challenge-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  max-height: 85vh;
+  background: var(--card-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--purple);
+  color: white;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group select, .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.message-preview {
+  font-size: 13px;
+  font-style: italic;
+  padding: 10px;
+  background: var(--gold)10;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cancel-btn, .send-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.send-btn {
+  background: var(--gold);
+  border: none;
+  color: #1a0030;
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   XP BAR COMPONENT
+   ============================================================ */
+.xp-bar-container {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 12px;
+  margin: 8px 0;
+}
+
+.xp-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.xp-bar-level {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.xp-icon {
+  font-size: 16px;
+}
+
+.xp-bar-total {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.xp-bar-progress {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), #FFA500);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.xp-bar-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* Compact XP Bar */
+.xp-bar-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xp-bar-compact-level {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.xp-bar-compact-progress {
+  flex: 1;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.xp-bar-compact-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), #FFA500);
+  border-radius: 10px;
+}
+
+.xp-bar-compact-xp {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.xp-bar-skeleton {
+  height: 40px;
+  background: var(--border-color);
+  border-radius: 16px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================================
+   XP POPUP ANIMATION
+   ============================================================ */
+.xp-popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  border-radius: 50px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  animation: xpFloatUp 1.5s ease forwards;
+}
+
+.xp-popup.xp-earn {
+  border-left: 4px solid var(--gold);
+}
+
+.xp-popup.xp-penalty {
+  border-left: 4px solid #FF4444;
+}
+
+.xp-popup-icon {
+  font-size: 24px;
+}
+
+.xp-popup-amount {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.xp-earn .xp-popup-amount {
+  color: var(--gold);
+}
+
+.xp-penalty .xp-popup-amount {
+  color: #FF4444;
+}
+
+@keyframes xpFloatUp {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-80px);
+  }
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES (already in your CSS)
+   ============================================================ */
+/* These variables should already be in your dark mode */
+body.dark-mode .leaderboard-item,
+body.dark-mode .challenge-card,
+body.dark-mode .history-card,
+body.dark-mode .create-challenge-modal {
+  background: var(--card-bg);
+}
+
+body.dark-mode .leaderboard-header,
+body.dark-mode .challenges-header {
+  background: linear-gradient(135deg, #1a0030, var(--purple));
+}
