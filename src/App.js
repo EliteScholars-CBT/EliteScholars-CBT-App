@@ -6,9 +6,12 @@ import ModeSelect from './components/ModeSelect';
 import ExamTypeSelect from './components/ExamTypeSelect';
 import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
+import BottomNav from './components/BottomNav';
+import Leaderboard from './components/Leaderboard';
+import Challenges from './components/Challenges';
 import { SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ROUND_SIZE, getTimerSecs } from './utils/constants';
 import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveSubjectPerformance, loadAchievements, saveAchievements } from './utils/storage';
-import { trackEvent, getDeviceInfo, fmtTimestamp } from './utils/analytics';
+import { trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp } from './utils/analytics';
 import { stopSpeech } from './utils/sounds';
 import { ACHIEVEMENTS } from './utils/constants';
 import './style.css';
@@ -159,6 +162,9 @@ export default function App() {
   // POST UTME states
   const [examType, setExamType] = useState(null); // 'jamb' or 'postutme'
   const [selectedUniversity, setSelectedUniversity] = useState(null);
+  
+  // Session tracking for analytics
+  const [sessionStartTime, setSessionStartTime] = useState(null);
 
   // Load user data on mount
   useEffect(() => {
@@ -180,6 +186,28 @@ export default function App() {
       setAchievements(userAchievements);
     }
   }, []);
+
+  // Track session start when user is logged in
+  useEffect(() => {
+    if (name && email && screen !== 'splash' && screen !== 'onboard') {
+      if (!sessionStartTime) {
+        setSessionStartTime(Date.now());
+        trackSessionStart(email, name);
+      }
+    }
+  }, [name, email, screen]);
+
+  // Track session end on page unload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (sessionStartTime && email) {
+        const duration = Math.round((Date.now() - sessionStartTime) / 60000);
+        trackSessionEnd(email, duration);
+      }
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [sessionStartTime, email]);
 
   const showToast = (message, type = 'info') => {
     setToast({ show: true, message, type });
@@ -232,7 +260,7 @@ export default function App() {
     setFlashcardSubject(null);
     setExamType(null);
     setSelectedUniversity(null);
-    setScreen('examType'); 
+    setScreen('subjects'); 
   };
   
   const handleAdGateComplete = (callback) => {
@@ -260,49 +288,29 @@ export default function App() {
       if (s.bestScore) setBestScore(s.bestScore);
       if (s.streak) setStreak(s.streak);
       if (s.lastDate) setLastDate(s.lastDate);
-      setScreen('examType');
+      setScreen('subjects');
     } else setScreen('onboard');
   };
 
-  const handleExamTypeSelect = (type) => {
-    setExamType(type);
-    if (type === 'postutme') {
-      setScreen('universitySelect');
-    } else {
-      // JAMB goes directly to mode select
-      setScreen('modeSelect');
-    }
+  // Navigation handlers for bottom nav
+  const handleNavigate = (newScreen) => {
+    if (SHOW_ADS) triggerAdRefresh();
+    stopSpeech();
+    setScreen(newScreen);
   };
 
-  const handleUniversitySelect = (university) => {
-    setSelectedUniversity(university);
-    setScreen('modeSelect');
-  };
-
-  const handleBackToExamType = () => {
-    setExamType(null);
-    setSelectedUniversity(null);
-    setScreen('examType');
-  };
-
-  const handleModeSelect = (mode) => {
-    setStudyMode(mode);
-    if (mode === 'cbt') {
-      setScreen('subjects');
-    } else if (mode === 'flashcard') {
-      setScreen('flashcardSubjects');
-    }
-  };
-
-  const handleFlashcardSubjectSelect = (subjectId) => {
-    setFlashcardSubject(subjectId);
-    setScreen('flashcards');
-  };
-
-  const handleBackToModeSelect = () => {
-    setStudyMode(null);
-    setFlashcardSubject(null);
-    setScreen('modeSelect');
+  const handleStartSubject = (subjectId) => {
+    setSubject(subjectId);
+    setScore(0);
+    setCorrect(0);
+    setTotalQ(0);
+    setRoundsPlayed(0);
+    trackEvent('quiz_start', { 
+      name, email, subject: subjectId, 
+      examType, university: selectedUniversity,
+      timestamp2: fmtTimestamp(), ...getDeviceInfo() 
+    });
+    setScreen('ready');
   };
 
   const startQuiz = (sel) => {
@@ -389,6 +397,9 @@ export default function App() {
     setScreen('result');
   };
 
+  // Check if user is logged in
+  const isLoggedIn = name && email;
+
   return (
     <>
       <div className="phone">
@@ -403,50 +414,61 @@ export default function App() {
             if (s.bestScore) setBestScore(s.bestScore); 
             if (s.streak) setStreak(s.streak); 
             if (s.lastDate) setLastDate(s.lastDate); 
-            setScreen('examType'); 
+            setScreen('subjects'); 
           }} />}
           
-          {/* Exam Type Selection */}
-          {screen === 'examType' && <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />}
-          
-          {/* University Selection (POST UTME only) */}
-          {screen === 'universitySelect' && <UniversitySelect onSelectUniversity={handleUniversitySelect} onBack={handleBackToExamType} />}
-          
-          {/* Mode Selection */}
-          {screen === 'modeSelect' && (
-            <ModeSelect 
-              onSelectMode={handleModeSelect} 
-              onBack={examType === 'postutme' ? handleBackToExamType : () => setScreen('examType')}
-              examType={examType}
-            />
+          {/* Main Screens with Bottom Navigation */}
+          {isLoggedIn && screen !== 'ready' && screen !== 'quiz' && screen !== 'result' && screen !== 'sharegate' && screen !== 'adgate' && screen !== 'flashcards' && (
+            <>
+              {screen === 'subjects' && (
+                <Subjects 
+                  name={name} 
+                  onStart={startQuiz} 
+                  onProfile={() => setScreen('profile')} 
+                  refreshTrigger={adRefresh} 
+                  mode="cbt"
+                  examType={examType}
+                  university={selectedUniversity}
+                />
+              )}
+              {screen === 'leaderboard' && (
+                <Leaderboard userEmail={email} userName={name} />
+              )}
+              {screen === 'challenges' && (
+                <Challenges userEmail={email} userName={name} />
+              )}
+              {screen === 'profile' && (
+                <Profile 
+                  name={name} 
+                  email={email} 
+                  sessions={sessions} 
+                  streak={streak} 
+                  allScores={allScores} 
+                  bestScore={bestScore} 
+                  onBack={() => setScreen('subjects')} 
+                  onSignOut={() => { 
+                    stopSpeech(); 
+                    localStorage.removeItem('ep_user'); 
+                    setName(''); 
+                    setEmail(''); 
+                    setSessions(0); 
+                    setAllScores([]); 
+                    setBestScore(0); 
+                    setStreak(1); 
+                    setLastDate(''); 
+                    setScreen('onboard'); 
+                  }} 
+                />
+              )}
+              <BottomNav 
+                currentScreen={screen} 
+                onNavigate={handleNavigate} 
+                userEmail={email}
+              />
+            </>
           )}
           
-          {/* Subjects for CBT */}
-          {screen === 'subjects' && (
-            <Subjects 
-              name={name} 
-              onStart={startQuiz} 
-              onProfile={() => { setFromResult(false); setScreen('profile'); }} 
-              refreshTrigger={adRefresh} 
-              mode="cbt"
-              examType={examType}
-              university={selectedUniversity}
-            />
-          )}
-          
-          {/* Subjects for Flashcards (JAMB only) */}
-          {screen === 'flashcardSubjects' && (
-            <Subjects 
-              name={name} 
-              onStart={handleFlashcardSubjectSelect} 
-              onProfile={() => { setFromResult(false); setScreen('profile'); }} 
-              refreshTrigger={adRefresh} 
-              mode="flashcard"
-              examType={examType}
-              university={selectedUniversity}
-            />
-          )}
-          
+          {/* Screens without Bottom Navigation */}
           {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { 
             setSubject(pendingSubject); 
             setScore(0); 
@@ -492,29 +514,10 @@ export default function App() {
             />
           )}
           
-          {screen === 'flashcards' && <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />}
-          
-          {screen === 'profile' && (
-            <Profile 
-              name={name} 
-              email={email} 
-              sessions={sessions} 
-              streak={streak} 
-              allScores={allScores} 
-              bestScore={bestScore} 
-              onBack={() => setScreen(fromResult ? 'result' : 'modeSelect')} 
-              onSignOut={() => { 
-                stopSpeech(); 
-                localStorage.removeItem('ep_user'); 
-                setName(''); 
-                setEmail(''); 
-                setSessions(0); 
-                setAllScores([]); 
-                setBestScore(0); 
-                setStreak(1); 
-                setLastDate(''); 
-                setScreen('onboard'); 
-              }} 
+          {screen === 'flashcards' && (
+            <Flashcards 
+              subjectId={flashcardSubject} 
+              onBack={() => setScreen('subjects')} 
             />
           )}
         </Suspense>
