@@ -1,7 +1,7 @@
 import { SHEETS_URL } from './constants';
 
 // ============================================================================
-// ANALYTICS
+// BASE ANALYTICS FUNCTIONS
 // ============================================================================
 
 export function getDeviceInfo() {
@@ -29,4 +29,118 @@ export function trackEvent(eventName, data) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ event: eventName, timestamp: fmtTimestamp(), ...data }),
   }).catch(() => {});
+}
+
+// ============================================================================
+// LEADERBOARD ANALYTICS
+// ============================================================================
+
+export function trackLeaderboardView(userEmail, timeframe, examType, subject = null) {
+  trackEvent('leaderboard_view', {
+    user_email: userEmail,
+    timeframe,        // 'daily', 'weekly', 'monthly', 'alltime'
+    exam_type: examType,  // 'jamb', 'postutme', 'all'
+    subject,
+    ...getDeviceInfo(),
+  });
+}
+
+export function trackLeaderboardFilter(userEmail, filterType, filterValue) {
+  trackEvent('leaderboard_filter', {
+    user_email: userEmail,
+    filter_type: filterType,   // 'timeframe', 'exam', 'subject'
+    filter_value: filterValue,
+    ...getDeviceInfo(),
+  });
+}
+
+// ============================================================================
+// CHALLENGE ANALYTICS
+// ============================================================================
+
+export function trackChallengeCreated(challengerEmail, opponentEmail, examType, subject, numQuestions, timeLimit) {
+  trackEvent('challenge_created', {
+    challenger_email: challengerEmail,
+    opponent_email: opponentEmail,
+    exam_type: examType,
+    subject,
+    num_questions: numQuestions,
+    time_limit: timeLimit,
+    ...getDeviceInfo(),
+  });
+}
+
+export function trackChallengeAction(challengeId, action, userEmail, result = null) {
+  // action: 'accept', 'decline', 'complete'
+  // result: 'win', 'loss' (only for 'complete')
+  trackEvent('challenge_action', {
+    challenge_id: challengeId,
+    action,
+    user_email: userEmail,
+    result,
+    ...getDeviceInfo(),
+  });
+}
+
+// ============================================================================
+// XP ANALYTICS
+// ============================================================================
+
+export function trackXPEarned(userEmail, amount, reason, totalXP, newLevel, oldLevel) {
+  trackEvent('xp_earned', {
+    user_email: userEmail,
+    amount,
+    reason,  // 'correct_answer', 'perfect_round', 'streak_bonus', 'challenge_win', etc.
+    total_xp: totalXP,
+    new_level: newLevel,
+    level_up: newLevel > oldLevel,
+    ...getDeviceInfo(),
+  });
+}
+
+export function trackLevelUp(userEmail, oldLevel, newLevel, totalXP) {
+  trackEvent('level_up', {
+    user_email: userEmail,
+    old_level: oldLevel,
+    new_level: newLevel,
+    total_xp: totalXP,
+    ...getDeviceInfo(),
+  });
+}
+
+// ============================================================================
+// SESSION ANALYTICS
+// ============================================================================
+
+export function trackSessionStart(userEmail, userName) {
+  trackEvent('session_start', {
+    user_email: userEmail,
+    user_name: userName,
+    ...getDeviceInfo(),
+  });
+}
+
+export function trackSessionEnd(userEmail, durationMinutes) {
+  trackEvent('session_end', {
+    user_email: userEmail,
+    duration_minutes: durationMinutes,
+    ...getDeviceInfo(),
+  });
+}
+
+// ============================================================================
+// QUIZ ANALYTICS (Enhanced with XP)
+// ============================================================================
+
+export function trackQuizCompleteWithXP(userEmail, subject, score, totalXP, xpEarned, levelUp, newLevel) {
+  trackEvent('quiz_complete_xp', {
+    user_email: userEmail,
+    subject,
+    score,
+    total_xp: totalXP,
+    xp_earned: xpEarned,
+    level_up: levelUp,
+    new_level: newLevel,
+    ...getDeviceInfo(),
+  });
 }
