@@ -19,20 +19,17 @@ export default function Subjects({
   examType = 'jamb',
   university = null 
 }) {
-  const [sel, setSel] = useState();
   const { theme, toggleTheme } = useTheme();
 
   // Helper: Check if a subject has questions available for current exam type
   const hasQuestions = (subjectId) => {
     if (examType === 'postutme' && university) {
-      // POST UTME - check university's question bank
       const uniData = POST_UTME[university?.toUpperCase()];
       if (uniData && uniData[subjectId]) {
         return uniData[subjectId].length > 0;
       }
       return false;
     } else {
-      // JAMB - check QB
       if (subjectId === 'novel') {
         return (QB.novel || []).length > 0;
       }
@@ -43,22 +40,18 @@ export default function Subjects({
   // Get count based on mode and exam type
   const getItemCount = (subjectId) => {
     if (mode === 'flashcard') {
-      // FLASHCARD MODE (JAMB only - POST UTME doesn't use flashcards)
       if (subjectId === 'novel') {
         return getFlashcardsForSubject('novel').length;
       }
       return getFlashcardsForSubject(subjectId).length;
     } else {
-      // CBT MODE
       if (examType === 'postutme' && university) {
-        // POST UTME CBT Questions
         const uniData = POST_UTME[university?.toUpperCase()];
         if (uniData && uniData[subjectId]) {
           return uniData[subjectId].length;
         }
         return 0;
       } else {
-        // JAMB CBT Questions
         if (subjectId === 'novel') {
           return (QB.novel || []).length;
         }
@@ -86,6 +79,13 @@ export default function Subjects({
     return mode === 'flashcard' ? 'Flashcard Study Mode' : 'CBT Practice Mode';
   };
 
+  // Handle subject click - start directly
+  const handleSubjectClick = (subjectId) => {
+    SFX.select();
+    SFX.submit();
+    onStart(subjectId);
+  };
+
   // Filter subjects that actually have questions
   const getAvailableSubjects = () => {
     const allSubjects = Object.entries(SUBJ).filter(([id]) => id !== 'novel');
@@ -97,7 +97,6 @@ export default function Subjects({
     const availableSubjects = getAvailableSubjects();
     const hasNovelQuestions = hasQuestions('novel');
     
-    // If no subjects available, show empty state
     if (availableSubjects.length === 0 && !hasNovelQuestions) {
       return [];
     }
@@ -108,7 +107,6 @@ export default function Subjects({
       return subjectCards;
     }
     
-    // Insert Lekki card at position 2 (after first 2 subjects) if novel has questions
     const lekkiCard = { id: '__lekki__', isLekki: true, type: 'lekki' };
     const result = [];
     
@@ -119,7 +117,6 @@ export default function Subjects({
       result.push(subjectCards[i]);
     }
     
-    // If we never inserted Lekki (less than 2 subjects), add at the end
     if (!result.some(card => card.isLekki) && hasNovelQuestions) {
       result.push(lekkiCard);
     }
@@ -130,7 +127,7 @@ export default function Subjects({
   const allCards = buildSubjectGrid();
   const hasAnyQuestions = allCards.length > 0;
 
-  // Guard for POST UTME trying to use flashcards (should never happen, but safe)
+  // Guard for POST UTME trying to use flashcards
   if (mode === 'flashcard' && examType === 'postutme') {
     return (
       <div className="scr fd" style={{ background: BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 20, padding: 40 }}>
@@ -215,24 +212,23 @@ export default function Subjects({
           <div className="subjects-card-container">
             {allCards.map((card) => {
               if (card.isLekki) {
-                const isSelL = sel === '__lekki__';
                 const itemCount = getItemCount('novel');
                 const itemLabel = getItemLabel();
                 
                 return (
                   <div 
                     key="lekki" 
-                    onClick={() => { SFX.select(); setSel('__lekki__'); }} 
-                    className={`lekki-card ${isSelL ? 'lekki-card-selected' : 'lekki-card-unselected'}`}
+                    onClick={() => handleSubjectClick('novel')} 
+                    className="lekki-card"
                   >
-                    <div className="lekki-icon" style={{ background: isSelL ? '#831843' : '#FCE7F3' }}>📗</div>
+                    <div className="lekki-icon" style={{ background: '#FCE7F3' }}>📗</div>
                     <div style={{ flex: 1 }}>
                       <div className="lekki-title">The Lekki Headmaster</div>
                       <div className="lekki-author">Kabir Alabi Garba · Literature</div>
-                      <div className="lekki-badge" style={{ background: isSelL ? '#831843' : LGRAY, color: isSelL ? WHITE : GRAY }}>NOVEL</div>
+                      <div className="lekki-badge" style={{ background: LGRAY, color: GRAY }}>NOVEL</div>
                     </div>
                     <div className="lekki-question-count">
-                      <div className="lekki-question-number" style={{ color: isSelL ? '#831843' : GRAY }}>{itemCount}</div>
+                      <div className="lekki-question-number" style={{ color: GRAY }}>{itemCount}</div>
                       <div>{itemLabel}</div>
                     </div>
                   </div>
@@ -240,24 +236,22 @@ export default function Subjects({
               }
               
               const { id, meta } = card;
-              const isSel = sel === id;
               const itemCount = getItemCount(id);
               const itemLabel = getItemLabel();
               
-              // Don't show subjects with 0 questions
               if (itemCount === 0) return null;
               
               return (
                 <div 
                   key={id} 
-                  onClick={() => { SFX.select(); setSel(id); }} 
-                  className={`subject-card ${isSel ? 'subject-card-selected' : 'subject-card-unselected'}`} 
+                  onClick={() => handleSubjectClick(id)} 
+                  className="subject-card"
                   style={{ '--subject-bg': meta.bg, '--subject-color': meta.color }}
                 >
-                  <div className="subject-icon" style={{ background: isSel ? meta.color : meta.bg }}>{meta.icon}</div>
+                  <div className="subject-icon" style={{ background: meta.bg }}>{meta.icon}</div>
                   <div className="subject-name">{meta.label}</div>
                   <div className="subject-question-count">{itemCount} {itemLabel}</div>
-                  <div className="subject-status" style={{ background: isSel ? meta.color : LGRAY, color: isSel ? WHITE : GRAY }}>
+                  <div className="subject-status" style={{ background: LGRAY, color: GRAY }}>
                     {mode === 'flashcard' ? 'STUDY' : 'READY'}
                   </div>
                 </div>
@@ -265,24 +259,6 @@ export default function Subjects({
             })}
           </div>
         )}
-      </div>
-
-      <div className="start-button-container">
-        <button 
-          onClick={() => { 
-            if (!sel) return;
-            SFX.submit(); 
-            const subjectId = sel === '__lekki__' ? 'novel' : sel;
-            onStart(subjectId); 
-          }} 
-          className={`start-button ${sel ? 'start-button-active' : 'start-button-inactive'}`}
-          disabled={!sel}
-        >
-          {mode === 'flashcard' 
-            ? '📖 Start Flashcards →' 
-            : (sel === '__lekki__' ? '📗' : SUBJ[sel]?.icon || '📚') + ' Start ' + (sel === '__lekki__' ? 'Lekki Headmaster' : SUBJ[sel]?.label || 'a subject') + ' →'
-          }
-        </button>
       </div>
     </div>
   );
