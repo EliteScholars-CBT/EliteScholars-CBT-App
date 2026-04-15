@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { createChallenge, getChallengeMessages } from '../utils/challengeApi';
-import { getAvailableUsers } from '../utils/leaderboardApi';
 
 export default function CreateChallenge({ userEmail, userName, onClose, onCreated }) {
   const [opponentEmail, setOpponentEmail] = useState('');
@@ -8,16 +7,16 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
   const [examType, setExamType] = useState('jamb');
   const [university, setUniversity] = useState('');
   const [subject, setSubject] = useState('mathematics');
-  const [numQuestions, setNumQuestions] = useState(10);
-  const [timeLimit, setTimeLimit] = useState(60);
   const [messageTemplate, setMessageTemplate] = useState('');
   const [customMessage, setCustomMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
 
-  const questionOptions = [5, 10, 20];
-  const timeOptions = [30, 60, 90];
+  // Fixed values
+  const NUM_QUESTIONS = 10;
+  const TIME_LIMIT = 60;
+
   const examOptions = [
     { id: 'jamb', label: 'JAMB' },
     { id: 'postutme', label: 'POST UTME' },
@@ -34,9 +33,30 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
     { id: 'literature', label: 'Literature' },
   ];
 
+  // Email validation function (same as signup)
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) return 'Email is required';
+    if (!emailRegex.test(email)) return 'Please enter a valid email address';
+    if (email === userEmail) return 'You cannot challenge yourself';
+    return '';
+  };
+
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
+    setOpponentEmail(email);
+    const error = validateEmail(email);
+    setEmailError(error);
+    
+    // You could optionally fetch user name by email here
+    if (!error && email !== userEmail) {
+      // For now, use email as name until we fetch user data
+      setOpponentName(email.split('@')[0]);
+    }
+  };
+
   useEffect(() => {
     loadMessages();
-    loadUsers();
   }, []);
 
   const loadMessages = async () => {
@@ -45,30 +65,31 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
     if (msgs.length > 0) setMessageTemplate(msgs[0].message_id);
   };
 
-  const loadUsers = async () => {
-    const usersList = await getAvailableUsers(userEmail);
-    setUsers(usersList);
-  };
-
   const handleSubmit = async () => {
+    const emailError = validateEmail(opponentEmail);
+    if (emailError) {
+      setEmailError(emailError);
+      return;
+    }
+
     if (!opponentEmail) {
-      alert('Please select an opponent');
+      alert('Please enter opponent email');
       return;
     }
 
     setLoading(true);
     const result = await createChallenge(
       userEmail, userName,
-      opponentEmail, opponentName,
+      opponentEmail, opponentName || opponentEmail.split('@')[0],
       examType, university, subject,
-      numQuestions, timeLimit,
+      NUM_QUESTIONS, TIME_LIMIT,
       messageTemplate, customMessage
     );
 
     if (result.success) {
       onCreated();
     } else {
-      alert('Failed to create challenge. Try again.');
+      alert('Failed to create challenge. Make sure the email belongs to a registered user.');
     }
     setLoading(false);
   };
@@ -85,17 +106,16 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
         <div className="modal-body">
           <div className="form-group">
-            <label>Select Opponent</label>
-            <select value={opponentEmail} onChange={(e) => {
-              const selected = users.find(u => u.email === e.target.value);
-              setOpponentEmail(selected?.email);
-              setOpponentName(selected?.name);
-            }}>
-              <option value="">Choose a user...</option>
-              {users.map(user => (
-                <option key={user.email} value={user.email}>{user.name}</option>
-              ))}
-            </select>
+            <label>Opponent Email</label>
+            <input 
+              type="email" 
+              placeholder="Enter opponent's email address" 
+              value={opponentEmail} 
+              onChange={handleEmailChange}
+              className={emailError ? 'input-error' : ''}
+            />
+            {emailError && <div className="error-text">{emailError}</div>}
+            <div className="helper-text">Enter the email address of the person you want to challenge</div>
           </div>
 
           <div className="form-group">
@@ -126,29 +146,14 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             </select>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label>Questions</label>
-              <div className="radio-group">
-                {questionOptions.map(q => (
-                  <label key={q}>
-                    <input type="radio" value={q} checked={numQuestions === q} onChange={(e) => setNumQuestions(parseInt(e.target.value))} />
-                    {q}
-                  </label>
-                ))}
-              </div>
+          <div className="challenge-info-box">
+            <div className="info-row">
+              <span>📚 Questions:</span>
+              <span><strong>{NUM_QUESTIONS} questions</strong> (fixed)</span>
             </div>
-
-            <div className="form-group">
-              <label>Time Limit</label>
-              <div className="radio-group">
-                {timeOptions.map(t => (
-                  <label key={t}>
-                    <input type="radio" value={t} checked={timeLimit === t} onChange={(e) => setTimeLimit(parseInt(e.target.value))} />
-                    {t}s
-                  </label>
-                ))}
-              </div>
+            <div className="info-row">
+              <span>⏱️ Time per question:</span>
+              <span><strong>{TIME_LIMIT} seconds</strong> (fixed)</span>
             </div>
           </div>
 
@@ -164,7 +169,13 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
           {messageTemplate === 'custom' && (
             <div className="form-group">
-              <input type="text" placeholder="Write your own message..." value={customMessage} onChange={(e) => setCustomMessage(e.target.value)} maxLength="100" />
+              <input 
+                type="text" 
+                placeholder="Write your own message (max 100 characters)" 
+                value={customMessage} 
+                onChange={(e) => setCustomMessage(e.target.value)} 
+                maxLength="100" 
+              />
             </div>
           )}
 
@@ -175,11 +186,41 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
         <div className="modal-footer">
           <button className="cancel-btn" onClick={onClose}>Cancel</button>
-          <button className="send-btn" onClick={handleSubmit} disabled={loading}>
+          <button className="send-btn" onClick={handleSubmit} disabled={loading || !!emailError || !opponentEmail}>
             {loading ? 'Sending...' : 'Send Challenge →'}
           </button>
         </div>
       </div>
+
+      <style jsx>{`
+        .input-error {
+          border-color: #FF4444 !important;
+        }
+        .error-text {
+          color: #FF4444;
+          font-size: 11px;
+          margin-top: 4px;
+        }
+        .helper-text {
+          color: var(--text-secondary);
+          font-size: 10px;
+          margin-top: 4px;
+        }
+        .challenge-info-box {
+          background: var(--bg-primary);
+          border-radius: 12px;
+          padding: 12px;
+          margin-bottom: 16px;
+          border: 1px solid var(--border-color);
+        }
+        .info-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          padding: 4px 0;
+          color: var(--text-primary);
+        }
+      `}</style>
     </div>
   );
 }
