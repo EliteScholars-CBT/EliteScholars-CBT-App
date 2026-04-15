@@ -90,9 +90,8 @@ export default function Challenges({ userEmail, userName }) {
                 {getStatusBadge(challenge.status)}
               </div>
               <div className="challenge-details">
-                <span>📚 {challenge.num_questions} questions</span>
-                <span>⏱️ {challenge.time_limit}s per Q</span>
-              </div>
+  <span>📚 10 questions</span>
+</div>
               <div className="challenge-message">"{challenge.custom_message || challenge.message_text}"</div>
               <div className="challenge-actions">
                 <button className="decline-btn" onClick={() => handleDecline(challenge.challenge_id)}>Decline</button>
