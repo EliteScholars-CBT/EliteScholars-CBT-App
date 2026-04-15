@@ -40,7 +40,6 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
   const newAchievements = [];
   const achievedIds = currentAchievements.map(a => a?.id).filter(Boolean);
 
-  // Total quizzes completed
   if (!achievedIds.includes('firstQuiz') && userStats.totalQuizzes >= 1) {
     newAchievements.push('firstQuiz');
   }
@@ -50,39 +49,28 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
   if (!achievedIds.includes('tenQuizzes') && userStats.totalQuizzes >= 10) {
     newAchievements.push('tenQuizzes');
   }
-
-  // Perfect score
   if (!achievedIds.includes('perfectScore') && userStats.perfectScores >= 1) {
     newAchievements.push('perfectScore');
   }
-  
-  // 90%+ score
   if (!achievedIds.includes('ninetyPlus') && userStats.ninetyPlusCount >= 1) {
     newAchievements.push('ninetyPlus');
   }
-
-  // Streak achievements
   if (!achievedIds.includes('streak7') && userStats.streak >= 7) {
     newAchievements.push('streak7');
   }
   if (!achievedIds.includes('streak30') && userStats.streak >= 30) {
     newAchievements.push('streak30');
   }
-
-  // All subjects attempted
   if (!achievedIds.includes('allSubjects')) {
     const subjectsAttempted = Object.keys(subjectPerformance || {}).filter(s => subjectPerformance[s]?.total > 0).length;
     if (subjectsAttempted >= 9) {
       newAchievements.push('allSubjects');
     }
   }
-
-  // Speed demon
   if (!achievedIds.includes('speedDemon') && userStats.speedDemonCount >= 1) {
     newAchievements.push('speedDemon');
   }
 
-  // Subject mastery
   const masteryMap = {
     mathematics: 'mathematician',
     physics: 'physicist',
@@ -106,7 +94,6 @@ const checkAndAwardAchievements = (userStats, email, currentAchievements, showTo
     }
   });
 
-  // Save new achievements and show popups
   if (newAchievements.length > 0) {
     const newAchievementObjects = newAchievements.map(id => ACHIEVEMENTS[id]).filter(a => a);
     const updatedAchievements = [...currentAchievements, ...newAchievementObjects];
@@ -144,29 +131,17 @@ export default function App() {
   const [adGateCallback, setAdGateCallback] = useState(null);
   const [totalSessionsForAd, setTotalSessionsForAd] = useState(0);
   
-  // Toast and Achievement states
   const [toast, setToast] = useState({ show: false, message: '', type: 'info' });
   const [achievementPopup, setAchievementPopup] = useState({ show: false, achievement: null });
   const [achievements, setAchievements] = useState([]);
-  
-  // Quiz timing for speed demon achievement
   const [quizTimeRemaining, setQuizTimeRemaining] = useState(null);
-  
-  // Subject performance tracking
   const [subjectPerformance, setSubjectPerformance] = useState({});
-  
-  // Study mode state
-  const [studyMode, setStudyMode] = useState(null); // 'cbt' or 'flashcard'
+  const [studyMode, setStudyMode] = useState(null);
   const [flashcardSubject, setFlashcardSubject] = useState(null);
-  
-  // POST UTME states
-  const [examType, setExamType] = useState(null); // 'jamb' or 'postutme'
+  const [examType, setExamType] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
-  
-  // Session tracking for analytics
   const [sessionStartTime, setSessionStartTime] = useState(null);
 
-  // Load user data on mount
   useEffect(() => {
     const u = loadUser();
     if (u.name) {
@@ -187,7 +162,6 @@ export default function App() {
     }
   }, []);
 
-  // Track session start when user is logged in
   useEffect(() => {
     if (name && email && screen !== 'splash' && screen !== 'onboard') {
       if (!sessionStartTime) {
@@ -197,7 +171,6 @@ export default function App() {
     }
   }, [name, email, screen]);
 
-  // Track session end on page unload
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (sessionStartTime && email) {
@@ -260,7 +233,7 @@ export default function App() {
     setFlashcardSubject(null);
     setExamType(null);
     setSelectedUniversity(null);
-    setScreen('subjects'); 
+    setScreen('examType'); 
   };
   
   const handleAdGateComplete = (callback) => {
@@ -288,29 +261,48 @@ export default function App() {
       if (s.bestScore) setBestScore(s.bestScore);
       if (s.streak) setStreak(s.streak);
       if (s.lastDate) setLastDate(s.lastDate);
-      setScreen('subjects');
+      setScreen('examType');
     } else setScreen('onboard');
   };
 
-  // Navigation handlers for bottom nav
-  const handleNavigate = (newScreen) => {
-    if (SHOW_ADS) triggerAdRefresh();
-    stopSpeech();
-    setScreen(newScreen);
+  const handleExamTypeSelect = (type) => {
+    setExamType(type);
+    if (type === 'postutme') {
+      setScreen('universitySelect');
+    } else {
+      setScreen('modeSelect');
+    }
   };
 
-  const handleStartSubject = (subjectId) => {
-    setSubject(subjectId);
-    setScore(0);
-    setCorrect(0);
-    setTotalQ(0);
-    setRoundsPlayed(0);
-    trackEvent('quiz_start', { 
-      name, email, subject: subjectId, 
-      examType, university: selectedUniversity,
-      timestamp2: fmtTimestamp(), ...getDeviceInfo() 
-    });
-    setScreen('ready');
+  const handleUniversitySelect = (university) => {
+    setSelectedUniversity(university);
+    setScreen('modeSelect');
+  };
+
+  const handleBackToExamType = () => {
+    setExamType(null);
+    setSelectedUniversity(null);
+    setScreen('examType');
+  };
+
+  const handleModeSelect = (mode) => {
+    setStudyMode(mode);
+    if (mode === 'cbt') {
+      setScreen('subjects');
+    } else if (mode === 'flashcard') {
+      setScreen('flashcardSubjects');
+    }
+  };
+
+  const handleFlashcardSubjectSelect = (subjectId) => {
+    setFlashcardSubject(subjectId);
+    setScreen('flashcards');
+  };
+
+  const handleBackToModeSelect = () => {
+    setStudyMode(null);
+    setFlashcardSubject(null);
+    setScreen('modeSelect');
   };
 
   const startQuiz = (sel) => {
@@ -340,11 +332,9 @@ export default function App() {
     const today = new Date().toDateString();
     const newStreak = calcStreak(streak, lastDate);
     
-    // Check for perfect score and 90%+
     const isPerfect = pct === 100;
     const isNinetyPlus = pct >= 90;
     
-    // Update subject performance
     updateSubjectPerformance(subject, correct, totalQ, quizTimeRemaining, getTimerSecs(subject, ROUND_SIZE));
     
     setSessions(ns);
@@ -354,7 +344,6 @@ export default function App() {
     setLastDate(today);
     persist(ns, nsc, nb, newStreak, today);
     
-    // Calculate user stats for achievements
     const perfectScoresCount = allScores.filter(s => s === 100).length + (isPerfect ? 1 : 0);
     const ninetyPlusCount = allScores.filter(s => s >= 90).length + (isNinetyPlus ? 1 : 0);
     
@@ -366,7 +355,6 @@ export default function App() {
       speedDemonCount: 0,
     };
     
-    // Check and award achievements
     const currentAchievements = achievements;
     checkAndAwardAchievements(userStats, email, currentAchievements, showToast, showAchievement, subjectPerformance);
     
@@ -375,7 +363,6 @@ export default function App() {
     }
     setRoundsPlayed(finalRoundsPlayed);
     
-    // Show toast for performance
     if (isPerfect) {
       showToast(`Perfect score! 🎯 You got ${correct}/${totalQ} correct!`, 'success');
     } else if (isNinetyPlus) {
@@ -397,8 +384,14 @@ export default function App() {
     setScreen('result');
   };
 
-  // Check if user is logged in
+  const handleNavigate = (newScreen) => {
+    if (SHOW_ADS) triggerAdRefresh();
+    stopSpeech();
+    setScreen(newScreen);
+  };
+
   const isLoggedIn = name && email;
+  const showBottomNav = isLoggedIn && !['ready', 'quiz', 'result', 'sharegate', 'adgate', 'flashcards', 'examType', 'universitySelect', 'modeSelect', 'flashcardSubjects'].includes(screen);
 
   return (
     <>
@@ -414,61 +407,85 @@ export default function App() {
             if (s.bestScore) setBestScore(s.bestScore); 
             if (s.streak) setStreak(s.streak); 
             if (s.lastDate) setLastDate(s.lastDate); 
-            setScreen('subjects'); 
+            setScreen('examType'); 
           }} />}
           
-          {/* Main Screens with Bottom Navigation */}
-          {isLoggedIn && screen !== 'ready' && screen !== 'quiz' && screen !== 'result' && screen !== 'sharegate' && screen !== 'adgate' && screen !== 'flashcards' && (
-            <>
-              {screen === 'subjects' && (
-                <Subjects 
-                  name={name} 
-                  onStart={startQuiz} 
-                  onProfile={() => setScreen('profile')} 
-                  refreshTrigger={adRefresh} 
-                  mode="cbt"
-                  examType={examType}
-                  university={selectedUniversity}
-                />
-              )}
-              {screen === 'leaderboard' && (
-                <Leaderboard userEmail={email} userName={name} />
-              )}
-              {screen === 'challenges' && (
-                <Challenges userEmail={email} userName={name} />
-              )}
-              {screen === 'profile' && (
-                <Profile 
-                  name={name} 
-                  email={email} 
-                  sessions={sessions} 
-                  streak={streak} 
-                  allScores={allScores} 
-                  bestScore={bestScore} 
-                  onBack={() => setScreen('subjects')} 
-                  onSignOut={() => { 
-                    stopSpeech(); 
-                    localStorage.removeItem('ep_user'); 
-                    setName(''); 
-                    setEmail(''); 
-                    setSessions(0); 
-                    setAllScores([]); 
-                    setBestScore(0); 
-                    setStreak(1); 
-                    setLastDate(''); 
-                    setScreen('onboard'); 
-                  }} 
-                />
-              )}
-              <BottomNav 
-                currentScreen={screen} 
-                onNavigate={handleNavigate} 
-                userEmail={email}
-              />
-            </>
+          {/* Exam Type Selection */}
+          {screen === 'examType' && <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />}
+          
+          {/* University Selection (POST UTME only) */}
+          {screen === 'universitySelect' && <UniversitySelect onSelectUniversity={handleUniversitySelect} onBack={handleBackToExamType} />}
+          
+          {/* Mode Selection */}
+          {screen === 'modeSelect' && (
+            <ModeSelect 
+              onSelectMode={handleModeSelect} 
+              onBack={examType === 'postutme' ? handleBackToExamType : () => setScreen('examType')}
+              examType={examType}
+            />
           )}
           
-          {/* Screens without Bottom Navigation */}
+          {/* Subjects for CBT */}
+          {screen === 'subjects' && (
+            <Subjects 
+              name={name} 
+              onStart={startQuiz} 
+              onProfile={() => setScreen('profile')} 
+              refreshTrigger={adRefresh} 
+              mode="cbt"
+              examType={examType}
+              university={selectedUniversity}
+            />
+          )}
+          
+          {/* Subjects for Flashcards (JAMB only) */}
+          {screen === 'flashcardSubjects' && (
+            <Subjects 
+              name={name} 
+              onStart={handleFlashcardSubjectSelect} 
+              onProfile={() => setScreen('profile')} 
+              refreshTrigger={adRefresh} 
+              mode="flashcard"
+              examType={examType}
+              university={selectedUniversity}
+            />
+          )}
+          
+          {/* Leaderboard */}
+          {screen === 'leaderboard' && (
+            <Leaderboard userEmail={email} userName={name} />
+          )}
+          
+          {/* Challenges */}
+          {screen === 'challenges' && (
+            <Challenges userEmail={email} userName={name} />
+          )}
+          
+          {/* Profile */}
+          {screen === 'profile' && (
+            <Profile 
+              name={name} 
+              email={email} 
+              sessions={sessions} 
+              streak={streak} 
+              allScores={allScores} 
+              bestScore={bestScore} 
+              onBack={() => setScreen('subjects')} 
+              onSignOut={() => { 
+                stopSpeech(); 
+                localStorage.removeItem('ep_user'); 
+                setName(''); 
+                setEmail(''); 
+                setSessions(0); 
+                setAllScores([]); 
+                setBestScore(0); 
+                setStreak(1); 
+                setLastDate(''); 
+                setScreen('onboard'); 
+              }} 
+            />
+          )}
+          
           {screen === 'sharegate' && <ShareGate name={name} email={email} onUnlocked={() => { 
             setSubject(pendingSubject); 
             setScore(0); 
@@ -517,11 +534,20 @@ export default function App() {
           {screen === 'flashcards' && (
             <Flashcards 
               subjectId={flashcardSubject} 
-              onBack={() => setScreen('subjects')} 
+              onBack={handleBackToModeSelect} 
             />
           )}
         </Suspense>
       </div>
+      
+      {/* Bottom Navigation - Only shows on main screens */}
+      {showBottomNav && (
+        <BottomNav 
+          currentScreen={screen} 
+          onNavigate={handleNavigate} 
+          userEmail={email}
+        />
+      )}
       
       {/* Toast Notifications */}
       {toast.show && (
