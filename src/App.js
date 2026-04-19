@@ -516,6 +516,8 @@ export default function App() {
               onHome={goHome} 
               triggerAdRefresh={triggerAdRefresh}
               adRefresh={adRefresh}
+              email={email}
+              name={name}
             />
           )}
           
