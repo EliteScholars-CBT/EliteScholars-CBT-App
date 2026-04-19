@@ -36,21 +36,33 @@ export const getProgressPercentage = (totalXP) => {
 
 // Add XP to user
 export const addXP = async (email, name, amount, reason = '') => {
+  console.log('=== addXP CALLED ===');
+  console.log('Email:', email);
+  console.log('Amount:', amount);
+  console.log('SHEETS_URL:', SHEETS_URL);
+  
   if (!email || amount === 0) return false;
   
   try {
+
+    const payload = {
+      action: 'addXP',
+      email: email,
+      name: name,
+      amount: amount,
+      reason: reason,
+    };
+    
+    console.log('Sending payload:', payload);
+    
     const response = await fetch(SHEETS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        action: 'addXP',
-        email: email,
-        name: name,
-        amount: amount,
-        reason: reason,
-      })
+      body: JSON.stringify(payload)
     });
+
+    console.log('Response sent (no-cors means no response body)');
     
     // Store in localStorage for immediate UI update
     const currentXP = localStorage.getItem(`xp_${email}`) || 0;
