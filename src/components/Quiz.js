@@ -104,17 +104,35 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSel(i); 
   };
   
-  const handleSubmit = () => {
-    if (SHOW_ADS) triggerAdRefresh();
-    if (sel === -1 || done) return;
-    stopSpeech(); setSpeaking(false); SFX.submit(); setDone(true); setTotalQ(t => t + 1);
-    const isCorrect = sel === q.a;
-    if (isCorrect) { setScore(s => s + 1); setCorrect(c => c + 1); setTimeout(() => SFX.correct(), 100); setAnsAnim('correct'); addXP(email, name, 5, 'correct_answer');}
-    else { setTimeout(() => SFX.wrong(), 80); setAnsAnim('wrong'); }
-    setTimeout(() => setAnsAnim(''), 500);
-    setTimeout(() => { if (bodyRef.current) bodyRef.current.scrollTop = 999; }, 200);
-  };
-
+const handleSubmit = () => {
+  if (SHOW_ADS) triggerAdRefresh();
+  if (sel === -1 || done) return;
+  stopSpeech();
+  setSpeaking(false);
+  SFX.submit();
+  setDone(true);
+  setTotalQ(t => t + 1);
+  const isCorrect = sel === q.a;
+  if (isCorrect) {
+    setScore(s => s + 1);
+    setCorrect(c => c + 1);
+    setTimeout(() => SFX.correct(), 100);
+    setAnsAnim('correct');
+    if (email && name) {
+      addXP(email, name, 5, 'correct_answer');
+    } else {
+      console.log('Cannot add XP - email or name missing:', { email, name });
+    }
+  } else {
+    setTimeout(() => SFX.wrong(), 80);
+    setAnsAnim('wrong');
+  }
+  setTimeout(() => setAnsAnim(''), 500);
+  setTimeout(() => {
+    if (bodyRef.current) bodyRef.current.scrollTop = 999;
+  }, 200);
+};
+  
   const handleNext = () => {
     stopSpeech(); setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
