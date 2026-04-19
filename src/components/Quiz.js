@@ -104,7 +104,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSel(i); 
   };
   
-const handleSubmit = () => {
+const handleSubmit = async () => {
   if (SHOW_ADS) triggerAdRefresh();
   if (sel === -1 || done) return;
   stopSpeech();
