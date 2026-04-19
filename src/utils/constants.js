@@ -2,7 +2,7 @@
 // CONFIGURATION - EDIT THESE VALUES
 // ============================================================================
 
-export const ROUND_SIZE = 20;
+export const ROUND_SIZE = 5;
 export const SHARE_GATE_EVERY = 6;
 export const SHOW_ADS = false;
 export const SHOW_POPOVER_AD = false;
