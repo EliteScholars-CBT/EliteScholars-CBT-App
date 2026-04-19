@@ -54,26 +54,21 @@ export const addXP = async (email, name, amount, reason = '') => {
     
     console.log('Sending payload:', payload);
     
-    // REMOVED mode: 'no-cors' to get proper response
-    const response = await fetch(SHEETS_URL, {
+    // Use no-cors to avoid preflight OPTIONS request
+    await fetch(SHEETS_URL, {
       method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-      },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
+
+    console.log('Request sent successfully');
     
-    const result = await response.json();
-    console.log('Response from server:', result);
+    // Store in localStorage for immediate UI update
+    const currentXP = localStorage.getItem(`xp_${email}`) || 0;
+    localStorage.setItem(`xp_${email}`, parseInt(currentXP) + amount);
     
-    if (result.success) {
-      // Store in localStorage for immediate UI update
-      const currentXP = localStorage.getItem(`xp_${email}`) || 0;
-      localStorage.setItem(`xp_${email}`, parseInt(currentXP) + amount);
-      return true;
-    }
-    
-    return false;
+    return true;
   } catch (error) {
     console.error('Failed to add XP:', error);
     return false;
