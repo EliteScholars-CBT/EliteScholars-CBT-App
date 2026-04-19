@@ -23,11 +23,19 @@ export function fmtTimestamp() {
 
 export function trackEvent(eventName, data) {
   if (!SHEETS_URL) return;
+
+   // Ensure timestamp is always included
+  const eventData = {
+    event: eventName,
+    timestamp: fmtTimestamp(),
+    ...data
+  };
+  
   fetch(SHEETS_URL, {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ event: eventName, timestamp: fmtTimestamp(), ...data }),
+    body: JSON.stringify(eventData),
   }).catch(() => {});
 }
 
