@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
+import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
@@ -108,7 +109,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     if (sel === -1 || done) return;
     stopSpeech(); setSpeaking(false); SFX.submit(); setDone(true); setTotalQ(t => t + 1);
     const isCorrect = sel === q.a;
-    if (isCorrect) { setScore(s => s + 1); setCorrect(c => c + 1); setTimeout(() => SFX.correct(), 100); setAnsAnim('correct'); }
+    if (isCorrect) { setScore(s => s + 1); setCorrect(c => c + 1); setTimeout(() => SFX.correct(), 100); setAnsAnim('correct'); addXP(email, name, 5, 'correct_answer');}
     else { setTimeout(() => SFX.wrong(), 80); setAnsAnim('wrong'); }
     setTimeout(() => setAnsAnim(''), 500);
     setTimeout(() => { if (bodyRef.current) bodyRef.current.scrollTop = 999; }, 200);
