@@ -379,7 +379,9 @@ export default function App() {
       name, email, subject, score, correct, totalQ, pct: pct + '%', 
       rounds: finalRoundsPlayed, totalSessions: ns, 
       examType, university: selectedUniversity,
-      timestamp2: fmtTimestamp() 
+      timestamp2: fmtTimestamp(),
+      timestamp: fmtTimestamp(),
+      date: new Date().toISOString()
     });
     setScreen('result');
   };
