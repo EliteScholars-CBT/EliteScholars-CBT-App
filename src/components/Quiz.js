@@ -118,11 +118,15 @@ const handleSubmit = () => {
     setCorrect(c => c + 1);
     setTimeout(() => SFX.correct(), 100);
     setAnsAnim('correct');
-    if (email && name) {
-      addXP(email, name, 5, 'correct_answer');
-    } else {
-      console.log('Cannot add XP - email or name missing:', { email, name });
-    }
+    
+    console.log('About to call addXP with:', { email, name });
+  
+  if (email && name) {
+    const result = await addXP(email, name, 5, 'correct_answer');
+    console.log('addXP result:', result);
+  } else {
+    console.log('Cannot add XP - email or name missing:', { email, name });
+  }
   } else {
     setTimeout(() => SFX.wrong(), 80);
     setAnsAnim('wrong');
