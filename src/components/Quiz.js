@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
-import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
@@ -18,13 +17,15 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);      // Used once per ROUND - persists across questions
-  const [usedH, setUH] = useState(false);      // Used once per ROUND - persists across questions
-  const [hidden, setHid] = useState([]);       // Resets EVERY question
-  const [showHint, setSHint] = useState(false); // Resets EVERY question
+  const [usedF, setUF] = useState(false);
+  const [usedH, setUH] = useState(false);
+  const [hidden, setHid] = useState([]);
+  const [showHint, setSHint] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const timerRef = useRef(null);
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
@@ -33,7 +34,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const q = shuffled[qi];
   const isLastQ = qi >= shuffled.length - 1;
   const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
-  const isLast = isLastQ || isRoundEnd;
+  const isLast = isLastQ; // Only call onAllDone at the VERY end
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
@@ -104,42 +105,44 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSel(i); 
   };
   
-const handleSubmit = async () => {
-  if (SHOW_ADS) triggerAdRefresh();
-  if (sel === -1 || done) return;
-  stopSpeech();
-  setSpeaking(false);
-  SFX.submit();
-  setDone(true);
-  setTotalQ(t => t + 1);
-  const isCorrect = sel === q.a;
-  
-  if (isCorrect) {
-    setScore(s => s + 1);
-    setCorrect(c => c + 1);
-    setTimeout(() => SFX.correct(), 100);
-    setAnsAnim('correct');
+  const handleSubmit = async () => {
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    if (SHOW_ADS) triggerAdRefresh();
+    if (sel === -1 || done) return;
     
-    // console.log('About to call addXP with:', { email, name });
-  
-  // if (email && name) {
-  //   const result = await addXP(email, name, 5, 'correct_answer');
-  //   console.log('addXP result:', result);
-  // } else {
-  //   console.log('Cannot add XP - email or name missing:', { email, name });
-  // }
-  } else {
-    setTimeout(() => SFX.wrong(), 80);
-    setAnsAnim('wrong');
-  }
-  setTimeout(() => setAnsAnim(''), 500);
-  setTimeout(() => {
-    if (bodyRef.current) bodyRef.current.scrollTop = 999;
-  }, 200);
-};
+    setIsSubmitting(true);
+    stopSpeech();
+    setSpeaking(false);
+    SFX.submit();
+    setDone(true);
+    setTotalQ(t => t + 1);
+    const isCorrect = sel === q.a;
+    
+    if (isCorrect) {
+      setScore(s => s + 1);
+      setCorrect(c => c + 1);
+      setTimeout(() => SFX.correct(), 100);
+      setAnsAnim('correct');
+      // XP is now added in App.jsx handleAllDone, not here
+    } else {
+      setTimeout(() => SFX.wrong(), 80);
+      setAnsAnim('wrong');
+    }
+    setTimeout(() => setAnsAnim(''), 500);
+    setTimeout(() => {
+      if (bodyRef.current) bodyRef.current.scrollTop = 999;
+      setIsSubmitting(false);
+    }, 200);
+  };
   
   const handleNext = () => {
-    stopSpeech(); setSpeaking(false);
+    // Prevent multiple navigation calls
+    if (isNavigating) return;
+    setIsNavigating(true);
+    
+    stopSpeech(); 
+    setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     
     if (isLast) { 
@@ -148,11 +151,13 @@ const handleSubmit = async () => {
         setQuizTimeRemaining(timeLeft);
       }
       onAllDone(Math.ceil(shuffled.length / ROUND_SIZE)); 
+      setIsNavigating(false);
       return; 
     }
     
     const nextQi = qi + 1;
     setQi(nextQi);
+    setIsNavigating(false);
   };
 
   const doFifty = () => { 
@@ -361,7 +366,7 @@ const handleSubmit = async () => {
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
         {!done && <button onClick={handleSubmit} className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}>Submit Answer</button>}
-        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : isRoundEnd ? 'See Results →' : 'Next →'}</button>}
+        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : 'Next →'}</button>}
       </div>
 
       {modal && (
@@ -382,4 +387,4 @@ const handleSubmit = async () => {
       )}
     </div>
   );
-    }
+}
