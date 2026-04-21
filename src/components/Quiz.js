@@ -7,7 +7,7 @@ import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED,
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
-export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining, name, email }) {
+export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining, name, email, onFiftyUsed, onHintUsed }) {
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
     return sfl(questions);
@@ -155,6 +155,7 @@ const handleSubmit = async () => {
   };
 
   const doFifty = () => { 
+    if (onFiftyUsed) onFiftyUsed(true);
     if (usedF || done) return; 
     setUF(true); 
     SFX.select(); 
@@ -166,6 +167,7 @@ const handleSubmit = async () => {
   };
   
   const doHint = () => { 
+    if (onHintUsed) onHintUsed(true);
     if (usedH || done) return; 
     setUH(true); 
     setSHint(true); 
