@@ -2,12 +2,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
-import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
-export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining, name, email }) {
+export default function Quiz({ 
+  subjectId, 
+  onAllDone, 
+  score, 
+  setScore, 
+  correct, 
+  setCorrect, 
+  totalQ, 
+  setTotalQ, 
+  onHome, 
+  triggerAdRefresh, 
+  adRefresh, 
+  setQuizTimeRemaining, 
+  name, 
+  email 
+}) {
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
     return sfl(questions);
@@ -104,38 +118,30 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSel(i); 
   };
   
-const handleSubmit = async () => {
-  if (SHOW_ADS) triggerAdRefresh();
-  if (sel === -1 || done) return;
-  stopSpeech();
-  setSpeaking(false);
-  SFX.submit();
-  setDone(true);
-  setTotalQ(t => t + 1);
-  const isCorrect = sel === q.a;
-  if (isCorrect) {
-    setScore(s => s + 1);
-    setCorrect(c => c + 1);
-    setTimeout(() => SFX.correct(), 100);
-    setAnsAnim('correct');
-    
-    console.log('About to call addXP with:', { email, name });
-  
-  if (email && name) {
-    const result = await addXP(email, name, 5, 'correct_answer');
-    console.log('addXP result:', result);
-  } else {
-    console.log('Cannot add XP - email or name missing:', { email, name });
-  }
-  } else {
-    setTimeout(() => SFX.wrong(), 80);
-    setAnsAnim('wrong');
-  }
-  setTimeout(() => setAnsAnim(''), 500);
-  setTimeout(() => {
-    if (bodyRef.current) bodyRef.current.scrollTop = 999;
-  }, 200);
-};
+  const handleSubmit = () => {
+    if (SHOW_ADS) triggerAdRefresh();
+    if (sel === -1 || done) return;
+    stopSpeech();
+    setSpeaking(false);
+    SFX.submit();
+    setDone(true);
+    setTotalQ(t => t + 1);
+    const isCorrect = sel === q.a;
+    if (isCorrect) {
+      setScore(s => s + 1);
+      setCorrect(c => c + 1);
+      setTimeout(() => SFX.correct(), 100);
+      setAnsAnim('correct');
+      // XP IS NOW ADDED IN handleAllDone, NOT HERE
+    } else {
+      setTimeout(() => SFX.wrong(), 80);
+      setAnsAnim('wrong');
+    }
+    setTimeout(() => setAnsAnim(''), 500);
+    setTimeout(() => {
+      if (bodyRef.current) bodyRef.current.scrollTop = 999;
+    }, 200);
+  };
   
   const handleNext = () => {
     stopSpeech(); setSpeaking(false);
@@ -379,4 +385,4 @@ const handleSubmit = async () => {
       )}
     </div>
   );
-    }
+}
