@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
+import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
@@ -17,16 +18,13 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);
-  const [usedH, setUH] = useState(false);
-  const [hidden, setHid] = useState([]);
-  const [showHint, setSHint] = useState(false);
+  const [usedF, setUF] = useState(false);      // Used once per ROUND - persists across questions
+  const [usedH, setUH] = useState(false);      // Used once per ROUND - persists across questions
+  const [hidden, setHid] = useState([]);       // Resets EVERY question
+  const [showHint, setSHint] = useState(false); // Resets EVERY question
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [quizCompleted, setQuizCompleted] = useState(false);
   const timerRef = useRef(null);
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
@@ -106,57 +104,55 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSel(i); 
   };
   
-  const handleSubmit = async () => {
-    if (isSubmitting) return;
-    if (SHOW_ADS) triggerAdRefresh();
-    if (sel === -1 || done) return;
+const handleSubmit = async () => {
+  if (SHOW_ADS) triggerAdRefresh();
+  if (sel === -1 || done) return;
+  stopSpeech();
+  setSpeaking(false);
+  SFX.submit();
+  setDone(true);
+  setTotalQ(t => t + 1);
+  const isCorrect = sel === q.a;
+  
+  if (isCorrect) {
+    setScore(s => s + 1);
+    setCorrect(c => c + 1);
+    setTimeout(() => SFX.correct(), 100);
+    setAnsAnim('correct');
     
-    setIsSubmitting(true);
-    stopSpeech();
-    setSpeaking(false);
-    SFX.submit();
-    setDone(true);
-    setTotalQ(t => t + 1);
-    const isCorrect = sel === q.a;
-    
-    if (isCorrect) {
-      setScore(s => s + 1);
-      setCorrect(c => c + 1);
-      setTimeout(() => SFX.correct(), 100);
-      setAnsAnim('correct');
-    } else {
-      setTimeout(() => SFX.wrong(), 80);
-      setAnsAnim('wrong');
-    }
-    setTimeout(() => setAnsAnim(''), 500);
-    setTimeout(() => {
-      if (bodyRef.current) bodyRef.current.scrollTop = 999;
-      setIsSubmitting(false);
-    }, 200);
-  };
+    // console.log('About to call addXP with:', { email, name });
+  
+  // if (email && name) {
+  //   const result = await addXP(email, name, 5, 'correct_answer');
+  //   console.log('addXP result:', result);
+  // } else {
+  //   console.log('Cannot add XP - email or name missing:', { email, name });
+  // }
+  } else {
+    setTimeout(() => SFX.wrong(), 80);
+    setAnsAnim('wrong');
+  }
+  setTimeout(() => setAnsAnim(''), 500);
+  setTimeout(() => {
+    if (bodyRef.current) bodyRef.current.scrollTop = 999;
+  }, 200);
+};
   
   const handleNext = () => {
-    if (isNavigating || quizCompleted) return;
-    setIsNavigating(true);
-    
-    stopSpeech(); 
-    setSpeaking(false);
+    stopSpeech(); setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     
-    if (isLast && !quizCompleted) { 
-      setQuizCompleted(true);
+    if (isLast) { 
       SFX.roundComplete(); 
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
       }
       onAllDone(Math.ceil(shuffled.length / ROUND_SIZE)); 
-      setIsNavigating(false);
       return; 
     }
     
     const nextQi = qi + 1;
     setQi(nextQi);
-    setIsNavigating(false);
   };
 
   const doFifty = () => { 
@@ -386,4 +382,4 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       )}
     </div>
   );
-}
+    }
