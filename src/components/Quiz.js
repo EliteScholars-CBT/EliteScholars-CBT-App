@@ -20,7 +20,8 @@ export default function Quiz({
   adRefresh, 
   setQuizTimeRemaining, 
   name, 
-  email 
+  email,
+  onLifelineUsage 
 }) {
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
@@ -132,7 +133,7 @@ export default function Quiz({
       setCorrect(c => c + 1);
       setTimeout(() => SFX.correct(), 100);
       setAnsAnim('correct');
-      // XP IS NOW ADDED IN handleAllDone, NOT HERE
+      // XP IS NOW ADDED IN handleAllDone (App.jsx), NOT HERE
     } else {
       setTimeout(() => SFX.wrong(), 80);
       setAnsAnim('wrong');
@@ -163,6 +164,8 @@ export default function Quiz({
   const doFifty = () => { 
     if (usedF || done) return; 
     setUF(true); 
+    // Report 50/50 usage to App.jsx for XP calculation
+    if (onLifelineUsage) onLifelineUsage('fifty', true);
     SFX.select(); 
     const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
     const shuffledWrong = sfl(wrongOptions);
@@ -174,6 +177,8 @@ export default function Quiz({
   const doHint = () => { 
     if (usedH || done) return; 
     setUH(true); 
+    // Report Hint usage to App.jsx for XP calculation
+    if (onLifelineUsage) onLifelineUsage('hint', true);
     setSHint(true); 
     SFX.select(); 
   };
