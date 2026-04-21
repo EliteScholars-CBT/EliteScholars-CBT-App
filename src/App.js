@@ -145,7 +145,6 @@ export default function App() {
 
   const [usedFiftyFifty, setUsedFiftyFifty] = useState(false);
   const [usedHint, setUsedHint] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false); // Prevent duplicate calls
 
   useEffect(() => {
     const u = loadUser();
@@ -238,8 +237,6 @@ export default function App() {
     setFlashcardSubject(null);
     setExamType(null);
     setSelectedUniversity(null);
-    setUsedFiftyFifty(false);
-    setUsedHint(false);
     setScreen('examType'); 
   };
   
@@ -334,96 +331,82 @@ export default function App() {
     setScreen('ready');
   };
 
-  const handleAllDone = async (finalRoundsPlayed) => {
-    // Prevent multiple calls
-    if (isProcessing) {
-      console.log('handleAllDone already running, skipping...');
-      return;
-    }
-    setIsProcessing(true);
+  const handleAllDone = (finalRoundsPlayed) => {
+    const pct = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
     
-    try {
-      const pct = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
-      
-      // Calculate total XP for the quiz
-      const totalXPEarned = calculateQuizXP(
-        correct,           // number of correct answers
-        totalQ,            // total questions
-        quizTimeRemaining || 0, // time remaining when finished
-        streak,            // current streak days
-        usedFiftyFifty,    // whether 50/50 was used
-        usedHint           // whether hint was used
-      );
+    // Calculate total XP for the quiz
+    const totalXPEarned = calculateQuizXP(
+      correct,           // number of correct answers
+      totalQ,            // total questions
+      quizTimeRemaining || 0, // time remaining when finished
+      streak,            // current streak days
+      usedFiftyFifty,    // whether 50/50 was used
+      usedHint           // whether hint was used
+    );
 
-      // Add XP once for the entire quiz
-      if (email && name && totalXPEarned > 0) {
-        console.log('Adding XP once:', totalXPEarned);
-        await addXP(email, name, totalXPEarned, 'quiz_complete');
-      }
-      
-      const ns = sessions + 1;
-      const nsc = [...allScores, pct];
-      const nb = Math.max(bestScore, score);
-      const today = new Date().toDateString();
-      const newStreak = calcStreak(streak, lastDate);
-      
-      const isPerfect = pct === 100;
-      const isNinetyPlus = pct >= 90;
-      
-      updateSubjectPerformance(subject, correct, totalQ, quizTimeRemaining, getTimerSecs(subject, ROUND_SIZE));
-      
-      setSessions(ns);
-      setAllScores(nsc);
-      setBestScore(nb);
-      setStreak(newStreak);
-      setLastDate(today);
-      persist(ns, nsc, nb, newStreak, today);
-      
-      const perfectScoresCount = allScores.filter(s => s === 100).length + (isPerfect ? 1 : 0);
-      const ninetyPlusCount = allScores.filter(s => s >= 90).length + (isNinetyPlus ? 1 : 0);
-      
-      const userStats = {
-        totalQuizzes: ns,
-        perfectScores: perfectScoresCount,
-        ninetyPlusCount: ninetyPlusCount,
-        streak: newStreak,
-        speedDemonCount: 0,
-      };
-      
-      const currentAchievements = achievements;
-      checkAndAwardAchievements(userStats, email, currentAchievements, showToast, showAchievement, subjectPerformance);
-      
-      if (ns % SHARE_GATE_EVERY === 0 && !SHOW_POPOVER_AD) {
-        try { localStorage.setItem(`ep_sharepending_${email}`, ns.toString()); } catch {}
-      }
-      setRoundsPlayed(finalRoundsPlayed);
-      
-      if (isPerfect) {
-        showToast(`Perfect score! 🎯 You got ${correct}/${totalQ} correct!`, 'success');
-      } else if (isNinetyPlus) {
-        showToast(`Excellent! ${pct}% - Keep up the great work! ⭐`, 'success');
-      } else if (pct >= 70) {
-        showToast(`Good job! ${pct}% - You're making progress! 📈`, 'success');
-      } else if (pct >= 50) {
-        showToast(`Not bad! ${pct}% - Review the explanations to improve! 📚`, 'info');
-      } else {
-        showToast(`Keep practicing! ${pct}% - Every session makes you better! 💪`, 'warning');
-      }
-      
-      trackEvent('quiz_complete', { 
-        name, email, subject, score, correct, totalQ, pct: pct + '%', 
-        rounds: finalRoundsPlayed, totalSessions: ns, 
-        examType, university: selectedUniversity,
-        timestamp2: fmtTimestamp(),
-        timestamp: fmtTimestamp(),
-        date: new Date().toISOString()
-      });
-      setScreen('result');
-    } catch (error) {
-      console.error('Error in handleAllDone:', error);
-    } finally {
-      setIsProcessing(false);
+    // Add XP once for the entire quiz
+    if (email && name && totalXPEarned > 0) {
+        addXP(email, name, totalXPEarned, 'quiz_complete');
     }
+    
+    const ns = sessions + 1;
+    const nsc = [...allScores, pct];
+    const nb = Math.max(bestScore, score);
+    const today = new Date().toDateString();
+    const newStreak = calcStreak(streak, lastDate);
+    
+    const isPerfect = pct === 100;
+    const isNinetyPlus = pct >= 90;
+    
+    updateSubjectPerformance(subject, correct, totalQ, quizTimeRemaining, getTimerSecs(subject, ROUND_SIZE));
+    
+    setSessions(ns);
+    setAllScores(nsc);
+    setBestScore(nb);
+    setStreak(newStreak);
+    setLastDate(today);
+    persist(ns, nsc, nb, newStreak, today);
+    
+    const perfectScoresCount = allScores.filter(s => s === 100).length + (isPerfect ? 1 : 0);
+    const ninetyPlusCount = allScores.filter(s => s >= 90).length + (isNinetyPlus ? 1 : 0);
+    
+    const userStats = {
+      totalQuizzes: ns,
+      perfectScores: perfectScoresCount,
+      ninetyPlusCount: ninetyPlusCount,
+      streak: newStreak,
+      speedDemonCount: 0,
+    };
+    
+    const currentAchievements = achievements;
+    checkAndAwardAchievements(userStats, email, currentAchievements, showToast, showAchievement, subjectPerformance);
+    
+    if (ns % SHARE_GATE_EVERY === 0 && !SHOW_POPOVER_AD) {
+      try { localStorage.setItem(`ep_sharepending_${email}`, ns.toString()); } catch {}
+    }
+    setRoundsPlayed(finalRoundsPlayed);
+    
+    if (isPerfect) {
+      showToast(`Perfect score! 🎯 You got ${correct}/${totalQ} correct!`, 'success');
+    } else if (isNinetyPlus) {
+      showToast(`Excellent! ${pct}% - Keep up the great work! ⭐`, 'success');
+    } else if (pct >= 70) {
+      showToast(`Good job! ${pct}% - You're making progress! 📈`, 'success');
+    } else if (pct >= 50) {
+      showToast(`Not bad! ${pct}% - Review the explanations to improve! 📚`, 'info');
+    } else {
+      showToast(`Keep practicing! ${pct}% - Every session makes you better! 💪`, 'warning');
+    }
+    
+    trackEvent('quiz_complete', { 
+      name, email, subject, score, correct, totalQ, pct: pct + '%', 
+      rounds: finalRoundsPlayed, totalSessions: ns, 
+      examType, university: selectedUniversity,
+      timestamp2: fmtTimestamp(),
+      timestamp: fmtTimestamp(),
+      date: new Date().toISOString()
+    });
+    setScreen('result');
   };
 
   const handleNavigate = (newScreen) => {
