@@ -2,27 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
+import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
-export default function Quiz({ 
-  subjectId, 
-  onAllDone, 
-  score, 
-  setScore, 
-  correct, 
-  setCorrect, 
-  totalQ, 
-  setTotalQ, 
-  onHome, 
-  triggerAdRefresh, 
-  adRefresh, 
-  setQuizTimeRemaining, 
-  name, 
-  email,
-  onLifelineUsage 
-}) {
+export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining, name, email }) {
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
     return sfl(questions);
@@ -33,10 +18,10 @@ export default function Quiz({
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);
-  const [usedH, setUH] = useState(false);
-  const [hidden, setHid] = useState([]);
-  const [showHint, setSHint] = useState(false);
+  const [usedF, setUF] = useState(false);      // Used once per ROUND - persists across questions
+  const [usedH, setUH] = useState(false);      // Used once per ROUND - persists across questions
+  const [hidden, setHid] = useState([]);       // Resets EVERY question
+  const [showHint, setSHint] = useState(false); // Resets EVERY question
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
@@ -48,6 +33,7 @@ export default function Quiz({
   const q = shuffled[qi];
   const isLastQ = qi >= shuffled.length - 1;
   const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
+  const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
@@ -118,36 +104,44 @@ export default function Quiz({
     setSel(i); 
   };
   
-  const handleSubmit = () => {
-    if (SHOW_ADS) triggerAdRefresh();
-    if (sel === -1 || done) return;
-    stopSpeech();
-    setSpeaking(false);
-    SFX.submit();
-    setDone(true);
-    setTotalQ(t => t + 1);
-    const isCorrect = sel === q.a;
-    if (isCorrect) {
-      setScore(s => s + 1);
-      setCorrect(c => c + 1);
-      setTimeout(() => SFX.correct(), 100);
-      setAnsAnim('correct');
-    } else {
-      setTimeout(() => SFX.wrong(), 80);
-      setAnsAnim('wrong');
-    }
-    setTimeout(() => setAnsAnim(''), 500);
-    setTimeout(() => {
-      if (bodyRef.current) bodyRef.current.scrollTop = 999;
-    }, 200);
-  };
+const handleSubmit = async () => {
+  if (SHOW_ADS) triggerAdRefresh();
+  if (sel === -1 || done) return;
+  stopSpeech();
+  setSpeaking(false);
+  SFX.submit();
+  setDone(true);
+  setTotalQ(t => t + 1);
+  const isCorrect = sel === q.a;
+  if (isCorrect) {
+    setScore(s => s + 1);
+    setCorrect(c => c + 1);
+    setTimeout(() => SFX.correct(), 100);
+    setAnsAnim('correct');
+    
+    console.log('About to call addXP with:', { email, name });
+  
+  if (email && name) {
+    const result = await addXP(email, name, 5, 'correct_answer');
+    console.log('addXP result:', result);
+  } else {
+    console.log('Cannot add XP - email or name missing:', { email, name });
+  }
+  } else {
+    setTimeout(() => SFX.wrong(), 80);
+    setAnsAnim('wrong');
+  }
+  setTimeout(() => setAnsAnim(''), 500);
+  setTimeout(() => {
+    if (bodyRef.current) bodyRef.current.scrollTop = 999;
+  }, 200);
+};
   
   const handleNext = () => {
     stopSpeech(); setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     
-    // Only call onAllDone when it's the VERY LAST question of the entire quiz
-    if (isLastQ) { 
+    if (isLast) { 
       SFX.roundComplete(); 
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
@@ -163,7 +157,6 @@ export default function Quiz({
   const doFifty = () => { 
     if (usedF || done) return; 
     setUF(true); 
-    if (onLifelineUsage) onLifelineUsage('fifty', true);
     SFX.select(); 
     const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
     const shuffledWrong = sfl(wrongOptions);
@@ -175,7 +168,6 @@ export default function Quiz({
   const doHint = () => { 
     if (usedH || done) return; 
     setUH(true); 
-    if (onLifelineUsage) onLifelineUsage('hint', true);
     setSHint(true); 
     SFX.select(); 
   };
@@ -366,7 +358,7 @@ export default function Quiz({
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
         {!done && <button onClick={handleSubmit} className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}>Submit Answer</button>}
-        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'See Results →' : 'Next →'}</button>}
+        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : isRoundEnd ? 'See Results →' : 'Next →'}</button>}
       </div>
 
       {modal && (
@@ -387,4 +379,4 @@ export default function Quiz({
       )}
     </div>
   );
-}
+    }
