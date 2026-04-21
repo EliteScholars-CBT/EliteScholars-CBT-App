@@ -14,6 +14,7 @@ import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveS
 import { trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp } from './utils/analytics';
 import { stopSpeech } from './utils/sounds';
 import { ACHIEVEMENTS } from './utils/constants';
+import { calculateQuizXP, addXP } from './utils/xpManager';
 import './style.css';
 
 // Lazy loaded components
@@ -141,6 +142,10 @@ export default function App() {
   const [examType, setExamType] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [sessionStartTime, setSessionStartTime] = useState(null);
+  
+  // Track lifeline usage for XP calculation
+  const [usedFiftyFifty, setUsedFiftyFifty] = useState(false);
+  const [usedHint, setUsedHint] = useState(false);
 
   useEffect(() => {
     const u = loadUser();
@@ -172,14 +177,13 @@ export default function App() {
   }, [name, email, screen]);
 
   useEffect(() => {
-    // Inside the beforeunload event listener
-const handleBeforeUnload = () => {
-  if (sessionStartTime && email) {
-    const durationMs = Date.now() - sessionStartTime;
-    const durationMinutes = durationMs / 60000; // Convert to minutes (as decimal)
-    trackSessionEnd(email, durationMinutes);
-  }
-};
+    const handleBeforeUnload = () => {
+      if (sessionStartTime && email) {
+        const durationMs = Date.now() - sessionStartTime;
+        const durationMinutes = durationMs / 60000;
+        trackSessionEnd(email, durationMinutes);
+      }
+    };
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [sessionStartTime, email]);
@@ -235,6 +239,8 @@ const handleBeforeUnload = () => {
     setFlashcardSubject(null);
     setExamType(null);
     setSelectedUniversity(null);
+    setUsedFiftyFifty(false);
+    setUsedHint(false);
     setScreen('examType'); 
   };
   
@@ -318,6 +324,8 @@ const handleBeforeUnload = () => {
     setCorrect(0);
     setTotalQ(0);
     setRoundsPlayed(0);
+    setUsedFiftyFifty(false);
+    setUsedHint(false);
     trackEvent('quiz_start', { 
       name, email, subject: sel, 
       examType, university: selectedUniversity,
@@ -326,8 +334,25 @@ const handleBeforeUnload = () => {
     setScreen('ready');
   };
 
-  const handleAllDone = (finalRoundsPlayed) => {
+  const handleAllDone = async (finalRoundsPlayed) => {
     const pct = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+    
+    // CALCULATE TOTAL XP FOR THE QUIZ (ADDED)
+    const totalXPEarned = calculateQuizXP(
+      correct,           // number of correct answers
+      totalQ,            // total questions
+      quizTimeRemaining || 0, // time remaining when finished
+      streak,            // current streak days
+      usedFiftyFifty,    // whether 50/50 was used
+      usedHint           // whether hint was used
+    );
+    
+    // ADD XP ONCE FOR THE ENTIRE QUIZ (ADDED)
+    if (email && name && totalXPEarned > 0) {
+      console.log('Adding total XP for quiz:', totalXPEarned);
+      await addXP(email, name, totalXPEarned, 'quiz_complete');
+    }
+    
     const ns = sessions + 1;
     const nsc = [...allScores, pct];
     const nb = Math.max(bestScore, score);
@@ -381,6 +406,7 @@ const handleBeforeUnload = () => {
       name, email, subject, score, correct, totalQ, pct: pct + '%', 
       rounds: finalRoundsPlayed, totalSessions: ns, 
       examType, university: selectedUniversity,
+      xp_earned: totalXPEarned,
       timestamp2: fmtTimestamp(),
       timestamp: fmtTimestamp(),
       date: new Date().toISOString()
@@ -392,6 +418,12 @@ const handleBeforeUnload = () => {
     if (SHOW_ADS) triggerAdRefresh();
     stopSpeech();
     setScreen(newScreen);
+  };
+
+  // Function to receive lifeline usage from Quiz component
+  const handleLifelineUsage = (type, used) => {
+    if (type === 'fifty') setUsedFiftyFifty(used);
+    if (type === 'hint') setUsedHint(used);
   };
 
   const isLoggedIn = name && email;
@@ -520,6 +552,7 @@ const handleBeforeUnload = () => {
               adRefresh={adRefresh}
               email={email}
               name={name}
+              onLifelineUsage={handleLifelineUsage}
             />
           )}
           
