@@ -26,6 +26,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const [ansAnim, setAnsAnim] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
   const timerRef = useRef(null);
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
@@ -34,7 +35,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const q = shuffled[qi];
   const isLastQ = qi >= shuffled.length - 1;
   const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
-  const isLast = isLastQ; // Only call onAllDone at the VERY end
+  const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
@@ -106,7 +107,6 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   };
   
   const handleSubmit = async () => {
-    // Prevent multiple submissions
     if (isSubmitting) return;
     if (SHOW_ADS) triggerAdRefresh();
     if (sel === -1 || done) return;
@@ -124,7 +124,6 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       setCorrect(c => c + 1);
       setTimeout(() => SFX.correct(), 100);
       setAnsAnim('correct');
-      // XP is now added in App.jsx handleAllDone, not here
     } else {
       setTimeout(() => SFX.wrong(), 80);
       setAnsAnim('wrong');
@@ -137,15 +136,15 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   };
   
   const handleNext = () => {
-    // Prevent multiple navigation calls
-    if (isNavigating) return;
+    if (isNavigating || quizCompleted) return;
     setIsNavigating(true);
     
     stopSpeech(); 
     setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     
-    if (isLast) { 
+    if (isLast && !quizCompleted) { 
+      setQuizCompleted(true);
       SFX.roundComplete(); 
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
@@ -366,7 +365,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
         {!done && <button onClick={handleSubmit} className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}>Submit Answer</button>}
-        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : 'Next →'}</button>}
+        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : isRoundEnd ? 'See Results →' : 'Next →'}</button>}
       </div>
 
       {modal && (
