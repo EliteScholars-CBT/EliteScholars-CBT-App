@@ -113,6 +113,7 @@ const handleSubmit = async () => {
   setDone(true);
   setTotalQ(t => t + 1);
   const isCorrect = sel === q.a;
+  
   if (isCorrect) {
     setScore(s => s + 1);
     setCorrect(c => c + 1);
