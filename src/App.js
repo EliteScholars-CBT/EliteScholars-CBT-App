@@ -172,12 +172,14 @@ export default function App() {
   }, [name, email, screen]);
 
   useEffect(() => {
-    const handleBeforeUnload = () => {
-      if (sessionStartTime && email) {
-        const duration = Math.round((Date.now() - sessionStartTime) / 60000);
-        trackSessionEnd(email, duration);
-      }
-    };
+    // Inside the beforeunload event listener
+const handleBeforeUnload = () => {
+  if (sessionStartTime && email) {
+    const durationMs = Date.now() - sessionStartTime;
+    const durationMinutes = durationMs / 60000; // Convert to minutes (as decimal)
+    trackSessionEnd(email, durationMinutes);
+  }
+};
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [sessionStartTime, email]);
