@@ -155,8 +155,8 @@ const handleSubmit = async () => {
   };
 
   const doFifty = () => { 
-    if (onFiftyUsed) onFiftyUsed(true);
     if (usedF || done) return; 
+    if (onFiftyUsed) onFiftyUsed(true);
     setUF(true); 
     SFX.select(); 
     const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
@@ -167,8 +167,8 @@ const handleSubmit = async () => {
   };
   
   const doHint = () => { 
-    if (onHintUsed) onHintUsed(true);
     if (usedH || done) return; 
+    if (onHintUsed) onHintUsed(true);
     setUH(true); 
     setSHint(true); 
     SFX.select(); 
