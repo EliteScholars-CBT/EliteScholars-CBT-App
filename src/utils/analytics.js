@@ -129,9 +129,17 @@ export function trackSessionStart(userEmail, userName) {
 }
 
 export function trackSessionEnd(userEmail, durationMinutes) {
+  // Convert minutes to HH:MM:SS format
+  const totalSeconds = Math.floor(durationMinutes * 60);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  const formattedDuration = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  
   trackEvent('session_end', {
     user_email: userEmail,
     duration_minutes: durationMinutes,
+    duration_formatted: formattedDuration,
     ...getDeviceInfo(),
   });
 }
