@@ -16,7 +16,7 @@ export const POPOVER_AD_URL = "https://fixesconsessionconsession.com/63/ce/c2/63
 export const WA_GROUP = 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t';
 export const WA_CHANNEL = 'https://whatsapp.com/channel/0029Vb6wPv72kNFnjr4FMr24';
 export const APP_URL = 'https://elitescholars.site';
-export const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzTp4BSw9E4fbaNAbwpcXLBAicE3sj6cZLaszxcsnUfufYjPXa7x1P8qFWzBRqFDJAJ/exec';
+export const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbw56Zs-BNJxKRHaBKzP-25FK5uOQ6WTcrM7nE7uZHfXfDeyMk9qyHHJguwycKWMH1w2/exec';
 
 
 // ============================================================================
