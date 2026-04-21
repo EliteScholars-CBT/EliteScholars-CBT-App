@@ -14,6 +14,7 @@ import { loadUser, loadStats, saveStats, saveUser, loadSubjectPerformance, saveS
 import { trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp } from './utils/analytics';
 import { stopSpeech } from './utils/sounds';
 import { ACHIEVEMENTS } from './utils/constants';
+import { calculateQuizXP, addXP } from './utils/xpManager';
 import './style.css';
 
 // Lazy loaded components
@@ -141,6 +142,9 @@ export default function App() {
   const [examType, setExamType] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [sessionStartTime, setSessionStartTime] = useState(null);
+
+  const [usedFiftyFifty, setUsedFiftyFifty] = useState(false);
+  const [usedHint, setUsedHint] = useState(false);
 
   useEffect(() => {
     const u = loadUser();
@@ -316,6 +320,9 @@ export default function App() {
     setCorrect(0);
     setTotalQ(0);
     setRoundsPlayed(0);
+    setUsedFiftyFifty(false);
+    setUsedHint(false);
+    
     trackEvent('quiz_start', { 
       name, email, subject: sel, 
       examType, university: selectedUniversity,
@@ -326,6 +333,22 @@ export default function App() {
 
   const handleAllDone = (finalRoundsPlayed) => {
     const pct = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+    
+    // Calculate total XP for the quiz
+    const totalXPEarned = calculateQuizXP(
+      correct,           // number of correct answers
+      totalQ,            // total questions
+      quizTimeRemaining || 0, // time remaining when finished
+      streak,            // current streak days
+      usedFiftyFifty,    // whether 50/50 was used
+      usedHint           // whether hint was used
+    );
+
+    // Add XP once for the entire quiz
+    if (email && name && totalXPEarned > 0) {
+        await addXP(email, name, totalXPEarned, 'quiz_complete');
+    }
+    
     const ns = sessions + 1;
     const nsc = [...allScores, pct];
     const nb = Math.max(bestScore, score);
@@ -493,7 +516,10 @@ export default function App() {
             setScore(0); 
             setCorrect(0); 
             setTotalQ(0); 
-            setRoundsPlayed(0); 
+            setRoundsPlayed(0);
+            setUsedFiftyFifty(false);
+            setUsedHint(false);
+            
             trackEvent('quiz_start', { name, email, subject: pendingSubject, examType, university: selectedUniversity, timestamp2: fmtTimestamp(), ...getDeviceInfo() }); 
             setScreen('ready'); 
           }} />}
@@ -518,6 +544,8 @@ export default function App() {
               adRefresh={adRefresh}
               email={email}
               name={name}
+              onFiftyUsed={setUsedFiftyFifty}
+              onHintUsed={setUsedHint}
             />
           )}
           
