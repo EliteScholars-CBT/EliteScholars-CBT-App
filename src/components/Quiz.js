@@ -357,6 +357,7 @@ const handleSubmit = async () => {
           </div>
         )}
       </div>
+          
 
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
