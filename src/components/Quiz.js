@@ -33,10 +33,10 @@ export default function Quiz({
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);      // Used once per ROUND - persists across questions
-  const [usedH, setUH] = useState(false);      // Used once per ROUND - persists across questions
-  const [hidden, setHid] = useState([]);       // Resets EVERY question
-  const [showHint, setSHint] = useState(false); // Resets EVERY question
+  const [usedF, setUF] = useState(false);
+  const [usedH, setUH] = useState(false);
+  const [hidden, setHid] = useState([]);
+  const [showHint, setSHint] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
@@ -48,7 +48,6 @@ export default function Quiz({
   const q = shuffled[qi];
   const isLastQ = qi >= shuffled.length - 1;
   const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
-  const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / ROUND_SIZE);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
@@ -133,7 +132,6 @@ export default function Quiz({
       setCorrect(c => c + 1);
       setTimeout(() => SFX.correct(), 100);
       setAnsAnim('correct');
-      // XP IS NOW ADDED IN handleAllDone (App.jsx), NOT HERE
     } else {
       setTimeout(() => SFX.wrong(), 80);
       setAnsAnim('wrong');
@@ -148,7 +146,8 @@ export default function Quiz({
     stopSpeech(); setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
     
-    if (isLast) { 
+    // Only call onAllDone when it's the VERY LAST question of the entire quiz
+    if (isLastQ) { 
       SFX.roundComplete(); 
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
@@ -164,7 +163,6 @@ export default function Quiz({
   const doFifty = () => { 
     if (usedF || done) return; 
     setUF(true); 
-    // Report 50/50 usage to App.jsx for XP calculation
     if (onLifelineUsage) onLifelineUsage('fifty', true);
     SFX.select(); 
     const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
@@ -177,7 +175,6 @@ export default function Quiz({
   const doHint = () => { 
     if (usedH || done) return; 
     setUH(true); 
-    // Report Hint usage to App.jsx for XP calculation
     if (onLifelineUsage) onLifelineUsage('hint', true);
     setSHint(true); 
     SFX.select(); 
@@ -369,7 +366,7 @@ export default function Quiz({
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
         {!done && <button onClick={handleSubmit} className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}>Submit Answer</button>}
-        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'Final Results →' : isRoundEnd ? 'See Results →' : 'Next →'}</button>}
+        {done && <button className="quiz-next-btn" onClick={handleNext}>{isLastQ ? 'See Results →' : 'Next →'}</button>}
       </div>
 
       {modal && (
