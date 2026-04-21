@@ -346,7 +346,7 @@ export default function App() {
 
     // Add XP once for the entire quiz
     if (email && name && totalXPEarned > 0) {
-        await addXP(email, name, totalXPEarned, 'quiz_complete');
+        addXP(email, name, totalXPEarned, 'quiz_complete');
     }
     
     const ns = sessions + 1;
