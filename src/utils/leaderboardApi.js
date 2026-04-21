@@ -23,6 +23,7 @@ export const getLeaderboard = async (type = 'alltime', examType = 'all', univers
 };
 
 // Get user's rank
+// Get user's rank
 export const getUserRank = async (email, type = 'alltime') => {
   try {
     const params = new URLSearchParams({
@@ -33,6 +34,10 @@ export const getUserRank = async (email, type = 'alltime') => {
     
     const response = await fetch(`${SHEETS_URL}?${params}`);
     const data = await response.json();
+    // Return the full rank object if available, otherwise just the number
+    if (data.rank_display) {
+      return { rank: data.rank, rank_display: data.rank_display };
+    }
     return data.rank || 0;
   } catch (error) {
     console.error('Failed to get user rank:', error);
