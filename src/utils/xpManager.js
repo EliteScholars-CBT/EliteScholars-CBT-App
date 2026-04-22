@@ -1,4 +1,6 @@
-// XP Manager - Handles XP calculations and storage
+// XP Manager - Handles XP calculations and API calls
+// FIX: XP is calculated ONCE at quiz completion via calculateQuizXP()
+//      and sent in a SINGLE addXP() call. Per-question XP calls are removed.
 import { SHEETS_URL } from './constants';
 
 // XP constants
@@ -34,15 +36,55 @@ export const getProgressPercentage = (totalXP) => {
   return (xpInCurrentLevel / 100) * 100;
 };
 
-// Add XP to user
+// Calculate total XP for a completed quiz (call ONCE at quiz end)
+// FIX: This is the single source of truth. Do NOT call addXP() per correct answer.
+export const calculateQuizXP = (correctCount, totalQuestions, timeRemaining, streakDays, usedFiftyFifty, usedHint) => {
+  let totalXP = 0;
+
+  if (totalQuestions === 0) return 0;
+
+  const percentage = (correctCount / totalQuestions) * 100;
+
+  // Base XP for correct answers
+  totalXP += correctCount * XP_RULES.CORRECT_ANSWER;
+
+  // Streak bonus (capped at MAX_STREAK_BONUS)
+  const streakBonus = Math.min((streakDays || 1) * XP_RULES.STREAK_BONUS_PER_DAY, XP_RULES.MAX_STREAK_BONUS);
+  totalXP += streakBonus;
+
+  // Perfect round bonus
+  if (correctCount === totalQuestions) {
+    totalXP += XP_RULES.PERFECT_ROUND;
+  }
+
+  // Score bonuses (mutually exclusive - only the higher tier applies)
+  if (percentage >= 90) {
+    totalXP += XP_RULES.SCORE_90_PLUS;
+  } else if (percentage >= 80) {
+    totalXP += XP_RULES.SCORE_80_PLUS;
+  }
+
+  // Speed bonus (finished with more than 10 seconds remaining)
+  if ((timeRemaining || 0) > 10) {
+    totalXP += XP_RULES.SPEED_BONUS;
+  }
+
+  // Lifeline penalties
+  if (usedFiftyFifty) {
+    totalXP += XP_RULES.PENALTY_FIFTY_FIFTY; // negative value
+  }
+  if (usedHint) {
+    totalXP += XP_RULES.PENALTY_HINT; // negative value
+  }
+
+  return Math.max(totalXP, 0); // never go below 0
+};
+
+// Add XP to user via Apps Script - called ONCE per quiz completion
+// FIX: Uses no-cors for POST (required by GAS), updates localStorage for immediate UI
 export const addXP = async (email, name, amount, reason = '') => {
-  console.log('=== addXP CALLED ===');
-  console.log('Email:', email);
-  console.log('Amount:', amount);
-  console.log('SHEETS_URL:', SHEETS_URL);
-  
-  if (!email || amount === 0) return false;
-  
+  if (!email || !name || amount <= 0) return false;
+
   try {
     const payload = {
       action: 'addXP',
@@ -51,23 +93,19 @@ export const addXP = async (email, name, amount, reason = '') => {
       amount: amount,
       reason: reason,
     };
-    
-    console.log('Sending payload:', payload);
-    
-    // Use no-cors to avoid preflight OPTIONS request
+
+    // no-cors is required for Google Apps Script POST requests
     await fetch(SHEETS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
-    console.log('Request sent successfully');
-    
-    // Store in localStorage for immediate UI update
-    const currentXP = localStorage.getItem(`xp_${email}`) || 0;
-    localStorage.setItem(`xp_${email}`, parseInt(currentXP) + amount);
-    
+    // Update localStorage immediately for XPBar to reflect new value without waiting for API
+    const currentXP = parseInt(localStorage.getItem(`xp_${email}`) || '0', 10);
+    localStorage.setItem(`xp_${email}`, currentXP + amount);
+
     return true;
   } catch (error) {
     console.error('Failed to add XP:', error);
@@ -75,59 +113,18 @@ export const addXP = async (email, name, amount, reason = '') => {
   }
 };
 
-// Get user XP data
+// Get user XP data from Apps Script (with localStorage fallback)
 export const getUserXP = async (email) => {
   try {
     const response = await fetch(`${SHEETS_URL}?action=getXP&email=${encodeURIComponent(email)}`);
     const data = await response.json();
     return data;
   } catch (error) {
-    // Fallback to localStorage
-    const localXP = localStorage.getItem(`xp_${email}`) || 0;
+    const localXP = parseInt(localStorage.getItem(`xp_${email}`) || '0', 10);
     return {
-      total_xp: parseInt(localXP),
-      level: getLevelFromXP(parseInt(localXP)),
-      xp_to_next: getXPToNextLevel(parseInt(localXP)),
+      total_xp: localXP,
+      level: getLevelFromXP(localXP),
+      xp_to_next: getXPToNextLevel(localXP),
     };
   }
-};
-
-// Calculate XP for quiz completion
-export const calculateQuizXP = (correctCount, totalQuestions, timeRemaining, streakDays, usedFiftyFifty, usedHint) => {
-  let totalXP = 0;
-  const percentage = (correctCount / totalQuestions) * 100;
-  
-  // Base XP for correct answers
-  totalXP += correctCount * XP_RULES.CORRECT_ANSWER;
-  
-  // Streak bonus
-  const streakBonus = Math.min(streakDays * XP_RULES.STREAK_BONUS_PER_DAY, XP_RULES.MAX_STREAK_BONUS);
-  totalXP += streakBonus;
-  
-  // Perfect round bonus
-  if (correctCount === totalQuestions) {
-    totalXP += XP_RULES.PERFECT_ROUND;
-  }
-  
-  // Score bonuses
-  if (percentage >= 90) {
-    totalXP += XP_RULES.SCORE_90_PLUS;
-  } else if (percentage >= 80) {
-    totalXP += XP_RULES.SCORE_80_PLUS;
-  }
-  
-  // Speed bonus (if finished with time left)
-  if (timeRemaining > 10) {
-    totalXP += XP_RULES.SPEED_BONUS;
-  }
-  
-  // Penalties
-  if (usedFiftyFifty) {
-    totalXP += XP_RULES.PENALTY_FIFTY_FIFTY;
-  }
-  if (usedHint) {
-    totalXP += XP_RULES.PENALTY_HINT;
-  }
-  
-  return Math.max(totalXP, 0);
 };
