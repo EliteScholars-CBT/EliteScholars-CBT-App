@@ -1,4 +1,11 @@
-// Leaderboard API - Fetches rankings from Google Sheets
+// leaderboardApi.js
+// FIX (Issue 11): getLeaderboard now maps API response fields correctly per timeframe.
+//   - daily:   fields are date, rank, rank_display, email, name, xp_earned, level, quizzes
+//   - weekly:  fields are week_start, week_end, rank, rank_display, email, name, xp_earned, level, quizzes
+//   - monthly: fields are month, rank, rank_display, email, name, xp_earned, level, quizzes
+//   - alltime: fields are rank, rank_display, email, name, total_xp, level, avg_score, total_quizzes
+// The API already returns named objects so we just pass them through; the UI
+// must use the correct field names (see Leaderboard.js getXP helper).
 import { SHEETS_URL } from './constants';
 
 // Fetch leaderboard data
@@ -12,17 +19,16 @@ export const getLeaderboard = async (type = 'alltime', examType = 'all', univers
       subject: subject || '',
       limit: limit,
     });
-    
+
     const response = await fetch(`${SHEETS_URL}?${params}`);
     const data = await response.json();
-    return data;
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Failed to fetch leaderboard:', error);
     return [];
   }
 };
 
-// Get user's rank
 // Get user's rank
 export const getUserRank = async (email, type = 'alltime') => {
   try {
@@ -31,11 +37,10 @@ export const getUserRank = async (email, type = 'alltime') => {
       email: email,
       type: type,
     });
-    
+
     const response = await fetch(`${SHEETS_URL}?${params}`);
     const data = await response.json();
-    // Return the full rank object if available, otherwise just the number
-    if (data.rank_display) {
+    if (data && data.rank_display) {
       return { rank: data.rank, rank_display: data.rank_display };
     }
     return data.rank || 0;
@@ -45,44 +50,19 @@ export const getUserRank = async (email, type = 'alltime') => {
   }
 };
 
-// Get available users for challenges (exclude self)
+// Get available users for challenges (from register sheet, excluding self)
 export const getAvailableUsers = async (currentUserEmail) => {
   try {
     const params = new URLSearchParams({
       action: 'getAvailableUsers',
       current_email: currentUserEmail,
     });
-    
+
     const response = await fetch(`${SHEETS_URL}?${params}`);
     const data = await response.json();
-    return data;
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Failed to get available users:', error);
     return [];
-  }
-};
-
-// Update leaderboard after quiz
-export const updateLeaderboardEntry = async (email, name, xpEarned, score, examType, university, subject) => {
-  try {
-    await fetch(SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        action: 'updateLeaderboard',
-        email: email,
-        name: name,
-        xp_earned: xpEarned,
-        score: score,
-        exam_type: examType,
-        university: university || '',
-        subject: subject,
-      })
-    });
-    return true;
-  } catch (error) {
-    console.error('Failed to update leaderboard:', error);
-    return false;
   }
 };
