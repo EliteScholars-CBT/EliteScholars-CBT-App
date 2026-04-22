@@ -1,27 +1,38 @@
+// Quiz.js
+// FIX (Issue 1): Removed the per-correct-answer addXP() call that was
+//   accidentally left (even though commented out, it was causing confusion).
+//   All XP is now calculated ONCE in App.js handleAllDone via calculateQuizXP().
+//   The import of addXP has been removed from this file entirely.
 import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
-import { addXP } from '../utils/xpManager';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
-export default function Quiz({ subjectId, onAllDone, score, setScore, correct, setCorrect, totalQ, setTotalQ, onHome, triggerAdRefresh, adRefresh, setQuizTimeRemaining, name, email, onFiftyUsed, onHintUsed }) {
+export default function Quiz({
+  subjectId, onAllDone,
+  score, setScore, correct, setCorrect, totalQ, setTotalQ,
+  onHome, triggerAdRefresh, adRefresh,
+  setQuizTimeRemaining,
+  name, email,
+  onFiftyUsed, onHintUsed,
+}) {
   const [shuffled] = useState(() => {
     const questions = QB[subjectId] || QB.economics;
     return sfl(questions);
   });
-  
+
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
   const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
-  const [usedF, setUF] = useState(false);      // Used once per ROUND - persists across questions
-  const [usedH, setUH] = useState(false);      // Used once per ROUND - persists across questions
-  const [hidden, setHid] = useState([]);       // Resets EVERY question
-  const [showHint, setSHint] = useState(false); // Resets EVERY question
+  const [usedF, setUF] = useState(false);
+  const [usedH, setUH] = useState(false);
+  const [hidden, setHid] = useState([]);
+  const [showHint, setSHint] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
@@ -46,7 +57,7 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     setSHint(false);
   }, [qi]);
 
-  // Reset lifelines ONLY when a new ROUND starts
+  // Reset lifelines only when a new ROUND starts
   useEffect(() => {
     setUF(false);
     setUH(false);
@@ -55,13 +66,13 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   // Auto-read question
   useEffect(() => {
     if (!q || !voiceEnabled) return;
-    const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A', 'B', 'C', 'D'][i] + '. ' + opt).join('. ');
+    const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A','B','C','D'][i] + '. ' + opt).join('. ');
     stopSpeech();
     const u = speak(txt);
     if (u) { utterRef.current = u; setSpeaking(true); u.onend = () => setSpeaking(false); }
   }, [qi, voiceEnabled, q]);
 
-  // Timer
+  // Timer (per round)
   useEffect(() => {
     setTL(roundSecs);
     if (timerRef.current) clearInterval(timerRef.current);
@@ -71,11 +82,16 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
       const elapsed = Math.floor((Date.now() - start) / 1000);
       const remaining = Math.max(0, roundSecs - elapsed);
       setTL(remaining);
-      if (remaining <= 10 && remaining > 0 && remaining !== lastWarnSec) { lastWarnSec = remaining; SFX.timerWarn(); }
+      if (remaining <= 10 && remaining > 0 && remaining !== lastWarnSec) {
+        lastWarnSec = remaining;
+        SFX.timerWarn();
+      }
       if (remaining <= 0) {
         clearInterval(timerRef.current);
+        // Time up — mark question as done without a selection
         setDone(d => { if (!d) { setTotalQ(x => x + 1); return true; } return d; });
-        stopSpeech(); setSpeaking(false);
+        stopSpeech();
+        setSpeaking(false);
       }
     }, 500);
     return () => clearInterval(timerRef.current);
@@ -84,12 +100,15 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
   const stopTimer = () => clearInterval(timerRef.current);
 
   const toggleVoice = () => {
-    if (speaking) { stopSpeech(); setSpeaking(false); setVoiceEnabled(false); }
-    else {
+    if (speaking) {
+      stopSpeech();
+      setSpeaking(false);
+      setVoiceEnabled(false);
+    } else {
       setVoiceEnabled(v => {
         const next = !v;
         if (next && q) {
-          const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A', 'B', 'C', 'D'][i] + '. ' + opt).join('. ');
+          const txt = q.q + '. Options: ' + q.o.map((opt, i) => ['A','B','C','D'][i] + '. ' + opt).join('. ');
           const u = speak(txt);
           if (u) { utterRef.current = u; setSpeaking(true); u.onend = () => setSpeaking(false); }
         }
@@ -98,81 +117,76 @@ export default function Quiz({ subjectId, onAllDone, score, setScore, correct, s
     }
   };
 
-  const handleSelect = (i) => { 
-    if (done || hidden.includes(i)) return; 
-    SFX.select(); 
-    setSel(i); 
+  const handleSelect = (i) => {
+    if (done || hidden.includes(i)) return;
+    SFX.select();
+    setSel(i);
   };
-  
-const handleSubmit = async () => {
-  if (SHOW_ADS) triggerAdRefresh();
-  if (sel === -1 || done) return;
-  stopSpeech();
-  setSpeaking(false);
-  SFX.submit();
-  setDone(true);
-  setTotalQ(t => t + 1);
-  const isCorrect = sel === q.a;
-  
-  if (isCorrect) {
-    setScore(s => s + 1);
-    setCorrect(c => c + 1);
-    setTimeout(() => SFX.correct(), 100);
-    setAnsAnim('correct');
-    
-    // console.log('About to call addXP with:', { email, name });
-  
-  // if (email && name) {
-  //   const result = await addXP(email, name, 5, 'correct_answer');
-  //   console.log('addXP result:', result);
-  // } else {
-  //   console.log('Cannot add XP - email or name missing:', { email, name });
-  // }
-  } else {
-    setTimeout(() => SFX.wrong(), 80);
-    setAnsAnim('wrong');
-  }
-  setTimeout(() => setAnsAnim(''), 500);
-  setTimeout(() => {
-    if (bodyRef.current) bodyRef.current.scrollTop = 999;
-  }, 200);
-};
-  
-  const handleNext = () => {
-    stopSpeech(); setSpeaking(false);
+
+  // FIX (Issue 1): handleSubmit does NOT call addXP.
+  // XP is computed once in App.js handleAllDone when the quiz ends.
+  const handleSubmit = () => {
     if (SHOW_ADS) triggerAdRefresh();
-    
-    if (isLast) { 
-      SFX.roundComplete(); 
+    if (sel === -1 || done) return;
+    stopSpeech();
+    setSpeaking(false);
+    SFX.submit();
+    setDone(true);
+    setTotalQ(t => t + 1);
+    const isCorrect = sel === q.a;
+
+    if (isCorrect) {
+      setScore(s => s + 1);
+      setCorrect(c => c + 1);
+      setTimeout(() => SFX.correct(), 100);
+      setAnsAnim('correct');
+    } else {
+      setTimeout(() => SFX.wrong(), 80);
+      setAnsAnim('wrong');
+    }
+
+    setTimeout(() => setAnsAnim(''), 500);
+    setTimeout(() => {
+      if (bodyRef.current) bodyRef.current.scrollTop = 999;
+    }, 200);
+  };
+
+  const handleNext = () => {
+    stopSpeech();
+    setSpeaking(false);
+    if (SHOW_ADS) triggerAdRefresh();
+
+    if (isLast) {
+      SFX.roundComplete();
+      // Pass final time remaining to App.js for speed bonus calculation
       if (setQuizTimeRemaining) {
         setQuizTimeRemaining(timeLeft);
       }
-      onAllDone(Math.ceil(shuffled.length / ROUND_SIZE)); 
-      return; 
+      onAllDone(Math.ceil(shuffled.length / ROUND_SIZE));
+      return;
     }
-    
-    const nextQi = qi + 1;
-    setQi(nextQi);
+
+    setQi(nextQi => nextQi + 1);
   };
 
-  const doFifty = () => { 
-    if (usedF || done) return; 
+  const doFifty = () => {
+    if (usedF || done) return;
     if (onFiftyUsed) onFiftyUsed(true);
-    setUF(true); 
-    SFX.select(); 
-    const wrongOptions = [0, 1, 2, 3].filter(i => i !== q.a);
+    setUF(true);
+    SFX.select();
+    const wrongOptions = [0,1,2,3].filter(i => i !== q.a);
     const shuffledWrong = sfl(wrongOptions);
     const toHide = shuffledWrong.slice(0, 2);
-    setHid(toHide); 
-    if (toHide.includes(sel)) setSel(-1); 
+    setHid(toHide);
+    if (toHide.includes(sel)) setSel(-1);
   };
-  
-  const doHint = () => { 
-    if (usedH || done) return; 
+
+  const doHint = () => {
+    if (usedH || done) return;
     if (onHintUsed) onHintUsed(true);
-    setUH(true); 
-    setSHint(true); 
-    SFX.select(); 
+    setUH(true);
+    setSHint(true);
+    SFX.select();
   };
 
   const tw = timeLeft <= 10;
@@ -181,16 +195,10 @@ const handleSubmit = async () => {
   const getOptionClass = (i) => {
     if (hidden.includes(i)) return 'hidden';
     let className = 'quiz-option';
-    
-    if (!done && sel === i) {
-      className += ' selected';
-    }
+    if (!done && sel === i) className += ' selected';
     if (done) {
-      if (i === q.a) {
-        className += ' correct';
-      } else if (i === sel && i !== q.a) {
-        className += ' wrong';
-      }
+      if (i === q.a) className += ' correct';
+      else if (i === sel && i !== q.a) className += ' wrong';
       className += ' disabled';
     }
     return className;
@@ -201,73 +209,21 @@ const handleSubmit = async () => {
     let border = `2px solid ${LGRAY}`;
     let bg = WHITE;
     let color = '#1a0030';
-    
-    if (!done && sel === i) {
-      border = `2px solid ${meta.color}`;
-      bg = meta.bg;
-      color = meta.color;
-    }
+    if (!done && sel === i) { border = `2px solid ${meta.color}`; bg = meta.bg; color = meta.color; }
     if (done) {
-      if (i === q.a) {
-        border = `2px solid ${GREEN}`;
-        bg = LGREEN;
-        color = GREEN;
-      } else if (i === sel && i !== q.a) {
-        border = `2px solid ${RED}`;
-        bg = LRED;
-        color = RED;
-      }
+      if (i === q.a) { border = `2px solid ${GREEN}`; bg = LGREEN; color = GREEN; }
+      else if (i === sel && i !== q.a) { border = `2px solid ${RED}`; bg = LRED; color = RED; }
     }
-    
-    return {
-      border,
-      background: bg,
-      color,
-      padding: '11px 13px',
-      borderRadius: 11,
-      display: 'flex',
-      alignItems: 'center',
-      gap: 9,
-      fontSize: 13,
-      fontWeight: 500,
-      cursor: done ? 'default' : 'pointer',
-      transition: 'all .18s',
-      marginBottom: 7
-    };
+    return { border, background: bg, color, padding: '11px 13px', borderRadius: 11, display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, fontWeight: 500, cursor: done ? 'default' : 'pointer', transition: 'all .18s', marginBottom: 7 };
   };
 
   const getLetterStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let bg = LGRAY;
-    let color = GRAY;
-    
-    if (!done && sel === i) {
-      bg = meta.color;
-      color = WHITE;
-    }
-    if (done && i === q.a) {
-      bg = GREEN;
-      color = WHITE;
-    }
-    if (done && i === sel && i !== q.a) {
-      bg = RED;
-      color = WHITE;
-    }
-    
-    return {
-      width: 28,
-      height: 28,
-      borderRadius: '50%',
-      background: bg,
-      color,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: 11,
-      fontWeight: 700,
-      flexShrink: 0,
-      transition: 'all .18s'
-    };
+    let bg = LGRAY; let color = GRAY;
+    if (!done && sel === i) { bg = meta.color; color = WHITE; }
+    if (done && i === q.a) { bg = GREEN; color = WHITE; }
+    if (done && i === sel && i !== q.a) { bg = RED; color = WHITE; }
+    return { width: 28, height: 28, borderRadius: '50%', background: bg, color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0, transition: 'all .18s' };
   };
 
   if (!q) {
@@ -299,25 +255,15 @@ const handleSubmit = async () => {
           <span>Q{(qi % ROUND_SIZE) + 1}/{ROUND_SIZE} · {meta.label}</span>
           <span>Round {roundNum + 1} · {(qi % ROUND_SIZE) + 1}/{ROUND_SIZE}</span>
         </div>
-        <div className="quiz-progress-bar"><div className="quiz-progress-fill" style={{ width: `${(((qi % ROUND_SIZE) + 1) / ROUND_SIZE) * 100}%` }} /></div>
+        <div className="quiz-progress-bar">
+          <div className="quiz-progress-fill" style={{ width: `${(((qi % ROUND_SIZE) + 1) / ROUND_SIZE) * 100}%` }} />
+        </div>
       </div>
 
       <div ref={bodyRef} className="scroll" style={{ flex: 1, padding: '10px 13px 6px', display: 'flex', flexDirection: 'column', gap: 9 }}>
         <div style={{ display: 'flex', gap: 7, flexShrink: 0 }}>
-          <button 
-            onClick={doFifty} 
-            disabled={usedF || done} 
-            className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}
-          >
-            ⚖️ 50/50
-          </button>
-          <button 
-            onClick={doHint} 
-            disabled={usedH || done} 
-            className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}
-          >
-            💡 Hint
-          </button>
+          <button onClick={doFifty} disabled={usedF || done} className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}>⚖️ 50/50</button>
+          <button onClick={doHint}  disabled={usedH || done} className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}>💡 Hint</button>
           <button onClick={toggleVoice} className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}>
             {speaking ? '🔊 Stop' : voiceEnabled ? '🔊 On' : '🔊 Off'}
           </button>
@@ -337,12 +283,7 @@ const handleSubmit = async () => {
           </div>
           <div className="question-text">{q.q}</div>
           {q.o.map((opt, i) => (
-            <div 
-              key={i} 
-              className={getOptionClass(i)} 
-              style={getOptionStyle(i)} 
-              onClick={() => handleSelect(i)}
-            >
+            <div key={i} className={getOptionClass(i)} style={getOptionStyle(i)} onClick={() => handleSelect(i)}>
               <div style={getLetterStyle(i)}>{['A','B','C','D'][i]}</div>
               <span>{opt}</span>
             </div>
@@ -357,7 +298,6 @@ const handleSubmit = async () => {
           </div>
         )}
       </div>
-          
 
       <div className="quiz-action-bar">
         {!done && sel !== -1 && <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>}
@@ -372,7 +312,9 @@ const handleSubmit = async () => {
             <div className="modal-title">💡 Full Explanation</div>
             <div className="modal-question">{q.q}</div>
             <div className="modal-section-title">WHY THIS ANSWER?</div>
-            <div className="modal-explanation">{(q.full || q.e).split('\n').filter(l => l.trim()).map((para, i) => <p key={i} style={{ marginBottom: 12 }}>{para}</p>)}</div>
+            <div className="modal-explanation">
+              {(q.full || q.e).split('\n').filter(l => l.trim()).map((para, i) => <p key={i} style={{ marginBottom: 12 }}>{para}</p>)}
+            </div>
             <div className="modal-answer-box" style={{ background: `${meta.color}12`, border: `1px solid ${meta.color}30` }}>
               <div className="modal-answer-title" style={{ color: meta.color }}>CORRECT ANSWER</div>
               <div className="modal-answer-text">{['A','B','C','D'][q.a]}. {q.o[q.a]}</div>
@@ -383,4 +325,4 @@ const handleSubmit = async () => {
       )}
     </div>
   );
-    }
+}
