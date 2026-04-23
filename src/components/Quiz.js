@@ -1,10 +1,6 @@
-// Quiz.js
-// FIX (Issue 1): Removed the per-correct-answer addXP() call that was
-//   accidentally left (even though commented out, it was causing confusion).
-//   All XP is now calculated ONCE in App.js handleAllDone via calculateQuizXP().
-//   The import of addXP has been removed from this file entirely.
 import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../QB';
+import { WAEC_QB } from '../data/waec';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import { DPURP, PURPLE, BG, LGRAY, WHITE, GRAY, LGOLD, GREEN, LGREEN, RED, LRED, GOLD } from '../utils/colors';
@@ -19,10 +15,11 @@ export default function Quiz({
   name, email,
   onFiftyUsed, onHintUsed,
 }) {
+  
   const [shuffled] = useState(() => {
-    const questions = QB[subjectId] || QB.economics;
-    return sfl(questions);
-  });
+  const questions = WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
+  return sfl(questions);
+});
 
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
