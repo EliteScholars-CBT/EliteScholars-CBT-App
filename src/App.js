@@ -1,9 +1,3 @@
-// App.js
-// FIXES applied:
-//  Issue 1  - XP calculated ONCE via calculateQuizXP() in handleAllDone, not per answer
-//  Issue 8  - All bonus parameters passed correctly to calculateQuizXP()
-//  Issue 9  - trackSessionEnd receives raw ms (Date.now() diff) instead of minutes;
-//             analytics.js converts it to HH:MM:SS
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import AdsterraBanner from './AdsterraBanner';
 import Toast from './components/Toast';
@@ -31,6 +25,8 @@ const Ready     = lazy(() => import('./components/Ready'));
 const Quiz      = lazy(() => import('./components/Quiz'));
 const Result    = lazy(() => import('./components/Result'));
 const Profile   = lazy(() => import('./components/Profile'));
+const WaecSubjects = lazy(() => import('./components/WaecSubjects'));
+const WaecLearn    = lazy(() => import('./components/WaecLearn'));
 const ShareGate = lazy(() => import('./components/ShareGate'));
 const AdGate    = lazy(() => import('./components/AdGate'));
 
