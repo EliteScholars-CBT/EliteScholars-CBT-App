@@ -1,10 +1,3 @@
-// Leaderboard.js
-// FIX (Issue 11): getXP() now reads the correct field names that the Apps Script API returns:
-//   - daily/monthly:  user.xp_earned   (column name in those sheets)
-//   - weekly:         user.xp_earned   (same)
-//   - alltime:        user.total_xp
-// FIX (Issue 3): getRankDisplay falls back cleanly to index-based ordinals when
-//   rank_display is missing (should be populated by Apps Script now).
 import React, { useState, useEffect } from 'react';
 import { getLeaderboard, getUserRank } from '../utils/leaderboardApi';
 import XPBar from './XPBar';
@@ -24,14 +17,12 @@ export default function Leaderboard({ userEmail, userName }) {
   ];
 
   const examTypes = [
-    { id: 'all',     label: 'All'      },
-    { id: 'jamb',    label: 'JAMB'     },
-    { id: 'postutme',label: 'POST UTME'},
+    { id: 'all',      label: 'All'       },
+    { id: 'jamb',     label: 'JAMB'      },
+    { id: 'postutme', label: 'POST UTME' },
   ];
 
-  useEffect(() => {
-    loadLeaderboard();
-  }, [activeTimeframe, activeExam]);
+  useEffect(() => { loadLeaderboard(); }, [activeTimeframe, activeExam]);
 
   const loadLeaderboard = async () => {
     setLoading(true);
@@ -44,22 +35,11 @@ export default function Leaderboard({ userEmail, userName }) {
     setLoading(false);
   };
 
-  // FIX (Issue 11): Map the correct API field names per timeframe.
-  // Apps Script returns named objects so we rely on the actual column names:
-  //   daily/weekly/monthly → xp_earned
-  //   alltime              → total_xp
   const getXP = (user) => {
     if (activeTimeframe === 'alltime') return user.total_xp || 0;
     return user.xp_earned || 0;
   };
 
-  // Avg score only available on all-time leaderboard
-  const getScore = (user) => {
-    if (activeTimeframe === 'alltime') return user.avg_score || 0;
-    return null;
-  };
-
-  // FIX (Issue 3): Ordinal helper - use API's rank_display when present, otherwise calculate
   const getOrdinal = (n) => {
     const num = parseInt(n, 10);
     if (isNaN(num) || num < 1) return '—';
@@ -74,17 +54,15 @@ export default function Leaderboard({ userEmail, userName }) {
 
   const getRankDisplay = (user, index) => {
     if (user.rank_display) return user.rank_display;
-    const rank = user.rank || (index + 1);
-    return getOrdinal(rank);
+    return getOrdinal(user.rank || (index + 1));
   };
 
   const getMedal = (user, index) => {
-    const rankDisplay = getRankDisplay(user, index);
     const rankNum = user.rank || (index + 1);
     if (rankNum === 1) return '👑';
     if (rankNum === 2) return '🥈';
     if (rankNum === 3) return '🥉';
-    return rankDisplay;
+    return getRankDisplay(user, index);
   };
 
   return (
@@ -145,15 +123,16 @@ export default function Leaderboard({ userEmail, userName }) {
                   <div className="leaderboard-name">{user.name}</div>
                   <div className="leaderboard-stats">
                     <span>Lv.{user.level || 1}</span>
-                    <span>{getXP(user).toLocaleString()} XP</span>
                     {activeTimeframe !== 'alltime' && (
                       <span>{user.quizzes || 0} quiz{user.quizzes !== 1 ? 'zes' : ''}</span>
                     )}
                   </div>
                 </div>
-                {activeTimeframe === 'alltime' && getScore(user) !== null && (
-                  <div className="leaderboard-score">{getScore(user)}%</div>
-                )}
+                {/* CHANGED: replaced % score with XP badge on all timeframes */}
+                <div className="leaderboard-xp-badge">
+                  <span className="leaderboard-xp-value">{getXP(user).toLocaleString()}</span>
+                  <span className="leaderboard-xp-label">XP</span>
+                </div>
               </div>
             ))}
           </div>
