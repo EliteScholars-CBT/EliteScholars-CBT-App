@@ -116,6 +116,9 @@ export default function App() {
   const [usedFiftyFifty, setUsedFiftyFifty] = useState(false);
   const [usedHint, setUsedHint] = useState(false);
 
+  const [waecSubject, setWaecSubject] = useState(null);
+  const [waecMode,    setWaecMode]    = useState('cbt');
+
   useEffect(() => {
     const u = loadUser();
     if (u.name) {
@@ -222,10 +225,11 @@ export default function App() {
   };
 
   const handleExamTypeSelect = (type) => {
-    setExamType(type);
-    if (type === 'postutme') setScreen('universitySelect');
-    else setScreen('modeSelect');
-  };
+  setExamType(type);
+  if (type === 'postutme')    setScreen('universitySelect');
+  else if (type === 'waec')   setScreen('waecSubjects');   // ← add this
+  else                        setScreen('modeSelect');
+};
 
   const handleUniversitySelect = (university) => {
     setSelectedUniversity(university);
@@ -375,7 +379,38 @@ export default function App() {
             if (s.streak)    setStreak(s.streak);
             if (s.lastDate)  setLastDate(s.lastDate);
             setScreen('examType');
-          }} />}
+          }} 
+
+
+{screen === 'waecSubjects' && (
+  <WaecSubjects
+    name={name}
+    mode={waecMode}
+    onStart={(subjectId, mode) => {
+      setWaecSubject(subjectId);
+      setWaecMode(mode);
+      if (mode === 'learn') setScreen('waecLearn');
+      else {
+        // reuse existing Quiz with WAEC QB — set subject and go to ready
+        setSubject(subjectId);
+        setScore(0); setCorrect(0); setTotalQ(0);
+        setUsedFiftyFifty(false); setUsedHint(false);
+        setScreen('ready');
+      }
+    }}
+    onBack={() => setScreen('examType')}
+  />
+)}
+
+{screen === 'waecLearn' && (
+  <WaecLearn
+    subjectId={waecSubject}
+    onBack={() => setScreen('waecSubjects')}
+  />
+)}
+
+
+/>}
 
           {screen === 'examType' && <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />}
           {screen === 'universitySelect' && <UniversitySelect onSelectUniversity={handleUniversitySelect} onBack={handleBackToExamType} />}
