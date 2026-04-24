@@ -2,17 +2,27 @@ import React from 'react';
 import { WAEC_SUBJECTS, WAEC_QB } from '../data/waec';
 import { useTheme } from '../context/ThemeContext';
 
-export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack }) {
+export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, examType = 'waec', onModeChange }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="scr fd" style={{ background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column', height: '100dvh' }}>
+    <div
+      className="scr fd"
+      style={{
+        background: 'var(--bg-primary)',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100dvh',
+      }}
+    >
       {/* Header */}
       <div className="subjects-header">
         <div className="subjects-header-curve" />
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <div>
-            <div className="subjects-welcome-label">WAEC • {mode === 'learn' ? 'LEARN' : 'CBT'}</div>
+            <div className="subjects-welcome-label">
+              {examType.toUpperCase()} • {mode === 'learn' ? 'LEARN' : 'CBT'}
+            </div>
             <div className="subjects-welcome-name">{name || 'Student'} 👋</div>
             <div className="subjects-welcome-text">
               {mode === 'learn' ? 'Study notes & key concepts' : 'Practice past questions'}
@@ -33,13 +43,22 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack }) {
 
       {/* Mode badge */}
       <div style={{ padding: '10px 16px 0' }}>
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: 6,
-          background: mode === 'learn' ? '#DCFCE7' : '#DBEAFE',
-          color: mode === 'learn' ? '#065F46' : '#1D4ED8',
-          borderRadius: 20, padding: '4px 12px', fontSize: 11, fontWeight: 700,
-        }}>
-          {mode === 'learn' ? '📖 Learn Mode — tap a subject to study' : '🎯 CBT Mode — tap a subject to begin'}
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            background: mode === 'learn' ? '#DCFCE7' : '#DBEAFE',
+            color: mode === 'learn' ? '#065F46' : '#1D4ED8',
+            borderRadius: 20,
+            padding: '4px 12px',
+            fontSize: 11,
+            fontWeight: 700,
+          }}
+        >
+          {mode === 'learn'
+            ? '📖 Learn Mode — tap a subject to study'
+            : '🎯 CBT Mode — tap a subject to begin'}
         </div>
       </div>
 
@@ -60,9 +79,7 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack }) {
                 </div>
                 <div className="waec-card-label">{subj.label}</div>
                 <div className="waec-card-meta">
-                  {mode === 'learn'
-                    ? '5 topics'
-                    : `${qCount} questions`}
+                  {mode === 'learn' ? '5 topics' : `${qCount} questions`}
                 </div>
                 <div className="waec-card-badge" style={{ background: subj.bg, color: subj.color }}>
                   {mode === 'learn' ? 'STUDY' : 'READY'}

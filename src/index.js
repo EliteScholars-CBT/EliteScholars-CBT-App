@@ -6,7 +6,7 @@ import App from './App';
 import About from './pages/About';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import './style.css';
+
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

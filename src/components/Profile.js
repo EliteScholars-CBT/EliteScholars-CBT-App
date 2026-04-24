@@ -1,12 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from 'recharts';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  CartesianGrid,
+} from 'recharts';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGOLD } from '../utils/colors';
 import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Profile({ name, email, sessions, streak, allScores, bestScore, onBack, onSignOut }) {
+export default function Profile({
+  name,
+  email,
+  sessions,
+  streak,
+  allScores,
+  bestScore,
+  onBack,
+  onSignOut,
+}) {
   const [activeTab, setActiveTab] = useState('stats');
   const [achievements, setAchievements] = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
@@ -17,8 +36,17 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   const navigate = useNavigate();
 
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
-  const avg = allScores.length ? Math.round(allScores.reduce((a,b) => a+b, 0) / allScores.length) : 0;
-  const rank = bestScore >= 38 ? '🏆 Elite Scholar' : bestScore >= 30 ? '⭐ Rising Star' : bestScore >= 20 ? '📚 Sharp Guy' : '🌱 Beginner';
+  const avg = allScores.length
+    ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
+    : 0;
+  const rank =
+    bestScore >= 38
+      ? '🏆 Elite Scholar'
+      : bestScore >= 30
+        ? '⭐ Rising Star'
+        : bestScore >= 20
+          ? '📚 Sharp Guy'
+          : '🌱 Beginner';
 
   // Scroll to active tab when it changes
   useEffect(() => {
@@ -31,9 +59,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
   }, [activeTab]);
 
   useEffect(() => {
-    // Load achievements
+    // Load achievements — supports both string IDs (legacy) and full objects (new)
     const userAchievements = loadAchievements(email);
-    const achievementList = userAchievements.map(id => ACHIEVEMENTS[id]).filter(a => a);
+    const achievementList = userAchievements
+      .map((a) => (typeof a === 'string' ? ACHIEVEMENTS[a] : a))
+      .filter((a) => a && a.id);
     setAchievements(achievementList);
 
     // Load subject performance
@@ -49,29 +79,58 @@ export default function Profile({ name, email, sessions, streak, allScores, best
     setPerformanceData(chartData);
 
     // Prepare subject chart data
-    const subjects = ['english', 'mathematics', 'physics', 'chemistry', 'biology', 'economics', 'accounting', 'government', 'literature'];
-    const subjectData = subjects.map(sub => {
-      const perfData = perf[sub] || { bestScore: 0, averageScore: 0, total: 0 };
-      return {
-        subject: sub.charAt(0).toUpperCase() + sub.slice(1),
-        bestScore: perfData.bestScore || 0,
-        averageScore: Math.round(perfData.averageScore || 0),
-        attempts: perfData.total || 0
-      };
-    }).filter(s => s.attempts > 0);
+    const subjects = [
+      'english',
+      'mathematics',
+      'physics',
+      'chemistry',
+      'biology',
+      'economics',
+      'accounting',
+      'government',
+      'literature',
+    ];
+    const subjectData = subjects
+      .map((sub) => {
+        const perfData = perf[sub] || { bestScore: 0, averageScore: 0, total: 0 };
+        return {
+          subject: sub.charAt(0).toUpperCase() + sub.slice(1),
+          bestScore: perfData.bestScore || 0,
+          averageScore: Math.round(perfData.averageScore || 0),
+          attempts: perfData.total || 0,
+        };
+      })
+      .filter((s) => s.attempts > 0);
     setSubjectChartData(subjectData);
   }, [email, allScores]);
 
   return (
     <div className="scr fd profile-page">
-      <div className="profile-header" style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})` }}>
-        <div style={{ position: 'absolute', bottom: -20, left: 0, right: 0, height: 40, background: BG, borderRadius: '24px 24px 0 0' }} />
-        <div className="profile-back" onClick={onBack}>← Back</div>
+      <div
+        className="profile-header"
+        style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})` }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            bottom: -20,
+            left: 0,
+            right: 0,
+            height: 40,
+            background: BG,
+            borderRadius: '24px 24px 0 0',
+          }}
+        />
+        <div className="profile-back" onClick={onBack}>
+          ← Back
+        </div>
         <div className="profile-avatar">{initials}</div>
         <div className="profile-name">{name || 'Student'}</div>
         <div className="profile-email">{email}</div>
         <div className="profile-badges">
-          <div className="profile-streak-badge">🔥 {streak} Day{streak !== 1 ? 's' : ''} Streak</div>
+          <div className="profile-streak-badge">
+            🔥 {streak} Day{streak !== 1 ? 's' : ''} Streak
+          </div>
           <div className="profile-rank-badge">{rank}</div>
         </div>
       </div>
@@ -79,16 +138,28 @@ export default function Profile({ name, email, sessions, streak, allScores, best
       {/* Horizontally scrollable tabs */}
       <div className="profile-tabs-wrapper">
         <div className="profile-tabs-scroll" ref={tabsContainerRef}>
-          <button className={`profile-tab ${activeTab === 'stats' ? 'active' : ''}`} onClick={() => setActiveTab('stats')}>
+          <button
+            className={`profile-tab ${activeTab === 'stats' ? 'active' : ''}`}
+            onClick={() => setActiveTab('stats')}
+          >
             📊 Stats
           </button>
-          <button className={`profile-tab ${activeTab === 'subjects' ? 'active' : ''}`} onClick={() => setActiveTab('subjects')}>
+          <button
+            className={`profile-tab ${activeTab === 'subjects' ? 'active' : ''}`}
+            onClick={() => setActiveTab('subjects')}
+          >
             📚 Subjects
           </button>
-          <button className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`} onClick={() => setActiveTab('achievements')}>
+          <button
+            className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`}
+            onClick={() => setActiveTab('achievements')}
+          >
             🏆 Achievements ({achievements.length})
           </button>
-          <button className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => setActiveTab('settings')}>
+          <button
+            className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`}
+            onClick={() => setActiveTab('settings')}
+          >
             ⚙️ Settings
           </button>
         </div>
@@ -100,7 +171,12 @@ export default function Profile({ name, email, sessions, streak, allScores, best
           <div className="profile-stats-section">
             <div className="profile-stats-title">Your Stats</div>
             <div className="profile-stats-grid">
-              {[['Quizzes Done', sessions || 0], ['Avg Score', avg + '%'], ['Best Score', bestScore + '/' + ROUND_SIZE], ['Streak', streak + ' days']].map(([l, v]) => (
+              {[
+                ['Quizzes Done', sessions || 0],
+                ['Avg Score', avg + '%'],
+                ['Best Score', bestScore + '/' + ROUND_SIZE],
+                ['Streak', streak + ' days'],
+              ].map(([l, v]) => (
                 <div key={l} className="profile-stat-card">
                   <div className="profile-stat-value">{v}</div>
                   <div className="profile-stat-label">{l}</div>
@@ -115,18 +191,28 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                   <ResponsiveContainer width="100%" height={200}>
                     <LineChart data={performanceData}>
                       <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
-                      <YAxis 
-                        domain={[0, 100]} 
-                        stroke="#6B7280" 
-                        fontSize={10} 
+                      <YAxis
+                        domain={[0, 100]}
+                        stroke="#6B7280"
+                        fontSize={10}
                         tickFormatter={(value) => `${value}%`}
                       />
-                      <Tooltip 
-                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+                      <Tooltip
+                        contentStyle={{
+                          background: '#1a0030',
+                          border: `1px solid ${GOLD}`,
+                          borderRadius: 8,
+                        }}
                         labelStyle={{ color: '#FFFFFF' }}
                         formatter={(value) => [`${value}%`, 'Score']}
                       />
-                      <Line type="monotone" dataKey="score" stroke={GOLD} strokeWidth={2} dot={{ fill: GOLD, r: 4 }} />
+                      <Line
+                        type="monotone"
+                        dataKey="score"
+                        stroke={GOLD}
+                        strokeWidth={2}
+                        dot={{ fill: GOLD, r: 4 }}
+                      />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -153,27 +239,41 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                     <BarChart data={subjectChartData} layout="vertical" margin={{ left: 60 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
                       <XAxis type="number" domain={[0, 100]} stroke="#6B7280" fontSize={10} />
-                      <YAxis 
-                        type="category" 
-                        dataKey="subject" 
-                        stroke="#6B7280" 
-                        fontSize={10} 
-                        width={80} 
+                      <YAxis
+                        type="category"
+                        dataKey="subject"
+                        stroke="#6B7280"
+                        fontSize={10}
+                        width={80}
                       />
-                      <XAxis 
-                        type="number" 
-                        domain={[0, 100]} 
-                        stroke="#6B7280" 
-                        fontSize={10} 
+                      <XAxis
+                        type="number"
+                        domain={[0, 100]}
+                        stroke="#6B7280"
+                        fontSize={10}
                         tickFormatter={(value) => `${value}%`}
                       />
-                      <Tooltip 
-                        contentStyle={{ background: '#1a0030', border: `1px solid ${GOLD}`, borderRadius: 8 }}
+                      <Tooltip
+                        contentStyle={{
+                          background: '#1a0030',
+                          border: `1px solid ${GOLD}`,
+                          borderRadius: 8,
+                        }}
                         labelStyle={{ color: '#FFFFFF' }}
                         formatter={(value) => [`${value}%`, 'Score']}
                       />
-                      <Bar dataKey="bestScore" name="Best Score" fill={GOLD} radius={[0, 4, 4, 0]} />
-                      <Bar dataKey="averageScore" name="Average Score" fill={PURPLE} radius={[0, 4, 4, 0]} />
+                      <Bar
+                        dataKey="bestScore"
+                        name="Best Score"
+                        fill={GOLD}
+                        radius={[0, 4, 4, 0]}
+                      />
+                      <Bar
+                        dataKey="averageScore"
+                        name="Average Score"
+                        fill={PURPLE}
+                        radius={[0, 4, 4, 0]}
+                      />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -181,7 +281,9 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             ) : (
               <div className="profile-empty-state">
                 <div className="profile-empty-icon">📖</div>
-                <div className="profile-empty-text">Complete quizzes to see subject performance!</div>
+                <div className="profile-empty-text">
+                  Complete quizzes to see subject performance!
+                </div>
               </div>
             )}
           </div>
@@ -192,7 +294,7 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             <div className="profile-stats-title">🏆 Unlocked Achievements</div>
             {achievements.length > 0 ? (
               <div className="achievements-grid">
-                {achievements.map(achievement => (
+                {achievements.map((achievement) => (
                   <div key={achievement.id} className="achievement-card">
                     <div className="achievement-card-icon">{achievement.icon}</div>
                     <div className="achievement-card-info">
@@ -208,17 +310,22 @@ export default function Profile({ name, email, sessions, streak, allScores, best
                 <div className="profile-empty-text">Complete quizzes to unlock achievements!</div>
               </div>
             )}
-            <div className="profile-stats-title" style={{ marginTop: 20 }}>🔒 Locked Achievements</div>
+            <div className="profile-stats-title" style={{ marginTop: 20 }}>
+              🔒 Locked Achievements
+            </div>
             <div className="achievements-grid locked">
-              {Object.values(ACHIEVEMENTS).filter(a => !achievements.some(ach => ach?.id === a.id)).slice(0, 6).map(achievement => (
-                <div key={achievement.id} className="achievement-card locked">
-                  <div className="achievement-card-icon">🔒</div>
-                  <div className="achievement-card-info">
-                    <div className="achievement-card-name">{achievement.name}</div>
-                    <div className="achievement-card-desc">{achievement.desc}</div>
+              {Object.values(ACHIEVEMENTS)
+                .filter((a) => !achievements.some((ach) => ach?.id === a.id))
+                .slice(0, 6)
+                .map((achievement) => (
+                  <div key={achievement.id} className="achievement-card locked">
+                    <div className="achievement-card-icon">🔒</div>
+                    <div className="achievement-card-info">
+                      <div className="achievement-card-name">{achievement.name}</div>
+                      <div className="achievement-card-desc">{achievement.desc}</div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         )}
@@ -241,10 +348,16 @@ export default function Profile({ name, email, sessions, streak, allScores, best
               </div>
             </div>
 
-            <div className="profile-stats-title" style={{ marginTop: 20 }}>ℹ️ Information</div>
-            
+            <div className="profile-stats-title" style={{ marginTop: 20 }}>
+              ℹ️ Information
+            </div>
+
             {/* About Card - Navigate to /about */}
-            <div className="settings-card about-settings-card" onClick={() => navigate('/about')} style={{ cursor: 'pointer' }}>
+            <div
+              className="settings-card about-settings-card"
+              onClick={() => navigate('/about')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="settings-item">
                 <div className="settings-icon">🎓</div>
                 <div className="settings-info">
@@ -256,7 +369,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             </div>
 
             {/* Terms of Service Card - Navigate to /terms */}
-            <div className="settings-card terms-settings-card" onClick={() => navigate('/terms')} style={{ cursor: 'pointer' }}>
+            <div
+              className="settings-card terms-settings-card"
+              onClick={() => navigate('/terms')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="settings-item">
                 <div className="settings-icon">📜</div>
                 <div className="settings-info">
@@ -268,7 +385,11 @@ export default function Profile({ name, email, sessions, streak, allScores, best
             </div>
 
             {/* Privacy Policy Card - Navigate to /privacy */}
-            <div className="settings-card privacy-settings-card" onClick={() => navigate('/privacy')} style={{ cursor: 'pointer' }}>
+            <div
+              className="settings-card privacy-settings-card"
+              onClick={() => navigate('/privacy')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="settings-item">
                 <div className="settings-icon">🔒</div>
                 <div className="settings-info">
@@ -292,7 +413,9 @@ export default function Profile({ name, email, sessions, streak, allScores, best
           </div>
         )}
 
-        <button className="profile-signout-btn" onClick={onSignOut}>↩ Sign Out</button>
+        <button className="profile-signout-btn" onClick={onSignOut}>
+          ↩ Sign Out
+        </button>
       </div>
     </div>
   );

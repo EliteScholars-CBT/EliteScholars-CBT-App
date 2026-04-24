@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getPendingChallenges, getChallengeHistory, acceptChallenge, declineChallenge } from '../utils/challengeApi';
+import {
+  getPendingChallenges,
+  getChallengeHistory,
+  acceptChallenge,
+  declineChallenge,
+} from '../utils/challengeApi';
 import CreateChallenge from './CreateChallenge';
 
 export default function Challenges({ userEmail, userName }) {
@@ -60,10 +65,16 @@ export default function Challenges({ userEmail, userName }) {
       </div>
 
       <div className="challenges-tabs">
-        <button className={`tab-btn ${activeTab === 'pending' ? 'active' : ''}`} onClick={() => setActiveTab('pending')}>
+        <button
+          className={`tab-btn ${activeTab === 'pending' ? 'active' : ''}`}
+          onClick={() => setActiveTab('pending')}
+        >
           Pending ({pendingChallenges.length})
         </button>
-        <button className={`tab-btn ${activeTab === 'history' ? 'active' : ''}`} onClick={() => setActiveTab('history')}>
+        <button
+          className={`tab-btn ${activeTab === 'history' ? 'active' : ''}`}
+          onClick={() => setActiveTab('history')}
+        >
           History
         </button>
       </div>
@@ -76,29 +87,44 @@ export default function Challenges({ userEmail, userName }) {
             <div className="empty-state">
               <div className="empty-icon">🎯</div>
               <div>No pending challenges</div>
-              <button className="empty-action" onClick={() => setShowCreateModal(true)}>Create one</button>
+              <button className="empty-action" onClick={() => setShowCreateModal(true)}>
+                Create one
+              </button>
             </div>
           )}
 
-          {activeTab === 'pending' && pendingChallenges.map(challenge => (
-            <div key={challenge.challenge_id} className="challenge-card">
-              <div className="challenge-header">
-                <div className="challenger-info">
-                  <span className="challenger-name">{challenge.challenger_name}</span>
-                  <span className="challenge-subject">{challenge.subject}</span>
+          {activeTab === 'pending' &&
+            pendingChallenges.map((challenge) => (
+              <div key={challenge.challenge_id} className="challenge-card">
+                <div className="challenge-header">
+                  <div className="challenger-info">
+                    <span className="challenger-name">{challenge.challenger_name}</span>
+                    <span className="challenge-subject">{challenge.subject}</span>
+                  </div>
+                  {getStatusBadge(challenge.status)}
                 </div>
-                {getStatusBadge(challenge.status)}
+                <div className="challenge-details">
+                  <span>📚 10 questions</span>
+                </div>
+                <div className="challenge-message">
+                  "{challenge.custom_message || challenge.message_text}"
+                </div>
+                <div className="challenge-actions">
+                  <button
+                    className="decline-btn"
+                    onClick={() => handleDecline(challenge.challenge_id)}
+                  >
+                    Decline
+                  </button>
+                  <button
+                    className="accept-btn"
+                    onClick={() => handleAccept(challenge.challenge_id)}
+                  >
+                    Accept →
+                  </button>
+                </div>
               </div>
-              <div className="challenge-details">
-  <span>📚 10 questions</span>
-</div>
-              <div className="challenge-message">"{challenge.custom_message || challenge.message_text}"</div>
-              <div className="challenge-actions">
-                <button className="decline-btn" onClick={() => handleDecline(challenge.challenge_id)}>Decline</button>
-                <button className="accept-btn" onClick={() => handleAccept(challenge.challenge_id)}>Accept →</button>
-              </div>
-            </div>
-          ))}
+            ))}
 
           {activeTab === 'history' && history.length === 0 && (
             <div className="empty-state">
@@ -107,16 +133,23 @@ export default function Challenges({ userEmail, userName }) {
             </div>
           )}
 
-          {activeTab === 'history' && history.map(challenge => (
-            <div key={challenge.challenge_id} className="history-card">
-              <div className="history-opponent">{challenge.opponent_name || challenge.challenger_name}</div>
-              <div className={`history-result ${challenge.winner_email === userEmail ? 'win' : 'loss'}`}>
-                {challenge.winner_email === userEmail ? '🏆 Won' : '❌ Lost'}
+          {activeTab === 'history' &&
+            history.map((challenge) => (
+              <div key={challenge.challenge_id} className="history-card">
+                <div className="history-opponent">
+                  {challenge.opponent_name || challenge.challenger_name}
+                </div>
+                <div
+                  className={`history-result ${challenge.winner_email === userEmail ? 'win' : 'loss'}`}
+                >
+                  {challenge.winner_email === userEmail ? '🏆 Won' : '❌ Lost'}
+                </div>
+                <div className="history-score">
+                  {challenge.challenger_score} - {challenge.opponent_score}
+                </div>
+                <div className="history-date">{challenge.completed_at?.split(' ')[0]}</div>
               </div>
-              <div className="history-score">{challenge.challenger_score} - {challenge.opponent_score}</div>
-              <div className="history-date">{challenge.completed_at?.split(' ')[0]}</div>
-            </div>
-          ))}
+            ))}
         </div>
       )}
 

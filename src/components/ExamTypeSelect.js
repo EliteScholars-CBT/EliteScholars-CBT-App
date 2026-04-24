@@ -1,7 +1,21 @@
 import React from 'react';
-import { BG, PURPLE, GOLD, WHITE } from '../utils/colors';
+import { EXAM_TYPES } from '../utils/constants';
+import { GOLD } from '../utils/colors';
+
+// ============================================================================
+// ExamTypeSelect — Compact grid layout (3 cols / 2 cols alternating)
+// Icon + label only, keyboard navigable
+// ============================================================================
 
 export default function ExamTypeSelect({ onSelectExam, onBack }) {
+  // Keyboard navigation
+  const handleKeyDown = (e, id) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onSelectExam(id);
+    }
+  };
+
   return (
     <div className="scr fd exam-type-page">
       <div className="exam-type-header-section">
@@ -10,49 +24,31 @@ export default function ExamTypeSelect({ onSelectExam, onBack }) {
         </button>
         <div className="exam-type-header-content">
           <div className="exam-type-icon">📚</div>
-          <h1>Choose <span style={{ color: GOLD }}>Exam Type</span></h1>
-          <p>Select the exam you want to practice for</p>
+          <h1>
+            Choose <span style={{ color: GOLD }}>Exam Type</span>
+          </h1>
+          <p>Select the exam you want to practise for</p>
         </div>
       </div>
 
-      <div className="exam-type-container">
-        {/* JAMB Card - Always Available */}
-        <div 
-          className="exam-type-card jamb-card"
-          onClick={() => onSelectExam('jamb')}
-        >
-          <div className="exam-type-card-icon">📝</div>
-          <div className="exam-type-card-title">JAMB</div>
-          <div className="exam-type-card-description">
-            Joint Admissions and Matriculation Board<br />
-            Unified Tertiary Matriculation Examination
+      {/* Compact grid — 3 columns, wraps to 2 for even items */}
+      <div className="exam-type-compact-grid">
+        {EXAM_TYPES.map((exam, idx) => (
+          <div
+            key={exam.id}
+            className={`exam-type-compact-card ${idx % 2 === 0 ? 'span-three' : 'span-two'}`}
+            style={{ '--exam-color': exam.color }}
+            role="button"
+            tabIndex={0}
+            onClick={() => onSelectExam(exam.id)}
+            onKeyDown={(e) => handleKeyDown(e, exam.id)}
+            aria-label={`Select ${exam.label}`}
+          >
+            <span className="exam-type-compact-icon">{exam.icon}</span>
+            <span className="exam-type-compact-label">{exam.label}</span>
+            <span className="exam-type-compact-desc">{exam.desc}</span>
           </div>
-          <div className="exam-type-card-features">
-            <span>✅ 4 Subjects</span>
-            <span>✅ 180 Questions</span>
-            <span>✅ 2 Hours</span>
-          </div>
-          <div className="exam-type-card-badge available">Available</div>
-        </div>
-
-        {/* POST UTME Card */}
-        <div 
-          className="exam-type-card postutme-card"
-          onClick={() => onSelectExam('postutme')}
-        >
-          <div className="exam-type-card-icon">🎓</div>
-          <div className="exam-type-card-title">POST UTME</div>
-          <div className="exam-type-card-description">
-            Post-Unified Tertiary Matriculation Examination<br />
-            University-specific screening
-          </div>
-          <div className="exam-type-card-features">
-            <span>✅ University Selection</span>
-            <span>✅ Past Questions</span>
-            <span>✅ CBT Practice</span>
-          </div>
-          <div className="exam-type-card-badge available">Available</div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -8,11 +8,20 @@ import { SHEETS_URL } from './constants';
 // Create a new challenge
 // FIX: Added mode: 'no-cors'. Returns optimistic success after send.
 export const createChallenge = async (
-  challengerEmail, challengerName,
-  opponentEmail, opponentName,
-  examType, university, subject,
-  numQuestions, timeLimit,
-  messageTemplate, customMessage = null
+  challengerEmail,
+  challengerName,
+  opponentEmail,
+  opponentName,
+  examType,
+  university,
+  subject,
+  numQuestions,
+  timeLimit,
+  messageTemplate,
+  customMessage = null,
+  challengerScore = 0,    // challenger's total score points
+  challengerCorrect = 0,  // challenger's correct answer count
+  challengerTotal = 0     // total questions challenger attempted
 ) => {
   try {
     await fetch(SHEETS_URL, {
@@ -32,6 +41,9 @@ export const createChallenge = async (
         time_limit: timeLimit,
         message_template: messageTemplate,
         custom_message: customMessage || '',
+        challenger_score: challengerScore,
+        challenger_correct: challengerCorrect,
+        challenger_total: challengerTotal,
       }),
     });
     // no-cors returns an opaque response so we cannot read the body.
@@ -152,13 +164,37 @@ export const getChallengeMessages = async () => {
 
 function defaultMessages() {
   return [
-    { message_id: 'msg_001', category: 'friendly',     message_text: 'Think you can beat me? 😊' },
-    { message_id: 'msg_002', category: 'competitive',  message_text: "I'm coming for your spot on the leaderboard! 👑" },
-    { message_id: 'msg_003', category: 'funny',        message_text: "Prepare to lose... or maybe win? Let's play! 🎮" },
-    { message_id: 'msg_004', category: 'motivational', message_text: "Let's help each other improve! Best score wins! 💪" },
-    { message_id: 'msg_005', category: 'trash_talk',   message_text: "You're going down! Hope you've been studying 😤" },
-    { message_id: 'msg_006', category: 'rematch',      message_text: 'Round 2? I want revenge! 🔥' },
-    { message_id: 'msg_007', category: 'daily',        message_text: 'Daily challenge time! Beat my score! 📅' },
-    { message_id: 'msg_008', category: 'weekend',      message_text: 'Weekend quiz battle! Winner buys lunch? 🍕' },
+    { message_id: 'msg_001', category: 'friendly', message_text: 'Think you can beat me? 😊' },
+    {
+      message_id: 'msg_002',
+      category: 'competitive',
+      message_text: "I'm coming for your spot on the leaderboard! 👑",
+    },
+    {
+      message_id: 'msg_003',
+      category: 'funny',
+      message_text: "Prepare to lose... or maybe win? Let's play! 🎮",
+    },
+    {
+      message_id: 'msg_004',
+      category: 'motivational',
+      message_text: "Let's help each other improve! Best score wins! 💪",
+    },
+    {
+      message_id: 'msg_005',
+      category: 'trash_talk',
+      message_text: "You're going down! Hope you've been studying 😤",
+    },
+    { message_id: 'msg_006', category: 'rematch', message_text: 'Round 2? I want revenge! 🔥' },
+    {
+      message_id: 'msg_007',
+      category: 'daily',
+      message_text: 'Daily challenge time! Beat my score! 📅',
+    },
+    {
+      message_id: 'msg_008',
+      category: 'weekend',
+      message_text: 'Weekend quiz battle! Winner buys lunch? 🍕',
+    },
   ];
 }

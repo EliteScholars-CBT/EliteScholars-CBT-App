@@ -38,7 +38,14 @@ export const getProgressPercentage = (totalXP) => {
 
 // Calculate total XP for a completed quiz (call ONCE at quiz end)
 // FIX: This is the single source of truth. Do NOT call addXP() per correct answer.
-export const calculateQuizXP = (correctCount, totalQuestions, timeRemaining, streakDays, usedFiftyFifty, usedHint) => {
+export const calculateQuizXP = (
+  correctCount,
+  totalQuestions,
+  timeRemaining,
+  streakDays,
+  usedFiftyFifty,
+  usedHint
+) => {
   let totalXP = 0;
 
   if (totalQuestions === 0) return 0;
@@ -49,7 +56,10 @@ export const calculateQuizXP = (correctCount, totalQuestions, timeRemaining, str
   totalXP += correctCount * XP_RULES.CORRECT_ANSWER;
 
   // Streak bonus (capped at MAX_STREAK_BONUS)
-  const streakBonus = Math.min((streakDays || 1) * XP_RULES.STREAK_BONUS_PER_DAY, XP_RULES.MAX_STREAK_BONUS);
+  const streakBonus = Math.min(
+    (streakDays || 1) * XP_RULES.STREAK_BONUS_PER_DAY,
+    XP_RULES.MAX_STREAK_BONUS
+  );
   totalXP += streakBonus;
 
   // Perfect round bonus
