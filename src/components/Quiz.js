@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { QB } from '../QB';
+import { QB } from '../data/jamb';
 import { WAEC_QB } from '../data/waec';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import AdsterraBanner from '../AdsterraBanner';
-import { QB } from '../QB';
+import AdSection from './AdSection';
+import { QB } from '../data/jamb';
 import { POST_UTME } from '../data/postutme';
 import { getFlashcardsForSubject } from '../data/flashcards';
 import { SUBJ } from '../data/subjects';
@@ -18,6 +18,8 @@ export default function Subjects({
   mode = 'cbt',
   examType = 'jamb',
   university = null,
+  email = '',
+  premiumUser = false,
 }) {
   const { theme, toggleTheme } = useTheme();
 
@@ -215,10 +217,7 @@ export default function Subjects({
 
       {SHOW_ADS && (
         <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
-          <AdsterraBanner
-            adKey="ec0487cde03d79b75629df8828d753f9"
-            refreshTrigger={refreshTrigger}
-          />
+          <AdSection slot={0} refreshTrigger={refreshTrigger} examType={examType} email={email} showPublisher={true} />
         </div>
       )}
 

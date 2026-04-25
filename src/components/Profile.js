@@ -1,5 +1,6 @@
+import PremiumModal from './PremiumModal';
+import { getPremiumData, cancelPremium } from '../utils/premium';
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
   LineChart,
   Line,
@@ -25,16 +26,20 @@ export default function Profile({
   bestScore,
   onBack,
   onSignOut,
+  premiumUser = false,
+  onPremiumActivated,
 }) {
   const [activeTab, setActiveTab] = useState('stats');
   const [achievements, setAchievements] = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
   const [performanceData, setPerformanceData] = useState([]);
   const [subjectChartData, setSubjectChartData] = useState([]);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [localPremium, setLocalPremium] = useState(premiumUser);
+  const premData = getPremiumData(email);
   const { theme, toggleTheme } = useTheme();
   const tabsContainerRef = useRef(null);
-  const navigate = useNavigate();
-
+  
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
   const avg = allScores.length
     ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
@@ -105,6 +110,7 @@ export default function Profile({
   }, [email, allScores]);
 
   return (
+    <>
     <div className="scr fd profile-page">
       <div
         className="profile-header"
@@ -413,10 +419,49 @@ export default function Profile({
           </div>
         )}
 
+        {/* Premium subscription management */}
+        {localPremium ? (
+          <div className="premium-active-box" style={{ margin: '0 0 12px' }}>
+            <div className="premium-badge">⭐ Premium Active</div>
+            <div className="premium-active-title" style={{ marginTop: 8 }}>
+              {premData?.plan === 'annual' ? 'Annual' : 'Monthly'} Plan
+            </div>
+            {premData?.expiresDateStr && (
+              <div className="premium-active-expiry">Expires: {premData.expiresDateStr}</div>
+            )}
+            <button className="premium-manage-btn" onClick={() => {
+              cancelPremium(email);
+              setLocalPremium(false);
+            }}>Cancel Subscription</button>
+          </div>
+        ) : (
+          <button
+            className="premium-cta-btn"
+            style={{ marginBottom: 12 }}
+            onClick={() => setShowPremiumModal(true)}
+          >
+            ⭐ Upgrade to Premium
+          </button>
+        )}
+
         <button className="profile-signout-btn" onClick={onSignOut}>
           ↩ Sign Out
         </button>
       </div>
     </div>
+
+      {showPremiumModal && (
+        <PremiumModal
+          email={email}
+          name={name}
+          onClose={() => setShowPremiumModal(false)}
+          onActivated={(data) => {
+            setLocalPremium(true);
+            setShowPremiumModal(false);
+            if (onPremiumActivated) onPremiumActivated(data);
+          }}
+        />
+      )}
+    </>
   );
 }

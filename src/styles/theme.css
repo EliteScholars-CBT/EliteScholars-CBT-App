@@ -280,3 +280,224 @@ body.dark-mode .flashcards-card-term {
 body.dark-mode .flashcards-card-label {
   color: var(--gold);
 }
+
+/* ============================================================================
+   DARK MODE — Bottom Nav (5-tab)
+   ============================================================================ */
+
+body.dark-mode .bottom-nav {
+  background: #0f0020;
+  border-top-color: #2d1b4e;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.4);
+}
+body.dark-mode .bottom-nav-label { color: #6B7280; }
+body.dark-mode .bottom-nav-item.active { background: rgba(108,63,201,0.12); }
+body.dark-mode .bottom-nav-item.active .bottom-nav-label,
+body.dark-mode .active-label { color: #C4B5FD !important; }
+
+/* ============================================================================
+   DARK MODE — Exam Type Select
+   ============================================================================ */
+
+body.dark-mode .exam-type-page {
+  background: linear-gradient(160deg, #050010, #1a0030 60%, #050010);
+}
+body.dark-mode .exam-type-compact-card {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+body.dark-mode .exam-type-compact-label { color: #F3F4F6; }
+body.dark-mode .exam-type-compact-desc  { color: rgba(255,255,255,0.45); }
+
+/* ============================================================================
+   DARK MODE — Learn Mode
+   ============================================================================ */
+
+body.dark-mode .learn-page { background: #0a0015; }
+body.dark-mode .learn-accordion-item {
+  background: #1a0030;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+body.dark-mode .learn-accordion-header { background: transparent; }
+body.dark-mode .learn-accordion-title { color: #F3F4F6; }
+body.dark-mode .learn-accordion-num   { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .learn-accordion-body  { border-top-color: #2d1b4e; }
+body.dark-mode .learn-content-html .learn-intro {
+  background: rgba(108,63,201,0.15);
+  border-left-color: #7C3AED;
+  color: #D1D5DB;
+}
+body.dark-mode .learn-content-html .learn-p,
+body.dark-mode .learn-content-html .learn-list li { color: #D1D5DB; }
+body.dark-mode .learn-content-html .learn-subheading,
+body.dark-mode .learn-content-html h3.learn-subheading {
+  color: #F3F4F6;
+  border-bottom-color: #2d1b4e;
+}
+body.dark-mode .learn-content-html .learn-table thead tr { background: #4B0082; }
+body.dark-mode .learn-content-html .learn-table td { color: #D1D5DB; border-bottom-color: #2d1b4e; }
+body.dark-mode .learn-content-html .learn-table tbody tr:nth-child(even) { background: #1f0035; }
+body.dark-mode .learn-content-html .learn-tip-box {
+  background: rgba(212,175,55,0.1);
+  border-color: rgba(212,175,55,0.3);
+  color: #FDE68A;
+}
+body.dark-mode .learn-content-html .learn-tip-warn {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.3);
+  color: #FCA5A5;
+}
+body.dark-mode .learn-content-html .learn-formula {
+  background: rgba(108,63,201,0.2);
+  border-color: #4B0082;
+  color: #E9D5FF;
+}
+body.dark-mode .learn-content-html .learn-worked-example {
+  background: rgba(22,163,74,0.1);
+  border-color: rgba(22,163,74,0.3);
+}
+body.dark-mode .learn-content-html .learn-worked-title { color: #4ADE80; }
+body.dark-mode .learn-nav-btn { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .learn-progress-bar { background: rgba(108,63,201,0.2); }
+body.dark-mode .learn-keyboard-hint { color: #4B5563; }
+body.dark-mode .learn-voice-select {
+  background: #1a0030;
+  border-color: #3d2a5e;
+  color: #D1D5DB;
+}
+body.dark-mode .learn-tts-btn { background: #4B0082; }
+body.dark-mode .learn-quiz-card { background: #1a0030; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+body.dark-mode .learn-quiz-q { color: #F3F4F6; }
+body.dark-mode .learn-quiz-opt {
+  background: #2d1b4e;
+  border-color: #3d2a5e;
+  color: #D1D5DB;
+}
+body.dark-mode .learn-quiz-exp-text { background: #0f0020; color: #D1D5DB; }
+body.dark-mode .learn-quiz-overlay { background: #0a0015; }
+body.dark-mode .learn-empty { color: #4B5563; }
+
+/* ============================================================================
+   DARK MODE — Mode Select
+   ============================================================================ */
+
+body.dark-mode .mode-select-page { background: linear-gradient(160deg, #0a0015, #1a0030 60%, #0a0015); }
+body.dark-mode .mode-select-card {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+body.dark-mode .mode-select-card-title { color: #F3F4F6; }
+body.dark-mode .mode-select-card-description { color: #9CA3AF; }
+
+/* ============================================================================
+   DARK MODE — Shop
+   ============================================================================ */
+
+body.dark-mode .shop-page { background: #0a0015; }
+body.dark-mode .shop-body { background: #0a0015; }
+body.dark-mode .shop-item-card { background: #1a0030; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+body.dark-mode .shop-item-title { color: #F3F4F6; }
+body.dark-mode .shop-item-desc  { color: #9CA3AF; }
+body.dark-mode .shop-item-footer { border-top-color: #2d1b4e; }
+body.dark-mode .shop-category-label { color: #C4B5FD; }
+body.dark-mode .shop-footer-note { color: #4B5563; }
+
+/* ============================================================================
+   DARK MODE — Premium modal & limit gate
+   ============================================================================ */
+
+body.dark-mode .premium-modal {
+  background: #1a0030;
+  border-top: 1px solid #2d1b4e;
+}
+body.dark-mode .premium-title { color: #F3F4F6; }
+body.dark-mode .premium-tagline { color: #9CA3AF; }
+body.dark-mode .free-col { background: #0f0020; border-color: #2d1b4e; }
+body.dark-mode .premium-compare-row { color: #D1D5DB; }
+body.dark-mode .premium-plan-toggle { background: #0f0020; }
+body.dark-mode .premium-plan-btn { color: #9CA3AF; }
+body.dark-mode .premium-plan-btn.active { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .premium-amount { color: #F3F4F6; }
+body.dark-mode .premium-cancel-note,
+body.dark-mode .premium-sim-note { color: #4B5563; }
+body.dark-mode .premium-close { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .limit-gate-card { background: #1a0030; }
+body.dark-mode .limit-gate-title { color: #F3F4F6; }
+body.dark-mode .limit-gate-msg  { color: #9CA3AF; }
+body.dark-mode .limit-gate-timer-wrap { background: #0f0020; }
+body.dark-mode .limit-gate-close-btn { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .premium-active-box {
+  background: rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.25);
+}
+
+/* ============================================================================
+   DARK MODE — Ads
+   ============================================================================ */
+
+body.dark-mode .ad-section-wrapper {
+  background: #0f0020;
+  border-color: rgba(108,63,201,0.2);
+}
+body.dark-mode .ad-affiliate-card {
+  background: #1a0030;
+  border-color: #2d1b4e;
+}
+body.dark-mode .ad-affiliate-title { color: #F3F4F6; }
+body.dark-mode .ad-affiliate-desc  { color: #9CA3AF; }
+
+/* ============================================================================
+   DARK MODE — Review modal
+   ============================================================================ */
+
+body.dark-mode .review-modal { background: #1a0030; }
+body.dark-mode .review-modal-header { border-bottom-color: #2d1b4e; }
+body.dark-mode .review-modal-title  { color: #F3F4F6; }
+body.dark-mode .review-modal-close  { background: #2d1b4e; color: #C4B5FD; }
+body.dark-mode .review-item-correct { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.3); }
+body.dark-mode .review-item-wrong   { background: rgba(239,68,68,0.1);  border-color: rgba(239,68,68,0.3); }
+body.dark-mode .review-item-q       { color: #D1D5DB; }
+body.dark-mode .review-detail-q     { color: #F3F4F6; }
+body.dark-mode .review-detail-opt   { background: #2d1b4e; border-color: #3d2a5e; color: #D1D5DB; }
+body.dark-mode .review-explanation  { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); }
+body.dark-mode .review-explanation p { color: #FDE68A; }
+
+/* ============================================================================
+   DARK MODE — Loading screen (branded colors)
+   ============================================================================ */
+
+body.dark-mode .loading-screen { background: #0a0015; }
+body.dark-mode .loading-spinner {
+  border-color: #2d1b4e;
+  border-top-color: #6C3FC9 !important;
+}
+body.dark-mode .loading-text { color: #6B7280; }
+
+/* ============================================================================
+   DARK MODE — Challenge flow
+   ============================================================================ */
+
+body.dark-mode .challenge-flow-notice {
+  background: rgba(108,63,201,0.12);
+  border-color: rgba(108,63,201,0.25);
+  color: #C4B5FD;
+}
+body.dark-mode .create-challenge-modal {
+  background: #1a0030;
+  border-color: #2d1b4e;
+}
+body.dark-mode .challenge-score-circle {
+  background: linear-gradient(135deg, #1a0030, #2d1b4e);
+  border-color: #6C3FC9;
+}
+
+/* ============================================================================
+   DARK MODE — Result page vibe box
+   ============================================================================ */
+
+body.dark-mode .result-vibe-box { background: linear-gradient(135deg, #0f0020, #1a0030); }
+body.dark-mode .result-review-btn {
+  background: #1a0030;
+  color: #C4B5FD;
+  border-color: #2d1b4e;
+}

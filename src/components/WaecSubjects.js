@@ -1,9 +1,41 @@
-import React from 'react';
-import { WAEC_SUBJECTS, WAEC_QB } from '../data/waec';
+import React, { useState } from 'react';
+import { WAEC_SUBJECTS } from '../data/waec';
+import { WAEC_QB } from '../data/waec';
+import { GST_SUBJECTS } from '../data/gst';
+import { NECO_SUBJECTS } from '../data/neco';
 import { useTheme } from '../context/ThemeContext';
 
-export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, examType = 'waec', onModeChange }) {
+// ============================================================================
+// WaecSubjects — subject picker for WAEC, NECO, and GST
+// Has inline CBT / Learn mode toggle — no ModeSelect step needed
+// ============================================================================
+
+export default function WaecSubjects({
+  name,
+  onStart,
+  onBack,
+  examType = 'waec',
+  onModeChange,
+}) {
   const { theme, toggleTheme } = useTheme();
+  const [mode, setMode] = useState('cbt');
+
+  // Pick the right subject list per exam type
+  const subjects =
+    examType === 'gst'  ? GST_SUBJECTS  :
+    examType === 'neco' ? NECO_SUBJECTS :
+    WAEC_SUBJECTS;
+
+  const examLabel = {
+    waec: 'WAEC',
+    neco: 'NECO',
+    gst:  'GST',
+  }[examType] || 'WAEC';
+
+  const handleMode = (m) => {
+    setMode(m);
+    if (onModeChange) onModeChange(m);
+  };
 
   return (
     <div
@@ -20,9 +52,7 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
         <div className="subjects-header-curve" />
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <div>
-            <div className="subjects-welcome-label">
-              {examType.toUpperCase()} • {mode === 'learn' ? 'LEARN' : 'CBT'}
-            </div>
+            <div className="subjects-welcome-label">{examLabel}</div>
             <div className="subjects-welcome-name">{name || 'Student'} 👋</div>
             <div className="subjects-welcome-text">
               {mode === 'learn' ? 'Study notes & key concepts' : 'Practice past questions'}
@@ -41,31 +71,28 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
         </div>
       </div>
 
-      {/* Mode badge */}
-      <div style={{ padding: '10px 16px 0' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 6,
-            background: mode === 'learn' ? '#DCFCE7' : '#DBEAFE',
-            color: mode === 'learn' ? '#065F46' : '#1D4ED8',
-            borderRadius: 20,
-            padding: '4px 12px',
-            fontSize: 11,
-            fontWeight: 700,
-          }}
-        >
-          {mode === 'learn'
-            ? '📖 Learn Mode — tap a subject to study'
-            : '🎯 CBT Mode — tap a subject to begin'}
+      {/* CBT / Learn mode toggle */}
+      <div style={{ padding: '14px 16px 2px', flexShrink: 0 }}>
+        <div className="waec-mode-toggle">
+          <button
+            className={`waec-mode-btn ${mode === 'cbt' ? 'active' : ''}`}
+            onClick={() => handleMode('cbt')}
+          >
+            📝 CBT Practice
+          </button>
+          <button
+            className={`waec-mode-btn ${mode === 'learn' ? 'active' : ''}`}
+            onClick={() => handleMode('learn')}
+          >
+            📖 Learn Mode
+          </button>
         </div>
       </div>
 
-      {/* 2-column subject grid */}
+      {/* Subject grid */}
       <div className="scroll" style={{ flex: 1, padding: '12px 16px 100px', overflowY: 'auto' }}>
         <div className="waec-grid">
-          {WAEC_SUBJECTS.map((subj) => {
+          {subjects.map((subj) => {
             const qCount = (WAEC_QB[subj.id] || []).length;
             return (
               <div
@@ -79,7 +106,7 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
                 </div>
                 <div className="waec-card-label">{subj.label}</div>
                 <div className="waec-card-meta">
-                  {mode === 'learn' ? '5 topics' : `${qCount} questions`}
+                  {mode === 'learn' ? '5 topics' : qCount > 0 ? `${qCount} questions` : 'Questions coming soon'}
                 </div>
                 <div className="waec-card-badge" style={{ background: subj.bg, color: subj.color }}>
                   {mode === 'learn' ? 'STUDY' : 'READY'}
@@ -91,12 +118,44 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
       </div>
 
       <style>{`
+        .waec-mode-toggle {
+          display: flex;
+          background: var(--card-bg, #F3F0FF);
+          border-radius: 12px;
+          padding: 4px;
+          gap: 4px;
+          border: 1px solid rgba(108,63,201,0.1);
+        }
+        .waec-mode-btn {
+          flex: 1;
+          padding: 9px 8px;
+          border: none;
+          border-radius: 9px;
+          font-size: 12px;
+          font-weight: 700;
+          color: var(--text-secondary, #6B7280);
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .waec-mode-btn.active {
+          background: #fff;
+          color: #6C3FC9;
+          box-shadow: 0 2px 8px rgba(108,63,201,0.15);
+        }
+        body.dark-mode .waec-mode-toggle {
+          background: rgba(255,255,255,0.08);
+          border-color: rgba(255,255,255,0.1);
+        }
+        body.dark-mode .waec-mode-btn.active {
+          background: rgba(108,63,201,0.3);
+          color: #C4B5FD;
+        }
         .waec-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 12px;
         }
-        /* Last card spans full width when total count is odd */
         .waec-card:last-child:nth-child(odd) {
           grid-column: 1 / -1;
         }
@@ -118,6 +177,9 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
           border-color: var(--waec-color);
           box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         }
+        body.dark-mode .waec-card {
+          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
         .waec-card-icon {
           width: 40px;
           height: 40px;
@@ -131,12 +193,12 @@ export default function WaecSubjects({ name, mode = 'cbt', onStart, onBack, exam
         .waec-card-label {
           font-size: 13px;
           font-weight: 700;
-          color: var(--text-primary);
+          color: var(--text-primary, #1a0030);
           line-height: 1.2;
         }
         .waec-card-meta {
           font-size: 11px;
-          color: var(--text-secondary);
+          color: var(--text-secondary, #6B7280);
         }
         .waec-card-badge {
           font-size: 9px;

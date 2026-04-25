@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import ModeSelect from './components/ModeSelect';
@@ -9,33 +9,28 @@ import BottomNav from './components/BottomNav';
 import Leaderboard from './components/Leaderboard';
 import Challenges from './components/Challenges';
 import Shop from './components/Shop';
+import FreeLimitGate from './components/FreeLimitGate';
 import {
-  SHOW_ADS,
-  SHOW_POPOVER_AD,
-  SHARE_GATE_EVERY,
-  ROUND_SIZE,
-  getTimerSecs,
-  ACHIEVEMENTS,
+  SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ACHIEVEMENTS, XP_REWARDS,
 } from './utils/constants';
 import {
-  loadUser,
-  loadStats,
-  saveStats,
-  saveUser,
-  loadSubjectPerformance,
-  saveSubjectPerformance,
-  loadAchievements,
-  saveAchievements,
+  loadUser, loadStats, saveStats, saveUser,
+  loadSubjectPerformance, saveSubjectPerformance,
+  loadAchievements, saveAchievements,
 } from './utils/storage';
 import {
-  trackEvent,
-  trackSessionStart,
-  trackSessionEnd,
-  getDeviceInfo,
-  fmtTimestamp,
+  trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp,
 } from './utils/analytics';
 import { stopSpeech } from './utils/sounds';
-import { calculateQuizXP, addXP } from './utils/xpManager';
+import {
+  calculateQuizXP, addXP, awardDailyLoginXP, awardTopicXP,
+} from './utils/xpManager';
+import {
+  isPremium, isSessionExpired, startSession, startCooldown,
+  canUseTopic, incrementTopicsToday, resetSession,
+} from './utils/premium';
+import { registerSW, requestNotificationPermission, scheduleDailyReminder, listenForSWMessages } from './utils/notifications';
+import { applySecurityMeasures } from './utils/security';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/learn.css';
@@ -43,413 +38,278 @@ import './styles/quiz.css';
 import './styles/result.css';
 import './styles/shop.css';
 import './styles/ads.css';
+import './styles/premium.css';
 import './styles/theme.css';
 
-// Lazy loaded pages
-const Splash = lazy(() => import('./components/Splash'));
-const Onboard = lazy(() => import('./components/Onboard'));
-const Subjects = lazy(() => import('./components/Subjects'));
-const Ready = lazy(() => import('./components/Ready'));
-const Quiz = lazy(() => import('./components/Quiz'));
-const Result = lazy(() => import('./components/Result'));
-const Profile = lazy(() => import('./components/Profile'));
+// Lazy loaded pages/components
+const Splash       = lazy(() => import('./components/Splash'));
+const Onboard      = lazy(() => import('./components/Onboard'));
+const Subjects     = lazy(() => import('./components/Subjects'));
+const Ready        = lazy(() => import('./components/Ready'));
+const Quiz         = lazy(() => import('./components/Quiz'));
+const Result       = lazy(() => import('./components/Result'));
+const Profile      = lazy(() => import('./components/Profile'));
 const WaecSubjects = lazy(() => import('./components/WaecSubjects'));
-const WaecLearn = lazy(() => import('./components/WaecLearn'));
-const ShareGate = lazy(() => import('./components/ShareGate'));
-const AdGate = lazy(() => import('./components/AdGate'));
+const WaecLearn    = lazy(() => import('./components/WaecLearn'));
+const ShareGate    = lazy(() => import('./components/ShareGate'));
+const AdGate       = lazy(() => import('./components/AdGate'));
 
 const LoadingScreen = () => (
   <div className="loading-screen">
+    <div className="loading-screen-logo">🎓</div>
     <div className="loading-spinner" />
-    <div className="loading-text">Loading…</div>
+    <div className="loading-text">EliteScholars CBT</div>
   </div>
 );
 
-// ============================================================================
-// Check and award achievements after a quiz
-// ============================================================================
-const checkAndAwardAchievements = (
-  userStats,
-  email,
-  currentAchievements,
-  showToast,
-  showAchievement,
-  subjectPerformance
-) => {
-  const achievedIds = currentAchievements.map((a) => a?.id).filter(Boolean);
+// ── Achievement checker ───────────────────────────────────────────────────────
+const checkAchievements = (userStats, email, current, showToast, showAch, subjPerf) => {
+  const ids = current.map((a) => a?.id).filter(Boolean);
   const newIds = [];
+  const add = (id, cond) => { if (!ids.includes(id) && cond) newIds.push(id); };
 
-  const check = (id, condition) => {
-    if (!achievedIds.includes(id) && condition) newIds.push(id);
-  };
+  add('firstQuiz',      userStats.totalQuizzes >= 1);
+  add('fiveQuizzes',    userStats.totalQuizzes >= 5);
+  add('tenQuizzes',     userStats.totalQuizzes >= 10);
+  add('twentyQuizzes',  userStats.totalQuizzes >= 20);
+  add('fiftyQuizzes',   userStats.totalQuizzes >= 50);
+  add('perfectScore',   userStats.perfectScores >= 1);
+  add('threePerfects',  userStats.perfectScores >= 3);
+  add('ninetyPlus',     userStats.ninetyPlusCount >= 1);
+  add('streak3',        userStats.streak >= 3);
+  add('streak7',        userStats.streak >= 7);
+  add('streak30',       userStats.streak >= 30);
+  add('speedDemon',     userStats.speedDemonCount >= 1);
 
-  check('firstQuiz', userStats.totalQuizzes >= 1);
-  check('fiveQuizzes', userStats.totalQuizzes >= 5);
-  check('tenQuizzes', userStats.totalQuizzes >= 10);
-  check('twentyQuizzes', userStats.totalQuizzes >= 20);
-  check('fiftyQuizzes', userStats.totalQuizzes >= 50);
-  check('perfectScore', userStats.perfectScores >= 1);
-  check('threePerfects', userStats.perfectScores >= 3);
-  check('ninetyPlus', userStats.ninetyPlusCount >= 1);
-  check('streak3', userStats.streak >= 3);
-  check('streak7', userStats.streak >= 7);
-  check('streak30', userStats.streak >= 30);
-  check('speedDemon', userStats.speedDemonCount >= 1);
-
-  // Night owl / early bird based on current hour
   const h = new Date().getHours();
-  check('nightOwl', h >= 22 || h < 1);
-  check('earlyBird', h >= 5 && h < 7);
+  add('nightOwl',  h >= 22 || h < 1);
+  add('earlyBird', h >= 5 && h < 7);
 
-  // All subjects
-  if (!achievedIds.includes('allSubjects')) {
-    const attempted = Object.keys(subjectPerformance || {}).filter(
-      (s) => subjectPerformance[s]?.total > 0
-    ).length;
+  if (!ids.includes('allSubjects')) {
+    const attempted = Object.keys(subjPerf || {}).filter((s) => subjPerf[s]?.total > 0).length;
     if (attempted >= 9) newIds.push('allSubjects');
   }
 
-  // Subject mastery
   const masteryMap = {
-    mathematics: 'mathematician',
-    physics: 'physicist',
-    chemistry: 'chemist',
-    biology: 'biologist',
-    economics: 'economist',
-    accounting: 'accountant',
-    literature: 'literatureLover',
-    government: 'governmentGuru',
-    english: 'englishExpert',
-    novel: 'novelReader',
+    mathematics: 'mathematician', physics: 'physicist', chemistry: 'chemist',
+    biology: 'biologist', economics: 'economist', accounting: 'accountant',
+    literature: 'literatureLover', government: 'governmentGuru',
+    english: 'englishExpert', novel: 'novelReader',
   };
   Object.entries(masteryMap).forEach(([subj, key]) => {
-    if (!achievedIds.includes(key)) {
-      const perf = subjectPerformance?.[subj];
-      if (perf && perf.bestScore >= 80) newIds.push(key);
-    }
+    if (!ids.includes(key) && (subjPerf?.[subj]?.bestScore || 0) >= 80) newIds.push(key);
   });
 
   if (newIds.length > 0) {
     const objs = newIds.map((id) => ACHIEVEMENTS[id]).filter(Boolean);
-    const updated = [...currentAchievements, ...objs];
+    const updated = [...current, ...objs];
     saveAchievements(updated, email);
-    objs.forEach((a) => {
-      showToast(`${a.name} unlocked!`, 'achievement');
-      showAchievement(a);
-    });
+    objs.forEach((a) => { showToast(`${a.name} unlocked!`, 'achievement'); showAch(a); });
   }
-
   return newIds;
 };
 
-// ============================================================================
-// App
-// ============================================================================
+// ── App ───────────────────────────────────────────────────────────────────────
 export default function App() {
-  const [screen, setScreen] = useState('splash');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('english');
-  const [score, setScore] = useState(0);
-  const [correct, setCorrect] = useState(0);
-  const [totalQ, setTotalQ] = useState(0);
-  const [sessions, setSessions] = useState(0);
-  const [allScores, setAllScores] = useState([]);
-  const [bestScore, setBestScore] = useState(0);
-  const [roundsPlayed, setRoundsPlayed] = useState(0);
-  const [fromResult, setFromResult] = useState(false);
+  const [screen, setScreen]               = useState('splash');
+  const [name, setName]                   = useState('');
+  const [email, setEmail]                 = useState('');
+  const [subject, setSubject]             = useState('english');
+  const [score, setScore]                 = useState(0);
+  const [correct, setCorrect]             = useState(0);
+  const [totalQ, setTotalQ]               = useState(0);
+  const [sessions, setSessions]           = useState(0);
+  const [allScores, setAllScores]         = useState([]);
+  const [bestScore, setBestScore]         = useState(0);
+  const [roundsPlayed, setRoundsPlayed]   = useState(0);
   const [pendingSubject, setPendingSubject] = useState('english');
-  const [streak, setStreak] = useState(1);
-  const [lastDate, setLastDate] = useState('');
-  const [adRefresh, setAdRefresh] = useState(0);
-  const [showAdGate, setShowAdGate] = useState(false);
+  const [streak, setStreak]               = useState(1);
+  const [lastDate, setLastDate]           = useState('');
+  const [adRefresh, setAdRefresh]         = useState(0);
+  const [showAdGate, setShowAdGate]       = useState(false);
   const [adGateCallback, setAdGateCallback] = useState(null);
-  const [totalSessionsForAd, setTotalSessionsForAd] = useState(0);
-
-  const [toast, setToast] = useState({ show: false, message: '', type: 'info' });
-  const [achievementPopup, setAchievementPopup] = useState({ show: false, achievement: null });
-  const [achievements, setAchievements] = useState([]);
-  const [quizTimeRemaining, setQuizTimeRemaining] = useState(null);
-  const [subjectPerformance, setSubjectPerformance] = useState({});
-  const [studyMode, setStudyMode] = useState(null);
-  const [flashcardSubject, setFlashcardSubject] = useState(null);
-  const [examType, setExamType] = useState(null);
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [sessionStartTime, setSessionStartTime] = useState(null);
-  const [usedFiftyFifty, setUsedFiftyFifty] = useState(false);
-  const [usedHint, setUsedHint] = useState(false);
-  const [waecSubject, setWaecSubject] = useState(null);
-  const [waecMode, setWaecMode] = useState('cbt');
-  const [questionLog, setQuestionLog] = useState([]);
-
-  // Load user on mount
-  useEffect(() => {
-    const u = loadUser();
-    if (u.name) {
-      setName(u.name);
-      setEmail(u.email || '');
-      const s = loadStats(u.email);
-      if (s.sessions) setSessions(s.sessions);
-      if (s.allScores) setAllScores(s.allScores);
-      if (s.bestScore) setBestScore(s.bestScore);
-      if (s.streak) setStreak(s.streak);
-      if (s.lastDate) setLastDate(s.lastDate);
-      setSubjectPerformance(loadSubjectPerformance(u.email));
-      setAchievements(loadAchievements(u.email));
-    }
-  }, []);
-
-  // Session tracking
-  useEffect(() => {
-    if (name && email && !['splash', 'onboard'].includes(screen)) {
-      if (!sessionStartTime) {
-        setSessionStartTime(Date.now());
-        trackSessionStart(email, name);
-      }
-    }
-  }, [name, email, screen]);
-
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      if (sessionStartTime && email) {
-        trackSessionEnd(email, Date.now() - sessionStartTime);
-      }
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [sessionStartTime, email]);
+  const [totalSessionsForAd, setTSFAd]   = useState(0);
+  const [toast, setToast]                 = useState({ show: false, message: '', type: 'info' });
+  const [achPopup, setAchPopup]           = useState({ show: false, achievement: null });
+  const [achievements, setAchievements]   = useState([]);
+  const [quizTimeLeft, setQuizTimeLeft]   = useState(null);
+  const [subjPerf, setSubjPerf]           = useState({});
+  const [studyMode, setStudyMode]         = useState(null);
+  const [examType, setExamType]           = useState(null);
+  const [selectedUni, setSelectedUni]     = useState(null);
+  const [sessionStart, setSessionStart]   = useState(null);
+  const [usedFifty, setUsedFifty]         = useState(false);
+  const [usedHint, setUsedHint]           = useState(false);
+  const [waecSubject, setWaecSubject]     = useState(null);
+  const [waecMode, setWaecMode]           = useState('cbt');
+  const [questionLog, setQuestionLog]     = useState([]);
+  const [premiumUser, setPremiumUser]     = useState(false);
+  const [showLimitGate, setShowLimitGate] = useState(false);
+  const [limitReason, setLimitReason]     = useState('session');
+  const [flashcardSubject, setFlashSub]   = useState(null);
 
   const showToast = (message, type = 'info') => setToast({ show: true, message, type });
-  const showAchievement = (achievement) => setAchievementPopup({ show: true, achievement });
-  const triggerAdRefresh = () => setAdRefresh((prev) => prev + 1);
+  const showAch   = (achievement) => setAchPopup({ show: true, achievement });
+  const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
-  const updateSubjectPerformance = (subjectName, scoreCorrect, totalQuestions) => {
-    const pct = (scoreCorrect / totalQuestions) * 100;
-    const current = subjectPerformance[subjectName] || {
-      bestScore: 0,
-      averageScore: 0,
-      total: 0,
-      scores: [],
-    };
-    const newScores = [...(current.scores || []), pct];
-    const newAverage = newScores.reduce((a, b) => a + b, 0) / newScores.length;
-    const newBest = Math.max(current.bestScore || 0, pct);
-    const updated = {
-      ...subjectPerformance,
-      [subjectName]: {
-        bestScore: newBest,
-        averageScore: newAverage,
-        total: (current.total || 0) + 1,
-        scores: newScores,
-      },
-    };
-    setSubjectPerformance(updated);
-    saveSubjectPerformance(updated, email);
-  };
+  // ── Startup ─────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    // Security
+    applySecurityMeasures();
+    // SW + notifications
+    registerSW().then((reg) => {
+      if (reg) {
+        requestNotificationPermission().then((perm) => {
+          if (perm === 'granted') {
+            const u = loadUser();
+            if (u.name) scheduleDailyReminder(18, u.name);
+          }
+        });
+      }
+    });
+    // Listen for SW→client messages
+    const unsub = listenForSWMessages((data) => {
+      if (data.type === 'challenge') setScreen('challenges');
+    });
+    return unsub;
+  }, []);
 
-  const calcStreak = (currentStreak, lastDate) => {
-    const today = new Date().toDateString();
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
-    if (!lastDate) return 1;
-    if (lastDate === today) return currentStreak;
-    if (lastDate === yesterday) return currentStreak + 1;
-    return 1;
-  };
-
-  const persist = (ns, nsc, nb, streak, lastDate) =>
-    saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak, lastDate }, email);
-
-  const goHome = () => {
-    if (SHOW_ADS) triggerAdRefresh();
-    stopSpeech();
-    setStudyMode(null);
-    setFlashcardSubject(null);
-    setExamType(null);
-    setSelectedUniversity(null);
-    setScreen('examType');
-  };
-
-  const handleAdGateComplete = (callback) => {
-    setTotalSessionsForAd(sessions + 1);
-    setAdGateCallback(() => callback);
-    setShowAdGate(true);
-  };
-
-  const handleAdGateUnlocked = () => {
-    setShowAdGate(false);
-    if (adGateCallback) {
-      adGateCallback();
-      setAdGateCallback(null);
-    }
-  };
+  // ── Load user data ───────────────────────────────────────────────────────────
+  const loadUserData = useCallback((u) => {
+    setName(u.name);
+    setEmail(u.email || '');
+    setPremiumUser(isPremium(u.email));
+    const s = loadStats(u.email);
+    if (s.sessions)  setSessions(s.sessions);
+    if (s.allScores) setAllScores(s.allScores);
+    if (s.bestScore) setBestScore(s.bestScore);
+    if (s.streak)    setStreak(s.streak);
+    if (s.lastDate)  setLastDate(s.lastDate);
+    setSubjPerf(loadSubjectPerformance(u.email));
+    setAchievements(loadAchievements(u.email));
+    // Daily login XP
+    awardDailyLoginXP(u.email, u.name);
+    // Start session timer
+    startSession(u.email);
+  }, []);
 
   const handleSplash = () => {
     const u = loadUser();
-    if (u.name) {
-      setName(u.name);
-      setEmail(u.email || '');
-      const s = loadStats(u.email);
-      if (s.sessions) setSessions(s.sessions);
-      if (s.allScores) setAllScores(s.allScores);
-      if (s.bestScore) setBestScore(s.bestScore);
-      if (s.streak) setStreak(s.streak);
-      if (s.lastDate) setLastDate(s.lastDate);
-      setScreen('examType');
-    } else {
-      setScreen('onboard');
+    if (u.name) { loadUserData(u); setScreen('examType'); }
+    else setScreen('onboard');
+  };
+
+  const handleOnboard = (n, e) => {
+    setName(n); setEmail(e);
+    setPremiumUser(isPremium(e));
+    const s = loadStats(e);
+    if (s.sessions)  setSessions(s.sessions);
+    if (s.allScores) setAllScores(s.allScores);
+    if (s.bestScore) setBestScore(s.bestScore);
+    if (s.streak)    setStreak(s.streak);
+    if (s.lastDate)  setLastDate(s.lastDate);
+    startSession(e);
+    awardDailyLoginXP(e, n);
+    setScreen('examType');
+  };
+
+  // ── Session expiry check ─────────────────────────────────────────────────────
+  const checkSessionLimit = useCallback(() => {
+    if (!email || premiumUser) return false;
+    if (isSessionExpired(email)) {
+      startCooldown(email);
+      setLimitReason('session');
+      setShowLimitGate(true);
+      return true;
     }
+    return false;
+  }, [email, premiumUser]);
+
+  // ── Navigation ───────────────────────────────────────────────────────────────
+  const goHome = () => {
+    if (SHOW_ADS) triggerAdRefresh();
+    stopSpeech();
+    setStudyMode(null); setFlashSub(null);
+    setExamType(null); setSelectedUni(null);
+    setScreen('examType');
   };
 
   const handleExamTypeSelect = (type) => {
     setExamType(type);
-    if (type === 'postutme') setScreen('universitySelect');
-    else if (type === 'waec' || type === 'neco') setScreen('waecSubjects');
-    else setScreen('modeSelect');
-  };
-
-  const handleUniversitySelect = (university) => {
-    setSelectedUniversity(university);
-    setScreen('modeSelect');
-  };
-
-  const handleBackToExamType = () => {
-    setExamType(null);
-    setSelectedUniversity(null);
-    setScreen('examType');
+    if (type === 'postutme')                              setScreen('universitySelect');
+    else if (type === 'waec' || type === 'neco' || type === 'gst') setScreen('waecSubjects');
+    else                                                  setScreen('modeSelect');
   };
 
   const handleModeSelect = (mode) => {
     setStudyMode(mode);
-    if (mode === 'cbt') setScreen('subjects');
+    if (mode === 'cbt')            setScreen('subjects');
     else if (mode === 'flashcard') setScreen('flashcardSubjects');
-    else if (mode === 'learn') setScreen('waecLearn');
-  };
-
-  const handleFlashcardSubjectSelect = (subjectId) => {
-    setFlashcardSubject(subjectId);
-    setScreen('flashcards');
-  };
-
-  const handleBackToModeSelect = () => {
-    setStudyMode(null);
-    setFlashcardSubject(null);
-    setScreen('modeSelect');
+    // 'learn' for JAMB/POSTUTME goes to waecSubjects too (shouldn't happen — kept for safety)
+    else if (mode === 'learn')     setScreen('waecSubjects');
   };
 
   const startQuiz = (sel) => {
+    // Session limit check (free users only)
+    if (checkSessionLimit()) return;
+
     if (SHOW_ADS) triggerAdRefresh();
     try {
       const pending = localStorage.getItem(`ep_sharepending_${email}`);
-      if (pending && !SHOW_POPOVER_AD) {
-        setPendingSubject(sel);
-        setScreen('sharegate');
-        return;
-      }
+      if (pending && !SHOW_POPOVER_AD) { setPendingSubject(sel); setScreen('sharegate'); return; }
     } catch {}
     setSubject(sel);
-    setScore(0);
-    setCorrect(0);
-    setTotalQ(0);
-    setRoundsPlayed(0);
-    setUsedFiftyFifty(false);
-    setUsedHint(false);
-    setQuizTimeRemaining(null);
+    setScore(0); setCorrect(0); setTotalQ(0);
+    setRoundsPlayed(0); setUsedFifty(false); setUsedHint(false);
     setQuestionLog([]);
-    trackEvent('quiz_start', {
-      name,
-      email,
-      subject: sel,
-      examType,
-      university: selectedUniversity,
-      timestamp2: fmtTimestamp(),
-      ...getDeviceInfo(),
-    });
+    trackEvent('quiz_start', { name, email, subject: sel, examType, timestamp2: fmtTimestamp(), ...getDeviceInfo() });
     setScreen('ready');
   };
 
-  const handleAllDone = (finalRoundsPlayed) => {
-    const pct = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+  const handleAllDone = (finalRounds) => {
+    const pct = totalQ ? Math.round((correct / totalQ) * 100) : 0;
+    const xp  = calculateQuizXP(correct, totalQ, quizTimeLeft || 0, streak, usedFifty, usedHint);
+    if (email && name && xp > 0) addXP(email, name, xp, 'quiz_complete');
 
-    const totalXPEarned = calculateQuizXP(
-      correct,
-      totalQ,
-      quizTimeRemaining || 0,
-      streak,
-      usedFiftyFifty,
-      usedHint
-    );
-
-    if (email && name && totalXPEarned > 0) {
-      addXP(email, name, totalXPEarned, 'quiz_complete');
-    }
-
-    const ns = sessions + 1;
+    const ns  = sessions + 1;
     const nsc = [...allScores, pct];
-    const nb = Math.max(bestScore, score);
+    const nb  = Math.max(bestScore, score);
     const today = new Date().toDateString();
-    const newStreak = calcStreak(streak, lastDate);
+    const yst   = new Date(Date.now() - 86400000).toDateString();
+    const newStreak = !lastDate ? 1 : lastDate === today ? streak : lastDate === yst ? streak + 1 : 1;
 
-    const isPerfect = pct === 100;
-    const isNinetyPlus = pct >= 90;
+    // Subject performance
+    const perf = subjPerf[subject] || { bestScore: 0, averageScore: 0, total: 0, scores: [] };
+    const newScores = [...(perf.scores || []), pct];
+    const newBest   = Math.max(perf.bestScore || 0, pct);
+    const newAvg    = newScores.reduce((a, b) => a + b, 0) / newScores.length;
+    const newPerf   = { ...subjPerf, [subject]: { bestScore: newBest, averageScore: newAvg, total: (perf.total || 0) + 1, scores: newScores } };
+    setSubjPerf(newPerf);
+    saveSubjectPerformance(newPerf, email);
 
-    updateSubjectPerformance(subject, correct, totalQ);
-    setSessions(ns);
-    setAllScores(nsc);
-    setBestScore(nb);
-    setStreak(newStreak);
-    setLastDate(today);
-    persist(ns, nsc, nb, newStreak, today);
+    setSessions(ns); setAllScores(nsc); setBestScore(nb);
+    setStreak(newStreak); setLastDate(today);
+    saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today }, email);
 
-    const perfectScoresCount = allScores.filter((s) => s === 100).length + (isPerfect ? 1 : 0);
-    const ninetyPlusCount = allScores.filter((s) => s >= 90).length + (isNinetyPlus ? 1 : 0);
-
-    checkAndAwardAchievements(
-      {
-        totalQuizzes: ns,
-        perfectScores: perfectScoresCount,
-        ninetyPlusCount,
-        streak: newStreak,
-        speedDemonCount: (quizTimeRemaining || 0) > 10 ? 1 : 0,
-      },
-      email,
-      achievements,
-      showToast,
-      showAchievement,
-      subjectPerformance
+    const perfectScores   = allScores.filter((s) => s === 100).length + (pct === 100 ? 1 : 0);
+    const ninetyPlusCount = allScores.filter((s) => s >= 90).length + (pct >= 90 ? 1 : 0);
+    checkAchievements(
+      { totalQuizzes: ns, perfectScores, ninetyPlusCount, streak: newStreak, speedDemonCount: (quizTimeLeft || 0) > 10 ? 1 : 0 },
+      email, achievements, showToast, showAch, newPerf,
     );
 
     if (ns % SHARE_GATE_EVERY === 0 && !SHOW_POPOVER_AD) {
-      try {
-        localStorage.setItem(`ep_sharepending_${email}`, ns.toString());
-      } catch {}
+      try { localStorage.setItem(`ep_sharepending_${email}`, ns.toString()); } catch {}
     }
 
-    setRoundsPlayed(finalRoundsPlayed);
+    if (pct === 100)     showToast('Perfect score! 🎯', 'success');
+    else if (pct >= 90)  showToast(`Excellent! ${pct}% ⭐`, 'success');
+    else if (pct >= 70)  showToast(`Good job! ${pct}% 📈`, 'success');
+    else if (pct >= 50)  showToast(`Keep going! ${pct}% 💪`, 'info');
+    else                 showToast('Review the explanations and try again! 📚', 'warning');
 
-    if (isPerfect) showToast(`Perfect score! 🎯 ${correct}/${totalQ} correct!`, 'success');
-    else if (isNinetyPlus) showToast(`Excellent! ${pct}% — keep up the great work! ⭐`, 'success');
-    else if (pct >= 70) showToast(`Good job! ${pct}% — you're making progress! 📈`, 'success');
-    else if (pct >= 50)
-      showToast(`Not bad! ${pct}% — review the explanations to improve! 📚`, 'info');
-    else showToast(`Keep practising! ${pct}% — every session counts! 💪`, 'warning');
-
-    trackEvent('quiz_complete', {
-      name,
-      email,
-      subject,
-      score,
-      correct,
-      totalQ,
-      pct: pct + '%',
-      rounds: finalRoundsPlayed,
-      totalSessions: ns,
-      xpEarned: totalXPEarned,
-      examType,
-      university: selectedUniversity,
-      timestamp2: fmtTimestamp(),
-      date: new Date().toISOString(),
-    });
-
+    trackEvent('quiz_complete', { name, email, subject, score, correct, totalQ, pct: pct + '%', rounds: finalRounds, ns, xpEarned: xp, examType, timestamp2: fmtTimestamp() });
+    setRoundsPlayed(finalRounds);
     setScreen('result');
   };
 
@@ -459,21 +319,24 @@ export default function App() {
     setScreen(newScreen);
   };
 
-  const isLoggedIn = name && email;
+  const handlePremiumActivated = () => {
+    setPremiumUser(true);
+    resetSession(email);
+    setShowLimitGate(false);
+    showToast('⭐ Premium activated! Enjoy unlimited access.', 'success');
+    const updated = [...achievements, ACHIEVEMENTS.premiumMember].filter(
+      (a, i, arr) => arr.findIndex((x) => x?.id === a?.id) === i
+    );
+    setAchievements(updated);
+    saveAchievements(updated, email);
+    showAch(ACHIEVEMENTS.premiumMember);
+  };
 
-  // Bottom nav is visible on these screens
   const NAV_SCREENS = new Set([
-    'subjects',
-    'flashcardSubjects',
-    'leaderboard',
-    'challenges',
-    'profile',
-    'shop',
-    'waecSubjects',
-    'modeSelect',
-    'universitySelect',
+    'subjects', 'flashcardSubjects', 'leaderboard', 'challenges',
+    'profile', 'shop', 'waecSubjects', 'modeSelect', 'universitySelect', 'examType',
   ]);
-  const showBottomNav = isLoggedIn && NAV_SCREENS.has(screen);
+  const showBottomNav = name && email && NAV_SCREENS.has(screen);
 
   return (
     <>
@@ -481,177 +344,119 @@ export default function App() {
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
 
-          {screen === 'onboard' && (
-            <Onboard
-              onDone={(n, e) => {
-                setName(n);
-                setEmail(e);
-                const s = loadStats(e);
-                if (s.sessions) setSessions(s.sessions);
-                if (s.allScores) setAllScores(s.allScores);
-                if (s.bestScore) setBestScore(s.bestScore);
-                if (s.streak) setStreak(s.streak);
-                if (s.lastDate) setLastDate(s.lastDate);
-                setScreen('examType');
-              }}
-            />
-          )}
+          {screen === 'onboard' && <Onboard onDone={handleOnboard} />}
 
           {screen === 'examType' && (
-            <ExamTypeSelect
-              onSelectExam={handleExamTypeSelect}
-              onBack={() => setScreen('onboard')}
-            />
+            <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />
           )}
 
           {screen === 'universitySelect' && (
-            <UniversitySelect
-              onSelectUniversity={handleUniversitySelect}
-              onBack={handleBackToExamType}
-            />
+            <UniversitySelect onSelectUniversity={(u) => { setSelectedUni(u); setScreen('modeSelect'); }} onBack={() => setScreen('examType')} />
           )}
 
           {screen === 'modeSelect' && (
-            <ModeSelect
-              onSelectMode={handleModeSelect}
-              onBack={
-                examType === 'postutme' ? () => setScreen('universitySelect') : handleBackToExamType
-              }
-              examType={examType}
-            />
+            <ModeSelect onSelectMode={handleModeSelect}
+              onBack={examType === 'postutme' ? () => setScreen('universitySelect') : () => setScreen('examType')}
+              examType={examType} />
           )}
 
           {screen === 'waecSubjects' && (
-            <WaecSubjects
-              name={name}
-              mode={waecMode}
-              examType={examType}
-              onStart={(subjectId, mode) => {
-                setWaecSubject(subjectId);
-                setWaecMode(mode);
+            <WaecSubjects name={name} mode={waecMode} examType={examType}
+              onStart={(sid, mode) => {
+                setWaecSubject(sid); setWaecMode(mode);
                 if (mode === 'learn') {
+                  // Topic limit check
+                  if (!canUseTopic(email)) { setLimitReason('topics'); setShowLimitGate(true); return; }
                   setScreen('waecLearn');
                 } else {
-                  setSubject(subjectId);
-                  setScore(0);
-                  setCorrect(0);
-                  setTotalQ(0);
-                  setUsedFiftyFifty(false);
-                  setUsedHint(false);
-                  setQuestionLog([]);
+                  setSubject(sid);
+                  setScore(0); setCorrect(0); setTotalQ(0);
+                  setUsedFifty(false); setUsedHint(false); setQuestionLog([]);
                   setScreen('ready');
                 }
               }}
               onBack={() => setScreen('examType')}
-              onModeChange={(mode) => setWaecMode(mode)}
-            />
+              onModeChange={(m) => setWaecMode(m)} />
           )}
 
           {screen === 'waecLearn' && (
-            <WaecLearn
-              subjectId={waecSubject}
+            <WaecLearn subjectId={waecSubject}
               onBack={() => setScreen('waecSubjects')}
-              onTopicComplete={(topicIdx) => {
-                showToast('Topic completed! 📖', 'success');
-                // Award learn mode achievement
+              examType={examType}
+              email={email}
+              onTopicComplete={(idx) => {
+                incrementTopicsToday(email);
+                awardTopicXP(email, name);
+                showToast('Topic completed! +75 XP 📖', 'success');
                 if (!achievements.some((a) => a?.id === 'learnMode')) {
                   const updated = [...achievements, ACHIEVEMENTS.learnMode];
                   setAchievements(updated);
                   saveAchievements(updated, email);
-                  showAchievement(ACHIEVEMENTS.learnMode);
+                  showAch(ACHIEVEMENTS.learnMode);
                 }
-              }}
-            />
+                // Check daily topic limit
+                if (!canUseTopic(email) && !premiumUser) {
+                  setLimitReason('topics'); setShowLimitGate(true);
+                }
+              }} />
           )}
 
           {screen === 'subjects' && (
-            <Subjects
-              name={name}
-              onStart={startQuiz}
-              onProfile={() => setScreen('profile')}
-              refreshTrigger={adRefresh}
-              mode="cbt"
-              examType={examType}
-              university={selectedUniversity}
-            />
+            <Subjects name={name} onStart={startQuiz} onProfile={() => setScreen('profile')}
+              refreshTrigger={adRefresh} mode="cbt" examType={examType} university={selectedUni}
+              email={email} premiumUser={premiumUser} />
           )}
 
           {screen === 'flashcardSubjects' && (
-            <Subjects
-              name={name}
-              onStart={handleFlashcardSubjectSelect}
-              onProfile={() => setScreen('profile')}
-              refreshTrigger={adRefresh}
-              mode="flashcard"
-              examType={examType}
-              university={selectedUniversity}
-            />
+            <Subjects name={name} onStart={(s) => { setFlashSub(s); setScreen('flashcards'); }}
+              onProfile={() => setScreen('profile')} refreshTrigger={adRefresh}
+              mode="flashcard" examType={examType} university={selectedUni}
+              email={email} premiumUser={premiumUser} />
           )}
 
-          {screen === 'leaderboard' && <Leaderboard userEmail={email} userName={name} />}
+          {screen === 'flashcards' && (
+            <Flashcards subjectId={flashcardSubject} onBack={() => setScreen('flashcardSubjects')} />
+          )}
 
-          {screen === 'challenges' && <Challenges userEmail={email} userName={name} />}
+          {screen === 'leaderboard'  && <Leaderboard userEmail={email} userName={name} />}
+          {screen === 'challenges'   && <Challenges userEmail={email} userName={name} />}
 
-          {screen === 'shop' && <Shop userEmail={email} onBack={() => setScreen('subjects')} />}
+          {screen === 'shop' && (
+            <Shop userEmail={email} name={name}
+              premiumUser={premiumUser}
+              onPremiumActivated={handlePremiumActivated} />
+          )}
 
           {screen === 'profile' && (
-            <Profile
-              name={name}
-              email={email}
-              sessions={sessions}
-              streak={streak}
-              allScores={allScores}
-              bestScore={bestScore}
+            <Profile name={name} email={email} sessions={sessions} streak={streak}
+              allScores={allScores} bestScore={bestScore}
+              premiumUser={premiumUser}
+              onPremiumActivated={handlePremiumActivated}
               onBack={() => setScreen('subjects')}
               onSignOut={() => {
                 stopSpeech();
                 localStorage.removeItem('ep_user');
-                setName('');
-                setEmail('');
-                setSessions(0);
-                setAllScores([]);
-                setBestScore(0);
-                setStreak(1);
-                setLastDate('');
+                setName(''); setEmail(''); setSessions(0);
+                setAllScores([]); setBestScore(0); setStreak(1); setLastDate('');
+                setPremiumUser(false);
                 setScreen('onboard');
-              }}
-            />
+              }} />
           )}
 
           {screen === 'sharegate' && (
-            <ShareGate
-              name={name}
-              email={email}
+            <ShareGate name={name} email={email}
               onUnlocked={() => {
                 setSubject(pendingSubject);
-                setScore(0);
-                setCorrect(0);
-                setTotalQ(0);
-                setRoundsPlayed(0);
-                setUsedFiftyFifty(false);
-                setUsedHint(false);
-                setQuestionLog([]);
-                trackEvent('quiz_start', {
-                  name,
-                  email,
-                  subject: pendingSubject,
-                  examType,
-                  university: selectedUniversity,
-                  timestamp2: fmtTimestamp(),
-                  ...getDeviceInfo(),
-                });
+                setScore(0); setCorrect(0); setTotalQ(0);
+                setUsedFifty(false); setUsedHint(false); setQuestionLog([]);
+                trackEvent('quiz_start', { name, email, subject: pendingSubject, examType, timestamp2: fmtTimestamp(), ...getDeviceInfo() });
                 setScreen('ready');
-              }}
-            />
+              }} />
           )}
 
           {screen === 'adgate' && (
-            <AdGate
-              name={name}
-              email={email}
-              totalSessions={totalSessionsForAd}
-              onUnlocked={handleAdGateUnlocked}
-            />
+            <AdGate name={name} email={email} totalSessions={totalSessionsForAd}
+              onUnlocked={() => { setShowAdGate(false); if (adGateCallback) { adGateCallback(); setAdGateCallback(null); } }} />
           )}
 
           {screen === 'ready' && (
@@ -659,48 +464,26 @@ export default function App() {
           )}
 
           {screen === 'quiz' && (
-            <Quiz
-              subjectId={subject}
-              onAllDone={handleAllDone}
-              setQuizTimeRemaining={setQuizTimeRemaining}
-              score={score}
-              setScore={setScore}
-              correct={correct}
-              setCorrect={setCorrect}
-              totalQ={totalQ}
-              setTotalQ={setTotalQ}
+            <Quiz subjectId={subject} onAllDone={handleAllDone}
+              setQuizTimeRemaining={setQuizTimeLeft}
+              score={score}     setScore={setScore}
+              correct={correct} setCorrect={setCorrect}
+              totalQ={totalQ}   setTotalQ={setTotalQ}
               onHome={goHome}
-              triggerAdRefresh={triggerAdRefresh}
-              adRefresh={adRefresh}
-              email={email}
-              name={name}
-              onFiftyUsed={setUsedFiftyFifty}
-              onHintUsed={setUsedHint}
-              onLogQuestion={(entry) => setQuestionLog((l) => [...l, entry])}
-              examType={examType}
-            />
+              triggerAdRefresh={triggerAdRefresh} adRefresh={adRefresh}
+              email={email} name={name} examType={examType}
+              onFiftyUsed={setUsedFifty} onHintUsed={setUsedHint}
+              onLogQuestion={(entry) => setQuestionLog((l) => [...l, entry])} />
           )}
 
           {screen === 'result' && (
-            <Result
-              name={name}
-              subjectId={subject}
-              score={score}
-              correct={correct}
-              totalQ={totalQ}
+            <Result name={name} subjectId={subject}
+              score={score} correct={correct} totalQ={totalQ}
               totalSessions={sessions}
               onHome={goHome}
-              onProfile={() => {
-                setFromResult(true);
-                setScreen('profile');
-              }}
-              onAdGateComplete={handleAdGateComplete}
-              questionLog={questionLog}
-            />
-          )}
-
-          {screen === 'flashcards' && (
-            <Flashcards subjectId={flashcardSubject} onBack={handleBackToModeSelect} />
+              onProfile={() => setScreen('profile')}
+              onAdGateComplete={(cb) => { setTSFAd(sessions + 1); setAdGateCallback(() => cb); setShowAdGate(true); }}
+              questionLog={questionLog} />
           )}
         </Suspense>
       </div>
@@ -709,19 +492,22 @@ export default function App() {
         <BottomNav currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
       )}
 
-      {toast.show && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast({ show: false, message: '', type: 'info' })}
+      {/* Free limit gate */}
+      {showLimitGate && (
+        <FreeLimitGate
+          email={email} name={name} reason={limitReason}
+          onClose={() => setShowLimitGate(false)}
+          onPremiumActivated={handlePremiumActivated}
         />
       )}
 
-      {achievementPopup.show && achievementPopup.achievement && (
-        <AchievementPopup
-          achievement={achievementPopup.achievement}
-          onClose={() => setAchievementPopup({ show: false, achievement: null })}
-        />
+      {toast.show && (
+        <Toast message={toast.message} type={toast.type}
+          onClose={() => setToast({ show: false, message: '', type: 'info' })} />
+      )}
+      {achPopup.show && achPopup.achievement && (
+        <AchievementPopup achievement={achPopup.achievement}
+          onClose={() => setAchPopup({ show: false, achievement: null })} />
       )}
     </>
   );

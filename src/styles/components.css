@@ -3020,7 +3020,7 @@ body.dark-mode .lekki-card:hover {
   flex-direction: column;
 }
 .exam-type-header-section {
-  padding: 48px 20px 24px;
+  padding: 52px 20px 20px;
   flex-shrink: 0;
 }
 .exam-type-back-btn {
@@ -3057,7 +3057,7 @@ body.dark-mode .lekki-card:hover {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
-  padding: 0 16px 32px;
+  padding: 16px 16px 40px;
   flex: 1;
   align-content: start;
 }
@@ -3358,10 +3358,23 @@ body.dark-mode .lekki-card:hover {
 .challenge-play-overlay {
   position: fixed;
   inset: 0;
-  background: #F8F5FF;
+  background: var(--bg-primary, #F8F5FF);
   z-index: 9999;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+/* Quiz inside challenge overlay must be scrollable so action bar is reachable */
+.challenge-play-overlay .scr {
+  flex: 1;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+}
+.challenge-play-overlay .quiz-action-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 .challenge-play-banner {
   background: linear-gradient(135deg, #1a0030, #4B0082);
@@ -3544,12 +3557,12 @@ body.dark-mode .lekki-card:hover {
   font-weight: 500;
 }
 .loading-spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid #E9E4FF;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(108, 63, 201, 0.15);
   border-top-color: #6C3FC9;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  animation: spin 0.7s linear infinite;
 }
 
 /* ============================================================================
@@ -3630,3 +3643,14 @@ body.dark-mode .lekki-card:hover {
 .waec-tag     { background: rgba(6,95,70,0.1);     color: #065F46; border-color: rgba(6,95,70,0.25); }
 .neco-tag     { background: rgba(154,52,18,0.1);   color: #9A3412; border-color: rgba(154,52,18,0.25); }
 .gst-tag      { background: rgba(124,58,237,0.1);  color: #7C3AED; border-color: rgba(124,58,237,0.25); }
+
+/* Loading screen logo */
+.loading-screen-logo {
+  font-size: 44px;
+  margin-bottom: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}

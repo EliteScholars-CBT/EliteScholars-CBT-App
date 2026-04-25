@@ -4337,29 +4337,6 @@ body.dark-mode .challenges-header {
    FIX FOR BOTTOM NAV COVERING CONTENT
    ============================================================ */
 
-/* Add padding to all scrollable content to account for bottom nav */
-.scroll {
-  padding-bottom: 80px !important;
-}
-
-/* Specific fix for subjects page */
-.subjects-card-container {
-  padding-bottom: 80px !important;
-}
-
-/* Fix for leaderboard and challenges pages */
-.leaderboard-page,
-.challenges-page,
-.profile-page {
-  padding-bottom: 80px !important;
-}
-
-/* Ensure the last item in any list has space */
-.leaderboard-list .leaderboard-item:last-child,
-.challenges-list .challenge-card:last-child,
-.challenges-list .history-card:last-child {
-  margin-bottom: 80px;
-}
 
 /* ============================================================
    BOTTOM NAVIGATION

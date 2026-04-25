@@ -1,15 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { BG, PURPLE, GOLD, WHITE } from '../utils/colors';
 
 export default function PrivacyPolicy() {
-  const navigate = useNavigate();
 
   return (
     <div className="scr fd privacy-page">
       {/* Header */}
       <div className="legal-header-section">
-        <button className="legal-back-btn" onClick={() => navigate(-1)}>
+        <button className="legal-back-btn" onClick={() => window.history.back()}>
           ← Back
         </button>
         <div className="legal-header-content">

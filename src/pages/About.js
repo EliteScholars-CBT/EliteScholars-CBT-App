@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { GOLD } from '../utils/colors';
 
 // ============================================================================
@@ -7,13 +6,12 @@ import { GOLD } from '../utils/colors';
 // ============================================================================
 
 export default function About() {
-  const navigate = useNavigate();
 
   return (
     <div className="scr fd about-page">
       {/* Header */}
       <div className="about-header-section">
-        <button className="about-back-btn" onClick={() => navigate(-1)}>
+        <button className="about-back-btn" onClick={() => window.history.back()}>
           ← Back
         </button>
         <div className="about-header-content">
