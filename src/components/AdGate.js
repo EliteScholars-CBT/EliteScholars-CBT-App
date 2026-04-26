@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GOLD, DPURP, GREEN } from '../utils/colors';
 import { triggerPopoverAd } from '../utils/ads';
 import { POPOVER_AD_URL } from '../utils/constants';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent } from '../analytics/quizAnalytics';
 
 export default function AdGate({ name, email, totalSessions, onUnlocked }) {
   const [countdown, setCountdown] = useState(3);

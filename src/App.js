@@ -20,7 +20,7 @@ import {
 } from './utils/storage';
 import {
   trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp,
-} from './utils/analytics';
+} from './analytics/quizAnalytics';
 import { stopSpeech } from './utils/sounds';
 import {
   calculateQuizXP, addXP, awardDailyLoginXP, awardTopicXP,

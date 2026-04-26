@@ -1,9 +1,13 @@
+import { attachSecurityTrackers } from '../analytics/securityAnalytics';
+
 // ============================================================================
 // security.js — Anti-scraping & content protection utilities
 // Call applySecurityMeasures() once on app mount.
 // ============================================================================
 
 export function applySecurityMeasures() {
+  // Attach analytics trackers
+  attachSecurityTrackers();
   // ── 1. Disable text selection globally ──────────────────────────────────────
   const noSelectStyle = document.createElement('style');
   noSelectStyle.id = 'no-select-style';

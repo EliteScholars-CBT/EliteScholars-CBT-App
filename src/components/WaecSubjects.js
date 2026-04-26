@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { WAEC_SUBJECTS } from '../data/waec';
-import { WAEC_QB } from '../data/waec';
-import { GST_SUBJECTS } from '../data/gst';
-import { NECO_SUBJECTS } from '../data/neco';
+import { WAEC_SUBJECTS, WAEC_QB } from '../data/waec/index';
+import { GST_SUBJECTS, GST_QB } from '../data/gst/index';
+import { NECO_SUBJECTS, NECO_QB } from '../data/neco/index';
 import { useTheme } from '../context/ThemeContext';
 
 // ============================================================================
@@ -93,7 +92,8 @@ export default function WaecSubjects({
       <div className="scroll" style={{ flex: 1, padding: '12px 16px 100px', overflowY: 'auto' }}>
         <div className="waec-grid">
           {subjects.map((subj) => {
-            const qCount = (WAEC_QB[subj.id] || []).length;
+            const qBank = examType === 'gst' ? GST_QB : examType === 'neco' ? NECO_QB : WAEC_QB;
+            const qCount = (qBank[subj.id] || []).length;
             return (
               <div
                 key={subj.id}

@@ -1,40 +1,69 @@
 // ============================================================================
-// JAMB Question Bank — Unified index
-// Each subject is a separate file for fast lazy loading
+// JAMB Data — Master index
+//
+// Structure:
+//   jamb/questions/<subject>.js  — question bank per subject
+//   jamb/learn/<subject>.js      — learn content per subject (borrowed from WAEC)
 // ============================================================================
 
-export { QB_ACCOUNTING  as accounting  } from './accounting';
-export { QB_ECONOMICS   as economics   } from './economics';
-export { QB_ENGLISH     as english     } from './english';
-export { QB_BIOLOGY     as biology     } from './biology';
-export { QB_CHEMISTRY   as chemistry   } from './chemistry';
-export { QB_MATHEMATICS as mathematics } from './mathematics';
-export { QB_PHYSICS     as physics     } from './physics';
-export { QB_GOVERNMENT  as government  } from './government';
-export { QB_LITERATURE  as literature  } from './literature';
-export { QB_NOVEL       as novel       } from './novel';
+// Question banks
+import { QB_ACCOUNTING } from './questions/accounting';
+import { QB_BIOLOGY } from './questions/biology';
+import { QB_CHEMISTRY } from './questions/chemistry';
+import { QB_ECONOMICS } from './questions/economics';
+import { QB_ENGLISH } from './questions/english';
+import { QB_GOVERNMENT } from './questions/government';
+import { QB_LITERATURE } from './questions/literature';
+import { QB_MATHEMATICS } from './questions/mathematics';
+import { QB_NOVEL } from './questions/novel';
+import { QB_PHYSICS } from './questions/physics';
 
-// Re-export as QB object for backward compatibility with Quiz.js
-import { QB_ACCOUNTING  } from './accounting';
-import { QB_ECONOMICS   } from './economics';
-import { QB_ENGLISH     } from './english';
-import { QB_BIOLOGY     } from './biology';
-import { QB_CHEMISTRY   } from './chemistry';
-import { QB_MATHEMATICS } from './mathematics';
-import { QB_PHYSICS     } from './physics';
-import { QB_GOVERNMENT  } from './government';
-import { QB_LITERATURE  } from './literature';
-import { QB_NOVEL       } from './novel';
+// Learn content
+import { JAMB_LEARN_ENGLISH } from './learn/english';
+import { JAMB_LEARN_MATHEMATICS } from './learn/mathematics';
+import { JAMB_LEARN_PHYSICS } from './learn/physics';
+import { JAMB_LEARN_CHEMISTRY } from './learn/chemistry';
+import { JAMB_LEARN_BIOLOGY } from './learn/biology';
+import { JAMB_LEARN_ECONOMICS } from './learn/economics';
+import { JAMB_LEARN_GOVERNMENT } from './learn/government';
+import { JAMB_LEARN_LITERATURE } from './learn/literature';
+import { JAMB_LEARN_ACCOUNTING } from './learn/accounting';
 
+// QB object — backward compatible with Quiz.js
 export const QB = {
-  accounting:  QB_ACCOUNTING,
-  economics:   QB_ECONOMICS,
-  english:     QB_ENGLISH,
-  biology:     QB_BIOLOGY,
-  chemistry:   QB_CHEMISTRY,
+  accounting: QB_ACCOUNTING,
+  biology: QB_BIOLOGY,
+  chemistry: QB_CHEMISTRY,
+  economics: QB_ECONOMICS,
+  english: QB_ENGLISH,
+  government: QB_GOVERNMENT,
+  literature: QB_LITERATURE,
   mathematics: QB_MATHEMATICS,
-  physics:     QB_PHYSICS,
-  government:  QB_GOVERNMENT,
-  literature:  QB_LITERATURE,
-  novel:       QB_NOVEL,
+  novel: QB_NOVEL,
+  physics: QB_PHYSICS,
 };
+
+// Learn object keyed by subject ID
+export const JAMB_LEARN = {
+  english: JAMB_LEARN_ENGLISH,
+  mathematics: JAMB_LEARN_MATHEMATICS,
+  physics: JAMB_LEARN_PHYSICS,
+  chemistry: JAMB_LEARN_CHEMISTRY,
+  biology: JAMB_LEARN_BIOLOGY,
+  economics: JAMB_LEARN_ECONOMICS,
+  government: JAMB_LEARN_GOVERNMENT,
+  literature: JAMB_LEARN_LITERATURE,
+  accounting: JAMB_LEARN_ACCOUNTING,
+};
+
+// Re-export individual QB arrays
+export { QB_ACCOUNTING } from './questions/accounting';
+export { QB_BIOLOGY } from './questions/biology';
+export { QB_CHEMISTRY } from './questions/chemistry';
+export { QB_ECONOMICS } from './questions/economics';
+export { QB_ENGLISH } from './questions/english';
+export { QB_GOVERNMENT } from './questions/government';
+export { QB_LITERATURE } from './questions/literature';
+export { QB_MATHEMATICS } from './questions/mathematics';
+export { QB_NOVEL } from './questions/novel';
+export { QB_PHYSICS } from './questions/physics';

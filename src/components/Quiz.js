@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { QB } from '../data/jamb';
-import { WAEC_QB } from '../data/waec';
+import { QB } from '../data/jamb/index';
+import { WAEC_QB } from '../data/waec/index';
+import { NECO_QB } from '../data/neco/index';
+import { GST_QB } from '../data/gst/index';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import {
@@ -42,7 +44,12 @@ export default function Quiz({
   examType,        // optional: 'jamb' | 'waec' | 'neco' | 'postutme' | 'gst'
 }) {
   const [shuffled] = useState(() => {
-    const questions = WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
+    // Pick the right question bank based on examType prop
+    const bankByType = examType === 'neco' ? NECO_QB :
+                       examType === 'gst'  ? GST_QB  :
+                       (examType === 'waec' || examType === 'postutme') ? WAEC_QB :
+                       QB; // jamb default
+    const questions = bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
     return sfl(questions);
   });
 

@@ -8,7 +8,7 @@ export const ROUND_SIZE        = 5;
 export const SHARE_GATE_EVERY  = 200;
 
 // ── Ads global ───────────────────────────────────────────────────────────────
-export const SHOW_ADS          = false;
+export const SHOW_ADS          = true;
 export const SHOW_POPOVER_AD   = false;
 export const POPOVER_AD_URL    = 'https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469';
 export const POPOVER_AD_SCRIPT = 'https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js';
@@ -16,7 +16,7 @@ export const POPOVER_AD_SCRIPT = 'https://fixesconsessionconsession.com/63/ce/c2
 // ── Publisher ad (Adsterra native banner) ────────────────────────────────────
 // Paste your Adsterra native-banner script src URL here.
 // Example: 'https://www.highperformanceformat.com/YOURKEY/invoke.js'
-export const PUBLISHER_AD_ENABLED   = false;
+export const PUBLISHER_AD_ENABLED   = true;
 export const PUBLISHER_AD_SCRIPT    = 'https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js';
 
 // In Learn Mode: insert a publisher ad slot before every Nth subheading
@@ -25,7 +25,7 @@ export const AD_EVERY_NTH_SUBHEADING = 2;
 export const MAX_ADS_PER_PAGE        = 3;
 
 // ── Affiliate ads ─────────────────────────────────────────────────────────────
-export const AFFILIATE_ADS_ENABLED = false;
+export const AFFILIATE_ADS_ENABLED = true;
 
 // audiences: which exam types see this ad.
 // Options: 'jamb' | 'postutme' | 'waec' | 'neco' | 'gst' | 'all'

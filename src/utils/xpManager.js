@@ -35,17 +35,18 @@ export async function addXP(email, name, amount, reason = '') {
     localStorage.setItem(DAILY_XP_KEY(email), String(dailyXP));
   } catch {}
 
-  // Push to leaderboard sheet (fire-and-forget)
+  // Always push XP to server leaderboard (fire-and-forget)
+  // This fires for ALL XP sources: quiz, daily login, topic complete, share, etc.
   try {
     fetch(SHEETS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'updateXP',
+        action: 'addXP',
         email, name,
         xp: newTotal,
-        xpGained: amount,
+        amount,
         reason,
         timestamp: new Date().toISOString(),
       }),
