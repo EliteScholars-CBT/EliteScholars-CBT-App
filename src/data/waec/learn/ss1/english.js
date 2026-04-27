@@ -241,3 +241,4 @@ export const WAEC_ENGLISH_LEARN_SS1 = [
       'Synonyms are words with similar meanings. Antonyms are opposites. WAEC often tests near-synonyms — choose the word closest in meaning considering context, not just definition.',
   },
 ];
+
