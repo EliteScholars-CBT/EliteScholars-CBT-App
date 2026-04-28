@@ -276,3 +276,4 @@ export const REMINDER_TIMES = [
 
 
 export const PRO_MONTHLY_PRICE = 3000
+export const PAYMENT_URL_PRO = 'https://elitescholars.site/pro-checkout'
