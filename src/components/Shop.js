@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SHOP_ITEMS, ACHIEVEMENTS } from '../utils/constants';
+import { SHOP_ITEMS, ACHIEVEMENTS, PRO_MONTHLY_PRICE, PREMIUM_MONTHLY_PRICE, PREMIUM_ANNUAL_PRICE, PREMIUM_ANNUAL_DISCOUNT_PCT } from '../utils/constants';
 import { loadAchievements, saveAchievements } from '../utils/storage';
 import { isPremium, getPremiumData, cancelPremium } from '../utils/premium';
 import PremiumModal from './PremiumModal';
@@ -27,10 +27,10 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
   const [showPremium, setShowPremium] = useState(false);
   const [localPremium, setLocalPremium] = useState(premiumUser);
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
+  const [billing, setBilling] = useState('monthly');
 
   const premData = getPremiumData(userEmail);
 
-  // Award shopShopper achievement on visit
   React.useEffect(() => {
     if (!userEmail) return;
     const existing = loadAchievements(userEmail);
@@ -54,9 +54,46 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
   const regularItems = SHOP_ITEMS.filter((i) => !i.isPremium);
   const categories = [...new Set(regularItems.map((i) => i.category))];
 
+  const FMT = (n) => n.toLocaleString('en-NG');
+
+  const PLANS = [
+    {
+      id: 'pro',
+      label: 'Pro',
+      icon: '🚀',
+      tag: null,
+      monthlyPrice: PRO_MONTHLY_PRICE,
+      annualPrice: null,
+      annualDisabled: true,
+      features: ['Unlimited topics', 'Unlimited sessions', 'No cooldown', 'Ads reduced', 'All 5 exam types'],
+      highlight: false,
+    },
+    {
+      id: 'monthly',
+      label: 'Premium',
+      icon: '⭐',
+      tag: 'Most Popular',
+      monthlyPrice: PREMIUM_MONTHLY_PRICE,
+      annualPrice: null,
+      annualDisabled: false,
+      features: ['Unlimited topics', 'Unlimited sessions', 'No cooldown ever', 'Zero ads', 'All 5 exam types'],
+      highlight: true,
+    },
+    {
+      id: 'annual',
+      label: 'Annual',
+      icon: '👑',
+      tag: `Save ${PREMIUM_ANNUAL_DISCOUNT_PCT}%`,
+      monthlyPrice: null,
+      annualPrice: PREMIUM_ANNUAL_PRICE,
+      annualDisabled: false,
+      features: ['Everything in Premium', 'Best value per month', 'Priority support', 'Zero ads', 'All 5 exam types'],
+      highlight: false,
+    },
+  ];
+
   return (
     <div className="scr fd shop-page">
-      {/* Header */}
       <div className="shop-header">
         <div className="shop-header-bg" />
         <div className="shop-header-content">
@@ -66,63 +103,78 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
       </div>
 
       <div className="scroll shop-body">
-        {/* Premium section */}
         {localPremium ? (
-          /* Already premium — show subscription status */
           <div className="premium-active-box" style={{ marginBottom: 20 }}>
             <div className="premium-badge">⭐ Premium Active</div>
             <div className="premium-active-title" style={{ marginTop: 10 }}>
-              You are on the {premData?.plan === 'annual' ? 'Annual' : 'Monthly'} plan
+              You are on the {premData?.plan === 'annual' ? 'Annual' : premData?.plan === 'pro' ? 'Pro' : 'Monthly'} plan
             </div>
             {premData?.expiresDateStr && (
-              <div className="premium-active-expiry">
-                Renews / expires: {premData.expiresDateStr}
-              </div>
+              <div className="premium-active-expiry">Renews / expires: {premData.expiresDateStr}</div>
             )}
             <div className="shop-already-premium" style={{ marginTop: 12 }}>
               ✅ Ad-free · Unlimited practice · All subjects unlocked
             </div>
             {!showCancelConfirm ? (
-              <button className="premium-manage-btn" onClick={() => setShowCancelConfirm(true)}>
-                Manage Subscription
-              </button>
+              <button className="premium-manage-btn" onClick={() => setShowCancelConfirm(true)}>Manage Subscription</button>
             ) : (
               <div style={{ marginTop: 12, display: 'flex', gap: 8, justifyContent: 'center' }}>
-                <button
-                  onClick={handleCancel}
-                  style={{ padding: '8px 16px', background: '#FEE2E2', color: '#991B1B', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700 }}
-                >
-                  Cancel Premium
-                </button>
-                <button
-                  onClick={() => setShowCancelConfirm(false)}
-                  style={{ padding: '8px 16px', background: '#F3F0FF', color: '#6C3FC9', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700 }}
-                >
-                  Keep Premium
-                </button>
+                <button onClick={handleCancel} style={{ padding: '8px 16px', background: '#FEE2E2', color: '#991B1B', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700 }}>Cancel Premium</button>
+                <button onClick={() => setShowCancelConfirm(false)} style={{ padding: '8px 16px', background: '#F3F0FF', color: '#6C3FC9', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700 }}>Keep Premium</button>
               </div>
             )}
           </div>
         ) : (
-          /* Not premium — show upgrade card */
-          <div className="shop-premium-card" onClick={() => setShowPremium(true)}>
-            <div className="shop-premium-star">⭐</div>
-            <div className="shop-premium-title">EliteScholars Premium</div>
-            <div className="shop-premium-sub">
-              Remove all limits and study without interruptions.
+          <div className="shop-plans-section">
+            <div className="shop-plans-header">
+              <div className="shop-plans-title">Choose Your Plan</div>
+              <div className="shop-billing-toggle">
+                <button className={`shop-billing-btn ${billing === 'monthly' ? 'active' : ''}`} onClick={() => setBilling('monthly')}>Monthly</button>
+                <button className={`shop-billing-btn ${billing === 'annual' ? 'active' : ''}`} onClick={() => setBilling('annual')}>Annual</button>
+              </div>
             </div>
-            <div className="shop-premium-features">
-              {[
-                '✓ No ads — ever',
-                '✓ Unlimited daily topics',
-                '✓ Unlimited session time',
-                '✓ All 5 exam types unlocked',
-                '✓ Priority support',
-              ].map((f) => (
-                <div key={f} className="shop-premium-feature">{f}</div>
-              ))}
+
+            <div className="shop-plans-grid">
+              {PLANS.map(plan => {
+                const price = billing === 'annual' && !plan.annualDisabled && plan.annualPrice
+                  ? plan.annualPrice
+                  : plan.monthlyPrice || plan.annualPrice;
+                const period = billing === 'annual' && !plan.annualDisabled && plan.annualPrice ? '/year' : '/month';
+                const isDisabled = billing === 'annual' && plan.annualDisabled;
+
+                return (
+                  <div key={plan.id} className={`shop-plan-card ${plan.highlight ? 'highlighted' : ''} ${isDisabled ? 'disabled' : ''}`}>
+                    {plan.tag && <div className="shop-plan-tag">{plan.tag}</div>}
+                    <div className="shop-plan-icon">{plan.icon}</div>
+                    <div className="shop-plan-name">{plan.label}</div>
+                    <div className="shop-plan-price">
+                      {isDisabled ? (
+                        <span className="shop-plan-no-annual">No annual</span>
+                      ) : (
+                        <>
+                          <span className="shop-plan-currency">₦</span>
+                          <span className="shop-plan-amount">{FMT(price)}</span>
+                          <span className="shop-plan-period">{period}</span>
+                        </>
+                      )}
+                    </div>
+                    <div className="shop-plan-features">
+                      {plan.features.map(f => (
+                        <div key={f} className="shop-plan-feature"><span className="shop-plan-check">✓</span>{f}</div>
+                      ))}
+                    </div>
+                    <button
+                      className={`shop-plan-cta ${plan.highlight ? 'cta-primary' : 'cta-secondary'}`}
+                      disabled={isDisabled}
+                      onClick={() => setShowPremium(true)}
+                    >
+                      {isDisabled ? 'Monthly only' : `Get ${plan.label}`}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
-            <button className="shop-premium-cta">⭐ Go Premium from ₦9,000/month</button>
+            <div className="shop-plans-note">Cancel anytime · No hidden fees · Secure payment</div>
           </div>
         )}
 

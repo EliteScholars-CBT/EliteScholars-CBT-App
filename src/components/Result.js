@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SUBJ } from '../data/subjects';
-import { SHOW_POPOVER_AD, SHARE_GATE_EVERY, WA_GROUP, WA_CHANNEL, VIBES } from '../utils/constants';
+import { SHOW_POPOVER_AD, SHARE_GATE_EVERY, WA_CHANNEL, VIBES, getStudentGCLinks } from '../utils/constants';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, GREEN } from '../utils/colors';
 import { SFX } from '../utils/sounds';
 import ScoreCard from './ScoreCard';
@@ -19,12 +19,17 @@ export default function Result({
   onHome,
   onProfile,
   onAdGateComplete,
-  questionLog = [], // array of { q, options, selected, answer, explanation }
+  questionLog = [],
+  userEmail = '',
+  studentType = '',
+  selectedExams = [],
 }) {
   const [showCard, setShowCard] = useState(false);
   const [adCompleted, setAdCompleted] = useState(false);
   const [showReview, setShowReview] = useState(false);
   const [reviewIdx, setReviewIdx] = useState(null);
+
+  const gcLinks = getStudentGCLinks(studentType, selectedExams);
 
   const meta = SUBJ[subjectId] || SUBJ.economics;
   const pct = totalQ ? Math.round((correct / totalQ) * 100) : 0;
@@ -155,14 +160,14 @@ export default function Result({
         {/* Community links */}
         {!SHOW_POPOVER_AD && showGroup && (
           <div className="join-card">
-            <div className="join-title">Join Our WhatsApp Group 💬</div>
+            <div className="join-title">Join Your Study Group 💬</div>
             <div className="join-subtitle">Practise with serious exam candidates daily.</div>
-            <button className="join-button" onClick={() => window.open(WA_GROUP, '_blank')}>
-              💬 Join WhatsApp Group
-            </button>
-            <button className="join-play-again" onClick={onHome}>
-              🔄 Play Again
-            </button>
+            {gcLinks.map(gc => (
+              <button key={gc.key} className="join-button" onClick={() => window.open(gc.url, '_blank')}>
+                {gc.emoji} Join {gc.label} WhatsApp Group
+              </button>
+            ))}
+            <button className="join-play-again" onClick={onHome}>🔄 Play Again</button>
           </div>
         )}
         {!SHOW_POPOVER_AD && showChannel && (

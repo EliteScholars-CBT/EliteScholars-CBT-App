@@ -1,7 +1,8 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
-import ModeSelect from './components/ModeSelect';
+import AuthScreen from './components/AuthScreen';
+import GameMode from './components/GameMode';
 import ExamTypeSelect from './components/ExamTypeSelect';
 import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
@@ -116,6 +117,8 @@ export default function App() {
   const [screen, setScreen]               = useState('splash');
   const [name, setName]                   = useState('');
   const [email, setEmail]                 = useState('');
+  const [studentType, setStudentType]     = useState('');
+  const [selectedExams, setSelectedExams] = useState([]);
   const [subject, setSubject]             = useState('english');
   const [score, setScore]                 = useState(0);
   const [correct, setCorrect]             = useState(0);
@@ -180,6 +183,8 @@ export default function App() {
   const loadUserData = useCallback((u) => {
     setName(u.name);
     setEmail(u.email || '');
+    setStudentType(u.studentType || '');
+    setSelectedExams(u.selectedExams || []);
     setPremiumUser(isPremium(u.email));
     const s = loadStats(u.email);
     if (s.sessions)  setSessions(s.sessions);
@@ -197,12 +202,16 @@ export default function App() {
 
   const handleSplash = () => {
     const u = loadUser();
-    if (u.name) { loadUserData(u); setScreen('examType'); }
+    if (u.name && u.email) { loadUserData(u); setScreen('examType'); }
     else setScreen('onboard');
   };
 
-  const handleOnboard = (n, e) => {
+  const handleOnboard = (userData) => {
+    const n = userData.name;
+    const e = userData.email;
     setName(n); setEmail(e);
+    setStudentType(userData.studentType || '');
+    setSelectedExams(userData.selectedExams || []);
     setPremiumUser(isPremium(e));
     const s = loadStats(e);
     if (s.sessions)  setSessions(s.sessions);
@@ -212,6 +221,7 @@ export default function App() {
     if (s.lastDate)  setLastDate(s.lastDate);
     startSession(e);
     awardDailyLoginXP(e, n);
+    saveUser({ name: n, email: e, studentType: userData.studentType, selectedExams: userData.selectedExams, firstName: userData.firstName, lastName: userData.lastName });
     setScreen('examType');
   };
 
@@ -247,8 +257,8 @@ export default function App() {
     setStudyMode(mode);
     if (mode === 'cbt')            setScreen('subjects');
     else if (mode === 'flashcard') setScreen('flashcardSubjects');
-    // 'learn' for JAMB/POSTUTME goes to waecSubjects too (shouldn't happen — kept for safety)
     else if (mode === 'learn')     setScreen('waecSubjects');
+    else if (mode === 'game')      setScreen('game');
   };
 
   const startQuiz = (sel) => {
@@ -346,7 +356,7 @@ export default function App() {
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
 
-          {screen === 'onboard' && <Onboard onDone={handleOnboard} />}
+          {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
 
           {screen === 'examType' && (
             <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />
@@ -478,6 +488,10 @@ export default function App() {
               onLogQuestion={(entry) => setQuestionLog((l) => [...l, entry])} />
           )}
 
+          {screen === 'game' && (
+            <GameMode onBack={() => setScreen('modeSelect')} email={email} name={name} />
+          )}
+
           {screen === 'result' && (
             <Result name={name} subjectId={subject}
               score={score} correct={correct} totalQ={totalQ}
@@ -485,7 +499,10 @@ export default function App() {
               onHome={goHome}
               onProfile={() => setScreen('profile')}
               onAdGateComplete={(cb) => { setTSFAd(sessions + 1); setAdGateCallback(() => cb); setShowAdGate(true); }}
-              questionLog={questionLog} />
+              questionLog={questionLog}
+              userEmail={email}
+              studentType={studentType}
+              selectedExams={selectedExams} />
           )}
         </Suspense>
       </div>

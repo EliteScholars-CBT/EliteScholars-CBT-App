@@ -201,7 +201,7 @@
 
 /* Intro paragraph */
 .learn-content-html .learn-intro {
-  font-size: 13px;
+  font-size: 1em;
   color: #374151;
   line-height: 1.75;
   margin-bottom: 14px;
@@ -224,7 +224,7 @@
 /* Subheadings */
 .learn-content-html .learn-subheading,
 .learn-content-html h3.learn-subheading {
-  font-size: 13px;
+  font-size: 1.08em;
   font-weight: 800;
   color: #1a0030;
   margin: 18px 0 8px;
@@ -237,7 +237,7 @@
 
 /* Body paragraphs */
 .learn-content-html .learn-p {
-  font-size: 13px;
+  font-size: 1em;
   color: #374151;
   line-height: 1.75;
   margin-bottom: 10px;
@@ -253,7 +253,7 @@
   margin-bottom: 12px;
 }
 .learn-content-html .learn-list li {
-  font-size: 13px;
+  font-size: 1em;
   color: #374151;
   line-height: 1.75;
   margin-bottom: 5px;
@@ -272,7 +272,7 @@
 .learn-content-html .learn-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 0.9em;
   min-width: 260px;
 }
 .learn-content-html .learn-table thead tr {

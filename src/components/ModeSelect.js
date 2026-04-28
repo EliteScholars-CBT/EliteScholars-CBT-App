@@ -49,6 +49,18 @@ export default function ModeSelect({ onSelectMode, onBack, examType }) {
           <div className="mode-select-card-badge">Start →</div>
         </div>
 
+        {/* Game Mode — always available */}
+        <div className="mode-select-card game-mode" onClick={() => onSelectMode('game')}>
+          <div className="mode-select-card-icon">🎮</div>
+          <div className="mode-select-card-title">Game Mode</div>
+          <div className="mode-select-card-description">
+            Earn XP battling through random edu-games built from everything you've studied. Addictive by design.
+          </div>
+          <div className="mode-select-card-badge" style={{ background: '#1a0030', color: '#D4AF37' }}>
+            Play →
+          </div>
+        </div>
+
         {/* Learn Mode — WAEC, NECO, GST */}
         {hasLearn && (
           <div className="mode-select-card learn-mode" onClick={() => onSelectMode('learn')}>

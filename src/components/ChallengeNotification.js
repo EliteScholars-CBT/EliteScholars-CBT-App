@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { getPendingChallenges } from '../utils/challengeApi';
 
 export default function ChallengeNotification({ userEmail, onClick }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount]       = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const countRef = useRef(0);
 
-  useEffect(() => {
-    if (userEmail) {
-      checkChallenges();
-      const interval = setInterval(checkChallenges, 30000);
-      return () => clearInterval(interval);
-    }
+  const checkChallenges = useCallback(async () => {
+    if (!userEmail) return;
+    try {
+      const pending  = await getPendingChallenges(userEmail);
+      const newCount = Array.isArray(pending) ? pending.length : 0;
+      if (newCount > countRef.current && newCount > 0) {
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 5000);
+      }
+      countRef.current = newCount;
+      setCount(newCount);
+    } catch {}
   }, [userEmail]);
 
-  const checkChallenges = async () => {
-    const pending = await getPendingChallenges(userEmail);
-    const newCount = pending.length;
-    
-    if (newCount > count && newCount > 0) {
-      setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 5000);
-    }
-    setCount(newCount);
-  };
+  useEffect(() => {
+    if (!userEmail) return;
+    checkChallenges();
+    const interval = setInterval(checkChallenges, 30000);
+    return () => clearInterval(interval);
+  }, [userEmail, checkChallenges]);
 
   return (
     <>

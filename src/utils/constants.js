@@ -80,6 +80,12 @@ export const CUSTOM_AD = {
   audiences: ['all'],
 };
 
+// ── Reminder schedule ─────────────────────────────────────────────────────────
+// Add or remove hours (24h format) to set when daily reminders fire.
+// Examples: 6 = 6 AM, 17 = 5 PM, 20 = 8 PM
+// The SW will schedule a notification at each of these times every day.
+export const REMINDER_TIMES = [6, 18]; // 6 AM and 6 PM
+
 // ── Premium / Freemium ────────────────────────────────────────────────────────
 // Free-tier limits (all editable here)
 export const FREE_TOPICS_PER_DAY   = 2;    // max learn-mode topics per day
@@ -89,6 +95,10 @@ export const FREE_COOLDOWN_HOURS   = 4;    // hours before they can continue aft
 // Premium pricing
 export const PREMIUM_MONTHLY_PRICE = 9000;    // ₦9,000/month
 export const PREMIUM_ANNUAL_PRICE  = 89000;   // ₦89,000/year
+
+// Pro plan pricing (no annual option)
+export const PRO_MONTHLY_PRICE     = 3000;    // ₦3,000/month
+export const PAYMENT_URL_PRO       = 'https://selar.co/elitescholars-pro';
 
 // Calculated discount
 export const PREMIUM_ANNUAL_SAVINGS =
@@ -106,21 +116,24 @@ export const PAYMENT_URL_ANNUAL  = 'https://selar.co/elitescholars-annual';
 
 // ── XP rewards ────────────────────────────────────────────────────────────────
 export const XP_REWARDS = {
-  perCorrectAnswer:   10,
-  perfectRound:       50,   // 5/5 in a round
-  perfectQuiz:       100,   // 100% overall
-  ninetyPlusQuiz:     50,
-  topicCompleted:     75,   // learn-mode topic finished
-  dailyLogin:         20,
-  streakBonus3:       30,   // 3-day streak
-  streakBonus7:       70,   // 7-day streak
-  streakBonus30:     200,   // 30-day streak
-  challengeWon:       80,
-  challengePlayed:    20,
-  speedBonus:         25,   // finish a round with >10s left per question
-  firstQuizEver:      50,
-  shopVisit:          10,
-  shareApp:           30,
+  perCorrectAnswer:    5,    // was 10 — reduced so quiz farming is slower
+  perfectRound:       30,    // was 50
+  perfectQuiz:        60,    // was 100
+  ninetyPlusQuiz:     25,    // was 50
+  topicCompleted:     40,    // was 75
+  dailyLogin:         15,    // was 20
+  streakBonus3:       25,    // was 30
+  streakBonus7:       60,    // was 70
+  streakBonus30:     150,    // was 200
+  challengeWon:       70,    // was 80
+  challengePlayed:    15,    // was 20
+  speedBonus:         20,    // was 25
+  firstQuizEver:      40,    // was 50
+  shopVisit:           5,    // was 10
+  shareApp:           20,    // was 30
+  gameCompleted:      35,    // NEW — game mode completion
+  gamePerfect:        80,    // NEW — perfect game round
+  learnQuizPass:      30,    // NEW — pass learn-mode quiz 70%+
 };
 
 // ── Shop items ────────────────────────────────────────────────────────────────
@@ -188,6 +201,37 @@ export const WA_CHANNEL = 'https://whatsapp.com/channel/0029Vb6wPv72kNFnjr4FMr24
 export const APP_URL    = 'https://elitescholars.site';
 export const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec';
 
+// ── Group chat links per exam type (use the JAMB link as the base for all) ───
+export const GC_LINKS = {
+  jamb:    { label: 'JAMB',     emoji: '📚', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+  waec:    { label: 'WAEC',     emoji: '📝', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+  neco:    { label: 'NECO',     emoji: '📋', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+  postutme:{ label: 'POST UTME',emoji: '🎓', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+  gst:     { label: 'GST',      emoji: '🏛️', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+};
+
+// Which GCs are shown per student type and their selected exams
+// senior_school: can see jamb + waec + neco (always) + postutme if selected
+// university: can see gst (always) + jamb/waec/neco/postutme if selected
+export function getStudentGCLinks(studentType, selectedExams = []) {
+  const links = [];
+  const add = (key) => { if (!links.find(l => l.key === key)) links.push({ key, ...GC_LINKS[key] }); };
+
+  if (studentType === 'senior_school') {
+    add('jamb'); add('waec'); add('neco');
+    if (selectedExams.includes('postutme')) add('postutme');
+  } else if (studentType === 'university') {
+    add('gst');
+    if (selectedExams.includes('jamb'))     add('jamb');
+    if (selectedExams.includes('waec'))     add('waec');
+    if (selectedExams.includes('neco'))     add('neco');
+    if (selectedExams.includes('postutme')) add('postutme');
+  } else {
+    add('jamb');
+  }
+  return links;
+}
+
 // ── Exam types ────────────────────────────────────────────────────────────────
 export const EXAM_TYPES = [
   { id: 'jamb',     label: 'JAMB',      icon: '📝', color: '#6C3FC9', desc: 'UTME' },
@@ -199,36 +243,55 @@ export const EXAM_TYPES = [
 
 // ── Achievements ──────────────────────────────────────────────────────────────
 export const ACHIEVEMENTS = {
-  firstQuiz:       { id: 'firstQuiz',       name: '🌟 Beginner',         desc: 'Complete your first quiz',                  icon: '🌟' },
-  fiveQuizzes:     { id: 'fiveQuizzes',     name: '📚 Getting Started',   desc: 'Complete 5 quizzes',                        icon: '📚' },
-  tenQuizzes:      { id: 'tenQuizzes',      name: '🎓 Dedicated Learner', desc: 'Complete 10 quizzes',                       icon: '🎓' },
-  twentyQuizzes:   { id: 'twentyQuizzes',   name: '🏅 Quiz Veteran',      desc: 'Complete 20 quizzes',                       icon: '🏅' },
-  fiftyQuizzes:    { id: 'fiftyQuizzes',    name: '🦁 Exam Warrior',      desc: 'Complete 50 quizzes',                       icon: '🦁' },
-  perfectScore:    { id: 'perfectScore',    name: '🎯 Perfect',           desc: 'Score 100% on a quiz',                      icon: '🎯' },
-  threePerfects:   { id: 'threePerfects',   name: '✨ Hat-Trick',         desc: 'Score 100% three times',                    icon: '✨' },
-  ninetyPlus:      { id: 'ninetyPlus',      name: '⭐ Excellence',        desc: 'Score 90%+ on a quiz',                      icon: '⭐' },
-  streak3:         { id: 'streak3',         name: '🔥 On a Roll',         desc: '3-day streak',                              icon: '🔥' },
-  streak7:         { id: 'streak7',         name: '🔥 On Fire',           desc: '7-day streak',                              icon: '🔥' },
-  streak30:        { id: 'streak30',        name: '💪 Dedicated',         desc: '30-day streak',                             icon: '💪' },
-  allSubjects:     { id: 'allSubjects',     name: '📖 Scholar',           desc: 'Attempt all 9 subjects',                    icon: '📖' },
-  speedDemon:      { id: 'speedDemon',      name: '⚡ Speed Demon',       desc: 'Finish with 10+ seconds left per question', icon: '⚡' },
-  nightOwl:        { id: 'nightOwl',        name: '🦉 Night Owl',         desc: 'Study after 10 PM',                         icon: '🦉' },
-  earlyBird:       { id: 'earlyBird',       name: '🌅 Early Bird',        desc: 'Study before 7 AM',                         icon: '🌅' },
-  learnMode:       { id: 'learnMode',       name: '📖 Curious Mind',      desc: 'Complete a full learn-mode topic',           icon: '📖' },
-  mathematician:   { id: 'mathematician',   name: '🧮 Mathematician',     desc: 'Score 80%+ in Mathematics',                 icon: '🧮' },
-  physicist:       { id: 'physicist',       name: '⚛️ Physicist',         desc: 'Score 80%+ in Physics',                     icon: '⚛️' },
-  chemist:         { id: 'chemist',         name: '🧪 Chemist',           desc: 'Score 80%+ in Chemistry',                   icon: '🧪' },
-  biologist:       { id: 'biologist',       name: '🔬 Biologist',         desc: 'Score 80%+ in Biology',                     icon: '🔬' },
-  economist:       { id: 'economist',       name: '📊 Economist',         desc: 'Score 80%+ in Economics',                   icon: '📊' },
-  accountant:      { id: 'accountant',      name: '💰 Accountant',        desc: 'Score 80%+ in Accounting',                  icon: '💰' },
-  literatureLover: { id: 'literatureLover', name: '📖 Literature Lover',  desc: 'Score 80%+ in Literature',                  icon: '📖' },
-  governmentGuru:  { id: 'governmentGuru',  name: '🏛️ Government Guru',   desc: 'Score 80%+ in Government',                  icon: '🏛️' },
-  englishExpert:   { id: 'englishExpert',   name: '📝 English Expert',    desc: 'Score 80%+ in English',                     icon: '📝' },
-  novelReader:     { id: 'novelReader',     name: '📗 Novel Reader',       desc: 'Score 80%+ in Novel',                       icon: '📗' },
-  challengeWinner: { id: 'challengeWinner', name: '🏆 Challenge Winner',  desc: 'Win your first challenge',                  icon: '🏆' },
-  shopShopper:     { id: 'shopShopper',     name: '🛍️ Shop Explorer',      desc: 'Visited the Shop',                          icon: '🛍️' },
-  premiumMember:   { id: 'premiumMember',   name: '⭐ Premium Member',    desc: 'Subscribed to EliteScholars Premium',        icon: '⭐' },
-  dailyLogin:      { id: 'dailyLogin',      name: '📅 Daily Player',      desc: 'Logged in 7 days in a row',                 icon: '📅' },
+  firstQuiz:        { id: 'firstQuiz',        name: '🌟 Beginner',           desc: 'Complete your first quiz',                   icon: '🌟' },
+  fiveQuizzes:      { id: 'fiveQuizzes',       name: '📚 Getting Started',    desc: 'Complete 5 quizzes',                         icon: '📚' },
+  tenQuizzes:       { id: 'tenQuizzes',        name: '🎓 Dedicated Learner',  desc: 'Complete 10 quizzes',                        icon: '🎓' },
+  twentyQuizzes:    { id: 'twentyQuizzes',     name: '🏅 Quiz Veteran',       desc: 'Complete 20 quizzes',                        icon: '🏅' },
+  fiftyQuizzes:     { id: 'fiftyQuizzes',      name: '🦁 Exam Warrior',       desc: 'Complete 50 quizzes',                        icon: '🦁' },
+  hundredQuizzes:   { id: 'hundredQuizzes',    name: '💯 Century Scholar',    desc: 'Complete 100 quizzes',                       icon: '💯' },
+  perfectScore:     { id: 'perfectScore',      name: '🎯 Perfect',            desc: 'Score 100% on a quiz',                       icon: '🎯' },
+  threePerfects:    { id: 'threePerfects',     name: '✨ Hat-Trick',          desc: 'Score 100% three times',                     icon: '✨' },
+  tenPerfects:      { id: 'tenPerfects',       name: '🏆 Flawless',           desc: 'Score 100% ten times',                       icon: '🏆' },
+  ninetyPlus:       { id: 'ninetyPlus',        name: '⭐ Excellence',         desc: 'Score 90%+ on a quiz',                       icon: '⭐' },
+  streak3:          { id: 'streak3',           name: '🔥 On a Roll',          desc: '3-day streak',                               icon: '🔥' },
+  streak7:          { id: 'streak7',           name: '🔥 On Fire',            desc: '7-day streak',                               icon: '🔥' },
+  streak14:         { id: 'streak14',          name: '🔥 Unstoppable',        desc: '14-day streak',                              icon: '🔥' },
+  streak30:         { id: 'streak30',          name: '💪 Dedicated',          desc: '30-day streak',                              icon: '💪' },
+  streak60:         { id: 'streak60',          name: '👑 Iron Will',          desc: '60-day streak',                              icon: '👑' },
+  allSubjects:      { id: 'allSubjects',       name: '📖 Scholar',            desc: 'Attempt all 9 subjects',                     icon: '📖' },
+  speedDemon:       { id: 'speedDemon',        name: '⚡ Speed Demon',        desc: 'Finish with 10+ secs left per question',      icon: '⚡' },
+  nightOwl:         { id: 'nightOwl',          name: '🦉 Night Owl',          desc: 'Study after 10 PM',                          icon: '🦉' },
+  earlyBird:        { id: 'earlyBird',         name: '🌅 Early Bird',         desc: 'Study before 7 AM',                          icon: '🌅' },
+  learnMode:        { id: 'learnMode',         name: '📖 Curious Mind',       desc: 'Complete a full learn-mode topic',            icon: '📖' },
+  tenTopics:        { id: 'tenTopics',         name: '🧠 Topic Master',       desc: 'Complete 10 learn-mode topics',               icon: '🧠' },
+  twentyFiveTopics: { id: 'twentyFiveTopics',  name: '🔬 Deep Diver',         desc: 'Complete 25 learn-mode topics',               icon: '🔬' },
+  mathematician:    { id: 'mathematician',     name: '🧮 Mathematician',      desc: 'Score 80%+ in Mathematics',                  icon: '🧮' },
+  physicist:        { id: 'physicist',         name: '⚛️ Physicist',          desc: 'Score 80%+ in Physics',                      icon: '⚛️' },
+  chemist:          { id: 'chemist',           name: '🧪 Chemist',            desc: 'Score 80%+ in Chemistry',                    icon: '🧪' },
+  biologist:        { id: 'biologist',         name: '🔬 Biologist',          desc: 'Score 80%+ in Biology',                      icon: '🔬' },
+  economist:        { id: 'economist',         name: '📊 Economist',          desc: 'Score 80%+ in Economics',                    icon: '📊' },
+  accountant:       { id: 'accountant',        name: '💰 Accountant',         desc: 'Score 80%+ in Accounting',                   icon: '💰' },
+  literatureLover:  { id: 'literatureLover',   name: '📖 Literature Lover',   desc: 'Score 80%+ in Literature',                   icon: '📖' },
+  governmentGuru:   { id: 'governmentGuru',    name: '🏛️ Government Guru',    desc: 'Score 80%+ in Government',                   icon: '🏛️' },
+  englishExpert:    { id: 'englishExpert',     name: '📝 English Expert',     desc: 'Score 80%+ in English',                      icon: '📝' },
+  novelReader:      { id: 'novelReader',       name: '📗 Novel Reader',       desc: 'Score 80%+ in Novel',                        icon: '📗' },
+  challengeWinner:  { id: 'challengeWinner',   name: '🏆 Challenge Winner',   desc: 'Win your first challenge',                   icon: '🏆' },
+  challengeStreak3: { id: 'challengeStreak3',  name: '⚔️ Combo Fighter',      desc: 'Win 3 challenges in a row',                  icon: '⚔️' },
+  shopShopper:      { id: 'shopShopper',       name: '🛍️ Shop Explorer',      desc: 'Visited the Shop',                           icon: '🛍️' },
+  premiumMember:    { id: 'premiumMember',     name: '⭐ Premium Member',     desc: 'Subscribed to EliteScholars Premium',         icon: '⭐' },
+  dailyLogin:       { id: 'dailyLogin',        name: '📅 Daily Player',       desc: 'Logged in 7 days in a row',                  icon: '📅' },
+  gamePlayer:       { id: 'gamePlayer',        name: '🎮 Gamer Scholar',      desc: 'Complete your first game mode round',         icon: '🎮' },
+  gamePerfect:      { id: 'gamePerfect',       name: '🕹️ Perfect Run',        desc: 'Complete a game round with 100%',             icon: '🕹️' },
+  gameStreak5:      { id: 'gameStreak5',       name: '🎯 Game Streak',        desc: 'Win 5 game rounds in a row',                  icon: '🎯' },
+  multiExam:        { id: 'multiExam',         name: '🌍 All-Rounder',        desc: 'Practice 3+ different exam types',            icon: '🌍' },
+  levelUp5:         { id: 'levelUp5',          name: '📈 Rising Star',        desc: 'Reach Level 5',                              icon: '📈' },
+  levelUp10:        { id: 'levelUp10',         name: '🚀 Level 10',           desc: 'Reach Level 10',                             icon: '🚀' },
+  levelUp20:        { id: 'levelUp20',         name: '👑 Level 20',           desc: 'Reach Level 20',                             icon: '👑' },
+  xp500:            { id: 'xp500',             name: '💎 500 XP',             desc: 'Earn 500 total XP',                          icon: '💎' },
+  xp2000:           { id: 'xp2000',            name: '💎 2,000 XP',           desc: 'Earn 2,000 total XP',                        icon: '💎' },
+  xp5000:           { id: 'xp5000',            name: '💎 5,000 XP',           desc: 'Earn 5,000 total XP',                        icon: '💎' },
+  comeback:         { id: 'comeback',          name: '💥 Comeback Kid',       desc: 'Score 50%+ after two consecutive fails',      icon: '💥' },
+  shareWarrior:     { id: 'shareWarrior',      name: '📣 Share Warrior',      desc: 'Share the app 3 times',                      icon: '📣' },
 };
 
 // ── Vibes ─────────────────────────────────────────────────────────────────────
@@ -265,15 +328,3 @@ export function getTimerSecs(subjectId, questionCount) {
 // ── Share message ─────────────────────────────────────────────────────────────
 export const shareMsg = (name, subject, correct, totalQ) =>
   `${name} just scored ${correct}/${totalQ} in ${subject} on EliteScholars CBT! 🔥\n\nFree exam prep at ${APP_URL} — come try it!`;
-
-
-// Reminder Times
-export const REMINDER_TIMES = [
-  '09:48',
-  '15"00',
-  '19:00'
-]
-
-
-export const PRO_MONTHLY_PRICE = 3000
-export const PAYMENT_URL_PRO = 'https://elitescholars.site/pro-checkout'

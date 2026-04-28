@@ -406,6 +406,18 @@ export default function Profile({
               </div>
             </div>
 
+            {/* Blog */}
+            <div className="settings-card" onClick={() => window.open('/blog/', '_blank')} style={{ cursor: 'pointer' }}>
+              <div className="settings-item">
+                <div className="settings-icon">✍️</div>
+                <div className="settings-info">
+                  <div className="settings-name">EliteScholars Blog</div>
+                  <div className="settings-desc">Study tips, JAMB updates and exam guides</div>
+                </div>
+                <div className="settings-arrow">→</div>
+              </div>
+            </div>
+
             {/* Contact Support */}
             <div className="settings-card">
               <div className="settings-item">

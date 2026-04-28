@@ -413,11 +413,20 @@ body.dark-mode .premium-modal {
 body.dark-mode .premium-title { color: #F3F4F6; }
 body.dark-mode .premium-tagline { color: #9CA3AF; }
 body.dark-mode .free-col { background: #0f0020; border-color: #2d1b4e; }
-body.dark-mode .premium-compare-row { color: #D1D5DB; }
+body.dark-mode .premium-col { background: linear-gradient(160deg, #2d1b4e, #1e0f3a); border-color: #6C3FC9; }
+body.dark-mode .premium-col-label { color: #9CA3AF; }
+body.dark-mode .premium-col-header { color: #C4B5FD !important; }
+body.dark-mode .premium-compare-row { color: #E5E7EB; }
+body.dark-mode .premium-x { color: #F87171; }
+body.dark-mode .premium-check { color: #34D399; }
 body.dark-mode .premium-plan-toggle { background: #0f0020; }
 body.dark-mode .premium-plan-btn { color: #9CA3AF; }
 body.dark-mode .premium-plan-btn.active { background: #2d1b4e; color: #C4B5FD; }
 body.dark-mode .premium-amount { color: #F3F4F6; }
+body.dark-mode .premium-currency { color: #C4B5FD; }
+body.dark-mode .premium-period { color: #9CA3AF; }
+body.dark-mode .premium-savings-note { color: #86EFAC; }
+body.dark-mode .premium-plan-note { color: #D1D5DB; background: rgba(108,63,201,0.15); border-radius: 10px; padding: 10px 12px; font-size: 12px; margin-bottom: 12px; }
 body.dark-mode .premium-cancel-note,
 body.dark-mode .premium-sim-note { color: #4B5563; }
 body.dark-mode .premium-close { background: #2d1b4e; color: #C4B5FD; }

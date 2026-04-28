@@ -515,3 +515,13 @@
   font-weight: 700;
   color: #D4AF37;
 }
+
+.premium-plan-note {
+  font-size: 12px;
+  color: #374151;
+  background: #F3F0FF;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
