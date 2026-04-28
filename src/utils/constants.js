@@ -265,3 +265,11 @@ export function getTimerSecs(subjectId, questionCount) {
 // ── Share message ─────────────────────────────────────────────────────────────
 export const shareMsg = (name, subject, correct, totalQ) =>
   `${name} just scored ${correct}/${totalQ} in ${subject} on EliteScholars CBT! 🔥\n\nFree exam prep at ${APP_URL} — come try it!`;
+
+
+// Reminder Times
+export const REMINDER_TIMES = [
+  '09:48',
+  '15"00',
+  '19:00'
+]
