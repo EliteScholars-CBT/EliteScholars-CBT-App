@@ -273,3 +273,6 @@ export const REMINDER_TIMES = [
   '15"00',
   '19:00'
 ]
+
+
+export const PRO_MONTHLY_PRICE = 3000
