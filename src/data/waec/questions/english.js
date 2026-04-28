@@ -1,105 +1,8 @@
 // ============================================================================
-// WAEC English — Question Bank & Learn Content
+// WAEC English — Learn Content — SS1
 // ============================================================================
 
-export const WAEC_ENGLISH = [
-  {
-    q: 'Choose the word nearest in meaning to GARRULOUS.',
-    o: ['Talkative', 'Silent', 'Aggressive', 'Timid'],
-    a: 0,
-    e: 'Garrulous means excessively talkative, especially on trivial matters.',
-    h: 'Think of someone who talks non-stop.',
-    yr: '2023',
-  },
-  {
-    q: 'In the sentence "The committee have reached their decision", the subject is:',
-    o: ['Singular', 'Plural', 'Collective', 'Abstract'],
-    a: 2,
-    e: 'The committee is a collective noun. It can take a plural verb when members act individually.',
-    h: 'Collective nouns name a group.',
-    yr: '2022',
-  },
-  {
-    q: 'Which of the following is a rhetorical question?',
-    o: ['Where are you going?', 'Is the sky not blue?', 'What time is it?', 'Who told you that?'],
-    a: 1,
-    e: 'A rhetorical question is asked for effect, not to get an answer.',
-    h: 'No answer is expected.',
-    yr: '2022',
-  },
-  {
-    q: 'Identify the correct spelling.',
-    o: ['Accomodation', 'Accommodation', 'Acommodation', 'Accommodaton'],
-    a: 1,
-    e: 'Accommodation has double "c" and double "m".',
-    h: "Two c's, two m's.",
-    yr: '2021',
-  },
-  {
-    q: 'The figure of speech in "the road swallowed him" is:',
-    o: ['Simile', 'Hyperbole', 'Personification', 'Irony'],
-    a: 2,
-    e: 'Giving the road a human action (swallowing) is personification.',
-    h: 'Is a non-human thing doing a human action?',
-    yr: '2023',
-  },
-  {
-    q: 'Choose the word that is OPPOSITE in meaning to LOQUACIOUS.',
-    o: ['Verbose', 'Taciturn', 'Boisterous', 'Eloquent'],
-    a: 1,
-    e: 'Loquacious means very talkative. Taciturn means reserved or untalkative — the opposite.',
-    h: 'Think of someone who rarely speaks.',
-    yr: '2022',
-  },
-  {
-    q: 'Which of the following sentences contains a dangling modifier?',
-    o: [
-      'Running fast, he reached the bus.',
-      'Running fast, the bus was missed.',
-      'He ran fast and caught the bus.',
-      'Fast as he ran, he caught the bus.',
-    ],
-    a: 1,
-    e: '"Running fast" has no clear subject in option B. The modifier "dangling" refers to the bus, not the person running.',
-    h: 'What is actually running fast?',
-    yr: '2023',
-  },
-  {
-    q: 'The word "ephemeral" means:',
-    o: ['Eternal', 'Short-lived', 'Mysterious', 'Powerful'],
-    a: 1,
-    e: 'Ephemeral means lasting for a very short time (e.g. "the ephemeral beauty of a sunset").',
-    h: 'Think "here today, gone tomorrow".',
-    yr: '2021',
-  },
-  {
-    q: 'Identify the type of clause: "When the rain falls, rivers flood."',
-    o: ['Independent clause', 'Adverbial clause', 'Noun clause', 'Relative clause'],
-    a: 1,
-    e: '"When the rain falls" is an adverbial clause of time modifying the main verb "flood".',
-    h: 'It tells us when something happens.',
-    yr: '2022',
-  },
-  {
-    q: 'Which sentence uses the apostrophe correctly?',
-    o: [
-      'Its raining outside.',
-      "The dog wagged it's tail.",
-      'The dog wagged its tail.',
-      "Its' a lovely day.",
-    ],
-    a: 2,
-    e: '"Its" (possessive, no apostrophe) is correct here. "It\'s" = "it is" — a contraction, not possessive.',
-    h: 'Possessive "its" never has an apostrophe.',
-    yr: '2023',
-  },
-];
-
-// ============================================================================
-// WAEC English Learn Content — Topic 1 is RICH with HTML/SVG illustrations
-// ============================================================================
-
-export const WAEC_ENGLISH_LEARN = [
+export const WAEC_ENGLISH_LEARN_SS1 = [
   {
     topic: 'Parts of Speech',
     // contentHTML is used by the WaecLearn component for rich rendering
@@ -338,3 +241,4 @@ export const WAEC_ENGLISH_LEARN = [
       'Synonyms are words with similar meanings. Antonyms are opposites. WAEC often tests near-synonyms — choose the word closest in meaning considering context, not just definition.',
   },
 ];
+
