@@ -4,9 +4,11 @@ import {
   PREMIUM_ANNUAL_PRICE,
   PREMIUM_ANNUAL_SAVINGS,
   PREMIUM_ANNUAL_DISCOUNT_PCT,
+  PRO_MONTHLY_PRICE,
   USE_REAL_PAYMENT,
   PAYMENT_URL_MONTHLY,
   PAYMENT_URL_ANNUAL,
+  PAYMENT_URL_PRO,
   FREE_TOPICS_PER_DAY,
   FREE_SESSION_MINUTES,
   FREE_COOLDOWN_HOURS,
@@ -15,40 +17,69 @@ import {
 import { activatePremium } from '../utils/premium';
 import { loadAchievements, saveAchievements } from '../utils/storage';
 
-// ============================================================================
-// PremiumModal — Paywall / upgrade screen
-// Shows pricing, benefits, and simulated or real payment flow
-// ============================================================================
-
 const FMT = (n) => n.toLocaleString('en-NG');
 
 export default function PremiumModal({ email, name, onClose, onActivated }) {
-  const [plan, setPlan]         = useState('monthly');
-  const [loading, setLoading]   = useState(false);
-  const [success, setSuccess]   = useState(false);
+  const [plan, setPlan]       = useState('pro');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const price = plan === 'annual' ? PREMIUM_ANNUAL_PRICE : PREMIUM_MONTHLY_PRICE;
-  const label = plan === 'annual' ? '/year' : '/month';
+  const PLANS = {
+    pro: {
+      price: PRO_MONTHLY_PRICE,
+      label: '/month',
+      payUrl: PAYMENT_URL_PRO,
+      tag: null,
+      features: [
+        'Unlimited topics',
+        'Unlimited sessions',
+        'No cooldown',
+        'Ads reduced',
+        'All 5 exam types',
+      ],
+    },
+    monthly: {
+      price: PREMIUM_MONTHLY_PRICE,
+      label: '/month',
+      payUrl: PAYMENT_URL_MONTHLY,
+      tag: null,
+      features: [
+        'Unlimited topics',
+        'Unlimited sessions',
+        'No cooldown ever',
+        'Zero ads',
+        'All 5 exam types',
+      ],
+    },
+    annual: {
+      price: PREMIUM_ANNUAL_PRICE,
+      label: '/year',
+      payUrl: PAYMENT_URL_ANNUAL,
+      tag: `Save ${PREMIUM_ANNUAL_DISCOUNT_PCT}%`,
+      features: [
+        'Unlimited topics',
+        'Unlimited sessions',
+        'No cooldown ever',
+        'Zero ads',
+        'All 5 exam types',
+      ],
+    },
+  };
+
+  const current = PLANS[plan];
 
   const handleSubscribe = () => {
     if (USE_REAL_PAYMENT) {
-      const url = plan === 'annual' ? PAYMENT_URL_ANNUAL : PAYMENT_URL_MONTHLY;
-      window.open(url, '_blank');
+      window.open(current.payUrl, '_blank');
       return;
     }
-
-    // Simulated payment
     setLoading(true);
     setTimeout(() => {
       const data = activatePremium(email, plan);
-
-      // Award premium achievement
       const existing = loadAchievements(email);
       if (!existing.some((a) => a?.id === 'premiumMember')) {
-        const updated = [...existing, ACHIEVEMENTS.premiumMember];
-        saveAchievements(updated, email);
+        saveAchievements([...existing, ACHIEVEMENTS.premiumMember], email);
       }
-
       setLoading(false);
       setSuccess(true);
       if (onActivated) onActivated(data);
@@ -60,13 +91,11 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
       <div className="premium-overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
         <div className="premium-modal">
           <div className="premium-success-icon">⭐</div>
-          <div className="premium-success-title">Welcome to Premium!</div>
+          <div className="premium-success-title">Welcome to {plan === 'pro' ? 'Pro' : 'Premium'}!</div>
           <div className="premium-success-sub">
-            You now have unlimited access. Enjoy ad-free, limitless study sessions, {name}!
+            You now have unlimited access. Enjoy your {plan === 'pro' ? 'Pro' : 'Premium'} experience, {name}!
           </div>
-          <button className="premium-cta-btn" onClick={onClose}>
-            Start Learning →
-          </button>
+          <button className="premium-cta-btn" onClick={onClose}>Start Learning →</button>
         </div>
       </div>
     );
@@ -75,22 +104,20 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
   return (
     <div className="premium-overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="premium-modal">
-        {/* Header */}
         <button className="premium-close" onClick={onClose}>✕</button>
         <div className="premium-header">
           <div className="premium-star">⭐</div>
-          <div className="premium-title">EliteScholars Premium</div>
-          <div className="premium-tagline">Unlock your full potential. No limits, no ads.</div>
+          <div className="premium-title">Upgrade Your Plan</div>
+          <div className="premium-tagline">No limits, no excuses. Pick your plan.</div>
         </div>
 
-        {/* Free vs Premium comparison */}
         <div className="premium-compare">
           <div className="premium-compare-col free-col">
             <div className="premium-col-label">Free</div>
             {[
               `${FREE_TOPICS_PER_DAY} topics/day`,
               `${FREE_SESSION_MINUTES} min sessions`,
-              `${FREE_COOLDOWN_HOURS}hr wait after limit`,
+              `${FREE_COOLDOWN_HOURS}hr cooldown`,
               'Ads shown',
               'Basic subjects',
             ].map((f) => (
@@ -100,14 +127,10 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
             ))}
           </div>
           <div className="premium-compare-col premium-col">
-            <div className="premium-col-label premium-col-header">Premium ⭐</div>
-            {[
-              'Unlimited topics',
-              'Unlimited sessions',
-              'No cooldown ever',
-              'Zero ads',
-              'All 5 exam types',
-            ].map((f) => (
+            <div className="premium-col-label premium-col-header">
+              {plan === 'pro' ? 'Pro 🚀' : 'Premium ⭐'}
+            </div>
+            {current.features.map((f) => (
               <div key={f} className="premium-compare-row">
                 <span className="premium-check">✓</span> {f}
               </div>
@@ -115,13 +138,18 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
           </div>
         </div>
 
-        {/* Plan toggle */}
         <div className="premium-plan-toggle">
+          <button
+            className={`premium-plan-btn ${plan === 'pro' ? 'active' : ''}`}
+            onClick={() => setPlan('pro')}
+          >
+            Pro 🚀
+          </button>
           <button
             className={`premium-plan-btn ${plan === 'monthly' ? 'active' : ''}`}
             onClick={() => setPlan('monthly')}
           >
-            Monthly
+            Premium
           </button>
           <button
             className={`premium-plan-btn ${plan === 'annual' ? 'active' : ''}`}
@@ -132,11 +160,16 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
           </button>
         </div>
 
-        {/* Price */}
+        {plan === 'pro' && (
+          <div className="premium-plan-note">
+            🚀 <strong>Pro</strong> — Best value for serious students. Core unlimited access at ₦3k/mo. No annual option.
+          </div>
+        )}
+
         <div className="premium-price-row">
           <span className="premium-currency">₦</span>
-          <span className="premium-amount">{FMT(price)}</span>
-          <span className="premium-period">{label}</span>
+          <span className="premium-amount">{FMT(current.price)}</span>
+          <span className="premium-period">{current.label}</span>
         </div>
         {plan === 'annual' && (
           <div className="premium-savings-note">
@@ -144,18 +177,13 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
           </div>
         )}
 
-        {/* CTA */}
-        <button
-          className="premium-cta-btn"
-          onClick={handleSubscribe}
-          disabled={loading}
-        >
+        <button className="premium-cta-btn" onClick={handleSubscribe} disabled={loading}>
           {loading ? (
             <span className="premium-loading">Processing…</span>
           ) : USE_REAL_PAYMENT ? (
-            `Subscribe for ₦${FMT(price)}${label}`
+            `Subscribe — ₦${FMT(current.price)}${current.label}`
           ) : (
-            `Try Premium — ₦${FMT(price)}${label}`
+            `Try ${plan === 'pro' ? 'Pro' : plan === 'annual' ? 'Annual' : 'Premium'} — ₦${FMT(current.price)}${current.label}`
           )}
         </button>
 
@@ -164,7 +192,6 @@ export default function PremiumModal({ email, name, onClose, onActivated }) {
             🔧 Payment simulation active. Real gateway coming soon.
           </div>
         )}
-
         <div className="premium-cancel-note">Cancel anytime · No hidden fees</div>
       </div>
     </div>

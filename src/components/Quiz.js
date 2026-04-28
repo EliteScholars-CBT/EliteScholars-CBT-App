@@ -427,7 +427,7 @@ export default function Quiz({
 
       <div
         ref={bodyRef}
-        className="scroll"
+        className="scroll quiz-scroll-area"
         style={{
           flex: 1,
           padding: '10px 13px 6px',

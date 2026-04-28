@@ -6,12 +6,13 @@ import ExamTypeSelect from './components/ExamTypeSelect';
 import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
 import BottomNav from './components/BottomNav';
+import DesktopSidebar from './components/DesktopSidebar';
 import Leaderboard from './components/Leaderboard';
 import Challenges from './components/Challenges';
 import Shop from './components/Shop';
 import FreeLimitGate from './components/FreeLimitGate';
 import {
-  SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ACHIEVEMENTS, XP_REWARDS,
+  SHOW_ADS, SHOW_POPOVER_AD, SHARE_GATE_EVERY, ACHIEVEMENTS, XP_REWARDS, REMINDER_TIMES,
 } from './utils/constants';
 import {
   loadUser, loadStats, saveStats, saveUser,
@@ -54,11 +55,12 @@ const WaecLearn    = lazy(() => import('./components/WaecLearn'));
 const ShareGate    = lazy(() => import('./components/ShareGate'));
 const AdGate       = lazy(() => import('./components/AdGate'));
 
+import appLogo from './assets/elite-scholars-cbt-logo.png';
+
 const LoadingScreen = () => (
   <div className="loading-screen">
-    <div className="loading-screen-logo">🎓</div>
+    <img src={appLogo} alt="EliteScholars" className="loading-screen-logo-img" />
     <div className="loading-spinner" />
-    <div className="loading-text">EliteScholars CBT</div>
   </div>
 );
 
@@ -162,7 +164,7 @@ export default function App() {
         requestNotificationPermission().then((perm) => {
           if (perm === 'granted') {
             const u = loadUser();
-            if (u.name) scheduleDailyReminder(18, u.name);
+            if (u.name) scheduleDailyReminder(REMINDER_TIMES, u.name);
           }
         });
       }
@@ -490,6 +492,10 @@ export default function App() {
 
       {showBottomNav && (
         <BottomNav currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
+      )}
+
+      {name && email && (
+        <DesktopSidebar currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
       )}
 
       {/* Free limit gate */}

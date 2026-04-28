@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EliteScholars Blog — JAMB, WAEC & University Tips for Nigerian Students</title>
+  <meta name="description" content="Hot takes, study tips, JAMB updates and everything a Nigerian student needs to win. Written by EliteScholars." />
+  <meta property="og:title" content="EliteScholars Blog" />
+  <meta property="og:description" content="The Nigerian student's corner. JAMB updates, study strategies, university tips and more." />
+  <meta property="og:image" content="https://elitescholars.site/android-chrome-512x512.png" />
+  <meta name="theme-color" content="#4B0082" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="blog-style.css" />
+</head>
+<body>
+
+<nav class="blog-topbar">
+  <a href="../" class="blog-topbar-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#D4AF37"/><text x="14" y="19" text-anchor="middle" fill="#4B0082" font-size="14" font-weight="900" font-family="sans-serif">E</text></svg>
+    EliteScholars
+  </a>
+  <div class="blog-topbar-nav">
+    <a href="../">App</a>
+    <a href="index.html">Blog</a>
+    <a href="../" class="blog-topbar-cta">Practice Free →</a>
+  </div>
+</nav>
+
+<div class="blog-index-hero">
+  <div class="blog-container">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.5);margin-bottom:12px;">EliteScholars Blog</div>
+    <h1 class="blog-index-title">Built for the Student Who Refuses to Fail</h1>
+    <p class="blog-index-sub">JAMB updates, study strategies, university tips and real talk. No fluff.</p>
+  </div>
+</div>
+
+<div class="blog-container">
+  <div class="blog-index-grid" id="blog-grid">
+    <div style="padding:60px 0;text-align:center;color:#9CA3AF;grid-column:1/-1;">Loading posts...</div>
+  </div>
+</div>
+
+<footer class="blog-footer">
+  <div class="blog-footer-links">
+    <a href="../">Home</a>
+    <a href="index.html">Blog</a>
+    <a href="../#privacy">Privacy</a>
+    <a href="../#terms">Terms</a>
+  </div>
+  <div>© 2026 EliteScholars. Free exam prep for every Nigerian student.</div>
+</footer>
+
+<script src="posts.js"></script>
+<script src="_blog-engine.js"></script>
+<script src="_blog-analytics.js"></script>
+<script>
+(function() {
+  const grid = document.getElementById('blog-grid');
+
+  const livePosts = BLOG_POSTS.filter(p => BlogEngine.isLive(p));
+
+  if (livePosts.length === 0) {
+    grid.innerHTML = '<div style="padding:60px 0;text-align:center;color:#9CA3AF;grid-column:1/-1;">No posts published yet. Check back soon!</div>';
+    return;
+  }
+
+  const CARD_SVGS = {
+    jamb: `<svg width="120" height="80" viewBox="0 0 120 80" fill="none"><rect width="120" height="80" fill="#EDE9FE" rx="8"/><rect x="20" y="15" width="80" height="8" rx="4" fill="#C4B5FD"/><rect x="20" y="30" width="60" height="6" rx="3" fill="#DDD6FE"/><rect x="20" y="43" width="70" height="6" rx="3" fill="#DDD6FE"/><circle cx="95" cy="55" r="14" fill="#6C3FC9"/><text x="95" y="60" text-anchor="middle" fill="#fff" font-size="13" font-weight="900" font-family="sans-serif">J</text></svg>`,
+    'study-tips': `<svg width="120" height="80" viewBox="0 0 120 80" fill="none"><rect width="120" height="80" fill="#DBEAFE" rx="8"/><rect x="30" y="12" width="60" height="56" rx="6" fill="#BFDBFE"/><rect x="38" y="22" width="44" height="5" rx="2.5" fill="#1D4ED8"/><rect x="38" y="32" width="36" height="4" rx="2" fill="#93C5FD"/><rect x="38" y="40" width="40" height="4" rx="2" fill="#93C5FD"/><rect x="38" y="48" width="32" height="4" rx="2" fill="#93C5FD"/><circle cx="85" cy="60" r="12" fill="#1D4ED8"/><text x="85" y="65" text-anchor="middle" fill="#fff" font-size="13" font-weight="900" font-family="sans-serif">✓</text></svg>`,
+  };
+
+  function getCardSvg(cat) {
+    return CARD_SVGS[cat] || CARD_SVGS['study-tips'];
+  }
+
+  grid.innerHTML = livePosts.map(post => {
+    const catStyle = BlogEngine.getCategoryStyle(post.category);
+    const postUrl = `${post.category}/${post.id}.html`;
+    return `
+<a href="${postUrl}" class="blog-card">
+  <div class="blog-card-img">${getCardSvg(post.category)}</div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat" style="background:${catStyle.bg};color:${catStyle.color}">${catStyle.label}</span>
+    <h2 class="blog-card-title">${post.title}</h2>
+    <p class="blog-card-excerpt">${post.excerpt}</p>
+    <div class="blog-card-footer">
+      <div class="blog-card-author">
+        <div class="blog-card-avatar">${BlogEngine.getAvatar(post.authorAvatar)}</div>
+        <span class="blog-card-author-name">${post.author}</span>
+      </div>
+      <div class="blog-card-meta">
+        <span>${BlogEngine.formatDate(post.publishAt)}</span>
+        <span>${post.readTime} min read</span>
+      </div>
+    </div>
+  </div>
+</a>`;
+  }).join('');
+})();
+</script>
+
+</body>
+</html>

@@ -60,7 +60,12 @@ function ContentBlock({ block, refreshTrigger, examType, email }) {
   if (block.type === 'ad')
     return <AdSection slot={block.slot} refreshTrigger={refreshTrigger}
       showPublisher={PUBLISHER_AD_ENABLED} examType={examType} email={email} />;
-  return <div className="learn-content-html" dangerouslySetInnerHTML={{ __html: block.content }} />;
+
+  let html = block.content;
+  if (examType === 'jamb') {
+    html = html.replace(/\bWAEC\b/gi, 'JAMB');
+  }
+  return <div className="learn-content-html" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 // ── Circular progress SVG ────────────────────────────────────────────────────
