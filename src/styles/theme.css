@@ -402,6 +402,41 @@ body.dark-mode .shop-item-footer { border-top-color: #2d1b4e; }
 body.dark-mode .shop-category-label { color: #C4B5FD; }
 body.dark-mode .shop-footer-note { color: #4B5563; }
 
+/* ── Dark mode ───────────────────────────────────────────────────────────────── */
+body.dark-mode .shop-page { background: var(--bg-primary); }
+body.dark-mode .shop-plans-title { color: var(--text-primary); }
+body.dark-mode .shop-plan-card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+body.dark-mode .shop-plan-card.highlighted {
+  background: linear-gradient(160deg, #2d1b4e, #1a0030);
+  border-color: #D4AF37;
+}
+body.dark-mode .shop-plan-name { color: var(--text-primary); }
+body.dark-mode .shop-plan-currency,
+body.dark-mode .shop-plan-amount { color: #D4AF37; }
+body.dark-mode .shop-plan-feature { color: var(--text-secondary); }
+body.dark-mode .shop-plan-cta.cta-secondary {
+  background: transparent;
+  color: #D4AF37;
+  border-color: #D4AF37;
+}
+body.dark-mode .shop-plan-cta.cta-secondary:hover {
+  background: #D4AF37;
+  color: #1a0030;
+}
+body.dark-mode .shop-billing-toggle { background: #3d2a5e; }
+body.dark-mode .shop-billing-btn { color: var(--text-secondary); }
+body.dark-mode .shop-billing-btn.active { background: #6C3FC9; }
+body.dark-mode .shop-item-card { background: var(--card-bg); border-color: var(--border-color); }
+body.dark-mode .shop-item-title { color: var(--text-primary); }
+body.dark-mode .shop-item-footer { border-top-color: #3d2a5e; }
+body.dark-mode .premium-active-box {
+  background: linear-gradient(135deg, #0a0015, #1a0030);
+  border-color: rgba(212,175,55,0.3);
+}
+
 /* ============================================================================
    DARK MODE — Premium modal & limit gate
    ============================================================================ */

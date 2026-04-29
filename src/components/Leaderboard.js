@@ -111,6 +111,18 @@ export default function Leaderboard({ userEmail, userName }) {
         </div>
       ) : (
         <>
+        {userRank && (
+            <div className="leaderboard-user-rank">
+              <div className="user-rank-label">Your Rank</div>
+              <div className="user-rank-value">
+                {typeof userRank === 'object'
+                  ? (userRank.rank_display || getOrdinal(userRank.rank))
+                  : getOrdinal(userRank)}
+              </div>
+              <XPBar email={userEmail} name={userName} compact={true} />
+            </div>
+          )}
+
           <div className="leaderboard-list">
             {leaderboard.map((user, index) => (
               <div
@@ -136,18 +148,6 @@ export default function Leaderboard({ userEmail, userName }) {
               </div>
             ))}
           </div>
-
-          {userRank && (
-            <div className="leaderboard-user-rank">
-              <div className="user-rank-label">Your Rank</div>
-              <div className="user-rank-value">
-                {typeof userRank === 'object'
-                  ? (userRank.rank_display || getOrdinal(userRank.rank))
-                  : getOrdinal(userRank)}
-              </div>
-              <XPBar email={userEmail} name={userName} compact={true} />
-            </div>
-          )}
         </>
       )}
     </div>

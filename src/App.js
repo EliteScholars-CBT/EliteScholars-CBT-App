@@ -7,7 +7,7 @@ import ExamTypeSelect from './components/ExamTypeSelect';
 import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
 import BottomNav from './components/BottomNav';
-import DesktopSidebar from './components/DesktopSidebar';
+// import DesktopSidebar from './components/DesktopSidebar';
 import Leaderboard from './components/Leaderboard';
 import Challenges from './components/Challenges';
 import Shop from './components/Shop';
@@ -353,9 +353,6 @@ export default function App() {
   return (
     <>
       <div className="phone">
-        {name && email && (
-          <DesktopSidebar currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
-        )}
         <div className="phone-content">
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
