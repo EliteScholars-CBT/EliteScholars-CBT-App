@@ -62,7 +62,7 @@ function ContentBlock({ block, refreshTrigger, examType, email }) {
       showPublisher={PUBLISHER_AD_ENABLED} examType={examType} email={email} />;
 
   let html = block.content;
-  if (examType === 'jamb') {
+  if (examType === 'jamb' || examType === 'postutme') {
     html = html.replace(/\bWAEC\b/gi, 'JAMB');
   }
   return <div className="learn-content-html" dangerouslySetInnerHTML={{ __html: html }} />;

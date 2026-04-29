@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { addXP } from '../utils/xpManager';
-import { XP_REWARDS } from '../utils/constants';
-import { GOLD, DPURP } from '../utils/colors';
+import { GOLD } from '../utils/colors';
 import { loadSubjectPerformance } from '../utils/storage';
 
 const STORY = {

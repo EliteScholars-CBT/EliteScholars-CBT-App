@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import AdSection from './AdSection';
 import { QB } from '../data/jamb';
 import { POST_UTME } from '../data/postutme';
 import { getFlashcardsForSubject } from '../data/flashcards';
 import { SUBJ } from '../data/subjects';
-import { SHOW_ADS } from '../utils/constants';
 import { PURPLE, DPURP, BG, LGRAY, WHITE, GRAY } from '../utils/colors';
 import { SFX } from '../utils/sounds';
 import { useTheme } from '../context/ThemeContext';
@@ -214,12 +212,6 @@ export default function Subjects({
           </div>
         </div>
       </div>
-
-      {SHOW_ADS && (
-        <div style={{ padding: '0 16px', marginTop: '-8px', marginBottom: '12px', zIndex: 2 }}>
-          <AdSection slot={0} refreshTrigger={refreshTrigger} examType={examType} email={email} showPublisher={true} />
-        </div>
-      )}
 
       <div className="scroll" style={{ flex: 1, padding: '0 16px 100px', overflowY: 'auto' }}>
         {!hasAnyQuestions ? (

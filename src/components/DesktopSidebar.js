@@ -35,6 +35,11 @@ export default function DesktopSidebar({ currentScreen, onNavigate, userEmail })
     return () => clearInterval(id);
   }, [userEmail, checkChallenges]);
 
+  const STUDY_SCREENS = new Set([
+    'subjects','examType','modeSelect','waecSubjects','flashcardSubjects',
+    'universitySelect','ready','quiz','result','waecLearn','game',
+  ]);
+
   const visible = MAIN_SCREENS.includes(currentScreen);
   if (!visible) return null;
 
@@ -45,8 +50,9 @@ export default function DesktopSidebar({ currentScreen, onNavigate, userEmail })
       </div>
       <nav>
         {NAV_ITEMS.map(item => {
-          const isActive = currentScreen === item.id ||
-            (item.id === 'subjects' && ['examType','waecSubjects','modeSelect','flashcardSubjects','universitySelect'].includes(currentScreen));
+          const isActive = item.id === 'subjects'
+            ? STUDY_SCREENS.has(currentScreen)
+            : currentScreen === item.id;
           return (
             <button
               key={item.id}
