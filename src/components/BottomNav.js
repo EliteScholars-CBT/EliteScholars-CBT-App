@@ -15,10 +15,17 @@ export default function BottomNav({ currentScreen, onNavigate, userEmail }) {
     { id: 'profile', label: 'Me', icon: '👤', activeIcon: '👤' },
   ];
 
+  const STUDY_SCREENS = new Set([
+    'subjects','examType','modeSelect','waecSubjects','flashcardSubjects',
+    'universitySelect','ready','quiz','result','waecLearn','game',
+  ]);
+
   return (
     <div className="bottom-nav" role="navigation" aria-label="Main navigation">
       {navItems.map((item) => {
-        const isActive = currentScreen === item.id;
+        const isActive = item.id === 'subjects'
+          ? STUDY_SCREENS.has(currentScreen)
+          : currentScreen === item.id;
         return (
           <button
             key={item.id}

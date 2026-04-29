@@ -45,7 +45,7 @@ import './styles/theme.css';
 
 // Lazy loaded pages/components
 const Splash       = lazy(() => import('./components/Splash'));
-const Onboard      = lazy(() => import('./components/Onboard'));
+const ModeSelect   = lazy(() => import('./components/ModeSelect'));
 const Subjects     = lazy(() => import('./components/Subjects'));
 const Ready        = lazy(() => import('./components/Ready'));
 const Quiz         = lazy(() => import('./components/Quiz'));
@@ -59,7 +59,7 @@ const AdGate       = lazy(() => import('./components/AdGate'));
 import appLogo from './assets/elite-scholars-cbt-logo.png';
 
 const LoadingScreen = () => (
-  <div className="loading-screen">
+  <div className="loading-screen" style={{ background: 'linear-gradient(160deg, #1a0030, #4B0082, #1a0030)' }}>
     <img src={appLogo} alt="EliteScholars" className="loading-screen-logo-img" />
     <div className="loading-spinner" />
   </div>
@@ -248,16 +248,15 @@ export default function App() {
 
   const handleExamTypeSelect = (type) => {
     setExamType(type);
-    if (type === 'postutme')                              setScreen('universitySelect');
-    else if (type === 'waec' || type === 'neco' || type === 'gst') setScreen('waecSubjects');
-    else                                                  setScreen('modeSelect');
+    if (type === 'postutme') setScreen('universitySelect');
+    else                     setScreen('modeSelect');
   };
 
   const handleModeSelect = (mode) => {
     setStudyMode(mode);
     if (mode === 'cbt')            setScreen('subjects');
-    else if (mode === 'flashcard') setScreen('flashcardSubjects');
-    else if (mode === 'learn')     setScreen('waecSubjects');
+    else if (mode === 'flashcard') { setWaecMode('flashcard'); setScreen('flashcardSubjects'); }
+    else if (mode === 'learn')     { setWaecMode('learn');     setScreen('waecSubjects'); }
     else if (mode === 'game')      setScreen('game');
   };
 
@@ -328,7 +327,8 @@ export default function App() {
   const handleNavigate = (newScreen) => {
     if (SHOW_ADS) triggerAdRefresh();
     stopSpeech();
-    setScreen(newScreen);
+    if (newScreen === 'subjects') setScreen('examType');
+    else setScreen(newScreen);
   };
 
   const handlePremiumActivated = () => {
@@ -353,13 +353,23 @@ export default function App() {
   return (
     <>
       <div className="phone">
+        {name && email && (
+          <DesktopSidebar currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
+        )}
+        <div className="phone-content">
         <Suspense fallback={<LoadingScreen />}>
           {screen === 'splash' && <Splash onDone={handleSplash} />}
 
           {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
 
           {screen === 'examType' && (
-            <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => setScreen('onboard')} />
+            <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => {
+              if (window.confirm('Log out of EliteScholars?')) {
+                localStorage.removeItem('ep_user');
+                setName(''); setEmail('');
+                setScreen('onboard');
+              }
+            }} />
           )}
 
           {screen === 'universitySelect' && (
@@ -387,7 +397,7 @@ export default function App() {
                   setScreen('ready');
                 }
               }}
-              onBack={() => setScreen('examType')}
+              onBack={() => setScreen('modeSelect')}
               onModeChange={(m) => setWaecMode(m)} />
           )}
 
@@ -505,14 +515,11 @@ export default function App() {
               selectedExams={selectedExams} />
           )}
         </Suspense>
+        </div>
       </div>
 
       {showBottomNav && (
         <BottomNav currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
-      )}
-
-      {name && email && (
-        <DesktopSidebar currentScreen={screen} onNavigate={handleNavigate} userEmail={email} />
       )}
 
       {/* Free limit gate */}

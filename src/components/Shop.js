@@ -24,10 +24,16 @@ function ShopItemSVG({ title, category, color = '#6C3FC9' }) {
 }
 
 export default function Shop({ userEmail, name, premiumUser, onPremiumActivated }) {
-  const [showPremium, setShowPremium] = useState(false);
-  const [localPremium, setLocalPremium] = useState(premiumUser);
+  const [showPremium, setShowPremium]       = useState(false);
+  const [selectedPlan, setSelectedPlan]     = useState('monthly');
+  const [localPremium, setLocalPremium]     = useState(premiumUser);
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
-  const [billing, setBilling] = useState('monthly');
+  const [billing, setBilling]               = useState('monthly');
+
+  const openPlan = (planId) => {
+    setSelectedPlan(planId);
+    setShowPremium(true);
+  };
 
   const premData = getPremiumData(userEmail);
 
@@ -166,10 +172,13 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
                     <button
                       className={`shop-plan-cta ${plan.highlight ? 'cta-primary' : 'cta-secondary'}`}
                       disabled={isDisabled}
-                      onClick={() => setShowPremium(true)}
+                      onClick={() => openPlan(plan.id)}
                     >
                       {isDisabled ? 'Monthly only' : `Get ${plan.label}`}
                     </button>
+                    {isDisabled && (
+                      <div className="shop-plan-disabled-note">Pro has no annual billing</div>
+                    )}
                   </div>
                 );
               })}
@@ -222,6 +231,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
         <PremiumModal
           email={userEmail}
           name={name}
+          initialPlan={selectedPlan}
           onClose={() => setShowPremium(false)}
           onActivated={handlePremiumActivated}
         />

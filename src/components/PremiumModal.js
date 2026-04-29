@@ -19,8 +19,8 @@ import { loadAchievements, saveAchievements } from '../utils/storage';
 
 const FMT = (n) => n.toLocaleString('en-NG');
 
-export default function PremiumModal({ email, name, onClose, onActivated }) {
-  const [plan, setPlan]       = useState('pro');
+export default function PremiumModal({ email, name, onClose, onActivated, initialPlan = 'monthly' }) {
+  const [plan, setPlan]       = useState(initialPlan);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 

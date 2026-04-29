@@ -25,9 +25,9 @@ export default function ExamTypeSelect({ onSelectExam, onBack }) {
         <div className="exam-type-header-content">
           <div className="exam-type-icon">📚</div>
           <h1>
-            Choose <span style={{ color: GOLD }}>Exam Type</span>
+            What are you <span style={{ color: GOLD }}>studying</span> for?
           </h1>
-          <p>Select the exam you want to practise for</p>
+          <p>Pick your focus — CBT, Learn, Game Mode and more await</p>
         </div>
       </div>
 
