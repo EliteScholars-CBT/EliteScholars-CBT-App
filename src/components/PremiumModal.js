@@ -17,38 +17,36 @@ import { loadAchievements, saveAchievements } from '../utils/storage';
 const FMT = (n) => n.toLocaleString('en-NG');
 
 export default function PremiumModal({ email, name, onClose, onActivated, initialPlan = 'monthly' }) {
-  const [billing, setBilling] = useState(initialPlan === 'annual' ? 'annual' : 'monthly');
-  const [selectedPlan, setSelectedPlan] = useState(null); // 'pro' or 'premium'
+  // initialPlan can be 'pro', 'monthly', or 'annual'
+  const [plan, setPlan] = useState(initialPlan);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // Pro plan (always monthly, no annual)
-  const PRO_PLAN = {
-    id: 'pro',
-    name: 'Pro',
-    icon: '🚀',
-    price: PRO_MONTHLY_PRICE,
-    period: '/month',
-    payUrl: PAYMENT_URL_PRO,
-    tag: 'Popular',
-    features: [
-      'Unlimited topics',
-      'Unlimited sessions',
-      'No cooldown',
-      'Ads reduced',
-      'All 5 exam types',
-    ],
-  };
-
-  // Premium plan (changes based on billing)
-  const getPremiumPlan = () => {
-    if (billing === 'annual') {
+  // Premium plan details based on billing type
+  const getPremiumPlan = (billingType) => {
+    if (billingType === 'monthly') {
       return {
-        id: 'premium',
-        name: 'Premium',
-        icon: '⭐',
+        id: 'monthly',
+        name: 'Premium Monthly',
+        price: PREMIUM_MONTHLY_PRICE,
+        label: '/month',
+        payUrl: PAYMENT_URL_MONTHLY,
+        tag: null,
+        features: [
+          'Unlimited topics',
+          'Unlimited sessions',
+          'No cooldown ever',
+          'Zero ads',
+          'All 5 exam types',
+          'Priority support',
+        ],
+      };
+    } else {
+      return {
+        id: 'annual',
+        name: 'Premium Annual',
         price: PREMIUM_ANNUAL_PRICE,
-        period: '/year',
+        label: '/year',
         payUrl: PAYMENT_URL_ANNUAL,
         tag: `Save ${PREMIUM_ANNUAL_DISCOUNT_PCT}%`,
         features: [
@@ -61,51 +59,37 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
           'Best value',
         ],
       };
-    } else {
-      return {
-        id: 'premium',
-        name: 'Premium',
-        icon: '⭐',
-        price: PREMIUM_MONTHLY_PRICE,
-        period: '/month',
-        payUrl: PAYMENT_URL_MONTHLY,
-        tag: 'Most Popular',
-        features: [
-          'Unlimited topics',
-          'Unlimited sessions',
-          'No cooldown ever',
-          'Zero ads',
-          'All 5 exam types',
-          'Priority support',
-        ],
-      };
     }
   };
 
-  const PREMIUM_PLAN = getPremiumPlan();
+  const PRO_PLAN = {
+    id: 'pro',
+    name: 'Pro',
+    price: PRO_MONTHLY_PRICE,
+    label: '/month',
+    payUrl: PAYMENT_URL_PRO,
+    tag: null,
+    features: [
+      'Unlimited topics',
+      'Unlimited sessions',
+      'No cooldown',
+      'Ads reduced',
+      'All 5 exam types',
+    ],
+  };
 
-  const handleSubscribe = (planType) => {
-    setSelectedPlan(planType);
-    
-    let planId;
-    let payUrl;
-    
-    if (planType === 'pro') {
-      planId = 'pro';
-      payUrl = PRO_PLAN.payUrl;
-    } else {
-      planId = billing === 'annual' ? 'annual' : 'monthly';
-      payUrl = PREMIUM_PLAN.payUrl;
-    }
-    
+  // Current selected plan (Pro or Premium with current billing)
+  const isPro = plan === 'pro';
+  const currentPlan = isPro ? PRO_PLAN : getPremiumPlan(plan);
+
+  const handleSubscribe = () => {
     if (USE_REAL_PAYMENT) {
-      window.open(payUrl, '_blank');
+      window.open(currentPlan.payUrl, '_blank');
       return;
     }
-    
     setLoading(true);
     setTimeout(() => {
-      const data = activatePremium(email, planId);
+      const data = activatePremium(email, plan);
       const existing = loadAchievements(email);
       if (!existing.some((a) => a?.id === 'premiumMember')) {
         saveAchievements([...existing, ACHIEVEMENTS.premiumMember], email);
@@ -122,10 +106,10 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
         <div className="premium-modal">
           <div className="premium-success-icon">⭐</div>
           <div className="premium-success-title">
-            Welcome to {selectedPlan === 'pro' ? 'Pro' : 'Premium'}!
+            Welcome to {isPro ? 'Pro' : 'Premium'}!
           </div>
           <div className="premium-success-sub">
-            You now have unlimited access. Enjoy your {selectedPlan === 'pro' ? 'Pro' : 'Premium'} experience, {name}!
+            You now have unlimited access. Enjoy your {isPro ? 'Pro' : 'Premium'} experience, {name}!
           </div>
           <button className="premium-cta-btn" onClick={onClose}>Start Learning →</button>
         </div>
@@ -144,84 +128,73 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
           <div className="premium-tagline">No limits, no excuses. Pick your plan.</div>
         </div>
 
-        {/* Billing Toggle (only Monthly/Annual, affects Premium) */}
-        <div className="premium-billing-toggle-wrapper">
-          <div className="premium-billing-toggle">
-            <button
-              className={`premium-billing-btn ${billing === 'monthly' ? 'active' : ''}`}
-              onClick={() => setBilling('monthly')}
-            >
-              Monthly
-            </button>
-            <button
-              className={`premium-billing-btn ${billing === 'annual' ? 'active' : ''}`}
-              onClick={() => setBilling('annual')}
-            >
-              Annual
-              <span className="premium-save-badge">Save {PREMIUM_ANNUAL_DISCOUNT_PCT}%</span>
-            </button>
-          </div>
+        {/* Toggle: Pro | Monthly | Annual */}
+        <div className="premium-plan-toggle">
+          <button
+            className={`premium-plan-btn ${plan === 'pro' ? 'active' : ''}`}
+            onClick={() => setPlan('pro')}
+          >
+            Pro 🚀
+          </button>
+          <button
+            className={`premium-plan-btn ${plan === 'monthly' ? 'active' : ''}`}
+            onClick={() => setPlan('monthly')}
+          >
+            Monthly
+          </button>
+          <button
+            className={`premium-plan-btn ${plan === 'annual' ? 'active' : ''}`}
+            onClick={() => setPlan('annual')}
+          >
+            Annual
+            <span className="premium-save-badge">Save {PREMIUM_ANNUAL_DISCOUNT_PCT}%</span>
+          </button>
         </div>
 
-        {/* 2-column grid: Pro | Premium */}
-        <div className="premium-plans-grid">
-          {/* Pro Card */}
-          <div className="premium-plan-card">
-            {PRO_PLAN.tag && <div className="premium-plan-tag">{PRO_PLAN.tag}</div>}
-            <div className="premium-plan-icon">{PRO_PLAN.icon}</div>
-            <div className="premium-plan-name">{PRO_PLAN.name}</div>
-            <div className="premium-plan-price">
-              <span className="premium-currency">₦</span>
-              <span className="premium-amount">{FMT(PRO_PLAN.price)}</span>
-              <span className="premium-period">{PRO_PLAN.period}</span>
-            </div>
-            <div className="premium-plan-features">
-              {PRO_PLAN.features.map((feature) => (
-                <div key={feature} className="premium-plan-feature">
-                  <span className="premium-check">✓</span> {feature}
-                </div>
-              ))}
-            </div>
-            <button
-              className="premium-plan-cta cta-secondary"
-              onClick={() => handleSubscribe('pro')}
-              disabled={loading}
-            >
-              {loading && selectedPlan === 'pro' ? 'Processing...' : 'Get Pro'}
-            </button>
+        {/* Pro note - no annual option */}
+        {plan === 'pro' && (
+          <div className="premium-plan-note">
+            🚀 <strong>Pro</strong> — Best value for serious students. Core unlimited access at ₦{FMT(PRO_MONTHLY_PRICE)}/month. No annual option available.
           </div>
+        )}
 
-          {/* Premium Card */}
-          <div className="premium-plan-card highlighted">
-            {PREMIUM_PLAN.tag && <div className="premium-plan-tag">{PREMIUM_PLAN.tag}</div>}
-            <div className="premium-plan-icon">{PREMIUM_PLAN.icon}</div>
-            <div className="premium-plan-name">{PREMIUM_PLAN.name}</div>
-            <div className="premium-plan-price">
-              <span className="premium-currency">₦</span>
-              <span className="premium-amount">{FMT(PREMIUM_PLAN.price)}</span>
-              <span className="premium-period">{PREMIUM_PLAN.period}</span>
-            </div>
-            {billing === 'annual' && (
-              <div className="premium-savings-badge">
-                Save ₦{FMT(PREMIUM_ANNUAL_SAVINGS)}/year
+        {/* Price display */}
+        <div className="premium-price-row">
+          <span className="premium-currency">₦</span>
+          <span className="premium-amount">{FMT(currentPlan.price)}</span>
+          <span className="premium-period">{currentPlan.label}</span>
+        </div>
+        
+        {plan === 'annual' && (
+          <div className="premium-savings-note">
+            You save ₦{FMT(PREMIUM_ANNUAL_SAVINGS)} compared to monthly billing
+          </div>
+        )}
+
+        {/* Features list */}
+        <div className="premium-features-list">
+          <div className="premium-features-title">
+            {isPro ? 'Pro Features:' : 'Premium Features:'}
+          </div>
+          <div className="premium-features-grid">
+            {currentPlan.features.map((feature) => (
+              <div key={feature} className="premium-feature-item">
+                <span className="premium-check">✓</span> {feature}
               </div>
-            )}
-            <div className="premium-plan-features">
-              {PREMIUM_PLAN.features.map((feature) => (
-                <div key={feature} className="premium-plan-feature">
-                  <span className="premium-check">✓</span> {feature}
-                </div>
-              ))}
-            </div>
-            <button
-              className="premium-plan-cta cta-primary"
-              onClick={() => handleSubscribe('premium')}
-              disabled={loading}
-            >
-              {loading && selectedPlan === 'premium' ? 'Processing...' : `Get ${PREMIUM_PLAN.name}`}
-            </button>
+            ))}
           </div>
         </div>
+
+        {/* CTA Button */}
+        <button className="premium-cta-btn" onClick={handleSubscribe} disabled={loading}>
+          {loading ? (
+            <span className="premium-loading">Processing…</span>
+          ) : USE_REAL_PAYMENT ? (
+            `Subscribe — ₦${FMT(currentPlan.price)}${currentPlan.label}`
+          ) : (
+            `Try ${isPro ? 'Pro' : plan === 'annual' ? 'Annual' : 'Premium'} — ₦${FMT(currentPlan.price)}${currentPlan.label}`
+          )}
+        </button>
 
         {!USE_REAL_PAYMENT && (
           <div className="premium-sim-note">
