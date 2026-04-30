@@ -26,7 +26,7 @@ export default function Splash({ onDone }) {
       <img src={logo} alt="EliteScholars Logo" className="splash-logo" />
       <div className="splash-subtitle">JAMB · WAEC · NECO · POST UTME · GST</div>
       <div className="splash-load-bar"><div className="splash-load-progress" /></div>
-      <div className="splash-footer">by Elite JAMB &amp; PUTME Clinic</div>
+      <div className="splash-footer">© {new Date().getFullYear()} EliteScholars. All rights reserved.</div>
     </div>
   );
 }
