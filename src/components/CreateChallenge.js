@@ -161,7 +161,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             {/* Quiz info */}
             <div className="challenge-info-box">
               <div className="info-row"><span>📚 Questions:</span><span><strong>{NUM_QUESTIONS}</strong></span></div>
-              <div className="info-row"><span>⏱️ Duration:</span><span><strong>{Math.round((TIME_LIMIT * NUM_QUESTIONS)/60)}s</strong></span></div>
+              <div className="info-row"><span>⏱️ Duration:</span><span><strong>{Math.round((TIME_LIMIT * NUM_QUESTIONS) / 60)} min</strong></span></div>
             </div>
 
             {/* Message */}

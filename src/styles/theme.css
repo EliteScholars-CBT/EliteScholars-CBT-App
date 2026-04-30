@@ -393,76 +393,173 @@ body.dark-mode .mode-select-card-description { color: #9CA3AF; }
    DARK MODE — Shop
    ============================================================================ */
 
+
+/* ============================================================================
+   DARK MODE — Complete Shop
+   ============================================================================ */
+
 body.dark-mode .shop-page,
 body.dark-mode .shop-body { background: #0a0015; }
 
 body.dark-mode .shop-plans-title { color: #F3F4F6; }
 body.dark-mode .shop-plans-note  { color: #4B5563; }
 
-/* Plan cards */
-body.dark-mode .shop-plan-card {
+/* New pricing card dark mode */
+body.dark-mode .shop-pricing-card {
   background: #1a0030;
-  border-color: #3d2a5e;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
-body.dark-mode .shop-plan-card.highlighted {
+
+body.dark-mode .shop-pricing-card-header {
+  background: linear-gradient(135deg, #2d1b4e, #1a0030);
+  border-bottom-color: rgba(212, 175, 55, 0.15);
+}
+
+body.dark-mode .shop-pricing-card-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .save-badge {
+  background: #22C55E;
+  color: #0a0015;
+}
+
+body.dark-mode .shop-plans-comparison {
+  background: #1a0030;
+}
+
+body.dark-mode .shop-compare-plan {
+  border-right-color: #3d2a5e;
+}
+
+body.dark-mode .shop-compare-plan:last-child {
+  border-right-color: transparent;
+}
+
+body.dark-mode .shop-compare-plan.highlighted {
   background: linear-gradient(160deg, #2d1b4e, #1a0030);
-  border-color: #D4AF37;
-  box-shadow: 0 6px 24px rgba(212,175,55,0.12);
+  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.12);
 }
 
-/* Plan text — fully visible in dark mode */
-body.dark-mode .shop-plan-name    { color: #F3F4F6; }
-body.dark-mode .shop-plan-currency,
-body.dark-mode .shop-plan-amount  { color: #D4AF37; }
-body.dark-mode .shop-plan-period  { color: #9CA3AF; }
-body.dark-mode .shop-plan-no-annual { color: #6B7280; }
+body.dark-mode .shop-compare-plan.annual-disabled {
+  background: #0a0015;
+  opacity: 0.5;
+}
 
-/* Feature rows — explicitly white in dark mode */
+/* Plan text dark mode */
+body.dark-mode .shop-plan-name {
+  color: #F3F4F6;
+}
+
+body.dark-mode .shop-plan-currency,
+body.dark-mode .shop-plan-amount {
+  color: #D4AF37;
+}
+
+body.dark-mode .shop-plan-period {
+  color: #9CA3AF;
+}
+
+body.dark-mode .shop-plan-no-annual {
+  color: #6B7280;
+}
+
+/* Features dark mode */
 body.dark-mode .shop-plan-feature {
   color: #E5E7EB;
 }
-body.dark-mode .shop-plan-check { color: #4ADE80; }
-body.dark-mode .shop-plan-disabled-note { color: #6B7280; }
 
-/* CTA buttons */
+body.dark-mode .shop-plan-check {
+  color: #4ADE80;
+}
+
+/* CTA buttons dark mode */
 body.dark-mode .shop-plan-cta.cta-primary {
   background: linear-gradient(135deg, #4B0082, #6C3FC9);
   color: #fff;
 }
+
 body.dark-mode .shop-plan-cta.cta-secondary {
   background: transparent;
   color: #D4AF37;
-  border-color: #D4AF37;
+  border: 1.5px solid #D4AF37;
 }
-body.dark-mode .shop-plan-cta.cta-secondary:hover {
+
+body.dark-mode .shop-plan-cta.cta-secondary:hover:not(:disabled) {
   background: #D4AF37;
   color: #1a0030;
 }
 
-/* Billing toggle */
-body.dark-mode .shop-billing-toggle { background: #3d2a5e; }
-body.dark-mode .shop-billing-btn    { color: #9CA3AF; }
-body.dark-mode .shop-billing-btn.active {
+body.dark-mode .shop-plan-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+body.dark-mode .shop-plan-disabled-note {
+  color: #6B7280;
+}
+
+/* Plan tag dark mode */
+body.dark-mode .shop-plan-tag {
+  background: linear-gradient(135deg, #D4AF37, #FFEB82);
+  color: #1a0030;
+}
+
+/* Billing toggle inside card dark mode */
+body.dark-mode .shop-pricing-card .shop-billing-toggle {
+  background: #3d2a5e;
+}
+
+body.dark-mode .shop-pricing-card .shop-billing-btn {
+  color: #9CA3AF;
+}
+
+body.dark-mode .shop-pricing-card .shop-billing-btn.active {
   background: #6C3FC9;
   color: #fff;
 }
 
-/* Shop item cards */
+/* Old plan cards (fallback) */
+body.dark-mode .shop-plan-card {
+  background: #1a0030;
+  border-color: #3d2a5e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .shop-plan-card.highlighted {
+  background: linear-gradient(160deg, #2d1b4e, #1a0030);
+  border-color: #D4AF37;
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.12);
+}
+
+/* Shop item cards dark mode */
 body.dark-mode .shop-item-card {
   background: #1a0030;
   border-color: #2d1b4e;
 }
+
 body.dark-mode .shop-item-title { color: #F3F4F6; }
-body.dark-mode .shop-item-desc  { color: #9CA3AF; }
+body.dark-mode .shop-item-desc { color: #9CA3AF; }
 body.dark-mode .shop-item-footer { border-top-color: #2d1b4e; }
 body.dark-mode .shop-category-label { color: #C4B5FD; }
-body.dark-mode .shop-footer-note    { color: #4B5563; }
+body.dark-mode .shop-footer-note { color: #4B5563; }
 
-/* Premium active box */
+/* Premium active box dark mode */
 body.dark-mode .premium-active-box {
   background: linear-gradient(135deg, #0a0015, #1a0030);
-  border-color: rgba(212,175,55,0.3);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive dark mode */
+@media (max-width: 640px) {
+  body.dark-mode .shop-compare-plan {
+    border-bottom-color: #3d2a5e;
+    border-right-color: transparent;
+  }
+  
+  body.dark-mode .shop-compare-plan:last-child {
+    border-bottom-color: transparent;
+  }
 }
 
 /* ============================================================================
