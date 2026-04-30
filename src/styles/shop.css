@@ -149,7 +149,7 @@
 /* 3-column comparison grid — always side by side */
 .shop-plans-comparison {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, minmax(auto, 50vw));
   gap: 0;
   background: #fff;
   overflow-x: auto;
