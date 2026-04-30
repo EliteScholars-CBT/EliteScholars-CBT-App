@@ -11,10 +11,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "obfuscate": "javascript-obfuscator build/static/js --output build/static/js --compact true --string-array true --rotate-string-array true --string-array-threshold 0.75 --dead-code-injection false --self-defending true --disable-console-output true",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "javascript-obfuscator": "^4.2.2",
     "prettier": "^3.8.3",
     "react-scripts": "latest"
   },
