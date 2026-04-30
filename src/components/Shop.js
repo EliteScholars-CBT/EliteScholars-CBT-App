@@ -87,7 +87,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
         'Limited sessions',
         'Has cooldown',
         'Ads shown',
-        '3 exam types'
+        'All exam types'
       ],
       highlight: false,
       ctaText: 'Current Plan',

@@ -393,11 +393,6 @@ body.dark-mode .mode-select-card-description { color: #9CA3AF; }
    DARK MODE — Shop
    ============================================================================ */
 
-
-/* ============================================================================
-   DARK MODE — Complete Shop
-   ============================================================================ */
-
 body.dark-mode .shop-page,
 body.dark-mode .shop-body { background: #0a0015; }
 
@@ -438,7 +433,7 @@ body.dark-mode .shop-compare-plan:last-child {
 
 body.dark-mode .shop-compare-plan.highlighted {
   background: linear-gradient(160deg, #2d1b4e, #1a0030);
-  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.12);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.12);
 }
 
 body.dark-mode .shop-compare-plan.annual-disabled {
@@ -519,6 +514,26 @@ body.dark-mode .shop-pricing-card .shop-billing-btn.active {
   color: #fff;
 }
 
+/* Mobile horizontal scroll dark mode */
+@media (max-width: 640px) {
+  body.dark-mode .shop-plans-comparison {
+    background: #1a0030;
+  }
+  
+  body.dark-mode .shop-compare-plan {
+    background: #1a0030;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.dark-mode .shop-compare-plan.highlighted {
+    background: linear-gradient(160deg, #2d1b4e, #1a0030);
+  }
+  
+  body.dark-mode .shop-compare-plan.annual-disabled {
+    background: #0a0015;
+  }
+}
+
 /* Old plan cards (fallback) */
 body.dark-mode .shop-plan-card {
   background: #1a0030;
@@ -550,17 +565,6 @@ body.dark-mode .premium-active-box {
   border-color: rgba(212, 175, 55, 0.3);
 }
 
-/* Responsive dark mode */
-@media (max-width: 640px) {
-  body.dark-mode .shop-compare-plan {
-    border-bottom-color: #3d2a5e;
-    border-right-color: transparent;
-  }
-  
-  body.dark-mode .shop-compare-plan:last-child {
-    border-bottom-color: transparent;
-  }
-}
 
 /* ============================================================================
    DARK MODE — Premium modal & limit gate

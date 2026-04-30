@@ -107,7 +107,7 @@
 .shop-plans-section { margin-bottom: 28px; }
 
 /* ============================================================================
-   NEW: Single pricing card with 3-column comparison
+   NEW: Single pricing card with 3-column comparison (horizontal scroll on mobile)
    ============================================================================ */
 
 .shop-pricing-card {
@@ -122,49 +122,52 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 16px 20px;
   background: linear-gradient(135deg, #F8F5FF, #F0EBFF);
   border-bottom: 1px solid rgba(108, 63, 201, 0.15);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .shop-pricing-card-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   color: #1a0030;
 }
 
 /* Save badge on annual toggle */
 .save-badge {
-  font-size: 9px;
+  font-size: 8px;
   background: #16A34A;
   color: #fff;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: 20px;
-  margin-left: 6px;
+  margin-left: 4px;
   font-weight: 600;
 }
 
-/* 3-column comparison grid */
+/* 3-column comparison grid — always side by side */
 .shop-plans-comparison {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   background: #fff;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Individual plan card inside comparison */
 .shop-compare-plan {
   position: relative;
-  padding: 28px 16px 24px;
+  padding: 20px 12px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
+  gap: 8px;
   border-right: 1px solid #E5E7EB;
   transition: all 0.2s;
+  min-width: 0; /* Allows shrinking */
 }
 
 .shop-compare-plan:last-child {
@@ -174,11 +177,10 @@
 .shop-compare-plan.highlighted {
   background: linear-gradient(160deg, #F3EEFF, #fff);
   position: relative;
-  transform: scale(1.02);
-  box-shadow: 0 8px 28px rgba(75, 0, 130, 0.12);
+  box-shadow: 0 4px 16px rgba(75, 0, 130, 0.1);
   z-index: 1;
-  border-radius: 16px;
-  margin: -4px 0;
+  margin: -2px 0;
+  border-radius: 12px;
 }
 
 .shop-compare-plan.annual-disabled {
@@ -195,16 +197,17 @@
   gap: 2px;
 }
 .shop-billing-btn {
-  padding: 6px 16px;
+  padding: 5px 14px;
   border: none;
   border-radius: 28px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   color: #6B7280;
   background: transparent;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 .shop-billing-btn.active {
   background: #4B0082;
@@ -215,24 +218,24 @@
 /* ── Plan card shared styles ─────────────────────────────────────────────────── */
 .shop-plan-tag {
   position: absolute;
-  top: -12px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #D4AF37, #FFEB82);
   color: #1a0030;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
-  padding: 3px 12px;
+  padding: 2px 10px;
   border-radius: 30px;
   white-space: nowrap;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(212,175,55,0.35);
+  box-shadow: 0 2px 6px rgba(212,175,55,0.35);
 }
 
-.shop-plan-icon { font-size: 28px; margin-top: 4px; }
+.shop-plan-icon { font-size: 24px; margin-top: 4px; }
 
 .shop-plan-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   color: #1a0030;
 }
@@ -244,30 +247,30 @@
   gap: 1px;
   justify-content: center;
   flex-wrap: wrap;
-  min-height: 36px;
+  min-height: 32px;
 }
 .shop-plan-currency {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   color: #4B0082;
   align-self: flex-start;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 .shop-plan-amount {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 900;
   color: #4B0082;
   line-height: 1;
 }
 .shop-plan-period {
-  font-size: 10px;
+  font-size: 9px;
   color: #6B7280;
   font-weight: 600;
   align-self: flex-end;
   margin-bottom: 2px;
 }
 .shop-plan-no-annual {
-  font-size: 11px;
+  font-size: 10px;
   color: #9CA3AF;
   font-style: italic;
   align-self: center;
@@ -278,23 +281,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin: 4px 0;
+  gap: 4px;
+  margin: 2px 0;
   text-align: left;
 }
 .shop-plan-feature {
   display: flex;
   align-items: flex-start;
-  gap: 6px;
-  font-size: 11.5px;
+  gap: 5px;
+  font-size: 10px;
   font-weight: 500;
   color: #374151;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .shop-plan-check {
   color: #16A34A;
   font-weight: 800;
-  font-size: 12px;
+  font-size: 10px;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -302,20 +305,20 @@
 /* ── CTA buttons ─────────────────────────────────────────────────────────────── */
 .shop-plan-cta {
   width: 100%;
-  padding: 11px 10px;
+  padding: 8px 8px;
   border: none;
-  border-radius: 12px;
-  font-size: 12.5px;
+  border-radius: 10px;
+  font-size: 11px;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: all 0.2s;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .shop-plan-cta.cta-primary {
   background: linear-gradient(135deg, #4B0082, #6C3FC9);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(75,0,130,0.3);
+  box-shadow: 0 3px 10px rgba(75,0,130,0.3);
 }
 .shop-plan-cta.cta-primary:hover {
   filter: brightness(1.1);
@@ -335,19 +338,19 @@
   opacity: 0.5;
 }
 .shop-plan-disabled-note {
-  font-size: 10px;
+  font-size: 9px;
   color: #9CA3AF;
   font-style: italic;
-  margin-top: -4px;
+  margin-top: -2px;
 }
 
 /* ── Plans footer note ───────────────────────────────────────────────────────── */
 .shop-plans-note {
   text-align: center;
-  font-size: 11px;
+  font-size: 10px;
   color: #9CA3AF;
-  margin-top: 14px;
-  padding-bottom: 16px;
+  margin-top: 12px;
+  padding: 0 12px 12px;
 }
 
 /* ── Regular shop items ──────────────────────────────────────────────────────── */
@@ -442,60 +445,121 @@
   line-height: 1.55;
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .shop-pricing-card-header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-  
-  .shop-billing-toggle {
-    align-self: center;
+/* ============================================================================
+   RESPONSIVE — Keep 3 cards side by side even on mobile
+   ============================================================================ */
+
+/* Tablet and desktop: normal grid */
+@media (min-width: 641px) {
+  .shop-plans-comparison {
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
   }
 }
 
+/* Mobile: horizontal scroll, cards have fixed min-width */
 @media (max-width: 640px) {
   .shop-plans-comparison {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+    background: #fff;
+    padding: 4px 12px 12px 12px;
   }
   
   .shop-compare-plan {
+    flex: 0 0 280px;
+    min-width: 260px;
+    scroll-snap-align: start;
     border-right: none;
-    border-bottom: 1px solid #E5E7EB;
-    padding: 24px 16px;
-  }
-  
-  .shop-compare-plan:last-child {
-    border-bottom: none;
+    border-radius: 16px;
+    padding: 18px 12px 14px;
+    margin: 4px 0;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
   
   .shop-compare-plan.highlighted {
     transform: none;
-    margin: 0;
-    border-radius: 0;
+    margin: 4px 0;
+    background: linear-gradient(160deg, #F3EEFF, #fff);
+  }
+  
+  .shop-compare-plan.annual-disabled {
+    background: #F9FAFB;
   }
   
   .shop-plan-tag {
-    position: static;
-    transform: none;
-    display: inline-block;
-    width: fit-content;
-    margin-bottom: 4px;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    padding: 2px 8px;
+  }
+  
+  .shop-plan-icon {
+    font-size: 22px;
+  }
+  
+  .shop-plan-name {
+    font-size: 12px;
+  }
+  
+  .shop-plan-amount {
+    font-size: 20px;
+  }
+  
+  .shop-plan-feature {
+    font-size: 9px;
+  }
+  
+  .shop-plan-cta {
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+  
+  .shop-pricing-card-header {
+    padding: 14px 16px;
+  }
+  
+  .shop-pricing-card-title {
+    font-size: 15px;
+  }
+  
+  .shop-billing-btn {
+    padding: 4px 12px;
+    font-size: 10px;
+  }
+  
+  .save-badge {
+    font-size: 7px;
+    padding: 1px 4px;
   }
 }
 
-@media (max-width: 360px) {
-  .shop-pricing-card-header {
-    padding: 16px;
-  }
-  
+/* Very small screens: even tighter */
+@media (max-width: 380px) {
   .shop-compare-plan {
-    padding: 20px 12px;
+    flex: 0 0 260px;
+    min-width: 240px;
+    padding: 16px 10px 12px;
   }
   
-  .shop-grid {
-    grid-template-columns: 1fr;
+  .shop-plan-features {
+    gap: 3px;
+  }
+  
+  .shop-plan-feature {
+    font-size: 8.5px;
+  }
+  
+  .shop-plan-amount {
+    font-size: 18px;
+  }
+  
+  .shop-plan-currency {
+    font-size: 10px;
   }
 }
