@@ -7,7 +7,7 @@ import { GOLD } from '../utils/colors';
 // Icon + label only, keyboard navigable
 // ============================================================================
 
-export default function ExamTypeSelect({ onSelectExam, onBack }) {
+export default function ExamTypeSelect({ onSelectExam }) {
   // Keyboard navigation
   const handleKeyDown = (e, id) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -19,9 +19,6 @@ export default function ExamTypeSelect({ onSelectExam, onBack }) {
   return (
     <div className="scr fd exam-type-page">
       <div className="exam-type-header-section">
-        <button className="exam-type-back-btn" onClick={onBack}>
-          ← Back
-        </button>
         <div className="exam-type-header-content">
           <div className="exam-type-icon">📚</div>
           <h1>
