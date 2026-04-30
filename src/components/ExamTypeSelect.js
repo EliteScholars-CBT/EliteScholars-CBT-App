@@ -24,7 +24,6 @@ export default function ExamTypeSelect({ onSelectExam }) {
           <h1>
             What are you <span style={{ color: GOLD }}>studying</span> for?
           </h1>
-          <p>Pick your focus — CBT, Learn, Game Mode and more await</p>
         </div>
       </div>
 

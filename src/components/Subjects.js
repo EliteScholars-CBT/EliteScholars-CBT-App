@@ -136,7 +136,7 @@ export default function Subjects({
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <div>
             <div className="subjects-welcome-label">{examLabel}</div>
-            <div className="subjects-welcome-name">{name || 'Student'} 👋</div>
+            <div className="subjects-welcome-name">Hi {name || 'Student'} 👋</div>
             <div className="subjects-welcome-text">{MODE_DESC[mode]}</div>
           </div>
           <div className="settings-group">

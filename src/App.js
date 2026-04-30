@@ -41,6 +41,7 @@ import './styles/shop.css';
 import './styles/ads.css';
 import './styles/premium.css';
 import './styles/theme.css';
+import './styles/auth.css';
 
 // Lazy loaded pages/components
 const Splash    = lazy(() => import('./components/Splash'));
