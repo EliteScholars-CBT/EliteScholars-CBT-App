@@ -1262,3 +1262,65 @@ body.dark-mode .premium-badge {
   font-weight: 700;
   color: #D4AF37;
 }
+
+/* ── Features list (replacing compare grid) ─────────────────────────────────── */
+.premium-features-list {
+  background: #F9FAFB;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.premium-features-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a0030;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.premium-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.premium-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  padding: 6px 0;
+}
+
+.premium-feature-item .premium-check {
+  color: #16A34A;
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Dark mode for features list */
+body.dark-mode .premium-features-list {
+  background: #0f0020;
+}
+
+body.dark-mode .premium-features-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-feature-item {
+  color: #E5E7EB;
+}
+
+body.dark-mode .premium-feature-item .premium-check {
+  color: #34D399;
+}
+
+/* Responsive for smaller screens */
+@media (min-width: 400px) {
+  .premium-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
