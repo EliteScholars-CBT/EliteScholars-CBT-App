@@ -7,7 +7,6 @@ import ExamTypeSelect from './components/ExamTypeSelect';
 import UniversitySelect from './components/UniversitySelect';
 import Flashcards from './components/Flashcards';
 import BottomNav from './components/BottomNav';
-// import DesktopSidebar from './components/DesktopSidebar';
 import Leaderboard from './components/Leaderboard';
 import Challenges from './components/Challenges';
 import Shop from './components/Shop';
@@ -50,7 +49,7 @@ const Ready     = lazy(() => import('./components/Ready'));
 const Quiz      = lazy(() => import('./components/Quiz'));
 const Result    = lazy(() => import('./components/Result'));
 const Profile   = lazy(() => import('./components/Profile'));
-const WaecLearn = lazy(() => import('./components/WaecLearn')); // still used for learn screen
+const Learn = lazy(() => import('./components/Learn')); // still used for learn screen
 const ShareGate = lazy(() => import('./components/ShareGate'));
 const AdGate    = lazy(() => import('./components/AdGate'));
 
@@ -142,7 +141,7 @@ export default function App() {
   const [sessionStart, setSessionStart]   = useState(null);
   const [usedFifty, setUsedFifty]         = useState(false);
   const [usedHint, setUsedHint]           = useState(false);
-  const [learnSubject, setLearnSubject]   = useState(null);  // replaces waecSubject
+  const [learnSubject, setLearnSubject]   = useState(null);  // replaces Subject
   const [questionLog, setQuestionLog]     = useState([]);
   const [premiumUser, setPremiumUser]     = useState(false);
   const [showLimitGate, setShowLimitGate] = useState(false);
@@ -400,9 +399,9 @@ export default function App() {
               />
             )}
 
-            {/* ── Learn mode (was waecLearn, now shared) ── */}
+            {/* ── Learn mode (was Learn, now shared) ── */}
             {screen === 'learn' && (
-              <WaecLearn
+              <Learn
                 subjectId={learnSubject}
                 onBack={() => setScreen('subjects')}
                 examType={examType}

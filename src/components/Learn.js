@@ -21,7 +21,7 @@ import {
 } from '../analytics/studyAnalytics';
 
 // ============================================================================
-// WaecLearn — Card-based learn mode
+// Learn — Card-based learn mode
 //
 // UX Flow:
 //   1. Topic list: cards with progress bar + ✓ badge when complete
@@ -121,7 +121,7 @@ function TopicCard({ topic, index, isActive, isDone, isLocked, color, onClick })
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
-export default function WaecLearn({ subjectId, onBack, onTopicComplete, examType = 'waec', email }) {
+export default function Learn({ subjectId, onBack, onTopicComplete, examType = 'waec', email }) {
   // Pick learn bank
   const learnData = examType === 'neco' ? NECO_LEARN
     : examType === 'gst'  ? GST_LEARN

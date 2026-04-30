@@ -198,8 +198,6 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
       <div className="challenge-play-overlay">
         <div className="challenge-play-banner">
           <BackButton onClick={() => setStep('setup')} light label="Setup" />
-          <span>⚔️ {subject} vs {opponentEmail}</span>
-          <span style={{ fontSize: 10, opacity: 0.7 }}>Score auto-sends when done</span>
         </div>
         <Quiz
           subjectId={subject}

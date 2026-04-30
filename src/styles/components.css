@@ -3904,3 +3904,10 @@ body.dark-mode .subjects-grid-card {
 .subjects-empty-btn:hover {
   filter: brightness(1.1);
 }
+
+.error-text {
+  color: #DC2626;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}
