@@ -344,7 +344,6 @@
    PROFILE SCREEN STYLES
    ============================================================================ */
 
-
 .profile-page {
   display: flex;
   flex-direction: column;
@@ -352,16 +351,16 @@
   overflow: hidden;
 }
 .profile-header {
-  padding: 44px 20px 68px;
+  padding: 33px 15px 51px;  /* 44px→33px, 20px→15px, 68px→51px */
   position: relative;
   flex-shrink: 0;
 }
 .profile-back {
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  margin-bottom: 16px;
+  margin-bottom: 12px;  /* 16px→12px */
   display: inline-block;
 }
 .profile-avatar {
@@ -372,45 +371,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 800;
   color: #280050;
-  margin: 0 auto 10px;
+  margin: 0 auto 7.5px;  /* 10px→7.5px */
   border: 3px solid rgba(255, 255, 255, 0.22);
 }
 .profile-name {
-  font-size: 19px;
+  font-size: 14.25px;
   font-weight: 800;
   color: #FFFFFF;
   text-align: center;
 }
 .profile-email {
-  font-size: 11px;
+  font-size: 8.25px;
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
-  margin-top: 2px;
+  margin-top: 1.5px;  /* 2px→1.5px */
 }
 .profile-badges {
   display: flex;
-  gap: 7px;
+  gap: 5.25px;  /* 7px→5.25px */
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 7.5px;  /* 10px→7.5px */
   flex-wrap: wrap;
 }
 .profile-streak-badge {
-  font-size: 10px;
+  font-size: 7.5px;
   font-weight: 700;
-  padding: 4px 11px;
-  border-radius: 20px;
+  padding: 3px 8.25px;  /* 4px→3px, 11px→8.25px */
+  border-radius: 15px;  /* 20px→15px */
   background: rgba(212, 175, 55, 0.2);
   border: 1px solid #D4AF37;
   color: #FFEB82;
 }
 .profile-rank-badge {
-  font-size: 10px;
+  font-size: 7.5px;
   font-weight: 700;
-  padding: 4px 11px;
-  border-radius: 20px;
+  padding: 3px 8.25px;  /* 4px→3px, 11px→8.25px */
+  border-radius: 15px;  /* 20px→15px */
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
@@ -424,8 +423,8 @@
 }
 .profile-tabs-scroll {
   display: flex;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 6px;  /* 8px→6px */
+  padding: 9px 12px;  /* 12px→9px, 16px→12px */
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
@@ -436,29 +435,29 @@
   scrollbar-width: thin;
   scrollbar-color: var(--gold) var(--border-color);
 }
-.profile-tabs-scroll::-webkit-scrollbar { height: 3px; }
+.profile-tabs-scroll::-webkit-scrollbar { height: 2.25px;  /* 3px→2.25px */ }
 .profile-tabs-scroll::-webkit-scrollbar-track {
   background: var(--border-color);
-  border-radius: 3px;
+  border-radius: 2.25px;  /* 3px→2.25px */
 }
 .profile-tabs-scroll::-webkit-scrollbar-thumb {
   background: var(--gold);
-  border-radius: 3px;
+  border-radius: 2.25px;  /* 3px→2.25px */
 }
 .profile-tab {
   flex-shrink: 0;
-  padding: 10px 20px;
+  padding: 7.5px 15px;  /* 10px→7.5px, 20px→15px */
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 30px;
-  font-size: 13px;
+  border-radius: 22.5px;  /* 30px→22.5px */
+  font-size: 9.75px;
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
-.profile-tab:hover { transform: translateY(-2px); }
+.profile-tab:hover { transform: translateY(-1.5px);  /* -2px→-1.5px */ }
 .profile-tab.active {
   background: var(--purple);
   border-color: var(--gold);
@@ -469,99 +468,99 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 15px;  /* 20px→15px */
   -webkit-overflow-scrolling: touch;
 }
-.profile-content-area::-webkit-scrollbar { width: 4px; }
+.profile-content-area::-webkit-scrollbar { width: 3px;  /* 4px→3px */ }
 .profile-content-area::-webkit-scrollbar-track {
   background: var(--border-color);
-  border-radius: 4px;
+  border-radius: 3px;  /* 4px→3px */
 }
 .profile-content-area::-webkit-scrollbar-thumb {
   background: var(--gold);
-  border-radius: 4px;
+  border-radius: 3px;  /* 4px→3px */
 }
 
 .profile-stats-section {
-  padding: 20px 16px;
+  padding: 15px 12px;  /* 20px→15px, 16px→12px */
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;  /* 16px→12px */
 }
 .profile-stats-title {
-  font-size: 11px;
+  font-size: 8.25px;
   font-weight: 700;
   color: #6B7280;
-  letter-spacing: 1px;
+  letter-spacing: 0.75px;  /* 1px→0.75px */
   text-transform: uppercase;
 }
 .profile-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 9px;
+  gap: 6.75px;  /* 9px→6.75px */
 }
 .profile-stat-card {
   background: #FFFFFF;
-  border-radius: 13px;
-  padding: 13px 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 9.75px;  /* 13px→9.75px */
+  padding: 9.75px 9px;  /* 13px→9.75px, 12px→9px */
+  box-shadow: 0 1.5px 7.5px rgba(0, 0, 0, 0.06);  /* 2px→1.5px, 10px→7.5px */
 }
 .profile-stat-value {
-  font-size: 22px;
+  font-size: 16.5px;
   font-weight: 800;
   color: #4B0082;
 }
 .profile-stat-label {
-  font-size: 10px;
+  font-size: 7.5px;
   color: #6B7280;
-  margin-top: 2px;
+  margin-top: 1.5px;  /* 2px→1.5px */
   font-weight: 600;
 }
 .profile-streak-card {
   background: linear-gradient(135deg, #280050, #4B0082);
-  border-radius: 13px;
-  padding: 14px 16px;
+  border-radius: 9.75px;  /* 13px→9.75px */
+  padding: 10.5px 12px;  /* 14px→10.5px, 16px→12px */
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;  /* 12px→9px */
 }
-.profile-streak-icon { font-size: 28px; }
+.profile-streak-icon { font-size: 21px; }
 .profile-streak-title {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 800;
   color: #D4AF37;
 }
 .profile-streak-text {
-  font-size: 11px;
+  font-size: 8.25px;
   color: rgba(255, 255, 255, 0.55);
-  margin-top: 1px;
+  margin-top: 0.75px;  /* 1px→0.75px */
 }
 .profile-signout-btn {
-  padding: 14px;
+  padding: 10.5px;  /* 14px→10.5px */
   background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.05));
   border: 1px solid rgba(220, 38, 38, 0.5);
-  border-radius: 13px;
-  font-size: 14px;
+  border-radius: 9.75px;  /* 13px→9.75px */
+  font-size: 10.5px;
   font-weight: 700;
   color: #DC2626;
   transition: all 0.2s;
-  margin-top: 20px;
+  margin-top: 15px;  /* 20px→15px */
 }
 .profile-signout-btn:hover {
   background: rgba(220, 38, 38, 0.25);
-  transform: translateY(-1px);
+  transform: translateY(-0.75px);  /* -1px→-0.75px */
 }
 .profile-signout-btn:active { transform: scale(0.98); }
 
 .profile-chart-section {
-  margin-top: 20px;
+  margin-top: 15px;  /* 20px→15px */
   background: white;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;  /* 16px→12px */
+  padding: 12px;  /* 16px→12px */
+  box-shadow: 0 1.5px 7.5px rgba(0, 0, 0, 0.05);  /* 2px→1.5px, 10px→7.5px */
 }
 .profile-chart-container {
-  margin-top: 12px;
+  margin-top: 9px;  /* 12px→9px */
   height: auto;
   width: 100%;
   overflow-x: auto;
@@ -570,44 +569,44 @@
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+  gap: 9px;  /* 12px→9px */
+  margin-top: 9px;  /* 12px→9px */
 }
 .achievement-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;  /* 12px→9px */
   background: white;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 9px;  /* 12px→9px */
+  padding: 9px;  /* 12px→9px */
+  box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.05);  /* 2px→1.5px, 8px→6px */
   transition: transform 0.2s;
 }
-.achievement-card:hover { transform: translateY(-2px); }
+.achievement-card:hover { transform: translateY(-1.5px);  /* -2px→-1.5px */ }
 .achievement-card.locked {
   opacity: 0.5;
   filter: grayscale(0.3);
 }
-.achievement-card-icon { font-size: 32px; }
+.achievement-card-icon { font-size: 24px; }
 .achievement-card-info { flex: 1; }
 .achievement-card-name {
-  font-size: 14px;
+  font-size: 10.5px;
   font-weight: 700;
   color: #1a0030;
-  margin-bottom: 2px;
+  margin-bottom: 1.5px;  /* 2px→1.5px */
 }
 .achievement-card-desc {
-  font-size: 11px;
+  font-size: 8.25px;
   color: #6B7280;
 }
 .profile-empty-state {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 15px;  /* 40px→30px, 20px→15px */
   background: white;
-  border-radius: 16px;
+  border-radius: 12px;  /* 16px→12px */
 }
-.profile-empty-icon { font-size: 48px; margin-bottom: 12px; }
-.profile-empty-text { font-size: 14px; color: #6B7280; }
+.profile-empty-icon { font-size: 36px; margin-bottom: 9px;  /* 12px→9px */ }
+.profile-empty-text { font-size: 10.5px; color: #6B7280; }
 
 /* ============================================================================
    TOAST NOTIFICATIONS
