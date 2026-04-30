@@ -201,3 +201,98 @@
   opacity: 0.6;
   cursor: wait;
 }
+
+/* Dark mode */
+body.dark-mode .premium-billing-toggle {
+  background: #3d2a5e;
+}
+
+body.dark-mode .premium-billing-btn {
+  color: #9CA3AF;
+}
+
+body.dark-mode .premium-billing-btn.active {
+  background: #6C3FC9;
+  color: #fff;
+}
+
+body.dark-mode .premium-save-badge {
+  background: #22C55E;
+  color: #0a0015;
+}
+
+body.dark-mode .premium-plan-card {
+  background: #1a0030;
+  border-color: #3d2a5e;
+}
+
+body.dark-mode .premium-plan-card.highlighted {
+  background: linear-gradient(160deg, #2d1b4e, #1a0030);
+  border-color: #D4AF37;
+}
+
+body.dark-mode .premium-plan-name {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-plan-price .premium-currency,
+body.dark-mode .premium-plan-price .premium-amount {
+  color: #D4AF37;
+}
+
+body.dark-mode .premium-plan-price .premium-period {
+  color: #9CA3AF;
+}
+
+body.dark-mode .premium-plan-feature {
+  color: #E5E7EB;
+}
+
+body.dark-mode .premium-plan-feature .premium-check {
+  color: #4ADE80;
+}
+
+body.dark-mode .premium-savings-badge {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ADE80;
+}
+
+body.dark-mode .premium-plan-cta.cta-primary {
+  background: linear-gradient(135deg, #4B0082, #6C3FC9);
+}
+
+body.dark-mode .premium-plan-cta.cta-secondary {
+  background: transparent;
+  color: #D4AF37;
+  border-color: #D4AF37;
+}
+
+body.dark-mode .premium-plan-cta.cta-secondary:hover {
+  background: #D4AF37;
+  color: #1a0030;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .premium-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .premium-billing-btn {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+  
+  .premium-plan-card {
+    padding: 20px 14px 18px;
+  }
+  
+  .premium-plan-name {
+    font-size: 14px;
+  }
+  
+  .premium-plan-price .premium-amount {
+    font-size: 24px;
+  }
+}
