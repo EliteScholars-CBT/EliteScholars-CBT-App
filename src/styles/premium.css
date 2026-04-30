@@ -119,47 +119,48 @@
 .premium-x     { color: #EF4444; font-weight: 700; flex-shrink: 0; }
 .premium-check { color: #16A34A; font-weight: 700; flex-shrink: 0; }
 
-/* ── Plan toggle ────────────────────────────────────────────────────────────── */
+/* ── Plan toggle — updated to match shop.css pill style ─────────────────────── */
 .premium-plan-toggle {
   display: flex;
-  background: #F3F0FF;
-  border-radius: 12px;
-  padding: 4px;
+  background: #E5E7EB;
+  border-radius: 30px;
+  padding: 3px;
+  gap: 2px;
   margin-bottom: 16px;
-  gap: 4px;
 }
 
 .premium-plan-btn {
   flex: 1;
-  padding: 10px 8px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 9px;
+  border-radius: 28px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
   color: #6B7280;
   background: transparent;
-  cursor: pointer;
   transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  position: relative;
+  white-space: nowrap;
 }
 
 .premium-plan-btn.active {
-  background: #fff;
-  color: #6C3FC9;
-  box-shadow: 0 2px 8px rgba(108, 63, 201, 0.15);
+  background: #4B0082;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(75, 0, 130, 0.25);
 }
 
 .premium-save-badge {
-  background: #D4AF37;
-  color: #1a0030;
+  background: #16A34A;
+  color: #fff;
   font-size: 8px;
-  font-weight: 800;
+  font-weight: 700;
   padding: 2px 6px;
-  border-radius: 8px;
+  border-radius: 20px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
 }
@@ -247,6 +248,16 @@
   font-size: 11px;
   color: #9CA3AF;
   margin-top: 6px;
+}
+
+.premium-plan-note {
+  font-size: 12px;
+  color: #374151;
+  background: #F3F0FF;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
 
 /* ── Success screen ─────────────────────────────────────────────────────────── */
@@ -516,6 +527,465 @@
   color: #D4AF37;
 }
 
+/* ============================================================================
+   DARK MODE — Premium modal & limit gate (separate section)
+   ============================================================================ */
+
+body.dark-mode .premium-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode .premium-modal {
+  background: #1a0030;
+  border-top: 1px solid #2d1b4e;
+}
+
+body.dark-mode .premium-close {
+  background: #2d1b4e;
+  color: #C4B5FD;
+}
+
+body.dark-mode .premium-title {
+  color: #F3F4F6;
+  -webkit-text-fill-color: unset;
+  background: linear-gradient(135deg, #C4B5FD, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark-mode .premium-tagline {
+  color: #9CA3AF;
+}
+
+/* Comparison grid dark mode */
+body.dark-mode .free-col {
+  background: #0f0020;
+  border-color: #2d1b4e;
+}
+
+body.dark-mode .premium-col {
+  background: linear-gradient(160deg, #2d1b4e, #1e0f3a);
+  border-color: #6C3FC9;
+}
+
+body.dark-mode .premium-col-label {
+  color: #9CA3AF;
+}
+
+body.dark-mode .premium-col-header {
+  color: #C4B5FD !important;
+}
+
+body.dark-mode .premium-compare-row {
+  color: #E5E7EB;
+}
+
+body.dark-mode .premium-x {
+  color: #F87171;
+}
+
+body.dark-mode .premium-check {
+  color: #34D399;
+}
+
+/* Toggle dark mode */
+body.dark-mode .premium-plan-toggle {
+  background: #3d2a5e;
+}
+
+body.dark-mode .premium-plan-btn {
+  color: #9CA3AF;
+}
+
+body.dark-mode .premium-plan-btn.active {
+  background: #6C3FC9;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(108, 63, 201, 0.25);
+}
+
+body.dark-mode .premium-save-badge {
+  background: #22C55E;
+  color: #0a0015;
+}
+
+/* Price display dark mode */
+body.dark-mode .premium-currency {
+  color: #C4B5FD;
+}
+
+body.dark-mode .premium-amount {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-period {
+  color: #9CA3AF;
+}
+
+body.dark-mode .premium-savings-note {
+  color: #86EFAC;
+  background: rgba(34, 197, 94, 0.15);
+}
+
+/* CTA button dark mode */
+body.dark-mode .premium-cta-btn {
+  background: linear-gradient(135deg, #6C3FC9, #4B0082);
+}
+
+/* Notes dark mode */
+body.dark-mode .premium-sim-note,
+body.dark-mode .premium-cancel-note {
+  color: #4B5563;
+}
+
+body.dark-mode .premium-plan-note {
+  color: #D1D5DB;
+  background: rgba(108, 63, 201, 0.15);
+}
+
+/* Success screen dark mode */
+body.dark-mode .premium-success-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-success-sub {
+  color: #9CA3AF;
+}
+
+/* Limit gate dark mode */
+body.dark-mode .limit-gate-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode .limit-gate-card {
+  background: #1a0030;
+}
+
+body.dark-mode .limit-gate-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .limit-gate-msg {
+  color: #9CA3AF;
+}
+
+body.dark-mode .limit-gate-timer-wrap {
+  background: #0f0020;
+}
+
+body.dark-mode .limit-gate-timer {
+  color: #C4B5FD;
+}
+
+body.dark-mode .limit-gate-timer-label,
+body.dark-mode .limit-gate-timer-sub {
+  color: #6B7280;
+}
+
+body.dark-mode .limit-gate-ready {
+  color: #4ADE80;
+}
+
+body.dark-mode .limit-gate-close-btn {
+  background: #2d1b4e;
+  color: #C4B5FD;
+}
+
+body.dark-mode .limit-gate-premium-btn {
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+}
+
+body.dark-mode .limit-gate-continue-btn {
+  background: linear-gradient(135deg, #6C3FC9, #4B0082);
+}
+
+/* Premium active box dark mode */
+body.dark-mode .premium-active-box {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+body.dark-mode .premium-active-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-active-expiry {
+  color: #D4AF37;
+}
+
+body.dark-mode .premium-manage-btn {
+  background: rgba(212, 175, 55, 0.1);
+  color: #D4AF37;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Shop premium card dark mode */
+body.dark-mode .shop-premium-card {
+  background: linear-gradient(135deg, #0a0015, #1a0030);
+}
+
+body.dark-mode .shop-already-premium {
+  background: rgba(212, 175, 55, 0.05);
+  color: #D4AF37;
+}
+
+/* Premium badge dark mode */
+body.dark-mode .premium-badge {
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+}/* ============================================================================
+   PREMIUM — Modal, pricing, limit gate, profile subscription section
+   ============================================================================ */
+
+/* ── Premium overlay ────────────────────────────────────────────────────────── */
+.premium-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 0, 30, 0.75);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  backdrop-filter: blur(4px);
+}
+
+.premium-modal {
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  width: 100%;
+  max-height: 92dvh;
+  overflow-y: auto;
+  padding: 28px 20px 36px;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.premium-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #F3F0FF;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: #6C3FC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.premium-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.premium-star {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.premium-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #1a0030;
+  background: linear-gradient(135deg, #6C3FC9, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-tagline {
+  font-size: 13px;
+  color: #6B7280;
+  margin-top: 4px;
+}
+
+/* ── Comparison grid ────────────────────────────────────────────────────────── */
+.premium-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.premium-compare-col {
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.free-col {
+  background: #F9FAFB;
+  border: 1.5px solid #E5E7EB;
+}
+
+.premium-col {
+  background: linear-gradient(160deg, #F3F0FF, #EDE9FE);
+  border: 1.5px solid #C4B5FD;
+}
+
+.premium-col-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6B7280;
+  margin-bottom: 4px;
+}
+
+.premium-col-header {
+  color: #6C3FC9 !important;
+}
+
+.premium-compare-row {
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.premium-x     { color: #EF4444; font-weight: 700; flex-shrink: 0; }
+.premium-check { color: #16A34A; font-weight: 700; flex-shrink: 0; }
+
+/* ── Plan toggle — updated to match shop.css pill style ─────────────────────── */
+.premium-plan-toggle {
+  display: flex;
+  background: #E5E7EB;
+  border-radius: 30px;
+  padding: 3px;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.premium-plan-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 28px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  color: #6B7280;
+  background: transparent;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.premium-plan-btn.active {
+  background: #4B0082;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(75, 0, 130, 0.25);
+}
+
+.premium-save-badge {
+  background: #16A34A;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* ── Price display ──────────────────────────────────────────────────────────── */
+.premium-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 4px;
+}
+
+.premium-currency {
+  font-size: 20px;
+  font-weight: 700;
+  color: #6C3FC9;
+}
+
+.premium-amount {
+  font-size: 40px;
+  font-weight: 900;
+  color: #1a0030;
+  line-height: 1;
+}
+
+.premium-period {
+  font-size: 14px;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.premium-savings-note {
+  text-align: center;
+  font-size: 12px;
+  color: #16A34A;
+  font-weight: 600;
+  margin-bottom: 16px;
+  background: #DCFCE7;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+/* ── CTA button ─────────────────────────────────────────────────────────────── */
+.premium-cta-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #6C3FC9, #4B0082);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(108, 63, 201, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.premium-cta-btn:active {
+  transform: scale(0.98);
+}
+
+.premium-cta-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.premium-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.premium-sim-note {
+  text-align: center;
+  font-size: 10px;
+  color: #9CA3AF;
+  margin-top: 8px;
+}
+
+.premium-cancel-note {
+  text-align: center;
+  font-size: 11px;
+  color: #9CA3AF;
+  margin-top: 6px;
+}
+
 .premium-plan-note {
   font-size: 12px;
   color: #374151;
@@ -524,4 +994,271 @@
   padding: 10px 12px;
   margin-bottom: 12px;
   line-height: 1.5;
+}
+
+/* ── Success screen ─────────────────────────────────────────────────────────── */
+.premium-success-icon {
+  text-align: center;
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+.premium-success-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 900;
+  color: #1a0030;
+  margin-bottom: 8px;
+}
+
+.premium-success-sub {
+  text-align: center;
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+/* ── Free limit gate ────────────────────────────────────────────────────────── */
+.limit-gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 0, 30, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.limit-gate-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px 22px 24px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.limit-gate-icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.limit-gate-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1a0030;
+  margin-bottom: 10px;
+}
+
+.limit-gate-msg {
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+/* Timer display */
+.limit-gate-timer-wrap {
+  background: #F3F0FF;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.limit-gate-timer-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.limit-gate-timer {
+  font-size: 36px;
+  font-weight: 900;
+  color: #6C3FC9;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.limit-gate-timer-sub {
+  font-size: 11px;
+  color: #9CA3AF;
+  margin-top: 6px;
+}
+
+.limit-gate-ready {
+  font-size: 15px;
+  font-weight: 700;
+  color: #16A34A;
+  margin-bottom: 16px;
+}
+
+.limit-gate-premium-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.limit-gate-continue-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6C3FC9, #4B0082);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.limit-gate-close-btn {
+  width: 100%;
+  padding: 12px;
+  background: #F3F0FF;
+  color: #6C3FC9;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Premium badge in profile / shop ────────────────────────────────────────── */
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.premium-active-box {
+  background: linear-gradient(135deg, #FFFBEB, #FEF3C7);
+  border: 1.5px solid #D4AF37;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.premium-active-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a0030;
+  margin-bottom: 4px;
+}
+
+.premium-active-expiry {
+  font-size: 11px;
+  color: #78350F;
+}
+
+.premium-manage-btn {
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: rgba(212, 175, 55, 0.15);
+  color: #B8961F;
+  border: 1px solid #D4AF37;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ── Shop premium card ──────────────────────────────────────────────────────── */
+.shop-premium-card {
+  background: linear-gradient(135deg, #1a0030, #4B0082);
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.shop-premium-card::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(212,175,55,0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.shop-premium-star {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.shop-premium-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.shop-premium-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+.shop-premium-features {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.shop-premium-feature {
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.shop-premium-cta {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(212,175,55,0.3);
+}
+
+.shop-already-premium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #D4AF37;
 }

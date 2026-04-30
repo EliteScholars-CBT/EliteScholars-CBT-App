@@ -138,6 +138,7 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
           </div>
         </div>
 
+        {/* Updated toggle — matching shop.css pill style */}
         <div className="premium-plan-toggle">
           <button
             className={`premium-plan-btn ${plan === 'pro' ? 'active' : ''}`}
@@ -149,7 +150,7 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
             className={`premium-plan-btn ${plan === 'monthly' ? 'active' : ''}`}
             onClick={() => setPlan('monthly')}
           >
-            Premium
+            Monthly
           </button>
           <button
             className={`premium-plan-btn ${plan === 'annual' ? 'active' : ''}`}
@@ -162,7 +163,7 @@ export default function PremiumModal({ email, name, onClose, onActivated, initia
 
         {plan === 'pro' && (
           <div className="premium-plan-note">
-            🚀 <strong>Pro</strong> — Best value for serious students. Core unlimited access at ₦3k/mo. No annual option.
+            🚀 <strong>Pro</strong> — Best value for serious students. Core unlimited access at ₦{FMT(PRO_MONTHLY_PRICE)}/mo. No annual option.
           </div>
         )}
 
