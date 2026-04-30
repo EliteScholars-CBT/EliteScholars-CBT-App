@@ -15,6 +15,7 @@ const EXAM_OPTIONS = [
   { id: 'postutme', label: 'POST UTME' },
   { id: 'waec',     label: 'WAEC' },
   { id: 'neco',     label: 'NECO' },
+  { id: 'gst',      label: 'GST' },
 ];
 
 const SUBJECT_OPTIONS = [
@@ -29,7 +30,7 @@ const SUBJECT_OPTIONS = [
   { id: 'literature',  label: 'Literature' },
 ];
 
-const NUM_QUESTIONS = 10;
+const NUM_QUESTIONS = 5;
 const TIME_LIMIT    = 60;
 
 export default function CreateChallenge({ userEmail, userName, onClose, onCreated }) {
@@ -118,10 +119,6 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           </div>
 
           <div className="modal-body">
-            <div className="challenge-flow-notice">
-              <span>📋</span>
-              <span>You'll <strong>play first</strong> — your score is automatically sent to your opponent.</span>
-            </div>
 
             {/* Opponent */}
             <div className="form-group">
@@ -129,7 +126,6 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
               <input type="email" placeholder="opponent@email.com" value={opponentEmail}
                 onChange={handleEmailChange} className={emailError ? 'input-error' : ''} />
               {emailError && <div className="error-text">{emailError}</div>}
-              <div className="helper-text">Must be a registered EliteScholars user.</div>
             </div>
 
             {/* Exam type */}
@@ -165,15 +161,15 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             {/* Quiz info */}
             <div className="challenge-info-box">
               <div className="info-row"><span>📚 Questions:</span><span><strong>{NUM_QUESTIONS}</strong></span></div>
-              <div className="info-row"><span>⏱️ Time/question:</span><span><strong>{TIME_LIMIT}s</strong></span></div>
+              <div className="info-row"><span>⏱️ Duration:</span><span><strong>{Math.round((TIME_LIMIT * NUM_QUESTIONS)/60)}s</strong></span></div>
             </div>
 
             {/* Message */}
             <div className="form-group">
               <label>Challenge Message</label>
               <select value={messageTemplate} onChange={(e) => setMsgTpl(e.target.value)}>
-                {messages.map((m) => <option key={m.message_id} value={m.message_id}>{m.message_text}</option>)}
                 <option value="custom">Custom message…</option>
+                {messages.map((m) => <option key={m.message_id} value={m.message_id}>{m.message_text}</option>)}
               </select>
             </div>
             {messageTemplate === 'custom' && (
@@ -182,16 +178,13 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
                   value={customMessage} onChange={(e) => setCustomMsg(e.target.value)} maxLength="100" />
               </div>
             )}
-            {selectedMessage && messageTemplate !== 'custom' && (
-              <div className="message-preview">"{selectedMessage.message_text}"</div>
-            )}
           </div>
 
           <div className="modal-footer">
             <button className="cancel-btn" onClick={onClose}>Cancel</button>
             <button className="send-btn" onClick={handleStartPlay}
               disabled={!!emailError || !opponentEmail}>
-              ▶ Play Your Round →
+              ▶ Play
             </button>
           </div>
         </div>
