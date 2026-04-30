@@ -16,8 +16,8 @@ export default function BottomNav({ currentScreen, onNavigate, userEmail }) {
   ];
 
   const STUDY_SCREENS = new Set([
-    'subjects','examType','modeSelect','waecSubjects','flashcardSubjects',
-    'universitySelect','ready','quiz','result','waecLearn','game',
+    'subjects','examType','universitySelect',
+'ready','quiz','result','learn','game',
   ]);
 
   return (
