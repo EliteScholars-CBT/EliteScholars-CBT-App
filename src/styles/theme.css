@@ -559,15 +559,8 @@ body.dark-mode .shop-item-footer { border-top-color: #2d1b4e; }
 body.dark-mode .shop-category-label { color: #C4B5FD; }
 body.dark-mode .shop-footer-note { color: #4B5563; }
 
-/* Premium active box dark mode */
-body.dark-mode .premium-active-box {
-  background: linear-gradient(135deg, #0a0015, #1a0030);
-  border-color: rgba(212, 175, 55, 0.3);
-}
-
-
 /* ============================================================================
-   DARK MODE — Premium modal & limit gate (separate section)
+   DARK MODE — Premium Modal (2-column grid style)
    ============================================================================ */
 
 body.dark-mode .premium-overlay {
@@ -584,7 +577,7 @@ body.dark-mode .premium-close {
   color: #C4B5FD;
 }
 
-body.dark-mode .premium-title {
+body.dark-mode .premium-header .premium-title {
   color: #F3F4F6;
   -webkit-text-fill-color: unset;
   background: linear-gradient(135deg, #C4B5FD, #D4AF37);
@@ -597,47 +590,16 @@ body.dark-mode .premium-tagline {
   color: #9CA3AF;
 }
 
-/* Comparison grid dark mode */
-body.dark-mode .free-col {
-  background: #0f0020;
-  border-color: #2d1b4e;
-}
-
-body.dark-mode .premium-col {
-  background: linear-gradient(160deg, #2d1b4e, #1e0f3a);
-  border-color: #6C3FC9;
-}
-
-body.dark-mode .premium-col-label {
-  color: #9CA3AF;
-}
-
-body.dark-mode .premium-col-header {
-  color: #C4B5FD !important;
-}
-
-body.dark-mode .premium-compare-row {
-  color: #E5E7EB;
-}
-
-body.dark-mode .premium-x {
-  color: #F87171;
-}
-
-body.dark-mode .premium-check {
-  color: #34D399;
-}
-
-/* Toggle dark mode */
-body.dark-mode .premium-plan-toggle {
+/* Billing Toggle Dark Mode */
+body.dark-mode .premium-billing-toggle {
   background: #3d2a5e;
 }
 
-body.dark-mode .premium-plan-btn {
+body.dark-mode .premium-billing-btn {
   color: #9CA3AF;
 }
 
-body.dark-mode .premium-plan-btn.active {
+body.dark-mode .premium-billing-btn.active {
   background: #6C3FC9;
   color: #fff;
   box-shadow: 0 2px 8px rgba(108, 63, 201, 0.25);
@@ -648,38 +610,74 @@ body.dark-mode .premium-save-badge {
   color: #0a0015;
 }
 
-/* Price display dark mode */
-body.dark-mode .premium-currency {
-  color: #C4B5FD;
+/* 2-Column Plans Grid Dark Mode */
+body.dark-mode .premium-plan-card {
+  background: #1a0030;
+  border-color: #3d2a5e;
 }
 
-body.dark-mode .premium-amount {
+body.dark-mode .premium-plan-card.highlighted {
+  background: linear-gradient(160deg, #2d1b4e, #1a0030);
+  border-color: #D4AF37;
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.12);
+}
+
+body.dark-mode .premium-plan-tag {
+  background: linear-gradient(135deg, #D4AF37, #FFEB82);
+  color: #1a0030;
+}
+
+body.dark-mode .premium-plan-name {
   color: #F3F4F6;
 }
 
-body.dark-mode .premium-period {
+body.dark-mode .premium-plan-price .premium-currency,
+body.dark-mode .premium-plan-price .premium-amount {
+  color: #D4AF37;
+}
+
+body.dark-mode .premium-plan-price .premium-period {
   color: #9CA3AF;
 }
 
-body.dark-mode .premium-savings-note {
-  color: #86EFAC;
+body.dark-mode .premium-plan-feature {
+  color: #E5E7EB;
+}
+
+body.dark-mode .premium-plan-feature .premium-check {
+  color: #4ADE80;
+}
+
+body.dark-mode .premium-savings-badge {
   background: rgba(34, 197, 94, 0.15);
+  color: #4ADE80;
 }
 
-/* CTA button dark mode */
-body.dark-mode .premium-cta-btn {
-  background: linear-gradient(135deg, #6C3FC9, #4B0082);
+/* CTA Buttons Dark Mode */
+body.dark-mode .premium-plan-cta.cta-primary {
+  background: linear-gradient(135deg, #4B0082, #6C3FC9);
+  color: #fff;
 }
 
-/* Notes dark mode */
+body.dark-mode .premium-plan-cta.cta-secondary {
+  background: transparent;
+  color: #D4AF37;
+  border: 1.5px solid #D4AF37;
+}
+
+body.dark-mode .premium-plan-cta.cta-secondary:hover {
+  background: #D4AF37;
+  color: #1a0030;
+}
+
+body.dark-mode .premium-plan-cta:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 body.dark-mode .premium-sim-note,
 body.dark-mode .premium-cancel-note {
   color: #4B5563;
-}
-
-body.dark-mode .premium-plan-note {
-  color: #D1D5DB;
-  background: rgba(108, 63, 201, 0.15);
 }
 
 /* Success screen dark mode */
@@ -691,7 +689,46 @@ body.dark-mode .premium-success-sub {
   color: #9CA3AF;
 }
 
-/* Limit gate dark mode */
+/* Premium active box dark mode (shared with shop) */
+body.dark-mode .premium-active-box {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+body.dark-mode .premium-active-title {
+  color: #F3F4F6;
+}
+
+body.dark-mode .premium-active-expiry {
+  color: #D4AF37;
+}
+
+body.dark-mode .premium-manage-btn {
+  background: rgba(212, 175, 55, 0.1);
+  color: #D4AF37;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Premium badge dark mode */
+body.dark-mode .premium-badge {
+  background: linear-gradient(135deg, #D4AF37, #B8961F);
+  color: #1a0030;
+}
+
+/* Shop premium card dark mode */
+body.dark-mode .shop-premium-card {
+  background: linear-gradient(135deg, #0a0015, #1a0030);
+}
+
+body.dark-mode .shop-already-premium {
+  background: rgba(212, 175, 55, 0.05);
+  color: #D4AF37;
+}
+
+/* ============================================================================
+   DARK MODE — Limit Gate
+   ============================================================================ */
+
 body.dark-mode .limit-gate-overlay {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -738,43 +775,6 @@ body.dark-mode .limit-gate-premium-btn {
 body.dark-mode .limit-gate-continue-btn {
   background: linear-gradient(135deg, #6C3FC9, #4B0082);
 }
-
-/* Premium active box dark mode */
-body.dark-mode .premium-active-box {
-  background: rgba(212, 175, 55, 0.08);
-  border-color: rgba(212, 175, 55, 0.25);
-}
-
-body.dark-mode .premium-active-title {
-  color: #F3F4F6;
-}
-
-body.dark-mode .premium-active-expiry {
-  color: #D4AF37;
-}
-
-body.dark-mode .premium-manage-btn {
-  background: rgba(212, 175, 55, 0.1);
-  color: #D4AF37;
-  border-color: rgba(212, 175, 55, 0.3);
-}
-
-/* Shop premium card dark mode */
-body.dark-mode .shop-premium-card {
-  background: linear-gradient(135deg, #0a0015, #1a0030);
-}
-
-body.dark-mode .shop-already-premium {
-  background: rgba(212, 175, 55, 0.05);
-  color: #D4AF37;
-}
-
-/* Premium badge dark mode */
-body.dark-mode .premium-badge {
-  background: linear-gradient(135deg, #D4AF37, #B8961F);
-  color: #1a0030;
-}
-
 
 /* ============================================================================
    DARK MODE — Ads
