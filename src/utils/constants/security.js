@@ -14,7 +14,7 @@ export const SECURITY_ENABLED = true;
 export const SECURITY_DISABLE_TEXT_SELECTION = true;
 
 // Blocks the right-click context menu across the entire app
-export const SECURITY_DISABLE_RIGHT_CLICK = false;
+export const SECURITY_DISABLE_RIGHT_CLICK = true;
 
 // Intercepts Ctrl+C / Ctrl+X so content cannot be copied or cut
 export const SECURITY_DISABLE_COPY_CUT = true;
