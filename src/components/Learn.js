@@ -190,6 +190,13 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     return () => stopSpeech();
   }, []);
 
+  useEffect(() => {
+  return () => {
+    endStudySession(email);
+    stopSpeech();
+  };
+}, [email]);
+
   // Collapse header on scroll inside topic view
   const handleScroll = () => {
     if (scrollRef.current && activeIdx !== null) {
@@ -313,7 +320,7 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
         <div className="learn-header learn-header-full"
           style={{ background: `linear-gradient(135deg,#1A1A2E,${meta.color || '#6C63FF'})` }}>
           <div className="learn-header-top-row">
-            <BackButton onClick={() => { stopSpeech(); onBack(); }} light />
+            <BackButton onClick={() => { endStudySession(email); stopSpeech(); onBack(); }} light />
             <div className="learn-font-controls">
               <button className="learn-font-btn" onClick={() => setFontSize((s) => Math.max(0, s - 1))} disabled={fontSize === 0} aria-label="Smaller text">A−</button>
               <button className="learn-font-btn" onClick={() => setFontSize((s) => Math.min(FONT_SIZES.length - 1, s + 1))} disabled={fontSize === FONT_SIZES.length - 1} aria-label="Larger text">A+</button>

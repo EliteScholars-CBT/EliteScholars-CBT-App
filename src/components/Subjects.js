@@ -140,21 +140,16 @@ export default function Subjects({
             <div className="subjects-welcome-text">{MODE_DESC[mode]}</div>
           </div>
           <div className="settings-group">
-            {onBack ? (
-              <button className="settings-group-btn theme-btn" onClick={onBack}>
-                <span className="settings-group-icon">←</span>
-                <span className="settings-group-text">Back</span>
-              </button>
-            ) : (
-              <button className="settings-group-btn profile-btn" onClick={onProfile}>
-                <span className="settings-group-icon">👤</span>
-                <span className="settings-group-text">Profile</span>
-              </button>
-            )}
-            <button className="settings-group-btn theme-btn" onClick={toggleTheme}>
-              <span className="settings-group-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
-              <span className="settings-group-text">{theme === 'light' ? 'Dark' : 'Light'}</span>
-            </button>
+            {onBack && (
+  <button className="settings-group-btn theme-btn" onClick={onBack}>
+    <span className="settings-group-icon">←</span>
+    <span className="settings-group-text">Back</span>
+  </button>
+)}
+<button className="settings-group-btn theme-btn" onClick={toggleTheme}>
+  <span className="settings-group-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
+  <span className="settings-group-text">{theme === 'light' ? 'Dark' : 'Light'}</span>
+</button>
           </div>
         </div>
       </div>

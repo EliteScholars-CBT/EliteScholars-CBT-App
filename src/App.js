@@ -154,23 +154,44 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
-  useEffect(() => {
-    applySecurityMeasures();
-    registerSW().then((reg) => {
-      if (reg) {
-        requestNotificationPermission().then((perm) => {
-          if (perm === 'granted') {
-            const u = loadUser();
-            if (u.name) scheduleDailyReminder(REMINDER_TIMES, u.name);
-          }
-        });
-      }
-    });
-    const unsub = listenForSWMessages((data) => {
-      if (data.type === 'challenge') setScreen('challenges');
-    });
-    return unsub;
-  }, []);
+useEffect(() => {
+  applySecurityMeasures();
+  registerSW().then((reg) => {
+    if (reg) {
+      requestNotificationPermission().then((perm) => {
+        if (perm === 'granted') {
+          const u = loadUser();
+          if (u.name) scheduleDailyReminder(REMINDER_TIMES, u.name);
+        }
+      });
+    }
+  });
+  const unsub = listenForSWMessages((data) => {
+    if (data.type === 'challenge') setScreen('challenges');
+  });
+  return unsub;
+}, []);
+
+// ── Session end tracking ─────────────────────────────────────────────────────
+useEffect(() => {
+  if (!email || !sessionStart) return;
+
+  const handleEnd = () => {
+    trackSessionEnd(email, Date.now() - sessionStart);
+  };
+
+  const handleVisibility = () => {
+    if (document.visibilityState === 'hidden') handleEnd();
+  };
+
+  window.addEventListener('beforeunload', handleEnd);
+  document.addEventListener('visibilitychange', handleVisibility);
+
+  return () => {
+    window.removeEventListener('beforeunload', handleEnd);
+    document.removeEventListener('visibilitychange', handleVisibility);
+  };
+}, [email, sessionStart]);
 
   // ── Load user data ───────────────────────────────────────────────────────────
   const loadUserData = useCallback((u) => {
@@ -189,6 +210,8 @@ export default function App() {
     setAchievements(loadAchievements(u.email));
     awardDailyLoginXP(u.email, u.name);
     startSession(u.email);
+    setSessionStart(Date.now());
+    trackSessionStart(u.email, u.name);
   }, []);
 
   const handleSplash = () => {
@@ -211,6 +234,8 @@ export default function App() {
     if (s.streak)    setStreak(s.streak);
     if (s.lastDate)  setLastDate(s.lastDate);
     startSession(e);
+    setSessionStart(Date.now());
+    trackSessionStart(e, n);
     awardDailyLoginXP(e, n);
     saveUser({ name: n, email: e, studentType: userData.studentType, selectedExams: userData.selectedExams, firstName: userData.firstName, lastName: userData.lastName });
     setScreen('examType');
