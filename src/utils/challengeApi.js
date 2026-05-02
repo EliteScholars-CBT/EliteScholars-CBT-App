@@ -1,12 +1,6 @@
-// challengeApi.js
-// FIX (Issue 4): createChallenge, acceptChallenge, declineChallenge, submitChallengeScore
-//   now use mode: 'no-cors' for POST calls (required by Google Apps Script).
-//   Since no-cors gives opaque responses, we optimistically return { success: true }
-//   after sending, just like addXP does. GET requests remain normal (they work fine).
 import { SHEETS_URL } from './constants';
 
 // Create a new challenge
-// FIX: Added mode: 'no-cors'. Returns optimistic success after send.
 export const createChallenge = async (
   challengerEmail,
   challengerName,

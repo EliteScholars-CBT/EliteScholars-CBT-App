@@ -1,6 +1,3 @@
-// analytics.js
-// FIX (Issue 9): trackSessionEnd now receives milliseconds from Date.now() diff,
-//                converts to HH:MM:SS for the formatted field.
 import { SHEETS_URL } from './constants';
 
 // ============================================================================
