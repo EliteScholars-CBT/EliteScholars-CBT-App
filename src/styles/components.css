@@ -3450,6 +3450,22 @@ body.dark-mode .challenge-info-box { background: rgba(108,63,201,0.15); }
 body.dark-mode .info-row { color: #C4B5FD; }
 body.dark-mode .info-row span:last-child { color: #F3F4F6; }
 
+@media (max-width: 480px) {
+  .history-opponent-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .history-score-line {
+    font-size: 11px;
+    word-break: break-all;
+  }
+  .challenges-list {
+    padding: 12px 14px 100px;
+    overflow-x: hidden;
+  }
+}
+
 /* ============================================================================
    SHAREGATE — General messaging, dual timers
    ============================================================================ */
