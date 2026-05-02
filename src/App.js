@@ -58,7 +58,6 @@ import appLogo from './assets/elite-scholars-cbt-logo.png';
 
 const LoadingScreen = () => (
   <div className="loading-screen" style={{ background: 'linear-gradient(160deg, #1a0030, #4B0082, #1a0030)' }}>
-    <img src={appLogo} alt="EliteScholars" className="loading-screen-logo-img" />
     <div className="loading-spinner" />
   </div>
 );

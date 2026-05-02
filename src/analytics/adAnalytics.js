@@ -61,8 +61,8 @@ function track(type, data) {
  * @param {string} adId - ad identifier
  * @param {string} examType - current exam context
  */
-export function trackAdImpression(adType, adId, examType = '') {
-  return track('ad_impression', { adType, adId, examType });
+export function trackAdImpression(adType, adId, examType = '', link = '') {
+  return track('ad_impression', { adType, adId, examType, link });
 }
 
 /**
@@ -77,12 +77,12 @@ export function trackAdClick(adType, adId, link = '', examType = '') {
 }
 
 /**
- * Track how long an ad was visible (viewability in ms).
+ * Track how long an ad was visible (viewability in seconds).
  * @param {string} adId
  * @param {number} visibleMs
  */
-export function trackAdViewTime(adId, visibleMs) {
-  return track('ad_view_time', { adId, visibleMs });
+export function trackAdViewTime(adId, visibleMs, link = '') {
+  return track('ad_view_time', { adId, link, visibleSec: Math.round((visibleMs / 1000) * 10) / 10 });
 }
 
 /**
@@ -107,7 +107,7 @@ export function flushAdAnalytics() {
 let _observer = null;
 const _viewStarts = new Map();
 
-export function observeAdElement(el, adId, adType, examType) {
+export function observeAdElement(el, adId, adType, examType, adLink) {
   if (!el || !('IntersectionObserver' in window)) return () => {};
 
   if (!_observer) {
@@ -116,12 +116,12 @@ export function observeAdElement(el, adId, adType, examType) {
         const id = entry.target.dataset.adId;
         if (!id) return;
         if (entry.isIntersecting) {
-          trackAdImpression(entry.target.dataset.adType, id, entry.target.dataset.examType);
+          trackAdImpression(entry.target.dataset.adType, id, entry.target.dataset.examType, entry.target.dataset.adLink || '');
           _viewStarts.set(id, Date.now());
         } else {
           const start = _viewStarts.get(id);
           if (start) {
-            trackAdViewTime(id, Date.now() - start);
+            trackAdViewTime(id, Date.now() - start, entry.target.dataset.adLink || '');
             _viewStarts.delete(id);
           }
         }
@@ -132,6 +132,7 @@ export function observeAdElement(el, adId, adType, examType) {
   el.dataset.adId    = adId;
   el.dataset.adType  = adType;
   el.dataset.examType = examType || '';
+  el.dataset.adLink   = adLink || '';
   _observer.observe(el);
 
   return () => _observer.unobserve(el);
