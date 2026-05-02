@@ -135,14 +135,6 @@ export default function Challenges({ userEmail, userName }) {
         >
           History
         </button>
-        <button
-          className="tab-btn"
-          onClick={() => loadChallenges(true)}
-          style={{ marginLeft: 'auto', fontSize: 13 }}
-          title="Refresh"
-        >
-          🔄
-        </button>
       </div>
 
       {loading ? (
