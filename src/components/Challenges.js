@@ -5,6 +5,7 @@ import {
   acceptChallenge,
   declineChallenge,
   submitChallengeScore,
+  getChallengeMessages
 } from '../utils/challengeApi';
 import CreateChallenge from './CreateChallenge';
 import Quiz from './Quiz';
@@ -21,6 +22,8 @@ export default function Challenges({ userEmail, userName }) {
   const [score, setScore]                   = useState(0);
   const [correct, setCorrect]               = useState(0);
   const [totalQ, setTotalQ]                 = useState(0);
+
+  const [messages, setMessages] = useState([]);
 
   const loadChallenges = useCallback(async (silent = false) => {
     if (!userEmail) return;
@@ -40,6 +43,10 @@ export default function Challenges({ userEmail, userName }) {
   }, [userEmail, activeTab]);
 
   useEffect(() => {
+  getChallengeMessages().then(setMessages);
+}, []);
+
+  useEffect(() => {
     if (userEmail) loadChallenges(false);
   }, [loadChallenges]);
 
@@ -49,6 +56,7 @@ export default function Challenges({ userEmail, userName }) {
     const interval = setInterval(() => loadChallenges(true), 20000);
     return () => clearInterval(interval);
   }, [loadChallenges]);
+
 
   // ── Accept — mark accepted then launch quiz ───────────────────────────────
   const handleAccept = async (challenge) => {
@@ -180,7 +188,9 @@ export default function Challenges({ userEmail, userName }) {
                   </div>
 
                   <div className="challenge-message">
-                    "{challenge.custom_message || challenge.message_template}"
+                    "{challenge.custom_message || 
+                      messages.find(m => m.message_id === challenge.message_template)?.message_text || 
+                      challenge.message_template}"
                   </div>
 
                   {/* Opponent — pending: show Accept/Decline */}
