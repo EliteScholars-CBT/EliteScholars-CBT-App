@@ -149,7 +149,7 @@ export default function Challenges({ userEmail, userName }) {
         <div className="history-card-top">
           <div className="history-opponent-name">
             vs <strong>{opponentName}</strong>
-            <span className="history-subject"> · {challenge.subject.toUppercase()}</span>
+            <span className="history-subject"> · {challenge.subject.toUpperCase()}</span>
           </div>
           {getStatusBadge(status)}
         </div>
