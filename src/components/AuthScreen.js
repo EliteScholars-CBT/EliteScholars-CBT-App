@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
-import logo from '../assets/elite-scholars-cbt-logo.png';
+import logo from '../assets/elite-scholars-logo.png';
 import { registerUser, loginUser, forgotPassword, resetPassword } from '../utils/auth';
 import { GOLD } from '../utils/colors';
 
 const EXAM_TYPES = [
   { id: 'jamb',     label: 'JAMB UTME',    icon: '📝' },
   { id: 'waec',     label: 'WAEC',         icon: '📋' },
+  // { id: 'gce',     label:   'GCE',         icon: '📘' },
   { id: 'neco',     label: 'NECO',         icon: '📄' },
   { id: 'postutme', label: 'POST UTME',    icon: '🎓' },
   { id: 'gst',      label: 'GST (Uni)',     icon: '🏛️' },
 ];
 
 const STUDENT_TYPES = [
-  { id: 'senior_school', label: 'Senior School Student', desc: 'SS1 – SS3 / WAEC / JAMB', icon: '🏫' },
-  { id: 'university',    label: 'University Student',    desc: '100L – 400L / GST / POST UTME', icon: '🎓' },
+{ 
+  id: 'senior_school', 
+  label: 'Senior School Student', 
+  desc: 'SS1 – SS3 • WAEC • NECO • GCE', 
+  icon: '🏫' 
+},
+{ 
+  id: 'aspirant', 
+  label: 'Aspirant', 
+  desc: 'Preparing for JAMB & Post-UTME', 
+  icon: '🎯' 
+},
+{ 
+  id: 'university',    
+  label: 'University Student',    
+  desc: '100L – 500L • GST / GNS Courses', 
+  icon: '🎓' 
+},
 ];
 
 function validate(fields) {
@@ -216,10 +233,10 @@ export default function AuthScreen({ onDone }) {
               </div>
 
               {error && <div className="auth-error">{error}</div>}
-              <div style={{ display: 'flex', gap: 10 }}>
+              <div style={{ display: 'flex', gap: 10}}>
                 <button className="auth-btn auth-btn-outline" onClick={() => setStep(1)}>← Back</button>
                 <button className="auth-btn" onClick={handleSignupStep2} disabled={loading} style={{ flex: 1 }}>
-                  {loading ? 'Creating account…' : 'Get Started 🚀'}
+                  {loading ? 'Creating account…' : 'Get Started'}
                 </button>
               </div>
             </>

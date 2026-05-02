@@ -269,6 +269,7 @@ body.dark-mode .auth-success {
 
 /* ── Primary button ──────────────────────────────────────────────────────────── */
 .auth-btn {
+  flex: 1;
   width: 100%;
   padding: 10px 20px;
   background: linear-gradient(135deg, #4B0082, #6C3FC9);
@@ -332,6 +333,7 @@ body.dark-mode .auth-btn-outline:hover:not(:disabled) {
 body.dark-mode .auth-switch { color: #9CA3AF; }
 
 .auth-link-btn {
+  flex: 1;
   background: none;
   border: none;
   font-size: 12px;
