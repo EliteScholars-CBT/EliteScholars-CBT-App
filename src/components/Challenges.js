@@ -142,16 +142,14 @@ export default function Challenges({ userEmail, userName }) {
     const oppScoreDisplay = (isPending || isDeclined) ? '?' : oppScore;
     const scoreLine = `${myName} ${myScore}  —  ${opponentName} ${oppScoreDisplay}`;
 
-    const dateStr = isCompleted
-      ? challenge.completed_at?.toString().split(' ')[0]
-      : challenge.expires_at?.toString().split(' ')[0] || '';
+    const dateStr = new Date(isCompleted ? challenge.completed_at : challenge.expires_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
 
     return (
       <div key={challenge.challenge_id} className="history-card">
         <div className="history-card-top">
           <div className="history-opponent-name">
             vs <strong>{opponentName}</strong>
-            <span className="history-subject"> · {challenge.subject}</span>
+            <span className="history-subject"> · {challenge.subject.toUppercase()}</span>
           </div>
           {getStatusBadge(status)}
         </div>
