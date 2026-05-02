@@ -3417,6 +3417,39 @@ body.dark-mode .lekki-card:hover {
   color: #4B0082;
 }
 
+/* ── History card ── */
+.history-card { background: var(--card-bg, #fff); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.history-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.history-opponent-name { font-size: 13px; font-weight: 600; color: var(--text-primary, #1a0030); }
+.history-subject { font-size: 11px; color: var(--text-secondary, #6B7280); font-weight: 400; }
+.history-result-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.history-result-icon { font-size: 16px; }
+.history-result-text { font-size: 13px; font-weight: 700; }
+.history-result-row.win      .history-result-text { color: #16A34A; }
+.history-result-row.loss     .history-result-text { color: #DC2626; }
+.history-result-row.draw     .history-result-text { color: #D4AF37; }
+.history-result-row.declined .history-result-text { color: #6B7280; }
+.history-result-row.pending  .history-result-text { color: #6C3FC9; }
+.history-score-line { font-size: 12px; color: var(--text-secondary, #6B7280); margin-bottom: 4px; }
+.history-date { font-size: 10px; color: var(--text-secondary, #9CA3AF); }
+
+/* ── Badge additions ── */
+.badge-declined { background: #FEE2E2; color: #DC2626; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+
+/* ── Create challenge info box ── */
+.challenge-info-box { background: #F3EEFF; border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+.info-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #4B0082; }
+.info-row span:last-child { font-weight: 700; color: #1a0030; }
+
+/* ── Dark mode ── */
+body.dark-mode .history-card { background: var(--card-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+body.dark-mode .history-opponent-name { color: var(--text-primary); }
+body.dark-mode .history-result-row.draw .history-result-text { color: #D4AF37; }
+body.dark-mode .badge-declined { background: rgba(220,38,38,0.15); color: #FCA5A5; }
+body.dark-mode .challenge-info-box { background: rgba(108,63,201,0.15); }
+body.dark-mode .info-row { color: #C4B5FD; }
+body.dark-mode .info-row span:last-child { color: #F3F4F6; }
+
 /* ============================================================================
    SHAREGATE — General messaging, dual timers
    ============================================================================ */
