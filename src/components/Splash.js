@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { GOLD, WHITE, LGOLD } from '../utils/colors';
 import { SFX } from '../utils/sounds';
 import { loadPopoverAd } from '../utils/ads';
-import logo from '../assets/elite-scholars-cbt-logo.png';
+import logo from '../assets/elite-scholars-logo.png';
 
 export default function Splash({ onDone }) {
   const stars = useRef(Array.from({ length: 22 }, (_, i) => ({
