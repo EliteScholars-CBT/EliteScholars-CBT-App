@@ -50,7 +50,7 @@ const Ready     = lazy(() => import('./components/Ready'));
 const Quiz      = lazy(() => import('./components/Quiz'));
 const Result    = lazy(() => import('./components/Result'));
 const Profile   = lazy(() => import('./components/Profile'));
-const Learn = lazy(() => import('./components/Learn')); // still used for learn screen
+const Learn     = lazy(() => import('./components/Learn')); // still used for learn screen
 const ShareGate = lazy(() => import('./components/ShareGate'));
 const AdGate    = lazy(() => import('./components/AdGate'));
 
