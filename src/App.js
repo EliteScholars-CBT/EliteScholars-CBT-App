@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
+import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import AuthScreen from './components/AuthScreen';
@@ -213,32 +214,73 @@ useEffect(() => {
     trackSessionStart(u.email, u.name);
   }, []);
 
-  const handleSplash = () => {
-    const u = loadUser();
-    if (u.name && u.email) { loadUserData(u); setScreen('examType'); }
-    else setScreen('onboard');
-  };
+  const handleSplash = async () => {
+  const u = loadUser();
+  if (u.email && u.passwordHash) {
+    // Verify stored credentials against sheet
+    try {
+      const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
+      if (result.success) {
+        // Hydrate from server profile
+        const p = result.profile;
+        loadUserData({
+          ...u,
+          studentType:   p.studentType  || u.studentType,
+          selectedExams: p.selectedExams || u.selectedExams || [],
+        });
+        // Restore server stats if newer
+        if (p.stats)             saveStats(p.stats, u.email);
+        if (p.achievements)      saveAchievements(p.achievements, u.email);
+        if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
+        setScreen('examType');
+        return;
+      }
+    } catch {}
+    // If verification fails, still let them in with local data
+    loadUserData(u);
+    setScreen('examType');
+  } else if (u.email && !u.passwordHash) {
+    // Old user with no password — force logout
+    localStorage.removeItem('ep_user');
+    setScreen('onboard');
+  } else {
+    setScreen('onboard');
+  }
+};
 
   const handleOnboard = (userData) => {
-    const n = userData.name;
-    const e = userData.email;
-    setName(n); setEmail(e);
-    setStudentType(userData.studentType || '');
-    setSelectedExams(userData.selectedExams || []);
-    setPremiumUser(isPremium(e));
-    const s = loadStats(e);
-    if (s.sessions)  setSessions(s.sessions);
-    if (s.allScores) setAllScores(s.allScores);
-    if (s.bestScore) setBestScore(s.bestScore);
-    if (s.streak)    setStreak(s.streak);
-    if (s.lastDate)  setLastDate(s.lastDate);
-    startSession(e);
-    setSessionStart(Date.now());
-    trackSessionStart(e, n);
-    awardDailyLoginXP(e, n);
-    saveUser({ name: n, email: e, studentType: userData.studentType, selectedExams: userData.selectedExams, firstName: userData.firstName, lastName: userData.lastName });
-    setScreen('examType');
-  };
+  const n = userData.name;
+  const e = userData.email;
+  setName(n); setEmail(e);
+  setStudentType(userData.studentType || '');
+  setSelectedExams(userData.selectedExams || []);
+  setPremiumUser(isPremium(e));
+
+  // Hydrate from server if available (login case)
+  const s = userData.serverStats || loadStats(e);
+  if (s.sessions)  setSessions(s.sessions);
+  if (s.allScores) setAllScores(s.allScores);
+  if (s.bestScore) setBestScore(s.bestScore);
+  if (s.streak)    setStreak(s.streak);
+  if (s.lastDate)  setLastDate(s.lastDate);
+  if (userData.serverStats)          saveStats(userData.serverStats, e);
+  if (userData.serverAchievements)   { setAchievements(userData.serverAchievements); saveAchievements(userData.serverAchievements, e); }
+  if (userData.serverSubjectPerf)    saveSubjectPerformance(userData.serverSubjectPerf, e);
+
+  startSession(e);
+  setSessionStart(Date.now());
+  trackSessionStart(e, n);
+  awardDailyLoginXP(e, n);
+  saveUser({
+    name: n, email: e,
+    studentType: userData.studentType,
+    selectedExams: userData.selectedExams,
+    firstName: userData.firstName,
+    lastName: userData.lastName,
+    passwordHash: userData.passwordHash,
+  });
+  setScreen('examType');
+};
 
   // ── Session expiry check ─────────────────────────────────────────────────────
   const checkSessionLimit = useCallback(() => {
@@ -322,6 +364,16 @@ useEffect(() => {
     setSessions(ns); setAllScores(nsc); setBestScore(nb);
     setStreak(newStreak); setLastDate(today);
     saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today }, email);
+
+// Sync to server every 5 quizzes
+if (ns % 5 === 0) {
+  syncProfileToSheet({
+    email,
+    stats: { sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today },
+    achievements,
+    subjectPerformance: newPerf,
+  });
+}
 
     const perfectScores   = allScores.filter((s) => s === 100).length + (pct === 100 ? 1 : 0);
     const ninetyPlusCount = allScores.filter((s) => s >= 90).length  + (pct >= 90  ? 1 : 0);
