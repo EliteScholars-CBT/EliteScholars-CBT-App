@@ -214,31 +214,31 @@ useEffect(() => {
     trackSessionStart(u.email, u.name);
   }, []);
 
-  const handleSplash = async () => {
+  
+const handleSplash = async () => {
   const u = loadUser();
+
   if (u.email && u.passwordHash) {
-    // Verify stored credentials against sheet
-    try {
-      const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
-      if (result.success) {
-        // Hydrate from server profile
-        const p = result.profile;
-        loadUserData({
-          ...u,
-          studentType:   p.studentType  || u.studentType,
-          selectedExams: p.selectedExams || u.selectedExams || [],
-        });
-        // Restore server stats if newer
-        if (p.stats)             saveStats(p.stats, u.email);
-        if (p.achievements)      saveAchievements(p.achievements, u.email);
-        if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
-        setScreen('examType');
-        return;
-      }
-    } catch {}
-    // If verification fails, still let them in with local data
+    // Has valid local credentials — log in immediately, no network call needed
     loadUserData(u);
     setScreen('examType');
+
+    // Silently sync from server in background once a day
+    const lastVerified = localStorage.getItem(`ep_verified_${u.email}`);
+    const oneDayAgo    = Date.now() - 24 * 60 * 60 * 1000;
+    if (!lastVerified || parseInt(lastVerified) < oneDayAgo) {
+      try {
+        const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
+        if (result.success) {
+          const p = result.profile;
+          if (p.stats)              saveStats(p.stats, u.email);
+          if (p.achievements)       saveAchievements(p.achievements, u.email);
+          if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
+          localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
+        }
+      } catch {}
+    }
+
   } else if (u.email && !u.passwordHash) {
     // Old user with no password — force logout
     localStorage.removeItem('ep_user');
