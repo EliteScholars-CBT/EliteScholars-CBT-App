@@ -216,35 +216,37 @@ useEffect(() => {
 
   
 const handleSplash = async () => {
-  const u = loadUser();
+  try {
+    const u = loadUser();
 
-  if (u.email && u.passwordHash) {
-    // Has valid local credentials — log in immediately, no network call needed
-    loadUserData(u);
-    setScreen('examType');
-
-    // Silently sync from server in background once a day
-    const lastVerified = localStorage.getItem(`ep_verified_${u.email}`);
-    const oneDayAgo    = Date.now() - 24 * 60 * 60 * 1000;
-    if (!lastVerified || parseInt(lastVerified) < oneDayAgo) {
-      try {
-        const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
-        if (result.success) {
-          const p = result.profile;
-          if (p.stats)              saveStats(p.stats, u.email);
-          if (p.achievements)       saveAchievements(p.achievements, u.email);
-          if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
-          localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
-        }
-      } catch {}
+    if (u.email && u.passwordHash) {
+      loadUserData(u);
+      setScreen('examType');
+      
+      // Fire and forget - completely non-blocking
+      setTimeout(() => {
+        verifyProfile({ email: u.email, passwordHash: u.passwordHash })
+          .then(result => {
+            if (result.success) {
+              const p = result.profile;
+              if (p.stats) saveStats(p.stats, u.email);
+              if (p.achievements) saveAchievements(p.achievements, u.email);
+              if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
+              localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
+            }
+          })
+          .catch(() => {}); // Silent fail, user unaffected
+      }, 0);
+      
+    } else if (u.email && !u.passwordHash) {
+      localStorage.removeItem('ep_user');
+      setScreen('onboard');
+    } else {
+      setScreen('onboard');
     }
-
-  } else if (u.email && !u.passwordHash) {
-    // Old user with no password — force logout
-    localStorage.removeItem('ep_user');
-    setScreen('onboard');
-  } else {
-    setScreen('onboard');
+  } catch (err) {
+    console.error('Splash error:', err);
+    setScreen('onboard'); // fallback
   }
 };
 
