@@ -98,6 +98,7 @@ export default function AuthScreen({ onDone }) {
         serverStats:          u.stats,
         serverAchievements:   u.achievements,
         serverSubjectPerf:    u.subjectPerformance,
+        passwordHash: u.passwordHash
       });
     } catch {
       err('Network error. Please check your connection.');
@@ -144,6 +145,7 @@ export default function AuthScreen({ onDone }) {
         studentType:   u.studentType,
         selectedExams: u.selectedExams || [],
         isNew:         true,
+        passwordHash: u.passwordHash
       });
     } catch {
       err('Network error. Please check your connection.');
