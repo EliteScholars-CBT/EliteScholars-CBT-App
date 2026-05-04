@@ -193,9 +193,6 @@ export default function Result({
           </button>
         )}
 
-        <button className="profile-view-btn" onClick={onProfile}>
-          📊 View My Profile
-        </button>
         <button className="back-menu-btn" onClick={onHome}>
           ⌂ Back to Main Menu
         </button>
