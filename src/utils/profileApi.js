@@ -1,108 +1,110 @@
 // ============================================================================
-// profileApi.js — Server-side profile management via Google Apps Script
-// Handles register, login, profile sync, stats/achievements update
+// profileApi.js — Auth via Vercel API, sync via Apps Script
 // ============================================================================
 
 import { SHEETS_URL } from './constants';
 
-// ── SHA-256 password hashing (Web Crypto API) ─────────────────────────────────
-export async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password + 'ep_salt_2025');
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+async function apiPost(endpoint, body) {
+  const res = await fetch(endpoint, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify(body),
+  });
+  return res.json();
 }
 
-// ── GET helper ────────────────────────────────────────────────────────────────
-async function get(params) {
-  try {
-    const url = `${SHEETS_URL}?${new URLSearchParams(params)}`;
-    const res = await fetch(url);
-    return await res.json();
-  } catch (err) {
-    console.error('profileApi GET error:', err);
-    return { success: false, error: err.message };
-  }
+async function apiGet(endpoint, params = {}) {
+  const qs  = new URLSearchParams(params).toString();
+  const res = await fetch(`${endpoint}${qs ? '?' + qs : ''}`);
+  return res.json();
 }
 
-// ── POST helper ───────────────────────────────────────────────────────────────
-async function post(body) {
+// ── Auth ──────────────────────────────────────────────────────────────────────
+export async function registerProfile({ firstName, lastName, email, password, studentType, selectedExams }) {
+  return apiPost('/api/auth/register', { firstName, lastName, email, password, studentType, selectedExams });
+}
+
+export async function loginProfile({ email, password }) {
+  return apiPost('/api/auth/login', { email, password });
+}
+
+export async function verifyProfile({ email, passwordHash }) {
+  return apiPost('/api/auth/verify', { email, passwordHash });
+}
+
+export async function requestPasswordReset(email) {
+  return apiPost('/api/auth/forgot', { email });
+}
+
+export async function confirmPasswordReset({ email, code, newPassword }) {
+  return apiPost('/api/auth/reset', { email, code, newPassword });
+}
+
+// ── Payment ───────────────────────────────────────────────────────────────────
+export async function initiatePayment({ email, name, plan }) {
+  return apiPost('/api/payment/initiate', { email, name, plan });
+}
+
+export async function fetchPremiumStatus(email) {
+  return apiGet('/api/payment/status', { email });
+}
+
+// ── Content ───────────────────────────────────────────────────────────────────
+export async function fetchSubjects(exam) {
+  return apiGet('/api/subjects', { exam });
+}
+
+export async function fetchQuestions({ exam, subject, university, count = 5, seed }) {
+  return apiGet('/api/questions', {
+    exam, subject, count,
+    seed: seed || String(Date.now()),
+    ...(university && { university }),
+  });
+}
+
+export async function fetchLearnTopics(subject) {
+  return apiGet('/api/learn', { subject });
+}
+
+export async function fetchFlashcards(subject) {
+  return apiGet('/api/flashcards', { subject });
+}
+
+export async function fetchShopData() {
+  return apiGet('/api/shop');
+}
+
+export async function fetchAds(exam) {
+  return apiGet('/api/ads', { exam: exam || 'all' });
+}
+
+// ── Profile sync — push + pull merged ────────────────────────────────────────
+export async function syncProfileToSheet({ email, stats, achievements, subjectPerformance, theme }) {
   try {
     await fetch(SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
+      method:  'POST',
+      mode:    'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body:    JSON.stringify({
+        action:             'syncProfile',
+        email:              email.toLowerCase().trim(),
+        stats:              JSON.stringify(stats || {}),
+        achievements:       JSON.stringify(achievements || []),
+        subjectPerformance: JSON.stringify(subjectPerformance || {}),
+        theme:              theme || 'light',
+        lastSync:           new Date().toISOString(),
+      }),
     });
-    return { success: true };
-  } catch (err) {
-    console.error('profileApi POST error:', err);
-    return { success: false, error: err.message };
+  } catch {}
+}
+
+// ── Pull profile from sheet (called on every login) ───────────────────────────
+export async function pullProfileFromSheet(email) {
+  try {
+    const qs  = new URLSearchParams({ action: 'loginProfile', email: email.toLowerCase().trim(), passwordHash: '__pull_only__' });
+    const res = await fetch(`${SHEETS_URL}?${qs}`);
+    return await res.json();
+  } catch {
+    return null;
   }
-}
-
-// ── Register ──────────────────────────────────────────────────────────────────
-export async function registerProfile({ firstName, lastName, email, password, studentType, selectedExams }) {
-  const passwordHash = await hashPassword(password);
-  return get({
-    action: 'registerProfile',
-    email: email.toLowerCase().trim(),
-    firstName,
-    lastName,
-    passwordHash,
-    studentType,
-    selectedExams: JSON.stringify(selectedExams),
-  });
-}
-
-// ── Login ─────────────────────────────────────────────────────────────────────
-export async function loginProfile({ email, password }) {
-  const passwordHash = await hashPassword(password);
-  return get({
-    action: 'loginProfile',
-    email: email.toLowerCase().trim(),
-    passwordHash,
-  });
-}
-
-// ── Verify token (auto-login) ─────────────────────────────────────────────────
-export async function verifyProfile({ email, passwordHash }) {
-  return get({
-    action: 'loginProfile',
-    email: email.toLowerCase().trim(),
-    passwordHash,
-  });
-}
-
-// ── Sync profile back to sheet after key events ───────────────────────────────
-export async function syncProfileToSheet({ email, stats, achievements, subjectPerformance, theme }) {
-  return post({
-    action: 'syncProfile',
-    email: email.toLowerCase().trim(),
-    stats:              JSON.stringify(stats || {}),
-    achievements:       JSON.stringify(achievements || []),
-    subjectPerformance: JSON.stringify(subjectPerformance || {}),
-    theme:              theme || 'light',
-    lastSync:           new Date().toISOString(),
-  });
-}
-
-// ── Forgot password — request reset code ─────────────────────────────────────
-export async function requestPasswordReset(email) {
-  return get({
-    action: 'requestPasswordReset',
-    email: email.toLowerCase().trim(),
-  });
-}
-
-// ── Reset password with code ──────────────────────────────────────────────────
-export async function confirmPasswordReset({ email, code, newPassword }) {
-  const passwordHash = await hashPassword(newPassword);
-  return get({
-    action: 'confirmPasswordReset',
-    email: email.toLowerCase().trim(),
-    code,
-    passwordHash,
-  });
 }
