@@ -28,6 +28,15 @@ window.onerror = function(msg, src, line) {
 <script>eruda.init();</script>
 -->
 
+<script>
+        // Check if we're already at the right path
+        if (window.location.pathname === '/blog') {
+            window.location.replace('/blog/index.html');
+        } else if (window.location.pathname === '/blog/') {
+            window.location.replace('/blog/index.html');
+        }
+    </script>
+
 </head>
 <body>
 
