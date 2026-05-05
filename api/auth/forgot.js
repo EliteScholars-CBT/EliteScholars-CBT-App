@@ -1,4 +1,3 @@
-api/auth/forgot.js
 // ============================================================================
 // api/auth/forgot.js — POST /api/auth/forgot
 // Rate limited: 3 requests per hour per email
