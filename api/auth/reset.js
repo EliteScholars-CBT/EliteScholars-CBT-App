@@ -1,4 +1,3 @@
-api/auth/reset.js
 // ============================================================================
 // api/auth/reset.js — POST /api/auth/reset
 // Verifies code from KV then updates password in sheet
