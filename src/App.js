@@ -214,43 +214,48 @@ useEffect(() => {
     trackSessionStart(u.email, u.name);
   }, []);
 
-  
 const handleSplash = async () => {
   try {
     const u = loadUser();
-
     if (u.email && u.passwordHash) {
+      // Log in immediately with local data
       loadUserData(u);
       setScreen('examType');
-      
-      // Fire and forget - completely non-blocking
-      setTimeout(() => {
-        verifyProfile({ email: u.email, passwordHash: u.passwordHash })
-          .then(result => {
-            if (result.success) {
-              const p = result.profile;
-              if (p.stats) saveStats(p.stats, u.email);
-              if (p.achievements) saveAchievements(p.achievements, u.email);
-              if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
-              localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
-            }
-          })
-          .catch(() => {}); // Silent fail, user unaffected
+
+      // Background: verify + pull latest from server
+      setTimeout(async () => {
+        try {
+          const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
+          if (result.success) {
+            const p = result.profile;
+            // Pull from server
+            if (p.stats)              saveStats(p.stats, u.email);
+            if (p.achievements)       saveAchievements(p.achievements, u.email);
+            if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
+            // Push current local state to server
+            syncProfileToSheet({
+              email:              u.email,
+              stats:              loadStats(u.email),
+              achievements:       loadAchievements(u.email),
+              subjectPerformance: loadSubjectPerformance(u.email),
+            });
+            localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
+          }
+        } catch {}
       }, 0);
-      
+
     } else if (u.email && !u.passwordHash) {
       localStorage.removeItem('ep_user');
       setScreen('onboard');
     } else {
       setScreen('onboard');
     }
-  } catch (err) {
-    console.error('Splash error:', err);
-    setScreen('onboard'); // fallback
+  } catch {
+    setScreen('onboard');
   }
 };
 
-  const handleOnboard = (userData) => {
+const handleOnboard = (userData) => {
   const n = userData.name;
   const e = userData.email;
   setName(n); setEmail(e);
@@ -258,16 +263,16 @@ const handleSplash = async () => {
   setSelectedExams(userData.selectedExams || []);
   setPremiumUser(isPremium(e));
 
-  // Hydrate from server if available (login case)
+  // Hydrate from server if available
   const s = userData.serverStats || loadStats(e);
   if (s.sessions)  setSessions(s.sessions);
   if (s.allScores) setAllScores(s.allScores);
   if (s.bestScore) setBestScore(s.bestScore);
   if (s.streak)    setStreak(s.streak);
   if (s.lastDate)  setLastDate(s.lastDate);
-  if (userData.serverStats)          saveStats(userData.serverStats, e);
-  if (userData.serverAchievements)   { setAchievements(userData.serverAchievements); saveAchievements(userData.serverAchievements, e); }
-  if (userData.serverSubjectPerf)    saveSubjectPerformance(userData.serverSubjectPerf, e);
+  if (userData.serverStats)         saveStats(userData.serverStats, e);
+  if (userData.serverAchievements)  { setAchievements(userData.serverAchievements); saveAchievements(userData.serverAchievements, e); }
+  if (userData.serverSubjectPerf)   saveSubjectPerformance(userData.serverSubjectPerf, e);
 
   startSession(e);
   setSessionStart(Date.now());
@@ -275,14 +280,24 @@ const handleSplash = async () => {
   awardDailyLoginXP(e, n);
   saveUser({
     name: n, email: e,
-    studentType: userData.studentType,
+    studentType:   userData.studentType,
     selectedExams: userData.selectedExams,
-    firstName: userData.firstName,
-    lastName: userData.lastName,
-    passwordHash: userData.passwordHash,
+    firstName:     userData.firstName,
+    lastName:      userData.lastName,
+    passwordHash:  userData.passwordHash,
   });
+
+  // Push + pull on every login
+  syncProfileToSheet({
+    email:              e,
+    stats:              userData.serverStats || loadStats(e),
+    achievements:       userData.serverAchievements || loadAchievements(e),
+    subjectPerformance: userData.serverSubjectPerf || loadSubjectPerformance(e),
+  });
+
   setScreen('examType');
 };
+  
 
   // ── Session expiry check ─────────────────────────────────────────────────────
   const checkSessionLimit = useCallback(() => {
