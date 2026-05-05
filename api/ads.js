@@ -1,4 +1,3 @@
-api/ads.js
 // ============================================================================
 // api/ads.js — GET /api/ads?exam=jamb
 // Returns filtered affiliate ads for the current exam type
