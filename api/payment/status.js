@@ -3,19 +3,17 @@
 // Returns current premium status from sheet
 // ============================================================================
 
-import { ok, err, methodNotAllowed } from '../_helpers/response.js';
-import { sheetsGet }                 from '../_helpers/sheets.js';
+import { sendOk, sendErr, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
+import { sheetsGet } from '../_helpers/sheets.js';
 
-export default async function handler(req) {
-  if (req.method === 'OPTIONS') return ok();
-  if (req.method !== 'GET') return methodNotAllowed();
+export default async function handler(req, res) {
+  setCors(res);
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'GET') return sendMethodNotAllowed(res);
 
-  const { searchParams } = new URL(req.url);
-  const email = searchParams.get('email')?.toLowerCase().trim();
-  if (!email) return err('email is required.');
+  const { email } = req.query;
+  if (!email) return sendErr(res, 'email is required.');
 
-  const result = await sheetsGet({ action: 'getPremiumStatus', email });
-  return ok(result);
+  const result = await sheetsGet({ action: 'getPremiumStatus', email: email.toLowerCase().trim() });
+  return sendOk(res, result);
 }
-
-export const config = { runtime: 'edge' };
