@@ -25,14 +25,16 @@ export default async function handler(req, res) {
     const ip = (
       req.headers['x-forwarded-for']?.split(',')[0]?.trim()
     ) || req.socket?.remoteAddress || 'unknown';
-
+const DEBUG = false;
     const body = await parseBody(req);
   
+if(DEBUG) {
 return res.status(200).json({
   rawBody: body,
   headers: req.headers,
   bodyType: typeof body
 });
+}
 
     const { email, password } = body;
 
