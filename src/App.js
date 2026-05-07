@@ -169,6 +169,9 @@ useEffect(() => {
       })
     });
 
+const text = await res.text();
+alert(text);
+
     const data = await res.json().catch(() => ({
       success: false,
       stage: "invalid_json_response",
