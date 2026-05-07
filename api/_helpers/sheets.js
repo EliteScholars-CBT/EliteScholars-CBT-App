@@ -8,7 +8,8 @@ const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1
 
 export async function sheetsGet(params) {
   console.log('got to sheets.js get' + SHEETS_URL)
-  const url = `${SHEETS_URL}?${new URLSearchParams(params)}`;
+  // const url = `${SHEETS_URL}?${new URLSearchParams(params)}`;
+const url = `${SHEETS_URL}?action=loginProfile`
   const res  = await fetch(url);
   return res.json();
 }
