@@ -155,7 +155,7 @@ export default function App() {
 
 
 
-
+// test login
 useEffect(() => {
   (async () => {
     try {
@@ -166,7 +166,7 @@ useEffect(() => {
 
       alert("SENDING PAYLOAD:\n" + JSON.stringify(payload, null, 2));
 
-      const res = await fetch("/api/login", {
+      const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -198,79 +198,6 @@ useEffect(() => {
       alert("REQUEST FAILED:\n" + err.message);
     }
   })();
-}, []);
-
-
-
-
-// testLogin
-
-useEffect(() => {
-
-  async function testLogin() {
-
-    try {
-
-      const url =
-        'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec' +
-        '?action=loginProfile' +
-        '&email=michaelokpegboro@gmail.com' +
-        '&passwordHash=88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612';
-
-      alert('REQUEST URL:\n\n' + url);
-
-      const res = await fetch(url);
-
-      alert(
-        'FETCH RESPONSE:\n\n' +
-        JSON.stringify({
-          ok: res.ok,
-          status: res.status,
-          statusText: res.statusText,
-          type: res.type,
-          redirected: res.redirected
-        }, null, 2)
-      );
-
-      const text = await res.text();
-
-      alert('RAW RESPONSE TEXT:\n\n' + text);
-
-      try {
-
-        const json = JSON.parse(text);
-
-        alert(
-          'PARSED JSON:\n\n' +
-          JSON.stringify(json, null, 2)
-        );
-
-      } catch (err) {
-
-        alert(
-          'JSON PARSE FAILED:\n\n' +
-          err.message +
-          '\n\nRAW:\n' +
-          text
-        );
-
-      }
-
-    } catch (err) {
-
-      alert(
-        'OUTER FETCH ERROR:\n\n' +
-        err.message +
-        '\n\n' +
-        err.stack
-      );
-
-    }
-
-  }
-
-  testLogin();
-
 }, []);
 
 
