@@ -50,83 +50,115 @@
     <meta name="twitter:title" content="EliteScholars CBT — Free Nigerian Exam Prep" />
     <meta name="twitter:description" content="JAMB, WAEC, NECO, POST UTME &amp; GST practice. 5,000+ questions, timed CBT, study notes, challenges. Free for all Nigerian students." />
     <meta name="twitter:image" content="https://elitescholars.site/og-image.png" />
+
+  
+
 <script>
 (function () {
-  function showError(title, details) {
-    const div = document.createElement('div');
+  function createOverlay(title, details) {
+    const wrapper = document.createElement('div');
 
-    div.style.position = 'fixed';
-    div.style.top = '0';
-    div.style.left = '0';
-    div.style.width = '100%';
-    div.style.maxHeight = '100vh';
-    div.style.overflow = 'auto';
-    div.style.background = '#111';
-    div.style.color = '#ff4d4f';
-    div.style.padding = '16px';
-    div.style.fontSize = '12px';
-    div.style.fontFamily = 'monospace';
-    div.style.zIndex = '999999';
-    div.style.whiteSpace = 'pre-wrap';
-    div.style.wordBreak = 'break-word';
+    wrapper.style.position = 'fixed';
+    wrapper.style.top = '0';
+    wrapper.style.left = '0';
+    wrapper.style.width = '100%';
+    wrapper.style.maxHeight = '100vh';
+    wrapper.style.overflow = 'auto';
+    wrapper.style.background = '#111';
+    wrapper.style.color = '#ff4d4f';
+    wrapper.style.padding = '16px';
+    wrapper.style.fontSize = '12px';
+    wrapper.style.fontFamily = 'monospace';
+    wrapper.style.zIndex = '999999';
+    wrapper.style.whiteSpace = 'pre-wrap';
+    wrapper.style.wordBreak = 'break-word';
+    wrapper.style.borderBottom = '2px solid #ff4d4f';
 
-    div.innerHTML = `
-      <div style="font-size:14px;font-weight:bold;margin-bottom:8px;">
-        ${title}
+    const id = 'err_' + Date.now();
+
+    wrapper.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="font-size:14px;font-weight:bold;">
+          ${title}
+        </div>
+
+        <div style="display:flex;gap:8px;">
+          <button id="${id}_copy" style="
+            background:#ff4d4f;
+            color:white;
+            border:none;
+            padding:6px 10px;
+            cursor:pointer;
+            border-radius:4px;
+          ">
+            Copy
+          </button>
+
+          <button id="${id}_close" style="
+            background:#333;
+            color:white;
+            border:none;
+            padding:6px 10px;
+            cursor:pointer;
+            border-radius:4px;
+          ">
+            Close
+          </button>
+        </div>
       </div>
-      <div>${details}</div>
+
+      <div id="${id}_content">${details}</div>
     `;
 
-    document.body.appendChild(div);
+    document.body.appendChild(wrapper);
+
+    document.getElementById(`${id}_copy`).onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(details);
+        alert('Error copied');
+      } catch (e) {
+        alert('Copy failed');
+      }
+    };
+
+    document.getElementById(`${id}_close`).onclick = () => {
+      wrapper.remove();
+    };
   }
 
   window.onerror = function (msg, src, line, col, err) {
-    showError(
+    createOverlay(
       'JavaScript Error',
-      `
-Message: ${msg}
+`Message:
+${msg}
 
-Source: ${src}
+Source:
+${src}
 
-Line: ${line}
-Column: ${col}
+Line:
+${line}
+
+Column:
+${col}
 
 Stack:
-${err && err.stack ? err.stack : 'No stack trace'}
-      `
+${err && err.stack ? err.stack : 'No stack trace'}`
     );
 
     return false;
   };
 
   window.onunhandledrejection = function (event) {
-    showError(
+    createOverlay(
       'Unhandled Promise Rejection',
       typeof event.reason === 'object'
         ? JSON.stringify(event.reason, null, 2)
         : String(event.reason)
     );
   };
-
-  console.log = (...args) => {
-    const old = window.__oldLog || (() => {});
-    old(...args);
-
-    showError(
-      'Console Log',
-      args.map(a =>
-        typeof a === 'object'
-          ? JSON.stringify(a, null, 2)
-          : String(a)
-      ).join('\n')
-    );
-  };
-
-  if (!window.__oldLog) {
-    window.__oldLog = console.log;
-  }
 })();
 </script>
+
 
     <!-- ── Structured data (JSON-LD) ──────────────────────────────────── -->
     <script type="application/ld+json">
