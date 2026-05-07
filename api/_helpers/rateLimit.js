@@ -2,7 +2,15 @@
 // api/_helpers/rateLimit.js — Rate limiting via Vercel KV
 // ============================================================================
 
-import { kv } from '@vercel/kv';
+// import { kv } from '@vercel/kv';
+
+
+// Add this temporarily:
+const kv = {
+  incr: async () => 1,
+  expire: async () => true,
+  ttl: async () => 900
+};
 
 export async function checkRateLimit(key, max, windowSec) {
   try {
