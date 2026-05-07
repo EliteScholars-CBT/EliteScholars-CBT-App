@@ -158,45 +158,30 @@ export default function App() {
 // test login
 useEffect(() => {
   (async () => {
-    try {
-      const payload = {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
         email: "michaelokpegboro@gmail.com",
         password: "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612"
-      };
+      })
+    });
 
-      alert("SENDING PAYLOAD:\n" + JSON.stringify(payload, null, 2));
+    const data = await res.json().catch(() => ({
+      success: false,
+      stage: "invalid_json_response",
+      error: "Response was not JSON",
+      raw: "check backend"
+    }));
 
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-
-      alert(
-        "RESPONSE STATUS:\n" +
-        res.status +
-        "\nOK: " +
-        res.ok
-      );
-
-      const text = await res.text();
-
-      alert("RAW RESPONSE TEXT:\n" + text);
-
-      let data;
-      try {
-        data = JSON.parse(text);
-        alert("PARSED RESPONSE:\n" + JSON.stringify(data, null, 2));
-      } catch (e) {
-        alert("RESPONSE IS NOT VALID JSON");
-        data = text;
-      }
-
-    } catch (err) {
-      alert("REQUEST FAILED:\n" + err.message);
-    }
+    alert(
+      "STAGE: " + (data.stage || "unknown") +
+      "\nSUCCESS: " + data.success +
+      "\nERROR: " + (data.error || "none") +
+      "\nDEBUG:\n" + JSON.stringify(data.debug || {}, null, 2)
+    );
   })();
 }, []);
 
