@@ -3,29 +3,24 @@
 // Silent auto-login token verification
 // ============================================================================
 
-import { ok, err, methodNotAllowed } from '../_helpers/response.js';
+api/auth/verify.js
+import { sendOk, sendErr, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
 import { sheetsGet } from '../_helpers/sheets.js';
 
-export default async function handler(req) {
-  if (req.method === 'OPTIONS') return ok();
-  if (req.method !== 'POST') return methodNotAllowed();
+export default async function handler(req, res) {
+  setCors(res);
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return sendMethodNotAllowed(res);
 
-  let body;
-  try { body = await req.json(); }
-  catch { return err('Invalid request body.'); }
-
-  const { email, passwordHash } = body;
-  if (!email || !passwordHash) return err('Missing credentials.');
+  const { email, passwordHash } = req.body || {};
+  if (!email || !passwordHash) return sendErr(res, 'Missing credentials.');
 
   const result = await sheetsGet({
-    action:       'loginProfile',
-    email:        email.toLowerCase().trim(),
+    action: 'loginProfile',
+    email:  email.toLowerCase().trim(),
     passwordHash,
   });
 
-  if (!result.success) return err('Session expired. Please log in again.');
-
-  return ok({ profile: result.profile });
+  if (!result.success) return sendErr(res, 'Session expired. Please log in again.');
+  return sendOk(res, { profile: result.profile });
 }
-
-export const config = { runtime: 'edge' };
