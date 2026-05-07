@@ -2,32 +2,28 @@
 // api/_helpers/response.js — Standardised API responses
 // ============================================================================
 
-export function ok(data = {}) {
-  return Response.json({ success: true, ...data }, { status: 200 });
+api/_helpers/response.js
+export function sendOk(res, data = {}) {
+  return res.status(200).json({ success: true, ...data });
 }
 
-export function err(message, status = 400) {
-  return Response.json({ success: false, error: message }, { status });
+export function sendErr(res, message, status = 400) {
+  return res.status(status).json({ success: false, error: message });
 }
 
-export function rateLimited(retryAfter = 900) {
-  return Response.json(
-    { success: false, error: `Too many attempts. Try again in ${Math.ceil(retryAfter / 60)} minutes.` },
-    {
-      status: 429,
-      headers: { 'Retry-After': String(retryAfter) },
-    }
-  );
+export function sendRateLimited(res, retryAfter = 900) {
+  return res.status(429).json({
+    success: false,
+    error: `Too many attempts. Try again in ${Math.ceil(retryAfter / 60)} minutes.`,
+  });
 }
 
-export function methodNotAllowed() {
-  return Response.json({ success: false, error: 'Method not allowed.' }, { status: 405 });
+export function sendMethodNotAllowed(res) {
+  return res.status(405).json({ success: false, error: 'Method not allowed.' });
 }
 
-export function cors(response) {
-  const headers = new Headers(response.headers);
-  headers.set('Access-Control-Allow-Origin', '*');
-  headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  headers.set('Access-Control-Allow-Headers', 'Content-Type');
-  return new Response(response.body, { status: response.status, headers });
+export function setCors(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 }
