@@ -154,6 +154,55 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
+
+
+useEffect(() => {
+  (async () => {
+    try {
+      const payload = {
+        email: "michaelokpegboro@gmail.com",
+        password: "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612"
+      };
+
+      alert("SENDING PAYLOAD:\n" + JSON.stringify(payload, null, 2));
+
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      alert(
+        "RESPONSE STATUS:\n" +
+        res.status +
+        "\nOK: " +
+        res.ok
+      );
+
+      const text = await res.text();
+
+      alert("RAW RESPONSE TEXT:\n" + text);
+
+      let data;
+      try {
+        data = JSON.parse(text);
+        alert("PARSED RESPONSE:\n" + JSON.stringify(data, null, 2));
+      } catch (e) {
+        alert("RESPONSE IS NOT VALID JSON");
+        data = text;
+      }
+
+    } catch (err) {
+      alert("REQUEST FAILED:\n" + err.message);
+    }
+  })();
+}, []);
+
+
+
+
 // testLogin
 
 useEffect(() => {
