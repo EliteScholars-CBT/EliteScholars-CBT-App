@@ -53,10 +53,32 @@
 
 // Run this in your browser console
 fetch('https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec')
-  .then(r => r.text())
-  .then(console.log)
-  .catch(console.error)
-  
+  .then(async r => {
+
+    const text = await r.text();
+
+    alert(
+`STATUS: ${r.status}
+
+OK: ${r.ok}
+
+RESPONSE:
+${text}`
+    );
+
+  })
+  .catch(err => {
+
+    alert(
+`FETCH ERROR:
+
+${err?.message}
+
+STACK:
+${err?.stack}`
+    );
+
+  });
 
 <script>
 (function () {
