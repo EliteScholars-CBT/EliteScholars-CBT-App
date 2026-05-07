@@ -165,8 +165,8 @@ useEffect(() => {
       const url =
         'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec' +
         '?action=loginProfile' +
-        '&email=test@gmail.com' +
-        '&passwordHash=123456';
+        '&email=michaelokpegboro@gmail.com' +
+        '&passwordHash=88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612';
 
       alert('REQUEST URL:\n\n' + url);
 
