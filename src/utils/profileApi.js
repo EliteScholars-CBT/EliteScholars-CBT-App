@@ -10,6 +10,7 @@ const res = await fetch(endpoint, {
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(body),
   });
+console.log('hi ' + res.json())
   return res.json();
 }
 
