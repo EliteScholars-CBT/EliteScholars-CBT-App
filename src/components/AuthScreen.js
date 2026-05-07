@@ -101,6 +101,7 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash
       });
     } catch {
+alert('AuthScreen.js is the culprit')
       err('Network error. Please check your connection.');
     }
   };
@@ -148,7 +149,6 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash
       });
     } catch {
-      alert('AuthScreen.js is the culprit')
       err('Network error. Please check your connection.');
     }
   };
