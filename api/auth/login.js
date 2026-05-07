@@ -1,6 +1,7 @@
 export default function handler(req, res) {
   return res.status(200).json({
-    ok: true,
-    test: "backend reachable"
+    stage: "test_hit",
+    success: true,
+    message: "login route is working"
   });
 }
