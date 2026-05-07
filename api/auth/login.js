@@ -27,6 +27,12 @@ export default async function handler(req, res) {
     ) || req.socket?.remoteAddress || 'unknown';
 
     const body = await parseBody(req);
+  
+return res.status(200).json({
+  rawBody: body,
+  headers: req.headers,
+  bodyType: typeof body
+});
 
     const { email, password } = body;
 
