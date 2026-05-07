@@ -3,15 +3,16 @@
 // Returns shop items from server-side constants
 // ============================================================================
 
-import { ok, methodNotAllowed }  from './_helpers/response.js';
-import { SHOP_ITEMS }            from './constants/shop.js';
+import { sendOk, sendMethodNotAllowed, setCors } from './_helpers/response.js';
+import { SHOP_ITEMS }   from './constants/shop.js';
 import { PREMIUM_MONTHLY_PRICE, PREMIUM_ANNUAL_PRICE, PRO_MONTHLY_PRICE, PAYMENT_URL_MONTHLY, PAYMENT_URL_ANNUAL, PAYMENT_URL_PRO } from './constants/premium.js';
 
-export default async function handler(req) {
-  if (req.method === 'OPTIONS') return ok();
-  if (req.method !== 'GET') return methodNotAllowed();
+export default async function handler(req, res) {
+  setCors(res);
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'GET') return sendMethodNotAllowed(res);
 
-  return ok({
+  return sendOk(res, {
     items: SHOP_ITEMS,
     pricing: {
       premiumMonthly: PREMIUM_MONTHLY_PRICE,
@@ -25,5 +26,3 @@ export default async function handler(req) {
     },
   });
 }
-
-export const config = { runtime: 'edge' };
