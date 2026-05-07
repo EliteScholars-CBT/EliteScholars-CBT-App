@@ -189,7 +189,7 @@ ${err?.stack}`
 
 
 
-useEffect({
+useEffect(() => {
 (function () {
   function createOverlay(title, details) {
     const wrapper = document.createElement('div');
