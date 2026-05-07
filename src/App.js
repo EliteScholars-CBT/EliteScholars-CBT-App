@@ -154,38 +154,76 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
+// testLogin
 
 useEffect(() => {
 
-  fetch('https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec?action=getPremiumStatus')
-    .then(async r => {
+  async function testLogin() {
 
-      const text = await r.text();
+    try {
 
-      alert(
-`STATUS: ${r.status}
+      const url =
+        'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec' +
+        '?action=loginProfile' +
+        '&email=test@gmail.com' +
+        '&passwordHash=123456';
 
-OK: ${r.ok}
+      alert('REQUEST URL:\n\n' + url);
 
-RESPONSE:
-${text}`
-      );
-
-    })
-    .catch(err => {
+      const res = await fetch(url);
 
       alert(
-`FETCH ERROR:
-
-${err?.message}
-
-STACK:
-${err?.stack}`
+        'FETCH RESPONSE:\n\n' +
+        JSON.stringify({
+          ok: res.ok,
+          status: res.status,
+          statusText: res.statusText,
+          type: res.type,
+          redirected: res.redirected
+        }, null, 2)
       );
 
-    });
+      const text = await res.text();
+
+      alert('RAW RESPONSE TEXT:\n\n' + text);
+
+      try {
+
+        const json = JSON.parse(text);
+
+        alert(
+          'PARSED JSON:\n\n' +
+          JSON.stringify(json, null, 2)
+        );
+
+      } catch (err) {
+
+        alert(
+          'JSON PARSE FAILED:\n\n' +
+          err.message +
+          '\n\nRAW:\n' +
+          text
+        );
+
+      }
+
+    } catch (err) {
+
+      alert(
+        'OUTER FETCH ERROR:\n\n' +
+        err.message +
+        '\n\n' +
+        err.stack
+      );
+
+    }
+
+  }
+
+  testLogin();
 
 }, []);
+
 
 
   // ── Startup ─────────────────────────────────────────────────────────────────
