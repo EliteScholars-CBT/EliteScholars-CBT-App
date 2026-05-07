@@ -5,7 +5,8 @@
 import { SHEETS_URL } from './constants';
 
 async function apiPost(endpoint, body) {
-  const res = await fetch(endpoint, {
+  alert('got to apiPost ' + JSON.stringify(body) + ' ' endpoint)
+const res = await fetch(endpoint, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(body),
