@@ -2,7 +2,6 @@
 // api/_helpers/response.js — Standardised API responses
 // ============================================================================
 
-api/_helpers/response.js
 export function sendOk(res, data = {}) {
   return res.status(200).json({ success: true, ...data });
 }
