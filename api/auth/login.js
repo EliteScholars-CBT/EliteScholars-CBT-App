@@ -3,7 +3,7 @@
 // Rate limited: 10 attempts per 15 minutes per email+IP
 // ============================================================================
 
-import { parseBody } from '../_helpers/bodyParser.js';
+// import { parseBody } from '../_helpers/bodyParser.js';
 import { checkRateLimit, clearRateLimit } from '../_helpers/rateLimit.js';
 import { sendOk, sendErr, sendRateLimited, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
 import { hashPassword }    from '../_helpers/hash.js';
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       req.headers['x-forwarded-for']?.split(',')[0]?.trim()
     ) || req.socket?.remoteAddress || 'unknown';
 const DEBUG = false;
-    const body = await parseBody(req);
+    const body = req.body || {};
   
 if(DEBUG) {
 return res.status(200).json({
