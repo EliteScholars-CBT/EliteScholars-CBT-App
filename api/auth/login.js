@@ -10,6 +10,7 @@ import { sheetsGet }       from '../_helpers/sheets.js';
 import { logSecurityEvent } from '../_helpers/security.js';
 
 export default async function handler(req, res) {
+console.log('hi this auth/login.js')
   setCors(res);
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return sendMethodNotAllowed(res);
