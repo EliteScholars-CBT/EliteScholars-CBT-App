@@ -157,7 +157,7 @@ export default function App() {
 
 useEffect(() => {
 
-  fetch('https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec?action=getLeaderboard')
+  fetch('https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec?action=getAvailableUsers')
     .then(async r => {
 
       const text = await r.text();
@@ -187,115 +187,6 @@ ${err?.stack}`
 
 }, []);
 
-
-
-useEffect(() => {
-(function () {
-  function createOverlay(title, details) {
-    const wrapper = document.createElement('div');
-
-    wrapper.style.position = 'fixed';
-    wrapper.style.top = '0';
-    wrapper.style.left = '0';
-    wrapper.style.width = '100%';
-    wrapper.style.maxHeight = '100vh';
-    wrapper.style.overflow = 'auto';
-    wrapper.style.background = '#111';
-    wrapper.style.color = '#ff4d4f';
-    wrapper.style.padding = '16px';
-    wrapper.style.fontSize = '12px';
-    wrapper.style.fontFamily = 'monospace';
-    wrapper.style.zIndex = '999999';
-    wrapper.style.whiteSpace = 'pre-wrap';
-    wrapper.style.wordBreak = 'break-word';
-    wrapper.style.borderBottom = '2px solid #ff4d4f';
-
-    const id = 'err_' + Date.now();
-
-    wrapper.innerHTML = `
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <div style="font-size:14px;font-weight:bold;">
-          ${title}
-        </div>
-
-        <div style="display:flex;gap:8px;">
-          <button id="${id}_copy" style="
-            background:#ff4d4f;
-            color:white;
-            border:none;
-            padding:6px 10px;
-            cursor:pointer;
-            border-radius:4px;
-          ">
-            Copy
-          </button>
-
-          <button id="${id}_close" style="
-            background:#333;
-            color:white;
-            border:none;
-            padding:6px 10px;
-            cursor:pointer;
-            border-radius:4px;
-          ">
-            Close
-          </button>
-        </div>
-      </div>
-
-      <div id="${id}_content">${details}</div>
-    `;
-
-    document.body.appendChild(wrapper);
-
-    document.getElementById(`${id}_copy`).onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(details);
-        alert('Error copied');
-      } catch (e) {
-        alert('Copy failed');
-      }
-    };
-
-    document.getElementById(`${id}_close`).onclick = () => {
-      wrapper.remove();
-    };
-  }
-
-  window.onerror = function (msg, src, line, col, err) {
-    createOverlay(
-      'JavaScript Error',
-`Message:
-${msg}
-
-Source:
-${src}
-
-Line:
-${line}
-
-Column:
-${col}
-
-Stack:
-${err && err.stack ? err.stack : 'No stack trace'}`
-    );
-
-    return false;
-  };
-
-  window.onunhandledrejection = function (event) {
-    createOverlay(
-      'Unhandled Promise Rejection',
-      typeof event.reason === 'object'
-        ? JSON.stringify(event.reason, null, 2)
-        : String(event.reason)
-    );
-  };
-})();
-
-
-}, []);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
