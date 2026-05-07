@@ -5,7 +5,6 @@
 import { SHEETS_URL } from './constants';
 
 async function apiPost(endpoint, body) {
-  alert('got to apiPost ' + JSON.stringify(body) + ' ' + endpoint)
 const res = await fetch(endpoint, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -26,7 +25,6 @@ export async function registerProfile({ firstName, lastName, email, password, st
 }
 
 export async function loginProfile({ email, password }) {
-  alert('got loginProfile ' + email + password)
   return apiPost('/api/auth/login', { email, password });
 }
 
