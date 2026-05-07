@@ -10,7 +10,6 @@ const res = await fetch(endpoint, {
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(body),
   });
-alert('hi from apiPost' + res.json())
   return res.json();
 }
 
@@ -18,7 +17,7 @@ async function apiGet(endpoint, params = {}) {
   const qs  = new URLSearchParams(params).toString();
   const res = await fetch(`${endpoint}${qs ? '?' + qs : ''}`);
 
-alert('hi from apiGett' + res.json())
+alert('hi from apiGet' + endpoint)
   return res.json();
 }
 
