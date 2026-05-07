@@ -3,32 +3,29 @@
 // Verifies code from KV then updates password in sheet
 // ============================================================================
 
-import { kv }             from '@vercel/kv';
-import { ok, err, methodNotAllowed } from '../_helpers/response.js';
-import { hashPassword }   from '../_helpers/hash.js';
-import { sheetsGet }      from '../_helpers/sheets.js';
+api/auth/reset.js
+import { kv }          from '@vercel/kv';
+import { sendOk, sendErr, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
+import { hashPassword } from '../_helpers/hash.js';
+import { sheetsGet }   from '../_helpers/sheets.js';
 
-export default async function handler(req) {
-  if (req.method === 'OPTIONS') return ok();
-  if (req.method !== 'POST') return methodNotAllowed();
+export default async function handler(req, res) {
+  setCors(res);
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return sendMethodNotAllowed(res);
 
-  let body;
-  try { body = await req.json(); }
-  catch { return err('Invalid request body.'); }
-
-  const { email, code, newPassword } = body;
-  if (!email || !code || !newPassword) return err('All fields are required.');
-  if (newPassword.length < 8) return err('Password must be at least 8 characters.');
+  const { email, code, newPassword } = req.body || {};
+  if (!email || !code || !newPassword) return sendErr(res, 'All fields are required.');
+  if (newPassword.length < 8) return sendErr(res, 'Password must be at least 8 characters.');
 
   const emailLower = email.toLowerCase().trim();
   const kvKey      = `reset:${emailLower}`;
-
   const storedCode = await kv.get(kvKey);
-  if (!storedCode)          return err('Reset code has expired. Please request a new one.');
-  if (storedCode !== code)  return err('Invalid reset code.');
+
+  if (!storedCode)         return sendErr(res, 'Reset code has expired. Please request a new one.');
+  if (storedCode !== code) return sendErr(res, 'Invalid reset code.');
 
   const passwordHash = hashPassword(newPassword);
-
   const result = await sheetsGet({
     action: 'confirmPasswordReset',
     email:  emailLower,
@@ -36,12 +33,8 @@ export default async function handler(req) {
     passwordHash,
   });
 
-  if (!result.success) return err(result.error || 'Failed to reset password.');
+  if (!result.success) return sendErr(res, result.error || 'Failed to reset password.');
 
-  // Delete code from KV
   await kv.del(kvKey);
-
-  return ok({ message: 'Password reset successfully.' });
+  return sendOk(res, { message: 'Password reset successfully.' });
 }
-
-export const config = { runtime: 'edge' };
