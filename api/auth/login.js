@@ -3,6 +3,7 @@
 // Rate limited: 10 attempts per 15 minutes per email+IP
 // ============================================================================
 
+import { parseBody } from '../_helpers/bodyParser.js';
 import { checkRateLimit, clearRateLimit } from '../_helpers/rateLimit.js';
 import { sendOk, sendErr, sendRateLimited, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
 import { hashPassword }    from '../_helpers/hash.js';
@@ -10,13 +11,13 @@ import { sheetsGet }       from '../_helpers/sheets.js';
 import { logSecurityEvent } from '../_helpers/security.js';
 
 export default async function handler(req, res) {
-console.log('hi this auth/login.js')
   setCors(res);
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return sendMethodNotAllowed(res);
 
   const ip         = req.headers['x-forwarded-for'] || 'unknown';
-  const { email, password } = req.body || {};
+  const body = await parseBody(req);
+  const { email, password } = body;
 
   if (!email || !password) return sendErr(res, 'Email and password are required.');
 
