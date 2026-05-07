@@ -5,6 +5,7 @@
 const SHEETS_URL = process.env.SHEETS_URL;
 
 export async function sheetsGet(params) {
+  alert('got to sheets.js ' + SHEETS_URL)
   const url = `${SHEETS_URL}?${new URLSearchParams(params)}`;
   const res  = await fetch(url);
   return res.json();
