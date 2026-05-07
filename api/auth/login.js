@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     const ip = (
       req.headers['x-forwarded-for']?.split(',')[0]?.trim()
     ) || req.socket?.remoteAddress || 'unknown';
-const DEBUG = false;
+const DEBUG = true;
     const body = req.body || {};
   
 if(DEBUG) {
