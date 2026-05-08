@@ -1,35 +1,52 @@
+import { hashPassword } from '../_helpers/hash.js';
 import { sheetsGet } from '../_helpers/sheets.js';
 
 export default async function handler(req, res) {
   try {
+
+    if (req.method !== "POST") {
+      return res.status(405).json({
+        stage: "method_blocked",
+        success: false
+      });
+    }
+
     const body = req.body || {};
 
     if (!body.email || !body.password) {
       return res.status(400).json({
         stage: "validation_error",
-        success: false
+        success: false,
+        message: "Email and password required"
       });
     }
 
+    const emailLower = body.email.toLowerCase().trim();
+
+    const passwordHash = hashPassword(body.password);
+
     const result = await sheetsGet({
       action: "loginProfile",
-      email: body.email,
-      passwordHash: body.password
+      email: emailLower,
+      passwordHash
     });
 
     return res.status(200).json({
-      stage: "sheets_test",
+      stage: "login_result",
       success: true,
+
       debug: {
-        result
+        sheetsResult: result
       }
     });
 
   } catch (err) {
+
     return res.status(500).json({
-      stage: "sheets_crash",
+      stage: "login_crash",
       success: false,
       error: err.message
     });
+
   }
 }
