@@ -1,87 +1,150 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { subscribe, clearLogs } from "./debugStore";
 
-export default function DebugConsole({ logs }) {
+export default function DebugConsole() {
+  const [logs, setLogs] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [max, setMax] = useState(false);
+
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const unsub = subscribe(setLogs);
+    return unsub;
+  }, []);
+
+  // Drag system
+  useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return;
+
+    let offsetX = 0, offsetY = 0, dragging = false;
+
+    const down = (e) => {
+      dragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+    };
+
+    const move = (e) => {
+      if (!dragging || max) return;
+      el.style.left = e.clientX - offsetX + "px";
+      el.style.top = e.clientY - offsetY + "px";
+    };
+
+    const up = () => (dragging = false);
+
+    el.addEventListener("mousedown", down);
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", up);
+
+    return () => {
+      el.removeEventListener("mousedown", down);
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+    };
+  }, [max]);
+
   const copy = (text) => {
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(
+      typeof text === "string" ? text : JSON.stringify(text, null, 2)
+    );
   };
 
+  if (!open) {
+    return (
+      <div
+        onClick={() => setOpen(true)}
+        style={{
+          position: "fixed",
+          bottom: 20,
+          right: 20,
+          background: "#111",
+          color: "#0f0",
+          padding: 10,
+          borderRadius: 8,
+          fontFamily: "monospace",
+          cursor: "pointer",
+          zIndex: 999999
+        }}
+      >
+        DEBUG
+      </div>
+    );
+  }
+
   return (
-    <div style={styles.wrapper}>
-      <div style={styles.header}>DEBUG CONSOLE</div>
+    <div
+      ref={boxRef}
+      style={{
+        position: "fixed",
+        bottom: 0,
+        right: 0,
+        width: max ? "100%" : 420,
+        height: max ? "100%" : 300,
+        background: "#0b0b0b",
+        color: "#fff",
+        fontFamily: "monospace",
+        zIndex: 999999,
+        display: "flex",
+        flexDirection: "column",
+        border: "1px solid #222"
+      }}
+    >
+      {/* Header */}
+      <div
+        style={{
+          padding: 8,
+          background: "#111",
+          display: "flex",
+          justifyContent: "space-between",
+          cursor: "move"
+        }}
+      >
+        <span>DEBUG CONSOLE</span>
 
-      <div style={styles.body}>
-        {logs.map((log, i) => (
-          <div key={i} style={{ ...styles.log, ...color(log.type) }}>
-            <div style={styles.row}>
-              <span>{log.type.toUpperCase()}</span>
+        <div style={{ display: "flex", gap: 10 }}>
+          <button onClick={() => setMax(!max)}>⬜</button>
+          <button onClick={clearLogs}>🧹</button>
+          <button onClick={() => setOpen(false)}>✖</button>
+        </div>
+      </div>
 
-              <button
-                onClick={() => copy(log.message)}
-                style={styles.copy}
-              >
-                📋
-              </button>
+      {/* Logs */}
+      <div style={{ overflow: "auto", flex: 1, padding: 10 }}>
+        {logs.map((l) => (
+          <div
+            key={l.id}
+            style={{
+              marginBottom: 10,
+              borderLeft: `3px solid ${
+                l.type === "error"
+                  ? "red"
+                  : l.type === "success"
+                  ? "lime"
+                  : "gray"
+              }`,
+              paddingLeft: 8
+            }}
+          >
+            <div style={{ fontSize: 12, opacity: 0.7 }}>
+              {l.category} • {l.time}
             </div>
 
-            <pre style={styles.pre}>{log.message}</pre>
+            <div>{l.message}</div>
+
+            {l.data && (
+              <pre style={{ fontSize: 11, opacity: 0.9 }}>
+                {JSON.stringify(l.data, null, 2)}
+              </pre>
+            )}
+
+            <button onClick={() => copy(l)} style={{ fontSize: 10 }}>
+              copy
+            </button>
           </div>
         ))}
       </div>
     </div>
   );
 }
-
-function color(type) {
-  if (type === "error") return { borderLeft: "3px solid red" };
-  if (type === "success") return { borderLeft: "3px solid limegreen" };
-  return { borderLeft: "3px solid #888" };
-}
-
-const styles = {
-  wrapper: {
-    position: "fixed",
-    bottom: 0,
-    right: 0,
-    width: "420px",
-    maxHeight: "45vh",
-    background: "#0f0f0f",
-    color: "#fff",
-    fontSize: "12px",
-    zIndex: 99999,
-    borderTopLeftRadius: "10px",
-    overflow: "hidden",
-    boxShadow: "0 0 20px rgba(0,0,0,0.6)"
-  },
-  header: {
-    padding: "8px",
-    background: "#1a1a1a",
-    fontWeight: "bold"
-  },
-  body: {
-    overflowY: "auto",
-    maxHeight: "40vh",
-    padding: "8px"
-  },
-  log: {
-    background: "#151515",
-    padding: "8px",
-    marginBottom: "6px",
-    borderRadius: "6px"
-  },
-  row: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginBottom: "4px"
-  },
-  copy: {
-    background: "transparent",
-    border: "none",
-    color: "#aaa",
-    cursor: "pointer"
-  },
-  pre: {
-    margin: 0,
-    whiteSpace: "pre-wrap",
-    wordBreak: "break-word"
-  }
-};
