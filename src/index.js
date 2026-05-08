@@ -6,7 +6,6 @@ import App from './App';
 import About from './pages/About';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import TestPage from "./debug/TestPage";
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -20,7 +19,6 @@ root.render(
           <Route path="/about" element={<About />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/test" element={<TestPage />} />
       </Routes>
       </ThemeProvider>
     </BrowserRouter>
