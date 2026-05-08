@@ -20,7 +20,7 @@ root.render(
           <Route path="/about" element={<About />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
-         <Route path="/test" element={<TestPage />} />
+          <Route path="/test" element={<TestPage />} />
       </Routes>
       </ThemeProvider>
     </BrowserRouter>
