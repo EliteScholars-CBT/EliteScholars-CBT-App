@@ -1,23 +1,33 @@
-// ============================================================================
-// api/_helpers/rateLimit.js — Rate limiting via Vercel KV
-// ============================================================================
-
-import { kv } from '@vercel/kv';
-
+import { redis } from "./redis.js";
 
 export async function checkRateLimit(key, max, windowSec) {
   try {
-    const current = await kv.incr(key);
-    if (current === 1) await kv.expire(key, windowSec);
-    const ttl       = await kv.ttl(key);
+    const current = await redis.incr(key);
+
+    if (current === 1) {
+      await redis.expire(key, windowSec);
+    }
+
+    const allowed = current <= max;
     const remaining = Math.max(0, max - current);
-    const allowed   = current <= max;
-    return { allowed, remaining, retryAfter: allowed ? 0 : ttl };
-  } catch {
-    return { allowed: true, remaining: 1, retryAfter: 0 };
+
+    return {
+      allowed,
+      remaining,
+      retryAfter: allowed ? 0 : windowSec
+    };
+
+  } catch (err) {
+    return {
+      allowed: true,
+      remaining: 1,
+      retryAfter: 0
+    };
   }
 }
 
 export async function clearRateLimit(key) {
-  try { await kv.del(key); } catch {}
+  try {
+    await redis.del(key);
+  } catch {}
 }
