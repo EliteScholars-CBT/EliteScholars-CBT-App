@@ -1,6 +1,7 @@
 import { addLog } from "./debugStore";
 
 export function installGlobalErrorDebugger() {
+alert('installGlobalErrorDebugger(); got called')
   window.onerror = (msg, src, line, col, err) => {
     addLog({
       type: "error",
