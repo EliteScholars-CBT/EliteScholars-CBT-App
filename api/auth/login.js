@@ -35,7 +35,6 @@ export default async function handler(req, res) {
     }
 
     const email = body.email.toLowerCase().trim();
-
     const key = `login:${email}:${ip}`;
 
     // =========================
@@ -60,16 +59,22 @@ export default async function handler(req, res) {
     }
 
     // =========================
-    // AUTH
+    // HASHING
     // =========================
     const passwordHash = hashPassword(body.password);
 
+    // =========================
+    // SHEETS CALL
+    // =========================
     const result = await sheetsGet({
       action: 'loginProfile',
       email,
       passwordHash
     });
 
+    // =========================
+    // FAILURE
+    // =========================
     if (!result || !result.success) {
       await logSecurityEvent({
         type: 'login_failed',
@@ -80,7 +85,11 @@ export default async function handler(req, res) {
       return res.status(401).json({
         success: false,
         stage: "login_failed",
-        message: result?.error || "Invalid credentials"
+        message: result?.error || "Invalid credentials",
+
+        debug: {
+          passwordHash   // 👈 DEBUG INCLUDED HERE
+        }
       });
     }
 
@@ -92,8 +101,14 @@ export default async function handler(req, res) {
     return res.status(200).json({
       success: true,
       stage: "login_success",
+      message: "Login successful",
+
       data: {
         profile: result.profile
+      },
+
+      debug: {
+        passwordHash   // 👈 DEBUG INCLUDED HERE TOO
       }
     });
 
