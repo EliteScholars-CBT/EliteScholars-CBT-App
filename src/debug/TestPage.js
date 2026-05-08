@@ -2,7 +2,7 @@ import DebugConsole from "./DebugConsole";
 import useDebugAuth from "../hooks/useDebugAuth";
 
 export default function TestPage() {
-  useDebugAuth(true);
+  const { logs } = useDebugAuth(true);
 
-  return <DebugConsole />;
+  return <DebugConsole logs={logs} />;
 }
