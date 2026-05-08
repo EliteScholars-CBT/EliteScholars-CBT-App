@@ -1,64 +1,6 @@
-import { hashPassword } from '../_helpers/hash.js';
-import { sheetsGet } from '../_helpers/sheets.js';
-
-export default async function handler(req, res) {
-  try {
-
-    if (req.method !== "POST") {
-      return res.status(405).json({
-        stage: "method_blocked",
-        success: false
-      });
-    }
-
-    const body = req.body || {};
-
-    if (!body.email || !body.password) {
-      return res.status(400).json({
-        stage: "validation_error",
-        success: false,
-        message: "Email and password required"
-      });
-    }
-
-    const emailLower = body.email.toLowerCase().trim();
-
-const firstHash = hashPassword(body.password);
-const passwordHash = hashPassword(firstHash);
-
-return res.status(200).json({
-  stage: "hash_compare",
-  success: true,
-
-  debug: {
-    rawPassword: body.password,
-    firstHash,
-    generatedHash: passwordHash
-  }
-});
-
-    const result = await sheetsGet({
-      action: "loginProfile",
-      email: emailLower,
-      passwordHash
-    });
-
-    return res.status(200).json({
-      stage: "login_result",
-      success: true,
-
-      debug: {
-        sheetsResult: result
-      }
-    });
-
-  } catch (err) {
-
-    return res.status(500).json({
-      stage: "login_crash",
-      success: false,
-      error: err.message
-    });
-
-  }
+export default function handler(req, res) {
+  return res.status(200).json({
+    stage: "backend_hash_check",
+    hash: "you88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612"
+  });
 }
