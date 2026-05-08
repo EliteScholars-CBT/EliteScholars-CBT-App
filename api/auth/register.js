@@ -124,6 +124,7 @@ export default async function handler(req, res) {
       lastName,
       studentType,
       selectedExams,
+      passwordHash
       stats: {},
       achievements: [],
       subjectPerformance: {}
