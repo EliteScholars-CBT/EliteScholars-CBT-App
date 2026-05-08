@@ -25,6 +25,16 @@ export default async function handler(req, res) {
 
     const passwordHash = hashPassword(body.password);
 
+return res.status(200).json({
+  stage: "hash_compare",
+  success: true,
+
+  debug: {
+    rawPassword: body.password,
+    generatedHash: passwordHash
+  }
+});
+
     const result = await sheetsGet({
       action: "loginProfile",
       email: emailLower,
