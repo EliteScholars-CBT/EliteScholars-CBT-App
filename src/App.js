@@ -477,9 +477,11 @@ if (ns % 5 === 0) {
       <DebugConsole />
       <div className="phone">
         <div className="phone-content">
+
           <ErrorBoundary>
             <Suspense fallback={<LoadingScreen />}>
           </ErrorBoundary>
+
             {screen === 'splash' && <Splash onDone={handleSplash} />}
 
             {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
