@@ -155,7 +155,7 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = true;
 
 
 
