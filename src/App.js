@@ -480,7 +480,6 @@ if (ns % 5 === 0) {
 
           <ErrorBoundary>
             <Suspense fallback={<LoadingScreen />}>
-          </ErrorBoundary>
 
             {screen === 'splash' && <Splash onDone={handleSplash} />}
 
@@ -639,6 +638,7 @@ if (ns % 5 === 0) {
             )}
 
           </Suspense>
+        </ErrorBoundary>
         </div>
       </div>
 
