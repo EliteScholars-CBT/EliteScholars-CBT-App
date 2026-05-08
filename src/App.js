@@ -158,36 +158,86 @@ export default function App() {
 // test login
 useEffect(() => {
   (async () => {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
+    try {
+
+      const payload = {
         email: "michaelokpegboro@gmail.com",
-        password: "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612"
-      })
-    });
+        password: "oomikeoo"
+      };
 
-const text = await res.text();
-alert(text);
+      alert(
+        "SENDING PAYLOAD:\n\n" +
+        JSON.stringify(payload, null, 2)
+      );
 
-    const data = await res.json().catch(() => ({
-      success: false,
-      stage: "invalid_json_response",
-      error: "Response was not JSON",
-      raw: "check backend"
-    }));
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
 
-    alert(
-      "STAGE: " + (data.stage || "unknown") +
-      "\nSUCCESS: " + data.success +
-      "\nERROR: " + (data.error || "none") +
-      "\nDEBUG:\n" + JSON.stringify(data.debug || {}, null, 2)
-    );
+      alert(
+        "RESPONSE STATUS:\n\n" +
+        "Status: " + res.status +
+        "\nOK: " + res.ok
+      );
+
+      const text = await res.text();
+
+      alert(
+        "RAW RESPONSE:\n\n" +
+        text
+      );
+
+      // only attempt JSON parse if it looks like JSON
+      if (
+        text.trim().startsWith("{") ||
+        text.trim().startsWith("[")
+      ) {
+
+        try {
+
+          const data = JSON.parse(text);
+
+          alert(
+            "PARSED RESPONSE:\n\n" +
+            "STAGE: " + (data.stage || "none") +
+            "\nSUCCESS: " + data.success +
+            "\nMESSAGE: " + (data.message || "none") +
+            "\n\nDEBUG:\n" +
+            JSON.stringify(data.debug || {}, null, 2)
+          );
+
+        } catch (e) {
+
+          alert(
+            "JSON PARSE FAILED:\n\n" +
+            e.message
+          );
+
+        }
+
+      } else {
+
+        alert(
+          "BACKEND RETURNED NON-JSON:\n\n" +
+          text
+        );
+
+      }
+
+    } catch (err) {
+
+      alert(
+        "REQUEST FAILED:\n\n" +
+        err.message
+      );
+
+    }
   })();
 }, []);
-
 
 
   // ── Startup ─────────────────────────────────────────────────────────────────
