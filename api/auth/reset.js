@@ -47,7 +47,7 @@ export default async function handler(req, res) {
     return sendErr(res, 'Reset code has expired. Please request a new one.');
   }
 
-  if (storedCode !== code) {
+  if (String(storedCode).trim() !== String(code).trim()) { {
     return sendErr(res, 'Invalid reset code.');
   }
 
