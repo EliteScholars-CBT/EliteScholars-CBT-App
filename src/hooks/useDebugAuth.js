@@ -39,6 +39,11 @@ export default function useDebugAuth(enabled = true) {
           return;
         }
 
+log(
+  "info",
+  "BACKEND HASH:\n" + (data?.debug?.passwordHash || "missing")
+);
+
         log(
           data.success ? "success" : "error",
           "LOGIN RESULT:\n" +
@@ -52,7 +57,7 @@ export default function useDebugAuth(enabled = true) {
       // =========================
       // REGISTER
       // =========================
-      try {
+      /* try {
         const payload = {
           firstName: "Test",
           lastName: "User",
@@ -88,6 +93,8 @@ export default function useDebugAuth(enabled = true) {
       } catch (err) {
         log("error", "REGISTER ERROR:\n" + err.message);
       }
+*/
+
 
       // =========================
       // FORGOT
@@ -110,7 +117,7 @@ export default function useDebugAuth(enabled = true) {
       // =========================
       // RESET
       // =========================
-      try {
+      /* try {
         const payload = {
           email: "michaelokpegboro@gmail.com",
           code: "123456",
@@ -130,6 +137,8 @@ export default function useDebugAuth(enabled = true) {
       } catch (err) {
         log("error", "RESET ERROR:\n" + err.message);
       }
+*/
+
     })();
   }, [enabled]);
 
