@@ -503,7 +503,7 @@ export default function DebugConsole() {
         boxSizing:      "border-box",
         width:          "100%",
       }}>
-        <span>EliteScholars DevTools v1.0</span>
+        <span>Makzosoft DevTools v1.0</span>
         <span>{new Date().toLocaleDateString()}</span>
       </div>
 
