@@ -1,6 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
-import TestPage from "./debug/TestPage";
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import AuthScreen from './components/AuthScreen';
