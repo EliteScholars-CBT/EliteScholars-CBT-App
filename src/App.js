@@ -158,36 +158,53 @@ export default function App() {
 // test login
 useEffect(() => {
   (async () => {
-    const payload = {
-      email: "michaelokpegboro@gmail.com",
-      password: "oomikeoo"
-    };
-
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
-
-    const text = await res.text();
-
-    alert("RAW RESPONSE:\n" + text);
-
     try {
-      const data = JSON.parse(text);
+      const payload = {
+        email: "michaelokpegboro@gmail.com",
+        password: "oomikeoo"
+      };
 
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const text = await res.text();
+
+      alert("RAW RESPONSE:\n" + text);
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        alert("❌ NOT VALID JSON RESPONSE");
+        return;
+      }
+
+      // =========================
+      // CLEAN REPORT VIEW
+      // =========================
       alert(
-        "STAGE: " + data.stage +
-        "\nSUCCESS: " + data.success +
-        "\nMATCH: " + data.debug.match +
-        "\n\nGENERATED:\n" + data.debug.generatedHash +
-        "\n\nSHEET:\n" + data.debug.sheetHash
+        "STAGE: " + (data.stage || "none") +
+        "\nSUCCESS: " + (data.success ?? "undefined") +
+        "\nMESSAGE: " + (data.message || "none")
       );
 
-    } catch (e) {
-      alert("NOT JSON RESPONSE");
+      // =========================
+      // OPTIONAL: SUCCESS DETAILS
+      // =========================
+      if (data.success) {
+        alert(
+          "LOGIN SUCCESS 🎉\n\nPROFILE:\n" +
+          JSON.stringify(data.data.profile, null, 2)
+        );
+      }
+
+    } catch (err) {
+      alert("REQUEST FAILED:\n" + err.message);
     }
   })();
 }, []);
