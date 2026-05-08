@@ -12,7 +12,7 @@ import { sheetsGet }       from '../_helpers/sheets.js';
 import { logSecurityEvent } from '../_helpers/security.js';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const FROM   = process.env.FROM_EMAIL || 'noreply@elitescholars.site';
+const FROM   = process.env.FROM_EMAIL || 'noreply@mail.elitescholars.site';
 
 export default async function handler(req, res) {
   setCors(res);
