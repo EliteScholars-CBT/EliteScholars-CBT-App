@@ -156,11 +156,9 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
-const DEBUG = false;
-
-/*useEffect(() => {
-    installNetworkDebugger();
-  }, []);*/
+useEffect(() => {
+    installGlobalErrorDebugger();
+  }, []);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
