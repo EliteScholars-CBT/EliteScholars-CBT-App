@@ -1,35 +1,24 @@
-import { useEffect } from "react";
-import { addLog } from "../utils/debugStore";
+import { useEffect, useState } from "react";
 
 export default function useDebugAuth(enabled = true) {
+  const [logs, setLogs] = useState([]);
 
-  const log = (type, message, data) => {
-    addLog({
-      type,
-      message,
-      data,
-      time: new Date().toISOString()
-    });
-
-    if (type === "error") console.error(message, data);
-    else console.log(message, data);
+  const log = (type, message) => {
+    setLogs((prev) => [...prev, { type, message }]);
+    console[type === "error" ? "error" : "log"](message);
   };
 
   useEffect(() => {
     if (!enabled) return;
 
     (async () => {
-
-      // =========================
-      // LOGIN
-      // =========================
       try {
         const payload = {
           email: "michaelokpegboro@gmail.com",
           password: "oomikeoo"
         };
 
-        log("info", "LOGIN PAYLOAD", payload);
+        log("info", "LOGIN PAYLOAD:\n" + JSON.stringify(payload, null, 2));
 
         const res = await fetch("/api/auth/login", {
           method: "POST",
@@ -38,28 +27,26 @@ export default function useDebugAuth(enabled = true) {
         });
 
         const text = await res.text();
-        log("info", "LOGIN RAW", text);
+        log("info", "LOGIN RAW:\n" + text);
 
         let data;
         try {
           data = JSON.parse(text);
         } catch {
-          log("error", "LOGIN NOT VALID JSON", text);
+          log("error", "INVALID JSON RESPONSE");
           return;
         }
 
-        log("info", "BACKEND HASH", data?.debug?.passwordHash || "missing");
-
         log(
           data.success ? "success" : "error",
-          "LOGIN RESULT",
-          data
+          "LOGIN RESULT:\n" + JSON.stringify(data, null, 2)
         );
 
       } catch (err) {
-        log("error", "LOGIN ERROR", err.message);
+        log("error", err.message);
       }
-
     })();
   }, [enabled]);
+
+  return { logs };
 }
