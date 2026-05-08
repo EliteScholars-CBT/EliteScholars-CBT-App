@@ -101,7 +101,7 @@ function validate(fields) {
 
 useEffect(()=> {
 
-alert('Hi, it's AuthScreen here')
+alert('Hi, it is AuthScreen here')
 
 }, [])
 
