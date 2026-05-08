@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { subscribe, clearLogs } from "./debugStore";
+import { subscribe, clearLogs } from "../utils/debugStore";
 
 export default function DebugConsole() {
   const [logs, setLogs] = useState([]);
