@@ -167,7 +167,7 @@ export default function AuthScreen({ onDone }) {
 
 useEffect(() => {
 alert("I'm on Authscreen")
-})
+}, [])
 
 
   // ─────────────────────────────────────────
