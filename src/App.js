@@ -157,7 +157,9 @@ export default function App() {
 
 
 useEffect(() => {
+alert('before installGlobalErrorDebugger();')
     installGlobalErrorDebugger();
+alert('after installGlobalErrorDebugger();')
   }, []);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
