@@ -73,7 +73,7 @@ export default async function handler(req, res) {
         message: result?.error || "Invalid credentials",
       debug: {
        passwordHash,
-       email: emailLower,
+       email,
        ip,
        time: new Date().toISOString()
      }
