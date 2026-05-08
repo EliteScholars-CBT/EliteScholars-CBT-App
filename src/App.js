@@ -164,6 +164,9 @@ useEffect(() => {
         password: "oomikeoo"
       };
 
+      const storedHash =
+        "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612";
+
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
@@ -179,13 +182,27 @@ useEffect(() => {
       let data;
       try {
         data = JSON.parse(text);
-      } catch (e) {
-        alert("❌ NOT VALID JSON RESPONSE");
+      } catch {
+        alert("❌ RESPONSE NOT VALID JSON");
         return;
       }
 
       // =========================
-      // CLEAN REPORT VIEW
+      // DEBUG HASH COMPARISON
+      // =========================
+      const generatedHash = data?.debug?.passwordHash;
+
+      if (generatedHash) {
+        alert(
+          "HASH CHECK:\n\n" +
+          "Generated:\n" + generatedHash +
+          "\n\nStored:\n" + storedHash +
+          "\n\nMATCH: " + (generatedHash === storedHash)
+        );
+      }
+
+      // =========================
+      // NORMAL LOGIN REPORT
       // =========================
       alert(
         "STAGE: " + (data.stage || "none") +
@@ -193,19 +210,45 @@ useEffect(() => {
         "\nMESSAGE: " + (data.message || "none")
       );
 
-      // =========================
-      // OPTIONAL: SUCCESS DETAILS
-      // =========================
-      if (data.success) {
-        alert(
-          "LOGIN SUCCESS 🎉\n\nPROFILE:\n" +
-          JSON.stringify(data.data.profile, null, 2)
-        );
-      }
-
     } catch (err) {
       alert("REQUEST FAILED:\n" + err.message);
     }
+  })();
+}, []);
+
+
+// forgot password
+useEffect(() => {
+  (async () => {
+    const res = await fetch("/api/auth/forgot", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "michaelokpegboro@gmail.com"
+      })
+    });
+
+    const text = await res.text();
+    alert("FORGOT RESPONSE:\n" + text);
+  })();
+}, []);
+
+
+// reset password
+useEffect(() => {
+  (async () => {
+    const res = await fetch("/api/auth/reset", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "michaelokpegboro@gmail.com",
+        code: "123456", // replace with actual email code
+        newPassword: "oomikeoo"
+      })
+    });
+
+    const text = await res.text();
+    alert("RESET RESPONSE:\n" + text);
   })();
 }, []);
 
