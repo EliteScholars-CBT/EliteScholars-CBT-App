@@ -160,10 +160,9 @@ export default function App() {
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
 
-alert('before installGlobalErrorDebugger();')
+alert('before installGlobalErrorDebugger()')
     installGlobalErrorDebugger();
-alert('after installGlobalErrorDebugger();')
-  },
+alert('after installGlobalErrorDebugger()')
 
   applySecurityMeasures();
   registerSW().then((reg) => {
