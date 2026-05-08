@@ -99,14 +99,6 @@ function validate(fields) {
 }
 
 
-useEffect(()=> {
-
-alert('Hi, it is AuthScreen here')
-
-}, [])
-
-
-
 export default function AuthScreen({ onDone }) {
 
   // ─────────────────────────────────────────
@@ -147,6 +139,12 @@ export default function AuthScreen({ onDone }) {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
+
+useEffect(()=> {
+
+alert('Hi, it is AuthScreen here')
+
+}, [])
 
   const err = (msg) => {
     setError(msg);
