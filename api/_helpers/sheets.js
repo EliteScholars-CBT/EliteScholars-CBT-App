@@ -1,4 +1,4 @@
-const SHEETS_URL = process.env.SHEETS_URL || "https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1U6k3Sl7czKLzC0PjW4jP1FSO4P_mMkSWN4fUmmCBPjt09YU/exec";
+const SHEETS_URL = process.env.SHEETS_URL;
 
 export async function sheetsGet(params) {
   try {
