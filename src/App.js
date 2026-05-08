@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
-import DebugConsole from "./debug/DebugConsole";
-import { installGlobalErrorDebugger } from "./debug/debugGlobalErrors";
+import DebugConsole from "./utils/DebugConsole";
+import { installGlobalErrorDebugger } from "./utils/debugGlobalErrors";
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import AuthScreen from './components/AuthScreen';
