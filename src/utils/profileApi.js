@@ -1,151 +1,84 @@
 // ============================================================================
-// profileApi.js — Auth via Vercel API, sync via Apps Script (DEBUG ENABLED)
+// profileApi.js — SAFE VERSION (FIXED ERROR HANDLING)
 // ============================================================================
 
 import { SHEETS_URL } from './constants';
-import { addLog } from './debugStore'; // 👈 IMPORTANT
 
-function safeParse(text) {
+async function safeFetchJSON(endpoint, options) {
   try {
-    return JSON.parse(text);
-  } catch {
-    return null;
-  }
-}
+    const res = await fetch(endpoint, options);
 
-// ───────────────────────────────────────────────────────────────
-// POST wrapper (DEBUG VERSION)
-// ───────────────────────────────────────────────────────────────
-async function apiPost(endpoint, body) {
-  try {
-    addLog({
-      type: "info",
-      message: "API REQUEST (POST)",
-      data: { endpoint, body },
-      time: new Date().toISOString()
-    });
+    const text = await res.text(); // always read raw first
 
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-
-    const text = await res.text();
-
-    addLog({
-      type: "info",
-      message: "API RAW RESPONSE",
-      data: { endpoint, text },
-      time: new Date().toISOString()
-    });
-
-    const data = safeParse(text);
-
-    if (!data) {
-      addLog({
-        type: "error",
-        message: "INVALID JSON RESPONSE",
-        data: text,
-        time: new Date().toISOString()
-      });
-
-      return { success: false, error: "Invalid JSON response" };
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      return {
+        success: false,
+        error: 'INVALID_JSON_RESPONSE',
+        raw: text,
+        status: res.status
+      };
     }
 
-    addLog({
-      type: res.ok ? "success" : "error",
-      message: "API PARSED RESPONSE",
-      data,
-      time: new Date().toISOString()
-    });
-
     return data;
-
   } catch (err) {
-    addLog({
-      type: "error",
-      message: "API NETWORK ERROR",
-      data: err.message,
-      time: new Date().toISOString()
-    });
-
-    return { success: false, error: err.message };
+    return {
+      success: false,
+      error: err.message || 'NETWORK_ERROR'
+    };
   }
 }
 
-// ───────────────────────────────────────────────────────────────
-// GET wrapper (DEBUG VERSION)
-// ───────────────────────────────────────────────────────────────
+async function apiPost(endpoint, body) {
+  return safeFetchJSON(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+}
+
 async function apiGet(endpoint, params = {}) {
-  try {
-    const qs = new URLSearchParams(params).toString();
-    const url = `${endpoint}${qs ? '?' + qs : ''}`;
+  const qs = new URLSearchParams(params).toString();
 
-    addLog({
-      type: "info",
-      message: "API REQUEST (GET)",
-      data: { url },
-      time: new Date().toISOString()
-    });
-
-    const res = await fetch(url);
-    const text = await res.text();
-
-    const data = safeParse(text);
-
-    addLog({
-      type: res.ok ? "success" : "error",
-      message: "API GET RESPONSE",
-      data: data || text,
-      time: new Date().toISOString()
-    });
-
-    return data;
-
-  } catch (err) {
-    addLog({
-      type: "error",
-      message: "API GET ERROR",
-      data: err.message,
-      time: new Date().toISOString()
-    });
-
-    return null;
-  }
+  return safeFetchJSON(`${endpoint}${qs ? '?' + qs : ''}`);
 }
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
-export async function registerProfile(data) {
-  return apiPost('/api/auth/register', data);
+// ── AUTH ─────────────────────────────────────────────────────────────────────
+
+export async function registerProfile(payload) {
+  return apiPost('/api/auth/register', payload);
 }
 
-export async function loginProfile(data) {
-  return apiPost('/api/auth/login', data);
+export async function loginProfile(payload) {
+  return apiPost('/api/auth/login', payload);
 }
 
-export async function verifyProfile(data) {
-  return apiPost('/api/auth/verify', data);
+export async function verifyProfile(payload) {
+  return apiPost('/api/auth/verify', payload);
 }
 
 export async function requestPasswordReset(email) {
   return apiPost('/api/auth/forgot', { email });
 }
 
-export async function confirmPasswordReset(data) {
-  return apiPost('/api/auth/reset', data);
+export async function confirmPasswordReset(payload) {
+  return apiPost('/api/auth/reset', payload);
 }
 
-// ── Payment ───────────────────────────────────────────────────────────────────
-export async function initiatePayment(data) {
-  return apiPost('/api/payment/initiate', data);
+// ── PAYMENT ──────────────────────────────────────────────────────────────────
+
+export async function initiatePayment(payload) {
+  return apiPost('/api/payment/initiate', payload);
 }
 
 export async function fetchPremiumStatus(email) {
   return apiGet('/api/payment/status', { email });
 }
 
-// ── Content ───────────────────────────────────────────────────────────────────
+// ── CONTENT ──────────────────────────────────────────────────────────────────
+
 export async function fetchSubjects(exam) {
   return apiGet('/api/subjects', { exam });
 }
@@ -173,7 +106,8 @@ export async function fetchAds(exam) {
   return apiGet('/api/ads', { exam: exam || 'all' });
 }
 
-// ── Profile sync ─────────────────────────────────────────────────────────────
+// ── PROFILE SYNC ─────────────────────────────────────────────────────────────
+
 export async function syncProfileToSheet(data) {
   try {
     await fetch(SHEETS_URL, {
@@ -182,18 +116,13 @@ export async function syncProfileToSheet(data) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: 'syncProfile',
-        email: data.email.toLowerCase().trim(),
-        stats: JSON.stringify(data.stats || {}),
-        achievements: JSON.stringify(data.achievements || []),
-        subjectPerformance: JSON.stringify(data.subjectPerformance || {}),
-        theme: data.theme || 'light',
-        lastSync: new Date().toISOString(),
+        ...data,
+        email: data.email?.toLowerCase().trim(),
       }),
     });
   } catch {}
 }
 
-// ── Pull profile ─────────────────────────────────────────────────────────────
 export async function pullProfileFromSheet(email) {
   try {
     const qs = new URLSearchParams({
