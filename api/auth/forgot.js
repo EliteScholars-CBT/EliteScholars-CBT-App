@@ -137,7 +137,7 @@ export default async function handler(req, res) {
             <td style="padding:32px;text-align:center;background:linear-gradient(135deg,#4B0082,#7B2FBE);">
               <h1 style="color:#fff;margin:0;font-size:22px;">EliteScholars</h1>
               <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:12px;">
-                CBT Prep Platform
+                Your Study / Exam Prep App
               </p>
             </td>
           </tr>
