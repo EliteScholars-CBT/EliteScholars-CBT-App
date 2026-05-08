@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
-import TestPage from './debug/TestPage';
-// import { installNetworkDebugger } from "./utils/networkDebug";
+import DebugConsole from "./debug/DebugConsole";
+import { installGlobalErrorDebugger } from "./debug/debugGlobalErrors";
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import AuthScreen from './components/AuthScreen';
@@ -451,9 +451,7 @@ if (ns % 5 === 0) {
 
   return (
     <>
-    <div>
-      {DEBUG && <TestPage />}
-    </div>
+      <DebugConsole />
       <div className="phone">
         <div className="phone-content">
           <Suspense fallback={<LoadingScreen />}>
