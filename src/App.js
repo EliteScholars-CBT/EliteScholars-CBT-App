@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
 import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
+import TestPage from './debug/TestPage';
 import Toast from './components/Toast';
 import AchievementPopup from './components/AchievementPopup';
 import AuthScreen from './components/AuthScreen';
@@ -154,7 +155,7 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
-const isDev = true;
+const DEBUG = true;
 
 
 
@@ -448,7 +449,7 @@ if (ns % 5 === 0) {
   return (
     <>
     <div>
-      {isDev && <TestPage />}
+      {DEBUG && <TestPage />}
     </div>
       <div className="phone">
         <div className="phone-content">
