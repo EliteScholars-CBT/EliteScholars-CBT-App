@@ -7,32 +7,47 @@ export default function DebugConsole() {
   const [max, setMax] = useState(false);
 
   const boxRef = useRef(null);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
-    const unsub = subscribe(setLogs);
-    return unsub;
+    return subscribe(setLogs);
   }, []);
 
-  // Drag system
+  // auto scroll to bottom
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [logs]);
+
+  // Drag system (fixed)
   useEffect(() => {
     const el = boxRef.current;
     if (!el) return;
 
-    let offsetX = 0, offsetY = 0, dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+    let dragging = false;
 
     const down = (e) => {
+      if (max) return;
       dragging = true;
       offsetX = e.clientX - el.offsetLeft;
       offsetY = e.clientY - el.offsetTop;
+      e.preventDefault();
     };
 
     const move = (e) => {
       if (!dragging || max) return;
-      el.style.left = e.clientX - offsetX + "px";
-      el.style.top = e.clientY - offsetY + "px";
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+      el.style.right = "auto";
+      el.style.bottom = "auto";
     };
 
-    const up = () => (dragging = false);
+    const up = () => {
+      dragging = false;
+    };
 
     el.addEventListener("mousedown", down);
     window.addEventListener("mousemove", move);
@@ -45,9 +60,11 @@ export default function DebugConsole() {
     };
   }, [max]);
 
-  const copy = (text) => {
+  const copy = (data) => {
     navigator.clipboard.writeText(
-      typeof text === "string" ? text : JSON.stringify(text, null, 2)
+      typeof data === "string"
+        ? data
+        : JSON.stringify(data, null, 2)
     );
   };
 
@@ -78,27 +95,28 @@ export default function DebugConsole() {
       ref={boxRef}
       style={{
         position: "fixed",
-        bottom: 0,
-        right: 0,
+        bottom: max ? 0 : 20,
+        right: max ? 0 : 20,
         width: max ? "100%" : 420,
-        height: max ? "100%" : 300,
+        height: max ? "100%" : 320,
         background: "#0b0b0b",
         color: "#fff",
         fontFamily: "monospace",
         zIndex: 999999,
         display: "flex",
         flexDirection: "column",
-        border: "1px solid #222"
+        border: "1px solid #222",
+        userSelect: "none"
       }}
     >
-      {/* Header */}
+      {/* HEADER */}
       <div
         style={{
           padding: 8,
           background: "#111",
           display: "flex",
           justifyContent: "space-between",
-          cursor: "move"
+          cursor: max ? "default" : "move"
         }}
       >
         <span>DEBUG CONSOLE</span>
@@ -110,11 +128,14 @@ export default function DebugConsole() {
         </div>
       </div>
 
-      {/* Logs */}
-      <div style={{ overflow: "auto", flex: 1, padding: 10 }}>
-        {logs.map((l) => (
+      {/* LOGS */}
+      <div
+        ref={scrollRef}
+        style={{ overflow: "auto", flex: 1, padding: 10 }}
+      >
+        {logs.map((l, i) => (
           <div
-            key={l.id}
+            key={l.id || i}
             style={{
               marginBottom: 10,
               borderLeft: `3px solid ${
@@ -122,13 +143,13 @@ export default function DebugConsole() {
                   ? "red"
                   : l.type === "success"
                   ? "lime"
-                  : "gray"
+                  : "#666"
               }`,
               paddingLeft: 8
             }}
           >
             <div style={{ fontSize: 12, opacity: 0.7 }}>
-              {l.category} • {l.time}
+              {l.category || "log"} • {l.time || ""}
             </div>
 
             <div>{l.message}</div>
@@ -139,7 +160,10 @@ export default function DebugConsole() {
               </pre>
             )}
 
-            <button onClick={() => copy(l)} style={{ fontSize: 10 }}>
+            <button
+              onClick={() => copy(l)}
+              style={{ fontSize: 10 }}
+            >
               copy
             </button>
           </div>
