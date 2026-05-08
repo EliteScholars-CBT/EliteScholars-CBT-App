@@ -14,6 +14,7 @@ import {
 
 import { logSessionToSheet } from '../utils/auth';
 import { saveUser } from '../utils/storage';
+import { addLog } from "../utils/debugStore";
 
 const EXAM_TYPES = [
   { id: 'jamb',     label: 'JAMB UTME', icon: '📝' },
