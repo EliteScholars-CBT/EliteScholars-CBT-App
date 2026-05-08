@@ -1,4 +1,4 @@
-import { hashPassword } from '../_helpers/hash.js';
+import { sheetsGet } from '../_helpers/sheets.js';
 
 export default async function handler(req, res) {
   try {
@@ -11,19 +11,23 @@ export default async function handler(req, res) {
       });
     }
 
-    const passwordHash = hashPassword(body.password);
+    const result = await sheetsGet({
+      action: "loginProfile",
+      email: body.email,
+      passwordHash: body.password
+    });
 
     return res.status(200).json({
-      stage: "hash_test",
+      stage: "sheets_test",
       success: true,
       debug: {
-        passwordHash
+        result
       }
     });
 
   } catch (err) {
     return res.status(500).json({
-      stage: "hash_crash",
+      stage: "sheets_crash",
       success: false,
       error: err.message
     });
