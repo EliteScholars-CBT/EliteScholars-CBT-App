@@ -1,35 +1,92 @@
 // ============================================================================
-// profileApi.js — SAFE VERSION (FIXED ERROR HANDLING)
+// profileApi.js — DEBUGGER-INTEGRATED SAFE VERSION
 // ============================================================================
 
 import { SHEETS_URL } from './constants';
+import { addLog } from "../debug/debugStore";
 
-async function safeFetchJSON(endpoint, options) {
+// ─────────────────────────────────────────────────────────────────────────────
+// CORE SAFE FETCH (now fully observable)
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function safeFetchJSON(endpoint, options = {}) {
+  const start = performance.now();
+
+  addLog({
+    type: "info",
+    category: "network",
+    message: "REQUEST",
+    data: {
+      url: endpoint,
+      method: options.method || "GET",
+      body: options.body || null
+    }
+  });
+
   try {
     const res = await fetch(endpoint, options);
-
-    const text = await res.text(); // always read raw first
+    const text = await res.text();
+    const duration = Math.round(performance.now() - start);
 
     let data;
+
     try {
       data = JSON.parse(text);
-    } catch {
+    } catch (err) {
+      addLog({
+        type: "error",
+        category: "network",
+        message: "INVALID JSON RESPONSE",
+        data: {
+          url: endpoint,
+          status: res.status,
+          raw: text
+        }
+      });
+
       return {
         success: false,
-        error: 'INVALID_JSON_RESPONSE',
+        error: "INVALID_JSON_RESPONSE",
         raw: text,
         status: res.status
       };
     }
 
+    addLog({
+      type: res.ok ? "success" : "error",
+      category: "network",
+      message: "RESPONSE",
+      data: {
+        url: endpoint,
+        status: res.status,
+        duration: `${duration}ms`,
+        response: data
+      }
+    });
+
     return data;
+
   } catch (err) {
+    addLog({
+      type: "error",
+      category: "network",
+      message: "NETWORK ERROR",
+      data: {
+        url: endpoint,
+        error: err.message
+      }
+    });
+
     return {
       success: false,
-      error: err.message || 'NETWORK_ERROR'
+      error: err.message || "NETWORK_ERROR"
     };
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// API WRAPPERS
+// ─────────────────────────────────────────────────────────────────────────────
 
 async function apiPost(endpoint, body) {
   return safeFetchJSON(endpoint, {
@@ -41,11 +98,14 @@ async function apiPost(endpoint, body) {
 
 async function apiGet(endpoint, params = {}) {
   const qs = new URLSearchParams(params).toString();
+  const url = `${endpoint}${qs ? '?' + qs : ''}`;
 
-  return safeFetchJSON(`${endpoint}${qs ? '?' + qs : ''}`);
+  return safeFetchJSON(url);
 }
 
-// ── AUTH ─────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function registerProfile(payload) {
   return apiPost('/api/auth/register', payload);
@@ -67,7 +127,9 @@ export async function confirmPasswordReset(payload) {
   return apiPost('/api/auth/reset', payload);
 }
 
-// ── PAYMENT ──────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// PAYMENT
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function initiatePayment(payload) {
   return apiPost('/api/payment/initiate', payload);
@@ -77,7 +139,9 @@ export async function fetchPremiumStatus(email) {
   return apiGet('/api/payment/status', { email });
 }
 
-// ── CONTENT ──────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// CONTENT
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function fetchSubjects(exam) {
   return apiGet('/api/subjects', { exam });
@@ -106,7 +170,9 @@ export async function fetchAds(exam) {
   return apiGet('/api/ads', { exam: exam || 'all' });
 }
 
-// ── PROFILE SYNC ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// PROFILE SYNC
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function syncProfileToSheet(data) {
   try {
@@ -120,8 +186,23 @@ export async function syncProfileToSheet(data) {
         email: data.email?.toLowerCase().trim(),
       }),
     });
-  } catch {}
+
+  } catch (err) {
+    addLog({
+      type: "error",
+      category: "network",
+      message: "SYNC FAILED",
+      data: {
+        error: err.message,
+        email: data?.email
+      }
+    });
+  }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SHEET PULL
+// ─────────────────────────────────────────────────────────────────────────────
 
 export async function pullProfileFromSheet(email) {
   try {
@@ -132,8 +213,21 @@ export async function pullProfileFromSheet(email) {
     });
 
     const res = await fetch(`${SHEETS_URL}?${qs}`);
-    return await res.json();
-  } catch {
+    const data = await res.json();
+
+    return data;
+
+  } catch (err) {
+    addLog({
+      type: "error",
+      category: "network",
+      message: "PULL FAILED",
+      data: {
+        error: err.message,
+        email
+      }
+    });
+
     return null;
   }
 }
