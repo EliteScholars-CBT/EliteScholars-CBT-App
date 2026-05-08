@@ -252,6 +252,90 @@ useEffect(() => {
   })();
 }, []);
 
+
+// register
+
+useEffect(() => {
+  (async () => {
+    try {
+      // =========================
+      // PAYLOAD
+      // =========================
+      const payload = {
+        firstName: "Test",
+        lastName: "User",
+        email: "test@gmail.com",
+        password: "password",
+        studentType: "waec",
+        selectedExams: ["math", "english"]
+      };
+
+      alert("SENDING REGISTER PAYLOAD:\n" + JSON.stringify(payload, null, 2));
+
+      // =========================
+      // API CALL
+      // =========================
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      alert(
+        "RESPONSE STATUS:\n" +
+        res.status +
+        "\nOK: " +
+        res.ok
+      );
+
+      // =========================
+      // RAW RESPONSE
+      // =========================
+      const text = await res.text();
+
+      alert("RAW RESPONSE:\n" + text);
+
+      // =========================
+      // PARSE RESPONSE
+      // =========================
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        alert("❌ RESPONSE IS NOT VALID JSON");
+        return;
+      }
+
+      // =========================
+      // SUCCESS CHECK
+      // =========================
+      alert(
+        "REGISTER STAGE:\n" +
+        (data.success ? "SUCCESS" : "FAILED") +
+        "\nEMAIL: " + (data?.profile?.email || "none")
+      );
+
+      // =========================
+      // DEBUG (IF ENABLED)
+      // =========================
+      if (data.debug) {
+        alert(
+          "DEBUG HASH INFO:\n\n" +
+          "Input Password: " + data.debug.inputPassword +
+          "\nGenerated Hash: " + data.debug.generatedHash +
+          "\nIP: " + data.debug.ip
+        );
+      }
+
+    } catch (err) {
+      alert("REQUEST FAILED:\n" + err.message);
+    }
+  })();
+}, []);
+
+
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
   applySecurityMeasures();
