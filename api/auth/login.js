@@ -71,6 +71,12 @@ export default async function handler(req, res) {
         success: false,
         stage: "login_failed",
         message: result?.error || "Invalid credentials",
+      debug: {
+       passwordHash,
+       email: emailLower,
+       ip,
+       time: new Date().toISOString()
+     }
       });
     }
 
@@ -89,12 +95,6 @@ export default async function handler(req, res) {
       success: false,
       stage: "internal_error",
       message: err.message,
-      debug: {
-       passwordHash,
-       email: emailLower,
-       ip,
-       time: new Date().toISOString()
-     }
     });
   }
 }
