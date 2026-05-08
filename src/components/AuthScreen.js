@@ -2,7 +2,7 @@
 // AuthScreen.js
 // ============================================================================
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/elite-scholars-logo.png';
 
 import {
@@ -97,6 +97,15 @@ function validate(fields) {
 
   return null;
 }
+
+
+useEffect(()=> {
+
+alert('Hi, it's AuthScreen here')
+
+}, [])
+
+
 
 export default function AuthScreen({ onDone }) {
 
