@@ -14,7 +14,7 @@ export default function useDebugAuth(enabled = true) {
       // =========================
       // LOGIN
       // =========================
-      try {
+       try {
         const payload = {
           email: "michaelokpegboro@gmail.com",
           password: "oomikeoo"
@@ -53,6 +53,8 @@ log(
       } catch (err) {
         log("error", "LOGIN ERROR:\n" + err.message);
       }
+
+
 
       // =========================
       // REGISTER
@@ -99,7 +101,7 @@ log(
       // =========================
       // FORGOT
       // =========================
-      try {
+      /* try {
         const res = await fetch("/api/auth/forgot", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -113,6 +115,8 @@ log(
       } catch (err) {
         log("error", "FORGOT ERROR:\n" + err.message);
       }
+*/
+
 
       // =========================
       // RESET
