@@ -59,6 +59,33 @@ const AdGate    = lazy(() => import('./components/AdGate'));
 
 import appLogo from './assets/elite-scholars-cbt-logo.png';
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error, info) {
+    console.error('App crashed:', error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ color: 'white', background: '#1a0030', padding: 24, minHeight: '100vh' }}>
+          <h2>Something went wrong</h2>
+          <pre style={{ fontSize: 12 }}>{this.state.error?.message}</pre>
+          <button onClick={() => this.setState({ hasError: false, error: null })}>
+            Retry
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 const LoadingScreen = () => (
   <div className="loading-screen" style={{ background: 'linear-gradient(160deg, #1a0030, #4B0082, #1a0030)' }}>
     <div className="loading-spinner" />
@@ -159,10 +186,6 @@ export default function App() {
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
-
-alert('before installGlobalErrorDebugger()')
-    installGlobalErrorDebugger();
-alert('after installGlobalErrorDebugger()')
 
   applySecurityMeasures();
   registerSW().then((reg) => {
@@ -454,8 +477,9 @@ if (ns % 5 === 0) {
       <DebugConsole />
       <div className="phone">
         <div className="phone-content">
-          <Suspense fallback={<LoadingScreen />}>
-
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingScreen />}>
+          </ErrorBoundary>
             {screen === 'splash' && <Splash onDone={handleSplash} />}
 
             {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
