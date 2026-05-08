@@ -162,7 +162,7 @@ useEffect(() => {
 
       const payload = {
         email: "michaelokpegboro@gmail.com",
-        password: "oomikeoo"
+        password: "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612"
       };
 
       alert(
