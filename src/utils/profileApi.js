@@ -3,7 +3,7 @@
 // ============================================================================
 
 import { SHEETS_URL } from './constants';
-import { addLog } from "../debug/debugStore";
+import { addLog } from "./debugStore";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CORE SAFE FETCH (now fully observable)
