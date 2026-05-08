@@ -23,7 +23,8 @@ export default async function handler(req, res) {
 
     const emailLower = body.email.toLowerCase().trim();
 
-    const passwordHash = hashPassword(body.password);
+const firstHash = hashPassword(body.password);
+const passwordHash = hashPassword(firstHash);
 
 return res.status(200).json({
   stage: "hash_compare",
@@ -31,6 +32,7 @@ return res.status(200).json({
 
   debug: {
     rawPassword: body.password,
+    firstHash,
     generatedHash: passwordHash
   }
 });
