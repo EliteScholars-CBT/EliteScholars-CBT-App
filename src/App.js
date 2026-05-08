@@ -159,85 +159,26 @@ export default function App() {
 useEffect(() => {
   (async () => {
     try {
+      const password = "oomikeoo";
 
-      const payload = {
-        email: "michaelokpegboro@gmail.com",
-        password: "oomikeoo"
-      };
+      // OLD frontend hashing method (Web Crypto)
+      const encoder = new TextEncoder();
+      const data = encoder.encode(password + "ep_salt_2025");
 
-      alert(
-        "SENDING PAYLOAD:\n\n" +
-        JSON.stringify(payload, null, 2)
-      );
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
 
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
+      const frontendHash = hashArray
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
 
-      alert(
-        "RESPONSE STATUS:\n\n" +
-        "Status: " + res.status +
-        "\nOK: " + res.ok
-      );
-
-      const text = await res.text();
-
-      alert(
-        "RAW RESPONSE:\n\n" +
-        text
-      );
-
-      // only attempt JSON parse if it looks like JSON
-      if (
-        text.trim().startsWith("{") ||
-        text.trim().startsWith("[")
-      ) {
-
-        try {
-
-          const data = JSON.parse(text);
-
-          alert(
-            "PARSED RESPONSE:\n\n" +
-            "STAGE: " + (data.stage || "none") +
-            "\nSUCCESS: " + data.success +
-            "\nMESSAGE: " + (data.message || "none") +
-            "\n\nDEBUG:\n" +
-            JSON.stringify(data.debug || {}, null, 2)
-          );
-
-        } catch (e) {
-
-          alert(
-            "JSON PARSE FAILED:\n\n" +
-            e.message
-          );
-
-        }
-
-      } else {
-
-        alert(
-          "BACKEND RETURNED NON-JSON:\n\n" +
-          text
-        );
-
-      }
+      alert("FRONTEND HASH:\n" + frontendHash);
 
     } catch (err) {
-
-      alert(
-        "REQUEST FAILED:\n\n" +
-        err.message
-      );
-
+      alert("HASH ERROR:\n" + err.message);
     }
   })();
-}, []);
+}, []);.
 
 
   // ── Startup ─────────────────────────────────────────────────────────────────
