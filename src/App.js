@@ -156,14 +156,15 @@ export default function App() {
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
 
-useEffect(() => {
-alert('before installGlobalErrorDebugger();')
-    installGlobalErrorDebugger();
-alert('after installGlobalErrorDebugger();')
-  }, []);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
+
+alert('before installGlobalErrorDebugger();')
+    installGlobalErrorDebugger();
+alert('after installGlobalErrorDebugger();')
+  },
+
   applySecurityMeasures();
   registerSW().then((reg) => {
     if (reg) {
