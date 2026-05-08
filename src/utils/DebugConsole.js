@@ -52,14 +52,16 @@ function LogEntry({ log, onCopy }) {
   const catColor = CATEGORY_COLORS[log.category] || "#888";
 
   return (
-    <div style={{
-      marginBottom: 6,
-      borderLeft: `3px solid ${c.border}`,
-      background: c.bg,
-      padding: "6px 8px",
-      borderRadius: "0 4px 4px 0",
-      cursor: log.data ? "pointer" : "default",
-    }}
+    <div
+      style={{
+        marginBottom: 6,
+        borderLeft: `3px solid ${c.border}`,
+        background: c.bg,
+        padding: "6px 8px",
+        borderRadius: "0 4px 4px 0",
+        cursor: log.data ? "pointer" : "default",
+        boxSizing: "border-box",
+      }}
       onClick={() => log.data && setExpanded(e => !e)}
     >
       {/* Top row */}
@@ -109,6 +111,8 @@ function LogEntry({ log, onCopy }) {
           maxHeight: 200,
           whiteSpace: "pre-wrap",
           wordBreak: "break-all",
+          boxSizing: "border-box",
+          width: "100%",
         }}>
           {typeof log.data === "string"
             ? log.data
@@ -137,13 +141,40 @@ function LogEntry({ log, onCopy }) {
   );
 }
 
+function HeaderBtn({ onClick, title, color, children }) {
+  return (
+    <button
+      onClick={onClick}
+      title={title}
+      style={{
+        background: "transparent",
+        border: "1px solid #2a2a2a",
+        color: color || "#666",
+        borderRadius: 4,
+        width: 24,
+        height: 24,
+        fontSize: 11,
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "monospace",
+        padding: 0,
+        flexShrink: 0,
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
 export default function DebugConsole() {
-  const [logs, setLogs]       = useState([]);
-  const [open, setOpen]       = useState(false);
-  const [max, setMax]         = useState(false);
-  const [tab, setTab]         = useState("ALL");
-  const [search, setSearch]   = useState("");
-  const [counts, setCounts]   = useState({});
+  const [logs, setLogs]     = useState([]);
+  const [open, setOpen]     = useState(false);
+  const [max, setMax]       = useState(false);
+  const [tab, setTab]       = useState("ALL");
+  const [search, setSearch] = useState("");
+  const [counts, setCounts] = useState({});
 
   const boxRef    = useRef(null);
   const scrollRef = useRef(null);
@@ -152,27 +183,30 @@ export default function DebugConsole() {
   // Subscribe to store
   useEffect(() => subscribe(incoming => {
     setLogs(incoming);
-    // Count by type
     const c = {};
     incoming.forEach(l => { c[l.type] = (c[l.type] || 0) + 1; });
     setCounts(c);
   }), []);
 
-  // Auto-scroll
+  // Auto-scroll to bottom
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [logs, open]);
 
-  // Drag
+  // Drag (only when not maximised)
   useEffect(() => {
     const el = boxRef.current;
     if (!el || !open) return;
 
     const down = (e) => {
       if (max || !e.target.closest("[data-drag]")) return;
-      dragRef.current = { dragging: true, ox: e.clientX - el.offsetLeft, oy: e.clientY - el.offsetTop };
+      dragRef.current = {
+        dragging: true,
+        ox: e.clientX - el.offsetLeft,
+        oy: e.clientY - el.offsetTop,
+      };
       e.preventDefault();
     };
     const move = (e) => {
@@ -195,18 +229,14 @@ export default function DebugConsole() {
   }, [open, max]);
 
   const copy = useCallback((log) => {
-    navigator.clipboard.writeText(
-      JSON.stringify(log, null, 2)
-    );
+    navigator.clipboard.writeText(JSON.stringify(log, null, 2));
   }, []);
 
   const copyAll = useCallback(() => {
-    navigator.clipboard.writeText(
-      JSON.stringify(getLogs(), null, 2)
-    );
+    navigator.clipboard.writeText(JSON.stringify(getLogs(), null, 2));
   }, []);
 
-  // Filter
+  // Filter logs by tab + search
   const filtered = logs.filter(l => {
     const matchTab =
       tab === "ALL"     ? true :
@@ -221,50 +251,47 @@ export default function DebugConsole() {
   const errorCount = counts.error || 0;
   const warnCount  = counts.warn  || 0;
 
-  // ── Minimized FAB ───────────────────────────────────────────────────────────
+  // ── Minimised FAB ───────────────────────────────────────────────────────────
   if (!open) {
     return (
       <div
         onClick={() => setOpen(true)}
         title="Open Debug Console"
         style={{
-          position:     "fixed",
-          bottom:       20,
-          right:        20,
-          width:        44,
-          height:       44,
-          background:   "#111",
-          border:       "1px solid #2a2a2a",
-          borderRadius: "50%",
-          display:      "flex",
-          alignItems:   "center",
+          position:       "fixed",
+          bottom:         16,
+          right:          16,
+          width:          44,
+          height:         44,
+          background:     "#111",
+          border:         "1px solid #2a2a2a",
+          borderRadius:   "50%",
+          display:        "flex",
+          alignItems:     "center",
           justifyContent: "center",
-          cursor:       "pointer",
-          zIndex:       999999,
-          fontFamily:   "monospace",
-          fontSize:     11,
-          boxShadow:    "0 4px 20px rgba(0,0,0,0.6)",
-          userSelect:   "none",
+          cursor:         "pointer",
+          zIndex:         999999,
+          boxShadow:      "0 4px 20px rgba(0,0,0,0.6)",
+          userSelect:     "none",
+          flexShrink:     0,
         }}
       >
-        {/* Bug icon */}
-        <span style={{ fontSize: 18 }}>🐛</span>
-        {/* Error badge */}
+        <span style={{ fontSize: 20 }}>🐛</span>
         {errorCount > 0 && (
           <span style={{
-            position:   "absolute",
-            top:        -4,
-            right:      -4,
-            background: "#ff5f57",
-            color:      "#fff",
-            fontSize:   9,
-            fontFamily: "monospace",
-            fontWeight: "bold",
-            borderRadius: "50%",
-            width:      16,
-            height:     16,
-            display:    "flex",
-            alignItems: "center",
+            position:       "absolute",
+            top:            -4,
+            right:          -4,
+            background:     "#ff5f57",
+            color:          "#fff",
+            fontSize:       9,
+            fontFamily:     "monospace",
+            fontWeight:     "bold",
+            borderRadius:   "50%",
+            width:          16,
+            height:         16,
+            display:        "flex",
+            alignItems:     "center",
             justifyContent: "center",
           }}>
             {errorCount > 9 ? "9+" : errorCount}
@@ -279,24 +306,26 @@ export default function DebugConsole() {
     <div
       ref={boxRef}
       style={{
-        position:    "fixed",
-        bottom:      max ? 0 : 20,
-        right:       max ? 0 : 20,
-        left:        max ? 0 : "auto",
-        top:         max ? 0 : "auto",
-        width:       max ? "100%" : 460,
-        height:      max ? "100%" : 360,
-        background:  "#0d0d0d",
-        color:       "#c8c8c8",
-        fontFamily:  "monospace",
-        zIndex:      999999,
-        display:     "flex",
-        flexDirection: "column",
-        border:      "1px solid #222",
-        borderRadius: max ? 0 : 8,
-        boxShadow:   "0 8px 40px rgba(0,0,0,0.8)",
-        overflow:    "hidden",
-        userSelect:  "none",
+        position:        "fixed",
+        bottom:          max ? 0 : 10,
+        right:           max ? 0 : 10,
+        left:            max ? 0 : 10,
+        top:             max ? 0 : "auto",
+        width:           max ? "100%" : "auto",
+        height:          max ? "100%" : "60vh",
+        maxHeight:       max ? "100%" : 420,
+        background:      "#0d0d0d",
+        color:           "#c8c8c8",
+        fontFamily:      "monospace",
+        zIndex:          999999,
+        display:         "flex",
+        flexDirection:   "column",
+        border:          "1px solid #222",
+        borderRadius:    max ? 0 : 8,
+        boxShadow:       "0 8px 40px rgba(0,0,0,0.8)",
+        overflow:        "hidden",
+        userSelect:      "none",
+        boxSizing:       "border-box",
       }}
     >
 
@@ -312,30 +341,46 @@ export default function DebugConsole() {
           justifyContent: "space-between",
           cursor:         max ? "default" : "move",
           flexShrink:     0,
+          boxSizing:      "border-box",
+          width:          "100%",
+          gap:            8,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{ fontSize: 13, color: "#28c840", fontWeight: "bold", letterSpacing: 1 }}>
+        <div style={{
+          display:    "flex",
+          alignItems: "center",
+          gap:        8,
+          flexWrap:   "wrap",
+          minWidth:   0,
+        }}>
+          <span style={{
+            fontSize:      13,
+            color:         "#28c840",
+            fontWeight:    "bold",
+            letterSpacing: 1,
+            fontFamily:    "monospace",
+            whiteSpace:    "nowrap",
+          }}>
             ▶ DEV
           </span>
-          <span style={{ fontSize: 11, color: "#444" }}>
-            {filtered.length}/{logs.length} logs
+          <span style={{ fontSize: 11, color: "#444", fontFamily: "monospace", whiteSpace: "nowrap" }}>
+            {filtered.length}/{logs.length}
           </span>
           {errorCount > 0 && (
-            <span style={{ fontSize: 10, color: "#ff5f57", fontFamily: "monospace" }}>
-              ✖ {errorCount} err
+            <span style={{ fontSize: 10, color: "#ff5f57", fontFamily: "monospace", whiteSpace: "nowrap" }}>
+              ✖ {errorCount}
             </span>
           )}
           {warnCount > 0 && (
-            <span style={{ fontSize: 10, color: "#ffbd2e", fontFamily: "monospace" }}>
-              ⚠ {warnCount} warn
+            <span style={{ fontSize: 10, color: "#ffbd2e", fontFamily: "monospace", whiteSpace: "nowrap" }}>
+              ⚠ {warnCount}
             </span>
           )}
         </div>
 
-        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-          <HeaderBtn onClick={copyAll}   title="Copy all logs">📋</HeaderBtn>
-          <HeaderBtn onClick={clearLogs} title="Clear">🧹</HeaderBtn>
+        <div style={{ display: "flex", gap: 5, alignItems: "center", flexShrink: 0 }}>
+          <HeaderBtn onClick={copyAll}            title="Copy all logs">📋</HeaderBtn>
+          <HeaderBtn onClick={clearLogs}          title="Clear">🧹</HeaderBtn>
           <HeaderBtn onClick={() => setMax(m => !m)} title={max ? "Restore" : "Maximise"}>
             {max ? "⊡" : "⊞"}
           </HeaderBtn>
@@ -350,6 +395,8 @@ export default function DebugConsole() {
         borderBottom: "1px solid #1a1a1a",
         flexShrink:   0,
         overflowX:    "auto",
+        width:        "100%",
+        boxSizing:    "border-box",
       }}>
         {TABS.map(t => {
           const active = tab === t;
@@ -365,13 +412,13 @@ export default function DebugConsole() {
               color:         active ? tColor : "#555",
               border:        "none",
               borderBottom:  active ? `2px solid ${tColor}` : "2px solid transparent",
-              padding:       "5px 12px",
+              padding:       "5px 10px",
               fontSize:      10,
               fontFamily:    "monospace",
               cursor:        "pointer",
               letterSpacing: 1,
               whiteSpace:    "nowrap",
-              transition:    "color 0.15s",
+              flexShrink:    0,
             }}>
               {t}
               {t === "ERROR" && errorCount > 0 && (
@@ -391,6 +438,8 @@ export default function DebugConsole() {
         background:   "#0f0f0f",
         borderBottom: "1px solid #1a1a1a",
         flexShrink:   0,
+        boxSizing:    "border-box",
+        width:        "100%",
       }}>
         <input
           value={search}
@@ -417,7 +466,10 @@ export default function DebugConsole() {
         style={{
           flex:      1,
           overflowY: "auto",
-          padding:   "8px 8px",
+          overflowX: "hidden",
+          padding:   "8px",
+          boxSizing: "border-box",
+          width:     "100%",
         }}
       >
         {filtered.length === 0 ? (
@@ -439,46 +491,22 @@ export default function DebugConsole() {
 
       {/* ── FOOTER ── */}
       <div style={{
-        padding:      "4px 10px",
-        background:   "#111",
-        borderTop:    "1px solid #1a1a1a",
-        fontSize:     9,
-        fontFamily:   "monospace",
-        color:        "#333",
-        display:      "flex",
+        padding:        "4px 10px",
+        background:     "#111",
+        borderTop:      "1px solid #1a1a1a",
+        fontSize:       9,
+        fontFamily:     "monospace",
+        color:          "#333",
+        display:        "flex",
         justifyContent: "space-between",
-        flexShrink:   0,
+        flexShrink:     0,
+        boxSizing:      "border-box",
+        width:          "100%",
       }}>
         <span>EliteScholars DevTools v1.0</span>
         <span>{new Date().toLocaleDateString()}</span>
       </div>
-    </div>
-  );
-}
 
-// ── Small helper ─────────────────────────────────────────────────────────────
-function HeaderBtn({ onClick, title, color, children }) {
-  return (
-    <button
-      onClick={onClick}
-      title={title}
-      style={{
-        background:   "transparent",
-        border:       "1px solid #2a2a2a",
-        color:        color || "#666",
-        borderRadius: 4,
-        width:        24,
-        height:       24,
-        fontSize:     11,
-        cursor:       "pointer",
-        display:      "flex",
-        alignItems:   "center",
-        justifyContent: "center",
-        fontFamily:   "monospace",
-        padding:      0,
-      }}
-    >
-      {children}
-    </button>
+    </div>
   );
 }
