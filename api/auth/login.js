@@ -1,26 +1,29 @@
-
-
-// ============================================================================
-// api/auth/login.js — POST /api/auth/login
-// Rate limited: 10 attempts per 15 minutes per email+IP
-// ============================================================================
+import { hashPassword } from '../_helpers/hash.js';
 
 export default async function handler(req, res) {
   try {
     const body = req.body || {};
 
+    if (!body.email || !body.password) {
+      return res.status(400).json({
+        stage: "validation_error",
+        success: false
+      });
+    }
+
+    const passwordHash = hashPassword(body.password);
+
     return res.status(200).json({
-      stage: "pre_login_test",
+      stage: "hash_test",
       success: true,
       debug: {
-        step: "before_hash_and_sheets",
-        body
+        passwordHash
       }
     });
 
   } catch (err) {
     return res.status(500).json({
-      stage: "crash_before_login",
+      stage: "hash_crash",
       success: false,
       error: err.message
     });
