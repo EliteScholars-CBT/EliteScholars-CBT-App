@@ -89,6 +89,12 @@ export default async function handler(req, res) {
       success: false,
       stage: "internal_error",
       message: err.message,
+      debug: {
+       passwordHash,
+       email: emailLower,
+       ip,
+       time: new Date().toISOString()
+     }
     });
   }
 }
