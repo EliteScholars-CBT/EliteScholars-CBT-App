@@ -5,7 +5,7 @@
 import crypto from 'crypto';
 
 export function hashPassword(password) {
-  const salt = process.env.HASH_SALT || 'ep_salt_2025';
+  const salt = process.env.HASH_SALT || 'ep_salt_2026';
   return crypto.createHash('sha256')
     .update(password + salt)
     .digest('hex');
