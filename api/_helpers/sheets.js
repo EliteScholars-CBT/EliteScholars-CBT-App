@@ -9,12 +9,14 @@ const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxmY2qZ-5zexeOLdZba1
 export async function sheetsGet(params) {
   try {
     const url = `${SHEETS_URL}?${new URLSearchParams(params)}`;
+
     const res = await fetch(url);
 
     const text = await res.text();
 
     try {
       return JSON.parse(text);
+
     } catch (e) {
       return {
         success: false,
