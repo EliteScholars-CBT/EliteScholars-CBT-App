@@ -83,12 +83,10 @@ export default async function handler(req, res) {
     await clearRateLimit(key);
 
     return res.status(200).json({
-      success: true,
-      stage: "login_success",
-      data: {
-        profile: result.profile,
-      },
-    });
+  success: true,
+  stage: "login_success",
+  profile: result.profile,
+});
 
   } catch (err) {
     return res.status(500).json({
