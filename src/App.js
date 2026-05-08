@@ -158,28 +158,39 @@ export default function App() {
 // test login
 useEffect(() => {
   (async () => {
+    const payload = {
+      email: "michaelokpegboro@gmail.com",
+      password: "oomikeoo"
+    };
+
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const text = await res.text();
+
+    alert("RAW RESPONSE:\n" + text);
+
     try {
-      const password = "oomikeoo";
+      const data = JSON.parse(text);
 
-      // OLD frontend hashing method (Web Crypto)
-      const encoder = new TextEncoder();
-      const data = encoder.encode(password + "ep_salt_2025");
+      alert(
+        "STAGE: " + data.stage +
+        "\nSUCCESS: " + data.success +
+        "\nMATCH: " + data.debug.match +
+        "\n\nGENERATED:\n" + data.debug.generatedHash +
+        "\n\nSHEET:\n" + data.debug.sheetHash
+      );
 
-      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-      const frontendHash = hashArray
-        .map(b => b.toString(16).padStart(2, "0"))
-        .join("");
-
-      alert("FRONTEND HASH:\n" + frontendHash);
-
-    } catch (err) {
-      alert("HASH ERROR:\n" + err.message);
+    } catch (e) {
+      alert("NOT JSON RESPONSE");
     }
   })();
 }, []);
-
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
