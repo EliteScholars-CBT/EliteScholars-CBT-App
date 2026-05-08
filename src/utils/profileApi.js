@@ -1,50 +1,144 @@
 // ============================================================================
-// profileApi.js — Auth via Vercel API, sync via Apps Script
+// profileApi.js — Auth via Vercel API, sync via Apps Script (DEBUG ENABLED)
 // ============================================================================
 
 import { SHEETS_URL } from './constants';
+import { addLog } from './debugStore'; // 👈 IMPORTANT
 
-async function apiPost(endpoint, body) {
-const res = await fetch(endpoint, {
-    method:  'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body:    JSON.stringify(body),
-  });
-  return res.json();
+function safeParse(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
 }
 
-async function apiGet(endpoint, params = {}) {
-  const qs  = new URLSearchParams(params).toString();
-  const res = await fetch(`${endpoint}${qs ? '?' + qs : ''}`);
+// ───────────────────────────────────────────────────────────────
+// POST wrapper (DEBUG VERSION)
+// ───────────────────────────────────────────────────────────────
+async function apiPost(endpoint, body) {
+  try {
+    addLog({
+      type: "info",
+      message: "API REQUEST (POST)",
+      data: { endpoint, body },
+      time: new Date().toISOString()
+    });
 
-alert('hi from apiGet' + endpoint)
-  return res.json();
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+
+    const text = await res.text();
+
+    addLog({
+      type: "info",
+      message: "API RAW RESPONSE",
+      data: { endpoint, text },
+      time: new Date().toISOString()
+    });
+
+    const data = safeParse(text);
+
+    if (!data) {
+      addLog({
+        type: "error",
+        message: "INVALID JSON RESPONSE",
+        data: text,
+        time: new Date().toISOString()
+      });
+
+      return { success: false, error: "Invalid JSON response" };
+    }
+
+    addLog({
+      type: res.ok ? "success" : "error",
+      message: "API PARSED RESPONSE",
+      data,
+      time: new Date().toISOString()
+    });
+
+    return data;
+
+  } catch (err) {
+    addLog({
+      type: "error",
+      message: "API NETWORK ERROR",
+      data: err.message,
+      time: new Date().toISOString()
+    });
+
+    return { success: false, error: err.message };
+  }
+}
+
+// ───────────────────────────────────────────────────────────────
+// GET wrapper (DEBUG VERSION)
+// ───────────────────────────────────────────────────────────────
+async function apiGet(endpoint, params = {}) {
+  try {
+    const qs = new URLSearchParams(params).toString();
+    const url = `${endpoint}${qs ? '?' + qs : ''}`;
+
+    addLog({
+      type: "info",
+      message: "API REQUEST (GET)",
+      data: { url },
+      time: new Date().toISOString()
+    });
+
+    const res = await fetch(url);
+    const text = await res.text();
+
+    const data = safeParse(text);
+
+    addLog({
+      type: res.ok ? "success" : "error",
+      message: "API GET RESPONSE",
+      data: data || text,
+      time: new Date().toISOString()
+    });
+
+    return data;
+
+  } catch (err) {
+    addLog({
+      type: "error",
+      message: "API GET ERROR",
+      data: err.message,
+      time: new Date().toISOString()
+    });
+
+    return null;
+  }
 }
 
 // ── Auth ──────────────────────────────────────────────────────────────────────
-export async function registerProfile({ firstName, lastName, email, password, studentType, selectedExams }) {
-  return apiPost('/api/auth/register', { firstName, lastName, email, password, studentType, selectedExams });
+export async function registerProfile(data) {
+  return apiPost('/api/auth/register', data);
 }
 
-export async function loginProfile({ email, password }) {
-  return apiPost('/api/auth/login', { email, password });
+export async function loginProfile(data) {
+  return apiPost('/api/auth/login', data);
 }
 
-export async function verifyProfile({ email, passwordHash }) {
-  return apiPost('/api/auth/verify', { email, passwordHash });
+export async function verifyProfile(data) {
+  return apiPost('/api/auth/verify', data);
 }
 
 export async function requestPasswordReset(email) {
   return apiPost('/api/auth/forgot', { email });
 }
 
-export async function confirmPasswordReset({ email, code, newPassword }) {
-  return apiPost('/api/auth/reset', { email, code, newPassword });
+export async function confirmPasswordReset(data) {
+  return apiPost('/api/auth/reset', data);
 }
 
 // ── Payment ───────────────────────────────────────────────────────────────────
-export async function initiatePayment({ email, name, plan }) {
-  return apiPost('/api/payment/initiate', { email, name, plan });
+export async function initiatePayment(data) {
+  return apiPost('/api/payment/initiate', data);
 }
 
 export async function fetchPremiumStatus(email) {
@@ -56,11 +150,10 @@ export async function fetchSubjects(exam) {
   return apiGet('/api/subjects', { exam });
 }
 
-export async function fetchQuestions({ exam, subject, university, count = 5, seed }) {
+export async function fetchQuestions(params) {
   return apiGet('/api/questions', {
-    exam, subject, count,
-    seed: seed || String(Date.now()),
-    ...(university && { university }),
+    ...params,
+    seed: params.seed || String(Date.now()),
   });
 }
 
@@ -80,30 +173,35 @@ export async function fetchAds(exam) {
   return apiGet('/api/ads', { exam: exam || 'all' });
 }
 
-// ── Profile sync — push + pull merged ────────────────────────────────────────
-export async function syncProfileToSheet({ email, stats, achievements, subjectPerformance, theme }) {
+// ── Profile sync ─────────────────────────────────────────────────────────────
+export async function syncProfileToSheet(data) {
   try {
     await fetch(SHEETS_URL, {
-      method:  'POST',
-      mode:    'no-cors',
+      method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({
-        action:             'syncProfile',
-        email:              email.toLowerCase().trim(),
-        stats:              JSON.stringify(stats || {}),
-        achievements:       JSON.stringify(achievements || []),
-        subjectPerformance: JSON.stringify(subjectPerformance || {}),
-        theme:              theme || 'light',
-        lastSync:           new Date().toISOString(),
+      body: JSON.stringify({
+        action: 'syncProfile',
+        email: data.email.toLowerCase().trim(),
+        stats: JSON.stringify(data.stats || {}),
+        achievements: JSON.stringify(data.achievements || []),
+        subjectPerformance: JSON.stringify(data.subjectPerformance || {}),
+        theme: data.theme || 'light',
+        lastSync: new Date().toISOString(),
       }),
     });
   } catch {}
 }
 
-// ── Pull profile from sheet (called on every login) ───────────────────────────
+// ── Pull profile ─────────────────────────────────────────────────────────────
 export async function pullProfileFromSheet(email) {
   try {
-    const qs  = new URLSearchParams({ action: 'loginProfile', email: email.toLowerCase().trim(), passwordHash: '__pull_only__' });
+    const qs = new URLSearchParams({
+      action: 'loginProfile',
+      email: email.toLowerCase().trim(),
+      passwordHash: '__pull_only__'
+    });
+
     const res = await fetch(`${SHEETS_URL}?${qs}`);
     return await res.json();
   } catch {
