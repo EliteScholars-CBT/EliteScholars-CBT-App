@@ -1,40 +1,107 @@
-import { hashPassword } from "../_helpers/hash.js";
+import { checkRateLimit, clearRateLimit } from '../_helpers/rateLimit.js';
+import { hashPassword } from '../_helpers/hash.js';
+import { sheetsGet } from '../_helpers/sheets.js';
+import { logSecurityEvent } from '../_helpers/security.js';
+import { setCors, sendMethodNotAllowed } from '../_helpers/response.js';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   try {
-    if (req.method !== "POST") {
-      return res.status(405).json({
-        stage: "method_not_allowed",
-        success: false
-      });
+    setCors(res);
+
+    if (req.method === 'OPTIONS') {
+      return res.status(200).end();
     }
+
+    if (req.method !== 'POST') {
+      return sendMethodNotAllowed(res);
+    }
+
+    const ip =
+      req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+      req.socket?.remoteAddress ||
+      'unknown';
 
     const body = req.body || {};
 
-    const generatedHash = hashPassword(body.password);
+    // =========================
+    // VALIDATION
+    // =========================
+    if (!body.email || !body.password) {
+      return res.status(400).json({
+        success: false,
+        stage: "validation_error",
+        message: "Email and password required"
+      });
+    }
 
-    const sheetHash = "88c85478aff3f3e6e94090b7b162b9331fa7ebbab84eb7f8d8824898cf60c612";
+    const email = body.email.toLowerCase().trim();
+
+    const key = `login:${email}:${ip}`;
+
+    // =========================
+    // RATE LIMIT
+    // =========================
+    const { allowed, retryAfter, remaining } =
+      await checkRateLimit(key, 10, 900);
+
+    if (!allowed) {
+      await logSecurityEvent({
+        type: 'login_rate_limited',
+        email,
+        ip
+      });
+
+      return res.status(429).json({
+        success: false,
+        stage: "rate_limited",
+        message: "Too many attempts",
+        retryAfter
+      });
+    }
+
+    // =========================
+    // AUTH
+    // =========================
+    const passwordHash = hashPassword(body.password);
+
+    const result = await sheetsGet({
+      action: 'loginProfile',
+      email,
+      passwordHash
+    });
+
+    if (!result || !result.success) {
+      await logSecurityEvent({
+        type: 'login_failed',
+        email,
+        ip
+      });
+
+      return res.status(401).json({
+        success: false,
+        stage: "login_failed",
+        message: result?.error || "Invalid credentials"
+      });
+    }
+
+    // =========================
+    // SUCCESS
+    // =========================
+    await clearRateLimit(key);
 
     return res.status(200).json({
-      stage: "comparison_mode",
       success: true,
-
-      debug: {
-        email: body.email,
-        inputPassword: body.password,
-
-        generatedHash,
-        sheetHash,
-
-        match: generatedHash === sheetHash
+      stage: "login_success",
+      data: {
+        profile: result.profile
       }
     });
 
   } catch (err) {
     return res.status(500).json({
-      stage: "error",
       success: false,
-      error: err.message
+      stage: "internal_error",
+      message: err.message
     });
   }
 }
