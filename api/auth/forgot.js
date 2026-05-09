@@ -102,7 +102,7 @@ export default async function handler(req, res) {
                 EliteScholars
               </h1>
               <p style="margin:4px 0 0;color:rgba(255,255,255,0.6);font-size:12px;letter-spacing:2px;text-transform:uppercase;">
-                CBT Prep Platform
+                Your Study & Exam Prep App
               </p>
             </td>
           </tr>
