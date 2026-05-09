@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     meta: { plan, email },
   };
 
-  const response = await fetch('https://api.flutterwave.com/v3/payments', {
+  const response = await fetch('https://api.flutterwave.com/v4/payments', {
     method:  'POST',
     headers: {
       'Content-Type':  'application/json',
