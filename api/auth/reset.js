@@ -62,7 +62,7 @@ export default async function handler(req, res) {
   let result;
   try {
     result = await sheetsGet({
-      action: 'confirmPasswordReset',
+      action: 'updatePassword',
       email: emailLower,
       passwordHash
     });
