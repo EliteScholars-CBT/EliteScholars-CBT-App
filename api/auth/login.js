@@ -72,7 +72,6 @@ export default async function handler(req, res) {
         stage: "login_failed",
         message: result?.error || "Invalid credentials",
       debug: {
-       passwordHash,
        email,
        ip,
        time: new Date().toISOString()
