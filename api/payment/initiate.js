@@ -20,8 +20,15 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return sendMethodNotAllowed(res);
 
   const { email, name, plan } = req.body || {};
-  if (!email || !name || !plan)  return sendErr(res, 'email, name and plan are required.');
-  if (!PLAN_AMOUNTS[plan])       return sendErr(res, 'Invalid plan.');
+
+  if (!email || !name || !plan) return sendErr(res, 'email, name and plan are required.');
+  if (!PLAN_AMOUNTS[plan])      return sendErr(res, 'Invalid plan.');
+
+  // ── Guard: env var missing ─────────────────────────────────────────────────
+  if (!FLW_SECRET_KEY) {
+    console.error('FLW_SECRET_KEY is not set in environment variables.');
+    return sendErr(res, 'Payment service is not configured. Please contact support.');
+  }
 
   const amount      = PLAN_AMOUNTS[plan];
   const txRef       = `ES-${plan.toUpperCase()}-${Date.now()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
@@ -41,17 +48,42 @@ export default async function handler(req, res) {
     meta: { plan, email },
   };
 
-  const response = await fetch('https://api.flutterwave.com/v4/payments', {
-    method:  'POST',
-    headers: {
-      'Content-Type':  'application/json',
-      'Authorization': `Bearer ${FLW_SECRET_KEY}`,
-    },
-    body: JSON.stringify(payload),
-  });
+  // ── Call Flutterwave ───────────────────────────────────────────────────────
+  try {
+    const response = await fetch('https://api.flutterwave.com/v4/payments', {
+      method:  'POST',
+      headers: {
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${FLW_SECRET_KEY}`,
+      },
+      body: JSON.stringify(payload),
+    });
 
-  const data = await response.json();
-  if (data.status !== 'success') return sendErr(res, data.message || 'Failed to initiate payment.');
+    // Read as text first — guards against HTML error pages from Flutterwave
+    const text = await response.text();
 
-  return sendOk(res, { paymentLink: data.data.link, txRef, plan, amount });
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      console.error('Flutterwave returned non-JSON:', text);
+      return sendErr(res, 'Payment provider returned an unexpected response. Please try again.');
+    }
+
+    if (data.status !== 'success') {
+      console.error('Flutterwave error response:', data);
+      return sendErr(res, data.message || 'Failed to initiate payment. Please try again.');
+    }
+
+    return sendOk(res, {
+      paymentLink: data.data.link,
+      txRef,
+      plan,
+      amount,
+    });
+
+  } catch (err) {
+    console.error('Payment initiate network error:', err);
+    return sendErr(res, 'Could not reach payment provider. Please check your connection and try again.');
+  }
 }
