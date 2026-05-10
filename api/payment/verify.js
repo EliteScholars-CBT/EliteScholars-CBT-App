@@ -19,7 +19,7 @@ const PLAN_NAMES = {
 };
 
 const PLAN_AMOUNTS = {
-  monthly: '₦3,000',
+  monthly: '₦9,000',
   annual:  '₦89,000',
   pro:     '₦100',
 };
