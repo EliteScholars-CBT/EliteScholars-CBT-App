@@ -4,7 +4,7 @@
 
 export const FREE_TOPICS_PER_DAY   = 2;
 export const FREE_SESSION_MINUTES  = 30;
-export const FREE_COOLDOWN_HOURS   = 4;
+export const FREE_COOLDOWN_HOURS   = 0;
 
 export const PREMIUM_MONTHLY_PRICE = 9000;
 export const PREMIUM_ANNUAL_PRICE  = 89000;
