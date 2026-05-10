@@ -1,7 +1,9 @@
-// async (params) => {
-
 import React, { useState, useEffect } from 'react';
-import { createChallenge, getChallengeMessages } from '../utils/challengeApi';
+import {
+  createChallenge,
+  getChallengeMessages,
+  checkUserExists,
+} from '../utils/challengeApi';
 import Quiz from './Quiz';
 import BackButton from './BackButton';
 
@@ -41,12 +43,16 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
   const [emailError, setEmailError]       = useState('');
   const [sendError, setSendError]         = useState('');
 
-  // Final scores — set directly from quiz callback, not from state
+  // User existence check
+  const [checkingUser, setCheckingUser]   = useState(false);
+  const [userChecked, setUserChecked]     = useState(false);
+
+  // Final scores
   const [finalCorrect, setFinalCorrect]   = useState(0);
   const [finalTotal, setFinalTotal]       = useState(0);
   const [finalScore, setFinalScore]       = useState(0);
 
-  // Live quiz state (passed into Quiz component)
+  // Live quiz state
   const [score, setScore]     = useState(0);
   const [correct, setCorrect] = useState(0);
   const [totalQ, setTotalQ]   = useState(0);
@@ -68,22 +74,47 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
   const handleEmailChange = (e) => {
     const v = e.target.value;
     setOpponentEmail(v);
+    setUserChecked(false);
+    setOpponentName('');
     const err = validateEmail(v);
     setEmailError(err);
-    if (!err) setOpponentName(v.split('@')[0]);
+  };
+
+  // Check user exists when email field loses focus
+  const handleEmailBlur = async () => {
+    const err = validateEmail(opponentEmail);
+    if (err) return;
+    setCheckingUser(true);
+    setEmailError('');
+    const result = await checkUserExists(opponentEmail);
+    setCheckingUser(false);
+    if (!result.exists) {
+      setEmailError('No EliteScholars account found with this email.');
+      setUserChecked(false);
+    } else {
+      setUserChecked(true);
+      // Use their real name if available
+      const name = result.firstName
+        ? `${result.firstName} ${result.lastName}`.trim()
+        : opponentEmail.split('@')[0];
+      setOpponentName(name);
+      setEmailError('');
+    }
   };
 
   const handleStartPlay = () => {
     const err = validateEmail(opponentEmail);
     if (err) { setEmailError(err); return; }
+    if (!userChecked) {
+      setEmailError('Please wait — verifying opponent account...');
+      return;
+    }
     setScore(0); setCorrect(0); setTotalQ(0);
     setFinalCorrect(0); setFinalTotal(0); setFinalScore(0);
     setStep('play');
   };
 
-  // Quiz calls onAllDone — we capture final values HERE before sending
   const handleQuizDone = async () => {
-    // Read directly from live state at the moment quiz ends
     const fc = correct;
     const ft = totalQ;
     const fs = score;
@@ -136,9 +167,18 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
                 placeholder="opponent@email.com"
                 value={opponentEmail}
                 onChange={handleEmailChange}
-                className={emailError ? 'input-error' : ''}
+                onBlur={handleEmailBlur}
+                className={emailError ? 'input-error' : userChecked ? 'input-success' : ''}
               />
-              {emailError && <div className="error-text">{emailError}</div>}
+              {checkingUser && (
+                <div className="checking-text">🔍 Checking account...</div>
+              )}
+              {!checkingUser && emailError && (
+                <div className="error-text">{emailError}</div>
+              )}
+              {!checkingUser && userChecked && !emailError && (
+                <div className="success-text">✅ Found: {opponentName}</div>
+              )}
             </div>
 
             <div className="form-group">
@@ -214,9 +254,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             <button
               className="send-btn"
               onClick={handleStartPlay}
-              disabled={!!emailError || !opponentEmail}
+              disabled={!!emailError || !opponentEmail || checkingUser || !userChecked}
             >
-              ▶ Play
+              {checkingUser ? 'Checking...' : '▶ Play'}
             </button>
           </div>
         </div>
@@ -275,7 +315,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           </div>
           <div style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6 }}>
             Your score <strong>{finalCorrect}/{finalTotal}</strong> has been sent to{' '}
-            <strong>{opponentEmail}</strong>. They have 24 hours to accept and play.
+            <strong>{opponentName}</strong>. They have 24 hours to accept and play.
           </div>
         </div>
       </div>
