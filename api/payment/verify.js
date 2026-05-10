@@ -106,7 +106,10 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'GET')     return sendMethodNotAllowed(res);
 
-  const { tx_ref, plan, email, status } = req.query;
+  const tx_ref = Array.isArray(req.query.tx_ref) 
+  ? req.query.tx_ref[0] 
+  : req.query.tx_ref;
+const { plan, email, status } = req.query;
 
   console.log('Verify called with params:', { tx_ref, plan, email, status });
 
