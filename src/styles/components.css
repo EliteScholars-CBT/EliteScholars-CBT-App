@@ -4203,6 +4203,8 @@ body.dark-mode .subjects-grid-card {
     #22263a;
 }
 
+
+
 /* =========================
    DARK MODE
    ========================= */
@@ -4267,4 +4269,22 @@ body.dark-mode .subjects-grid-card {
     align-items: flex-start;
   }
 
+}
+
+/* checking text */
+
+.checking-text {
+  color: #666666;
+  font-size: 13px;
+}
+
+.dark-mode .checking-text {
+  color: #ffffff;
+}
+
+/* success text */
+
+.success-text {
+  color: #28c840 !important;
+  font-size: 13px;
 }

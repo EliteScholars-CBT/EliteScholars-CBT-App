@@ -89,7 +89,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
     const result = await checkUserExists(opponentEmail);
     setCheckingUser(false);
     if (!result.exists) {
-      setEmailError('No EliteScholars account found with this email.');
+      setEmailError('No account found with this email.');
       setUserChecked(false);
     } else {
       setUserChecked(true);
