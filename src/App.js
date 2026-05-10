@@ -491,7 +491,7 @@ if (ns % 5 === 0) {
 
   return (
     <>
-      <DebugConsole />
+      {/* <DebugConsole /> */}
       <div className="phone">
         <div className="phone-content">
 
