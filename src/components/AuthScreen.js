@@ -2,7 +2,7 @@
 // AuthScreen.js
 // ============================================================================
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/elite-scholars-logo.png';
 
 import {
@@ -25,22 +25,22 @@ const EXAM_TYPES = [
 
 const STUDENT_TYPES = [
   {
-    id: 'senior_school',
+    id:    'senior_school',
     label: 'Senior School Student',
-    desc: 'SS1 – SS3 • WAEC • NECO • GCE',
-    icon: '🏫'
+    desc:  'SS1 – SS3 • WAEC • NECO • GCE',
+    icon:  '🏫'
   },
   {
-    id: 'aspirant',
+    id:    'aspirant',
     label: 'Aspirant',
-    desc: 'Preparing for JAMB & Post-UTME',
-    icon: '🎯'
+    desc:  'Preparing for JAMB & Post-UTME',
+    icon:  '🎯'
   },
   {
-    id: 'university',
+    id:    'university',
     label: 'University Student',
-    desc: '100L – 500L • GST / GNS Courses',
-    icon: '🎓'
+    desc:  '100L – 500L • GST / GNS Courses',
+    icon:  '🎓'
   },
 ];
 
@@ -60,6 +60,21 @@ function validate(fields) {
   if (fields.selectedExams !== undefined && fields.selectedExams.length === 0)
     return 'Select at least one exam.';
   return null;
+}
+
+// ── Network error helper ──────────────────────────────────────────────────────
+function getNetworkError(e) {
+  if (!navigator.onLine) {
+    return 'No internet connection. Please check your network and try again.';
+  }
+  if (
+    e?.message === 'Failed to fetch' ||
+    e?.message?.includes('fetch') ||
+    e?.name === 'TypeError'
+  ) {
+    return 'Network error. Please check your connection and try again.';
+  }
+  return e?.message || 'Something went wrong. Please try again.';
 }
 
 export default function AuthScreen({ onDone }) {
@@ -100,8 +115,8 @@ export default function AuthScreen({ onDone }) {
   // ─────────────────────────────────────────
   // Helpers
   // ─────────────────────────────────────────
-  const err = (msg) => { setError(msg); setLoading(false); };
-  const clear = () => { setError(''); setSuccess(''); };
+  const err      = (msg) => { setError(msg); setLoading(false); };
+  const clear    = ()    => { setError(''); setSuccess(''); };
   const switchView = (v) => { clear(); setView(v); setStep(1); setResetStep(1); };
   const toggleExam = (id) =>
     setSelectedExams(prev =>
@@ -115,6 +130,7 @@ export default function AuthScreen({ onDone }) {
     clear();
     const validationError = validate({ email, password });
     if (validationError) return err(validationError);
+    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await loginProfile({ email: email.trim(), password });
@@ -134,20 +150,20 @@ export default function AuthScreen({ onDone }) {
       });
       logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
       onDone({
-        name:                `${u.firstName} ${u.lastName}`,
-        firstName:           u.firstName,
-        lastName:            u.lastName,
-        email:               u.email,
-        studentType:         u.studentType,
-        selectedExams:       u.selectedExams || [],
-        serverStats:         u.stats,
-        serverAchievements:  u.achievements,
-        serverSubjectPerf:   u.subjectPerformance,
-        passwordHash:        u.passwordHash,
+        name:               `${u.firstName} ${u.lastName}`,
+        firstName:          u.firstName,
+        lastName:           u.lastName,
+        email:              u.email,
+        studentType:        u.studentType,
+        selectedExams:      u.selectedExams || [],
+        serverStats:        u.stats,
+        serverAchievements: u.achievements,
+        serverSubjectPerf:  u.subjectPerformance,
+        passwordHash:       u.passwordHash,
       });
     } catch (e) {
       console.error('LOGIN ERROR:', e);
-      err(e?.message || 'Network error. Please check your connection.');
+      err(getNetworkError(e));
     }
   };
 
@@ -168,6 +184,7 @@ export default function AuthScreen({ onDone }) {
     clear();
     const validationError = validate({ email, studentType, selectedExams });
     if (validationError) return err(validationError);
+    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await registerProfile({
@@ -202,7 +219,7 @@ export default function AuthScreen({ onDone }) {
       });
     } catch (e) {
       console.error('REGISTER ERROR:', e);
-      err(e?.message || 'Network error. Please check your connection.');
+      err(getNetworkError(e));
     }
   };
 
@@ -212,6 +229,7 @@ export default function AuthScreen({ onDone }) {
   const handleForgotRequest = async () => {
     clear();
     if (!resetEmail.trim()) return err('Enter your email address.');
+    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await requestPasswordReset(resetEmail.trim());
@@ -224,7 +242,7 @@ export default function AuthScreen({ onDone }) {
       setResetStep(2);
     } catch (e) {
       console.error('FORGOT ERROR:', e);
-      err(e?.message || 'Network error. Please try again.');
+      err(getNetworkError(e));
     }
   };
 
@@ -235,6 +253,7 @@ export default function AuthScreen({ onDone }) {
     clear();
     if (!resetCode.trim()) return err('Enter the reset code.');
     if (newPw.length < 8)  return err('New password must be at least 8 characters.');
+    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await confirmPasswordReset({
@@ -252,7 +271,7 @@ export default function AuthScreen({ onDone }) {
       setTimeout(() => { switchView('login'); }, 2000);
     } catch (e) {
       console.error('RESET ERROR:', e);
-      err(e?.message || 'Network error. Please try again.');
+      err(getNetworkError(e));
     }
   };
 
@@ -268,7 +287,9 @@ export default function AuthScreen({ onDone }) {
 
           {resetStep === 1 && (
             <>
-              <p className="auth-sub">Enter your registered email to receive a reset code.</p>
+              <p className="auth-sub">
+                Enter your registered email to receive a reset code.
+              </p>
               <input className="auth-input" placeholder="Email address" type="email"
                 value={resetEmail} onChange={e => setResetEmail(e.target.value)} />
               {error   && <div className="auth-error">{error}</div>}
@@ -281,10 +302,13 @@ export default function AuthScreen({ onDone }) {
 
           {resetStep === 2 && (
             <>
-              <p className="auth-sub">Enter the code from your email and your new password.</p>
+              <p className="auth-sub">
+                Enter the code from your email and your new password.
+              </p>
               <input className="auth-input" placeholder="Reset code"
                 value={resetCode} onChange={e => setResetCode(e.target.value)} />
-              <input className="auth-input" placeholder="New password (min 8 chars)" type="password"
+              <input className="auth-input" placeholder="New password (min 8 chars)"
+                type="password"
                 value={newPw} onChange={e => setNewPw(e.target.value)} />
               {error   && <div className="auth-error">{error}</div>}
               {success && <div className="auth-success">{success}</div>}
@@ -348,7 +372,9 @@ export default function AuthScreen({ onDone }) {
               <button className="auth-btn" onClick={handleSignupStep1}>Continue →</button>
               <div className="auth-switch">
                 Already have an account?{' '}
-                <button className="auth-link-btn" onClick={() => switchView('login')}>Log In</button>
+                <button className="auth-link-btn" onClick={() => switchView('login')}>
+                  Log In
+                </button>
               </div>
             </>
           )}
@@ -381,7 +407,9 @@ export default function AuthScreen({ onDone }) {
                     onClick={() => toggleExam(ex.id)}
                   >
                     <span>{ex.icon}</span> {ex.label}
-                    {selectedExams.includes(ex.id) && <span className="auth-exam-check">✓</span>}
+                    {selectedExams.includes(ex.id) && (
+                      <span className="auth-exam-check">✓</span>
+                    )}
                   </button>
                 ))}
               </div>
