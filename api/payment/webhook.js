@@ -107,7 +107,11 @@ export default async function handler(req, res) {
   if (req.method !== 'POST')    return res.status(405).end();
 
   // ── Verify signature ──────────────────────────────────────────────────────
-  const signature = req.headers['flutterwave-signature'];
+  const signature = req.headers['verif-hash'] || req.headers['flutterwave-signature'];
+
+console.log('All headers:', JSON.stringify(req.headers));
+console.log('Signature received:', signature);
+console.log('Expected hash:', FLW_SECRET_HASH);
   if (!signature || signature !== FLW_SECRET_HASH) {
     console.error('Invalid webhook signature:', signature);
     return res.status(401).end();
