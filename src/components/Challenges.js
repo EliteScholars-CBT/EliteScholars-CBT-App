@@ -97,68 +97,166 @@ export default function Challenges({ userEmail, userName }) {
     return null;
   };
 
-  // ── History card ──────────────────────────────────────────────────────────
+  // ── History card — competition scoreboard style ────────────────────────────
   const renderHistoryCard = (challenge) => {
     const isChallenger = challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
 
-    const myName       = userName || 'You';
-    const opponentName = isChallenger
-      ? (challenge.opponent_name || 'Opponent')
+    const myName  = userName || 'You';
+    const oppName = isChallenger
+      ? (challenge.opponent_name   || 'Opponent')
       : (challenge.challenger_name || 'Opponent');
 
     const myScore  = isChallenger
-      ? (challenge.challenger_score != null && challenge.challenger_score !== '' ? challenge.challenger_score : '?')
-      : (challenge.opponent_score   != null && challenge.opponent_score   !== '' ? challenge.opponent_score   : '?');
+      ? (challenge.challenger_score ?? '?')
+      : (challenge.opponent_score   ?? '?');
 
     const oppScore = isChallenger
-      ? (challenge.opponent_score   != null && challenge.opponent_score   !== '' ? challenge.opponent_score   : '?')
-      : (challenge.challenger_score != null && challenge.challenger_score !== '' ? challenge.challenger_score : '?');
+      ? (challenge.opponent_score   ?? '?')
+      : (challenge.challenger_score ?? '?');
 
-    const status   = challenge.status;
-    const winner   = challenge.winner_email;
-    const isDraw   = winner === 'draw';
-    const iWon     = !isDraw && winner === userEmail;
-    const iLost    = !isDraw && winner && winner !== userEmail;
-    const isPending   = status === 'pending';
-    const isDeclined  = status === 'declined';
-    const isCompleted = status === 'completed';
+    const status     = challenge.status;
+    const winner     = challenge.winner_email;
+    const isDraw     = winner === 'draw';
+    const iWon       = !isDraw && winner === userEmail;
+    const iLost      = !isDraw && winner && winner !== userEmail;
+    const isPending  = status === 'pending';
+    const isDeclined = status === 'declined';
 
-    let resultIcon, resultText, resultClass;
-    if (isPending) {
-      resultIcon = '⏳'; resultText = 'Awaiting opponent'; resultClass = 'pending';
-    } else if (isDeclined) {
-      resultIcon = '🚫'; resultText = 'Declined';          resultClass = 'declined';
-    } else if (isDraw) {
-      resultIcon = '🤝'; resultText = 'Draw';              resultClass = 'draw';
-    } else if (iWon) {
-      resultIcon = '🏆'; resultText = 'You won';           resultClass = 'win';
-    } else if (iLost) {
-      resultIcon = '❌'; resultText = 'You lost';          resultClass = 'loss';
-    } else {
-      resultIcon = '—';  resultText = status;              resultClass = '';
-    }
+    let resultIcon, resultText, resultColor;
+    if (isPending)       { resultIcon = '⏳'; resultText = 'Awaiting';  resultColor = '#9090b0'; }
+    else if (isDeclined) { resultIcon = '🚫'; resultText = 'Declined';  resultColor = '#ff5f57'; }
+    else if (isDraw)     { resultIcon = '🤝'; resultText = 'Draw';      resultColor = '#ffbd2e'; }
+    else if (iWon)       { resultIcon = '🏆'; resultText = 'You Won';   resultColor = '#28c840'; }
+    else if (iLost)      { resultIcon = '❌'; resultText = 'You Lost';  resultColor = '#ff5f57'; }
+    else                 { resultIcon = '—';  resultText = status;      resultColor = '#9090b0'; }
 
-    // Score display
+    const dateStr = challenge.completed_at || challenge.expires_at
+      ? new Date(challenge.completed_at || challenge.expires_at)
+          .toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric'
+          })
+      : '';
+
     const oppScoreDisplay = (isPending || isDeclined) ? '?' : oppScore;
-    const scoreLine = `${myName} ${myScore}  —  ${opponentName} ${oppScoreDisplay}`;
-
-    const dateStr = new Date(isCompleted ? challenge.completed_at : challenge.expires_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
 
     return (
-      <div key={challenge.challenge_id} className="history-card">
-        <div className="history-card-top">
-          <div className="history-opponent-name">
-            vs <strong>{opponentName}</strong>
-            <span className="history-subject"> · {challenge.subject.toUpperCase()}</span>
+      <div key={challenge.challenge_id} style={{
+        background:   'linear-gradient(135deg, #1a0030, #2a0050)',
+        border:       `1px solid ${resultColor}44`,
+        borderRadius: 14,
+        marginBottom: 12,
+        overflow:     'hidden',
+      }}>
+
+        {/* Top bar */}
+        <div style={{
+          background:     `${resultColor}18`,
+          borderBottom:   `1px solid ${resultColor}33`,
+          padding:        '8px 14px',
+          display:        'flex',
+          alignItems:     'center',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontSize: 16 }}>{resultIcon}</span>
+            <span style={{ color: resultColor, fontWeight: 700, fontSize: 12 }}>
+              {resultText}
+            </span>
+            <span style={{ color: '#5a5a7a', fontSize: 11 }}>·</span>
+            <span style={{
+              color:         '#9090b0',
+              fontSize:      11,
+              textTransform: 'uppercase',
+              letterSpacing: 1,
+            }}>
+              {challenge.subject}
+            </span>
           </div>
-          {getStatusBadge(status)}
+          <span style={{ color: '#5a5a7a', fontSize: 10 }}>{dateStr}</span>
         </div>
-        <div className={`history-result-row ${resultClass}`}>
-          <span className="history-result-icon">{resultIcon}</span>
-          <span className="history-result-text">{resultText}</span>
+
+        {/* Scoreboard */}
+        <div style={{
+          display:             'grid',
+          gridTemplateColumns: '1fr auto 1fr',
+          alignItems:          'center',
+          padding:             '16px 14px',
+          gap:                 8,
+        }}>
+
+          {/* You */}
+          <div style={{ textAlign: 'center' }}>
+            <div style={{
+              fontSize:   28,
+              fontWeight: 900,
+              color:      iWon ? '#28c840' : isDraw ? '#ffbd2e' : '#fff',
+              lineHeight: 1,
+            }}>
+              {myScore}
+            </div>
+            <div style={{ color: '#9090b0', fontSize: 11, marginTop: 4 }}>
+              {myName}
+            </div>
+            {iWon && (
+              <div style={{ fontSize: 10, color: '#28c840', marginTop: 2 }}>
+                WINNER
+              </div>
+            )}
+          </div>
+
+          {/* VS */}
+          <div style={{
+            color:      '#3a3a5a',
+            fontSize:   13,
+            fontWeight: 700,
+            padding:    '0 8px',
+          }}>
+            VS
+          </div>
+
+          {/* Opponent */}
+          <div style={{ textAlign: 'center' }}>
+            <div style={{
+              fontSize:   28,
+              fontWeight: 900,
+              color:      iLost ? '#ff5f57' : isDraw ? '#ffbd2e' : '#9090b0',
+              lineHeight: 1,
+            }}>
+              {oppScoreDisplay}
+            </div>
+            <div style={{ color: '#9090b0', fontSize: 11, marginTop: 4 }}>
+              {oppName}
+            </div>
+            {iLost && !isDraw && (
+              <div style={{ fontSize: 10, color: '#ff5f57', marginTop: 2 }}>
+                WINNER
+              </div>
+            )}
+          </div>
+
         </div>
-        <div className="history-score-line">{scoreLine}</div>
-        {dateStr ? <div className="history-date">{dateStr}</div> : null}
+
+        {/* Footer */}
+        <div style={{
+          padding:        '6px 14px',
+          borderTop:      '1px solid #1e1e3a',
+          display:        'flex',
+          justifyContent: 'space-between',
+          alignItems:     'center',
+        }}>
+          <span style={{
+            color:         '#5a5a7a',
+            fontSize:      10,
+            textTransform: 'uppercase',
+            letterSpacing: 1,
+          }}>
+            {challenge.exam_type || 'JAMB'}
+          </span>
+          <span style={{ color: '#5a5a7a', fontSize: 10 }}>
+            {challenge.num_questions || 5} questions · {challenge.time_limit || 60}s each
+          </span>
+        </div>
+
       </div>
     );
   };
@@ -256,7 +354,12 @@ export default function Challenges({ userEmail, userName }) {
                     <span>📚 {challenge.num_questions || 10} questions</span>
                     <span>⏱️ {challenge.time_limit || 60}s per question</span>
                     {isChallenger && (
-                      <span>🎯 Your score: {challenge.challenger_score != null && challenge.challenger_score !== '' ? challenge.challenger_score : '?'}</span>
+                      <span>
+                        🎯 Your score:{' '}
+                        {challenge.challenger_score != null && challenge.challenger_score !== ''
+                          ? challenge.challenger_score
+                          : '?'}
+                      </span>
                     )}
                   </div>
 
@@ -269,10 +372,16 @@ export default function Challenges({ userEmail, userName }) {
                   {/* Opponent — pending: Accept / Decline */}
                   {isOpponent && challenge.status === 'pending' && (
                     <div className="challenge-actions">
-                      <button className="decline-btn" onClick={() => handleDecline(challenge.challenge_id)}>
+                      <button
+                        className="decline-btn"
+                        onClick={() => handleDecline(challenge.challenge_id)}
+                      >
                         Decline
                       </button>
-                      <button className="accept-btn" onClick={() => handleAccept(challenge)}>
+                      <button
+                        className="accept-btn"
+                        onClick={() => handleAccept(challenge)}
+                      >
                         Accept & Play →
                       </button>
                     </div>
@@ -292,7 +401,12 @@ export default function Challenges({ userEmail, userName }) {
 
                   {/* Challenger — waiting */}
                   {isChallenger && (
-                    <div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 8, fontStyle: 'italic' }}>
+                    <div style={{
+                      fontSize:   11,
+                      color:      'var(--text-secondary)',
+                      marginTop:  8,
+                      fontStyle:  'italic',
+                    }}>
                       Waiting for {challenge.opponent_name} to play...
                     </div>
                   )}
@@ -300,7 +414,7 @@ export default function Challenges({ userEmail, userName }) {
               );
             })}
 
-          {/* ── HISTORY TAB ── */}
+          {/* ── HISTORY TAB — latest first ── */}
           {activeTab === 'history' && history.length === 0 && (
             <div className="empty-state">
               <div className="empty-icon">📭</div>
@@ -308,7 +422,8 @@ export default function Challenges({ userEmail, userName }) {
             </div>
           )}
 
-          {activeTab === 'history' && history.map(renderHistoryCard)}
+          {activeTab === 'history' &&
+            [...history].reverse().map(renderHistoryCard)}
 
         </div>
       )}
