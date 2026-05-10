@@ -16,8 +16,8 @@ import { useTheme } from '../context/ThemeContext';
 // ============================================================================
 
 const MODES = [
-  { id: 'cbt', label: '📝 CBT' },
   { id: 'learn', label: '📖 Learn' },
+  { id: 'cbt', label: '📝 CBT' },
   { id: 'flashcard', label: '🃏 Flash' },
   { id: 'game', label: '🎮 Game' },
 ];
