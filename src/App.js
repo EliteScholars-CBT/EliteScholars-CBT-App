@@ -177,6 +177,7 @@ export default function App() {
   const [showLimitGate, setShowLimitGate] = useState(false);
   const [limitReason, setLimitReason]     = useState('session');
   const [flashcardSubject, setFlashSub]   = useState(null);
+const [paymentModal, setPaymentModal] = useState(null);
 
   const showToast = (message, type = 'info') => setToast({ show: true, message, type });
   const showAch   = (achievement) => setAchPopup({ show: true, achievement });
@@ -188,6 +189,22 @@ export default function App() {
 useEffect(() => {
 
   applySecurityMeasures();
+
+  // ── Read payment result from URL ──────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const paymentStatus = params.get('payment');
+
+  if (paymentStatus === 'success') {
+    const plan     = params.get('plan') || '';
+    const expiry   = params.get('expiry') || '';
+    const name     = params.get('name') || '';
+    setPaymentModal({ plan, expiry, name });
+    // Clean URL so refresh doesn't retrigger
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
+
+
   registerSW().then((reg) => {
     if (reg) {
       requestNotificationPermission().then((perm) => {
@@ -662,6 +679,65 @@ if (ns % 5 === 0) {
         <AchievementPopup achievement={achPopup.achievement}
           onClose={() => setAchPopup({ show: false, achievement: null })} />
       )}
+
+      {paymentModal && (
+  <div style={{
+    position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)',
+    zIndex: 999998, display: 'flex', alignItems: 'center',
+    justifyContent: 'center', padding: 20,
+  }}>
+    <div style={{
+      background: 'linear-gradient(160deg,#1a0030,#2a0050)',
+      border: '1px solid #4B0082', borderRadius: 20,
+      padding: '40px 32px', maxWidth: 360, width: '100%',
+      textAlign: 'center', fontFamily: 'inherit',
+    }}>
+      <div style={{ fontSize: 56, marginBottom: 12 }}>🎉</div>
+      <h2 style={{ color: '#fff', fontSize: 22, margin: '0 0 8px' }}>
+        You're Premium!
+      </h2>
+      <p style={{ color: '#9090b0', fontSize: 14, margin: '0 0 24px', lineHeight: 1.6 }}>
+        Hey {paymentModal.name || name} 👋 Your{' '}
+        <strong style={{ color: '#c8b4f0' }}>
+          {paymentModal.plan === 'annual' ? 'Premium Annual'
+           : paymentModal.plan === 'pro' ? 'Pro Monthly'
+           : 'Premium Monthly'}
+        </strong>{' '}
+        plan is now active. Go crush those exams! 🚀
+      </p>
+
+      {paymentModal.expiry && (
+        <div style={{
+          background: 'rgba(255,189,46,0.08)',
+          border: '1px solid rgba(255,189,46,0.25)',
+          borderRadius: 10, padding: '12px 16px', marginBottom: 24,
+        }}>
+          <p style={{ margin: 0, color: '#ffbd2e', fontSize: 12 }}>
+            ⏳ Expires:{' '}
+            {new Date(paymentModal.expiry).toLocaleDateString('en-GB', {
+              day: 'numeric', month: 'long', year: 'numeric'
+            })}
+          </p>
+        </div>
+      )}
+
+      <button
+        onClick={() => {
+          setPaymentModal(null);
+          handlePremiumActivated();
+        }}
+        style={{
+          width: '100%', padding: '14px 0',
+          background: 'linear-gradient(135deg,#4B0082,#7B2FBE)',
+          border: 'none', borderRadius: 10, color: '#fff',
+          fontSize: 16, fontWeight: 700, cursor: 'pointer',
+        }}
+      >
+        Start Studying
+      </button>
+    </div>
+  </div>
+)}
     </>
   );
 }
