@@ -37,7 +37,9 @@ export default async function handler(req, res) {
 
   const amount      = PLAN_AMOUNTS[plan];
   const txRef       = `ES-${plan.toUpperCase()}-${Date.now()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
-  const redirectUrl = `https://elitescholars.site/api/payment/verify?tx_ref=${txRef}&plan=${plan}&email=${encodeURIComponent(email)}`;
+  // const redirectUrl = `https://elitescholars.site/api/payment/verify?tx_ref=${txRef}&plan=${plan}&email=${encodeURIComponent(email)}`;
+
+const redirectUrl = `https://elite-scholars-cbt-app-git-api-serverless-makzos-projects.vercel.app/api/payment/verify?tx_ref=${txRef}&plan=${plan}&email=${encodeURIComponent(email)}`;
 
   const payload = {
     tx_ref:       txRef,
