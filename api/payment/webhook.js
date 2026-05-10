@@ -1,6 +1,5 @@
 // ============================================================================
 // api/payment/webhook.js — POST /api/payment/webhook
-// Flutterwave posts here on every payment event
 // ============================================================================
 
 import { setCors } from '../_helpers/response.js';
@@ -84,7 +83,9 @@ function confirmationEmail({ firstName, plan, amount, activatedOn, expiryDate })
             <p style="margin:0 0 8px;color:#c8c8c8;font-size:13px;">🏆 Leaderboard and challenges</p>
             <p style="margin:0;color:#c8c8c8;font-size:13px;">⚡ Priority support</p>
           </div>
-          <p style="margin:0;color:#5a5a7a;font-size:12px;line-height:1.7;">Questions? Just reply to this email. We are always here for you, ${firstName}.</p>
+          <p style="margin:0;color:#5a5a7a;font-size:12px;line-height:1.7;">
+            Questions? Just reply to this email. We are always here for you, ${firstName}.
+          </p>
         </td>
       </tr>
       <tr>
@@ -105,7 +106,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST')    return res.status(405).end();
 
-  // ── Verify signature ────────────────────────────────────────────────────────
+  // ── Verify signature ──────────────────────────────────────────────────────
   const signature = req.headers['flutterwave-signature'];
   if (!signature || signature !== FLW_SECRET_HASH) {
     console.error('Invalid webhook signature:', signature);
@@ -115,13 +116,17 @@ export default async function handler(req, res) {
   const payload = req.body;
   console.log('Webhook received:', JSON.stringify(payload));
 
-  // ── Only handle successful charges ──────────────────────────────────────────
-  if (payload?.type !== 'charge.completed') {
+  // ── Only handle successful charges ────────────────────────────────────────
+  if (payload?.event !== 'charge.completed') {
+    console.log('Ignoring event type:', payload?.event);
     return res.status(200).end();
   }
 
   const txData = payload?.data;
-  if (!txData || txData.status !== 'succeeded') {
+
+  // ✅ Fixed: 'successful' not 'succeeded'
+  if (!txData || txData.status !== 'successful') {
+    console.log('Non-successful status:', txData?.status);
     return res.status(200).end();
   }
 
@@ -133,7 +138,7 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // ── Extract plan from tx_ref (format: ES-MONTHLY-timestamp-random) ──────────
+  // ── Extract plan from tx_ref ──────────────────────────────────────────────
   const planRaw = tx_ref.split('-')[1]?.toLowerCase();
   const plan    = planRaw === 'monthly' ? 'monthly'
                 : planRaw === 'annual'  ? 'annual'
@@ -145,20 +150,20 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // ── Calculate expiry ─────────────────────────────────────────────────────────
+  // ── Calculate expiry ──────────────────────────────────────────────────────
   const expiryDateObj   = getExpiryDate(plan);
   const expiresAt       = expiryDateObj.toISOString();
   const expiryFormatted = formatDate(expiryDateObj);
   const activatedOn     = formatDate(new Date());
 
-  // ── Get firstName from profile ───────────────────────────────────────────────
+  // ── Get firstName ─────────────────────────────────────────────────────────
   let firstName = 'Student';
   try {
     const profile = await sheetsGet({ action: 'getProfile', email: emailLower });
     if (profile?.profile?.firstName) firstName = profile.profile.firstName;
   } catch {}
 
-  // ── Activate premium (idempotent) ────────────────────────────────────────────
+  // ── Activate premium ──────────────────────────────────────────────────────
   try {
     await sheetsGet({
       action:    'activatePremium',
@@ -173,7 +178,7 @@ export default async function handler(req, res) {
     console.error('activatePremium webhook error:', err.message);
   }
 
-  // ── Log to payments sheet (skips duplicate tx_ref) ───────────────────────────
+  // ── Log to payments sheet ─────────────────────────────────────────────────
   try {
     const logged = await sheetsGet({
       action:        'logPayment',
@@ -191,23 +196,9 @@ export default async function handler(req, res) {
       verifiedBy:    'webhook',
     });
     console.log('logPayment result:', JSON.stringify(logged));
-  } catch (err) {
-    console.error('logPayment webhook error:', err.message);
-  }
 
-  // ── Send confirmation email only if not already sent by verify.js ────────────
-  // We check duplicate flag from logPayment — if duplicate, email already sent
-  // So we only send here if this is the first time we're seeing this tx_ref
-  try {
-    const paymentLog = await sheetsGet({ action: 'logPayment',
-      email: emailLower, txRef: tx_ref, verifiedBy: 'webhook',
-      action: 'getPayments', email: emailLower,
-    });
-    // Only send if webhook is the first to process this
-    const alreadySent = paymentLog?.payments?.some(
-      p => p.tx_ref === tx_ref && p.verified_by === 'redirect'
-    );
-    if (!alreadySent) {
+    // ── Send email only if not a duplicate tx_ref ─────────────────────────
+    if (!logged?.duplicate) {
       await resend.emails.send({
         from:    `EliteScholars <${FROM}>`,
         to:      emailLower,
@@ -220,12 +211,12 @@ export default async function handler(req, res) {
           expiryDate: expiryFormatted,
         }),
       });
-      console.log('Confirmation email sent via webhook for:', emailLower);
+      console.log('Confirmation email sent for:', emailLower);
     } else {
-      console.log('Email already sent via redirect for:', emailLower);
+      console.log('Duplicate tx_ref — email already sent for:', emailLower);
     }
   } catch (err) {
-    console.error('Webhook email error:', err.message);
+    console.error('logPayment/email webhook error:', err.message);
   }
 
   return res.status(200).end();
