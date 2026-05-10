@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     redirect_url: redirectUrl,
     customer:     { email, name },
     customizations: {
-      title:       'EliteScholars',
+      title:       'EliteScholars (Resumeefy Concepts)',
       description: PLAN_NAMES[plan],
       logo:        'https://elitescholars.site/android-chrome-192x192.png',
     },
