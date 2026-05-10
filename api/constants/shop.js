@@ -1,5 +1,7 @@
 // ============================================================================
 // api/constants/shop.js — Shop items (server-side)
+// Images live in /public/shop/ and are referenced by filename only.
+// The frontend constructs the full URL as /shop/<filename>
 // ============================================================================
 
 export const SHOP_ITEMS = [
@@ -15,47 +17,52 @@ export const SHOP_ITEMS = [
   },
   {
     id: 'shop_1',
-    title: '📝 JAMB Key Points',
-    description: 'Condensed notes covering all JAMB topics.',
+    title: 'JAMB Key Points',
+    description: 'Condensed notes covering all JAMB topics. Perfect last-minute revision.',
     price: '₦1,500',
-    image: null,
+    image: 'jamb-key-points.jpg',
     link: 'https://elitescholars.site/shop/jamb-key-points',
     category: 'Notes',
+    badge: 'Bestseller',
   },
   {
     id: 'shop_2',
-    title: '📐 Maths Formula Sheet',
+    title: 'Maths Formula Sheet',
     description: 'All JAMB & WAEC maths formulas on one printable sheet.',
     price: '₦500',
-    image: null,
+    image: 'maths-formula.jpg',
     link: 'https://elitescholars.site/shop/maths-formula',
     category: 'Cheat Sheet',
+    badge: null,
   },
   {
     id: 'shop_3',
-    title: '🎓 POST UTME Bundle',
+    title: 'POST UTME Bundle',
     description: 'Past questions & answers for 11 top universities.',
     price: '₦2,000',
-    image: null,
+    image: 'postutme-bundle.jpg',
     link: 'https://elitescholars.site/shop/postutme',
     category: 'Bundle',
+    badge: 'Popular',
   },
   {
     id: 'shop_4',
-    title: '🌍 WAEC Geography Notes',
+    title: 'WAEC Geography Notes',
     description: 'Complete geography notes with maps & diagrams.',
     price: '₦800',
-    image: null,
+    image: 'waec-geography.jpg',
     link: 'https://elitescholars.site/shop/geography',
     category: 'Notes',
+    badge: null,
   },
   {
     id: 'shop_5',
-    title: '💡 Exam Success Blueprint',
+    title: 'Exam Success Blueprint',
     description: 'A proven study strategy guide for Nigerian students.',
     price: '₦1,000',
-    image: null,
+    image: 'exam-blueprint.jpg',
     link: 'https://elitescholars.site/shop/blueprint',
     category: 'Guide',
+    badge: 'New',
   },
 ];
