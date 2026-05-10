@@ -7,7 +7,7 @@ import { sendOk, sendErr, sendMethodNotAllowed, setCors } from '../_helpers/resp
 
 const FLW_SECRET_KEY = process.env.FLW_SECRET_KEY;
 
-const PLAN_AMOUNTS = { monthly: 9000, annual: 89000, pro: 3000 };
+const PLAN_AMOUNTS = { monthly: 9000, annual: 89000, pro: 100 };
 const PLAN_NAMES   = {
   monthly: 'EliteScholars Premium Monthly',
   annual:  'EliteScholars Premium Annual',
