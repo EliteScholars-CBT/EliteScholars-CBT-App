@@ -4,7 +4,7 @@
 
 // ── Free-tier limits ──────────────────────────────────────────────────────────
 export const FREE_TOPICS_PER_DAY  = 5;   // max learn-mode topics per day
-export const FREE_SESSION_MINUTES = 60;  // max CBT/learn time per session (minutes)
+export const FREE_SESSION_MINUTES = 120;  // max CBT/learn time per session (minutes)
 export const FREE_COOLDOWN_HOURS  = 4;   // hours before they can continue after limit
 
 // ── Premium pricing ───────────────────────────────────────────────────────────

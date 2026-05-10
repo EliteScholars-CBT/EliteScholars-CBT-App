@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState, useEffect, useCallback } from 'react';
-import { verifyProfile, syncProfileToSheet } from './utils/profileApi';
+import { SHEETS_URL } from './utils/constants';
+import { verifyProfile, syncProfileToSheet, pullProfileFromSheet } from './utils/profileApi';
 import DebugConsole from "./utils/DebugConsole";
 import { installGlobalErrorDebugger } from "./utils/debugError";
 import Toast from './components/Toast';
@@ -21,6 +22,7 @@ import {
   loadUser, loadStats, saveStats, saveUser,
   loadSubjectPerformance, saveSubjectPerformance,
   loadAchievements, saveAchievements,
+  mergeStats, mergeAchievements, mergeSubjectPerformance,
 } from './utils/storage';
 import {
   trackEvent, trackSessionStart, trackSessionEnd, getDeviceInfo, fmtTimestamp,
@@ -139,6 +141,16 @@ const checkAchievements = (userStats, email, current, showToast, showAch, subjPe
   return newIds;
 };
 
+let syncTimer = null;
+
+function debouncedSync(payload, delay = 5000) {
+  if (syncTimer) clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => {
+    syncProfileToSheet(payload);
+    syncTimer = null;
+  }, delay);
+}
+
 // ── App ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [screen, setScreen]               = useState('splash');
@@ -187,7 +199,7 @@ const [paymentModal, setPaymentModal] = useState(null);
 
   // ── Startup ─────────────────────────────────────────────────────────────────
 useEffect(() => {
-
+  installGlobalErrorDebugger();
   applySecurityMeasures();
 
   // ── Read payment result from URL ──────────────────────────────────────────
@@ -225,12 +237,38 @@ useEffect(() => {
 useEffect(() => {
   if (!email || !sessionStart) return;
 
+  const doSync = () => {
+    const stats   = loadStats(email);
+    const ach     = loadAchievements(email);
+    const subjPrf = loadSubjectPerformance(email);
+    // Use sendBeacon so it fires reliably on tab close
+    const payload = JSON.stringify({
+      action: 'syncProfile',
+      email,
+      stats:              JSON.stringify(stats),
+      achievements:       JSON.stringify(ach),
+      subjectPerformance: JSON.stringify(subjPrf),
+    });
+    try {
+      navigator.sendBeacon
+        ? navigator.sendBeacon(
+            `${SHEETS_URL}`,
+            new Blob([payload], { type: 'application/json' })
+          )
+        : syncProfileToSheet({ email, stats, achievements: ach, subjectPerformance: subjPrf });
+    } catch {}
+  };
+
   const handleEnd = () => {
     trackSessionEnd(email, Date.now() - sessionStart);
+    doSync();
   };
 
   const handleVisibility = () => {
-    if (document.visibilityState === 'hidden') handleEnd();
+    if (document.visibilityState === 'hidden') {
+      trackSessionEnd(email, Date.now() - sessionStart);
+      doSync();
+    }
   };
 
   window.addEventListener('beforeunload', handleEnd);
@@ -277,17 +315,39 @@ const handleSplash = async () => {
           const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
           if (result.success) {
             const p = result.profile;
-            // Pull from server
-            if (p.stats)              saveStats(p.stats, u.email);
-            if (p.achievements)       saveAchievements(p.achievements, u.email);
-            if (p.subjectPerformance) saveSubjectPerformance(p.subjectPerformance, u.email);
-            // Push current local state to server
+
+            // Grab local data
+            const localStats    = loadStats(u.email);
+            const localAch      = loadAchievements(u.email);
+            const localSubjPerf = loadSubjectPerformance(u.email);
+
+            // Merge server + local (instead of blindly overwriting with server)
+            const mergedStats = mergeStats(localStats, p.stats || {});
+            const mergedAch   = mergeAchievements(localAch, p.achievements || []);
+            const mergedPerf  = mergeSubjectPerformance(localSubjPerf, p.subjectPerformance || {});
+
+            // Save merged locally
+            saveStats(mergedStats, u.email);
+            saveAchievements(mergedAch, u.email);
+            saveSubjectPerformance(mergedPerf, u.email);
+
+            // Update React state silently in the background
+            setSessions(mergedStats.sessions || 0);
+            setAllScores(mergedStats.allScores || []);
+            setBestScore(mergedStats.bestScore || 0);
+            setStreak(mergedStats.streak || 1);
+            setLastDate(mergedStats.lastDate || '');
+            setAchievements(mergedAch);
+            setSubjPerf(mergedPerf);
+
+            // Push merged (not stale local) back to server
             syncProfileToSheet({
               email:              u.email,
-              stats:              loadStats(u.email),
-              achievements:       loadAchievements(u.email),
-              subjectPerformance: loadSubjectPerformance(u.email),
+              stats:              mergedStats,
+              achievements:       mergedAch,
+              subjectPerformance: mergedPerf,
             });
+
             localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
           }
         } catch {}
@@ -312,16 +372,29 @@ const handleOnboard = (userData) => {
   setSelectedExams(userData.selectedExams || []);
   setPremiumUser(isPremium(e));
 
-  // Hydrate from server if available
-  const s = userData.serverStats || loadStats(e);
-  if (s.sessions)  setSessions(s.sessions);
-  if (s.allScores) setAllScores(s.allScores);
-  if (s.bestScore) setBestScore(s.bestScore);
-  if (s.streak)    setStreak(s.streak);
-  if (s.lastDate)  setLastDate(s.lastDate);
-  if (userData.serverStats)         saveStats(userData.serverStats, e);
-  if (userData.serverAchievements)  { setAchievements(userData.serverAchievements); saveAchievements(userData.serverAchievements, e); }
-  if (userData.serverSubjectPerf)   saveSubjectPerformance(userData.serverSubjectPerf, e);
+  // Grab local data
+  const localStats    = loadStats(e);
+  const localAch      = loadAchievements(e);
+  const localSubjPerf = loadSubjectPerformance(e);
+
+  // Merge server + local instead of picking one side
+  const mergedStats = mergeStats(localStats, userData.serverStats || {});
+  const mergedAch   = mergeAchievements(localAch, userData.serverAchievements || []);
+  const mergedPerf  = mergeSubjectPerformance(localSubjPerf, userData.serverSubjectPerf || {});
+
+  // Save merged locally
+  saveStats(mergedStats, e);
+  saveAchievements(mergedAch, e);
+  saveSubjectPerformance(mergedPerf, e);
+
+  // Hydrate state from merged data
+  if (mergedStats.sessions)  setSessions(mergedStats.sessions);
+  if (mergedStats.allScores) setAllScores(mergedStats.allScores);
+  if (mergedStats.bestScore) setBestScore(mergedStats.bestScore);
+  if (mergedStats.streak)    setStreak(mergedStats.streak);
+  if (mergedStats.lastDate)  setLastDate(mergedStats.lastDate);
+  setAchievements(mergedAch);
+  setSubjPerf(mergedPerf);
 
   startSession(e);
   setSessionStart(Date.now());
@@ -336,12 +409,12 @@ const handleOnboard = (userData) => {
     passwordHash:  userData.passwordHash,
   });
 
-  // Push + pull on every login
+  // Push merged to server
   syncProfileToSheet({
     email:              e,
-    stats:              userData.serverStats || loadStats(e),
-    achievements:       userData.serverAchievements || loadAchievements(e),
-    subjectPerformance: userData.serverSubjectPerf || loadSubjectPerformance(e),
+    stats:              mergedStats,
+    achievements:       mergedAch,
+    subjectPerformance: mergedPerf,
   });
 
   setScreen('examType');
@@ -431,15 +504,12 @@ const handleOnboard = (userData) => {
     setStreak(newStreak); setLastDate(today);
     saveStats({ sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today }, email);
 
-// Sync to server every 5 quizzes
-if (ns % 5 === 0) {
-  syncProfileToSheet({
-    email,
-    stats: { sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today },
-    achievements,
-    subjectPerformance: newPerf,
-  });
-}
+    debouncedSync({
+      email,
+      stats: { sessions: ns, allScores: nsc, bestScore: nb, streak: newStreak, lastDate: today },
+      achievements,
+      subjectPerformance: newPerf,
+    });
 
     const perfectScores   = allScores.filter((s) => s === 100).length + (pct === 100 ? 1 : 0);
     const ninetyPlusCount = allScores.filter((s) => s >= 90).length  + (pct >= 90  ? 1 : 0);
@@ -491,171 +561,240 @@ if (ns % 5 === 0) {
 
   return (
     <>
-      {/* <DebugConsole /> */}
+      <DebugConsole />
       <div className="phone">
         <div className="phone-content">
-
           <ErrorBoundary>
             <Suspense fallback={<LoadingScreen />}>
+              {screen === 'splash' && <Splash onDone={handleSplash} />}
 
-            {screen === 'splash' && <Splash onDone={handleSplash} />}
+              {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
 
-            {screen === 'onboard' && <AuthScreen onDone={handleOnboard} />}
+              {screen === 'examType' && (
+                <ExamTypeSelect
+                  onSelectExam={handleExamTypeSelect}
+                  onBack={() => {
+                    if (window.confirm('Log out of EliteScholars?')) {
+                      localStorage.removeItem('ep_user');
+                      setName('');
+                      setEmail('');
+                      setScreen('onboard');
+                    }
+                  }}
+                />
+              )}
 
-            {screen === 'examType' && (
-              <ExamTypeSelect onSelectExam={handleExamTypeSelect} onBack={() => {
-                if (window.confirm('Log out of EliteScholars?')) {
-                  localStorage.removeItem('ep_user');
-                  setName(''); setEmail('');
-                  setScreen('onboard');
-                }
-              }} />
-            )}
+              {screen === 'universitySelect' && (
+                <UniversitySelect
+                  onSelectUniversity={(u) => {
+                    setSelectedUni(u);
+                    setScreen('subjects');
+                  }}
+                  onBack={() => setScreen('examType')}
+                />
+              )}
 
-            {screen === 'universitySelect' && (
-              <UniversitySelect
-                onSelectUniversity={(u) => { setSelectedUni(u); setScreen('subjects'); }}
-                onBack={() => setScreen('examType')}
-              />
-            )}
+              {/* ── Unified subjects screen — handles ALL exam types ── */}
+              {screen === 'subjects' && (
+                <Subjects
+                  name={name}
+                  examType={examType}
+                  university={selectedUni}
+                  email={email}
+                  premiumUser={premiumUser}
+                  refreshTrigger={adRefresh}
+                  onStartCBT={startQuiz}
+                  onStartLearn={startLearn}
+                  onStartFlashcard={startFlashcard}
+                  onStartGame={() => setScreen('game')}
+                  onProfile={() => setScreen('profile')}
+                  onBack={examType === 'postutme' ? () => setScreen('universitySelect') : null}
+                />
+              )}
 
-            {/* ── Unified subjects screen — handles ALL exam types ── */}
-            {screen === 'subjects' && (
-              <Subjects
-                name={name}
-                examType={examType}
-                university={selectedUni}
-                email={email}
-                premiumUser={premiumUser}
-                refreshTrigger={adRefresh}
-                onStartCBT={startQuiz}
-                onStartLearn={startLearn}
-                onStartFlashcard={startFlashcard}
-                onStartGame={() => setScreen('game')}
-                onProfile={() => setScreen('profile')}
-                onBack={examType === 'postutme' ? () => setScreen('universitySelect') : null}
-              />
-            )}
+              {/* ── Flashcards ── */}
+              {screen === 'flashcards' && (
+                <Flashcards subjectId={flashcardSubject} onBack={() => setScreen('subjects')} />
+              )}
 
-            {/* ── Flashcards ── */}
-            {screen === 'flashcards' && (
-              <Flashcards
-                subjectId={flashcardSubject}
-                onBack={() => setScreen('subjects')}
-              />
-            )}
+              {/* ── Learn mode (was Learn, now shared) ── */}
+              {screen === 'learn' && (
+                <Learn
+                  subjectId={learnSubject}
+                  onBack={() => setScreen('subjects')}
+                  examType={examType}
+                  email={email}
+                  onTopicComplete={() => {
+                    incrementTopicsToday(email);
+                    awardTopicXP(email, name);
+                    showToast('Topic completed! +75 XP 📖', 'success');
 
-            {/* ── Learn mode (was Learn, now shared) ── */}
-            {screen === 'learn' && (
-              <Learn
-                subjectId={learnSubject}
-                onBack={() => setScreen('subjects')}
-                examType={examType}
-                email={email}
-                onTopicComplete={() => {
-                  incrementTopicsToday(email);
-                  awardTopicXP(email, name);
-                  showToast('Topic completed! +75 XP 📖', 'success');
-                  if (!achievements.some((a) => a?.id === 'learnMode')) {
-                    const updated = [...achievements, ACHIEVEMENTS.learnMode];
-                    setAchievements(updated);
-                    saveAchievements(updated, email);
-                    showAch(ACHIEVEMENTS.learnMode);
-                  }
-                  if (!canUseTopic(email) && !premiumUser) {
-                    setLimitReason('topics'); setShowLimitGate(true);
-                  }
-                }}
-              />
-            )}
+                    let updatedAch = achievements;
+                    if (!achievements.some((a) => a?.id === 'learnMode')) {
+                      updatedAch = [...achievements, ACHIEVEMENTS.learnMode];
+                      setAchievements(updatedAch);
+                      saveAchievements(updatedAch, email);
+                      showAch(ACHIEVEMENTS.learnMode);
+                    }
 
-            {screen === 'leaderboard' && <Leaderboard userEmail={email} userName={name} />}
-            {screen === 'challenges'  && <Challenges  userEmail={email} userName={name} />}
+                    debouncedSync({
+                      email,
+                      stats: { sessions, allScores, bestScore, streak, lastDate },
+                      achievements: updatedAch,
+                      subjectPerformance: subjPerf,
+                    });
 
-            {screen === 'shop' && (
-              <Shop
-                userEmail={email} name={name}
-                premiumUser={premiumUser}
-                onPremiumActivated={handlePremiumActivated}
-              />
-            )}
+                    if (!canUseTopic(email) && !premiumUser) {
+                      setLimitReason('topics');
+                      setShowLimitGate(true);
+                    }
+                  }}
+                />
+              )}
 
-            {screen === 'profile' && (
-              <Profile
-                name={name} email={email} sessions={sessions} streak={streak}
-                allScores={allScores} bestScore={bestScore}
-                premiumUser={premiumUser}
-                onPremiumActivated={handlePremiumActivated}
-                onBack={() => setScreen('subjects')}
-                onSignOut={() => {
-                  stopSpeech();
-                  localStorage.removeItem('ep_user');
-                  setName(''); setEmail(''); setSessions(0);
-                  setAllScores([]); setBestScore(0); setStreak(1); setLastDate('');
-                  setPremiumUser(false);
-                  setScreen('onboard');
-                }}
-              />
-            )}
+              {screen === 'leaderboard' && <Leaderboard userEmail={email} userName={name} />}
+              {screen === 'challenges' && <Challenges userEmail={email} userName={name} />}
 
-            {screen === 'sharegate' && (
-              <ShareGate name={name} email={email}
-                onUnlocked={() => {
-                  setSubject(pendingSubject);
-                  setScore(0); setCorrect(0); setTotalQ(0);
-                  setUsedFifty(false); setUsedHint(false); setQuestionLog([]);
-                  trackEvent('quiz_start', { name, email, subject: pendingSubject, examType, timestamp2: fmtTimestamp(), ...getDeviceInfo() });
-                  setScreen('ready');
-                }}
-              />
-            )}
+              {screen === 'shop' && (
+                <Shop
+                  userEmail={email}
+                  name={name}
+                  premiumUser={premiumUser}
+                  onPremiumActivated={handlePremiumActivated}
+                />
+              )}
 
-            {screen === 'adgate' && (
-              <AdGate name={name} email={email} totalSessions={totalSessionsForAd}
-                onUnlocked={() => { setShowAdGate(false); if (adGateCallback) { adGateCallback(); setAdGateCallback(null); } }}
-              />
-            )}
+              {screen === 'profile' && (
+                <Profile
+                  name={name}
+                  email={email}
+                  sessions={sessions}
+                  streak={streak}
+                  allScores={allScores}
+                  bestScore={bestScore}
+                  premiumUser={premiumUser}
+                  onPremiumActivated={handlePremiumActivated}
+                  onBack={() => setScreen('subjects')}
+                  onSignOut={() => {
+                    stopSpeech();
+                    // Sync before clearing
+                    const stats = loadStats(email);
+                    const ach = loadAchievements(email);
+                    const subjPrf = loadSubjectPerformance(email);
+                    syncProfileToSheet({
+                      email,
+                      stats,
+                      achievements: ach,
+                      subjectPerformance: subjPrf,
+                    });
+                    localStorage.removeItem('ep_user');
+                    setName('');
+                    setEmail('');
+                    setSessions(0);
+                    setAllScores([]);
+                    setBestScore(0);
+                    setStreak(1);
+                    setLastDate('');
+                    setPremiumUser(false);
+                    setScreen('onboard');
+                  }}
+                />
+              )}
 
-            {screen === 'ready' && (
-              <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />
-            )}
+              {screen === 'sharegate' && (
+                <ShareGate
+                  name={name}
+                  email={email}
+                  onUnlocked={() => {
+                    setSubject(pendingSubject);
+                    setScore(0);
+                    setCorrect(0);
+                    setTotalQ(0);
+                    setUsedFifty(false);
+                    setUsedHint(false);
+                    setQuestionLog([]);
+                    trackEvent('quiz_start', {
+                      name,
+                      email,
+                      subject: pendingSubject,
+                      examType,
+                      timestamp2: fmtTimestamp(),
+                      ...getDeviceInfo(),
+                    });
+                    setScreen('ready');
+                  }}
+                />
+              )}
 
-            {screen === 'quiz' && (
-              <Quiz
-                subjectId={subject} onAllDone={handleAllDone}
-                setQuizTimeRemaining={setQuizTimeLeft}
-                score={score}     setScore={setScore}
-                correct={correct} setCorrect={setCorrect}
-                totalQ={totalQ}   setTotalQ={setTotalQ}
-                onHome={goHome}
-                triggerAdRefresh={triggerAdRefresh} adRefresh={adRefresh}
-                email={email} name={name} examType={examType}
-                onFiftyUsed={setUsedFifty} onHintUsed={setUsedHint}
-                onLogQuestion={(entry) => setQuestionLog((l) => [...l, entry])}
-              />
-            )}
+              {screen === 'adgate' && (
+                <AdGate
+                  name={name}
+                  email={email}
+                  totalSessions={totalSessionsForAd}
+                  onUnlocked={() => {
+                    setShowAdGate(false);
+                    if (adGateCallback) {
+                      adGateCallback();
+                      setAdGateCallback(null);
+                    }
+                  }}
+                />
+              )}
 
-            {screen === 'game' && (
-              <GameMode onBack={() => setScreen('subjects')} email={email} name={name} />
-            )}
+              {screen === 'ready' && (
+                <Ready subjectId={subject} onGo={() => setScreen('quiz')} onBack={goHome} />
+              )}
 
-            {screen === 'result' && (
-              <Result
-                name={name} subjectId={subject}
-                score={score} correct={correct} totalQ={totalQ}
-                totalSessions={sessions}
-                onHome={goHome}
-                onProfile={() => setScreen('profile')}
-                onAdGateComplete={(cb) => { setTSFAd(sessions + 1); setAdGateCallback(() => cb); setShowAdGate(true); }}
-                questionLog={questionLog}
-                userEmail={email}
-                studentType={studentType}
-                selectedExams={selectedExams}
-              />
-            )}
+              {screen === 'quiz' && (
+                <Quiz
+                  subjectId={subject}
+                  onAllDone={handleAllDone}
+                  setQuizTimeRemaining={setQuizTimeLeft}
+                  score={score}
+                  setScore={setScore}
+                  correct={correct}
+                  setCorrect={setCorrect}
+                  totalQ={totalQ}
+                  setTotalQ={setTotalQ}
+                  onHome={goHome}
+                  triggerAdRefresh={triggerAdRefresh}
+                  adRefresh={adRefresh}
+                  email={email}
+                  name={name}
+                  examType={examType}
+                  onFiftyUsed={setUsedFifty}
+                  onHintUsed={setUsedHint}
+                  onLogQuestion={(entry) => setQuestionLog((l) => [...l, entry])}
+                />
+              )}
 
-          </Suspense>
-        </ErrorBoundary>
+              {screen === 'game' && (
+                <GameMode onBack={() => setScreen('subjects')} email={email} name={name} />
+              )}
+
+              {screen === 'result' && (
+                <Result
+                  name={name}
+                  subjectId={subject}
+                  score={score}
+                  correct={correct}
+                  totalQ={totalQ}
+                  totalSessions={sessions}
+                  onHome={goHome}
+                  onProfile={() => setScreen('profile')}
+                  onAdGateComplete={(cb) => {
+                    setTSFAd(sessions + 1);
+                    setAdGateCallback(() => cb);
+                    setShowAdGate(true);
+                  }}
+                  questionLog={questionLog}
+                  userEmail={email}
+                  studentType={studentType}
+                  selectedExams={selectedExams}
+                />
+              )}
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </div>
 
@@ -665,79 +804,110 @@ if (ns % 5 === 0) {
 
       {showLimitGate && (
         <FreeLimitGate
-          email={email} name={name} reason={limitReason}
+          email={email}
+          name={name}
+          reason={limitReason}
           onClose={() => setShowLimitGate(false)}
           onPremiumActivated={handlePremiumActivated}
         />
       )}
 
       {toast.show && (
-        <Toast message={toast.message} type={toast.type}
-          onClose={() => setToast({ show: false, message: '', type: 'info' })} />
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast({ show: false, message: '', type: 'info' })}
+        />
       )}
       {achPopup.show && achPopup.achievement && (
-        <AchievementPopup achievement={achPopup.achievement}
-          onClose={() => setAchPopup({ show: false, achievement: null })} />
+        <AchievementPopup
+          achievement={achPopup.achievement}
+          onClose={() => setAchPopup({ show: false, achievement: null })}
+        />
       )}
 
       {paymentModal && (
-  <div style={{
-    position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)',
-    zIndex: 999998, display: 'flex', alignItems: 'center',
-    justifyContent: 'center', padding: 20,
-  }}>
-    <div style={{
-      background: 'linear-gradient(160deg,#1a0030,#2a0050)',
-      border: '1px solid #4B0082', borderRadius: 20,
-      padding: '40px 32px', maxWidth: 360, width: '100%',
-      textAlign: 'center', fontFamily: 'inherit',
-    }}>
-      <div style={{ fontSize: 56, marginBottom: 12 }}>🎉</div>
-      <h2 style={{ color: '#fff', fontSize: 22, margin: '0 0 8px' }}>
-        You're Premium!
-      </h2>
-      <p style={{ color: '#9090b0', fontSize: 14, margin: '0 0 24px', lineHeight: 1.6 }}>
-        Hey {paymentModal.name || name} 👋 Your{' '}
-        <strong style={{ color: '#c8b4f0' }}>
-          {paymentModal.plan === 'annual' ? 'Premium Annual'
-           : paymentModal.plan === 'pro' ? 'Pro Monthly'
-           : 'Premium Monthly'}
-        </strong>{' '}
-        plan is now active. Go crush those exams! 🚀
-      </p>
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.85)',
+            zIndex: 999998,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 20,
+          }}
+        >
+          <div
+            style={{
+              background: 'linear-gradient(160deg,#1a0030,#2a0050)',
+              border: '1px solid #4B0082',
+              borderRadius: 20,
+              padding: '40px 32px',
+              maxWidth: 360,
+              width: '100%',
+              textAlign: 'center',
+              fontFamily: 'inherit',
+            }}
+          >
+            <div style={{ fontSize: 56, marginBottom: 12 }}>🎉</div>
+            <h2 style={{ color: '#fff', fontSize: 22, margin: '0 0 8px' }}>You're Premium!</h2>
+            <p style={{ color: '#9090b0', fontSize: 14, margin: '0 0 24px', lineHeight: 1.6 }}>
+              Hey {paymentModal.name || name} 👋 Your{' '}
+              <strong style={{ color: '#c8b4f0' }}>
+                {paymentModal.plan === 'annual'
+                  ? 'Premium Annual'
+                  : paymentModal.plan === 'pro'
+                    ? 'Pro Monthly'
+                    : 'Premium Monthly'}
+              </strong>{' '}
+              plan is now active. Go crush those exams! 🚀
+            </p>
 
-      {paymentModal.expiry && (
-        <div style={{
-          background: 'rgba(255,189,46,0.08)',
-          border: '1px solid rgba(255,189,46,0.25)',
-          borderRadius: 10, padding: '12px 16px', marginBottom: 24,
-        }}>
-          <p style={{ margin: 0, color: '#ffbd2e', fontSize: 12 }}>
-            ⏳ Expires:{' '}
-            {new Date(paymentModal.expiry).toLocaleDateString('en-GB', {
-              day: 'numeric', month: 'long', year: 'numeric'
-            })}
-          </p>
+            {paymentModal.expiry && (
+              <div
+                style={{
+                  background: 'rgba(255,189,46,0.08)',
+                  border: '1px solid rgba(255,189,46,0.25)',
+                  borderRadius: 10,
+                  padding: '12px 16px',
+                  marginBottom: 24,
+                }}
+              >
+                <p style={{ margin: 0, color: '#ffbd2e', fontSize: 12 }}>
+                  ⏳ Expires:{' '}
+                  {new Date(paymentModal.expiry).toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </p>
+              </div>
+            )}
+
+            <button
+              onClick={() => {
+                setPaymentModal(null);
+                handlePremiumActivated();
+              }}
+              style={{
+                width: '100%',
+                padding: '14px 0',
+                background: 'linear-gradient(135deg,#4B0082,#7B2FBE)',
+                border: 'none',
+                borderRadius: 10,
+                color: '#fff',
+                fontSize: 16,
+                fontWeight: 700,
+                cursor: 'pointer',
+              }}
+            >
+              Start Studying
+            </button>
+          </div>
         </div>
       )}
-
-      <button
-        onClick={() => {
-          setPaymentModal(null);
-          handlePremiumActivated();
-        }}
-        style={{
-          width: '100%', padding: '14px 0',
-          background: 'linear-gradient(135deg,#4B0082,#7B2FBE)',
-          border: 'none', borderRadius: 10, color: '#fff',
-          fontSize: 16, fontWeight: 700, cursor: 'pointer',
-        }}
-      >
-        Start Studying
-      </button>
-    </div>
-  </div>
-)}
     </>
   );
 }

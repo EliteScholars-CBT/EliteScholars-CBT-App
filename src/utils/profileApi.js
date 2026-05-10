@@ -171,7 +171,7 @@ export async function fetchAds(exam) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// PROFILE SYNC
+// PROFILE SYNC — push local data to Sheets
 // ─────────────────────────────────────────────────────────────────────────────
 
 export async function syncProfileToSheet(data) {
@@ -184,50 +184,33 @@ export async function syncProfileToSheet(data) {
         action: 'syncProfile',
         ...data,
         email: data.email?.toLowerCase().trim(),
+        stats:              JSON.stringify(data.stats || {}),
+        achievements:       JSON.stringify(data.achievements || []),
+        subjectPerformance: JSON.stringify(data.subjectPerformance || {}),
       }),
     });
-
   } catch (err) {
-    addLog({
-      type: "error",
-      category: "network",
-      message: "SYNC FAILED",
-      data: {
-        error: err.message,
-        email: data?.email
-      }
-    });
+    addLog({ type: 'error', category: 'network', message: 'SYNC FAILED', data: { error: err.message, email: data?.email } });
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// SHEET PULL
+// PROFILE PULL — fetch latest profile from Sheets via /api/auth/verify
+// Returns { stats, achievements, subjectPerformance } or null
 // ─────────────────────────────────────────────────────────────────────────────
 
-export async function pullProfileFromSheet(email) {
+export async function pullProfileFromSheet(email, passwordHash) {
   try {
-    const qs = new URLSearchParams({
-      action: 'loginProfile',
-      email: email.toLowerCase().trim(),
-      passwordHash: '__pull_only__'
-    });
-
-    const res = await fetch(`${SHEETS_URL}?${qs}`);
-    const data = await res.json();
-
-    return data;
-
+    const result = await apiPost('/api/auth/verify', { email, passwordHash });
+    if (!result?.success) return null;
+    const p = result.profile;
+    return {
+      stats:              p.stats              || {},
+      achievements:       p.achievements       || [],
+      subjectPerformance: p.subjectPerformance || {},
+    };
   } catch (err) {
-    addLog({
-      type: "error",
-      category: "network",
-      message: "PULL FAILED",
-      data: {
-        error: err.message,
-        email
-      }
-    });
-
+    addLog({ type: 'error', category: 'network', message: 'PULL FAILED', data: { error: err.message, email } });
     return null;
   }
 }
