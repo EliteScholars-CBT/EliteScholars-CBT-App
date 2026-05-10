@@ -29,7 +29,6 @@
       ]
     }
   ],
-{
   "crons": [
     {
       "path": "/api/cron/subscription-reminders",
@@ -37,5 +36,3 @@
     }
   ]
 }
-}
-
