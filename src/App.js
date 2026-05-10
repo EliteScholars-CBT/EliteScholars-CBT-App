@@ -57,7 +57,7 @@ const Learn     = lazy(() => import('./components/Learn')); // still used for le
 const ShareGate = lazy(() => import('./components/ShareGate'));
 const AdGate    = lazy(() => import('./components/AdGate'));
 
-import appLogo from './assets/elite-scholars-cbt-logo.png';
+import appLogo from './assets/elite-scholars-logo.png';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
