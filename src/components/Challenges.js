@@ -469,7 +469,7 @@ export default function Challenges({ userEmail, userName }) {
           )}
 
           {activeTab === 'history' &&
-            [...history].reverse().map(renderHistoryCard)}
+            [...history].map(renderHistoryCard)}
 
         </div>
       )}
