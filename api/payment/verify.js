@@ -106,13 +106,19 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'GET')     return sendMethodNotAllowed(res);
 
-  const { tx_ref, plan, email, status } = req.query;
+  const tx_ref = Array.isArray(req.query.tx_ref) 
+  ? req.query.tx_ref[0] 
+  : req.query.tx_ref;
+const { plan, email, status } = req.query;
+
+  console.log('Verify called with params:', { tx_ref, plan, email, status });
 
   if (status === 'cancelled') {
     return res.redirect(`${APP_URL}/?payment=cancelled`);
   }
 
   if (!tx_ref || !plan || !email) {
+    console.error('Missing params:', { tx_ref, plan, email });
     return res.redirect(`${APP_URL}/?payment=failed`);
   }
 
@@ -125,30 +131,46 @@ export default async function handler(req, res) {
 
     const flwText = await flwRes.text();
     let flwData;
-    try { flwData = JSON.parse(flwText); } catch {
+    try {
+      flwData = JSON.parse(flwText);
+    } catch {
       console.error('FLW verify non-JSON:', flwText);
       return res.redirect(`${APP_URL}/?payment=failed`);
     }
 
-    console.log('FLW verify response:', JSON.stringify(flwData));
+    // ── Debug logs ───────────────────────────────────────────────────────────
+    console.log('FLW verify status:', flwData?.status);
+    console.log('FLW tx status:', flwData?.data?.status);
+    console.log('FLW currency:', flwData?.data?.currency);
+    console.log('FLW customer email:', flwData?.data?.customer?.email);
+    console.log('URL email param:', email);
+    console.log('FLW full response:', JSON.stringify(flwData));
 
     const txData = flwData?.data;
 
     if (
-      flwData.status !== 'success'            ||
-      txData?.status !== 'successful'          ||
-      txData?.currency !== 'NGN'               ||
+      flwData.status !== 'success'          ||
+      txData?.status !== 'successful'        ||
+      txData?.currency !== 'NGN'             ||
       txData?.customer?.email?.toLowerCase() !== email.toLowerCase()
     ) {
+      console.error('Verification failed — condition dump:', {
+        flwStatus:  flwData?.status,
+        txStatus:   txData?.status,
+        currency:   txData?.currency,
+        flwEmail:   txData?.customer?.email?.toLowerCase(),
+        urlEmail:   email.toLowerCase(),
+        emailMatch: txData?.customer?.email?.toLowerCase() === email.toLowerCase(),
+      });
       return res.redirect(`${APP_URL}/?payment=failed`);
     }
 
     // ── Step 2: Calculate expiry ─────────────────────────────────────────────
-    const expiryDateObj  = getExpiryDate(plan);
-    const expiresAt      = expiryDateObj.toISOString();
+    const expiryDateObj   = getExpiryDate(plan);
+    const expiresAt       = expiryDateObj.toISOString();
     const expiryFormatted = formatDate(expiryDateObj);
-    const activatedOn    = formatDate(new Date());
-    const emailLower     = email.toLowerCase().trim();
+    const activatedOn     = formatDate(new Date());
+    const emailLower      = email.toLowerCase().trim();
 
     // ── Step 3: Get user profile for firstName ───────────────────────────────
     let firstName = 'Student';
@@ -167,6 +189,7 @@ export default async function handler(req, res) {
         expiresAt,
         amount:    String(txData.amount),
       });
+      console.log('activatePremium done for:', emailLower);
     } catch (err) {
       console.error('activatePremium error:', err.message);
     }
@@ -188,6 +211,7 @@ export default async function handler(req, res) {
         expiryDate:    expiresAt,
         verifiedBy:    'redirect',
       });
+      console.log('logPayment done for:', emailLower);
     } catch (err) {
       console.error('logPayment error:', err.message);
     }
@@ -206,11 +230,13 @@ export default async function handler(req, res) {
           expiryDate:  expiryFormatted,
         }),
       });
+      console.log('Confirmation email sent to:', emailLower);
     } catch (err) {
       console.error('Confirmation email error:', err.message);
     }
 
     // ── Step 7: Redirect to app ──────────────────────────────────────────────
+    console.log('Redirecting to success for:', emailLower);
     return res.redirect(
       `${APP_URL}/?payment=success&plan=${plan}&email=${encodeURIComponent(emailLower)}&expiry=${encodeURIComponent(expiresAt)}&name=${encodeURIComponent(firstName)}`
     );
