@@ -74,7 +74,7 @@ export function applySecurityMeasures() {
   document.addEventListener('dragstart', preventDefault, { passive: false });
 
   // ── 7. Console warning ────────────────────────────────────────────────────────
-  console.log('%cEliteScholars CBT', 'color:#6C3FC9;font-size:24px;font-weight:900;');
+  console.log('%cEliteScholars', 'color:#6C3FC9;font-size:24px;font-weight:900;');
   console.log('%c⚠️  Content is protected. Unauthorised scraping is a violation of our Terms of Service.', 'color:#ef4444;font-size:13px;');
 }
 
