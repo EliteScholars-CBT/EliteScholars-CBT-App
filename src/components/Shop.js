@@ -206,7 +206,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
 
               {/* Header row */}
               <div className="shop-plans-card-header">
-                <div className="shop-plans-card-title">📊 Compare Plans</div>
+                <div className="shop-plans-card-title">Compare Plans</div>
                 <div className="shop-billing-toggle">
                   <button
                     className={`shop-billing-btn ${billing === 'monthly' ? 'active' : ''}`}
@@ -350,7 +350,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
         )}
 
         <div className="shop-footer-note">
-          🔒 All payments are secured by Flutterwave
+          🔒 All payments are secured by Flutterwave and Selar
         </div>
 
       </div>
