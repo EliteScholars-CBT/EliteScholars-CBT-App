@@ -38,7 +38,7 @@ export const CUSTOM_ADS = [
     audiences:   ['all'],
   },
   {
-    image:       '/images/ads/resumeefy-student-resume.jpg',
+    image:       '/images/ads/resumeefy-student.jpg',
     title:       '50+ Remote Roles for Students!',
     description: 'Get a professional student resume today for just ₦5k and start getting offers.',
     link:        'https://wa.me/2349093788218?text=Hello%2C%20I%20need%20the%20Student%20Resume%20service.%20I%20was%20referred%20by%20EliteScholars',
