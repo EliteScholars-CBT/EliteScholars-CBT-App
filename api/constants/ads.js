@@ -22,7 +22,7 @@ export const AFFILIATE_ADS = [
   {
     id: 'aff_waec_1',
     image: null,
-    title: '🏫 WAEC & NECO Prep Pack',
+    title: '🏫 API WAEC & NECO Prep Pack',
     description: 'Complete study materials: PDFs, past questions and model answers.',
     link: 'https://elitescholars.site/waec-pack',
     cta: 'Download Pack →',
