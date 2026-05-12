@@ -123,9 +123,9 @@ function TopicCard({ topic, index, isActive, isDone, isLocked, color, onClick })
 // ── Main component ────────────────────────────────────────────────────────────
 export default function Learn({ subjectId, onBack, onTopicComplete, examType = 'waec', email }) {
   // Pick learn bank
-  const learnData = examType === 'neco' ? NECO_LEARN
+  const learnData = examType === 'neco' ? WAEC_LEARN
     : examType === 'gst'  ? GST_LEARN
-    : (examType === 'jamb' || examType === 'postutme') ? JAMB_LEARN
+    : (examType === 'jamb' || examType === 'postutme') ? WAEC_LEARN
     : WAEC_LEARN;
   const topics = learnData[subjectId] || [];
 
