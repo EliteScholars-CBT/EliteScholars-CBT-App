@@ -458,4 +458,103 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
                   let cls = 'learn-quiz-opt';
                   if (quizAnswered) {
                     if (i === quizQs[quizIdx].a) cls += ' correct';
-                    else if (i === quizS
+                    else if (i === quizSel && quizSel !== quizQs[quizIdx].a) cls += ' wrong';
+                  } else if (i === quizSel) cls += ' selected';
+                  return (
+                    <button key={i} className={cls}
+                      onClick={() => !quizAnswered && setQuizSel(i)}
+                      disabled={quizAnswered}>
+                      <span className="learn-quiz-opt-letter">{['A','B','C','D'][i]}</span>
+                      {opt}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {!quizAnswered
+                             ? <button className="learn-quiz-submit" onClick={submitAnswer}
+                    disabled={quizSel < 0} style={{ background: meta.color }}>
+                    Submit Answer →
+                  </button>
+                : <div className="learn-quiz-explanation">
+                    <div className={`learn-quiz-result ${quizSel === quizQs[quizIdx].a ? 'correct' : 'wrong'}`}>
+                      {quizSel === quizQs[quizIdx].a ? '✅ Correct!' : '❌ Incorrect'}
+                    </div>
+                    <div className="learn-quiz-exp-text">💡 {quizQs[quizIdx].e}</div>
+                    <button className="learn-quiz-next" onClick={nextQuestion} style={{ background: meta.color }}>
+                      {quizIdx >= quizQs.length - 1 ? '🏁 See Results' : 'Next Question →'}
+                    </button>
+                  </div>
+              }
+            </div>
+          )}
+
+          {/* Results screen */}
+          {quizDone && (
+            <div className="learn-quiz-results">
+              <div className="learn-quiz-results-score" style={{ color: meta.color }}>
+                {quizScore}/{quizQs.length}
+              </div>
+              <div className="learn-quiz-results-label">
+                {quizScore === quizQs.length ? '🎉 Perfect score!' : quizScore >= quizQs.length * 0.6 ? '👍 Well done!' : '📚 Keep studying!'}
+              </div>
+              <div className="learn-quiz-results-list">
+                {quizResults.map((r, i) => (
+                  <div key={i} className={`learn-quiz-result-row ${r.correct ? 'correct' : 'wrong'}`}>
+                    <span>{i + 1}. {r.q?.slice(0, 55)}{r.q?.length > 55 ? '…' : ''}</span>
+                    <span>{r.correct ? '✅' : '❌'}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="learn-quiz-finish-btn" onClick={finishQuiz}
+                style={{ background: meta.color }}>
+                ✅ Mark Topic Complete →
+              </button>
+              {quizScore < quizQs.length * 0.6 && (
+                <button className="learn-quiz-retry-btn" onClick={startQuiz}>
+                  🔄 Retry Quiz
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      ) : (
+        // ── Content view ────────────────────────────────────────────────────
+        <div className="scroll" ref={scrollRef} onScroll={handleScroll}
+          style={{ flex: 1, overflowY: 'auto', padding: '0 0 24px' }}>
+          <div style={{ padding: '12px 16px 0', fontSize: fSize }}>
+            {contentBlocks.map((block, bi) => (
+              <ContentBlock key={bi} block={block} refreshTrigger={adRefresh}
+                examType={examType} email={email} />
+            ))}
+          </div>
+
+          {/* Bottom action bar */}
+          <div className="learn-content-footer">
+            {isDoneNow
+              ? <div className="learn-completed-badge">✅ Topic Completed</div>
+              : <button className="learn-quiz-trigger-full" onClick={startQuiz}
+                  style={{ background: meta.color }}>
+                  📝 Take Quiz to Complete This Topic
+                </button>
+            }
+            <div className="learn-content-nav">
+              <button className="learn-nav-btn"
+                onClick={() => openTopic(Math.max(0, activeIdx - 1))}
+                disabled={activeIdx === 0}>
+                ← Prev
+              </button>
+              <button className="learn-nav-btn learn-nav-next"
+                onClick={() => openTopic(Math.min(topics.length - 1, activeIdx + 1))}
+                disabled={activeIdx === topics.length - 1 || !isDoneNow}
+                style={isDoneNow ? { borderColor: meta.color, color: meta.color } : {}}>
+                {isDoneNow ? 'Next →' : '🔒 Next'}
+              </button>
+            </div>
+            <p className="learn-keyboard-hint">⌨️ Arrow keys to navigate · Complete quiz to unlock next topic</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
