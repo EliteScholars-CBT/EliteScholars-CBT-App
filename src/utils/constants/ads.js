@@ -27,7 +27,7 @@ export const AFFILIATE_ADS_ENABLED = true;
 export const AFFILIATE_ADS = [
   {
     id: 'aff_jamb_1',
-    image: null,
+    image: '/public/jamb-',
     title: '📚 JAMB Masterclass Bundle',
     description: 'Premium offline study pack: 5,000+ questions, answer keys & video solutions.',
     link: 'https://elitescholars.site/shop',
