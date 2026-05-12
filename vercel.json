@@ -31,11 +31,11 @@
   ],
   "crons": [
     {
-      "path": "/api/cron/subscription-reminders",
+      "path": "/api/cron?job=subscription-reminders",
       "schedule": "0 7 * * *"
     },
     {
-      "path": "/api/cron/guardian-reports",
+      "path": "/api/cron?job=guardian-reports",
       "schedule": "0 5 * * 0"
     }
   ]
