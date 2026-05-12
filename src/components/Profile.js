@@ -455,4 +455,27 @@ export default function Profile({
             >
               ⭐ Upgrade to Premium
             </button>
-     
+     )}
+
+          <button className="profile-signout-btn" onClick={onSignOut}>
+            ↩ Sign Out
+          </button>
+
+        </div>
+      </div>
+
+      {showPremiumModal && (
+        <PremiumModal
+          email={email}
+          name={name}
+          onClose={() => setShowPremiumModal(false)}
+          onActivated={(data) => {
+            setLocalPremium(true);
+            setShowPremiumModal(false);
+            if (onPremiumActivated) onPremiumActivated(data);
+          }}
+        />
+      )}
+    </>
+  );
+}
