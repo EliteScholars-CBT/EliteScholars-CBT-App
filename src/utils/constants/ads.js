@@ -73,11 +73,19 @@ export const CUSTOM_AD = [{
   cta: 'Upgrade Now',
   audiences: ['all'],
 },
+export const CUSTOM_AD = [{
+  image: '/shop/exam-blueprint.jpg',
+  title: 'Earn N150k from Affiliate Marketing',
+  description: 'Take the bold step today and start earning while you learn.',
+  link: 'https://wa.me/2347052122350?text=Hello%2C%20I%20need%20the%20Affiliate%20Masterclass.%20I%20was%20referred%20by%20EliteScholars',
+  cta: 'Upgrade Now',
+  audiences: ['all'],
+},
 {
   image: '/shop/exam-blueprint.jpg',
   title: '50+ Remote Roles for Students!',
   description: 'Get a professional student resume today for just #5k and start getting offers.',
-  link: 'https://wa.me/+2349093788218',
+  link: 'https://wa.me/2349093788218?text=Hello%2C%20I%20need%20the%20Student%20Resume%20service.%20I%20was%20referred%20by%20EliteScholars',
   cta: 'Get Resume for #5k',
   audiences: ['all'],
 }];
