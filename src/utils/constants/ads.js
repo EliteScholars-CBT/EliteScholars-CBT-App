@@ -12,7 +12,7 @@ export const POPOVER_AD_SCRIPT = 'https://fixesconsessionconsession.com/63/ce/c2
 
 // ── Publisher ───────────────────────────────────────
 export const PUBLISHER_AD_ENABLED = true;
-export const PUBLISHER_AD_SCRIPT  = 'https://mistakefixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js';
+export const PUBLISHER_AD_SCRIPT  = 'https://fixesconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js';
 
 // In Learn Mode: insert a publisher ad slot before every Nth subheading
 export const AD_EVERY_NTH_SUBHEADING = 1;
@@ -80,7 +80,4 @@ export const CUSTOM_AD = [{
   link: 'https://wa.me/+2349093788218',
   cta: 'Get Resume for #5k',
   audiences: ['all'],
-},
-
-
-];
+}];
