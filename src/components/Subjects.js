@@ -67,7 +67,13 @@ export default function Subjects({
         return { subjects: WAEC_SUBJECTS, qb: WAEC_QB };
 
       case 'neco':
-        return { subjects: NECO_SUBJECTS, qb: NECO_QB };
+        return { subjects: WAEC_SUBJECTS, qb: NECO_QB };
+
+      case 'jamb':
+        return { subjects: WAEC_SUBJECTS, qb: QB };
+
+      case 'postutme':
+        return { subjects: WAEC_SUBJECTS, qb: POST_UTME };
 
       case 'gst':
         return { subjects: GST_SUBJECTS, qb: GST_QB };
