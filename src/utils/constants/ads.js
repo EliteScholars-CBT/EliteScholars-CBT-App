@@ -17,55 +17,20 @@ export const MAX_ADS_PER_PAGE        = 8;
 export const AFFILIATE_ADS_ENABLED = true;
 export const AFFILIATE_ADS = [
   {
-    id:          'aff_jamb_1',
-    image:       '/shop/exam-blueprint.jpg',
-    title:       '📚 JAMB Masterclass Bundle',
-    description: 'Premium offline study pack: 5,000+ questions, answer keys & video solutions.',
-    link:        'https://elitescholars.site/shop',
-    cta:         'Get It Now →',
-    audiences:   ['jamb', 'postutme'],
-  },
-  {
-    id:          'aff_waec_1',
-    image:       '/shop/exam-blueprint.jpg',
-    title:       '🏫 WAEC & NECO Prep Pack',
-    description: 'Complete study materials: PDFs, past questions and model answers.',
-    link:        'https://elitescholars.site/waec-pack',
-    cta:         'Download Pack →',
-    audiences:   ['waec', 'neco'],
-  },
-  {
-    id:          'aff_gst_1',
-    image:       '/shop/exam-blueprint.jpg',
-    title:       '🎓 University GST Study Kit',
-    description: 'Ace Use of English, Logic & Nigerian Studies. Written for 100-level students.',
-    link:        'https://elitescholars.site/gst-kit',
-    cta:         'Get the Kit →',
-    audiences:   ['gst'],
-  },
-  {
-    id:          'aff_all_1',
-    image:       '/shop/exam-blueprint.jpg',
-    title:       '🎯 Score 300+ Guarantee',
-    description: '30-day intensive coaching programme. Limited spots!',
-    link:        'https://elitescholars.site/coaching',
-    cta:         'Join Now →',
-    audiences:   ['all'],
-  },
+  image:       '/images/ads/opay-students.jpg',
+  title:       'Open Your OPay Account Today!',
+  description: 'No more “please wait” moments. Receive money from parents faster, buy airtime instantly, and pay for what you need without stress.',
+  link:        'https://www.opayweb.com/',
+  cta:         'Create OPay Account →',
+  audiences:   ['all'],
+},
+
 ];
 
 export const CUSTOM_AD_ENABLED = true;
 export const CUSTOM_ADS = [
   {
-    image:       '/shop/exam-blueprint.jpg',
-    title:       'EliteScholars Premium',
-    description: 'No ads, unlimited practice, all subjects.',
-    link:        'https://elitescholars.site/premium',
-    cta:         'Upgrade Now →',
-    audiences:   ['all'],
-  },
-  {
-    image:       '/shop/exam-blueprint.jpg',
+    image:       '/images/ads/doxiee-affiliate-masterclass.jpg',
     title:       'Earn ₦150k from Affiliate Marketing',
     description: 'Take the bold step today and start earning while you learn.',
     link:        'https://wa.me/2347052122350?text=Hello%2C%20I%20need%20the%20Affiliate%20Masterclass.%20I%20was%20referred%20by%20EliteScholars',
@@ -73,11 +38,19 @@ export const CUSTOM_ADS = [
     audiences:   ['all'],
   },
   {
-    image:       '/shop/exam-blueprint.jpg',
+    image:       '/images/ads/resumeefy-student-resume.jpg',
     title:       '50+ Remote Roles for Students!',
     description: 'Get a professional student resume today for just ₦5k and start getting offers.',
     link:        'https://wa.me/2349093788218?text=Hello%2C%20I%20need%20the%20Student%20Resume%20service.%20I%20was%20referred%20by%20EliteScholars',
     cta:         'Get Resume for ₦5k →',
     audiences:   ['all'],
   },
+{
+  image:       '/images/ads/volt-victory-accessories.jpg',
+  title:       'Power Your Lifestyle!',
+  description: 'Shop reliable, stylish, and affordable phone accessories built for every device. Chargers, cases, AirPods, cables, power banks & more.',
+  link:        'https://wa.me/2349034878935?text=Hello%2C%20I%20want%20to%20order%20phone%20accessories.%20I%20was%20referred%20by%20EliteScholars',
+  cta:         'Order Now →',
+  audiences:   ['all'],
+},
 ];
