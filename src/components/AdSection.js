@@ -41,23 +41,18 @@ function resolveAdSlot(slot, examType) {
   const pool = [];
 
   if (AFFILIATE_ADS_ENABLED && affiliates.length > 0) {
-    pool.push({ type: 'affiliate', ads: affiliates });
+    affiliates.forEach((ad, i) => pool.push({ type: 'affiliate', ad, index: i }));
   }
   if (CUSTOM_AD_ENABLED && customs.length > 0) {
-    pool.push({ type: 'custom', ads: customs });
+    customs.forEach((ad, i) => pool.push({ type: 'custom', ad, index: i }));
   }
   if (PUBLISHER_AD_ENABLED) {
-    pool.push({ type: 'publisher', ads: [] });
+    pool.push({ type: 'publisher' });
   }
 
   if (pool.length === 0) return null;
 
-  const entry = pool[slot % pool.length];
-  if (entry.type === 'publisher') {
-    return { type: 'publisher' };
-  }
-  const ad = entry.ads[slot % entry.ads.length];
-  return { type: entry.type, ad };
+  return pool[slot % pool.length];
 }
 
 // ── Publisher ad ──────────────────────────────────────────────────────────────
