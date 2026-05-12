@@ -31,6 +31,35 @@ function getCustomAds(examType) {
   });
 }
 
+// ── Determine which single ad to show for this slot ──────────────────────────
+// Rotation: affiliate → custom → publisher → affiliate → custom → publisher...
+// Skips types that are disabled or have no matching ads
+function resolveAdSlot(slot, examType) {
+  const affiliates = getAffiliateAds(examType);
+  const customs    = getCustomAds(examType);
+
+  const pool = [];
+
+  if (AFFILIATE_ADS_ENABLED && affiliates.length > 0) {
+    pool.push({ type: 'affiliate', ads: affiliates });
+  }
+  if (CUSTOM_AD_ENABLED && customs.length > 0) {
+    pool.push({ type: 'custom', ads: customs });
+  }
+  if (PUBLISHER_AD_ENABLED) {
+    pool.push({ type: 'publisher', ads: [] });
+  }
+
+  if (pool.length === 0) return null;
+
+  const entry = pool[slot % pool.length];
+  if (entry.type === 'publisher') {
+    return { type: 'publisher' };
+  }
+  const ad = entry.ads[slot % entry.ads.length];
+  return { type: entry.type, ad };
+}
+
 // ── Publisher ad ──────────────────────────────────────────────────────────────
 function PublisherAd({ refreshTrigger, examType }) {
   const ref = useRef(null);
@@ -39,9 +68,9 @@ function PublisherAd({ refreshTrigger, examType }) {
     if (!ref.current || !PUBLISHER_AD_SCRIPT) return;
     ref.current.innerHTML = '';
 
-    const script   = document.createElement('script');
-    script.src     = PUBLISHER_AD_SCRIPT;
-    script.async   = true;
+    const script = document.createElement('script');
+    script.src   = PUBLISHER_AD_SCRIPT;
+    script.async = true;
 
     const timer = setTimeout(() => {
       if (ref.current && ref.current.offsetHeight < 10) {
@@ -83,7 +112,9 @@ function AffiliateCard({ ad, index, examType }) {
 
   useEffect(() => {
     if (!ref.current) return;
-    const unobserve = observeAdElement(ref.current, ad.id, 'affiliate', examType, ad.link);
+    const unobserve = observeAdElement(
+      ref.current, ad.id, 'affiliate', examType, ad.link
+    );
     return unobserve;
   }, [ad.id, examType]);
 
@@ -98,7 +129,6 @@ function AffiliateCard({ ad, index, examType }) {
         aria-label={`Sponsored: ${ad.title}`}
         onClick={() => trackAdClick('affiliate', ad.id, ad.link, examType)}
       >
-        {/* Image on top */}
         <div className="ad-affiliate-img">
           {ad.image ? (
             <img src={ad.image} alt={ad.title} />
@@ -106,7 +136,6 @@ function AffiliateCard({ ad, index, examType }) {
             <div className="ad-affiliate-img-placeholder">📢</div>
           )}
         </div>
-        {/* Text below */}
         <div className="ad-affiliate-body">
           <div className="ad-affiliate-badge">AFFILIATE</div>
           <div className="ad-affiliate-title">{ad.title}</div>
@@ -131,7 +160,7 @@ function CustomCard({ ad, examType }) {
   }, [examType, ad.link]);
 
   return (
-    <div ref={ref} style={{ marginTop: 6 }}>
+    <div ref={ref}>
       <a
         href={ad.link}
         target="_blank"
@@ -140,13 +169,11 @@ function CustomCard({ ad, examType }) {
         aria-label={`Ad: ${ad.title}`}
         onClick={() => trackAdClick('custom', 'custom_ad', ad.link, examType)}
       >
-        {/* Image on top */}
         {ad.image ? (
           <img src={ad.image} alt={ad.title} className="ad-custom-img" />
         ) : (
           <div className="ad-custom-img-placeholder">📢</div>
         )}
-        {/* Text below */}
         <div className="ad-custom-body">
           <div className="ad-custom-title">{ad.title}</div>
           <div className="ad-custom-desc">{ad.description}</div>
@@ -167,23 +194,12 @@ export default function AdSection({
 }) {
   if (isPremium(email)) return null;
 
-  const filteredAffiliates = getAffiliateAds(examType);
-  const filteredCustom     = getCustomAds(examType);
+  const resolved = resolveAdSlot(slot, examType);
 
-  const affAd    = filteredAffiliates.length > 0
-    ? filteredAffiliates[slot % filteredAffiliates.length]
-    : null;
+  if (!resolved) return null;
 
-  const customAd = filteredCustom.length > 0
-    ? filteredCustom[slot % filteredCustom.length]
-    : null;
-
-  const hasAnyAd =
-    (PUBLISHER_AD_ENABLED && showPublisher) ||
-    (AFFILIATE_ADS_ENABLED && affAd)        ||
-    (CUSTOM_AD_ENABLED     && customAd);
-
-  if (!hasAnyAd) return null;
+  // If publisher is resolved but showPublisher is false, skip
+  if (resolved.type === 'publisher' && !showPublisher) return null;
 
   useEffect(() => {
     return () => flushAdAnalytics();
@@ -193,16 +209,16 @@ export default function AdSection({
     <div className="ad-section-wrapper" role="complementary" aria-label="Advertisement">
       <div className="ad-section-label">AD</div>
 
-      {PUBLISHER_AD_ENABLED && showPublisher && (
+      {resolved.type === 'publisher' && (
         <PublisherAd refreshTrigger={refreshTrigger} examType={examType} />
       )}
 
-      {AFFILIATE_ADS_ENABLED && affAd && (
-        <AffiliateCard ad={affAd} index={slot} examType={examType} />
+      {resolved.type === 'affiliate' && (
+        <AffiliateCard ad={resolved.ad} index={slot} examType={examType} />
       )}
 
-      {CUSTOM_AD_ENABLED && customAd && (
-        <CustomCard ad={customAd} examType={examType} />
+      {resolved.type === 'custom' && (
+        <CustomCard ad={resolved.ad} examType={examType} />
       )}
     </div>
   );
