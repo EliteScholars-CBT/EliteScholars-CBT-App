@@ -4289,3 +4289,115 @@ body.dark-mode .subjects-grid-card {
   color: #28c840 !important;
   font-size: 12px;
 }
+
+/* ============================================================================
+   GUARDIAN EMAIL — Settings card input
+   ============================================================================ */
+
+.guardian-card {
+  cursor: default !important;
+}
+
+.guardian-card:hover {
+  transform: none !important;
+  background: var(--card-bg) !important;
+}
+
+.guardian-card:hover .settings-name,
+.guardian-card:hover .settings-desc {
+  color: var(--text-primary) !important;
+}
+
+.guardian-card:hover .settings-icon {
+  filter: none !important;
+}
+
+.guardian-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.guardian-input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #E5E7EB);
+  background: var(--bg-primary, #fff);
+  color: var(--text-primary, #1a0030);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.guardian-input:focus {
+  border-color: #6C3FC9;
+}
+
+.guardian-input.error {
+  border-color: #ff5f57;
+}
+
+.guardian-input.saved {
+  border-color: #28c840;
+}
+
+.guardian-save-btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4B0082, #7B2FBE);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 64px;
+  transition: opacity 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.guardian-save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.guardian-save-btn.saved {
+  background: #28c840;
+}
+
+.guardian-error-text {
+  font-size: 11px;
+  color: #ff5f57;
+  margin-top: 2px;
+}
+
+.guardian-success-text {
+  font-size: 11px;
+  color: #28c840;
+  margin-top: 2px;
+}
+
+.guardian-locked-badge {
+  font-size: 11px;
+  color: #D4AF37;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Dark mode */
+body.dark-mode .guardian-input {
+  background: #0f0020;
+  border-color: #3d2a5e;
+  color: #F3F4F6;
+}
+
+body.dark-mode .guardian-input:focus {
+  border-color: #7B2FBE;
+}
+
+body.dark-mode .guardian-card:hover {
+  background: #1a0030 !important;
+}
