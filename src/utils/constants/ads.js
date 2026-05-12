@@ -17,11 +17,11 @@ export const MAX_ADS_PER_PAGE        = 8;
 export const AFFILIATE_ADS_ENABLED = true;
 export const AFFILIATE_ADS = [
   {
-  image:       '/images/ads/opay-students.jpg',
-  title:       'Open Your OPay Account Today!',
+  image:       '/images/ads/palmpay-students.jpg',
+  title:       'Open Your PalmPay Account Today!',
   description: 'No more “please wait” moments. Receive money from parents faster, buy airtime instantly, and pay for what you need without stress.',
-  link:        'https://www.opayweb.com/',
-  cta:         'Create OPay Account →',
+  link:        'https://info.palmpay.com/sP7ZEQrG',
+  cta:         'Create PalmPay Account →',
   audiences:   ['all'],
 },
 
