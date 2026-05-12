@@ -168,12 +168,13 @@ function CustomCard({ ad, examType }) {
           <img src={ad.image} alt={ad.title} className="ad-custom-img" />
         ) : (
           <div className="ad-custom-img-placeholder">📢</div>
+        )}
         <div className="ad-custom-body">
-  <div className="ad-custom-badge">PARTNER</div>  {/* ← add this */}
-  <div className="ad-custom-title">{ad.title}</div>
-  <div className="ad-custom-desc">{ad.description}</div>
-  <div className="ad-custom-cta">{ad.cta}</div>
-</div
+          <div className="ad-custom-badge">PARTNER</div>
+          <div className="ad-custom-title">{ad.title}</div>
+          <div className="ad-custom-desc">{ad.description}</div>
+          <div className="ad-custom-cta">{ad.cta}</div>
+        </div>
       </a>
     </div>
   );
