@@ -214,3 +214,15 @@ export async function pullProfileFromSheet(email, passwordHash) {
     return null;
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GUARDIAN
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function updateGuardianEmail({ email, guardianEmail }) {
+  return apiGet(SHEETS_URL, { action: 'updateGuardianEmail', email, guardianEmail });
+}
+
+export async function fetchGuardianEmail(email) {
+  return apiGet(SHEETS_URL, { action: 'getProfile', email });
+}
