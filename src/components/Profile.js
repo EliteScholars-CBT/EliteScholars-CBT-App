@@ -2,20 +2,14 @@ import PremiumModal from './PremiumModal';
 import { getPremiumData, cancelPremium } from '../utils/premium';
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  CartesianGrid,
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
+  BarChart, Bar, CartesianGrid,
 } from 'recharts';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, LGOLD } from '../utils/colors';
 import { ROUND_SIZE, ACHIEVEMENTS } from '../utils/constants';
 import { loadAchievements, loadSubjectPerformance } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
+import { updateGuardianEmail, fetchGuardianEmail } from '../utils/profileApi';
 
 export default function Profile({
   name,
@@ -29,69 +23,66 @@ export default function Profile({
   premiumUser = false,
   onPremiumActivated,
 }) {
-  const [activeTab, setActiveTab] = useState('stats');
-  const [achievements, setAchievements] = useState([]);
+  const [activeTab, setActiveTab]           = useState('stats');
+  const [achievements, setAchievements]     = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
-  const [performanceData, setPerformanceData] = useState([]);
-  const [subjectChartData, setSubjectChartData] = useState([]);
-  const [showPremiumModal, setShowPremiumModal] = useState(false);
-  const [localPremium, setLocalPremium] = useState(premiumUser);
+  const [performanceData, setPerformanceData]       = useState([]);
+  const [subjectChartData, setSubjectChartData]     = useState([]);
+  const [showPremiumModal, setShowPremiumModal]     = useState(false);
+  const [localPremium, setLocalPremium]             = useState(premiumUser);
   const premData = getPremiumData(email);
   const { theme, toggleTheme } = useTheme();
   const tabsContainerRef = useRef(null);
+
+  // Guardian state
+  const [guardianEmail, setGuardianEmail]   = useState('');
+  const [guardianInput, setGuardianInput]   = useState('');
+  const [guardianSaving, setGuardianSaving] = useState(false);
+  const [guardianSaved, setGuardianSaved]   = useState(false);
+  const [guardianError, setGuardianError]   = useState('');
 
   const initials = name ? name.slice(0, 2).toUpperCase() : 'ME';
   const avg = allScores.length
     ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
     : 0;
   const rank =
-    bestScore >= 38
-      ? '🏆 Elite Scholar'
-      : bestScore >= 30
-        ? '⭐ Rising Star'
-        : bestScore >= 20
-          ? '📚 Sharp Guy'
-          : '🌱 Beginner';
+    bestScore >= 38 ? '🏆 Elite Scholar' :
+    bestScore >= 30 ? '⭐ Rising Star'   :
+    bestScore >= 20 ? '📚 Sharp Guy'     : '🌱 Beginner';
 
-  // Scroll to active tab when it changes
+  // Scroll to active tab
   useEffect(() => {
     if (tabsContainerRef.current) {
-      const activeTabElement = tabsContainerRef.current.querySelector('.profile-tab.active');
-      if (activeTabElement) {
-        activeTabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
+      const el = tabsContainerRef.current.querySelector('.profile-tab.active');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }, [activeTab]);
 
+  // Load achievements + subject performance
   useEffect(() => {
-    // Load achievements — supports both string IDs (legacy) and full objects (new)
     const userAchievements = loadAchievements(email);
-    const achievementList = userAchievements
+    const achievementList  = userAchievements
       .map((a) => (typeof a === 'string' ? ACHIEVEMENTS[a] : a))
       .filter((a) => a && a.id);
     setAchievements(achievementList);
 
-    // Load subject performance
     const perf = loadSubjectPerformance(email);
     setSubjectPerformance(perf);
 
-    // Defer chart data — don't block initial render
     const timer = setTimeout(() => {
       const lastTenScores = allScores.slice(-10);
       setPerformanceData(lastTenScores.map((score, index) => ({ quiz: index + 1, score })));
-
-      // Only show subjects the user has actually attempted, derived from their data
       setSubjectChartData(
         Object.keys(perf)
           .filter((sub) => (perf[sub]?.total || 0) > 0)
           .map((sub) => {
             const perfData = perf[sub];
-            const label = sub.replace(/_/g, ' ');
+            const label    = sub.replace(/_/g, ' ');
             return {
-              subject: label.charAt(0).toUpperCase() + label.slice(1),
-              bestScore: perfData.bestScore || 0,
+              subject:      label.charAt(0).toUpperCase() + label.slice(1),
+              bestScore:    perfData.bestScore || 0,
               averageScore: Math.round(perfData.averageScore || 0),
-              attempts: perfData.total || 0,
+              attempts:     perfData.total || 0,
             };
           })
           .sort((a, b) => b.attempts - a.attempts)
@@ -101,6 +92,40 @@ export default function Profile({
     return () => clearTimeout(timer);
   }, [email, allScores]);
 
+  // Load guardian email for premium users
+  useEffect(() => {
+    if (!email || !localPremium) return;
+    fetchGuardianEmail(email).then(result => {
+      if (result?.profile?.guardianEmail) {
+        setGuardianEmail(result.profile.guardianEmail);
+        setGuardianInput(result.profile.guardianEmail);
+      }
+    });
+  }, [email, localPremium]);
+
+  const handleSaveGuardian = async () => {
+    const val = guardianInput.trim().toLowerCase();
+    if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      setGuardianError('Enter a valid email address.');
+      return;
+    }
+    if (val === email.toLowerCase()) {
+      setGuardianError('Cannot use your own email.');
+      return;
+    }
+    setGuardianSaving(true);
+    setGuardianError('');
+    const result = await updateGuardianEmail({ email, guardianEmail: val });
+    setGuardianSaving(false);
+    if (result?.success) {
+      setGuardianEmail(val);
+      setGuardianSaved(true);
+      setTimeout(() => setGuardianSaved(false), 3000);
+    } else {
+      setGuardianError(result?.error || 'Failed to save. Try again.');
+    }
+  };
+
   return (
     <>
       <div className="scr fd profile-page">
@@ -108,20 +133,11 @@ export default function Profile({
           className="profile-header"
           style={{ background: `linear-gradient(135deg,${DPURP},${PURPLE})` }}
         >
-          <div
-            style={{
-              position: 'absolute',
-              bottom: -20,
-              left: 0,
-              right: 0,
-              height: 40,
-              background: BG,
-              borderRadius: '24px 24px 0 0',
-            }}
-          />
-          <div className="profile-back" onClick={onBack}>
-            ← Back
-          </div>
+          <div style={{
+            position: 'absolute', bottom: -20, left: 0, right: 0,
+            height: 40, background: BG, borderRadius: '24px 24px 0 0',
+          }} />
+          <div className="profile-back" onClick={onBack}>← Back</div>
           <div className="profile-avatar">{initials}</div>
           <div className="profile-name">{name || 'Student'}</div>
           <div className="profile-email">{email}</div>
@@ -133,47 +149,39 @@ export default function Profile({
           </div>
         </div>
 
-        {/* Horizontally scrollable tabs */}
+        {/* Tabs */}
         <div className="profile-tabs-wrapper">
           <div className="profile-tabs-scroll" ref={tabsContainerRef}>
-            <button
-              className={`profile-tab ${activeTab === 'stats' ? 'active' : ''}`}
-              onClick={() => setActiveTab('stats')}
-            >
-              📊 Stats
-            </button>
-            <button
-              className={`profile-tab ${activeTab === 'subjects' ? 'active' : ''}`}
-              onClick={() => setActiveTab('subjects')}
-            >
-              📚 Subjects
-            </button>
-            <button
-              className={`profile-tab ${activeTab === 'achievements' ? 'active' : ''}`}
-              onClick={() => setActiveTab('achievements')}
-            >
-              🏆 Achievements ({achievements.length})
-            </button>
-            <button
-              className={`profile-tab ${activeTab === 'settings' ? 'active' : ''}`}
-              onClick={() => setActiveTab('settings')}
-            >
-              ⚙️ Settings
-            </button>
+            {[
+              ['stats',        '📊 Stats'],
+              ['subjects',     '📚 Subjects'],
+              ['achievements', `🏆 Achievements (${achievements.length})`],
+              ['settings',     '⚙️ Settings'],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                className={`profile-tab ${activeTab === id ? 'active' : ''}`}
+                onClick={() => setActiveTab(id)}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Vertically scrollable content */}
+        {/* Content */}
         <div className="profile-content-area">
+
+          {/* ── STATS TAB ── */}
           {activeTab === 'stats' && (
             <div className="profile-stats-section">
               <div className="profile-stats-title">Your Stats</div>
               <div className="profile-stats-grid">
                 {[
                   ['Quizzes Done', sessions || 0],
-                  ['Avg Score', avg + '%'],
-                  ['Best Score', bestScore + '/' + ROUND_SIZE],
-                  ['Streak', streak + ' days'],
+                  ['Avg Score',    avg + '%'],
+                  ['Best Score',   bestScore + '/' + ROUND_SIZE],
+                  ['Streak',       streak + ' days'],
                 ].map(([l, v]) => (
                   <div key={l} className="profile-stat-card">
                     <div className="profile-stat-value">{v}</div>
@@ -182,7 +190,7 @@ export default function Profile({
                 ))}
               </div>
 
-              {performanceData.length > 0 ? (
+              {performanceData.length > 0 && (
                 <div className="profile-chart-section">
                   <div className="profile-stats-title">📈 Performance Trend</div>
                   <div className="profile-chart-container">
@@ -190,151 +198,95 @@ export default function Profile({
                       <LineChart data={performanceData}>
                         <XAxis dataKey="quiz" stroke="#6B7280" fontSize={10} />
                         <YAxis
-                          domain={[0, 100]}
-                          stroke="#6B7280"
-                          fontSize={10}
-                          tickFormatter={(value) => `${value}%`}
+                          domain={[0, 100]} stroke="#6B7280" fontSize={10}
+                          tickFormatter={(v) => `${v}%`}
                         />
                         <Tooltip
-                          contentStyle={{
-                            background: '#1a0030',
-                            border: `1px solid ${GOLD}`,
-                            borderRadius: 8,
-                          }}
-                          labelStyle={{ color: '#FFFFFF' }}
-                          formatter={(value) => [`${value}%`, 'Score']}
+                          contentStyle={{ background: '#1a0030', border: '1px solid #4B0082', borderRadius: 8 }}
+                          labelStyle={{ color: '#D4AF37' }}
+                          itemStyle={{ color: '#fff' }}
                         />
                         <Line
-                          type="monotone"
-                          dataKey="score"
-                          stroke={GOLD}
-                          strokeWidth={2}
-                          dot={{ fill: GOLD, r: 4 }}
+                          type="monotone" dataKey="score" stroke="#D4AF37"
+                          strokeWidth={2} dot={{ fill: '#D4AF37', r: 3 }}
                         />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
                 </div>
-              ) : (
-                <div style={{ height: 200 }} />
               )}
-
-              <div className="profile-streak-card">
-                <div className="profile-streak-icon">🔥</div>
-                <div>
-                  <div className="profile-streak-title">{streak}-Day Streak</div>
-                  <div className="profile-streak-text">Come back daily to keep it alive!</div>
-                </div>
-              </div>
             </div>
           )}
 
+          {/* ── SUBJECTS TAB ── */}
           {activeTab === 'subjects' && (
             <div className="profile-stats-section">
-              <div className="profile-stats-title">📚 Subject Performance</div>
+              <div className="profile-stats-title">Subject Performance</div>
               {subjectChartData.length > 0 ? (
-                <div className="profile-chart-section">
-                  <div className="profile-chart-container">
-                    <ResponsiveContainer
-                      width="100%"
-                      height={Math.max(200, subjectChartData.length * 50)}
-                    >
-                      <BarChart data={subjectChartData} layout="vertical" margin={{ left: 60 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                        <XAxis type="number" domain={[0, 100]} stroke="#6B7280" fontSize={10} />
-                        <YAxis
-                          type="category"
-                          dataKey="subject"
-                          stroke="#6B7280"
-                          fontSize={10}
-                          width={80}
-                        />
-                        <XAxis
-                          type="number"
-                          domain={[0, 100]}
-                          stroke="#6B7280"
-                          fontSize={10}
-                          tickFormatter={(value) => `${value}%`}
-                        />
-                        <Tooltip
-                          contentStyle={{
-                            background: '#1a0030',
-                            border: `1px solid ${GOLD}`,
-                            borderRadius: 8,
-                          }}
-                          labelStyle={{ color: '#FFFFFF' }}
-                          formatter={(value) => [`${value}%`, 'Score']}
-                        />
-                        <Bar
-                          dataKey="bestScore"
-                          name="Best Score"
-                          fill={GOLD}
-                          radius={[0, 4, 4, 0]}
-                        />
-                        <Bar
-                          dataKey="averageScore"
-                          name="Average Score"
-                          fill={PURPLE}
-                          radius={[0, 4, 4, 0]}
-                        />
-                      </BarChart>
-                    </ResponsiveContainer>
+                <>
+                  <div className="profile-chart-section">
+                    <div className="profile-chart-container">
+                      <ResponsiveContainer width="100%" height={220}>
+                        <BarChart data={subjectChartData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                          <XAxis type="number" domain={[0, 100]} stroke="#6B7280" fontSize={9} tickFormatter={(v) => `${v}%`} />
+                          <YAxis type="category" dataKey="subject" stroke="#6B7280" fontSize={9} width={70} />
+                          <Tooltip
+                            contentStyle={{ background: '#1a0030', border: '1px solid #4B0082', borderRadius: 8 }}
+                            labelStyle={{ color: '#D4AF37' }}
+                            itemStyle={{ color: '#fff' }}
+                          />
+                          <Bar dataKey="bestScore"    fill="#D4AF37" name="Best Score" radius={[0,4,4,0]} />
+                          <Bar dataKey="averageScore" fill="#6C3FC9" name="Avg Score"  radius={[0,4,4,0]} />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
                   </div>
-                </div>
+                  {subjectChartData.map((s) => (
+                    <div key={s.subject} className="profile-stat-card" style={{ marginBottom: 8 }}>
+                      <div style={{ fontWeight: 700, fontSize: 13 }}>{s.subject}</div>
+                      <div style={{ fontSize: 11, color: '#6B7280', marginTop: 2 }}>
+                        {s.attempts} attempt{s.attempts !== 1 ? 's' : ''} · Best: {s.bestScore}% · Avg: {s.averageScore}%
+                      </div>
+                    </div>
+                  ))}
+                </>
               ) : (
                 <div className="profile-empty-state">
-                  <div className="profile-empty-icon">📖</div>
-                  <div className="profile-empty-text">
-                    Complete quizzes to see subject performance!
-                  </div>
+                  <div className="profile-empty-icon">📚</div>
+                  <div className="profile-empty-text">No subject data yet. Complete some quizzes!</div>
                 </div>
               )}
             </div>
           )}
 
+          {/* ── ACHIEVEMENTS TAB ── */}
           {activeTab === 'achievements' && (
             <div className="profile-stats-section">
-              <div className="profile-stats-title">🏆 Unlocked Achievements</div>
+              <div className="profile-stats-title">🏆 Achievements ({achievements.length})</div>
               {achievements.length > 0 ? (
-                <div className="achievements-grid">
-                  {achievements.map((achievement) => (
-                    <div key={achievement.id} className="achievement-card">
-                      <div className="achievement-card-icon">{achievement.icon}</div>
-                      <div className="achievement-card-info">
-                        <div className="achievement-card-name">{achievement.name}</div>
-                        <div className="achievement-card-desc">{achievement.desc}</div>
-                      </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                  {achievements.map((a) => (
+                    <div key={a.id} className="achievement-card">
+                      <div style={{ fontSize: 28, marginBottom: 6 }}>{a.icon}</div>
+                      <div className="achievement-card-name">{a.name}</div>
+                      <div className="achievement-card-desc">{a.desc}</div>
                     </div>
                   ))}
                 </div>
               ) : (
                 <div className="profile-empty-state">
                   <div className="profile-empty-icon">🏆</div>
-                  <div className="profile-empty-text">Complete quizzes to unlock achievements!</div>
+                  <div className="profile-empty-text">No achievements yet. Keep practising!</div>
                 </div>
               )}
-              <div className="profile-stats-title" style={{ marginTop: 20 }}>
-                🔒 Locked Achievements
-              </div>
-              <div className="achievements-grid locked">
-                {Object.values(ACHIEVEMENTS)
-                  .filter((a) => !achievements.some((ach) => ach?.id === a.id))
-                  .slice(0, 6)
-                  .map((achievement) => (
-                    <div key={achievement.id} className="achievement-card locked">
-                      <div className="achievement-card-icon">🔒</div>
-                      <div className="achievement-card-info">
-                        <div className="achievement-card-name">{achievement.name}</div>
-                        <div className="achievement-card-desc">{achievement.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
             </div>
           )}
 
+          {/* ── SETTINGS TAB ── */}
           {activeTab === 'settings' && (
             <div className="profile-stats-section">
+
               <div className="profile-stats-title">⚙️ Appearance</div>
               <div className="settings-card" onClick={toggleTheme} style={{ cursor: 'pointer' }}>
                 <div className="settings-item">
@@ -345,21 +297,79 @@ export default function Profile({
                   </div>
                   <div className="settings-toggle">
                     <div className={`toggle-switch ${theme === 'dark' ? 'active' : ''}`}>
-                      <div className="toggle-slider"></div>
+                      <div className="toggle-slider" />
                     </div>
                   </div>
                 </div>
               </div>
 
+              {/* ── Guardian / Parent Email ── */}
+              <div className="profile-stats-title" style={{ marginTop: 20 }}>
+                👨‍👩‍👧 Parent / Guardian
+              </div>
+
+              {!localPremium ? (
+                <div className="settings-card guardian-card" style={{ opacity: 0.65 }}>
+                  <div className="settings-item">
+                    <div className="settings-icon">🔒</div>
+                    <div className="settings-info">
+                      <div className="settings-name">Guardian Weekly Report</div>
+                      <div className="settings-desc">
+                        Upgrade to Premium to add a parent or guardian. They'll receive a weekly academic report card every Sunday.
+                      </div>
+                    </div>
+                    <div className="guardian-locked-badge">PRO</div>
+                  </div>
+                </div>
+              ) : (
+                <div className="settings-card guardian-card">
+                  <div className="settings-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 10 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <div className="settings-icon">📧</div>
+                      <div className="settings-info">
+                        <div className="settings-name">Guardian Weekly Report</div>
+                        <div className="settings-desc">
+                          Your guardian receives a report card every Sunday at 6AM covering your week's activity.
+                        </div>
+                      </div>
+                    </div>
+                    <div className="guardian-input-row">
+                      <input
+                        type="email"
+                        placeholder="guardian@email.com"
+                        value={guardianInput}
+                        onChange={e => {
+                          setGuardianInput(e.target.value);
+                          setGuardianSaved(false);
+                          setGuardianError('');
+                        }}
+                        className={`guardian-input ${guardianError ? 'error' : guardianSaved ? 'saved' : ''}`}
+                      />
+                      <button
+                        onClick={handleSaveGuardian}
+                        disabled={guardianSaving || guardianInput.trim() === guardianEmail}
+                        className={`guardian-save-btn ${guardianSaved ? 'saved' : ''}`}
+                      >
+                        {guardianSaving ? '...' : guardianSaved ? '✓ Saved' : 'Save'}
+                      </button>
+                    </div>
+                    {guardianError && (
+                      <div className="guardian-error-text">{guardianError}</div>
+                    )}
+                    {guardianEmail && !guardianError && (
+                      <div className="guardian-success-text">
+                        ✓ Reports sending to {guardianEmail} every Sunday
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               <div className="profile-stats-title" style={{ marginTop: 20 }}>
                 ℹ️ Information
               </div>
 
-              <div
-                className="settings-card about-settings-card"
-                onClick={() => navigate('/about')}
-                style={{ cursor: 'pointer' }}
-              >
+              <div className="settings-card about-settings-card" style={{ cursor: 'pointer' }}>
                 <div className="settings-item">
                   <div className="settings-icon">🎓</div>
                   <div className="settings-info">
@@ -370,28 +380,18 @@ export default function Profile({
                 </div>
               </div>
 
-              <div
-                className="settings-card terms-settings-card"
-                onClick={() => navigate('/terms')}
-                style={{ cursor: 'pointer' }}
-              >
+              <div className="settings-card terms-settings-card" style={{ cursor: 'pointer' }}>
                 <div className="settings-item">
                   <div className="settings-icon">📜</div>
                   <div className="settings-info">
                     <div className="settings-name">Terms of Service</div>
-                    <div className="settings-desc">
-                      Rules and guidelines for using EliteScholars
-                    </div>
+                    <div className="settings-desc">Rules and guidelines for using EliteScholars</div>
                   </div>
                   <div className="settings-arrow">→</div>
                 </div>
               </div>
 
-              <div
-                className="settings-card privacy-settings-card"
-                onClick={() => navigate('/privacy')}
-                style={{ cursor: 'pointer' }}
-              >
+              <div className="settings-card privacy-settings-card" style={{ cursor: 'pointer' }}>
                 <div className="settings-item">
                   <div className="settings-icon">🔒</div>
                   <div className="settings-info">
@@ -417,7 +417,7 @@ export default function Profile({
                 </div>
               </div>
 
-              <div className="settings-card">
+              <div className="settings-card guardian-card">
                 <div className="settings-item">
                   <div className="settings-icon">📧</div>
                   <div className="settings-info">
@@ -426,10 +426,11 @@ export default function Profile({
                   </div>
                 </div>
               </div>
+
             </div>
           )}
 
-          {/* Premium subscription management */}
+          {/* ── Premium management ── */}
           {localPremium ? (
             <div className="premium-active-box" style={{ margin: '0 0 12px' }}>
               <div className="premium-badge">⭐ Premium Active</div>
@@ -441,10 +442,7 @@ export default function Profile({
               )}
               <button
                 className="premium-manage-btn"
-                onClick={() => {
-                  cancelPremium(email);
-                  setLocalPremium(false);
-                }}
+                onClick={() => { cancelPremium(email); setLocalPremium(false); }}
               >
                 Cancel Subscription
               </button>
@@ -457,26 +455,4 @@ export default function Profile({
             >
               ⭐ Upgrade to Premium
             </button>
-          )}
-
-          <button className="profile-signout-btn" onClick={onSignOut}>
-            ↩ Sign Out
-          </button>
-        </div>
-      </div>
-
-      {showPremiumModal && (
-        <PremiumModal
-          email={email}
-          name={name}
-          onClose={() => setShowPremiumModal(false)}
-          onActivated={(data) => {
-            setLocalPremium(true);
-            setShowPremiumModal(false);
-            if (onPremiumActivated) onPremiumActivated(data);
-          }}
-        />
-      )}
-    </>
-  );
-}
+     
