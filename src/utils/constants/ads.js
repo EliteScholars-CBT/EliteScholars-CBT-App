@@ -15,9 +15,9 @@ export const PUBLISHER_AD_ENABLED = true;
 export const PUBLISHER_AD_SCRIPT  = 'https://mistakefixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469.js';
 
 // In Learn Mode: insert a publisher ad slot before every Nth subheading
-export const AD_EVERY_NTH_SUBHEADING = 2;
+export const AD_EVERY_NTH_SUBHEADING = 1;
 // Hard ceiling on ad slots per learn page
-export const MAX_ADS_PER_PAGE        = 3;
+export const MAX_ADS_PER_PAGE        = 8;
 
 // ── Affiliate ads ─────────────────────────────────────────────────────────────
 export const AFFILIATE_ADS_ENABLED = true;
