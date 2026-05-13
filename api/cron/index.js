@@ -533,36 +533,51 @@ async function runSubscriptionReminders() {
 // ============================================================================
 
 export default async function handler(req, res) {
-  const authHeader = req.headers['authorization'];
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
+  // ⚠️ TEMPORARILY DISABLE AUTH FOR TESTING ⚠️
+  // const authHeader = req.headers['authorization'];
+  // if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  //   return res.status(401).json({ error: 'Unauthorized' });
+  // }
 
   const now  = new Date();
   const hour = now.getUTCHours();
-  const day  = now.getUTCDay(); // 0 = Sunday
+  const day  = now.getUTCDay();
 
   try {
     let result;
 
-    // Manual trigger via query param (for testing)
+    // Manual trigger via query param
     const job = req.query?.job;
 
     if (job === 'guardian-reports') {
+      console.log('🔵 MANUAL TRIGGER: Guardian Reports');
       result = await runGuardianReports();
-    } else if (job === 'subscription-reminders') {
+    } 
+    else if (job === 'subscription-reminders') {
+      console.log('🟢 MANUAL TRIGGER: Subscription Reminders');
       result = await runSubscriptionReminders();
-
-    // Vercel cron triggers — time based
-    } else if (day === 3 && hour === 8) {
+    }
+    // ⚠️ ALSO ADD TEST MODE - just visit /api/cron?test=guardian
+    else if (req.query?.test === 'guardian') {
+      console.log('🧪 TEST MODE: Guardian Reports');
       result = await runGuardianReports();
-    } else if (hour === 7) {
+    }
+    else if (req.query?.test === 'subscription') {
+      console.log('🧪 TEST MODE: Subscription Reminders');
       result = await runSubscriptionReminders();
-    } else {
+    }
+    else if (day === 0 && hour === 5) {
+      result = await runGuardianReports();
+    } 
+    else if (hour === 7) {
+      result = await runSubscriptionReminders();
+    } 
+    else {
       result = {
         message: 'No job scheduled for this time.',
         utcHour: hour,
         utcDay:  day,
+        hint: 'Use ?job=guardian-reports or ?test=guardian to force run'
       };
     }
 
