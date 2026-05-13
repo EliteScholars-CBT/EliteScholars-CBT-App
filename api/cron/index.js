@@ -1,5 +1,6 @@
 // ============================================================================
-// api/cron/index.js — Combined cron jobs — PART 1/3
+// api/cron/index.js — Combined cron jobs
+// Runs via Vercel Cron Jobs (schedule configured in vercel.json)
 // ============================================================================
 
 import { sheetsGet } from '../_helpers/sheets.js';
@@ -129,7 +130,7 @@ function buildReportEmail({
             subjectRows +
           '</table>' +
         '</div>' +
-      '</td><table>'
+      '</td></tr>'
     : '';
 
   const progressNote = avg >= 70
@@ -159,7 +160,7 @@ function buildReportEmail({
             EliteScholars · Weekly Report
           </div>
           <h1 style="margin:0;color:#fff;font-size:22px;font-weight:700;">
-            Academic Progress Report
+            📊 Academic Progress Report
           </h1>
           <p style="margin:8px 0 0;color:rgba(255,255,255,0.7);font-size:13px;">
             ${weekFrom} — ${weekTo}
@@ -212,11 +213,10 @@ function buildReportEmail({
                 <div style="font-size:28px;font-weight:900;color:#28c840;">${avg}%</div>
                 <div style="font-size:10px;color:#5a5a7a;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Avg Score</div>
               </td>
-            <tr>
-          能有
-        </div>
-       </td>
-     </tr>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
       ${subjectTableBlock}
 
@@ -228,8 +228,8 @@ function buildReportEmail({
           <div style="background:#0f0f1a;border-radius:10px;padding:16px;border:1px solid #2a2a4a;">
             ${achievementBadges}
           </div>
-         </td>
-       </tr>
+        </td>
+      </tr>
 
       <tr>
         <td style="padding:0 32px 28px;">
@@ -237,14 +237,14 @@ function buildReportEmail({
             <div style="font-size:12px;font-weight:700;color:#c8b4f0;margin-bottom:8px;">📝 Progress Note</div>
             <p style="margin:0;color:#9090b0;font-size:13px;line-height:1.7;">${progressNote}</p>
           </div>
-         </td>
-       </tr>
+        </td>
+      </tr>
 
       <tr>
         <td style="padding:0 32px 24px;">
           <div style="border-top:1px solid #2a2a4a;"></div>
-         </td>
-       </tr>
+        </td>
+      </tr>
 
       <tr>
         <td style="padding:0 32px 28px;">
@@ -254,26 +254,22 @@ function buildReportEmail({
             EliteScholars <strong style="color:#9090b0;">${planLabel}</strong> account.
             To update or remove your guardian email, ${wardName} can do so in their Profile Settings.
           </p>
-         </td>
-       </tr>
+        </td>
+      </tr>
 
       <tr>
         <td style="background:#13132a;padding:20px 32px;text-align:center;border-top:1px solid #2a2a4a;">
           <p style="margin:0 0 4px;color:#5a5a7a;font-size:11px;">© 2026 EliteScholars · Built for Nigerian Students</p>
           <p style="margin:0;color:#3a3a5a;font-size:10px;">JAMB · WAEC · NECO · POST UTME · GST</p>
-         </td>
-       </tr>
+        </td>
+      </tr>
 
-     </tr>
-   </table>
-  </body>
+    </table>
+  </td></tr>
+</table>
+</body>
 </html>`;
 }
-
-
-// ============================================================================
-// api/cron/index.js — Combined cron jobs — PART 2/3
-// ============================================================================
 
 // ============================================================================
 // SUBSCRIPTION EMAILS
@@ -339,7 +335,8 @@ function expiryReminderEmail({ firstName, plan, expiresAt }) {
         </td>
       </tr>
     </table>
-  </table>
+  </td></tr>
+</table>
 </body>
 </html>`;
 }
@@ -403,7 +400,7 @@ function missYouEmail({ firstName }) {
                 <td style="padding:8px 0;"><span style="color:#c8c8c8;font-size:13px;">👑 Premium Annual</span></td>
                 <td style="padding:8px 0;text-align:right;"><span style="color:#28c840;font-size:13px;font-weight:600;">₦89,000/yr</span></td>
               </tr>
-            能有
+            </table>
           </div>
           <p style="margin:0;color:#5a5a7a;font-size:12px;line-height:1.7;text-align:center;">
             We believe in you, ${firstName}. Come back and show your exams what you're made of 💜
@@ -417,7 +414,9 @@ function missYouEmail({ firstName }) {
         </td>
       </tr>
     </table>
-  </body>
+  </td></tr>
+</table>
+</body>
 </html>`;
 }
 
@@ -482,7 +481,7 @@ async function runSubscriptionReminders(isSunday = false) {
   const { expiring = [], expired = [] } = result;
   const sent = { reminders: 0, missYou: 0, errors: 0 };
 
-  // Send expiry reminders (always)
+  // Send expiry reminders (always, every day)
   for (const user of expiring) {
     try {
       await resend.emails.send({
@@ -503,9 +502,9 @@ async function runSubscriptionReminders(isSunday = false) {
     }
   }
 
-  // Send "I miss you" ONLY on Sundays
+  // Send "I miss you" ONLY on Sundays (weekly)
   if (isSunday) {
-    console.log('📅 Sunday detected - Sending "We Miss You" emails');
+    console.log('📅 Sunday detected — Sending "We Miss You" emails');
     for (const user of expired) {
       try {
         await resend.emails.send({
@@ -525,22 +524,17 @@ async function runSubscriptionReminders(isSunday = false) {
       }
     }
   } else {
-    console.log('📅 Not Sunday - Skipping "We Miss You" emails (will send next Sunday)');
+    console.log('📅 Not Sunday — Skipping "We Miss You" emails (will send next Sunday)');
   }
 
   return {
-    type:     'subscription_reminders',
+    type:        'subscription_reminders',
     sent,
-    expiring: expiring.length,
-    expired:  expired.length,
+    expiring:    expiring.length,
+    expired:     expired.length,
     missYouSent: isSunday,
   };
 }
-
-
-// ============================================================================
-// api/cron/index.js — Combined cron jobs — PART 3/3
-// ============================================================================
 
 // ============================================================================
 // MAIN HANDLER
@@ -569,33 +563,25 @@ export default async function handler(req, res) {
     } 
     else if (job === 'subscription-reminders') {
       console.log('🟢 MANUAL TRIGGER: Subscription Reminders');
-      result = await runSubscriptionReminders(true);
+      result = await runSubscriptionReminders(true); // manual = send everything
     }
-    // TEST MODE - just visit /api/cron?test=guardian
+    // ⚠️ ALSO ADD TEST MODE - just visit /api/cron?test=guardian
     else if (req.query?.test === 'guardian') {
       console.log('🧪 TEST MODE: Guardian Reports');
       result = await runGuardianReports();
     }
     else if (req.query?.test === 'subscription') {
       console.log('🧪 TEST MODE: Subscription Reminders');
-      result = await runSubscriptionReminders(true);
+      result = await runSubscriptionReminders(true); // test = send everything
     }
-    
-    // SCHEDULED JOBS
-    
-    // Guardian Reports: Sundays at 5AM UTC (hour 5, day 0)
     else if (day === 0 && hour === 5) {
-      console.log('📅 SCHEDULED: Guardian Reports (Sunday 5AM UTC)');
       result = await runGuardianReports();
     } 
-    
-    // Subscription Reminders: Daily at 7AM UTC (miss-you only on Sundays)
     else if (hour === 7) {
       const isSunday = day === 0;
-      console.log(`📅 SCHEDULED: Subscription Reminders (Daily 7AM UTC) - isSunday: ${isSunday}`);
+      console.log(`📅 SCHEDULED: Subscription Reminders (Daily 7AM UTC) — isSunday: ${isSunday}`);
       result = await runSubscriptionReminders(isSunday);
     } 
-    
     else {
       result = {
         message: 'No job scheduled for this time.',
