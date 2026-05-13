@@ -19,7 +19,7 @@ const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
   { id: 'flashcard', label: 'Flash' },
-  { id: 'game', label: 'Game' },
+  // { id: 'game', label: 'Game' },
 ];
 
 const MODE_DESC = {
