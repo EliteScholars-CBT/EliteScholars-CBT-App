@@ -389,4 +389,187 @@ function missYouEmail({ firstName }) {
             <p style="margin:0 0 12px;color:#5a5a7a;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Available Plans</p>
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td style="padding:8px 0;border-bott
+                <td style="padding:8px 0;border-bottom:1px solid #1e1e3a;"><span style="color:#c8c8c8;font-size:13px;">⭐ Pro Monthly</span></td>
+                <td style="padding:8px 0;border-bottom:1px solid #1e1e3a;text-align:right;"><span style="color:#28c840;font-size:13px;font-weight:600;">₦3,000/mo</span></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;border-bottom:1px solid #1e1e3a;"><span style="color:#c8c8c8;font-size:13px;">💎 Premium Monthly</span></td>
+                <td style="padding:8px 0;border-bottom:1px solid #1e1e3a;text-align:right;"><span style="color:#28c840;font-size:13px;font-weight:600;">₦9,000/mo</span></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;"><span style="color:#c8c8c8;font-size:13px;">👑 Premium Annual</span></td>
+                <td style="padding:8px 0;text-align:right;"><span style="color:#28c840;font-size:13px;font-weight:600;">₦89,000/yr</span></td>
+              </tr>
+            </table>
+          </div>
+          <p style="margin:0;color:#5a5a7a;font-size:12px;line-height:1.7;text-align:center;">
+            We believe in you, ${firstName}. Come back and show your exams what you're made of 💜
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="background:#13132a;padding:20px 40px;text-align:center;border-top:1px solid #2a2a4a;">
+          <p style="margin:0 0 4px;color:#5a5a7a;font-size:11px;">© 2026 EliteScholars · Built for Nigerian Students</p>
+          <p style="margin:0;color:#3a3a5a;font-size:10px;">JAMB · WAEC · NECO · POST UTME · GST</p>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
+}
+
+// ============================================================================
+// JOB: Guardian Reports (Sundays 5AM UTC)
+// ============================================================================
+
+async function runGuardianReports() {
+  const { from: weekFrom, to: weekTo } = getWeekRange();
+  const result = await sheetsGet({ action: 'getUsersWithGuardians' });
+
+  if (!result?.success) throw new Error('Failed to fetch users with guardians');
+
+  const users = result.users || [];
+  const sent  = { success: 0, errors: 0 };
+
+  for (const user of users) {
+    if (!user.guardianEmail || !user.email) continue;
+
+    const wardName = (user.firstName + ' ' + user.lastName).trim() || 'Your Ward';
+
+    try {
+      await resend.emails.send({
+        from:    'EliteScholars <' + FROM + '>',
+        to:      user.guardianEmail,
+        subject: '📊 ' + wardName + "'s Weekly Study Report — EliteScholars",
+        html:    buildReportEmail({
+          wardName,
+          stats:              user.stats,
+          subjectPerformance: user.subjectPerformance,
+          achievements:       user.achievements,
+          weekFrom,
+          weekTo,
+          plan:               user.plan,
+        }),
+      });
+      sent.success++;
+      console.log('Report sent for:', user.email, '→', user.guardianEmail);
+    } catch (err) {
+      console.error('Failed to send report for:', user.email, err.message);
+      sent.errors++;
+    }
+  }
+
+  return {
+    type:  'guardian_reports',
+    sent,
+    total: users.length,
+    week:  weekFrom + ' — ' + weekTo,
+  };
+}
+
+// ============================================================================
+// JOB: Subscription Reminders (Daily 7AM UTC)
+// ============================================================================
+
+async function runSubscriptionReminders() {
+  const result = await sheetsGet({ action: 'getExpiringSubscriptions' });
+
+  if (!result?.success) throw new Error('Failed to fetch subscriptions');
+
+  const { expiring = [], expired = [] } = result;
+  const sent = { reminders: 0, missYou: 0, errors: 0 };
+
+  for (const user of expiring) {
+    try {
+      await resend.emails.send({
+        from:    'EliteScholars <' + FROM + '>',
+        to:      user.email,
+        subject: '⏳ ' + (user.firstName || 'Student') + ', your Premium expires in 3 days',
+        html:    expiryReminderEmail({
+          firstName: user.firstName || 'Student',
+          plan:      user.plan,
+          expiresAt: user.expiresAt,
+        }),
+      });
+      sent.reminders++;
+      console.log('Reminder sent to:', user.email);
+    } catch (err) {
+      console.error('Reminder error:', user.email, err.message);
+      sent.errors++;
+    }
+  }
+
+  for (const user of expired) {
+    try {
+      await resend.emails.send({
+        from:    'EliteScholars <' + FROM + '>',
+        to:      user.email,
+        subject: '🥺 ' + (user.firstName || 'Student') + ', we miss you — come back to EliteScholars',
+        html:    missYouEmail({
+          firstName: user.firstName || 'Student',
+          plan:      user.plan,
+        }),
+      });
+      sent.missYou++;
+      console.log('Miss-you sent to:', user.email);
+    } catch (err) {
+      console.error('Miss-you error:', user.email, err.message);
+      sent.errors++;
+    }
+  }
+
+  return {
+    type:     'subscription_reminders',
+    sent,
+    expiring: expiring.length,
+    expired:  expired.length,
+  };
+}
+
+// ============================================================================
+// MAIN HANDLER
+// ============================================================================
+
+export default async function handler(req, res) {
+  const authHeader = req.headers['authorization'];
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  const now  = new Date();
+  const hour = now.getUTCHours();
+  const day  = now.getUTCDay(); // 0 = Sunday
+
+  try {
+    let result;
+
+    // Manual trigger via query param (for testing)
+    const job = req.query?.job;
+
+    if (job === 'guardian-reports') {
+      result = await runGuardianReports();
+    } else if (job === 'subscription-reminders') {
+      result = await runSubscriptionReminders();
+
+    // Vercel cron triggers — time based
+    } else if (day === 0 && hour === 5) {
+      result = await runGuardianReports();
+    } else if (hour === 7) {
+      result = await runSubscriptionReminders();
+    } else {
+      result = {
+        message: 'No job scheduled for this time.',
+        utcHour: hour,
+        utcDay:  day,
+      };
+    }
+
+    return res.status(200).json({ success: true, ...result });
+
+  } catch (err) {
+    console.error('Cron handler crash:', err.message);
+    return res.status(500).json({ error: err.message });
+  }
+}
