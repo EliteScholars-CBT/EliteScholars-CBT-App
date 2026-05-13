@@ -474,7 +474,10 @@ async function runGuardianReports() {
 // ============================================================================
 
 async function runSubscriptionReminders(isSunday = false) {
+
+  console.log('About to call getExpiringSubscriptions');
   const result = await sheetsGet({ action: 'getExpiringSubscriptions' });
+console.log('Finished calling getExpiringSubscriptions ', result);
 
   if (!result?.success) throw new Error('Failed to fetch subscriptions');
 
