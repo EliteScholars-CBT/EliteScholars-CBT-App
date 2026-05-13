@@ -554,7 +554,7 @@ export default async function handler(req, res) {
       result = await runSubscriptionReminders();
 
     // Vercel cron triggers — time based
-    } else if (day === 0 && hour === 5) {
+    } else if (day === 3 && hour === 7) {
       result = await runGuardianReports();
     } else if (hour === 7) {
       result = await runSubscriptionReminders();
