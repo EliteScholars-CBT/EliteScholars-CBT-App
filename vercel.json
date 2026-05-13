@@ -30,13 +30,13 @@
     }
   ],
   "crons": [
-  {
-    "path": "/api/cron",
-    "schedule": "0 7 * * *"
-  },
-  {
-    "path": "/api/cron",
-    "schedule": "15 8 * * 3"
-  }
-]
+    {
+      "path": "/api/cron",
+      "schedule": "0 5 * * 0"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "0 7 * * *"
+    }
+  ]
 }
