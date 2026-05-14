@@ -4475,12 +4475,10 @@ body.dark-mode .guardian-card:hover {
 
 /* Challenge notification — fixed sizing */
 .notification-popup {
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: calc(100vw - 64px);
   max-width: 360px;
   min-width: 280px;
-  margin-left: 0;
-  margin-right: 0;
   box-sizing: border-box;
 }
