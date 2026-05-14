@@ -33,7 +33,7 @@ import {
 } from './utils/xpManager';
 import {
   isPremium, isSessionExpired, startSession, startCooldown,
-  canUseTopic, incrementTopicsToday, resetSession,
+  canUseTopic, incrementTopicsToday, resetSession, syncPremiumFromServer,
 } from './utils/premium';
 import { registerSW, requestNotificationPermission, scheduleDailyReminder, listenForSWMessages } from './utils/notifications';
 import { applySecurityMeasures } from './utils/security';
@@ -183,102 +183,97 @@ export default function App() {
   const [sessionStart, setSessionStart]   = useState(null);
   const [usedFifty, setUsedFifty]         = useState(false);
   const [usedHint, setUsedHint]           = useState(false);
-  const [learnSubject, setLearnSubject]   = useState(null);  // replaces Subject
+  const [learnSubject, setLearnSubject]   = useState(null);
   const [questionLog, setQuestionLog]     = useState([]);
   const [premiumUser, setPremiumUser]     = useState(false);
   const [showLimitGate, setShowLimitGate] = useState(false);
   const [limitReason, setLimitReason]     = useState('session');
   const [flashcardSubject, setFlashSub]   = useState(null);
-const [paymentModal, setPaymentModal] = useState(null);
+  const [paymentModal, setPaymentModal]   = useState(null);
 
   const showToast = (message, type = 'info') => setToast({ show: true, message, type });
   const showAch   = (achievement) => setAchPopup({ show: true, achievement });
   const triggerAdRefresh = () => setAdRefresh((p) => p + 1);
 
-
-
   // ── Startup ─────────────────────────────────────────────────────────────────
-useEffect(() => {
-  installGlobalErrorDebugger();
-  applySecurityMeasures();
+  useEffect(() => {
+    installGlobalErrorDebugger();
+    applySecurityMeasures();
 
-  // ── Read payment result from URL ──────────────────────────────────────────
-  const params = new URLSearchParams(window.location.search);
-  const paymentStatus = params.get('payment');
+    // ── Read payment result from URL ──────────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const paymentStatus = params.get('payment');
 
-  if (paymentStatus === 'success') {
-    const plan     = params.get('plan') || '';
-    const expiry   = params.get('expiry') || '';
-    const name     = params.get('name') || '';
-    setPaymentModal({ plan, expiry, name });
-    // Clean URL so refresh doesn't retrigger
-    window.history.replaceState({}, '', window.location.pathname);
-  }
-
-
-
-  registerSW().then((reg) => {
-    if (reg) {
-      requestNotificationPermission().then((perm) => {
-        if (perm === 'granted') {
-          const u = loadUser();
-          if (u.name) scheduleDailyReminder(REMINDER_TIMES, u.name);
-        }
-      });
+    if (paymentStatus === 'success') {
+      const plan   = params.get('plan') || '';
+      const expiry = params.get('expiry') || '';
+      const name   = params.get('name') || '';
+      setPaymentModal({ plan, expiry, name });
+      // Clean URL so refresh doesn't retrigger
+      window.history.replaceState({}, '', window.location.pathname);
     }
-  });
-  const unsub = listenForSWMessages((data) => {
-    if (data.type === 'challenge') setScreen('challenges');
-  });
-  return unsub;
-}, []);
 
-// ── Session end tracking ─────────────────────────────────────────────────────
-useEffect(() => {
-  if (!email || !sessionStart) return;
-
-  const doSync = () => {
-    const stats   = loadStats(email);
-    const ach     = loadAchievements(email);
-    const subjPrf = loadSubjectPerformance(email);
-    // Use sendBeacon so it fires reliably on tab close
-    const payload = JSON.stringify({
-      action: 'syncProfile',
-      email,
-      stats:              JSON.stringify(stats),
-      achievements:       JSON.stringify(ach),
-      subjectPerformance: JSON.stringify(subjPrf),
+    registerSW().then((reg) => {
+      if (reg) {
+        requestNotificationPermission().then((perm) => {
+          if (perm === 'granted') {
+            const u = loadUser();
+            if (u.name) scheduleDailyReminder(REMINDER_TIMES, u.name);
+          }
+        });
+      }
     });
-    try {
-      navigator.sendBeacon
-        ? navigator.sendBeacon(
-            `${SHEETS_URL}`,
-            new Blob([payload], { type: 'application/json' })
-          )
-        : syncProfileToSheet({ email, stats, achievements: ach, subjectPerformance: subjPrf });
-    } catch {}
-  };
+    const unsub = listenForSWMessages((data) => {
+      if (data.type === 'challenge') setScreen('challenges');
+    });
+    return unsub;
+  }, []);
 
-  const handleEnd = () => {
-    trackSessionEnd(email, Date.now() - sessionStart);
-    doSync();
-  };
+  // ── Session end tracking ─────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!email || !sessionStart) return;
 
-  const handleVisibility = () => {
-    if (document.visibilityState === 'hidden') {
+    const doSync = () => {
+      const stats   = loadStats(email);
+      const ach     = loadAchievements(email);
+      const subjPrf = loadSubjectPerformance(email);
+      const payload = JSON.stringify({
+        action: 'syncProfile',
+        email,
+        stats:              JSON.stringify(stats),
+        achievements:       JSON.stringify(ach),
+        subjectPerformance: JSON.stringify(subjPrf),
+      });
+      try {
+        navigator.sendBeacon
+          ? navigator.sendBeacon(
+              `${SHEETS_URL}`,
+              new Blob([payload], { type: 'application/json' })
+            )
+          : syncProfileToSheet({ email, stats, achievements: ach, subjectPerformance: subjPrf });
+      } catch {}
+    };
+
+    const handleEnd = () => {
       trackSessionEnd(email, Date.now() - sessionStart);
       doSync();
-    }
-  };
+    };
 
-  window.addEventListener('beforeunload', handleEnd);
-  document.addEventListener('visibilitychange', handleVisibility);
+    const handleVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        trackSessionEnd(email, Date.now() - sessionStart);
+        doSync();
+      }
+    };
 
-  return () => {
-    window.removeEventListener('beforeunload', handleEnd);
-    document.removeEventListener('visibilitychange', handleVisibility);
-  };
-}, [email, sessionStart]);
+    window.addEventListener('beforeunload', handleEnd);
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleEnd);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
+  }, [email, sessionStart]);
 
   // ── Load user data ───────────────────────────────────────────────────────────
   const loadUserData = useCallback((u) => {
@@ -301,125 +296,133 @@ useEffect(() => {
     trackSessionStart(u.email, u.name);
   }, []);
 
-const handleSplash = async () => {
-  try {
-    const u = loadUser();
-    if (u.email && u.passwordHash) {
-      // Log in immediately with local data
-      loadUserData(u);
-      setScreen('examType');
+  const handleSplash = async () => {
+    try {
+      const u = loadUser();
+      if (u.email && u.passwordHash) {
+        // Log in immediately with local data
+        loadUserData(u);
+        setScreen('examType');
 
-      // Background: verify + pull latest from server
-      setTimeout(async () => {
-        try {
-          const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
-          if (result.success) {
-            const p = result.profile;
+        // Background: verify + pull latest from server
+        setTimeout(async () => {
+          try {
+            const result = await verifyProfile({ email: u.email, passwordHash: u.passwordHash });
+            if (result.success) {
+              const p = result.profile;
 
-            // Grab local data
-            const localStats    = loadStats(u.email);
-            const localAch      = loadAchievements(u.email);
-            const localSubjPerf = loadSubjectPerformance(u.email);
+              // ── Sync premium status from server into localStorage ──────────
+              if (p.premiumPlan && p.premiumExpiresAt) {
+                syncPremiumFromServer(u.email, p.premiumPlan, p.premiumExpiresAt);
+                const expiresAt = new Date(p.premiumExpiresAt).getTime();
+                if (!isNaN(expiresAt) && Date.now() < expiresAt) {
+                  setPremiumUser(true);
+                }
+              }
 
-            // Merge server + local (instead of blindly overwriting with server)
-            const mergedStats = mergeStats(localStats, p.stats || {});
-            const mergedAch   = mergeAchievements(localAch, p.achievements || []);
-            const mergedPerf  = mergeSubjectPerformance(localSubjPerf, p.subjectPerformance || {});
+              // Grab local data
+              const localStats    = loadStats(u.email);
+              const localAch      = loadAchievements(u.email);
+              const localSubjPerf = loadSubjectPerformance(u.email);
 
-            // Save merged locally
-            saveStats(mergedStats, u.email);
-            saveAchievements(mergedAch, u.email);
-            saveSubjectPerformance(mergedPerf, u.email);
+              // Merge server + local (instead of blindly overwriting with server)
+              const mergedStats = mergeStats(localStats, p.stats || {});
+              const mergedAch   = mergeAchievements(localAch, p.achievements || []);
+              const mergedPerf  = mergeSubjectPerformance(localSubjPerf, p.subjectPerformance || {});
 
-            // Update React state silently in the background
-            setSessions(mergedStats.sessions || 0);
-            setAllScores(mergedStats.allScores || []);
-            setBestScore(mergedStats.bestScore || 0);
-            setStreak(mergedStats.streak || 1);
-            setLastDate(mergedStats.lastDate || '');
-            setAchievements(mergedAch);
-            setSubjPerf(mergedPerf);
+              // Save merged locally
+              saveStats(mergedStats, u.email);
+              saveAchievements(mergedAch, u.email);
+              saveSubjectPerformance(mergedPerf, u.email);
 
-            // Push merged (not stale local) back to server
-            syncProfileToSheet({
-              email:              u.email,
-              stats:              mergedStats,
-              achievements:       mergedAch,
-              subjectPerformance: mergedPerf,
-            });
+              // Update React state silently in the background
+              setSessions(mergedStats.sessions || 0);
+              setAllScores(mergedStats.allScores || []);
+              setBestScore(mergedStats.bestScore || 0);
+              setStreak(mergedStats.streak || 1);
+              setLastDate(mergedStats.lastDate || '');
+              setAchievements(mergedAch);
+              setSubjPerf(mergedPerf);
 
-            localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
-          }
-        } catch {}
-      }, 0);
+              // Push merged (not stale local) back to server
+              syncProfileToSheet({
+                email:              u.email,
+                stats:              mergedStats,
+                achievements:       mergedAch,
+                subjectPerformance: mergedPerf,
+              });
 
-    } else if (u.email && !u.passwordHash) {
-      localStorage.removeItem('ep_user');
-      setScreen('onboard');
-    } else {
+              localStorage.setItem(`ep_verified_${u.email}`, String(Date.now()));
+            }
+          } catch {}
+        }, 0);
+
+      } else if (u.email && !u.passwordHash) {
+        localStorage.removeItem('ep_user');
+        setScreen('onboard');
+      } else {
+        setScreen('onboard');
+      }
+    } catch {
       setScreen('onboard');
     }
-  } catch {
-    setScreen('onboard');
-  }
-};
+  };
 
-const handleOnboard = (userData) => {
-  const n = userData.name;
-  const e = userData.email;
-  setName(n); setEmail(e);
-  setStudentType(userData.studentType || '');
-  setSelectedExams(userData.selectedExams || []);
-  setPremiumUser(isPremium(e));
+  const handleOnboard = (userData) => {
+    const n = userData.name;
+    const e = userData.email;
+    setName(n); setEmail(e);
+    setStudentType(userData.studentType || '');
+    setSelectedExams(userData.selectedExams || []);
+    setPremiumUser(isPremium(e));
 
-  // Grab local data
-  const localStats    = loadStats(e);
-  const localAch      = loadAchievements(e);
-  const localSubjPerf = loadSubjectPerformance(e);
+    // Grab local data
+    const localStats    = loadStats(e);
+    const localAch      = loadAchievements(e);
+    const localSubjPerf = loadSubjectPerformance(e);
 
-  // Merge server + local instead of picking one side
-  const mergedStats = mergeStats(localStats, userData.serverStats || {});
-  const mergedAch   = mergeAchievements(localAch, userData.serverAchievements || []);
-  const mergedPerf  = mergeSubjectPerformance(localSubjPerf, userData.serverSubjectPerf || {});
+    // Merge server + local instead of picking one side
+    const mergedStats = mergeStats(localStats, userData.serverStats || {});
+    const mergedAch   = mergeAchievements(localAch, userData.serverAchievements || []);
+    const mergedPerf  = mergeSubjectPerformance(localSubjPerf, userData.serverSubjectPerf || {});
 
-  // Save merged locally
-  saveStats(mergedStats, e);
-  saveAchievements(mergedAch, e);
-  saveSubjectPerformance(mergedPerf, e);
+    // Save merged locally
+    saveStats(mergedStats, e);
+    saveAchievements(mergedAch, e);
+    saveSubjectPerformance(mergedPerf, e);
 
-  // Hydrate state from merged data
-  if (mergedStats.sessions)  setSessions(mergedStats.sessions);
-  if (mergedStats.allScores) setAllScores(mergedStats.allScores);
-  if (mergedStats.bestScore) setBestScore(mergedStats.bestScore);
-  if (mergedStats.streak)    setStreak(mergedStats.streak);
-  if (mergedStats.lastDate)  setLastDate(mergedStats.lastDate);
-  setAchievements(mergedAch);
-  setSubjPerf(mergedPerf);
+    // Hydrate state from merged data
+    if (mergedStats.sessions)  setSessions(mergedStats.sessions);
+    if (mergedStats.allScores) setAllScores(mergedStats.allScores);
+    if (mergedStats.bestScore) setBestScore(mergedStats.bestScore);
+    if (mergedStats.streak)    setStreak(mergedStats.streak);
+    if (mergedStats.lastDate)  setLastDate(mergedStats.lastDate);
+    setAchievements(mergedAch);
+    setSubjPerf(mergedPerf);
 
-  startSession(e);
-  setSessionStart(Date.now());
-  trackSessionStart(e, n);
-  awardDailyLoginXP(e, n);
-  saveUser({
-    name: n, email: e,
-    studentType:   userData.studentType,
-    selectedExams: userData.selectedExams,
-    firstName:     userData.firstName,
-    lastName:      userData.lastName,
-    passwordHash:  userData.passwordHash,
-  });
+    startSession(e);
+    setSessionStart(Date.now());
+    trackSessionStart(e, n);
+    awardDailyLoginXP(e, n);
+    saveUser({
+      name: n, email: e,
+      studentType:   userData.studentType,
+      selectedExams: userData.selectedExams,
+      firstName:     userData.firstName,
+      lastName:      userData.lastName,
+      passwordHash:  userData.passwordHash,
+    });
 
-  // Push merged to server
-  syncProfileToSheet({
-    email:              e,
-    stats:              mergedStats,
-    achievements:       mergedAch,
-    subjectPerformance: mergedPerf,
-  });
+    // Push merged to server
+    syncProfileToSheet({
+      email:              e,
+      stats:              mergedStats,
+      achievements:       mergedAch,
+      subjectPerformance: mergedPerf,
+    });
 
-  setScreen('examType');
-};
-  
+    setScreen('examType');
+  };
 
   // ── Session expiry check ─────────────────────────────────────────────────────
   const checkSessionLimit = useCallback(() => {
@@ -617,7 +620,7 @@ const handleOnboard = (userData) => {
                 <Flashcards subjectId={flashcardSubject} onBack={() => setScreen('subjects')} />
               )}
 
-              {/* ── Learn mode (was Learn, now shared) ── */}
+              {/* ── Learn mode ── */}
               {screen === 'learn' && (
                 <Learn
                   subjectId={learnSubject}
@@ -678,8 +681,8 @@ const handleOnboard = (userData) => {
                   onSignOut={() => {
                     stopSpeech();
                     // Sync before clearing
-                    const stats = loadStats(email);
-                    const ach = loadAchievements(email);
+                    const stats   = loadStats(email);
+                    const ach     = loadAchievements(email);
                     const subjPrf = loadSubjectPerformance(email);
                     syncProfileToSheet({
                       email,
