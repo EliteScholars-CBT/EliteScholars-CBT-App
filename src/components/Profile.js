@@ -23,8 +23,9 @@ export default function Profile({
   premiumUser = false,
   onPremiumActivated,
 }) {
-  const [activeTab, setActiveTab]           = useState('stats');
-  const [achievements, setAchievements]     = useState([]);
+  const [activeTab, setActiveTab]                   = useState('stats');
+  const [achievements, setAchievements]             = useState([]);
+  const [allAchievements, setAllAchievements]       = useState([]);
   const [subjectPerformance, setSubjectPerformance] = useState({});
   const [performanceData, setPerformanceData]       = useState([]);
   const [subjectChartData, setSubjectChartData]     = useState([]);
@@ -61,10 +62,22 @@ export default function Profile({
   // Load achievements + subject performance
   useEffect(() => {
     const userAchievements = loadAchievements(email);
-    const achievementList  = userAchievements
-      .map((a) => (typeof a === 'string' ? ACHIEVEMENTS[a] : a))
-      .filter((a) => a && a.id);
-    setAchievements(achievementList);
+
+    // IDs the user has earned
+    const earnedIds = new Set(
+      userAchievements.map((a) => (typeof a === 'string' ? a : a?.id)).filter(Boolean)
+    );
+
+    // Build full list: all achievements, marking earned vs locked
+    const full = Object.values(ACHIEVEMENTS).map((a) => ({
+      ...a,
+      earned: earnedIds.has(a.id),
+    }));
+
+    // Earned count for tab label
+    const earned = full.filter((a) => a.earned);
+    setAchievements(earned);
+    setAllAchievements(full);
 
     const perf = loadSubjectPerformance(email);
     setSubjectPerformance(perf);
@@ -263,14 +276,22 @@ export default function Profile({
           {/* ── ACHIEVEMENTS TAB ── */}
           {activeTab === 'achievements' && (
             <div className="profile-stats-section">
-              <div className="profile-stats-title">🏆 Achievements ({achievements.length})</div>
-              {achievements.length > 0 ? (
+              <div className="profile-stats-title">
+                🏆 Achievements ({achievements.length}/{allAchievements.length})
+              </div>
+              {allAchievements.length > 0 ? (
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-                  {achievements.map((a) => (
-                    <div key={a.id} className="achievement-card">
-                      <div style={{ fontSize: 28, marginBottom: 6 }}>{a.icon}</div>
-                      <div className="achievement-card-name">{a.name}</div>
-                      <div className="achievement-card-desc">{a.desc}</div>
+                  {allAchievements.map((a) => (
+                    <div key={a.id} className={`achievement-card${a.earned ? '' : ' locked'}`}>
+                      <div style={{ fontSize: 28, marginBottom: 6 }}>
+                        {a.earned ? a.icon : '🔒'}
+                      </div>
+                      <div className="achievement-card-name">
+                        {a.earned ? a.name : '???'}
+                      </div>
+                      <div className="achievement-card-desc">
+                        {a.earned ? a.desc : a.desc}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -430,36 +451,36 @@ export default function Profile({
             </div>
           )}
 
-          {/* ── Premium management ── */}
-          {localPremium ? (
-            <div className="premium-active-box" style={{ margin: '0 0 12px' }}>
-              <div className="premium-badge">⭐ Premium Active</div>
-              <div className="premium-active-title" style={{ marginTop: 8 }}>
-                {premData?.plan === 'annual' ? 'Annual' : 'Monthly'} Plan
+          {/* ── Premium / Upgrade section ── */}
+          <div style={{ margin: '20px 0 8px' }}>
+            {localPremium ? (
+              <div className="premium-active-box">
+                <div className="premium-badge">⭐ Premium Active</div>
+                <div className="premium-active-title" style={{ marginTop: 8 }}>
+                  {premData?.plan === 'annual' ? '👑 Annual Plan' : '💎 Monthly Plan'}
+                </div>
+                {premData?.expiresDateStr && (
+                  <div className="premium-active-expiry">Expires: {premData.expiresDateStr}</div>
+                )}
               </div>
-              {premData?.expiresDateStr && (
-                <div className="premium-active-expiry">Expires: {premData.expiresDateStr}</div>
-              )}
+            ) : (
               <button
-                className="premium-manage-btn"
-                onClick={() => { cancelPremium(email); setLocalPremium(false); }}
+                className="premium-cta-btn"
+                style={{ width: '100%', marginBottom: 12 }}
+                onClick={() => setShowPremiumModal(true)}
               >
-                Cancel Subscription
+                ⭐ Upgrade to Premium
               </button>
-            </div>
-          ) : (
-            <button
-              className="premium-cta-btn"
-              style={{ marginBottom: 12 }}
-              onClick={() => setShowPremiumModal(true)}
-            >
-              ⭐ Upgrade to Premium
-            </button>
-     )}
+            )}
 
-          <button className="profile-signout-btn" onClick={onSignOut}>
-            ↩ Sign Out
-          </button>
+            <button
+              className="profile-signout-btn"
+              style={{ width: '100%', display: 'block', textAlign: 'center', cursor: 'pointer' }}
+              onClick={onSignOut}
+            >
+              🚪 Sign Out
+            </button>
+          </div>
 
         </div>
       </div>
@@ -467,12 +488,11 @@ export default function Profile({
       {showPremiumModal && (
         <PremiumModal
           email={email}
-          name={name}
           onClose={() => setShowPremiumModal(false)}
-          onActivated={(data) => {
+          onActivated={() => {
             setLocalPremium(true);
             setShowPremiumModal(false);
-            if (onPremiumActivated) onPremiumActivated(data);
+            if (onPremiumActivated) onPremiumActivated();
           }}
         />
       )}
