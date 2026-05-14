@@ -71,6 +71,32 @@ export function cancelPremium(email) {
   try { localStorage.removeItem(KEY_PREMIUM(email)); } catch {}
 }
 
+// ── Sync premium status from server ──────────────────────────────────────────
+// Call this after a successful verifyProfile so localStorage stays in sync
+// with whatever the server says about the user's subscription.
+
+export function syncPremiumFromServer(email, premiumPlan, premiumExpiresAt) {
+  if (!email || !premiumPlan || !premiumExpiresAt) return;
+  try {
+    const expiresAt = new Date(premiumExpiresAt).getTime();
+    if (isNaN(expiresAt) || Date.now() > expiresAt) {
+      // Subscription expired or invalid — clear local record
+      localStorage.removeItem(KEY_PREMIUM(email));
+      return;
+    }
+    const data = {
+      active:         true,
+      plan:           premiumPlan,
+      activatedAt:    Date.now(),
+      expiresAt,
+      expiresDateStr: new Date(expiresAt).toLocaleDateString('en-NG', {
+        day: 'numeric', month: 'long', year: 'numeric',
+      }),
+    };
+    localStorage.setItem(KEY_PREMIUM(email), JSON.stringify(data));
+  } catch {}
+}
+
 // ── Free tier limits ──────────────────────────────────────────────────────────
 
 export function getTopicsUsedToday(email) {
