@@ -19,17 +19,6 @@ import {
   trackTopicOpened, trackLearnQuizComplete, trackTopicComplete,
 } from '../analytics/studyAnalytics';
 
-// ============================================================================
-// Learn — Card-based learn mode
-//
-// UX Flow:
-//   1. Topic list: cards with progress bar + ✓ badge when complete
-//   2. Tap a card → collapsible content view (header shrinks to save space)
-//   3. "Take Quiz" button at the bottom of content
-//   4. User MUST pass quiz to mark topic complete & unlock "Next"
-//   5. Progress stored per-subject in localStorage
-// ============================================================================
-
 const FONT_SIZES = [13, 15, 17, 19, 21];
 const STORAGE_KEY = (examType, subjectId) => `es_learn_${examType}_${subjectId}`;
 
@@ -37,7 +26,6 @@ function stripHtml(html = '') {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-// Updated injectAds to use adSequence for variety
 function injectAds(html, adEvery, maxAds, topicIdx, adSequence) {
   if (!html || adEvery <= 0) return [{ type: 'html', content: html }];
   const parts = html.split(/(?=<h3[\s>])/i);
@@ -48,7 +36,6 @@ function injectAds(html, adEvery, maxAds, topicIdx, adSequence) {
     if (/^<h3/i.test(part)) {
       h3Count++;
       if (h3Count % adEvery === 0 && adCount < maxAds) {
-        // Use topic index + adCount + global sequence for unique slot values
         const slot = (topicIdx * 100 + adCount + adSequence) % 100;
         blocks.push({ type: 'ad', slot });
         adCount++;
@@ -70,7 +57,6 @@ function ContentBlock({ block, refreshTrigger, examType, email }) {
   return <div className="learn-content-html" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-// ── Circular progress SVG ────────────────────────────────────────────────────
 function CircleProgress({ pct = 0, color = '#6C3FC9', size = 36 }) {
   const r = (size / 2) - 4;
   const circ = 2 * Math.PI * r;
@@ -88,7 +74,6 @@ function CircleProgress({ pct = 0, color = '#6C3FC9', size = 36 }) {
   );
 }
 
-// ── Topic card ────────────────────────────────────────────────────────────────
 function TopicCard({ topic, index, isActive, isDone, isLocked, color, onClick }) {
   return (
     <div
@@ -122,14 +107,10 @@ function TopicCard({ topic, index, isActive, isDone, isLocked, color, onClick })
   );
 }
 
-// ── Main component ────────────────────────────────────────────────────────────
 export default function Learn({ subjectId, onBack, onTopicComplete, examType = 'waec', email }) {
-  // Simplified: jamb, postutme, waec, neco all use WAEC_LEARN
-  // Only GST uses GST_LEARN
   const learnData = examType === 'gst' ? GST_LEARN : WAEC_LEARN;
   const topics = learnData[subjectId] || [];
 
-  // Subject metadata — check across all banks
   const allSubjects = [
     ...( WAEC_SUBJECTS || []),
     ...( GST_SUBJECTS  || []),
@@ -137,13 +118,11 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
   ];
   const meta = allSubjects.find((s) => s.id === subjectId) || { label: subjectId, icon: '📖', color: '#6C3FC9', bg: '#F3F0FF' };
 
-  // ── Persistent state ───────────────────────────────────────────────────────
   const storageKey = STORAGE_KEY(examType, subjectId);
   const [progress, setProgress] = useState(() => {
     try { return JSON.parse(localStorage.getItem(storageKey) || '{}'); }
     catch { return {}; }
   });
-  // progress shape: { completedTopics: [0,1,...], lastTopicIdx: 0 }
   const completedTopics = progress.completedTopics || [];
   const lastIdx         = progress.lastTopicIdx ?? null;
 
@@ -153,46 +132,40 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     try { localStorage.setItem(storageKey, JSON.stringify(p)); } catch {}
   };
 
-  // ── UI state ───────────────────────────────────────────────────────────────
-  const [activeIdx, setActiveIdx]         = useState(null);   // null = topic list
+  const [activeIdx, setActiveIdx]             = useState(null);
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
-  const [fontSize, setFontSize]           = useState(1);
-  const [characterVoices, setCharVoices]  = useState([]);
-  const [selectedCharId, setSelectedCharId] = useState('sophia');
-  const [speaking, setSpeaking]           = useState(false);
-  const [paused, setPaused]               = useState(false);
-  
-  // ── AD ROTATION FIX: Rolling counter for ad variety ────────────────────────
-  const [adSequence, setAdSequence] = useState(() => Math.floor(Math.random() * 100));
-  const [adRefresh] = useState(0); // Keep for compatibility, but adSequence handles rotation
+  const [fontSize, setFontSize]               = useState(1);
+  const [characterVoices, setCharVoices]      = useState([]);
+  const [selectedCharId, setSelectedCharId]   = useState('sophia');
+  const [speaking, setSpeaking]               = useState(false);
+  const [paused, setPaused]                   = useState(false);
 
-  // Increment ad sequence every 30 seconds to rotate ads
+  const [adSequence, setAdSequence] = useState(() => Math.floor(Math.random() * 100));
+  const [adRefresh] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setAdSequence(prev => (prev + 1) % 100);
-    }, 30000); // Change ad rotation every 30 seconds
+    }, 30000);
     return () => clearInterval(interval);
   }, []);
 
-  // Quiz state
-  const [quizMode, setQuizMode]   = useState(false);
-  const [quizQs, setQuizQs]       = useState([]);
-  const [quizIdx, setQuizIdx]     = useState(0);
-  const [quizSel, setQuizSel]     = useState(-1);
-  const [quizAnswered, setAnswered] = useState(false);  // current Q answered
-  const [quizResults, setResults] = useState([]);
-  const [quizDone, setQuizDone]   = useState(false);    // all Qs done
+  const [quizMode, setQuizMode]     = useState(false);
+  const [quizQs, setQuizQs]         = useState([]);
+  const [quizIdx, setQuizIdx]       = useState(0);
+  const [quizSel, setQuizSel]       = useState(-1);
+  const [quizAnswered, setAnswered] = useState(false);
+  const [quizResults, setResults]   = useState([]);
+  const [quizDone, setQuizDone]     = useState(false);
 
   const scrollRef = useRef(null);
   const fSize     = FONT_SIZES[fontSize];
 
-  // ── Voice loading ──────────────────────────────────────────────────────────
   useEffect(() => {
     const load = () => {
       const raw = window.speechSynthesis?.getVoices() || [];
       const mapped = mapToCharacterVoices(raw);
       setCharVoices(mapped);
-      // Auto-select first available
       const firstAvail = mapped.find(c => c.voice);
       if (firstAvail) setSelectedCharId(firstAvail.id);
     };
@@ -208,14 +181,12 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     };
   }, [email]);
 
-  // Collapse header on scroll inside topic view
   const handleScroll = () => {
     if (scrollRef.current && activeIdx !== null) {
       setHeaderCollapsed(scrollRef.current.scrollTop > 60);
     }
   };
 
-  // ── TTS ────────────────────────────────────────────────────────────────────
   const speakContent = () => {
     if (activeIdx === null) return;
     const text = stripHtml(topics[activeIdx]?.contentHTML || topics[activeIdx]?.content || '');
@@ -223,22 +194,21 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     const utter = new SpeechSynthesisUtterance(text);
     const voice = getVoiceForCharacter(selectedCharId, characterVoices);
     if (voice) utter.voice = voice;
-    utter.rate  = 0.75;  // slightly below normal for clear comprehension
+    utter.rate  = 0.75;
     utter.pitch = 1.0;
     utter.onend = () => { setSpeaking(false); setPaused(false); };
     window.speechSynthesis.speak(utter);
     setSpeaking(true); setPaused(false);
   };
+
   const handlePause = () => {
     if (paused) { window.speechSynthesis.resume(); setPaused(false); }
     else { window.speechSynthesis.pause(); setPaused(true); }
   };
   const handleStop = () => { stopSpeech(); setSpeaking(false); setPaused(false); };
 
-  // ── Open a topic ───────────────────────────────────────────────────────────
   const openTopic = (idx) => {
     stopSpeech(); setSpeaking(false);
-    // Start study session tracking
     if (idx !== activeIdx) endStudySession(email);
     startStudySession({
       email, name: '', examType, subjectId,
@@ -259,7 +229,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     setActiveIdx(null); setHeaderCollapsed(false); setQuizMode(false);
   };
 
-  // ── Start topic quiz ───────────────────────────────────────────────────────
   const startQuiz = useCallback(() => {
     const bankPromise = examType === 'neco' ? import('../data/neco/index').then(m => m.NECO_QB)
       : examType === 'gst'   ? import('../data/gst/index').then(m => m.GST_QB)
@@ -270,7 +239,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
       const pool = (bank[subjectId] || []);
       const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, Math.min(5, pool.length));
       if (!shuffled.length) {
-        // No questions — auto-complete topic
         markComplete(activeIdx);
         return;
       }
@@ -281,9 +249,7 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
       setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
     });
   }, [subjectId, examType, activeIdx]);
-
-  // ── Quiz answer flow ───────────────────────────────────────────────────────
-  const submitAnswer = () => {
+const submitAnswer = () => {
     if (quizSel < 0 || quizAnswered) return;
     const q = quizQs[quizIdx];
     const correct = quizSel === q.a;
@@ -311,24 +277,22 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     setQuizMode(false);
   };
 
-  const finishQuiz = () => markComplete(activeIdx);
+  const finishQuiz = () => {
+    if (quizScore < 4) return;
+    markComplete(activeIdx);
+  };
 
-  // Build content blocks for active topic with ad sequence
   const topic = activeIdx !== null ? topics[activeIdx] : null;
   const contentBlocks = topic
-    ? injectAds(topic.contentHTML || `<p class="learn-p">${topic.content || ''}</p>`, 
+    ? injectAds(topic.contentHTML || `<p class="learn-p">${topic.content || ''}</p>`,
         AD_EVERY_NTH_SUBHEADING, MAX_ADS_PER_PAGE, activeIdx, adSequence)
     : [];
 
   const overallPct = topics.length ? Math.round((completedTopics.length / topics.length) * 100) : 0;
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // RENDER — Topic List (when no active topic)
-  // ─────────────────────────────────────────────────────────────────────────
   if (activeIdx === null) {
     return (
       <div className="scr fd learn-page" style={{ height: '100dvh', display: 'flex', flexDirection: 'column' }}>
-        {/* Header — full size when showing topic list */}
         <div className="learn-header learn-header-full"
           style={{ background: `linear-gradient(135deg,#1A1A2E,${meta.color || '#6C63FF'})` }}>
           <div className="learn-header-top-row">
@@ -347,19 +311,16 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
               </div>
             </div>
           </div>
-          {/* Overall progress bar */}
           <div className="learn-header-progress-bar">
             <div className="learn-header-progress-fill" style={{ width: `${overallPct}%`, background: '#D4AF37' }} />
           </div>
           <div className="learn-header-progress-label">{overallPct}% complete</div>
         </div>
 
-        {/* Topic cards */}
         <div className="scroll learn-body" style={{ flex: 1, overflowY: 'auto' }}>
           <div className="learn-topic-list">
             {topics.map((t, i) => {
               const isDone   = completedTopics.includes(i);
-              // Topic i is locked if topic i-1 is not done (first topic always unlocked)
               const isLocked = i > 0 && !completedTopics.includes(i - 1);
               return (
                 <TopicCard
@@ -383,15 +344,11 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     );
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // RENDER — Topic Content View
-  // ─────────────────────────────────────────────────────────────────────────
   const isDoneNow = completedTopics.includes(activeIdx);
   const quizScore = quizResults.filter((r) => r.correct).length;
 
   return (
     <div className="scr fd learn-page" style={{ height: '100dvh', display: 'flex', flexDirection: 'column' }}>
-      {/* Collapsible header — shrinks when scrolling */}
       <div className={`learn-header ${headerCollapsed ? 'learn-header-collapsed' : 'learn-header-full'}`}
         style={{ background: `linear-gradient(135deg,#1A1A2E,${meta.color || '#6C63FF'})` }}>
         <div className="learn-header-top-row">
@@ -413,7 +370,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
                 <div className="learn-subject-meta">Topic {activeIdx + 1} of {topics.length}{isDoneNow ? ' · ✅ Completed' : ''}</div>
               </div>
             </div>
-            {/* TTS bar in header */}
             <div className="learn-tts-bar learn-tts-compact">
               <select className="learn-voice-select" value={selectedCharId}
                 onChange={(e) => setSelectedCharId(e.target.value)} aria-label="Select voice">
@@ -433,7 +389,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
         )}
       </div>
 
-      {/* ── Quiz mode ─────────────────────────────────────────────────────── */}
       {quizMode ? (
         <div className="scroll learn-quiz-overlay" ref={scrollRef} style={{ flex: 1, overflowY: 'auto' }}>
           <div className="learn-quiz-header">
@@ -445,7 +400,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
 
           {!quizDone && quizQs[quizIdx] && (
             <div className="learn-quiz-card">
-              {/* Progress dots */}
               <div className="learn-quiz-dots">
                 {quizQs.map((_, i) => (
                   <div key={i} className={`learn-quiz-dot ${i < quizIdx ? 'done' : i === quizIdx ? 'active' : ''}`} />
@@ -472,7 +426,7 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
               </div>
 
               {!quizAnswered
-                             ? <button className="learn-quiz-submit" onClick={submitAnswer}
+                ? <button className="learn-quiz-submit" onClick={submitAnswer}
                     disabled={quizSel < 0} style={{ background: meta.color }}>
                     Submit Answer →
                   </button>
@@ -489,14 +443,17 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
             </div>
           )}
 
-          {/* Results screen */}
           {quizDone && (
             <div className="learn-quiz-results">
               <div className="learn-quiz-results-score" style={{ color: meta.color }}>
                 {quizScore}/{quizQs.length}
               </div>
               <div className="learn-quiz-results-label">
-                {quizScore === quizQs.length ? '🎉 Perfect score!' : quizScore >= quizQs.length * 0.6 ? '👍 Well done!' : '📚 Keep studying!'}
+                {quizScore === quizQs.length
+                  ? '🎉 Perfect score!'
+                  : quizScore >= 4
+                  ? '👍 Well done! You passed!'
+                  : `📚 You need 4/5 to complete this topic. You got ${quizScore}/5.`}
               </div>
               <div className="learn-quiz-results-list">
                 {quizResults.map((r, i) => (
@@ -506,20 +463,20 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
                   </div>
                 ))}
               </div>
-              <button className="learn-quiz-finish-btn" onClick={finishQuiz}
-                style={{ background: meta.color }}>
-                ✅ Mark Topic Complete →
-              </button>
-              {quizScore < quizQs.length * 0.6 && (
+              {quizScore >= 4 ? (
+                <button className="learn-quiz-finish-btn" onClick={finishQuiz}
+                  style={{ background: meta.color }}>
+                  ✅ Mark Topic Complete →
+                </button>
+              ) : (
                 <button className="learn-quiz-retry-btn" onClick={startQuiz}>
-                  🔄 Retry Quiz
+                  🔄 Retry Quiz — need {4 - quizScore} more correct
                 </button>
               )}
             </div>
           )}
         </div>
       ) : (
-        // ── Content view ────────────────────────────────────────────────────
         <div className="scroll" ref={scrollRef} onScroll={handleScroll}
           style={{ flex: 1, overflowY: 'auto', padding: '0 0 24px' }}>
           <div style={{ padding: '12px 16px 0', fontSize: fSize }}>
@@ -529,7 +486,6 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
             ))}
           </div>
 
-          {/* Bottom action bar */}
           <div className="learn-content-footer">
             {isDoneNow
               ? <div className="learn-completed-badge">✅ Topic Completed</div>
@@ -551,7 +507,7 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
                 {isDoneNow ? 'Next →' : '🔒 Next'}
               </button>
             </div>
-            <p className="learn-keyboard-hint">⌨️ Arrow keys to navigate · Complete quiz to unlock next topic</p>
+            <p className="learn-keyboard-hint">⌨️ Arrow keys to navigate · Score 4/5 to unlock next topic</p>
           </div>
         </div>
       )}
