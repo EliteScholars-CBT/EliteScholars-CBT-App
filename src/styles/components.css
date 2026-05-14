@@ -1,4 +1,4 @@
-/* Challenge notification — perfectly centered */
+/* Challenge notification — slide in from right, slide out to left */
 .notification-popup {
   position: fixed;
   bottom: 90px;
@@ -18,15 +18,15 @@
   gap: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.1);
   z-index: 1000;
-  animation: challengeSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInFromRight 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
 }
 
-/* Smooth hiding animation */
+/* Hiding state — slide out to left */
 .notification-popup.hiding {
-  animation: challengeSlideOut 0.3s ease forwards;
+  animation: slideOutToLeft 0.3s ease forwards;
 }
 
-/* Icon pulse animation */
 .notification-popup .popup-icon {
   font-size: 32px;
   animation: swordPulse 1s ease infinite;
@@ -50,6 +50,7 @@
 .notification-popup .popup-text span {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.65);
+  word-break: break-word;
 }
 
 .notification-popup .popup-dismiss {
@@ -68,7 +69,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Dark mode styles */
+/* Dark mode */
 body.dark-mode .notification-popup {
   background: linear-gradient(135deg, #1a1a2e, #2a1a4a);
   border-color: var(--gold);
@@ -78,33 +79,26 @@ body.dark-mode .notification-popup .popup-text span {
   color: rgba(255, 255, 255, 0.6);
 }
 
-body.dark-mode .notification-popup .popup-dismiss {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-body.dark-mode .notification-popup .popup-dismiss:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Smooth animations — GPU accelerated */
-@keyframes challengeSlideIn {
-  from {
-    transform: translate(-50%, 20px) scale(0.95);
+/* Slide in: from right (off-screen) → center */
+@keyframes slideInFromRight {
+  0% {
+    transform: translate(calc(-50% + 100vw), 0);
     opacity: 0;
   }
-  to {
-    transform: translate(-50%, 0) scale(1);
+  100% {
+    transform: translate(-50%, 0);
     opacity: 1;
   }
 }
 
-@keyframes challengeSlideOut {
-  from {
-    transform: translate(-50%, 0) scale(1);
+/* Slide out: from center → left (off-screen) */
+@keyframes slideOutToLeft {
+  0% {
+    transform: translate(-50%, 0);
     opacity: 1;
   }
-  to {
-    transform: translate(-50%, 20px) scale(0.95);
+  100% {
+    transform: translate(calc(-50% - 100vw), 0);
     opacity: 0;
   }
 }
@@ -117,6 +111,7 @@ body.dark-mode .notification-popup .popup-dismiss:hover {
     transform: scale(1.15) rotate(5deg);
   }
 }
+
 
 
 /* ============================================================================
