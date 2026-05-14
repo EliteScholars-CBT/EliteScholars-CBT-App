@@ -732,9 +732,21 @@
   padding: 16px;
   margin-bottom: 12px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
 }
-.settings-card:hover { transform: translateY(-2px); }
+.settings-card:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+}
+.settings-card:hover .settings-name,
+.settings-card:hover .settings-desc,
+.settings-card:hover .settings-arrow {
+  color: #1a0030;
+}
+.settings-card:hover .settings-icon {
+  filter: brightness(0.9);
+}
 .settings-item {
   display: flex;
   align-items: center;
@@ -807,31 +819,6 @@
 .about-settings-card:hover .settings-icon,
 .terms-settings-card:hover .settings-icon,
 .privacy-settings-card:hover .settings-icon {
-  filter: brightness(0.9);
-}
-
-/* Settings Card Hover - Make text visible on hover */
-.settings-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: var(--shadow);
-  transition: all 0.2s;
-  cursor: pointer;
-}
-.settings-card:hover {
-  transform: translateY(-2px);
-  background: var(--gold);
-}
-
-.settings-card:hover .settings-name,
-.settings-card:hover .settings-desc,
-.settings-card:hover .settings-arrow {
-  color: #1a0030;
-}
-
-.settings-card:hover .settings-icon {
   filter: brightness(0.9);
 }
 
@@ -4474,4 +4461,15 @@ body.dark-mode .guardian-input:focus {
 
 body.dark-mode .guardian-card:hover {
   background: #1a0030 !important;
+}
+/* Guardian mobile fix */
+@media (max-width: 400px) {
+  .guardian-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .guardian-save-btn {
+    width: 100%;
+    padding: 10px;
+  }
 }
