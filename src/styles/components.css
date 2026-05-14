@@ -4475,8 +4475,9 @@ body.dark-mode .guardian-card:hover {
 
 /* Challenge notification — fixed sizing */
 .notification-popup {
-  left: 50%;
+  left: 0;
   transform: translateX(-50%);
+  margin: 0 auto;
   width: calc(100vw - 64px);
   max-width: 360px;
   min-width: 280px;
