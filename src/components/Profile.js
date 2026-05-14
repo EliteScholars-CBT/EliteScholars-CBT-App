@@ -69,10 +69,15 @@ export default function Profile({
     );
 
     // Build full list: all achievements, marking earned vs locked
+    // SORTED: earned first (true comes before false)
     const full = Object.values(ACHIEVEMENTS).map((a) => ({
       ...a,
       earned: earnedIds.has(a.id),
-    }));
+    })).sort((a, b) => {
+      // Sort by earned status: earned (true) first, then locked (false)
+      if (a.earned === b.earned) return 0;
+      return a.earned ? -1 : 1;
+    });
 
     // Earned count for tab label
     const earned = full.filter((a) => a.earned);
@@ -303,7 +308,6 @@ export default function Profile({
               )}
             </div>
           )}
-
           {/* ── SETTINGS TAB ── */}
           {activeTab === 'settings' && (
             <div className="profile-stats-section">
