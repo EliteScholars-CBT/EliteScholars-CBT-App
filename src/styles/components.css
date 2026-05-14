@@ -2091,6 +2091,20 @@ body.dark-mode .mode-select-card {
   }
 }
 
+body.dark-mode .notification-popup {
+  background: linear-gradient(135deg, #1a1a2e, #2a1a4a);
+  border-color: var(--gold);
+}
+body.dark-mode .notification-popup .popup-text span {
+  color: rgba(255, 255, 255, 0.6);
+}
+body.dark-mode .notification-popup .popup-dismiss {
+  color: rgba(255, 255, 255, 0.35);
+}
+body.dark-mode .notification-popup .popup-dismiss:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* ============================================================================
    LEADERBOARD PAGE
    ============================================================================ */
