@@ -916,3 +916,23 @@ body.dark-mode .learn-quiz-result-row.wrong   { background: rgba(239,68,68,0.12)
 body.dark-mode .learn-quiz-results-label { color: #D1D5DB; }
 body.dark-mode .learn-quiz-finish-btn, body.dark-mode .learn-quiz-retry-btn { background: #2d1b4e; color: #C4B5FD; }
 body.dark-mode .learn-completed-badge { background: rgba(22,163,74,0.15); color: #4ADE80; }
+
+body.dark-mode .learn-quiz-opt.selected {
+  background: rgba(108, 63, 201, 0.2);
+  border-color: #a78bfa;
+  color: #c4b5fd;
+}
+body.dark-mode .learn-quiz-opt.correct {
+  background: rgba(22, 163, 74, 0.15);
+  border-color: #4ade80;
+  color: #4ade80;
+}
+body.dark-mode .learn-quiz-opt.wrong {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #f87171;
+  color: #fca5a5;
+}
+body.dark-mode .learn-quiz-opt-letter {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
