@@ -4472,3 +4472,14 @@ body.dark-mode .guardian-card:hover {
     padding: 10px;
   }
 }
+
+/* Challenge notification — fixed sizing */
+.notification-popup {
+  left: auto;
+  right: 16px;
+  width: calc(100vw - 32px);
+  max-width: 360px;
+  min-width: 280px;
+  margin-left: 0;
+  box-sizing: border-box;
+}
