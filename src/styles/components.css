@@ -2508,7 +2508,24 @@ body.dark-mode .notification-popup .popup-dismiss:hover {
 .history-date {
   font-size: 10px;
   color: var(--text-secondary);
+
+
+
+
+/* Guardian mobile fix */
+@media (max-width: 400px) {
+  .guardian-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .guardian-save-btn {
+    width: 100%;
+    padding: 10px;
+  }
 }
+
+
+
 
 /* ============================================================================
    XP BAR COMPONENT
