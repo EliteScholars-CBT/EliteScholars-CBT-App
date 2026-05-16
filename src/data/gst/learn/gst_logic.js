@@ -4488,6 +4488,7 @@ export const GST_LEARN_GST_LOGIC = [
       e: "Intuitive decision-making (based on expert pattern recognition) works best for experienced experts in familiar situations, especially under time pressure. Chess grandmasters, experienced surgeons, and firefighters can make excellent rapid decisions this way. But intuition fails in novel, unfamiliar situations where accumulated patterns don't apply.",
       h: "Intuition = compressed expertise + pattern recognition. Works for EXPERTS in FAMILIAR situations. Fails for novices or novel contexts.",
       yr: "GST"
+    }
   ]
 },
 
