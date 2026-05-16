@@ -11,7 +11,7 @@ export const POPOVER_AD_SCRIPT = 'https://fixesconsessionconsession.com/63/ce/c2
 export const PUBLISHER_AD_ENABLED = true;
 export const PUBLISHER_AD_SCRIPT  = 'https://pl29020764.effectivecpmnetwork.com/ec0487cde03d79b75629df8828d753f9/invoke.js';
 
-export const AD_EVERY_NTH_SUBHEADING = 2;
+export const AD_EVERY_NTH_SUBHEADING = 1;
 export const MAX_ADS_PER_PAGE        = 5;
 
 export const AFFILIATE_ADS_ENABLED = true;
