@@ -155,7 +155,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
         <div className="shop-header-content">
           <div className="shop-title">🛍️ Shop</div>
       </div>
-
+      </div>
       <div className="shop-body">
 
         {/* ── Premium active ── */}
