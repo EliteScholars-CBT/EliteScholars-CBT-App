@@ -6,6 +6,7 @@
 // ============================================================================
 
 export const GST_LEARN_GST_LOGIC = [
+  {
   topic: "Introduction to Logic and Critical Thinking",
   topicCode: "LCT-001-01",
   module: "Foundations of Logical Reasoning",
