@@ -1432,7 +1432,7 @@ export const GST_LEARN_GST_LOGIC = [
       q: "A definition that introduces a new term or assigns a specific meaning to an existing term for a particular purpose, without claiming to describe established usage, is called:",
       o: ["Lexical definition", "Precising definition", "Stipulative definition", "Theoretical definition"],
       a: 2,
-      e: "A stipulative definition introduces or assigns a meaning for a specific purpose without claiming to reflect established usage. It cannot be 'wrong' — only more or less useful. 'For this analysis, let "young adult" mean 18–25 years of age' is a stipulative definition.",
+      e: "A stipulative definition introduces or assigns a meaning for a specific purpose without claiming to reflect established usage. It cannot be 'wrong' — only more or less useful. 'For this analysis, let \"young adult\" mean 18–25 years of age' is a stipulative definition.",
       h: "The root word is 'stipulate' — to specify or prescribe. The definer is setting the terms, not reporting existing ones.",
       yr: "GST"
     },
