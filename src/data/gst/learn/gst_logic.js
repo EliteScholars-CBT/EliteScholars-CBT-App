@@ -5,7 +5,7 @@
 // 10 Topics | 200 Questions | Full HTML Content with Animated SVGs
 // ============================================================================
 
-export const GST_LEARN_GST_LOGIC = [
+export default const GST_LEARN_GST_LOGIC = [
   {
   topic: "Introduction to Logic and Critical Thinking",
   topicCode: "LCT-001-01",
@@ -5008,41 +5008,4 @@ export const GST_LEARN_GST_LOGIC = [
       yr: "GST"
     }
   ]
-};
-
-// ============================================================================
-// MAIN EXPORT
-// ============================================================================
-
-export const LOGIC_CONTENT = [
-  TOPIC_1,
-  TOPIC_2,
-  TOPIC_3,
-  TOPIC_4,
-  TOPIC_5,
-  TOPIC_6,
-  TOPIC_7,
-  TOPIC_8,
-  TOPIC_9,
-  TOPIC_10
-];
-
-export const LOGIC_MODULE_META = {
-  courseCode: "GST 112 / PHIL 101",
-  courseTitle: "Logic and Critical Thinking",
-  standard: "CCMAS (Core Curriculum and Minimum Academic Standards)",
-  totalTopics: 10,
-  totalQuestions: 200,
-  modules: [
-    { name: "Foundations of Logical Reasoning", topics: [1, 2] },
-    { name: "Language, Meaning, and Clarity", topics: [3] },
-    { name: "Classical Logic", topics: [4, 5] },
-    { name: "Symbolic Logic", topics: [6] },
-    { name: "Inductive Logic and Scientific Reasoning", topics: [7] },
-    { name: "Critical Evaluation of Arguments", topics: [8] },
-    { name: "Applied Critical Thinking", topics: [9, 10] }
-  ],
-  version: "1.0.0"
-};
-
-export default LOGIC_CONTENT;
+}]
