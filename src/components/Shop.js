@@ -153,7 +153,7 @@ export default function Shop({ userEmail, name, premiumUser, onPremiumActivated 
       <div className="shop-header">
         <div className="shop-header-glow" />
         <div className="shop-header-content">
-          <div className="shop-title">🛍️ Shop</div>
+          <div className="shop-title">🛍️ Elite Shop</div>
       </div>
       </div>
       <div className="shop-body">
