@@ -230,6 +230,24 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
   };
 
   const startQuiz = useCallback(() => {
+  // Get current topic's questions
+  const currentTopic = topics[activeIdx];
+  const topicQuestions = currentTopic?.questions || [];
+  
+  if (topicQuestions.length > 0) {
+    // Use topic-specific questions
+    const shuffled = [...topicQuestions].sort(() => Math.random() - 0.5)
+      .slice(0, Math.min(5, topicQuestions.length));
+    setQuizQs(shuffled);
+    setQuizIdx(0); 
+    setQuizSel(-1);
+    setAnswered(false); 
+    setResults([]); 
+    setQuizDone(false);
+    setQuizMode(true);
+    setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
+  } else {
+    // Fallback to question bank if no topic-specific questions
     const bankPromise = examType === 'neco' ? import('../data/neco/index').then(m => m.NECO_QB)
       : examType === 'gst'   ? import('../data/gst/index').then(m => m.GST_QB)
       : (examType === 'jamb' || examType === 'postutme') ? import('../data/jamb/index').then(m => m.QB)
@@ -248,7 +266,9 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
       setQuizMode(true);
       setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
     });
-  }, [subjectId, examType, activeIdx]);
+  }
+}, [subjectId, examType, activeIdx, topics]);
+
 const submitAnswer = () => {
     if (quizSel < 0 || quizAnswered) return;
     const q = quizQs[quizIdx];
