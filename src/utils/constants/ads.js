@@ -14,7 +14,7 @@ export const PUBLISHER_AD_SCRIPT  = 'https://www.highperformanceformat.com/6eb83
 export const AD_EVERY_NTH_SUBHEADING = 1;
 export const MAX_ADS_PER_PAGE        = 8;
 
-export const AFFILIATE_ADS_ENABLED = true;
+export const AFFILIATE_ADS_ENABLED = false;
 export const AFFILIATE_ADS = [
   {
   image:       '/images/ads/palmpay-students.jpg',
