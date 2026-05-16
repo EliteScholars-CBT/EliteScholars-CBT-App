@@ -5,7 +5,7 @@
 // 10 Topics | 200 Questions | Full HTML Content with Animated SVGs
 // ============================================================================
 
-export default const GST_LEARN_GST_LOGIC = [
+export const GST_LEARN_GST_LOGIC = [
   {
   topic: "Introduction to Logic and Critical Thinking",
   topicCode: "LCT-001-01",
