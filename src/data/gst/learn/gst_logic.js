@@ -565,9 +565,9 @@ export const GST_LEARN_GST_LOGIC = [
       yr: "GST"
     }
   ]
-};
+},
 
-const TOPIC_2 = {
+{
   topic: "Basic Concepts in Logic",
   topicCode: "LCT-002-01",
   module: "Foundations of Logical Reasoning",
@@ -1118,9 +1118,9 @@ const TOPIC_2 = {
       yr: "GST"
     }
   ]
-};
+},
 
-const TOPIC_3 = {
+{
   topic: "Language and Definition",
   topicCode: "LCT-003-01",
   module: "Language, Meaning, and Clarity",
@@ -1579,11 +1579,9 @@ const TOPIC_3 = {
       yr: "GST"
     }
   ]
-};
+},
 
-
-
-const TOPIC_4 = {
+  {
   topic: "Categorical Propositions",
   topicCode: "LCT-004-01",
   module: "Classical Logic",
@@ -2173,9 +2171,9 @@ const TOPIC_4 = {
       yr: "GST"
     }
   ]
-};
-
-const TOPIC_5 = {
+},
+  
+{
   topic: "Categorical Syllogisms",
   topicCode: "LCT-005-01",
   module: "Classical Logic",
@@ -2648,11 +2646,9 @@ const TOPIC_5 = {
       yr: "GST"
     }
   ]
-};
-
-
-
-const TOPIC_6 = {
+},
+  
+{
   topic: "Propositional Logic",
   topicCode: "LCT-006-01",
   module: "Symbolic Logic",
@@ -3111,9 +3107,9 @@ const TOPIC_6 = {
       yr: "GST"
     }
   ]
-};
+},
 
-const TOPIC_7 = {
+{
   topic: "Inductive Reasoning and Fallacies",
   topicCode: "LCT-007-01",
   module: "Inductive Logic and Scientific Reasoning",
@@ -3554,11 +3550,8 @@ const TOPIC_7 = {
       yr: "GST"
     }
   ]
-};
-
-
-
-const TOPIC_8 = {
+},
+{
   topic: "Informal Fallacies",
   topicCode: "LCT-008-01",
   module: "Critical Evaluation of Arguments",
@@ -3998,9 +3991,9 @@ const TOPIC_8 = {
       yr: "GST"
     }
   ]
-};
+},
 
-const TOPIC_9 = {
+{
   topic: "Problem-Solving and Decision Making",
   topicCode: "LCT-009-01",
   module: "Applied Critical Thinking",
@@ -4495,11 +4488,10 @@ const TOPIC_9 = {
       e: "Intuitive decision-making (based on expert pattern recognition) works best for experienced experts in familiar situations, especially under time pressure. Chess grandmasters, experienced surgeons, and firefighters can make excellent rapid decisions this way. But intuition fails in novel, unfamiliar situations where accumulated patterns don't apply.",
       h: "Intuition = compressed expertise + pattern recognition. Works for EXPERTS in FAMILIAR situations. Fails for novices or novel contexts.",
       yr: "GST"
-    }
   ]
-};
+},
 
-const TOPIC_10 = {
+{
   topic: "Argument Analysis and Construction",
   topicCode: "LCT-010-01",
   module: "Applied Critical Thinking",
