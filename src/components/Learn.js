@@ -21,6 +21,7 @@ import {
 
 const FONT_SIZES = [13, 15, 17, 19, 21];
 const STORAGE_KEY = (examType, subjectId) => `es_learn_${examType}_${subjectId}`;
+const MIN_CORRECT_ANSWERS = 4;
 
 function stripHtml(html = '') {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -298,7 +299,7 @@ const submitAnswer = () => {
   };
 
   const finishQuiz = () => {
-    if (quizScore < 4) return;
+    if (quizScore < MIN_CORRECT_ANSWERS) return;
     markComplete(activeIdx);
   };
 
@@ -471,9 +472,9 @@ const submitAnswer = () => {
               <div className="learn-quiz-results-label">
                 {quizScore === quizQs.length
                   ? '🎉 Perfect score!'
-                  : quizScore >= 4
+                  : quizScore >= MIN_CORRECT_ANSWERS
                   ? '👍 Well done! You passed!'
-                  : `📚 You need 4/5 to complete this topic. You got ${quizScore}/5.`}
+                  : `📚 You need ${MIN_CORRECT_ANSWERS}/5 to complete this topic. You got ${quizScore}/5.`}
               </div>
               <div className="learn-quiz-results-list">
                 {quizResults.map((r, i) => (
@@ -483,14 +484,14 @@ const submitAnswer = () => {
                   </div>
                 ))}
               </div>
-              {quizScore >= 4 ? (
+              {quizScore >= 0 ? (
                 <button className="learn-quiz-finish-btn" onClick={finishQuiz}
                   style={{ background: meta.color }}>
                   ✅ Mark Topic Complete →
                 </button>
               ) : (
                 <button className="learn-quiz-retry-btn" onClick={startQuiz}>
-                  🔄 Retry Quiz — need {4 - quizScore} more correct
+                  🔄 Retry Quiz — need {MIN_CORRECT_ANSWERS - quizScore} more correct
                 </button>
               )}
             </div>
@@ -527,7 +528,7 @@ const submitAnswer = () => {
                 {isDoneNow ? 'Next →' : '🔒 Next'}
               </button>
             </div>
-            <p className="learn-keyboard-hint">⌨️ Arrow keys to navigate · Score 4/5 to unlock next topic</p>
+            <p className="learn-keyboard-hint">{`⌨️ Arrow keys to navigate · Score ${MIN_CORRECT_ANSWERS}/5 to unlock next topic`}</p>
           </div>
         </div>
       )}
