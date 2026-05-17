@@ -1010,3 +1010,196 @@ body.dark-mode .learn-quiz-summary {
   background: #1a0030;
 }
 
+/* ============================================================================
+   DARK MODE — COMPLETE TEXT FIX (add to end of CSS)
+   ============================================================================ */
+
+/* Force all text to be white/light in dark mode */
+body.dark-mode,
+body.dark-mode .learn-page,
+body.dark-mode .learn-content-html,
+body.dark-mode .learn-accordion-body,
+body.dark-mode .learn-quiz-overlay,
+body.dark-mode .learn-quiz-card,
+body.dark-mode .learn-topic-list {
+  background: #0a0015;
+}
+
+/* ALL text elements — force light color */
+body.dark-mode .learn-content-html .learn-p,
+body.dark-mode .learn-content-html .learn-list li,
+body.dark-mode .learn-content-html .learn-intro,
+body.dark-mode .learn-content-html .learn-tip-box,
+body.dark-mode .learn-content-html .learn-worked-example,
+body.dark-mode .learn-content-html .learn-formula,
+body.dark-mode .learn-content-html .learn-table td,
+body.dark-mode .learn-content-html .learn-table td *,
+body.dark-mode .learn-quiz-exp-text,
+body.dark-mode .learn-quiz-results-label,
+body.dark-mode .learn-quiz-opt,
+body.dark-mode .learn-quiz-q,
+body.dark-mode .learn-accordion-title,
+body.dark-mode .learn-topic-title,
+body.dark-mode .learn-topic-status,
+body.dark-mode .learn-quiz-results-score,
+body.dark-mode .learn-completed-badge {
+  color: #F3F4F6 !important;
+}
+
+/* Subheadings */
+body.dark-mode .learn-content-html .learn-subheading,
+body.dark-mode .learn-content-html h3.learn-subheading {
+  color: #c4b5fd !important;
+  border-bottom-color: #3d2a5e;
+}
+
+/* Table header already white (good) — ensure background */
+body.dark-mode .learn-content-html .learn-table thead tr {
+  background: #6C3FC9;
+}
+body.dark-mode .learn-content-html .learn-table th {
+  color: #ffffff !important;
+}
+
+/* Table rows alternating background */
+body.dark-mode .learn-content-html .learn-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.08);
+}
+body.dark-mode .learn-content-html .learn-table tbody tr {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Intro box */
+body.dark-mode .learn-content-html .learn-intro {
+  background: rgba(108, 63, 201, 0.2) !important;
+  border-left-color: #a78bfa;
+}
+
+/* Keyword highlights */
+body.dark-mode .learn-content-html .learn-keyword {
+  background: rgba(167, 139, 250, 0.25);
+  color: #d8b4fe !important;
+}
+
+/* Tip boxes */
+body.dark-mode .learn-content-html .learn-tip-box {
+  background: rgba(212, 175, 55, 0.1) !important;
+  border-color: #d4af37;
+  color: #ffeb82 !important;
+}
+body.dark-mode .learn-content-html .learn-tip-warn {
+  background: rgba(244, 63, 94, 0.1) !important;
+  border-color: #f43f5e;
+  color: #fca5a5 !important;
+}
+
+/* Accordion items */
+body.dark-mode .learn-accordion-item {
+  background: #1a0030;
+}
+body.dark-mode .learn-accordion-num {
+  background: #2d1b4e;
+  color: #c4b5fd;
+}
+body.dark-mode .learn-accordion-title {
+  color: #F3F4F6 !important;
+}
+
+/* Topic cards */
+body.dark-mode .learn-topic-card {
+  background: #1a0030;
+}
+body.dark-mode .learn-topic-card.active {
+  background: linear-gradient(135deg, #1a0030, #2d1b4e);
+  border-color: #a78bfa;
+}
+body.dark-mode .learn-topic-title {
+  color: #F3F4F6 !important;
+}
+body.dark-mode .learn-topic-num {
+  background: #2d1b4e;
+  color: #c4b5fd;
+}
+
+/* Quiz */
+body.dark-mode .learn-quiz-card {
+  background: #1a0030;
+}
+body.dark-mode .learn-quiz-q {
+  color: #c4b5fd !important;
+}
+body.dark-mode .learn-quiz-opt {
+  background: rgba(108, 63, 201, 0.15);
+  border-color: #3d2a5e;
+  color: #F3F4F6 !important;
+}
+body.dark-mode .learn-quiz-opt.selected {
+  background: rgba(108, 63, 201, 0.35);
+  border-color: #a78bfa;
+  color: #d8b4fe !important;
+}
+body.dark-mode .learn-quiz-opt.correct {
+  background: rgba(22, 163, 74, 0.2);
+  border-color: #4ade80;
+  color: #4ade80 !important;
+}
+body.dark-mode .learn-quiz-opt.wrong {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #f87171;
+  color: #fca5a5 !important;
+}
+body.dark-mode .learn-quiz-exp-text {
+  background: rgba(108, 63, 201, 0.1);
+  color: #F3F4F6 !important;
+}
+body.dark-mode .learn-quiz-summary {
+  background: #1a0030;
+}
+body.dark-mode .learn-quiz-results-score {
+  color: #c4b5fd !important;
+}
+body.dark-mode .learn-quiz-result-row.correct {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80 !important;
+}
+body.dark-mode .learn-quiz-result-row.wrong {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5 !important;
+}
+
+/* Buttons */
+body.dark-mode .learn-nav-btn,
+body.dark-mode .learn-quiz-retry-btn {
+  background: #2d1b4e;
+  color: #c4b5fd;
+}
+body.dark-mode .learn-completed-badge {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80 !important;
+}
+
+/* Tense cards */
+body.dark-mode .learn-content-html .learn-tense-past {
+  background: rgba(153, 27, 27, 0.3);
+  color: #fca5a5;
+}
+body.dark-mode .learn-content-html .learn-tense-present {
+  background: rgba(6, 95, 70, 0.3);
+  color: #86efac;
+}
+body.dark-mode .learn-content-html .learn-tense-future {
+  background: rgba(29, 78, 216, 0.3);
+  color: #93c5fd;
+}
+
+/* SVG text — ensure visible */
+body.dark-mode .learn-svg text {
+  fill: #F3F4F6 !important;
+}
+body.dark-mode .learn-svg rect,
+body.dark-mode .learn-svg circle,
+body.dark-mode .learn-svg polyline,
+body.dark-mode .learn-svg polygon,
+body.dark-mode .learn-svg path {
+  stroke: #a78bfa;
+}
