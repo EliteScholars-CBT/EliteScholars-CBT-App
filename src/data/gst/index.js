@@ -16,7 +16,7 @@ import { GST_LEARN_GST_COMPUTE } from './learn/gst_compute';
 import { GST_LEARN_GST_ENTREPRENEURSHIP } from './learn/gst_entrepreneurship';
 import { GST_LEARN_GST_PEACE } from './learn/gst_peace';
 import { GST_LEARN_GST_COMMUNICATION } from './learn/gst_communication';
-import { GST_LEARN_GST_ENVIRONMENTAL } from './learn/gst_environment';
+import { GST_LEARN_GST_ENVIRONMENT } from './learn/gst_environment';
 
 export const GST_SUBJECTS = [
   { id: 'gst_english',          label: 'Use of English',                    icon: '📝', color: '#0369A1', bg: '#E0F2FE' },
