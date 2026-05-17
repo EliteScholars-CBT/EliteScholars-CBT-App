@@ -2,7 +2,7 @@
 // GST Question Bank — Introduction to Computing
 // ============================================================================
 
-export const GST_QB_GST_COMPUTE = [
+export const GST_QB_GST_COMPUTING = [
   { q: 'The CPU stands for:', o: ['Central Processing Unit', 'Computer Processing Unit', 'Central Program Utility', 'Core Processing Unit'], a: 0, e: 'CPU = Central Processing Unit — the "brain" of the computer that executes instructions.', h: 'Central = main; Processing = working; Unit = part.', yr: '2023' },
   { q: 'Which of the following is an example of an operating system?', o: ['Microsoft Word', 'Google Chrome', 'Windows 11', 'Adobe Photoshop'], a: 2, e: 'Windows 11 is an operating system — software that manages computer hardware and provides services for programs.', h: 'What runs the computer itself?', yr: '2022' },
   { q: 'RAM stands for:', o: ['Random Access Memory', 'Read Access Memory', 'Rapid Action Memory', 'Remote Access Module'], a: 0, e: 'RAM (Random Access Memory) is volatile memory that temporarily stores data the CPU is actively using.', h: 'Temporary, fast, lost when power off.', yr: '2023' },
