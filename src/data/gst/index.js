@@ -2,7 +2,7 @@ import { GST_QB_GST_ENGLISH } from './questions/gst_english';
 import { GST_QB_GST_LOGIC } from './questions/gst_logic';
 import { GST_QB_GST_NIGERIAN } from './questions/gst_nigerian';
 import { GST_QB_GST_HISTORY } from './questions/gst_history';
-import { GST_QB_GST_COMPUTE } from './questions/gst_compute';
+import { GST_QB_GST_COMPUTING } from './questions/gst_computing';
 import { GST_QB_GST_ENTREPRENEURSHIP } from './questions/gst_entrepreneurship';
 import { GST_QB_GST_PEACE } from './questions/gst_peace';
 import { GST_QB_GST_COMMUNICATION } from './questions/gst_communication';
