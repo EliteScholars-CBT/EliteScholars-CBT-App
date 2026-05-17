@@ -4,7 +4,7 @@
 // GST 225 / ESM 201
 // ============================================================================
 
-export const GST_LEARN_GST_ENVIRONMENTAL = [
+export const GST_LEARN_GST_ENVIRONMENT = [
   // ==========================================================================
   // TOPIC 1: Introduction to Environmental Education
   // ==========================================================================
@@ -1009,12 +1009,6 @@ export const GST_LEARN_GST_ENVIRONMENTAL = [
       { q: "Adaptation to climate change includes:", o: ["Reducing fossil fuel use", "Building flood defenses and developing drought-resistant crops", "Planting trees", "Using solar panels"], a: 1, e: "Adaptation = adjusting to impacts: flood defenses, drought crops, early warnings, resilient infrastructure.", h: "What is adaptation?", yr: "GST" }
     ]
   },
-
-  // ============================================================================
-// ENVIRONMENTAL EDUCATION — PART 3 OF 3 (CLEAN - NO INLINE STYLES)
-// Continuing GST_LEARN_GST_ENVIRONMENTAL array from Part 2
-// TOPICS 7, 8, 9, 10
-// ============================================================================
 
   // ==========================================================================
   // TOPIC 7: Environmental Laws and Policies in Nigeria
