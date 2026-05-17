@@ -33,9 +33,9 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       </tr>
       <tr><td>Entrepreneur</th>。<th>Individual who organizes, manages, and assumes risk of business</th>。<th>Innovative, proactive, risk-tolerant, opportunity-focused, resilient</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Intrapreneur</th>。<th>Employee who acts like an entrepreneur within an existing organization</th>。<th>Innovation within corporate setting, internal venture creation</th>
+      <tr><td>Intrapreneur</th>。<th>Employee who acts like an entrepreneur within an existing organization</th>。<th>Innovation within corporate setting, internal venture creation</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Small Business Owner</th>。<th>Owns and operates a business but may not seek growth or innovation</th>。<th>Focuses on stable income, local market, established products</th>
+      <tr><td>Small Business Owner</th>。<th>Owns and operates a business but may not seek growth or innovation</th>。<th>Focuses on stable income, local market, established products</th>
       </tr>
     </tbody>
   </table>
@@ -109,15 +109,15 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Theory</th><th>Key Proponent(s)</th><th>Main Idea</th><th>Nigerian Application</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Economic Theory</th>。<th>Cantillon, Say, Kirzner</th>。<th>Entrepreneurs respond to market opportunities, arbitrage, and resource allocation</th>。<th>Identifying gaps in Nigerian market — e.g., logistics, payments, education</th>
+      <tr><td>Economic Theory</th>。<th>Cantillon, Say, Kirzner</th>。<th>Entrepreneurs respond to market opportunities, arbitrage, and resource allocation</th>。<th>Identifying gaps in Nigerian market — e.g., logistics, payments, education</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Psychological Theory</th>。<th>McClelland (Need for Achievement)</th>。<th>Entrepreneurs have high need for achievement, risk-taking propensity, internal locus of control</th>。<th>Many Nigerian entrepreneurs driven by desire for independence and achievement</th>
+      <tr><td>Psychological Theory</th>。<th>McClelland (Need for Achievement)</th>。<th>Entrepreneurs have high need for achievement, risk-taking propensity, internal locus of control</th>。<th>Many Nigerian entrepreneurs driven by desire for independence and achievement</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Sociological Theory</th>。<th>Weber, Hagen</th>。<th>Social networks, family background, culture shape entrepreneurial behavior</th>。<th>Igbo apprenticeship system ("Igba Boi"), Hausa trading networks, Yoruba entrepreneurship</th>
+      <tr><td>Sociological Theory</th>。<th>Weber, Hagen</th>。<th>Social networks, family background, culture shape entrepreneurial behavior</th>。<th>Igbo apprenticeship system ("Igba Boi"), Hausa trading networks, Yoruba entrepreneurship</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Innovation Theory</th>。<th>Schumpeter (Creative Destruction)</th>。<th>Entrepreneurs innovate by introducing new products, methods, markets, or reorganizing industries</th>。<th>Paystack revolutionizing payments, Flutterwave cross-border transactions</th>
+      <tr><td>Innovation Theory</th>。<th>Schumpeter (Creative Destruction)</th>。<th>Entrepreneurs innovate by introducing new products, methods, markets, or reorganizing industries</th>。<th>Paystack revolutionizing payments, Flutterwave cross-border transactions</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Resource-Based Theory</th>。<th>Penrose, Barney</th>。<th>Entrepreneurs leverage unique resources, capabilities, and networks</th>。<th>Access to capital, technology, talent, and government connections</th>
+      <tr><td>Resource-Based Theory</th>。<th>Penrose, Barney</th>。<th>Entrepreneurs leverage unique resources, capabilities, and networks</th>。<th>Access to capital, technology, talent, and government connections</th>
       </tr>
     </tbody>
   </table>
@@ -239,19 +239,19 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Characteristic</th><th>Description</th><th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Opportunity orientation</th>。<th>Constantly scanning environment for unmet needs, problems to solve</th>。<th>Seeing traffic congestion as opportunity for delivery service, not just annoyance</th>
+      <tr><td>Opportunity orientation</th>。<th>Constantly scanning environment for unmet needs, problems to solve</th>。<th>Seeing traffic congestion as opportunity for delivery service, not just annoyance</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Comfort with uncertainty</th>。<th>Able to act without complete information; tolerates ambiguity</th>。<th>Launching product knowing it may fail; adapting based on feedback</th>
+      <tr><td>Comfort with uncertainty</th>。<th>Able to act without complete information; tolerates ambiguity</th>。<th>Launching product knowing it may fail; adapting based on feedback</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Self-efficacy (confidence)</th>。<th>Belief in ability to succeed despite challenges</th>。<th>"I can figure out how to reach customers even without marketing budget"</th>
+      <tr><td>Self-efficacy (confidence)</th>。<th>Belief in ability to succeed despite challenges</th>。<th>"I can figure out how to reach customers even without marketing budget"</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Resilience and persistence</th>。<th>Bouncing back from failure; trying different approaches</th>。<th>Continuing after customer rejection; pivoting after failed product</th>
+      <tr><td>Resilience and persistence</th>。<th>Bouncing back from failure; trying different approaches</th>。<th>Continuing after customer rejection; pivoting after failed product</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Growth mindset</th>。<th>Believing abilities can be developed through effort, learning</th>。<th>Seeking feedback, learning from mistakes, embracing challenges</th>
+      <tr><td>Growth mindset</th>。<th>Believing abilities can be developed through effort, learning</th>。<th>Seeking feedback, learning from mistakes, embracing challenges</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Passion and intrinsic motivation</th>。<th>Driven by internal satisfaction, not just external rewards</th>。<th>Working long hours because you love solving the problem, not just for money</th>
+      <tr><td>Passion and intrinsic motivation</th>。<th>Driven by internal satisfaction, not just external rewards</th>。<th>Working long hours because you love solving the problem, not just for money</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Proactiveness</th>。<th>Acting in advance of future opportunities or problems</th>。<th>Entering new market before competitors; preparing for regulation changes</th>
+      <tr><td>Proactiveness</th>。<th>Acting in advance of future opportunities or problems</th>。<th>Entering new market before competitors; preparing for regulation changes</th>
       </tr>
     </tbody>
   </table>
@@ -331,13 +331,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Technique</th><th>Description</th><th>How to Use</th><th>Nigerian Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Brainstorming</th>。<th>Generating many ideas without initial criticism</th>。<th>Set time limit, encourage wild ideas, no judgment, build on others' ideas</th>。<th>Team generating features for new app — quantity over quality initially</th>
+      <tr><td>Brainstorming</th>。<th>Generating many ideas without initial criticism</th>。<th>Set time limit, encourage wild ideas, no judgment, build on others' ideas</th>。<th>Team generating features for new app — quantity over quality initially</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">SCAMPER</th>。<th>Seven prompts to modify existing products/services</th>。<th>Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse</th>。<th>Adapting ride-hailing model (Uber) to Nigeria — adding cash payments</th>
+      <tr><td>SCAMPER</th>。<th>Seven prompts to modify existing products/services</th>。<th>Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse</th>。<th>Adapting ride-hailing model (Uber) to Nigeria — adding cash payments</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Mind Mapping</th>。<th>Visual diagram connecting ideas around central concept</th>。<th>Place central idea in middle, branch out related concepts, sub-branches</th>。<th>Exploring business ideas around "agriculture" — processing, logistics, inputs, marketing, exports</th>
+      <tr><td>Mind Mapping</th>。<th>Visual diagram connecting ideas around central concept</th>。<th>Place central idea in middle, branch out related concepts, sub-branches</th>。<th>Exploring business ideas around "agriculture" — processing, logistics, inputs, marketing, exports</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Reverse Brainstorming</th>。<th>Identifying ways to cause failure, then reversing</th>。<th>How could this business fail? Answer reveals what to avoid</th>。<th>For restaurant: fail by having bad service, dirty kitchen — ensure excellent service, cleanliness</th>
+      <tr><td>Reverse Brainstorming</th>。<th>Identifying ways to cause failure, then reversing</th>。<th>How could this business fail? Answer reveals what to avoid</th>。<th>For restaurant: fail by having bad service, dirty kitchen — ensure excellent service, cleanliness</th>
       </tr>
     </tbody>
   </table>
@@ -365,9 +365,9 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Factor Type</th><th>Description</th><th>Examples</th><th>Common in Nigeria</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">PUSH Factors</th>。<th>Negative situations pushing people into entrepreneurship (necessity entrepreneurship)</th>。<th>Unemployment, underemployment, job dissatisfaction, career frustration, family pressure, lack of advancement</th>。<th>Many Nigerian graduates cannot find formal jobs → start small business</th>
+      <tr><td>PUSH Factors</th>。<th>Negative situations pushing people into entrepreneurship (necessity entrepreneurship)</th>。<th>Unemployment, underemployment, job dissatisfaction, career frustration, family pressure, lack of advancement</th>。<th>Many Nigerian graduates cannot find formal jobs → start small business</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">PULL Factors</th>。<th>Positive attractions pulling people toward entrepreneurship (opportunity entrepreneurship)</th>。<th>Desire for independence, wealth creation potential, passion for idea, self-fulfillment, flexibility, legacy building</th>。<th>Tech founders leaving stable jobs to pursue startup ideas</th>
+      <tr><td>PULL Factors</th>。<th>Positive attractions pulling people toward entrepreneurship (opportunity entrepreneurship)</th>。<th>Desire for independence, wealth creation potential, passion for idea, self-fulfillment, flexibility, legacy building</th>。<th>Tech founders leaving stable jobs to pursue startup ideas</th>
       </tr>
     </tbody>
   </table>
@@ -441,13 +441,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Stage</th><th>Description</th><th>What Happens</th><th>How to Facilitate</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">1. Preparation</th>。<th>Immersing in problem, gathering information, learning</th>。<th>Define problem clearly; research; learn domain; examine solutions tried before</th>。<th>Study, ask questions, observe, read, talk to experts, understand constraints</th>
+      <tr><td>1. Preparation</th>。<th>Immersing in problem, gathering information, learning</th>。<th>Define problem clearly; research; learn domain; examine solutions tried before</th>。<th>Study, ask questions, observe, read, talk to experts, understand constraints</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">2. Incubation</th>。<th>Unconscious processing — stepping away from active problem</th>。<th>Mind works on problem subconsciously; not actively thinking about it</th>。<th>Take breaks, sleep on it, do unrelated activities, relax, exercise</th>
+      <tr><td>2. Incubation</th>。<th>Unconscious processing — stepping away from active problem</th>。<th>Mind works on problem subconsciously; not actively thinking about it</th>。<th>Take breaks, sleep on it, do unrelated activities, relax, exercise</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">3. Illumination ("Aha! moment")</th>。<th>Sudden insight — solution appears unexpectedly</th>。<th>Often occurs during incubation (shower, walk, sleep). Intuitive, not fully developed</th>。<th>Capture insights immediately (notebook, phone); trust your subconscious</th>
+      <tr><td>3. Illumination ("Aha! moment")</th>。<th>Sudden insight — solution appears unexpectedly</th>。<th>Often occurs during incubation (shower, walk, sleep). Intuitive, not fully developed</th>。<th>Capture insights immediately (notebook, phone); trust your subconscious</th>
       </table>
-      <tr><td style="background:#f0fdf4;">4. Verification</th>。<th>Testing, refining, implementing the solution</th>。<th>Evaluate idea logically, test prototype, gather feedback, refine, implement</th>。<th>Seek criticism, run experiments, be willing to modify or abandon if flawed</th>
+      <tr><td>4. Verification</th>。<th>Testing, refining, implementing the solution</th>。<th>Evaluate idea logically, test prototype, gather feedback, refine, implement</th>。<th>Seek criticism, run experiments, be willing to modify or abandon if flawed</th>
       </tr>
     </tbody>
   </table>
@@ -523,15 +523,15 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Barrier Type</th><th>Description</th><th>Examples</th><th>How to Overcome</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Perceptual blocks</th>。<th>Seeing things only as they are, not as they could be</th>。<th>Stereotyping, narrow problem definition, failure to see multiple uses</th>。<th>Question assumptions, use analogies, change perspective</th>
+      <tr><td>Perceptual blocks</th>。<th>Seeing things only as they are, not as they could be</th>。<th>Stereotyping, narrow problem definition, failure to see multiple uses</th>。<th>Question assumptions, use analogies, change perspective</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Emotional blocks</th>。<th>Fear, anxiety, negativity</th>。<th>Fear of failure, fear of judgment, fear of looking foolish, intolerance of ambiguity</th>。<th>Create psychological safety, normalize failure as learning, suspend judgment</th>
+      <tr><td>Emotional blocks</th>。<th>Fear, anxiety, negativity</th>。<th>Fear of failure, fear of judgment, fear of looking foolish, intolerance of ambiguity</th>。<th>Create psychological safety, normalize failure as learning, suspend judgment</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Cultural blocks</th>。<th>Social norms discouraging creativity</th>。<th>Conformity pressure, tradition, "don't rock the boat," hierarchy</th>。<th>Encourage diversity of thought, reward creativity, model openness</th>
+      <tr><td>Cultural blocks</th>。<th>Social norms discouraging creativity</th>。<th>Conformity pressure, tradition, "don't rock the boat," hierarchy</th>。<th>Encourage diversity of thought, reward creativity, model openness</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Environmental blocks</th>。<th>Physical or organizational barriers</th>。<th>Distractions, lack of resources, time pressure, rigid rules, poor leadership</th>。<th>Create dedicated creative spaces, provide resources, protect creative time</th>
+      <tr><td>Environmental blocks</th>。<th>Physical or organizational barriers</th>。<th>Distractions, lack of resources, time pressure, rigid rules, poor leadership</th>。<th>Create dedicated creative spaces, provide resources, protect creative time</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Intellectual blocks</th>。<th>Mental habits limiting creativity</th>。<th>Inflexible thinking, information overload, poor problem definition, laziness</th>。<th>Learn creativity techniques, practice regularly, challenge own thinking</th>
+      <tr><td>Intellectual blocks</th>。<th>Mental habits limiting creativity</th>。<th>Inflexible thinking, information overload, poor problem definition, laziness</th>。<th>Learn creativity techniques, practice regularly, challenge own thinking</th>
       </tr>
     </tbody>
   </table>
@@ -552,17 +552,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Innovation Type</th><th>Description</th><th>Degree of Change</th><th>Nigerian Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Incremental innovation</th>。<th>Small improvements to existing products, processes</th>。<th>Low (marginal)</th>。<th>Banks adding mobile app features; improved phone battery life; better customer service</th>
+      <tr><td>Incremental innovation</th>。<th>Small improvements to existing products, processes</th>。<th>Low (marginal)</th>。<th>Banks adding mobile app features; improved phone battery life; better customer service</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Radical innovation</th>。<th>Dramatically new, different from existing</th>。<th>High (transformative)</th>。<th>Internet; smartphones; AI; Paystack's payment integration (disruptive for Nigerian market)</th>
+      <tr><td>Radical innovation</th>。<th>Dramatically new, different from existing</th>。<th>High (transformative)</th>。<th>Internet; smartphones; AI; Paystack's payment integration (disruptive for Nigerian market)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Product innovation</th>。<th>New or improved goods/services</th>。<th>Varies</th>。<th>MTN mobile money; Farmcrowdy agricultural platform; Kuda digital-only bank</th>
+      <tr><td>Product innovation</th>。<th>New or improved goods/services</th>。<th>Varies</th>。<th>MTN mobile money; Farmcrowdy agricultural platform; Kuda digital-only bank</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Process innovation</th>。<th>New ways to produce or deliver</th>。<th>Varies</th>。<th>Logistics automation; online ordering systems; mobile payment at markets</th>
+      <tr><td>Process innovation</th>。<th>New ways to produce or deliver</th>。<th>Varies</th>。<th>Logistics automation; online ordering systems; mobile payment at markets</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Business model innovation</th>。<th>Changing how value is created and captured</th>。<th>Often radical</th>。<th>Pay-per-use model; subscription boxes; marketplace platforms (Jumia, Konga)</th>
+      <tr><td>Business model innovation</th>。<th>Changing how value is created and captured</th>。<th>Often radical</th>。<th>Pay-per-use model; subscription boxes; marketplace platforms (Jumia, Konga)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Disruptive innovation (Christensen)</th>。<th>Starts small/simple, eventually displaces established competitors</th>。<th>High (over time)</th>。<th>Mobile money disrupting traditional banking; online learning disrupting universities</th>
+      <tr><td>Disruptive innovation (Christensen)</th>。<th>Starts small/simple, eventually displaces established competitors</th>。<th>High (over time)</th>。<th>Mobile money disrupting traditional banking; online learning disrupting universities</th>
       </tr>
     </tbody>
   </table>
@@ -695,15 +695,15 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Stage</th><th>Key Activities</th><th>Challenges</th><th>Success Factors</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">1. Opportunity Identification</th>。<th>Scanning environment, recognizing problems, evaluating ideas, observing trends</th>。<th>Confirmation bias, overoptimism, missing market signals, solving wrong problem</th>。<th>Customer discovery, problem validation, opportunity log, talking to potential customers</th>
+      <tr><td>1. Opportunity Identification</th>。<th>Scanning environment, recognizing problems, evaluating ideas, observing trends</th>。<th>Confirmation bias, overoptimism, missing market signals, solving wrong problem</th>。<th>Customer discovery, problem validation, opportunity log, talking to potential customers</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">2. Concept Development</th>。<th>Refining idea, defining value proposition, developing business model, creating MVP plan</th>。<th>Solution before problem, feature creep, unclear target customer, building too much too soon</th>。<th>MVP development, lean canvas, customer feedback loops, early prototyping</th>
+      <tr><td>2. Concept Development</th>。<th>Refining idea, defining value proposition, developing business model, creating MVP plan</th>。<th>Solution before problem, feature creep, unclear target customer, building too much too soon</th>。<th>MVP development, lean canvas, customer feedback loops, early prototyping</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">3. Resource Acquisition</th>。<th>Securing funding, building team, finding space/equipment, forming partnerships</th>。<th>Underestimating capital needs, wrong investors, weak team, timing misalignment</th>。<th>Bootstrapping, smart fundraising, hiring for culture and skills, networking</th>
+      <tr><td>3. Resource Acquisition</th>。<th>Securing funding, building team, finding space/equipment, forming partnerships</th>。<th>Underestimating capital needs, wrong investors, weak team, timing misalignment</th>。<th>Bootstrapping, smart fundraising, hiring for culture and skills, networking</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">4. Implementation/Launch</th>。<th>Building product, acquiring first customers, establishing operations, generating first revenue</th>。<th>Technical problems, marketing challenges, cash flow pressure, first customer acquisition</th>。<th>Minimum viable product, early adopter focus, rapid iteration, customer feedback loops</th>
+      <tr><td>4. Implementation/Launch</th>。<th>Building product, acquiring first customers, establishing operations, generating first revenue</th>。<th>Technical problems, marketing challenges, cash flow pressure, first customer acquisition</th>。<th>Minimum viable product, early adopter focus, rapid iteration, customer feedback loops</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">5. Growth and Management</th>。<th>Scaling operations, expanding market, building team, professionalizing systems</th>。<th>Growing pains, loss of focus, culture dilution, operational complexity, founder's inability to delegate</th>。<th>Systems and processes, delegation, professional management, continuous innovation</th>
+      <tr><td>5. Growth and Management</th>。<th>Scaling operations, expanding market, building team, professionalizing systems</th>。<th>Growing pains, loss of focus, culture dilution, operational complexity, founder's inability to delegate</th>。<th>Systems and processes, delegation, professional management, continuous innovation</th>
       </tr>
     </tbody>
   </table>
@@ -804,17 +804,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Pivot Type</th><th>Description</th><th>Example</th><th>Nigerian Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Zoom-in pivot</th>。<th>What was a feature becomes the whole product</th>。<th>Instagram started as Burbn (check-in app with photo feature) → pivoted to photos only</th>。<th>Payment feature in larger platform becomes standalone payments company</th>
+      <tr><td>Zoom-in pivot</th>。<th>What was a feature becomes the whole product</th>。<th>Instagram started as Burbn (check-in app with photo feature) → pivoted to photos only</th>。<th>Payment feature in larger platform becomes standalone payments company</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Zoom-out pivot</th>。<th>What was the whole product becomes a feature of larger solution</th>。<th>Single service expands to platform with multiple services</th>。<th>Delivery service adds logistics, warehousing, fulfillment as platform</th>
+      <tr><td>Zoom-out pivot</th>。<th>What was the whole product becomes a feature of larger solution</th>。<th>Single service expands to platform with multiple services</th>。<th>Delivery service adds logistics, warehousing, fulfillment as platform</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Customer segment pivot</th>。<th>Same product, different target customer</th>。<th>B2C product pivots to B2B after discovering business need</th>。<th>EdTech platform for students pivots to corporate training for employees</th>
+      <tr><td>Customer segment pivot</th>。<th>Same product, different target customer</th>。<th>B2C product pivots to B2B after discovering business need</th>。<th>EdTech platform for students pivots to corporate training for employees</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Customer need pivot</th>。<th>Same customers, different problem to solve</th>。<th>Delivery service discovers customers also need storage</th>。<th>Logistics startup adds warehousing after customer requests</th>
+      <tr><td>Customer need pivot</th>。<th>Same customers, different problem to solve</th>。<th>Delivery service discovers customers also need storage</th>。<th>Logistics startup adds warehousing after customer requests</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Technology pivot</th>。<th>Same solution, different technology to deliver it</th>。<th>Move from web to mobile app as primary platform</th>。<th>Agricultural platform moves from SMS to smartphone app as smartphone penetration increases</th>
+      <tr><td>Technology pivot</th>。<th>Same solution, different technology to deliver it</th>。<th>Move from web to mobile app as primary platform</th>。<th>Agricultural platform moves from SMS to smartphone app as smartphone penetration increases</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Channel pivot</th>。<th>Same product, different distribution channel</th>。<th>Direct sales pivots to e-commerce or partnership model</th>。<th>Retail brand pivots to direct-to-consumer online sales</th>
+      <tr><td>Channel pivot</th>。<th>Same product, different distribution channel</th>。<th>Direct sales pivots to e-commerce or partnership model</th>。<th>Retail brand pivots to direct-to-consumer online sales</th>
       </tr>
     </tbody>
   </table>
@@ -861,13 +861,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Stage</th><th>Characteristics</th><th>Challenges</th><th>Strategy</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Startup (Birth)</th>。<th>Low revenue, high uncertainty, founder-led, few employees, searching for business model</th>。<th>Product-market fit, cash flow survival, customer acquisition, building MVP</th>。<th>Iterate quickly, focus on early adopters, preserve cash, test hypotheses</th>
+      <tr><td>Startup (Birth)</th>。<th>Low revenue, high uncertainty, founder-led, few employees, searching for business model</th>。<th>Product-market fit, cash flow survival, customer acquisition, building MVP</th>。<th>Iterate quickly, focus on early adopters, preserve cash, test hypotheses</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Growth</th>。<th>Rapid revenue growth, hiring, processes forming, pressure to scale, need for systems</th>。<th>Managing growth, maintaining culture, cash flow (growing companies need working capital), quality control</th>。<th>Professionalize management, systematize operations, raise growth capital, delegate</th>
+      <tr><td>Growth</th>。<th>Rapid revenue growth, hiring, processes forming, pressure to scale, need for systems</th>。<th>Managing growth, maintaining culture, cash flow (growing companies need working capital), quality control</th>。<th>Professionalize management, systematize operations, raise growth capital, delegate</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Maturity</th>。<th>Stable revenue, established market position, efficient operations, strong brand, loyal customers</th>。<th>Competition, market saturation, complacency, innovation slowdown, price pressure</th>。<th>Innovate (new products/markets), defend market share, optimize efficiency, consider diversification or international expansion</th>
+      <tr><td>Maturity</th>。<th>Stable revenue, established market position, efficient operations, strong brand, loyal customers</th>。<th>Competition, market saturation, complacency, innovation slowdown, price pressure</th>。<th>Innovate (new products/markets), defend market share, optimize efficiency, consider diversification or international expansion</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Decline or Exit</th>。<th>Revenue falling, market shrinking, outdated products, loss of competitive advantage, negative growth</th>。<th>Reversing decline (turnaround) vs graceful exit (sale or liquidation)</th>。<th>Turnaround strategy (cost cutting, repositioning, new leadership), pivot, sell business, or liquidate assets</th>
+      <tr><td>Decline or Exit</th>。<th>Revenue falling, market shrinking, outdated products, loss of competitive advantage, negative growth</th>。<th>Reversing decline (turnaround) vs graceful exit (sale or liquidation)</th>。<th>Turnaround strategy (cost cutting, repositioning, new leadership), pivot, sell business, or liquidate assets</th>
       </tr>
     </tbody>
   </table>
@@ -948,19 +948,19 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Dimension</th><th>Idea</th><th>Opportunity</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Market demand</th>。<th>Assumed or hoped — not validated</th>。<th>Validated with real customers through interviews, surveys, or early sales</th>
+      <tr><td>Market demand</th>。<th>Assumed or hoped — not validated</th>。<th>Validated with real customers through interviews, surveys, or early sales</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Profitability</th>。<th>Unknown or unrealistic estimates</th>。<th>Calculated potential with reasonable assumptions and unit economics</th>
+      <tr><td>Profitability</th>。<th>Unknown or unrealistic estimates</th>。<th>Calculated potential with reasonable assumptions and unit economics</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Competition</th>。<th>Ignored or dismissed as irrelevant</th>。<th>Analyzed and addressed — clear differentiation or defensible advantage</th>
+      <td><td>Competition</th>。<th>Ignored or dismissed as irrelevant</th>。<th>Analyzed and addressed — clear differentiation or defensible advantage</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Timing</th>。<th>Any time — no consideration of market window</th>。<th>Window of opportunity exists — not too early or too late</th>
+      <tr><td>Timing</th>。<th>Any time — no consideration of market window</th>。<th>Window of opportunity exists — not too early or too late</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Resources required</th>。<th>Underestimated or ignored</th>。<th>Realistically estimated with contingency</th>
+      <tr><td>Resources required</th>。<th>Underestimated or ignored</th>。<th>Realistically estimated with contingency</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Risk assessment</th>。<th>None or superficial</th>。<th>Identified risks and mitigation plans</th>
+      <tr><td>Risk assessment</th>。<th>None or superficial</th>。<th>Identified risks and mitigation plans</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Personal fit</th>。<th>Not considered</th>。<th>Matches founder's skills, interests, resources, and risk tolerance</th>
+      <tr><td>Personal fit</th>。<th>Not considered</th>。<th>Matches founder's skills, interests, resources, and risk tolerance</th>
       </tr>
     </tbody>
   </table>
@@ -976,17 +976,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Source</th><th>Description</th><th>Nigerian Examples</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Problems and Pain Points</th>。<th>Every problem is a potential business opportunity — the bigger the problem, the bigger the opportunity</th>。<th>Unreliable electricity → generator sales, solar solutions, inverters; traffic congestion → delivery services, ride-hailing; lack of trust in online transactions → escrow services, verified platforms</th>
+      <tr><td>Problems and Pain Points</th>。<th>Every problem is a potential business opportunity — the bigger the problem, the bigger the opportunity</th>。<th>Unreliable electricity → generator sales, solar solutions, inverters; traffic congestion → delivery services, ride-hailing; lack of trust in online transactions → escrow services, verified platforms</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Changes in Environment</th>。<th>Technological, economic, social, political, regulatory changes create new opportunities</th>。<th>Mobile money growth (regulatory changes enabled fintech); e-commerce growth (internet penetration); remote work trend (coworking spaces, online collaboration tools)</th>
+      <tr><td>Changes in Environment</th>。<th>Technological, economic, social, political, regulatory changes create new opportunities</th>。<th>Mobile money growth (regulatory changes enabled fintech); e-commerce growth (internet penetration); remote work trend (coworking spaces, online collaboration tools)</th>
       <tr>
-      <tr><td style="background:#f0fdf4;">Underutilized Resources</th>。<th>Resources not used to full potential — waste, byproducts, idle skills, excess capacity</th>。<th>Recycling businesses (plastic, paper, electronic waste); skill-sharing platforms; idle transportation (logistics marketplaces); agricultural waste processing (coconut husks → coir, cassava peels → animal feed)</th>
+      <tr><td>Underutilized Resources</th>。<th>Resources not used to full potential — waste, byproducts, idle skills, excess capacity</th>。<th>Recycling businesses (plastic, paper, electronic waste); skill-sharing platforms; idle transportation (logistics marketplaces); agricultural waste processing (coconut husks → coir, cassava peels → animal feed)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Market Gaps</th>。<th>Customer needs not being met adequately — poor service, limited selection, inconvenient locations, high prices</th>。<th>Quality affordable housing; reliable logistics; access to credit for SMEs; rural healthcare; quality education outside major cities</th>
+      <tr><td>Market Gaps</th>。<th>Customer needs not being met adequately — poor service, limited selection, inconvenient locations, high prices</th>。<th>Quality affordable housing; reliable logistics; access to credit for SMEs; rural healthcare; quality education outside major cities</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Your Skills and Passions</th>。<th>Best opportunities combine what you're good at, what you know, and what you love</th>。<th>Software developer creating fintech solution; teacher creating ed-tech platform; fashion designer creating clothing line; agriculture graduate creating agri-processing business</th>
+      <tr><td>Your Skills and Passions</th>。<th>Best opportunities combine what you're good at, what you know, and what you love</th>。<th>Software developer creating fintech solution; teacher creating ed-tech platform; fashion designer creating clothing line; agriculture graduate creating agri-processing business</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Trends and Megatrends</th>。<th>Long-term shifts creating sustained demand</th>。<th>Digital transformation (fintech, ed-tech, health-tech); health and wellness (organic food, fitness, mental health); sustainability (renewable energy, recycling); youth population (entertainment, education, employment platforms)</th>
+      <tr><td>Trends and Megatrends</th>。<th>Long-term shifts creating sustained demand</th>。<th>Digital transformation (fintech, ed-tech, health-tech); health and wellness (organic food, fitness, mental health); sustainability (renewable energy, recycling); youth population (entertainment, education, employment platforms)</th>
       </tr>
     </tbody>
   </table>
@@ -1077,17 +1077,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Factor</th><th>What to Examine</th><th>Nigerian Considerations</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Political</th>。<th>Government stability, policies, regulations, taxes, trade restrictions</th>。<th>Regulatory changes (e.g., fintech licenses), tax policies, ease of business registration (CAC), corruption perception, political stability in different regions</th>
+      <tr><td>Political</th>。<th>Government stability, policies, regulations, taxes, trade restrictions</th>。<th>Regulatory changes (e.g., fintech licenses), tax policies, ease of business registration (CAC), corruption perception, political stability in different regions</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Economic</th>。<th>Economic growth, inflation, interest rates, exchange rates, unemployment, disposable income</th>。<th>Naira exchange rate volatility, inflation affecting costs/prices, interest rates for loans, unemployment (labor availability but limited customer purchasing power)</th>
+      <tr><td>Economic</th>。<th>Economic growth, inflation, interest rates, exchange rates, unemployment, disposable income</th>。<th>Naira exchange rate volatility, inflation affecting costs/prices, interest rates for loans, unemployment (labor availability but limited customer purchasing power)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Social</th>。<th>Demographics, culture, lifestyle trends, education, health, values</th>。<th>Youth population (over 70% under 30), urbanization (growing cities), digital adoption (high mobile penetration), cultural diversity, religious factors, changing consumer preferences</th>
+      <tr><td>Social</th>。<th>Demographics, culture, lifestyle trends, education, health, values</th>。<th>Youth population (over 70% under 30), urbanization (growing cities), digital adoption (high mobile penetration), cultural diversity, religious factors, changing consumer preferences</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Technological</th>。<th>Technology infrastructure, innovation, automation, R&D, internet access</th>。<th>Mobile internet penetration enabling digital services; growing fintech, ed-tech, health-tech; but infrastructure gaps (electricity, broadband in rural areas), digital literacy levels</th>
+      <tr><td>Technological</th>。<th>Technology infrastructure, innovation, automation, R&D, internet access</th>。<th>Mobile internet penetration enabling digital services; growing fintech, ed-tech, health-tech; but infrastructure gaps (electricity, broadband in rural areas), digital literacy levels</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Environmental</th>。<th>Climate, weather, pollution, sustainability, natural resources</th>。<th>Climate change impacts (desertification in North, flooding in coastal areas), waste management crisis, renewable energy opportunities (solar), environmental regulations</th>
+      <tr><td>Environmental</th>。<th>Climate, weather, pollution, sustainability, natural resources</th>。<th>Climate change impacts (desertification in North, flooding in coastal areas), waste management crisis, renewable energy opportunities (solar), environmental regulations</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Legal</th>。<th>Laws, regulations, enforcement, consumer protection, labor laws, intellectual property</th>。<th>Company registration (CAC), tax compliance (FIRS, state IRS), industry-specific regulations (NAFDAC for food/drugs, NCC for telecom, CBN for financial services), contract enforcement challenges, intellectual property protection weakness</th>
+      <tr><td>Legal</th>。<th>Laws, regulations, enforcement, consumer protection, labor laws, intellectual property</th>。<th>Company registration (CAC), tax compliance (FIRS, state IRS), industry-specific regulations (NAFDAC for food/drugs, NCC for telecom, CBN for financial services), contract enforcement challenges, intellectual property protection weakness</th>
       </tr>
     </tbody>
   </table>
@@ -1208,15 +1208,15 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Audience</th><th>Purpose</th><th>What They Look For</th><th>Plan Type</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Entrepreneur/Founders</th>。<th>Guide decision-making, test assumptions, identify risks</th>。<th>Clarity, feasibility, alignment with capabilities</th>。<th>Working plan (updated regularly)</th>
+      <tr><td>Entrepreneur/Founders</th>。<th>Guide decision-making, test assumptions, identify risks</th>。<th>Clarity, feasibility, alignment with capabilities</th>。<th>Working plan (updated regularly)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Investors (Angels, VCs)</th>。<th>Raise equity funding</th>。<th>Market size, growth potential, team quality, exit strategy, return on investment (10x+ for VCs)</th>。<th>Investor pitch deck + detailed plan</th>
+      <tr><td>Investors (Angels, VCs)</th>。<th>Raise equity funding</th>。<th>Market size, growth potential, team quality, exit strategy, return on investment (10x+ for VCs)</th>。<th>Investor pitch deck + detailed plan</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Banks/Lenders</th>。<th>Secure debt financing (loans)</th>。<th>Cash flow, collateral, ability to repay, management experience, financial ratios</th>。<th>Loan proposal (focus on cash flow and repayment)</th>
+      <tr><td>Banks/Lenders</th>。<th>Secure debt financing (loans)</th>。<th>Cash flow, collateral, ability to repay, management experience, financial ratios</th>。<th>Loan proposal (focus on cash flow and repayment)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Partners/Suppliers</th>。<th>Establish credibility, negotiate terms</th>。<th>Stability, growth potential, reputation</th>。<th>Executive summary and key sections</th>
+      <tr><td>Partners/Suppliers</th>。<th>Establish credibility, negotiate terms</th>。<th>Stability, growth potential, reputation</th>。<th>Executive summary and key sections</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Key Employees/Hires</th>。<th>Recruit talent, align team</th>。<th>Vision, culture, growth potential, role clarity</th>。<th>Executive summary + culture/values section</th>
+      <tr><td>Key Employees/Hires</th>。<th>Recruit talent, align team</th>。<th>Vision, culture, growth potential, role clarity</th>。<th>Executive summary + culture/values section</th>
       </tr>
     </tbody>
   </table>
@@ -1426,15 +1426,15 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Dimension</th><th>Feasibility Analysis</th><th>Business Plan</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Purpose</th>。<th>Determine if idea is viable</th>。<th>Describe how to execute viable idea</th>
+      <tr><td>Purpose</th>。<th>Determine if idea is viable</th>。<th>Describe how to execute viable idea</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Timing</th>。<th>Early — before committing resources</th>。<th>After feasibility confirmed</th>
+      <tr><td>Timing</th>。<th>Early — before committing resources</th>。<th>After feasibility confirmed</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Audience</th>。<th>Entrepreneur (internal decision)</th>。<th>Investors, banks, partners (external)</th>
+      <tr><td>Audience</th>。<th>Entrepreneur (internal decision)</th>。<th>Investors, banks, partners (external)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Depth</th>。<th>Focused on key risks and deal-breakers</th>。<th>Comprehensive operational and financial detail</th>
+      <tr><td>Depth</th>。<th>Focused on key risks and deal-breakers</th>。<th>Comprehensive operational and financial detail</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Outcome</th>。<th>Go/No-go decision</th>。<th>Execution roadmap</th>
+      <tr><td>Outcome</th>。<th>Go/No-go decision</th>。<th>Execution roadmap</th>
       </tr>
     </tbody>
   </table>
@@ -1540,17 +1540,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Dimension</th><th>Weight (1-5)</th><th>Score (1-5)</th><th>Weighted Score</th><th>Notes / Evidence</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Market Feasibility</th>。<th>5</th>。<th>4</th>。<th>20</th>。<th>Large growing market, customer interviews positive</th>
+      <tr><td>Market Feasibility</th>。<th>5</th>。<th>4</th>。<th>20</th>。<th>Large growing market, customer interviews positive</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Technical Feasibility</th>。<th>4</th>。<th>3</th>。<th>12</th>。<th>Technology exists but development time longer than desired</th>
+      <tr><td>Technical Feasibility</th>。<th>4</th>。<th>3</th>。<th>12</th>。<th>Technology exists but development time longer than desired</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Financial Feasibility</th>。<th>5</th>。<th>3</th>。<th>15</th>。<th>Positive unit economics but high upfront capital</th>
+      <tr><td>Financial Feasibility</th>。<th>5</th>。<th>3</th>。<th>15</th>。<th>Positive unit economics but high upfront capital</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Organizational Feasibility</th>。<th>4</th>。<th>4</th>。<th>16</th>。<th>Strong team, need one technical hire</th>
+      <tr><td>Organizational Feasibility</th>。<th>4</th>。<th>4</th>。<th>16</th>。<th>Strong team, need one technical hire</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Schedule Feasibility</th>。<th>3</th>。<th>2</th>。<th>6</th>。<th>Longer timeline due to regulatory approvals</th>
+      <tr><td>Schedule Feasibility</th>。<th>3</th>。<th>2</th>。<th>6</th>。<th>Longer timeline due to regulatory approvals</th>
       </tr>
-      <tr><td style="background:#f0fdf4; font-weight:800;">TOTAL</th>。<td style="background:#f0fdf4;" colspan="2"></th>。<th>69/105</th>。<td style="background:#f0fdf4;"></th>
+      <tr><td>TOTAL</th>。<td colspan="2"></th>。<th>69/105</th>。<td></th>
       </tr>
     </tbody>
   </table>
@@ -1655,13 +1655,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Segmentation Type</th><th>Basis</th><th>Nigerian Examples</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Demographic</th>。<th>Age, gender, income, education, occupation, family size</th>。<th>Youth (under 30) for entertainment, fashion, tech; high-income for luxury goods; students for education products</th>
+      <tr><td>Demographic</th>。<th>Age, gender, income, education, occupation, family size</th>。<th>Youth (under 30) for entertainment, fashion, tech; high-income for luxury goods; students for education products</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Geographic</th>。<th>Location (region, city, urban/rural, climate)</th>。<th>Lagos vs Kano vs Port Harcourt (different needs); urban vs rural (infrastructure differences); North vs South (climate, agriculture)</th>
+      <tr><td>Geographic</th>。<th>Location (region, city, urban/rural, climate)</th>。<th>Lagos vs Kano vs Port Harcourt (different needs); urban vs rural (infrastructure differences); North vs South (climate, agriculture)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Psychographic</th>。<th>Lifestyle, values, personality, interests, attitudes</th>。<th>Health-conscious (fitness, organic food); tech-early adopters; environmentally conscious; religious values</th>
+      <tr><td>Psychographic</th>。<th>Lifestyle, values, personality, interests, attitudes</th>。<th>Health-conscious (fitness, organic food); tech-early adopters; environmentally conscious; religious values</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Behavioral</th>。<th>Purchase behavior, usage rate, loyalty, benefits sought</th>。<th>First-time buyers vs repeat; heavy users (e.g., frequent travelers for airline loyalty); price-sensitive vs quality-focused</th>
+      <tr><td>Behavioral</th>。<th>Purchase behavior, usage rate, loyalty, benefits sought</th>。<th>First-time buyers vs repeat; heavy users (e.g., frequent travelers for airline loyalty); price-sensitive vs quality-focused</th>
       </tr>
     </tbody>
   </table>
@@ -1698,19 +1698,19 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>P</th><th>Description</th><th>Questions</th><th>Nigerian Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Product</th>。<th>Goods or services offered to customers</th>。<th>What problem does it solve? Features? Benefits? Quality? Design? Branding? Packaging?</th>。<th>Paystack — payment integration product solving online payment problem</th>
+      <tr><td>Product</th>。<th>Goods or services offered to customers</th>。<th>What problem does it solve? Features? Benefits? Quality? Design? Branding? Packaging?</th>。<th>Paystack — payment integration product solving online payment problem</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Price</th>。<th>Amount customers pay</th>。<th>Pricing strategy? (cost-plus, value-based, competitive, penetration, skimming). Discounts? Payment terms?</th>。<th>Freemium models; pay-as-you-go solar; installment payments for phones</th>
+      <tr><td>Price</th>。<th>Amount customers pay</th>。<th>Pricing strategy? (cost-plus, value-based, competitive, penetration, skimming). Discounts? Payment terms?</th>。<th>Freemium models; pay-as-you-go solar; installment payments for phones</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Place (Distribution)</th>。<th>How customers access product</th>。<th>Direct? Retail? Online? Agents? Delivery? Geographic coverage?</th>。<th>Kuda — mobile-only bank (app download); Jumia — e-commerce delivery</th>
+      <td><td>Place (Distribution)</th>。<th>How customers access product</th>。<th>Direct? Retail? Online? Agents? Delivery? Geographic coverage?</th>。<th>Kuda — mobile-only bank (app download); Jumia — e-commerce delivery</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Promotion</th>。<th>Communicating value to customers</th>。<th>Advertising? PR? Social media? Sales promotions? Word-of-mouth? Content marketing?</th>。<th>Social media marketing (Instagram, Twitter, TikTok), influencer partnerships, referral programs</th>
+      <tr><td>Promotion</th>。<th>Communicating value to customers</th>。<th>Advertising? PR? Social media? Sales promotions? Word-of-mouth? Content marketing?</th>。<th>Social media marketing (Instagram, Twitter, TikTok), influencer partnerships, referral programs</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">People</th>。<th>Employees delivering service</th>。<th>Customer service? Training? Culture? Hiring?</th>。<th>Customer support quality differentiates many Nigerian startups</th>
+      <tr><td>People</th>。<th>Employees delivering service</th>。<th>Customer service? Training? Culture? Hiring?</th>。<th>Customer support quality differentiates many Nigerian startups</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Process</th>。<th>Systems delivering service</th>。<th>Ordering? Delivery? Returns? Customer support?</th>。<th>Easy returns process; fast delivery; one-click ordering</th>
+      <tr><td>Process</th>。<th>Systems delivering service</th>。<th>Ordering? Delivery? Returns? Customer support?</th>。<th>Easy returns process; fast delivery; one-click ordering</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Physical Evidence</th>。<th>Tangible cues of service quality</th>。<th>Website? Packaging? Facility? Employee uniforms?</th>。<th>Professional website, branded packaging, clean delivery vehicles</th>
+      <tr><td>Physical Evidence</th>。<th>Tangible cues of service quality</th>。<th>Website? Packaging? Facility? Employee uniforms?</th>。<th>Professional website, branded packaging, clean delivery vehicles</th>
       </tr>
     </tbody>
   </table>
@@ -1781,18 +1781,18 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Concept</th><th>Definition</th><th>Why It Matters</th><th>Formula</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Revenue</th>。<th>Total income from sales before expenses</th>。<th>Shows market demand and top-line growth</th>。<th>Price × Quantity Sold</th>
+      <tr><td>Revenue</th>。<th>Total income from sales before expenses</th>。<th>Shows market demand and top-line growth</th>。<th>Price × Quantity Sold</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Expenses/Costs</th>。<th>Money spent to operate business (fixed and variable)</th>。<th>Must be less than revenue for profit</th>。<th>Fixed + Variable Costs</th>
-      </tr>      <td><td style="background:#f0fdf4;">Profit</th>。<th>Revenue minus expenses</th>。<th>Ultimate goal — excess after costs</th>。<th>Revenue - Expenses</th>
+      <tr><td>Expenses/Costs</th>。<th>Money spent to operate business (fixed and variable)</th>。<th>Must be less than revenue for profit</th>。<th>Fixed + Variable Costs</th>
+      </tr>      <td><td>Profit</th>。<th>Revenue minus expenses</th>。<th>Ultimate goal — excess after costs</th>。<th>Revenue - Expenses</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Cash Flow</th>。<th>Movement of cash in and out of business</th>。<th>Critical for survival — timing matters</th>。<th>Cash In - Cash Out</th>
+      <tr><td>Cash Flow</th>。<th>Movement of cash in and out of business</th>。<th>Critical for survival — timing matters</th>。<th>Cash In - Cash Out</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Assets</th>。<th>Resources owned (cash, equipment, inventory)</th>。<th>Used to generate revenue</th>。<th>-</th>
+      <tr><td>Assets</th>。<th>Resources owned (cash, equipment, inventory)</th>。<th>Used to generate revenue</th>。<th>-</th>
       <tr>
-      <tr><td style="background:#f0fdf4;">Liabilities</th>。<th>Debts owed (loans, accounts payable)</th>。<th>Must be repaid; affect cash flow</th>。<th>-</th>
+      <tr><td>Liabilities</th>。<th>Debts owed (loans, accounts payable)</th>。<th>Must be repaid; affect cash flow</th>。<th>-</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Equity</th>。<th>Owner's stake (assets minus liabilities)</th>。<th>Net worth of business</th>。<th>Assets - Liabilities</th>
+      <tr><td>Equity</th>。<th>Owner's stake (assets minus liabilities)</th>。<th>Net worth of business</th>。<th>Assets - Liabilities</th>
       </tr>
     </tbody>
   </table>
@@ -1870,17 +1870,17 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Strategy</th><th>Description</th><th>When to Use</th><th>Risk</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Cost-Plus Pricing</th>。<th>Add markup to cost of production</th>。<th>Simple, ensures profit per unit</th>。<th>Ignores market demand and competition</th>
+      <tr><td>Cost-Plus Pricing</th>。<th>Add markup to cost of production</th>。<th>Simple, ensures profit per unit</th>。<th>Ignores market demand and competition</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Value-Based Pricing</th>。<th>Price based on perceived customer value</th>。<th>Unique product with strong benefits</th>。<th>Hard to determine customer value</th>
+      <tr><td>Value-Based Pricing</th>。<th>Price based on perceived customer value</th>。<th>Unique product with strong benefits</th>。<th>Hard to determine customer value</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Competitive Pricing</th>。<th>Match or undercut competitors</th>。<th>Crowded market, similar products</th>。<th>Price wars, low margins</th>
+      <td><td>Competitive Pricing</th>。<th>Match or undercut competitors</th>。<th>Crowded market, similar products</th>。<th>Price wars, low margins</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Penetration Pricing</th>。<th>Low initial price to gain market share</th>。<th>Entering competitive market</th>。<th>Hard to raise prices later</th>
+      <tr><td>Penetration Pricing</th>。<th>Low initial price to gain market share</th>。<th>Entering competitive market</th>。<th>Hard to raise prices later</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Skimming</th>。<th>High initial price, lower over time</th>。<th>Innovative product, early adopters willing to pay premium</th>。<th>Limited initial sales</th>
+      <td><td>Skimming</th>。<th>High initial price, lower over time</th>。<th>Innovative product, early adopters willing to pay premium</th>。<th>Limited initial sales</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Freemium</th>。<th>Basic free, premium paid features</th>。<th>Software, digital services</th>。<th>Converting free users to paid</th>
+      <tr><td>Freemium</th>。<th>Basic free, premium paid features</th>。<th>Software, digital services</th>。<th>Converting free users to paid</th>
       </tr>
     </tbody>
   </table>
@@ -1942,19 +1942,19 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Source</th><th>Stage</th><th>Amount</th><th>Pros</th><th>Cons</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Bootstrapping (Personal savings, family, friends)</th>。<th>Idea to Early Revenue</th>。<th>₦50k - ₦5M</th>。<th>Full control, no dilution, fast</th>。<th>Limited amount, personal risk</th>
+      <tr><td>Bootstrapping (Personal savings, family, friends)</th>。<th>Idea to Early Revenue</th>。<th>₦50k - ₦5M</th>。<th>Full control, no dilution, fast</th>。<th>Limited amount, personal risk</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Government Grants and Programs</th>。<th>Early stage</th>。<th>₦500k - ₦10M</th>。<th>Non-dilutive (no equity given), validation</th>。<th>Competitive, slow, bureaucracy</th>
+      <tr><td>Government Grants and Programs</th>。<th>Early stage</th>。<th>₦500k - ₦10M</th>。<th>Non-dilutive (no equity given), validation</th>。<th>Competitive, slow, bureaucracy</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Bank Loans / Microfinance</th>。<th>Revenue stage (proven cash flow)</th>。<th>₦1M - ₦50M</th>。<th>Keep equity, builds credit</th>。<th>Interest, collateral required, hard for startups</th>
+      <tr><td>Bank Loans / Microfinance</th>。<th>Revenue stage (proven cash flow)</th>。<th>₦1M - ₦50M</th>。<th>Keep equity, builds credit</th>。<th>Interest, collateral required, hard for startups</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Angel Investors</th>。<th>Early revenue, traction</th>。<th>₦5M - ₦50M</th>。<th>Mentorship, networks, credibility</th>。<th>Give up equity (10-30%), loss of control</th>
+      <tr><td>Angel Investors</th>。<th>Early revenue, traction</th>。<th>₦5M - ₦50M</th>。<th>Mentorship, networks, credibility</th>。<th>Give up equity (10-30%), loss of control</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Venture Capital</th>。<th>Scalable, high growth</th>。<th>₦50M+</th>。<th>Large capital, strategic support</th>。<th>Significant equity (20-40%), high expectations, pressure to scale</th>
+      <tr><td>Venture Capital</th>。<th>Scalable, high growth</th>。<th>₦50M+</th>。<th>Large capital, strategic support</th>。<th>Significant equity (20-40%), high expectations, pressure to scale</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Crowdfunding</th>。<th>Idea to early product</th>。<th>₦500k - ₦20M</th>。<th>Validates demand, free marketing</th>。<th>Requires compelling story, platform fees</th>
+      <tr><td>Crowdfunding</th>。<th>Idea to early product</th>。<th>₦500k - ₦20M</th>。<th>Validates demand, free marketing</th>。<th>Requires compelling story, platform fees</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Traditional Savings Groups (Esusu, Ajo, Adashe)</th>。<th>Any stage</th>。<th>Small increments</th>。<th>Accessible, community-based, disciplined saving</th>。<th>Limited amount, inflexible timing</th>
+      <tr><td>Traditional Savings Groups (Esusu, Ajo, Adashe)</th>。<th>Any stage</th>。<th>Small increments</th>。<th>Accessible, community-based, disciplined saving</th>。<th>Limited amount, inflexible timing</th>
       </tr>
     </tbody>
   </table>
@@ -2065,13 +2065,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Structure</th><th>Description</th><th>Liability</th><th>Taxation</th><th>Best For</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Sole Proprietorship</th>。<th>One owner, simple registration (business name)</th>。<th>Unlimited personal liability</th>。<th>Personal income tax</th>。<th>Small businesses, freelancers, consultants</th>
+      <tr><td>Sole Proprietorship</th>。<th>One owner, simple registration (business name)</th>。<th>Unlimited personal liability</th>。<th>Personal income tax</th>。<th>Small businesses, freelancers, consultants</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Partnership</th>。<th>Two or more owners</th>。<th>Unlimited (general partners)</th>。<th>Each partner's personal income</th>。<th>Professional services (law, accounting, medical)</th>
+      <tr><td>Partnership</th>。<th>Two or more owners</th>。<th>Unlimited (general partners)</th>。<th>Each partner's personal income</th>。<th>Professional services (law, accounting, medical)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Limited Liability Company (LTD)</th>。<th>Separate legal entity, registered with CAC</th>。<th>Limited to investment (no personal liability)</th>。<th>Company income tax + dividends tax</th>。<th>Most serious businesses, investors expect this structure</th>
+      <tr><td>Limited Liability Company (LTD)</th>。<th>Separate legal entity, registered with CAC</th>。<th>Limited to investment (no personal liability)</th>。<th>Company income tax + dividends tax</th>。<th>Most serious businesses, investors expect this structure</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Incorporated Trustees</th>。<th>Non-profit organization</th>。<th>Limited</th>。<th>Tax-exempt (if approved)</th>。<th>NGOs, religious organizations, associations</th>
+      <tr><td>Incorporated Trustees</th>。<th>Non-profit organization</th>。<th>Limited</th>。<th>Tax-exempt (if approved)</th>。<th>NGOs, religious organizations, associations</th>
       </tr>
     </tbody>
   </table>
@@ -2151,19 +2151,19 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>Agency</th><th>Products/Services Regulated</th><th>Requirement</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">NAFDAC</th>。<th>Food, drugs, cosmetics, medical devices, packaged water, chemicals</th>。<th>Product registration, facility inspection, manufacturing license</th>
+      <tr><td>NAFDAC</th>。<th>Food, drugs, cosmetics, medical devices, packaged water, chemicals</th>。<th>Product registration, facility inspection, manufacturing license</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">NCC</th>。<th>Telecommunications, ISP, broadcasting</th>。<th>Communications license</th>
+      <tr><td>NCC</th>。<th>Telecommunications, ISP, broadcasting</th>。<th>Communications license</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">CBN</th>。<th>Banking, finance, lending, payment systems</th>。<th>Bank license, microfinance license, payment service provider license</th>
+      <tr><td>CBN</th>。<th>Banking, finance, lending, payment systems</th>。<th>Bank license, microfinance license, payment service provider license</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">NAICOM</th>。<th>Insurance</th>。<th>Insurance brokerage license</th>
+      <tr><td>NAICOM</th>。<th>Insurance</th>。<th>Insurance brokerage license</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">FIRS / State IRS</th>。<th>All businesses</th>。<th>Tax Identification Number (TIN), VAT registration, tax filing</th>
+      <tr><td>FIRS / State IRS</th>。<th>All businesses</th>。<th>Tax Identification Number (TIN), VAT registration, tax filing</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">PENCOM</th>。<th>Businesses with 3+ employees</th>。<th>Pension registration and contributions</th>
+      <tr><td>PENCOM</th>。<th>Businesses with 3+ employees</th>。<th>Pension registration and contributions</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">SON</th>。<th>Manufactured products (quality standards)</th>。<th>Product certification (SONCAP for imports, MANCAP for local)</th>
+      <tr><td>SON</th>。<th>Manufactured products (quality standards)</th>。<th>Product certification (SONCAP for imports, MANCAP for local)</th>
       </tr>
     </tbody>
   </table>
@@ -2197,13 +2197,13 @@ export const GST_LEARN_GST_ENTREPRENEURSHIP = [
       <tr><th>IP Type</th><th>What It Protects</th><th>Registration</th><th>Duration</th><th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Trademark</th>。<th>Brand names, logos, slogans</th>。<th>CAC (Registrar of Trademarks)</th>。<th>7 years, renewable</th>。<th>"Paystack" name, MTN logo, "Naija" brand</th>
+      <tr><td>Trademark</th>。<th>Brand names, logos, slogans</th>。<th>CAC (Registrar of Trademarks)</th>。<th>7 years, renewable</th>。<th>"Paystack" name, MTN logo, "Naija" brand</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Patent</th>。<th>Inventions, new products, processes</th>。<th>Patents and Designs Registry</th>。<th>20 years</th>。<th>New medical device, new agricultural technology</th>
+      <tr><td>Patent</th>。<th>Inventions, new products, processes</th>。<th>Patents and Designs Registry</th>。<th>20 years</th>。<th>New medical device, new agricultural technology</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Industrial Design</th>。<th>Ornamental/aesthetic product features</th>。<th>Patents and Designs Registry</th>。<th>5 years (renewable twice)</th>。<th>Unique bottle shape, furniture design</th>
+      <tr><td>Industrial Design</th>。<th>Ornamental/aesthetic product features</th>。<th>Patents and Designs Registry</th>。<th>5 years (renewable twice)</th>。<th>Unique bottle shape, furniture design</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Copyright</th>。<th>Literary, artistic, musical works</th>。<th>Automatic (no registration required), but can deposit at NCC</th>。<th>Life + 70 years</th>。<th>Books, music, films, software, paintings</th>
+      <td><td>Copyright</th>。<th>Literary, artistic, musical works</th>。<th>Automatic (no registration required), but can deposit at NCC</th>。<th>Life + 70 years</th>。<th>Books, music, films, software, paintings</th>
       </tr>
     </tbody>
   </tr>
