@@ -1142,3 +1142,11 @@ body.dark-mode .learn-svg [fill="#ffffff"],
 body.dark-mode .learn-svg [fill="white"] {
   fill: #1a0030;
 }
+
+/* Increase SVG size */
+.learn-content-html .learn-svg {
+  max-height: none !important;
+  height: auto;
+  width: 100%;
+  min-height: 250px;
+}
