@@ -1151,3 +1151,139 @@ body.dark-mode .learn-svg [fill="white"] {
   max-width: 1080px;
   min-height: 250px;
 }
+
+/* ============================================================================
+   ADDITIONAL FIXES — Override inline styles from old content
+   ============================================================================ */
+
+/* Force all table cells to respect CSS over inline styles */
+.learn-content-html .learn-table td,
+.learn-content-html .learn-table th {
+  background: transparent !important;
+}
+
+/* Ensure table rows alternate properly */
+.learn-content-html .learn-table tbody tr:nth-child(even) td {
+  background: rgba(108, 63, 201, 0.04) !important;
+}
+
+.learn-content-html .learn-table tbody tr:nth-child(odd) td {
+  background: transparent !important;
+}
+
+/* Dark mode overrides for inline-styled tables */
+body.dark-mode .learn-content-html .learn-table td,
+body.dark-mode .learn-content-html .learn-table th {
+  background: transparent !important;
+}
+
+body.dark-mode .learn-content-html .learn-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .learn-content-html .learn-table tbody tr:nth-child(odd) td {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Ensure tip boxes display properly regardless of inline styles */
+.learn-content-html .learn-tip-box,
+.learn-content-html .learn-tip-warn {
+  display: flex !important;
+  gap: 12px !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin: 16px 0 !important;
+}
+
+/* Fix any broken inline background colors */
+.learn-content-html .learn-tip-box[style*="background"],
+.learn-content-html .learn-tip-warn[style*="background"] {
+  background: transparent !important;
+}
+
+/* Ensure dark mode tip boxes override inline styles */
+body.dark-mode .learn-content-html .learn-tip-box {
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: #d4af37 !important;
+  color: #ffeb82 !important;
+}
+
+body.dark-mode .learn-content-html .learn-tip-warn {
+  background: rgba(244, 63, 94, 0.12) !important;
+  border-color: #f43f5e !important;
+  color: #fca5a5 !important;
+}
+
+/* Fix any broken inline text colors in tables */
+.learn-content-html .learn-table td[style*="color"],
+.learn-content-html .learn-table td[style*="background"] {
+  color: inherit !important;
+  background: transparent !important;
+}
+
+/* Ensure SVG is responsive and centered */
+.learn-svg-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin: 20px 0;
+}
+
+.learn-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix table text in light mode - ensure dark text is readable */
+.learn-content-html .learn-table td {
+  color: #1a202c !important;
+}
+
+body.dark-mode .learn-content-html .learn-table td {
+  color: #f3f4f6 !important;
+}
+
+/* Fix any remaining dark text in dark mode */
+body.dark-mode .learn-content-html .learn-p,
+body.dark-mode .learn-content-html .learn-list li,
+body.dark-mode .learn-content-html .learn-intro,
+body.dark-mode .learn-content-html .learn-subheading,
+body.dark-mode .learn-content-html .learn-tip-box,
+body.dark-mode .learn-content-html .learn-tip-warn,
+body.dark-mode .learn-content-html .learn-worked-example,
+body.dark-mode .learn-content-html .learn-formula,
+body.dark-mode .learn-content-html .learn-table td,
+body.dark-mode .learn-content-html .learn-table th,
+body.dark-mode .learn-quiz-exp-text,
+body.dark-mode .learn-quiz-results-label,
+body.dark-mode .learn-quiz-opt,
+body.dark-mode .learn-quiz-q,
+body.dark-mode .learn-accordion-title,
+body.dark-mode .learn-topic-title {
+  color: #f3f4f6 !important;
+}
+
+/* Light mode text fixes */
+.learn-content-html .learn-p,
+.learn-content-html .learn-list li,
+.learn-content-html .learn-table td {
+  color: #1a202c;
+}
+
+/* Ensure all tip boxes have consistent styling */
+.learn-tip-box, .learn-tip-warn {
+  background: var(--tip-bg, #fffbeb);
+  border-left: 4px solid var(--tip-border, #d4af37);
+}
+
+body.dark-mode .learn-tip-box {
+  --tip-bg: rgba(212, 175, 55, 0.1);
+  --tip-border: #d4af37;
+}
+
+body.dark-mode .learn-tip-warn {
+  --tip-bg: rgba(244, 63, 94, 0.1);
+  --tip-border: #f43f5e;
+}
