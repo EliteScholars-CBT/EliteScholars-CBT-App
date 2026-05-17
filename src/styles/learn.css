@@ -1148,5 +1148,6 @@ body.dark-mode .learn-svg [fill="white"] {
   max-height: none !important;
   height: auto;
   width: 100%;
+  max-width: 1080px;
   min-height: 250px;
 }
