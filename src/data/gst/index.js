@@ -12,7 +12,7 @@ import { GST_LEARN_GST_ENGLISH } from './learn/gst_english';
 import { GST_LEARN_GST_LOGIC } from './learn/gst_logic';
 import { GST_LEARN_GST_NIGERIAN } from './learn/gst_nigerian';
 import { GST_LEARN_GST_HISTORY } from './learn/gst_history';
-import { GST_LEARN_GST_COMPUTE } from './learn/gst_compute';
+import { GST_LEARN_GST_COMPUTING } from './learn/gst_computing';
 import { GST_LEARN_GST_ENTREPRENEURSHIP } from './learn/gst_entrepreneurship';
 import { GST_LEARN_GST_PEACE } from './learn/gst_peace';
 import { GST_LEARN_GST_COMMUNICATION } from './learn/gst_communication';
