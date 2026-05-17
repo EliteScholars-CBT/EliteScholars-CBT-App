@@ -21,7 +21,7 @@ import {
 
 const FONT_SIZES = [13, 15, 17, 19, 21];
 const STORAGE_KEY = (examType, subjectId) => `es_learn_${examType}_${subjectId}`;
-const MIN_CORRECT_ANSWERS = 4;
+const MIN_CORRECT_ANSWERS = 0;
 
 function stripHtml(html = '') {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
