@@ -26,21 +26,21 @@ export const GST_LEARN_GST_PEACE = [
 <div class="learn-table-wrap">
   <table class="learn-table">
     <thead>
-      <tr><th style="background:#dcfce7;">Negative Peace</th>
-      <th style="background:#dbeafe;">Positive Peace</th>
+      <tr><th>Negative Peace</th>
+      <th>Positive Peace</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Absence of direct violence (war, killing, fighting)</td>
-      <td style="background:#eff6ff;">Absence of structural violence (poverty, inequality, oppression)</td>
+      <tr><td>Absence of direct violence (war, killing, fighting)</td>
+      <td>Absence of structural violence (poverty, inequality, oppression)</td>
     </tr>
-      <tr><td style="background:#f0fdf4;">Temporary ceasefire or truce</td>
-      <td style="background:#eff6ff;">Sustainable, just social order</td>
+      <tr><td>Temporary ceasefire or truce</td>
+      <td>Sustainable, just social order</td>
     </tr>
-      <tr><td style="background:#f0fdf4;">Example: Nigeria after Civil War ceasefire (1970)</td>
-      <td style="background:#eff6ff;">Example: Society with social justice, equal opportunity, rule of law</td>
+      <tr><td>Example: Nigeria after Civil War ceasefire (1970)</td>
+      <td>Example: Society with social justice, equal opportunity, rule of law</td>
     </tr>
-      <tr><td style="background:#f0fdf4;">Peace is simply "no fighting"</td>
-      <td style="background:#eff6ff;">Peace includes cooperation, development, human rights</td>
+      <tr><td>Peace is simply "no fighting"</td>
+      <td>Peace includes cooperation, development, human rights</td>
     </tr>
     </tbody>
   </table>
@@ -494,30 +494,30 @@ export const GST_LEARN_GST_PEACE = [
 <div class="learn-table-wrap">
   <table class="learn-table">
     <thead>
-      <tr><th style="background:#dbeafe;">Approach</th>
-      <th style="background:#dbeafe;">Goal</th>
-      <th style="background:#dbeafe;">Timeframe</th>
-      <th style="background:#dbeafe;">Focus</th>
-      <th style="background:#dbeafe;">Example</th>
+      <tr><th>Approach</th>
+      <th>Goal</th>
+      <th>Timeframe</th>
+      <th>Focus</th>
+      <th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#eff6ff;">Conflict Resolution</td>
-      <td style="background:#eff6ff;">Eliminate root causes, achieve win-win outcomes</td>
-      <td style="background:#eff6ff;">Medium to long-term</td>
-      <td style="background:#eff6ff;">Addressing underlying interests and needs</td>
-      <td style="background:#eff6ff;">Land reform addressing farmers' and herders' needs</td>
+      <tr><td>Conflict Resolution</td>
+      <td>Eliminate root causes, achieve win-win outcomes</td>
+      <td>Medium to long-term</td>
+      <td>Addressing underlying interests and needs</td>
+      <td>Land reform addressing farmers' and herders' needs</td>
      </tr>
-      <tr style="background:#eff6ff;">Conflict Management</td>
-      <td style="background:#eff6ff;">Contain conflict, prevent escalation</td>
-      <td style="background:#eff6ff;">Short to medium-term</td>
-      <td style="background:#eff6ff;">Behavior change, ceasefire, de-escalation</td>
-      <td style="background:#eff6ff;">Seasonal grazing route agreements preventing violence</td>
+      <tr>Conflict Management</td>
+      <td>Contain conflict, prevent escalation</td>
+      <td>Short to medium-term</td>
+      <td>Behavior change, ceasefire, de-escalation</td>
+      <td>Seasonal grazing route agreements preventing violence</td>
      </tr>
-      <tr style="background:#eff6ff;">Conflict Transformation</td>
-      <td style="background:#eff6ff;">Change underlying structures and relationships</td>
-      <td style="background:#eff6ff;">Long-term (generations)</td>
-      <td style="background:#eff6ff;">Systemic change — institutions, relationships, narratives</td>
-      <td style="background:#eff6ff;">Constitutional reform, federal character evolution</td>
+      <tr>Conflict Transformation</td>
+      <td>Change underlying structures and relationships</td>
+      <td>Long-term (generations)</td>
+      <td>Systemic change — institutions, relationships, narratives</td>
+      <td>Constitutional reform, federal character evolution</td>
      </tr>
     </tbody>
    </table>
@@ -883,9 +883,9 @@ export const GST_LEARN_GST_PEACE = [
   <table class="learn-table">
     <thead><tr><th>Dimension</th><th>Focus</th><th>Questions</th></tr></thead>
     <tbody>
-      <tr><td>Education ABOUT peace</ol><td style="background:#eff6ff;">Knowledge — what is peace, causes of war, conflict resolution methods</ol><td style="background:#eff6ff;">What do students need to KNOW?</ol></tr>
-      <tr><td>Education FOR peace</ol><td style="background:#eff6ff;">Skills and values — enabling students to become peacebuilders</ol><td style="background:#eff6ff;">What do students need to BE ABLE TO DO?</ol></tr>
-      <tr><td>Education THROUGH peace</ol><td style="background:#eff6ff;">Pedagogy — peaceful teaching methods (cooperative learning, democratic classrooms)</ol><td style="background:#eff6ff;">How should teaching MODEL peace?</ol></tr>
+      <tr><td>Education ABOUT peace</ol><td>Knowledge — what is peace, causes of war, conflict resolution methods</ol><td>What do students need to KNOW?</ol></tr>
+      <tr><td>Education FOR peace</ol><td>Skills and values — enabling students to become peacebuilders</ol><td>What do students need to BE ABLE TO DO?</ol></tr>
+      <tr><td>Education THROUGH peace</ol><td>Pedagogy — peaceful teaching methods (cooperative learning, democratic classrooms)</ol><td>How should teaching MODEL peace?</ol></tr>
     </tbody>
   </table>
 </div>
