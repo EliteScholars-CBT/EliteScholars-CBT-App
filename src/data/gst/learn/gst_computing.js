@@ -27,19 +27,19 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Characteristic</th><th>Description</th><th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Speed</th>。<th>Computers process millions to billions of operations per second</th>。<th>CPU speeds measured in GHz (billions of cycles per second)</th>
+      <tr><td>Speed</th>。<th>Computers process millions to billions of operations per second</th>。<th>CPU speeds measured in GHz (billions of cycles per second)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Accuracy</th>。<th>Computers produce error-free results when hardware and software are functioning correctly</th>。<th>Calculations are precise; errors are human-made (garbage in, garbage out)</th>
+      <tr><td>Accuracy</th>。<th>Computers produce error-free results when hardware and software are functioning correctly</th>。<th>Calculations are precise; errors are human-made (garbage in, garbage out)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Diligence</th>。<th>Computers do not get tired or lose concentration</th>。<th>Can perform repetitive tasks millions of times without error</th>
+      <tr><td>Diligence</th>。<th>Computers do not get tired or lose concentration</th>。<th>Can perform repetitive tasks millions of times without error</th>
       </tr>
-      <td><td style="background:#f0fdf4;">Versatility</th>。<th>Computers can perform completely different tasks</th>。<th>Same computer can browse internet, edit photos, play games, calculate spreadsheets</th>
+      <td><td>Versatility</th>。<th>Computers can perform completely different tasks</th>。<th>Same computer can browse internet, edit photos, play games, calculate spreadsheets</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Storage</th>。<th>Computers can store vast amounts of data permanently</th>。<th>Hard drives can store terabytes (trillions of bytes) of data</th>
+      <tr><td>Storage</th>。<th>Computers can store vast amounts of data permanently</th>。<th>Hard drives can store terabytes (trillions of bytes) of data</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Automation</th>。<th>Computers can follow instructions automatically without human intervention</th>。<th>Once started, a program runs until completion</th>
+      <tr><td>Automation</th>。<th>Computers can follow instructions automatically without human intervention</th>。<th>Once started, a program runs until completion</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">No IQ</th>。<th>Computers cannot think or make decisions independently</th>。<th>They follow programmed instructions; AI simulates intelligence but is not conscious</th>
+      <tr><td>No IQ</th>。<th>Computers cannot think or make decisions independently</th>。<th>They follow programmed instructions; AI simulates intelligence but is not conscious</th>
       </tr>
     </tbody>
   </table>
@@ -279,13 +279,13 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Feature</th><th>RAM</th><th>ROM</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Volatility</th>。<th>Volatile (loses data when power off)</th>。<th>Non-volatile (retains data)</th>
+      <tr><td>Volatility</th>。<th>Volatile (loses data when power off)</th>。<th>Non-volatile (retains data)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Usage</th>。<th>Temporary storage for active programs</th>。<th>Permanent storage for boot instructions</th>
+      <tr><td>Usage</th>。<th>Temporary storage for active programs</th>。<th>Permanent storage for boot instructions</th>
       <tr>
-      <tr><td style="background:#f0fdf4;">Modifiability</th>。<th>Read-write (can change)</th>。<th>Read-only (normally)</th>
+      <tr><td>Modifiability</th>。<th>Read-write (can change)</th>。<th>Read-only (normally)</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Speed</th>。<th>Fast</th>。<th>Slower than RAM</th>
+      <tr><td>Speed</th>。<th>Fast</th>。<th>Slower than RAM</th>
       </tr>
     </tbody>
   </table>
@@ -493,13 +493,13 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Type</th><th>Examples</th><th>Characteristics</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Desktop OS</th>。<th>Windows, macOS, Linux</th>。<th>Personal computers, GUI, multi-user, multi-tasking</th>
+      <tr><td>Desktop OS</th>。<th>Windows, macOS, Linux</th>。<th>Personal computers, GUI, multi-user, multi-tasking</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Mobile OS</th>。<th>Android, iOS</th>。<th>Touch interface, app stores, power efficient</th>
+      <tr><td>Mobile OS</th>。<th>Android, iOS</th>。<th>Touch interface, app stores, power efficient</th>
       </table>
-      <tr><td style="background:#f0fdf4;">Server OS</th>。<th>Windows Server, Linux Server</th>。<th>Network services, high stability, security</th>
+      <tr><td>Server OS</th>。<th>Windows Server, Linux Server</th>。<th>Network services, high stability, security</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Real-time OS</th>。<th>VxWorks, QNX</th>。<th>Deterministic response times (industrial, automotive, medical)</th>
+      <tr><td>Real-time OS</th>。<th>VxWorks, QNX</th>。<th>Deterministic response times (industrial, automotive, medical)</th>
       </tr>
     </tbody>
   </table>
@@ -637,13 +637,13 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>System</th><th>Base</th><th>Digits</th><th>Uses</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Binary</th>。<th>2</th>。<th>0, 1</th>。<th>Computer internal representation</th>
+      <tr><td>Binary</th>。<th>2</th>。<th>0, 1</th>。<th>Computer internal representation</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Octal</th>。<th>8</th>。<th>0-7</th>。<th>Unix file permissions (chmod), some programming</th>
+      <tr><td>Octal</th>。<th>8</th>。<th>0-7</th>。<th>Unix file permissions (chmod), some programming</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Decimal</th>。<th>10</th>。<th>0-9</th>。<th>Everyday human use</th>
+      <tr><td>Decimal</th>。<th>10</th>。<th>0-9</th>。<th>Everyday human use</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Hexadecimal</th>。<th>16</th>。<th>0-9, A-F (A=10, B=11, C=12, D=13, E=14, F=15)</th>。<th>Memory addresses, color codes (RGB), debugging</th>
+      <tr><td>Hexadecimal</th>。<th>16</th>。<th>0-9, A-F (A=10, B=11, C=12, D=13, E=14, F=15)</th>。<th>Memory addresses, color codes (RGB), debugging</th>
       </tr>
     </tbody>
   </table>
@@ -819,15 +819,15 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Type</th><th>Full Form</th><th>Range</th><th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">PAN</th>。<th>Personal Area Network</th>。<th>Within person's reach (~10m)</th>。<th>Bluetooth between phone and headset</th>
+      <tr><td>PAN</th>。<th>Personal Area Network</th>。<th>Within person's reach (~10m)</th>。<th>Bluetooth between phone and headset</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">LAN</th>。<th>Local Area Network</th>。<th>Building/campus (~100m)</th>。<th>Office network, school computer lab</th>
+      <tr><td>LAN</th>。<th>Local Area Network</th>。<th>Building/campus (~100m)</th>。<th>Office network, school computer lab</th>
       <tr>
-      <tr><td style="background:#f0fdf4;">CAN</th>。<th>Campus Area Network</th>。<th>University campus, corporate campus</th>。<th>UNN campus network connecting buildings</th>
+      <tr><td>CAN</th>。<th>Campus Area Network</th>。<th>University campus, corporate campus</th>。<th>UNN campus network connecting buildings</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">MAN</th>。<th>Metropolitan Area Network</th>。<th>City-wide</th>。<th>City government network</th>
+      <tr><td>MAN</th>。<th>Metropolitan Area Network</th>。<th>City-wide</th>。<th>City government network</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">WAN</th>。<th>Wide Area Network</th>。<th>Country or global</th>。<th>The Internet (largest WAN)</th>
+      <tr><td>WAN</th>。<th>Wide Area Network</th>。<th>Country or global</th>。<th>The Internet (largest WAN)</th>
       </tr>
     </tbody>
   </table>
@@ -977,15 +977,15 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Component</th><th>Description</th><th>Examples</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Web Browser (Client)</th>。<th>Requests and displays web pages</th>。<th>Chrome, Firefox, Safari, Edge, Brave</th>
+      <tr><td>Web Browser (Client)</th>。<th>Requests and displays web pages</th>。<th>Chrome, Firefox, Safari, Edge, Brave</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Web Server</th>。<th>Stores and delivers web pages</th>。<th>Apache, Nginx, IIS</th>
+      <tr><td>Web Server</th>。<th>Stores and delivers web pages</th>。<th>Apache, Nginx, IIS</th>
       </tr>
-      <td><td style="background:#f0fdf4;">HTML</th>。<th>Structure of web pages</th>。<th>&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;div&gt;, &lt;p&gt;</th>
+      <td><td>HTML</th>。<th>Structure of web pages</th>。<th>&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;div&gt;, &lt;p&gt;</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">CSS</th>。<th>Styling and layout</th>。<th>Colors, fonts, spacing, responsive design</th>
+      <tr><td>CSS</th>。<th>Styling and layout</th>。<th>Colors, fonts, spacing, responsive design</th>
       </td>
-      <tr><td style="background:#f0fdf4;">JavaScript</th>。<th>Interactivity and dynamic behavior</th>。<th>Form validation, animations, API calls</th>
+      <tr><td>JavaScript</th>。<th>Interactivity and dynamic behavior</th>。<th>Form validation, animations, API calls</th>
       </tr>
     </tbody>
   </table>
@@ -1249,11 +1249,11 @@ export const GST_LEARN_GST_COMPUTING = [
       <tr><th>Principle</th><th>Description</th><th>Example</th>
     </thead>
     <tbody>
-      <tr><td style="background:#f0fdf4;">Confidentiality</th>。<th>Ensuring data is accessible only to authorized users</th>。<th>Encryption, passwords, access controls</th>
+      <tr><td>Confidentiality</th>。<th>Ensuring data is accessible only to authorized users</th>。<th>Encryption, passwords, access controls</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Integrity</th>。<th>Ensuring data is accurate and unaltered</th>。<th>Checksums, version control, audit logs</th>
+      <tr><td>Integrity</th>。<th>Ensuring data is accurate and unaltered</th>。<th>Checksums, version control, audit logs</th>
       </tr>
-      <tr><td style="background:#f0fdf4;">Availability</th>。<th>Ensuring systems and data are accessible when needed</th>。<th>Backups, redundancy, disaster recovery</th>
+      <tr><td>Availability</th>。<th>Ensuring systems and data are accessible when needed</th>。<th>Backups, redundancy, disaster recovery</th>
       </tr>
     </tbody>
   </table>
