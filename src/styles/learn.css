@@ -936,3 +936,77 @@ body.dark-mode .learn-quiz-opt-letter {
   background: rgba(167, 139, 250, 0.15);
   color: #a78bfa;
 }
+
+/* ============================================================================
+   DARK MODE — TABLE TEXT FIX
+   ============================================================================ */
+
+body.dark-mode .learn-content-html .learn-table td {
+  color: #F3F4F6 !important;
+  border-bottom-color: #3d2a5e;
+}
+
+body.dark-mode .learn-content-html .learn-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .learn-content-html .learn-table tbody tr {
+  background: transparent;
+}
+
+/* Dark mode — ensure all text is readable */
+body.dark-mode .learn-content-html .learn-p,
+body.dark-mode .learn-content-html .learn-list li,
+body.dark-mode .learn-content-html .learn-intro,
+body.dark-mode .learn-content-html .learn-tip-box,
+body.dark-mode .learn-content-html .learn-worked-example,
+body.dark-mode .learn-content-html .learn-formula,
+body.dark-mode .learn-quiz-exp-text,
+body.dark-mode .learn-quiz-results-label,
+body.dark-mode .learn-quiz-opt {
+  color: #F3F4F6;
+}
+
+body.dark-mode .learn-content-html .learn-intro {
+  background: rgba(108, 63, 201, 0.15);
+  border-left-color: #a78bfa;
+}
+
+body.dark-mode .learn-content-html .learn-keyword {
+  background: rgba(167, 139, 250, 0.2);
+  color: #c4b5fd;
+}
+
+body.dark-mode .learn-content-html .learn-subheading {
+  color: #c4b5fd;
+  border-bottom-color: #3d2a5e;
+}
+
+body.dark-mode .learn-content-html .learn-tip-box {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+  color: #ffeb82;
+}
+
+body.dark-mode .learn-content-html .learn-tip-warn {
+  background: rgba(244, 63, 94, 0.1);
+  border-color: #f43f5e;
+  color: #fca5a5;
+}
+
+body.dark-mode .learn-quiz-card {
+  background: #1a0030;
+}
+
+body.dark-mode .learn-quiz-q {
+  color: #c4b5fd;
+}
+
+body.dark-mode .learn-quiz-exp-text {
+  background: rgba(108, 63, 201, 0.1);
+}
+
+body.dark-mode .learn-quiz-summary {
+  background: #1a0030;
+}
+
