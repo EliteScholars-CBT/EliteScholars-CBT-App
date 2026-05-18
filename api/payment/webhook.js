@@ -65,11 +65,11 @@ export default async function handler(req, res) {
       return res.redirect(`${APP_URL}/?payment=failed`);
     }
 
-    console.log('FLW verify status:', flwData?.status);
-    console.log('FLW tx status:', flwData?.data?.status);
-    console.log('FLW currency:', flwData?.data?.currency);
-    console.log('FLW customer email:', flwData?.data?.customer?.email);
-    console.log('URL email param:', email);
+    // console.log('FLW verify status:', flwData?.status);
+    // console.log('FLW tx status:', flwData?.data?.status);
+    // console.log('FLW currency:', flwData?.data?.currency);
+    // console.log('FLW customer email:', flwData?.data?.customer?.email);
+    // console.log('URL email param:', email);
 
     const txData = flwData?.data;
 
