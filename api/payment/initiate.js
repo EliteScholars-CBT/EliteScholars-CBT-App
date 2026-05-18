@@ -7,7 +7,7 @@ import { sendOk, sendErr, sendMethodNotAllowed, setCors } from '../_helpers/resp
 
 const FLW_SECRET_KEY = process.env.FLW_SECRET_KEY;
 
-const PLAN_AMOUNTS = { monthly: 9000, annual: 89000, pro: 100 };
+const PLAN_AMOUNTS = { monthly: 9000, annual: 89000, pro: 3000 };
 const PLAN_NAMES   = {
   monthly: 'EliteScholars Premium Monthly',
   annual:  'EliteScholars Premium Annual',
@@ -80,7 +80,7 @@ export default async function handler(req, res) {
       return sendErr(res, 'Payment provider returned an unexpected response. Please try again.');
     }
 
-    console.log('Flutterwave parsed response:', JSON.stringify(data));
+    // console.log('Flutterwave parsed response:', JSON.stringify(data));
 
     if (data.status !== 'success') {
       console.error('Flutterwave error response:', JSON.stringify(data));
