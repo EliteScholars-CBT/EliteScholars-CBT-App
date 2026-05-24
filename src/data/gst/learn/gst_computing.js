@@ -5,1513 +5,2499 @@
 // ============================================================================
 
 export const GST_LEARN_GST_COMPUTING = [
-  // ==========================================================================
-  // TOPIC 1: Introduction to Computers
-  // ==========================================================================
   {
-    topic: "Introduction to Computers",
-    topicCode: "CSC-001-01",
-    module: "Foundations of Computing",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">A computer</span> is an electronic device that processes data according to a set of instructions (programs), producing meaningful information. Computers have transformed every aspect of modern life — from communication and entertainment to healthcare, education, and business. <strong>Understanding how computers work is essential in today's digital world</strong>.
-</div>
-
-<p class="learn-p">The word "computer" originally referred to people who performed calculations. Today, computers are ubiquitous — from smartphones in our pockets to supercomputers that predict weather and simulate nuclear reactions. All computers, regardless of size or complexity, follow the same basic principle: input → processing → output → storage.</p>
-
-<h3 class="learn-subheading">Characteristics of Computers</h3>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Characteristic</th><th>Description</th><th>Example</th>
-    </thead>
-    <tbody>
-      <tr><td>Speed</th>。<th>Computers process millions to billions of operations per second</th>。<th>CPU speeds measured in GHz (billions of cycles per second)</th>
-      </tr>
-      <tr><td>Accuracy</th>。<th>Computers produce error-free results when hardware and software are functioning correctly</th>。<th>Calculations are precise; errors are human-made (garbage in, garbage out)</th>
-      </tr>
-      <tr><td>Diligence</th>。<th>Computers do not get tired or lose concentration</th>。<th>Can perform repetitive tasks millions of times without error</th>
-      </tr>
-      <td><td>Versatility</th>。<th>Computers can perform completely different tasks</th>。<th>Same computer can browse internet, edit photos, play games, calculate spreadsheets</th>
-      </tr>
-      <tr><td>Storage</th>。<th>Computers can store vast amounts of data permanently</th>。<th>Hard drives can store terabytes (trillions of bytes) of data</th>
-      </tr>
-      <tr><td>Automation</th>。<th>Computers can follow instructions automatically without human intervention</th>。<th>Once started, a program runs until completion</th>
-      </tr>
-      <tr><td>No IQ</th>。<th>Computers cannot think or make decisions independently</th>。<th>They follow programmed instructions; AI simulates intelligence but is not conscious</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">💻 GENERATIONS OF COMPUTERS</text>
-    
-    <g>
-      <rect x="15" y="45" width="85" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="57" y="63" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">1st Gen</text>
-      <text x="57" y="78" text-anchor="middle" font-size="6" fill="#1e3a8a">Vacuum Tubes</text>
-      <text x="57" y="88" text-anchor="middle" font-size="6" fill="#1e3a8a">1940s-50s</text>
-    </g>
-    
-    <g>
-      <rect x="110" y="45" width="85" height="50" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="152" y="63" text-anchor="middle" font-size="8" fill="#166534" font-weight="800">2nd Gen</text>
-      <text x="152" y="78" text-anchor="middle" font-size="6" fill="#166534">Transistors</text>
-      <text x="152" y="88" text-anchor="middle" font-size="6" fill="#166534">1950s-60s</text>
-    </g>
-    
-    <g>
-      <rect x="205" y="45" width="85" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="247" y="63" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">3rd Gen</text>
-      <text x="247" y="78" text-anchor="middle" font-size="6" fill="#92400e">ICs</text>
-      <text x="247" y="88" text-anchor="middle" font-size="6" fill="#92400e">1960s-70s</text>
-    </g>
-    
-    <g>
-      <rect x="300" y="45" width="85" height="50" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-      <text x="342" y="63" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">4th Gen</text>
-      <text x="342" y="78" text-anchor="middle" font-size="6" fill="#831843">Microprocessors</text>
-      <text x="342" y="88" text-anchor="middle" font-size="6" fill="#831843">1970s-90s</text>
-    </g>
-    
-    <g>
-      <rect x="395" y="45" width="90" height="50" rx="6" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.5"/>
-      <text x="440" y="63" text-anchor="middle" font-size="8" fill="#5b21b6" font-weight="800">5th Gen</text>
-      <text x="440" y="78" text-anchor="middle" font-size="6" fill="#5b21b6">AI & ULSI</text>
-      <text x="440" y="88" text-anchor="middle" font-size="6" fill="#5b21b6">1990s+</text>
-    </g>
-    
-    <text x="250" y="130" text-anchor="middle" font-size="9" fill="#475569">Each generation brought smaller size, lower cost, higher speed, and more reliability</text>
-    
-    <rect x="50" y="150" width="400" height="35" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="170" text-anchor="middle" font-size="8" fill="#475569">Today's smartphones have more computing power than room-sized computers of the 1960s</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Generations of Computers</h3>
-
-<ul class="learn-list">
-  <li><strong>First Generation (1940s-1950s):</strong> Vacuum tubes — large, expensive, generated enormous heat, unreliable. Examples: ENIAC, UNIVAC I. Used machine language (0s and 1s).</li>
-  <li><strong>Second Generation (1950s-1960s):</strong> Transistors replaced vacuum tubes — smaller, faster, more reliable, less heat. Assembly language and early high-level languages (FORTRAN, COBOL).</li>
-  <li><strong>Third Generation (1960s-1970s):</strong> Integrated Circuits (ICs) — multiple transistors on single chip. Smaller, cheaper, more powerful. Operating systems developed.</li>
-  <li><strong>Fourth Generation (1970s-1990s):</strong> Microprocessors — entire CPU on one chip. Personal computers emerged (IBM PC, Apple Macintosh). GUIs, networks, internet.</li>
-  <li><strong>Fifth Generation (1990s-present):</strong> Artificial Intelligence, parallel processing, ULSI (Ultra Large Scale Integration). Smartphones, tablets, cloud computing, AI assistants.</li>
-</ul>
-
-<h3 class="learn-subheading">Classification of Computers</h3>
-
-<p class="learn-p"><strong>By Size and Power:</strong></p>
-<ul class="learn-list">
-  <li><strong>Supercomputers:</strong> Fastest, most powerful — used for weather forecasting, scientific simulations, nuclear research, cryptography. Examples: Fugaku (Japan), Summit (US).</li>
-  <li><strong>Mainframe computers:</strong> Large, high-capacity — used by banks, airlines, government for transaction processing. Handle millions of users simultaneously.</li>
-  <li><strong>Minicomputers (mid-range):</strong> Smaller than mainframes — used in manufacturing, research labs, small businesses.</li>
-  <li><strong>Microcomputers (personal computers):</strong> Desktops, laptops, tablets, smartphones — most common type.</li>
-  <li><strong>Workstations:</strong> High-performance PCs for scientific, engineering, design work (CAD, 3D rendering).</li>
-</ul>
-
-<p class="learn-p"><strong>By Purpose:</strong> General purpose (designed for variety of tasks) vs Special purpose (designed for specific tasks — ATMs, traffic light controllers, medical devices).</p>
-<p class="learn-p"><strong>By Type:</strong> Analog (continuous data — temperature, pressure), Digital (discrete data — numbers, text), Hybrid (both analog and digital — medical equipment, industrial controls).</p>
-
-<h3 class="learn-subheading">The Information Processing Cycle</h3>
-
-<p class="learn-p">All computers follow the same basic cycle:</p>
-<ul class="learn-list">
-  <li><strong>Input:</strong> Entering data into the computer (keyboard, mouse, scanner, microphone)</li>
-  <li><strong>Processing:</strong> Performing operations on data (calculations, comparisons, sorting) — done by CPU</li>
-  <li><strong>Output:</strong> Displaying or producing results (monitor, printer, speaker)</li>
-  <li><strong>Storage:</strong> Saving data permanently for future use (hard drive, SSD, USB drive)</li>
-  <li><strong>Communication:</strong> Transferring data between computers (networks, internet, Bluetooth, WiFi)</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Key Term:</strong> GIGO — Garbage In, Garbage Out. Computers are accurate, but they cannot correct wrong input. If you input incorrect data, output will be incorrect.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> Remember the five generations with their key technologies: Vacuum Tubes → Transistors → ICs → Microprocessors → AI/Parallel Processing. Each generation brought smaller size, lower cost, and higher speed.</span>
-</div>
-    `,
+    topic: 'Introduction to Computers',
+    topicCode: 'CSC-101-01',
+    module: 'Fundamentals of Computing',
+    contentHTML:
+      '\n<div class="learn-intro">\n  A <span class="learn-keyword">computer</span> is an electronic device that accepts data as input, processes it according to a set of instructions (a program), and produces meaningful results as output. The word "computer" originally referred to a person who performed calculations, but today it universally means an electronic machine capable of storing, retrieving, and processing data at incredible speeds. From the banking halls of Lagos to the lecture rooms of the University of Ibadan, computers have become the backbone of modern Nigerian life, transforming education, commerce, healthcare, and government in ways unimaginable just decades ago.\n</div>\n\n<h3 class="learn-subheading">1. Definition and Basic Concept</h3>\n<p class="learn-p">At its core, a computer operates on the <span class="learn-keyword">Input-Process-Output (IPO)</span> model. You provide raw data (input), the computer manipulates it according to instructions (process), and delivers the result (output). A fourth component — <span class="learn-keyword">storage</span> — allows data and results to be saved for later use. This simple yet powerful cycle underlies everything from calculating your CGPA to streaming Afrobeats on Audiomack.</p>\n<p class="learn-p">Data is the raw, unprocessed facts and figures entered into a computer — names, numbers, images, sounds. <span class="learn-keyword">Information</span> is what emerges after the computer processes that data — a payslip, a bank statement, a medical report. The transformation of data into information is the fundamental purpose of computing.</p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg">\n    <rect width="500" height="160" fill="#0f0020" rx="10"/>\n    <rect x="15" y="55" width="100" height="50" rx="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="195" y="55" width="110" height="50" rx="8" fill="#6C3FC9" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="385" y="55" width="100" height="50" rx="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="185" y="115" width="130" height="35" rx="8" fill="#2d1b4e" stroke="#28c840" stroke-width="1.5"/>\n    <text x="65" y="76" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">INPUT</text>\n    <text x="65" y="92" text-anchor="middle" fill="#9090b0" font-size="8">Keyboard, Mouse</text>\n    <text x="65" y="103" text-anchor="middle" fill="#9090b0" font-size="8">Scanner, Mic</text>\n    <text x="250" y="76" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">PROCESS</text>\n    <text x="250" y="92" text-anchor="middle" fill="#9090b0" font-size="8">CPU executes</text>\n    <text x="250" y="103" text-anchor="middle" fill="#9090b0" font-size="8">instructions</text>\n    <text x="435" y="76" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">OUTPUT</text>\n    <text x="435" y="92" text-anchor="middle" fill="#9090b0" font-size="8">Monitor, Printer</text>\n    <text x="435" y="103" text-anchor="middle" fill="#9090b0" font-size="8">Speaker</text>\n    <text x="250" y="128" text-anchor="middle" fill="#28c840" font-size="10" font-weight="bold">STORAGE</text>\n    <text x="250" y="142" text-anchor="middle" fill="#9090b0" font-size="8">HDD, SSD, USB</text>\n    <path d="M115 80 L193 80" stroke="#D4AF37" stroke-width="2" marker-end="url(#arr)"/>\n    <path d="M305 80 L383 80" stroke="#D4AF37" stroke-width="2" marker-end="url(#arr)"/>\n    <path d="M250 105 L250 113" stroke="#28c840" stroke-width="2" marker-end="url(#arr2)"/>\n    <defs>\n      <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#D4AF37"/></marker>\n      <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#28c840"/></marker>\n    </defs>\n    <rect x="195" y="55" width="110" height="50" rx="8" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>\n    </rect>\n    <text x="250" y="150" text-anchor="middle" fill="#5a5a7a" font-size="9">The Information Processing Cycle</text>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">2. Characteristics of Computers</h3>\n<p class="learn-p">What makes computers so indispensable? Eight key characteristics set computers apart from human workers and traditional machines.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Characteristic</th><th>Explanation</th><th>Real-World Example</th></tr></thead>\n    <tbody>\n      <tr><td>Speed</td><td>Performs millions/billions of operations per second (MIPS/FLOPS)</td><td>A bank\'s server processes thousands of Interswitch transactions per second</td></tr>\n      <tr><td>Accuracy</td><td>Results are correct if input and program are correct; no random errors</td><td>WAEC marking system calculates results without arithmetic mistakes</td></tr>\n      <tr><td>Diligence</td><td>Never gets tired, bored, or loses concentration; consistent performance</td><td>ATMs operate 24/7 without rest or declining service quality</td></tr>\n      <tr><td>Versatility</td><td>Can perform many different types of tasks without hardware changes</td><td>Same laptop writes documents, plays Burna Boy, and processes spreadsheets</td></tr>\n      <tr><td>Storage</td><td>Can store vast amounts of data in a small physical space</td><td>JAMB stores millions of candidates\' records on a few servers</td></tr>\n      <tr><td>Automation</td><td>Once programmed, performs tasks without human intervention</td><td>Nigerian Eagle Airline automated check-in systems</td></tr>\n      <tr><td>No IQ</td><td>Cannot think, reason, or make decisions without explicit instructions</td><td>A computer cannot determine if a medical diagnosis is ethical</td></tr>\n      <tr><td>No Feeling</td><td>Has no emotions, creativity, intuition, or moral judgment</td><td>Cannot feel empathy when counselling a distressed student</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. Generations of Computers</h3>\n<p class="learn-p">Computer technology has evolved through five distinct generations, each defined by the dominant hardware technology of its era. Understanding these generations helps trace the remarkable journey from room-sized machines to pocket computers.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Generation</th><th>Period</th><th>Technology</th><th>Characteristics</th><th>Examples</th></tr></thead>\n    <tbody>\n      <tr><td>First</td><td>1940–1956</td><td>Vacuum Tubes</td><td>Room-sized, very hot, unreliable, expensive, used machine language, thousands of vacuum tubes</td><td>ENIAC, UNIVAC I, IBM 701</td></tr>\n      <tr><td>Second</td><td>1956–1963</td><td>Transistors</td><td>Smaller, faster, cheaper, more reliable than 1st gen, used assembly language, less heat</td><td>IBM 1401, CDC 1604, Honeywell 400</td></tr>\n      <tr><td>Third</td><td>1964–1971</td><td>Integrated Circuits (IC)</td><td>Much smaller, faster, cheaper, multiple transistors on a chip, high-level languages introduced</td><td>IBM 360, PDP-8, NCR 395</td></tr>\n      <tr><td>Fourth</td><td>1971–Present</td><td>Microprocessors (VLSI)</td><td>Personal computers emerged, GUI, networks, millions of transistors on one chip, very affordable</td><td>Intel 4004, Apple II, IBM PC, modern laptops</td></tr>\n      <tr><td>Fifth</td><td>Present–Future</td><td>AI/ULSI/Quantum</td><td>Artificial intelligence, natural language processing, machine learning, voice recognition, parallel processing</td><td>Deep Blue, Watson, modern AI systems</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — Generations Memory Aid:</strong> Remember the technology sequence: <strong>V</strong>acuum tubes → <strong>T</strong>ransistors → <strong>I</strong>ntegrated Circuits → <strong>M</strong>icroprocessors → <strong>A</strong>I/Quantum. "Very Tired IT Managers Act" helps recall the order. First generation computers used machine language; second used assembly; third introduced high-level languages like FORTRAN and COBOL.\n</div>\n\n<h3 class="learn-subheading">4. Classification of Computers</h3>\n<p class="learn-p">Computers are classified in three main ways: by <span class="learn-keyword">size/processing power</span>, by <span class="learn-keyword">purpose</span>, and by the <span class="learn-keyword">type of data</span> they process.</p>\n\n<h4 class="learn-subsubheading">By Size and Processing Power</h4>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Type</th><th>Size/Cost</th><th>Speed/Power</th><th>Users</th><th>Nigerian Example</th></tr></thead>\n    <tbody>\n      <tr><td>Supercomputer</td><td>Enormous/Very expensive</td><td>Fastest (petaFLOPS)</td><td>Scientists, researchers</td><td>Used for weather forecasting, NIMET uses similar systems</td></tr>\n      <tr><td>Mainframe</td><td>Large room/Expensive</td><td>Very fast, handles many users</td><td>Banks, govt agencies</td><td>CBN, ZENITH Bank core banking servers</td></tr>\n      <tr><td>Minicomputer</td><td>Medium cabinet/Moderate</td><td>Fast, multi-user</td><td>Mid-size organisations</td><td>University departmental servers</td></tr>\n      <tr><td>Microcomputer</td><td>Desktop/laptop/Affordable</td><td>Sufficient for personal use</td><td>Individuals, small businesses</td><td>The laptop you use at UNILAG</td></tr>\n      <tr><td>Workstation</td><td>Desktop form/Expensive</td><td>High-performance single user</td><td>Engineers, designers</td><td>NTA broadcasting workstations</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h4 class="learn-subsubheading">By Purpose</h4>\n<ul class="learn-list">\n  <li><strong>General Purpose Computers:</strong> Can perform many different tasks — word processing, browsing, gaming, accounting. Most personal computers fall in this category. Your HP or Dell laptop is a general purpose computer.</li>\n  <li><strong>Special Purpose Computers:</strong> Designed for one specific task only. Examples include ATM machines (dispense cash and process transactions only), digital cameras (capture and store images), and the computer controlling a Dangote Cement plant\'s industrial process.</li>\n</ul>\n\n<h4 class="learn-subsubheading">By Type of Data Processed</h4>\n<ul class="learn-list">\n  <li><strong>Analog Computers:</strong> Process continuous physical quantities — voltage, pressure, temperature. Examples: thermometers, speedometers in older cars, petrol pumps. They give approximate results.</li>\n  <li><strong>Digital Computers:</strong> Process discrete binary data (0s and 1s). All modern computers are digital. Results are exact.</li>\n  <li><strong>Hybrid Computers:</strong> Combine features of both analog and digital. Used in hospitals (ECG machines that sense analog signals and display digital readings) and meteorological stations.</li>\n</ul>\n\n<h3 class="learn-subheading">5. Applications of Computers in Nigeria</h3>\n<ul class="learn-list">\n  <li><strong>Education:</strong> E-learning platforms (NOUN\'s online courses), JAMB CBT examinations, digital libraries, research databases, virtual classrooms during COVID-19.</li>\n  <li><strong>Banking and Finance:</strong> Internet banking, Flutterwave and Paystack payment processing, ATM networks, forex trading platforms, CBN\'s monetary policy analysis.</li>\n  <li><strong>Healthcare:</strong> Hospital Management Information Systems (HMIS), telemedicine apps (Helium Health), medical imaging (CT scans, X-rays), laboratory result management.</li>\n  <li><strong>Government:</strong> BVN (Bank Verification Number) database, INEC\'s voter registration system, NIN (National Identification Number), tax management (ITAS - Integrated Tax Administration System).</li>\n  <li><strong>Agriculture:</strong> Precision farming, crop monitoring via drones and satellites, e-market platforms (Farmcrowdy), weather prediction for planting seasons.</li>\n  <li><strong>Transportation:</strong> Lagos BRT bus tracking, airline reservation systems (Nigeria Eagle), port management at Apapa, traffic management systems.</li>\n  <li><strong>Entertainment:</strong> Nollywood digital production, streaming (Netflix Nigeria, AudioMack, Boomplay), gaming, social media management.</li>\n  <li><strong>Communication:</strong> MTN and Airtel network management, satellite communications (NIGCOMSAT), email servers, social media platforms.</li>\n</ul>\n\n<h3 class="learn-subheading">6. Advantages and Disadvantages</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Advantages</th><th>Disadvantages</th></tr></thead>\n    <tbody>\n      <tr><td>High speed of processing — millions of operations per second</td><td>Unemployment — automation replaces some human jobs</td></tr>\n      <tr><td>High accuracy — no computational errors when properly programmed</td><td>Health issues — eye strain, RSI, poor posture, sedentary lifestyle</td></tr>\n      <tr><td>Large storage capacity — terabytes of data in small space</td><td>Privacy concerns — personal data collected and potentially misused</td></tr>\n      <tr><td>Versatility — performs multiple different tasks</td><td>Security risks — hacking, fraud, identity theft</td></tr>\n      <tr><td>24/7 availability — never rests or takes holidays</td><td>High initial cost — quality computers are expensive in Nigeria</td></tr>\n      <tr><td>Global connectivity — internet connects people worldwide</td><td>Power dependency — useless without electricity (major Nigerian challenge)</td></tr>\n      <tr><td>Improved communication — email, video calls, social media</td><td>Computer crime — cybercrime, online fraud, data breaches</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Exam Tip — Common Error:</strong> Students often say computers are "intelligent" — this is WRONG. Computers have NO intelligence (IQ) of their own. They only execute pre-written instructions. They cannot reason, feel, or make independent moral decisions. AI systems appear intelligent but are based on human-written algorithms and training data, not genuine understanding.\n</div>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="25" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Computer Generations Timeline</text>\n    <line x1="30" y1="100" x2="450" y2="100" stroke="#4B0082" stroke-width="3"/>\n    <circle cx="70" cy="100" r="18" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="160" cy="100" r="18" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="250" cy="100" r="18" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="340" cy="100" r="18" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="420" cy="100" r="18" fill="#7C3AED" stroke="#D4AF37" stroke-width="2"/>\n    <text x="70" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">1st</text>\n    <text x="160" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">2nd</text>\n    <text x="250" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">3rd</text>\n    <text x="340" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">4th</text>\n    <text x="420" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">5th</text>\n    <text x="70" y="55" text-anchor="middle" fill="#9090b0" font-size="8">1940-56</text>\n    <text x="70" y="66" text-anchor="middle" fill="#c8b4f0" font-size="7">Vacuum</text>\n    <text x="70" y="75" text-anchor="middle" fill="#c8b4f0" font-size="7">Tubes</text>\n    <text x="160" y="55" text-anchor="middle" fill="#9090b0" font-size="8">1956-63</text>\n    <text x="160" y="66" text-anchor="middle" fill="#c8b4f0" font-size="7">Transistors</text>\n    <text x="250" y="55" text-anchor="middle" fill="#9090b0" font-size="8">1964-71</text>\n    <text x="250" y="66" text-anchor="middle" fill="#c8b4f0" font-size="7">Integrated</text>\n    <text x="250" y="75" text-anchor="middle" fill="#c8b4f0" font-size="7">Circuits</text>\n    <text x="340" y="55" text-anchor="middle" fill="#9090b0" font-size="8">1971-Now</text>\n    <text x="340" y="66" text-anchor="middle" fill="#c8b4f0" font-size="7">Micro-</text>\n    <text x="340" y="75" text-anchor="middle" fill="#c8b4f0" font-size="7">processors</text>\n    <text x="420" y="55" text-anchor="middle" fill="#9090b0" font-size="8">Future</text>\n    <text x="420" y="66" text-anchor="middle" fill="#c8b4f0" font-size="7">AI &amp;</text>\n    <text x="420" y="75" text-anchor="middle" fill="#c8b4f0" font-size="7">Quantum</text>\n    <text x="70" y="132" text-anchor="middle" fill="#ff9500" font-size="7">ENIAC</text>\n    <text x="160" y="132" text-anchor="middle" fill="#ff9500" font-size="7">IBM 1401</text>\n    <text x="250" y="132" text-anchor="middle" fill="#ff9500" font-size="7">IBM 360</text>\n    <text x="340" y="132" text-anchor="middle" fill="#ff9500" font-size="7">IBM PC</text>\n    <text x="420" y="132" text-anchor="middle" fill="#ff9500" font-size="7">Watson</text>\n    <circle cx="420" cy="100" r="18" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="r" values="18;24;18" dur="2s" repeatCount="indefinite"/>\n      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>\n    </circle>\n  </svg>\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> A computer is an electronic device that processes data using the Input-Process-Output-Storage cycle. Key characteristics include speed, accuracy, diligence, versatility, and storage, but computers have NO IQ or feelings. Five generations span from vacuum tubes (1940s) to AI/quantum computing (present/future). Computers are classified by size (supercomputer to microcomputer), purpose (general/special), and data type (analog/digital/hybrid). Applications span every sector of Nigerian life from banking to agriculture.\n</div>\n  ',
     questions: [
-      { q: "A computer is best defined as:", o: ["A machine that displays pictures", "An electronic device that processes data according to instructions", "A device for playing games", "A typewriter with a screen"], a: 1, e: "A computer is an electronic device that processes data following programmed instructions, producing meaningful output.", h: "What is a computer?", yr: "GST" },
-      { q: "Which characteristic of computers means they can perform completely different tasks?", o: ["Speed", "Accuracy", "Versatility", "Diligence"], a: 2, e: "Versatility means computers can do many different tasks — browse internet, edit photos, play games, calculate spreadsheets.", h: "What characteristic is doing many tasks?", yr: "GST" },
-      { q: "First generation computers used which technology?", o: ["Transistors", "Integrated Circuits", "Vacuum Tubes", "Microprocessors"], a: 2, e: "First generation (1940s-50s) used vacuum tubes — large, hot, unreliable, power-hungry.", h: "What did first gen computers use?", yr: "GST" },
-      { q: "Microprocessors were introduced in which generation?", o: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"], a: 2, e: "Fourth generation (1970s-90s) introduced microprocessors — entire CPU on one chip, enabling personal computers.", h: "Which generation had microprocessors?", yr: "GST" },
-      { q: "Which type of computer is the fastest and most powerful?", o: ["Mainframe", "Minicomputer", "Supercomputer", "Microcomputer"], a: 2, e: "Supercomputers are the fastest and most powerful — used for weather forecasting, scientific simulations, cryptography.", h: "What is the most powerful computer?", yr: "GST" },
-      { q: "The information processing cycle consists of:", o: ["Only input and output", "Input, processing, output, storage, communication", "Only storage", "Only processing"], a: 1, e: "Complete cycle: Input → Processing → Output → Storage → Communication.", h: "What are the steps?", yr: "GST" },
-      { q: "Which characteristic explains why computers do not get tired?", o: ["Accuracy", "Diligence", "Speed", "Storage"], a: 1, e: "Diligence means computers can perform repetitive tasks tirelessly without losing concentration.", h: "What characteristic means no tiredness?", yr: "GST" },
-      { q: "ENIAC and UNIVAC are examples of which generation?", o: ["First", "Second", "Third", "Fourth"], a: 0, e: "ENIAC (Electronic Numerical Integrator and Computer) and UNIVAC I were first generation vacuum tube computers.", h: "Which generation included ENIAC?", yr: "GST" },
-      { q: "A laptop computer is classified as:", o: ["Supercomputer", "Mainframe", "Minicomputer", "Microcomputer"], a: 3, e: "Laptops are microcomputers (personal computers) — small, affordable, designed for individual use.", h: "What type is a laptop?", yr: "GST" },
-      { q: "Which generation introduced transistors?", o: ["First", "Second", "Third", "Fourth"], a: 1, e: "Second generation (1950s-60s) replaced vacuum tubes with transistors — smaller, faster, more reliable.", h: "Which generation had transistors?", yr: "GST" },
-      { q: "GIGO stands for:", o: ["Good Input, Good Output", "Garbage In, Garbage Out", "Great Input, Great Output", "General Input, General Output"], a: 1, e: "GIGO means computers cannot correct wrong input — inaccurate input produces inaccurate output.", h: "What does GIGO mean?", yr: "GST" },
-      { q: "Which of the following is NOT a characteristic of computers?", o: ["Speed", "Intelligence (computers have no IQ)", "Accuracy", "Diligence"], a: 1, e: "Computers have no IQ — they follow instructions without understanding or independent thought.", h: "What do computers lack?", yr: "GST" },
-      { q: "Smartphones and tablets belong to which computer class?", o: ["Mainframe", "Minicomputer", "Microcomputer", "Supercomputer"], a: 2, e: "Smartphones and tablets are microcomputers — small, portable, general purpose computing devices.", h: "What type are smartphones?", yr: "GST" },
-      { q: "Mainframe computers are typically used by:", o: ["Individuals", "Banks, airlines, government for transaction processing", "Game players", "Weather forecasters"], a: 1, e: "Mainframes handle massive transaction processing for banks, airlines, government agencies.", h: "Who uses mainframes?", yr: "GST" },
-      { q: "Integrated Circuits (ICs) were introduced in which generation?", o: ["First", "Second", "Third", "Fourth"], a: 2, e: "Third generation (1960s-70s) introduced integrated circuits — multiple transistors on single chip.", h: "Which generation had ICs?", yr: "GST" },
-      { q: "Which of the following is an example of storage in the information processing cycle?", o: ["Keyboard", "Monitor", "Hard drive", "CPU"], a: 2, e: "Hard drive, SSD, USB drive are storage devices — they save data permanently for future use.", h: "What is an example of storage?", yr: "GST" },
-      { q: "Fifth generation computers are characterized by:", o: ["Vacuum tubes", "Transistors", "Artificial Intelligence and parallel processing", "Integrated Circuits"], a: 2, e: "Fifth generation (1990s-present) focuses on AI, parallel processing, natural language processing, expert systems.", h: "What defines fifth generation?", yr: "GST" },
-      { q: "Which characteristic means computers produce error-free results when functioning correctly?", o: ["Speed", "Accuracy", "Diligence", "Versatility"], a: 1, e: "Accuracy means results are precise and error-free — provided input and hardware/software are correct.", h: "What characteristic means no errors?", yr: "GST" },
-      { q: "A hybrid computer combines features of:", o: ["Supercomputer and mainframe", "Analog and digital computers", "Microcomputer and minicomputer", "Laptop and desktop"], a: 1, e: "Hybrid computers combine analog (continuous data) and digital (discrete data) capabilities — used in medical equipment, industrial controls.", h: "What does hybrid combine?", yr: "GST" },
-      { q: "Which generation saw the emergence of personal computers (IBM PC, Apple Macintosh)?", o: ["2nd", "3rd", "4th", "5th"], a: 2, e: "Fourth generation microprocessors enabled personal computers — IBM PC (1981), Apple Macintosh (1984).", h: "Which generation brought PCs?", yr: "GST" }
-    ]
+      {
+        q: 'Which of the following BEST defines a computer?',
+        o: [
+          'A machine that can think and make decisions independently',
+          'An electronic device that accepts data, processes it according to instructions, and produces output',
+          'A device used only for calculations and mathematical operations',
+          'A machine that stores information without processing it',
+        ],
+        a: 1,
+        e: 'A computer is an electronic device that accepts data (input), processes it according to a set of instructions (program), and produces meaningful results (output). It can also store data. It does NOT think independently.',
+        h: 'Focus on the Input-Process-Output definition.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which characteristic of a computer means it will perform tasks the same way at 2am as at 2pm without fatigue?',
+        o: ['Speed', 'Accuracy', 'Diligence', 'Versatility'],
+        a: 2,
+        e: 'Diligence means a computer never gets tired, bored, or loses concentration. It performs consistently 24/7 without any decline in performance, unlike human workers who fatigue.',
+        h: 'Think of ATMs that work all day and night without rest.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The ENIAC and UNIVAC I computers belong to which generation?',
+        o: ['Second generation', 'Third generation', 'First generation', 'Fourth generation'],
+        a: 2,
+        e: 'ENIAC (Electronic Numerical Integrator and Computer) and UNIVAC I belong to the First Generation (1940-1956), which used vacuum tubes as the primary switching technology. They were room-sized, very hot, and expensive.',
+        h: 'First generation = vacuum tubes = 1940s-1950s.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A hospital ECG machine that senses continuous electrical signals from the heart and displays them as digital readings is an example of which type of computer?',
+        o: [
+          'Analog computer',
+          'Digital computer',
+          'Hybrid computer',
+          'Special purpose digital computer',
+        ],
+        a: 2,
+        e: 'A hybrid computer combines both analog and digital features. The ECG senses analog electrical signals from the body (continuous data) and converts/displays them digitally. This combination of analog sensing and digital processing defines a hybrid computer.',
+        h: 'Analog sensing + digital display = hybrid.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The transition from First Generation to Second Generation computers involved replacing which technology?',
+        o: [
+          'Integrated circuits with microprocessors',
+          'Vacuum tubes with transistors',
+          'Transistors with integrated circuits',
+          'Magnetic core with semiconductor memory',
+        ],
+        a: 1,
+        e: 'The Second Generation (1956-1963) replaced vacuum tubes with transistors. Transistors were smaller, faster, cheaper, more reliable, and generated less heat than vacuum tubes.',
+        h: 'Remember: V-T-I-M-A (Vacuum, Transistor, IC, Microprocessor, AI).',
+        yr: 'CSC',
+      },
+      {
+        q: "JAMB's CBT examination system, which simultaneously serves hundreds of thousands of candidates nationwide, most closely resembles which category of computer?",
+        o: ['Supercomputer', 'Microcomputer', 'Mainframe computer', 'Minicomputer'],
+        a: 2,
+        e: "Mainframe computers handle very large numbers of concurrent users and massive transaction volumes. JAMB's CBT infrastructure uses server systems capable of handling hundreds of thousands of simultaneous exam sessions — characteristic of mainframe-class systems.",
+        h: 'Mainframes serve many users simultaneously in large organisations.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is NOT a characteristic of computers?',
+        o: [
+          'High speed of processing',
+          'Ability to reason and apply moral judgment',
+          'Diligence and consistent performance',
+          'Large storage capacity',
+        ],
+        a: 1,
+        e: "Computers have NO ability to reason, apply moral judgment, or think independently. This is the 'No IQ' characteristic. All other options (speed, diligence, storage) are genuine computer characteristics.",
+        h: 'Computers cannot think — they only follow instructions.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In the Information Processing Cycle, what is the correct order of stages?',
+        o: [
+          'Process → Input → Output → Storage',
+          'Input → Process → Output → Storage',
+          'Storage → Input → Process → Output',
+          'Input → Output → Process → Storage',
+        ],
+        a: 1,
+        e: 'The Information Processing Cycle follows: Input (data is entered) → Process (CPU manipulates data) → Output (results are produced) → Storage (results are saved). This is also called the IPO+S model.',
+        h: 'Think of cooking: ingredients (input) → cooking (process) → meal (output) → fridge (storage).',
+        yr: 'CSC',
+      },
+      {
+        q: "Flutterwave's payment processing servers, which handle millions of transactions for Nigerian businesses, are BEST classified as:",
+        o: [
+          'Special purpose computers by purpose; mainframe by size',
+          'General purpose computers by purpose; microcomputers by size',
+          'Analog computers by type; minicomputer by size',
+          'Hybrid computers by type; workstation by size',
+        ],
+        a: 0,
+        e: "Flutterwave's servers are special purpose (designed specifically for payment processing, not general tasks) and mainframe/enterprise class by size (handling millions of concurrent transactions requiring massive processing power).",
+        h: 'Payment servers do ONE thing (payments) = special purpose.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which generation of computers first introduced the concept of the personal computer (PC)?',
+        o: ['Second generation', 'Third generation', 'Fourth generation', 'Fifth generation'],
+        a: 2,
+        e: 'The Fourth Generation (1971-present), based on microprocessor technology (Very Large Scale Integration - VLSI), made personal computers possible and affordable. The Intel 4004 microprocessor (1971), Apple II, and IBM PC are Fourth Generation milestones.',
+        h: 'Microprocessors made computers small and affordable enough for personal use.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A digital camera designed exclusively to take photographs and cannot run word processing software is classified as:',
+        o: [
+          'General purpose, digital',
+          'Special purpose, digital',
+          'General purpose, analog',
+          'Special purpose, hybrid',
+        ],
+        a: 1,
+        e: 'A camera designed exclusively for photography is a special purpose device (one specific task). It processes digital data (discrete binary values for each pixel), making it a special purpose digital computer.',
+        h: 'Special purpose = one specific task only.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The NIMET (Nigerian Meteorological Agency) uses high-performance computers to run complex atmospheric simulations. These are BEST described as:',
+        o: ['Mainframe computers', 'Microcomputers', 'Supercomputers', 'Workstations'],
+        a: 2,
+        e: "Supercomputers are the fastest and most powerful computers, used for complex scientific simulations like weather forecasting, climate modelling, and atmospheric research. NIMET's computational weather modelling requires supercomputer-class processing.",
+        h: 'Scientific simulations requiring maximum speed = supercomputer.',
+        yr: 'CSC',
+      },
+      {
+        q: "Which of the following best describes 'data' versus 'information'?",
+        o: [
+          'Data is processed; information is raw',
+          'Data is raw unprocessed facts; information is data that has been processed to be meaningful',
+          'Data and information are the same thing',
+          'Information is entered into a computer; data is produced by it',
+        ],
+        a: 1,
+        e: "Data consists of raw, unprocessed facts and figures (e.g., '070', '25', 'Lagos'). Information is data that has been processed and organized to be meaningful (e.g., 'Student aged 25 from Lagos, phone: 070...'). Processing transforms data into information.",
+        h: 'Data = raw. Information = processed + meaningful.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which technology is associated with the Third Generation of computers?',
+        o: ['Vacuum tubes', 'Transistors', 'Integrated Circuits (IC)', 'Microprocessors (VLSI)'],
+        a: 2,
+        e: 'The Third Generation (1964-1971) used Integrated Circuits (ICs) — chips that combined multiple transistors, resistors, and capacitors onto a single silicon chip. This dramatically reduced size, cost, and power consumption compared to discrete transistors.',
+        h: '1st=Vacuum tubes, 2nd=Transistors, 3rd=Integrated Circuits, 4th=Microprocessors.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is a DISADVANTAGE specific to computer use in the Nigerian context?',
+        o: [
+          'High processing speed',
+          'Data storage capability',
+          'Power dependency (frequent outages limit computer use)',
+          'Ability to connect to the internet',
+        ],
+        a: 2,
+        e: 'Power dependency is a particularly acute disadvantage in Nigeria, where frequent NEPA/PHCN power outages render computers useless. Computers cannot operate without electricity, making generator costs and battery life critical concerns for Nigerian users.',
+        h: 'Think of the Nigerian context — what makes computers harder to use here?',
+        yr: 'CSC',
+      },
+      {
+        q: 'The Nigerian BVN (Bank Verification Number) system, which stores biometric and personal data for all bank customers, is an application of computers in which sector?',
+        o: ['Entertainment', 'Agriculture', 'Banking/Finance and Government', 'Education'],
+        a: 2,
+        e: 'The BVN system is a joint initiative of the Central Bank of Nigeria (CBN) and the banking sector. It applies computers in both banking/finance (linking bank accounts) and government (national identification and financial inclusion policy implementation).',
+        h: 'BVN = CBN initiative for banking + national ID = Banking & Government.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In which generation were high-level programming languages like FORTRAN and COBOL first widely introduced?',
+        o: ['First generation', 'Second generation', 'Third generation', 'Fourth generation'],
+        a: 2,
+        e: 'High-level languages like FORTRAN (1957) and COBOL (1959) were introduced in the Second Generation, and COBOL became widespread in Third Generation systems. However, the Third Generation (1964-1971) is most associated with the proliferation of high-level languages and time-sharing systems.',
+        h: 'Machine language (1st), Assembly (2nd), High-level languages (3rd).',
+        yr: 'CSC',
+      },
+      {
+        q: 'A workstation used by an architect at AECOM Nigeria for CAD (Computer-Aided Design) drawings differs from a regular desktop PC primarily in:',
+        o: [
+          'It is a special purpose computer used only for architecture',
+          'It has higher processing power, more RAM, and professional graphics capability',
+          'It cannot connect to the internet or networks',
+          'It uses analog processing instead of digital',
+        ],
+        a: 1,
+        e: 'A workstation is a high-performance single-user computer with more powerful CPU, more RAM, professional-grade GPU (graphics card), and greater storage than standard PCs. It remains a general purpose computer but with enhanced specifications for demanding professional tasks.',
+        h: 'Workstations are general purpose but with higher specs than typical PCs.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following correctly lists the full Information Processing Cycle?',
+        o: [
+          'Input → Output → Process → Storage → Communication',
+          'Input → Process → Output → Storage → Communication',
+          'Process → Input → Storage → Output → Communication',
+          'Input → Storage → Process → Output → Communication',
+        ],
+        a: 1,
+        e: 'The complete Information Processing Cycle is: Input → Process → Output → Storage → Communication. The communication component (transmitting information to others via networks) is sometimes added to the basic IPO+S model.',
+        h: 'The full cycle adds Communication at the end: IPOSC.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Fifth Generation computers are primarily characterised by:',
+        o: [
+          'Use of vacuum tubes for ultra-fast processing',
+          'Very Large Scale Integration (VLSI) microprocessors',
+          'Artificial intelligence, machine learning, and natural language processing capabilities',
+          'Integrated circuits and time-sharing operating systems',
+        ],
+        a: 2,
+        e: "Fifth Generation computers (present and future) are characterized by artificial intelligence (AI), machine learning, natural language processing, voice recognition, and parallel processing. Systems like IBM Watson, DeepMind's AlphaGo, and modern AI assistants represent this generation.",
+        h: '5th generation = AI, machine learning, natural language processing.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 2: Computer Hardware - System Unit
-  // ==========================================================================
   {
-    topic: "Computer Hardware - System Unit",
-    topicCode: "CSC-002-01",
-    module: "Computer Hardware",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">The system unit</span> is the core of a computer — the metal or plastic case that houses the main electronic components. It contains the motherboard, CPU, memory, power supply, and storage drives. <strong>Understanding the system unit is essential for knowing how computers process information</strong>.
-</div>
-
-<p class="learn-p">The system unit is often called the "tower" or "CPU" (incorrectly — the CPU is just one component inside). All critical processing occurs inside the system unit.</p>
-
-<h3 class="learn-subheading">The Motherboard</h3>
-
-<p class="learn-p">The motherboard is the main circuit board that connects all components. Think of it as the central nervous system or the "backbone" of the computer.</p>
-
-<p class="learn-p"><strong>Major motherboard components:</strong></p>
-<ul class="learn-list">
-  <li><strong>CPU socket:</strong> Holds the processor (CPU)</li>
-  <li><strong>RAM slots:</strong> Hold memory modules (DIMM slots)</li>
-  <li><strong>Expansion slots:</strong> PCI, PCIe for adding cards (graphics, sound, network)</li>
-  <li><strong>Chipset:</strong> Controls data flow between CPU, memory, and peripherals</li>
-  <li><strong>BIOS/UEFI chip:</strong> Contains basic input/output system (starts the computer)</li>
-  <li><strong>CMOS battery:</strong> Powers BIOS memory to save settings (date, time, boot order)</li>
-  <li><strong>Power connectors:</strong> Supply power to motherboard and CPU</li>
-  <li><strong>SATA connectors:</strong> Connect storage drives (hard drives, SSDs)</li>
-  <li><strong>USB headers, fan headers, front panel connectors</strong></li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">⚙️ THE CPU - Fetch-Decode-Execute Cycle</text>
-    
-    <g>
-      <rect x="15" y="45" width="140" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <text x="85" y="65" text-anchor="middle" font-size="9" fill="#1e3a8a" font-weight="800">FETCH</text>
-      <text x="85" y="82" text-anchor="middle" font-size="7" fill="#1e3a8a">Get instruction from memory</text>
-    </g>
-    
-    <g>
-      <rect x="180" y="45" width="140" height="50" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <text x="250" y="65" text-anchor="middle" font-size="9" fill="#166534" font-weight="800">DECODE</text>
-      <text x="250" y="82" text-anchor="middle" font-size="7" fill="#166534">Interpret instruction</text>
-    </g>
-    
-    <g>
-      <rect x="345" y="45" width="140" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-      <text x="415" y="65" text-anchor="middle" font-size="9" fill="#92400e" font-weight="800">EXECUTE</text>
-      <text x="415" y="82" text-anchor="middle" font-size="7" fill="#92400e">Perform operation</text>
-    </g>
-    
-    <line x1="155" y1="70" x2="180" y2="70" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowCPU1)"/>
-    <line x1="320" y1="70" x2="345" y2="70" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowCPU1)"/>
-    
-    <defs>
-      <marker id="arrowCPU1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="135" text-anchor="middle" font-size="9" fill="#475569">The CPU continuously repeats this cycle billions of times per second</text>
-    
-    <rect x="50" y="155" width="400" height="35" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="175" text-anchor="middle" font-size="8" fill="#475569">Clock speed (GHz) determines how many cycles per second the CPU can perform</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Central Processing Unit (CPU)</h3>
-
-<p class="learn-p">The CPU is the "brain" of the computer — it executes instructions and performs calculations.</p>
-
-<p class="learn-p"><strong>CPU Components:</strong></p>
-<ul class="learn-list">
-  <li><strong>ALU (Arithmetic Logic Unit):</strong> Performs arithmetic (addition, subtraction, multiplication, division) and logical operations (comparisons: greater than, less than, equal to).</li>
-  <li><strong>CU (Control Unit):</strong> Directs the flow of data and instructions — tells other components what to do.</li>
-  <li><strong>Registers:</strong> Very fast, small memory locations inside CPU that hold data being processed.</li>
-</ul>
-
-<p class="learn-p"><strong>Fetch-Decode-Execute Cycle:</strong> The CPU continuously repeats three steps: 1) Fetch instruction from memory, 2) Decode instruction, 3) Execute instruction — billions of times per second.</p>
-
-<p class="learn-p"><strong>Factors affecting CPU performance:</strong></p>
-<ul class="learn-list">
-  <li><strong>Clock speed (GHz):</strong> Number of cycles per second — higher = faster (but not the only factor)</li>
-  <li><strong>Number of cores:</strong> Multiple processing units on one chip — dual-core, quad-core, octa-core, etc.</li>
-  <li><strong>Cache memory:</strong> Very fast memory on CPU (L1, L2, L3) — holds frequently used data</li>
-  <li><strong>Word size:</strong> Bits CPU can process at once (32-bit vs 64-bit)</li>
-</ul>
-
-<h3 class="learn-subheading">Memory — RAM and ROM</h3>
-
-<p class="learn-p"><strong>RAM (Random Access Memory):</strong></p>
-<ul class="learn-list">
-  <li>Volatile — loses data when power is turned off</li>
-  <li>Temporarily holds data and programs being used</li>
-  <li>More RAM allows more programs to run simultaneously</li>
-  <li>Types: DRAM (Dynamic RAM — needs refreshing), SRAM (Static RAM — faster, more expensive)</li>
-</ul>
-
-<p class="learn-p"><strong>ROM (Read Only Memory):</strong></p>
-<ul class="learn-list">
-  <li>Non-volatile — retains data when power is off</li>
-  <li>Contains permanent instructions for booting the computer (BIOS/UEFI)</li>
-  <li>Cannot be easily modified by the user</li>
-  <li>Types: PROM (programmable once), EPROM (erasable with UV light), EEPROM (electrically erasable)</li>
-</ul>
-
-<p class="learn-p"><strong>Cache memory:</strong> Extremely fast memory located on or near the CPU (L1, L2, L3). Stores frequently used data for quick access. L1 is fastest and smallest; L3 is slower but larger.</p>
-
-<p class="learn-p"><strong>RAM vs ROM comparison:</strong></p>
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Feature</th><th>RAM</th><th>ROM</th>
-    </thead>
-    <tbody>
-      <tr><td>Volatility</th>。<th>Volatile (loses data when power off)</th>。<th>Non-volatile (retains data)</th>
-      </tr>
-      <tr><td>Usage</th>。<th>Temporary storage for active programs</th>。<th>Permanent storage for boot instructions</th>
-      <tr>
-      <tr><td>Modifiability</th>。<th>Read-write (can change)</th>。<th>Read-only (normally)</th>
-      </tr>
-      <tr><td>Speed</th>。<th>Fast</th>。<th>Slower than RAM</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 class="learn-subheading">Ports and Connectors</h3>
-
-<p class="learn-p"><strong>USB (Universal Serial Bus):</strong> Types: USB-A (standard rectangular), USB-B (square for printers), USB-C (reversible, newer), Micro-USB, Mini-USB.</p>
-<p class="learn-p"><strong>Video ports:</strong> HDMI (High-Definition Multimedia Interface — audio+video), VGA (older analog video), DisplayPort, DVI.</p>
-<p class="learn-p"><strong>Other ports:</strong> Ethernet (RJ45 for network cable), Audio jack (headphones, microphone), Thunderbolt (high-speed data + video).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Key Distinction:</strong> RAM is temporary and volatile; ROM is permanent and non-volatile. RAM contents disappear when you shut down; ROM retains BIOS settings.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> The CPU's fetch-decode-execute cycle is fundamental. Remember: Fetch (get instruction) → Decode (interpret) → Execute (perform). Clock speed (GHz) determines cycle frequency.</span>
-</div>
-    `,
+    topic: 'Computer Hardware — System Unit',
+    topicCode: 'CSC-101-02',
+    module: 'Computer Hardware',
+    contentHTML:
+      '\n<div class="learn-intro">\n  <span class="learn-keyword">Hardware</span> refers to all the physical, tangible components of a computer system — the parts you can see and touch. At the heart of every computer is the <span class="learn-keyword">system unit</span> (also called the chassis or case), which houses the critical electronic components that make computation possible. Understanding these components is fundamental to anyone studying computing, whether you plan to assemble a PC in Alaba International Market, troubleshoot a faulty server, or simply understand what\'s happening inside the laptop on your desk.\n</div>\n\n<h3 class="learn-subheading">1. The System Unit</h3>\n<p class="learn-p">The system unit is the main body of the computer that contains and protects the critical internal components. It provides mounting space, power distribution, cooling airflow, and electromagnetic shielding. System units come in several form factors: the traditional <span class="learn-keyword">tower</span> (stands vertically, common in offices), <span class="learn-keyword">desktop</span> (lies flat, less common today), <span class="learn-keyword">all-in-one</span> (components integrated behind the monitor, like iMac), and <span class="learn-keyword">laptop</span> (portable, battery-powered, all-in-one compact design).</p>\n\n<h3 class="learn-subheading">2. The Motherboard</h3>\n<p class="learn-p">The <span class="learn-keyword">motherboard</span> (also called the mainboard or system board) is the primary printed circuit board inside the system unit. It is the backbone that connects all components together, providing electrical connections and communication pathways between every part of the computer. Without the motherboard, no component can communicate with another.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Motherboard Component</th><th>Function</th></tr></thead>\n    <tbody>\n      <tr><td>CPU Socket</td><td>Physical slot where the processor is installed; socket type must match CPU (e.g., Intel LGA 1700, AMD AM5)</td></tr>\n      <tr><td>RAM Slots (DIMM)</td><td>Slots for installing RAM modules; most modern boards have 2-4 slots supporting DDR4 or DDR5</td></tr>\n      <tr><td>Chipset</td><td>Set of chips that manage data flow between CPU, RAM, storage, and peripherals; determines capabilities</td></tr>\n      <tr><td>BIOS/UEFI Chip</td><td>ROM chip containing firmware that boots the computer and initializes hardware before OS loads</td></tr>\n      <tr><td>CMOS Battery</td><td>Small coin battery (CR2032) that keeps BIOS settings and system clock alive when computer is off</td></tr>\n      <tr><td>PCIe Slots</td><td>Expansion slots for graphics cards, network cards, sound cards, NVMe SSDs</td></tr>\n      <tr><td>SATA Connectors</td><td>Ports for connecting SATA hard drives and optical drives</td></tr>\n      <tr><td>Power Connectors</td><td>24-pin ATX main power + 8-pin CPU power from PSU</td></tr>\n      <tr><td>USB Headers</td><td>Internal connectors for front-panel USB ports on the case</td></tr>\n      <tr><td>M.2 Slots</td><td>High-speed slots for NVMe SSDs, much faster than SATA</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. The Central Processing Unit (CPU)</h3>\n<p class="learn-p">The <span class="learn-keyword">CPU</span> (Central Processing Unit) is the "brain" of the computer — the component that executes program instructions. It performs all arithmetic, logic, and control operations. Modern CPUs from Intel (Core i3/i5/i7/i9) and AMD (Ryzen series) are complex chips containing billions of transistors on a silicon die smaller than your thumbnail.</p>\n\n<h4 class="learn-subsubheading">CPU Components</h4>\n<ul class="learn-list">\n  <li><strong>Arithmetic Logic Unit (ALU):</strong> Performs all mathematical calculations (addition, subtraction, multiplication, division) and logical comparisons (AND, OR, NOT, greater than, equal to). Every computation ultimately reduces to ALU operations.</li>\n  <li><strong>Control Unit (CU):</strong> The director of the CPU. Fetches instructions from memory, decodes what they mean, and coordinates all other CPU components to execute them. It does NOT perform calculations itself.</li>\n  <li><strong>Registers:</strong> Extremely fast, tiny storage locations INSIDE the CPU itself. They hold data and instructions currently being processed. Types: Program Counter (PC), Instruction Register (IR), Accumulator, Memory Address Register (MAR), Memory Buffer Register (MBR).</li>\n  <li><strong>Cache Memory:</strong> Ultra-fast memory built into or very close to the CPU. Stores frequently used data and instructions to avoid slower RAM access.</li>\n</ul>\n\n<h4 class="learn-subsubheading">The Fetch-Decode-Execute Cycle</h4>\n<p class="learn-p">The CPU operates by continuously repeating the <span class="learn-keyword">Fetch-Decode-Execute</span> (FDE) cycle: (1) <strong>Fetch</strong> — the Control Unit retrieves the next instruction from RAM into the Instruction Register; (2) <strong>Decode</strong> — the CU interprets the instruction to determine what operation is needed; (3) <strong>Execute</strong> — the ALU or other components carry out the operation. This cycle repeats billions of times per second.</p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="22" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">CPU Internal Architecture</text>\n    <rect x="20" y="35" width="440" height="140" rx="8" fill="#1a0030" stroke="#4B0082" stroke-width="2"/>\n    <text x="240" y="52" text-anchor="middle" fill="#c8b4f0" font-size="10">CPU</text>\n    <rect x="40" y="60" width="120" height="50" rx="6" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <text x="100" y="82" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">Control Unit</text>\n    <text x="100" y="96" text-anchor="middle" fill="#9090b0" font-size="8">(CU)</text>\n    <text x="100" y="106" text-anchor="middle" fill="#9090b0" font-size="7">Fetch &amp; Decode</text>\n    <rect x="180" y="60" width="120" height="50" rx="6" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <text x="240" y="82" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">ALU</text>\n    <text x="240" y="96" text-anchor="middle" fill="#9090b0" font-size="8">Arithmetic &amp; Logic</text>\n    <text x="240" y="106" text-anchor="middle" fill="#9090b0" font-size="7">+, -, ×, ÷, AND, OR</text>\n    <rect x="320" y="60" width="120" height="50" rx="6" fill="#2d1b4e" stroke="#28c840" stroke-width="1.5"/>\n    <text x="380" y="82" text-anchor="middle" fill="#28c840" font-size="10" font-weight="bold">Registers</text>\n    <text x="380" y="96" text-anchor="middle" fill="#9090b0" font-size="8">PC, IR, ACC</text>\n    <text x="380" y="106" text-anchor="middle" fill="#9090b0" font-size="7">Ultra-fast storage</text>\n    <rect x="100" y="130" width="280" height="30" rx="6" fill="#0a3a1a" stroke="#28c840" stroke-width="1.5"/>\n    <text x="240" y="147" text-anchor="middle" fill="#28c840" font-size="10" font-weight="bold">Cache Memory (L1/L2/L3)</text>\n    <text x="240" y="157" text-anchor="middle" fill="#9090b0" font-size="8">Fast buffer between CPU and RAM</text>\n    <path d="M160 85 L178 85" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#a4)"/>\n    <path d="M300 85 L318 85" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#a4)"/>\n    <defs><marker id="a4" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4AF37"/></marker></defs>\n    <rect x="180" y="60" width="120" height="50" rx="6" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.5s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h4 class="learn-subsubheading">Factors Affecting CPU Performance</h4>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Factor</th><th>Description</th><th>Example</th></tr></thead>\n    <tbody>\n      <tr><td>Clock Speed</td><td>Number of cycles per second (GHz). Higher = faster instruction execution</td><td>Intel Core i7 @ 3.6GHz completes 3.6 billion cycles/second</td></tr>\n      <tr><td>Number of Cores</td><td>Physical processing units on one chip. More cores = better multitasking</td><td>A quad-core CPU handles 4 tasks simultaneously</td></tr>\n      <tr><td>Cache Memory</td><td>Faster cache reduces time spent waiting for data from slower RAM</td><td>16MB L3 cache vs 4MB — significant speed difference</td></tr>\n      <tr><td>Word Size</td><td>Amount of data CPU processes in one operation. 64-bit processes more than 32-bit</td><td>64-bit CPU processes 64 bits at once; 32-bit processes 32 bits</td></tr>\n      <tr><td>Architecture</td><td>Design efficiency (instructions per cycle). Newer architectures do more with same clock speed</td><td>Intel 13th gen performs better than 10th gen at same GHz</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Memory</h3>\n<p class="learn-p">A computer has several types of memory, each with different speed, cost, and purpose. Understanding the memory hierarchy is crucial for understanding computer performance.</p>\n\n<h4 class="learn-subsubheading">RAM (Random Access Memory)</h4>\n<p class="learn-p"><span class="learn-keyword">RAM</span> is the computer\'s main working memory — where the operating system, running programs, and current data are stored. It is <span class="learn-keyword">volatile</span> (loses all data when power is cut), which is why you must save your work. RAM is much faster than hard disk storage but slower than cache. Modern computers typically have 8GB to 64GB of RAM. Types include DRAM (Dynamic RAM — needs periodic refreshing, used in main RAM modules) and SRAM (Static RAM — faster, no refreshing needed, used in cache memory).</p>\n\n<h4 class="learn-subsubheading">ROM (Read Only Memory)</h4>\n<p class="learn-p"><span class="learn-keyword">ROM</span> is <span class="learn-keyword">non-volatile</span> (retains data without power) and stores permanent instructions. The computer\'s BIOS/UEFI firmware is stored in ROM. Types: PROM (Programmable ROM — written once after manufacture), EPROM (Erasable Programmable ROM — erasable with UV light), EEPROM (Electrically Erasable Programmable ROM — erasable electrically, used for BIOS chips today).</p>\n\n<h4 class="learn-subsubheading">Cache Memory</h4>\n<p class="learn-p"><span class="learn-keyword">Cache memory</span> bridges the speed gap between the ultra-fast CPU and the relatively slower RAM. It stores copies of frequently accessed data and instructions. Cache is organised in levels: <strong>L1 cache</strong> (smallest, fastest, inside the CPU core, typically 32-128KB), <strong>L2 cache</strong> (larger, slightly slower, 256KB-2MB per core), <strong>L3 cache</strong> (largest, shared among cores, 4-64MB). The CPU checks L1 first, then L2, then L3, then RAM.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Memory Type</th><th>Speed</th><th>Capacity</th><th>Volatile?</th><th>Purpose</th></tr></thead>\n    <tbody>\n      <tr><td>CPU Registers</td><td>Fastest</td><td>Bytes</td><td>Yes</td><td>Immediate data during processing</td></tr>\n      <tr><td>L1 Cache</td><td>Very fast</td><td>32-128 KB</td><td>Yes</td><td>Most frequently used data</td></tr>\n      <tr><td>L2 Cache</td><td>Fast</td><td>256 KB - 2 MB</td><td>Yes</td><td>Second-level frequently used data</td></tr>\n      <tr><td>L3 Cache</td><td>Moderately fast</td><td>4-64 MB</td><td>Yes</td><td>Shared cache for all cores</td></tr>\n      <tr><td>RAM</td><td>Moderate</td><td>4-128 GB</td><td>Yes</td><td>Running programs and OS</td></tr>\n      <tr><td>ROM/EEPROM</td><td>Slow</td><td>4-32 MB</td><td>No</td><td>BIOS/UEFI firmware</td></tr>\n      <tr><td>SSD Storage</td><td>Slow (vs RAM)</td><td>128 GB - 8 TB</td><td>No</td><td>Permanent data storage</td></tr>\n      <tr><td>HDD Storage</td><td>Slowest</td><td>500 GB - 20 TB</td><td>No</td><td>Mass permanent storage</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">5. Ports and Connectors</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Port/Connector</th><th>Use</th><th>Speed/Notes</th></tr></thead>\n    <tbody>\n      <tr><td>USB-A</td><td>Flash drives, keyboard, mouse, older devices</td><td>USB 3.0: 5 Gbps; rectangular flat shape</td></tr>\n      <tr><td>USB-C</td><td>Modern phones, laptops, data, charging, video</td><td>USB 3.1/3.2: up to 40 Gbps; oval reversible</td></tr>\n      <tr><td>HDMI</td><td>Video/audio output to monitors, TVs, projectors</td><td>HDMI 2.1: 4K/8K video; most common display connector</td></tr>\n      <tr><td>Ethernet (RJ-45)</td><td>Wired network connection</td><td>Up to 10 Gbps; more reliable than WiFi</td></tr>\n      <tr><td>3.5mm Audio Jack</td><td>Headphones, speakers, microphones</td><td>Analog audio; colour-coded: green=output, pink=mic</td></tr>\n      <tr><td>Thunderbolt 4</td><td>High-speed data, video, power; Apple popular</td><td>40 Gbps; uses USB-C physical connector</td></tr>\n      <tr><td>VGA</td><td>Older monitors; analog video only</td><td>Legacy; no audio; blue trapezoidal connector</td></tr>\n      <tr><td>DisplayPort</td><td>High-resolution monitors; professional use</td><td>DP 2.0: up to 80 Gbps; supports 8K</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">6. Power Supply Unit (PSU) and Cooling</h3>\n<p class="learn-p">The <span class="learn-keyword">Power Supply Unit (PSU)</span> converts AC electricity from the wall socket (240V in Nigeria) to the DC voltages needed by computer components: 12V (for CPU and GPU), 5V (for drives and USB), and 3.3V (for RAM and motherboard circuits). PSU wattage determines how many components can be powered — a gaming PC might need a 650W PSU, while a basic office PC needs only 300W. <span class="learn-keyword">Efficiency ratings</span> (80 PLUS Bronze, Silver, Gold, Platinum) indicate how little power is wasted as heat.</p>\n\n<p class="learn-p"><span class="learn-keyword">Cooling systems</span> are critical because electronic components generate heat that can damage them. Methods include: <strong>heatsink and fan</strong> (most common — a metal block draws heat away from the CPU, a fan blows air over it), <strong>case fans</strong> (move air through the entire system unit), <strong>liquid cooling</strong> (coolant circulates through tubes past hot components — quieter and more effective for high-performance systems), and <strong>thermal paste</strong> (a heat-conducting compound applied between CPU and heatsink to fill microscopic gaps).</p>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — RAM vs ROM:</strong> The most common exam question confuses RAM and ROM. Remember: <strong>RAM is Volatile</strong> (loses data when power off) — this is where running programs live. <strong>ROM is Non-volatile</strong> (keeps data without power) — this is where BIOS/firmware lives. Also: RAM can be READ and WRITTEN; ROM is primarily read-only (or very rarely written). If you save a file to disk, that\'s storage — NOT RAM.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> The system unit houses all critical computer components. The motherboard connects everything together. The CPU (with ALU, CU, and Registers) executes the Fetch-Decode-Execute cycle billions of times per second. RAM is volatile working memory; ROM is non-volatile firmware storage; Cache bridges the speed gap. Memory speed hierarchy: Registers > L1 > L2 > L3 Cache > RAM > Storage. PSU converts AC to DC power; cooling prevents heat damage.\n</div>\n  ',
     questions: [
-      { q: "The motherboard is best described as:", o: ["The CPU", "The main circuit board connecting all components", "The power supply", "The hard drive"], a: 1, e: "Motherboard is the main circuit board that connects CPU, memory, storage, and expansion cards.", h: "What is the main circuit board?", yr: "GST" },
-      { q: "Which CPU component performs arithmetic and logical operations?", o: ["Control Unit", "ALU (Arithmetic Logic Unit)", "Registers", "Cache"], a: 1, e: "ALU performs addition, subtraction, multiplication, division, and comparisons (greater than, equal to).", h: "What does ALU do?", yr: "GST" },
-      { q: "RAM is which type of memory?", o: ["Non-volatile", "Volatile (loses data when power off)", "Read-only", "Permanent"], a: 1, e: "RAM is volatile — contents are lost when computer shuts down.", h: "Is RAM volatile?", yr: "GST" },
-      { q: "Which memory is used to store BIOS/UEFI instructions?", o: ["RAM", "ROM", "Cache", "Hard drive"], a: 1, e: "ROM stores permanent boot instructions (BIOS/UEFI). Non-volatile.", h: "What stores BIOS?", yr: "GST" },
-      { q: "The fetch-decode-execute cycle is performed by:", o: ["RAM", "Hard drive", "CPU", "Motherboard"], a: 2, e: "CPU repeatedly fetches, decodes, and executes instructions billions of times per second.", h: "What performs the fetch-decode-execute cycle?", yr: "GST" },
-      { q: "Which factor affects CPU performance?", o: ["RAM color", "Clock speed (GHz)", "Hard drive size", "Monitor resolution"], a: 1, e: "Clock speed (GHz) determines cycles per second — higher speed generally means faster processing.", h: "What affects CPU speed?", yr: "GST" },
-      { q: "A CPU with multiple processing units is called:", o: ["Multi-core", "Multi-threaded", "Multi-tasking", "Multi-processing"], a: 0, e: "Multi-core CPUs have multiple processing units (dual-core, quad-core, octa-core) on one chip.", h: "What is a multi-core CPU?", yr: "GST" },
-      { q: "Which memory is fastest and located closest to the CPU?", o: ["RAM", "ROM", "Cache (L1)", "Hard drive"], a: 2, e: "Cache memory (L1, L2, L3) is extremely fast and located on or near CPU.", h: "What is the fastest memory?", yr: "GST" },
-      { q: "USB-C is characterized by:", o: ["Rectangular shape, not reversible", "Square shape", "Reversible connector (can plug either way)", "Round shape"], a: 2, e: "USB-C is reversible — no wrong orientation. Supports faster speeds and power delivery.", h: "What is USB-C?", yr: "GST" },
-      { q: "Which component of the CPU directs the flow of data and instructions?", o: ["ALU", "Control Unit", "Registers", "Cache"], a: 1, e: "Control Unit directs operations — tells other components what to do.", h: "What directs data flow?", yr: "GST" },
-      { q: "ROM stands for:", o: ["Random Only Memory", "Read Only Memory", "Read Operational Memory", "Random Operational Memory"], a: 1, e: "ROM = Read Only Memory — non-volatile memory that retains data when power off.", h: "What does ROM stand for?", yr: "GST" },
-      { q: "Which type of memory is used for temporary storage of active programs and data?", o: ["ROM", "Hard drive", "RAM", "SSD"], a: 2, e: "RAM temporarily holds active programs and data while computer is running.", h: "What holds active programs temporarily?", yr: "GST" },
-      { q: "The BIOS/UEFI chip is typically stored on:", o: ["RAM", "Hard drive", "Motherboard (ROM)", "CPU"], a: 2, e: "BIOS/UEFI is stored on ROM chip on motherboard — non-volatile boot instructions.", h: "Where is BIOS stored?", yr: "GST" },
-      { q: "Which port is commonly used for network cable connections?", o: ["USB", "HDMI", "Ethernet (RJ45)", "VGA"], a: 2, e: "Ethernet (RJ45) port connects to network cables for wired internet access.", h: "What port is for network cable?", yr: "GST" },
-      { q: "Word size (32-bit vs 64-bit) refers to:", o: ["Monitor resolution", "Bits CPU can process at once", "RAM size", "Hard drive capacity"], a: 1, e: "Word size is the number of bits CPU can process simultaneously — 64-bit CPUs handle more data per cycle.", h: "What does word size mean?", yr: "GST" },
-      { q: "Which memory is non-volatile?", o: ["RAM", "Cache", "ROM", "Register"], a: 2, e: "ROM is non-volatile — retains data when power is off. RAM, cache, registers are volatile.", h: "What memory retains data when off?", yr: "GST" },
-      { q: "HDMI port carries:", o: ["Only video", "Only audio", "Both audio and video", "Only power"], a: 2, e: "HDMI carries high-definition audio and video in one cable.", h: "What does HDMI carry?", yr: "GST" },
-      { q: "Cache memory levels L1, L2, L3 differ by:", o: ["Color", "Speed and size (L1 fastest, smallest; L3 slower, larger)", "Shape", "Brand"], a: 1, e: "L1 is fastest and smallest, L2 is medium, L3 is slower but larger.", h: "How do cache levels differ?", yr: "GST" },
-      { q: "Which component holds the CPU?", o: ["RAM slot", "CPU socket", "PCI slot", "SATA connector"], a: 1, e: "CPU socket on motherboard holds the processor.", h: "What holds the CPU?", yr: "GST" },
-      { q: "The control unit's function is to:", o: ["Perform arithmetic", "Direct data flow and instruction execution", "Store data", "Display output"], a: 1, e: "Control unit manages and coordinates all CPU activities — directing data flow and instruction execution.", h: "What does control unit do?", yr: "GST" }
-    ]
+      {
+        q: 'Which component of the CPU performs arithmetic calculations and logical comparisons?',
+        o: [
+          'Control Unit (CU)',
+          'Arithmetic Logic Unit (ALU)',
+          'Program Counter (PC)',
+          'Cache Memory',
+        ],
+        a: 1,
+        e: 'The Arithmetic Logic Unit (ALU) performs all mathematical operations (addition, subtraction, multiplication, division) and logical operations (AND, OR, NOT, comparisons). The Control Unit fetches and decodes instructions but does not perform the calculations.',
+        h: 'ALU = Arithmetic (math) + Logic (comparisons).',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the PRIMARY function of the Control Unit (CU) in a CPU?',
+        o: [
+          'Perform arithmetic operations on data',
+          'Store frequently accessed data for quick retrieval',
+          'Fetch, decode, and coordinate the execution of instructions',
+          'Convert AC power to DC for CPU components',
+        ],
+        a: 2,
+        e: "The Control Unit (CU) is responsible for fetching instructions from memory, decoding them, and coordinating all other CPU components to execute the instructions. It does NOT perform calculations — that is the ALU's job.",
+        h: "CU = the 'director' that coordinates — it doesn't compute.",
+        yr: 'CSC',
+      },
+      {
+        q: "A student removes the CMOS battery from their computer's motherboard. What is the MOST LIKELY immediate effect?",
+        o: [
+          'The computer will not turn on at all',
+          'The computer loses BIOS settings and the system clock resets',
+          'RAM data is permanently deleted',
+          'The hard drive data is corrupted',
+        ],
+        a: 1,
+        e: "The CMOS battery (typically a CR2032 coin cell) keeps the BIOS/UEFI settings (like boot order, date/time, hardware configurations) alive when the computer is powered off. Removing it causes these settings to reset to defaults and the system clock to reset to the manufacturer's default date/time.",
+        h: 'CMOS battery = keeps BIOS settings and clock alive without main power.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following correctly describes the Fetch-Decode-Execute cycle?',
+        o: [
+          'Store → Fetch → Execute → Decode',
+          'Fetch → Decode → Execute (repeated continuously)',
+          'Decode → Fetch → Store → Execute',
+          'Execute → Fetch → Decode → Store',
+        ],
+        a: 1,
+        e: 'The Fetch-Decode-Execute cycle is the fundamental operation loop of the CPU: (1) Fetch — retrieve the next instruction from RAM; (2) Decode — interpret what operation is needed; (3) Execute — carry out the operation. This cycle repeats billions of times per second.',
+        h: 'FDE: Fetch first, then Decode, then Execute.',
+        yr: 'CSC',
+      },
+      {
+        q: "RAM is described as 'volatile memory'. What does this mean?",
+        o: [
+          'It can only be read, not written to',
+          'It operates at very high voltage levels',
+          'It loses all stored data when power is removed',
+          'It is permanently embedded in the motherboard',
+        ],
+        a: 2,
+        e: 'Volatile memory loses all its data when the power supply is interrupted or switched off. This is why unsaved work disappears when a computer loses power. RAM stores the operating system and running programs only while the computer is on.',
+        h: 'Volatile = evaporates (data disappears) when power goes.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In the memory hierarchy, which is the FASTEST type of memory?',
+        o: ['RAM (DDR5)', 'L1 Cache', 'L3 Cache', 'CPU Registers'],
+        a: 3,
+        e: 'CPU Registers are the fastest memory in the hierarchy — they are tiny storage locations INSIDE the CPU itself, accessed in a single CPU cycle. The hierarchy from fastest to slowest is: Registers > L1 Cache > L2 Cache > L3 Cache > RAM > SSD > HDD.',
+        h: 'Registers are inside the CPU itself — nothing is faster.',
+        yr: 'CSC',
+      },
+      {
+        q: "A computer is advertised with an 'Intel Core i9 processor with 32MB L3 Cache and 6GHz clock speed'. The 6GHz specification refers to:",
+        o: [
+          'The amount of data the CPU can store',
+          'The number of cores in the processor',
+          'The number of processing cycles the CPU completes per second',
+          'The size of the CPU chip in nanometres',
+        ],
+        a: 2,
+        e: 'Clock speed (measured in GHz — GigaHertz) refers to how many processing cycles the CPU completes per second. 6GHz = 6 billion cycles per second. Higher clock speed generally means faster processing of individual instructions.',
+        h: 'GHz = billions of cycles per second = clock speed.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which type of ROM chip can be erased using ultraviolet (UV) light and reprogrammed?',
+        o: ['PROM', 'EPROM', 'EEPROM', 'Flash ROM'],
+        a: 1,
+        e: 'EPROM (Erasable Programmable Read Only Memory) can be erased by exposing it to ultraviolet (UV) light through a quartz window on the chip package, then reprogrammed electrically. PROM can only be written once; EEPROM is erased electrically.',
+        h: 'EPROM = UV light erasing. EEPROM = Electrical erasing (more modern).',
+        yr: 'CSC',
+      },
+      {
+        q: 'What does the chipset on a motherboard primarily do?',
+        o: [
+          'Processes all arithmetic and logic operations',
+          'Stores the BIOS firmware permanently',
+          'Manages data flow between the CPU, RAM, storage, and peripherals',
+          'Converts AC power from the wall socket to DC power',
+        ],
+        a: 2,
+        e: 'The chipset is a set of chips on the motherboard that manages and controls data flow between the CPU, RAM, expansion cards, and storage devices. It determines the capabilities of the motherboard, including what CPUs, RAM types, and features are supported.',
+        h: 'Chipset = traffic controller for data between all components.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian cybercafe owner wants to upgrade their computers to handle more simultaneous tasks. Which RAM upgrade would be MOST beneficial for multitasking?',
+        o: [
+          'Upgrading from 8GB to 16GB RAM',
+          'Upgrading from a 256MB L2 cache to 512MB L2 cache',
+          'Replacing the PSU with a higher wattage model',
+          'Adding a second CMOS battery',
+        ],
+        a: 0,
+        e: "More RAM allows the operating system to keep more programs and data in fast working memory simultaneously. Going from 8GB to 16GB directly improves multitasking performance, as the OS won't need to swap data to slower disk storage as frequently.",
+        h: 'More RAM = more programs running simultaneously without slowdown.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which motherboard connector is used to interface with modern NVMe SSDs for maximum storage speed?',
+        o: ['SATA connector', 'M.2 slot', 'PCIe x1 slot', 'USB 3.0 header'],
+        a: 1,
+        e: 'M.2 slots support NVMe (Non-Volatile Memory Express) SSDs, which communicate via PCIe lanes for dramatically faster speeds (up to 7000 MB/s) compared to SATA SSDs (up to 600 MB/s). Modern high-performance storage uses M.2 NVMe.',
+        h: 'M.2 + NVMe = fastest consumer storage interface.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The BIOS/UEFI is stored in which type of memory?',
+        o: ['RAM (DRAM)', 'ROM/EEPROM chip', 'L1 Cache', 'The hard drive boot sector'],
+        a: 1,
+        e: 'The BIOS (Basic Input/Output System) or UEFI firmware is stored in a ROM chip (specifically EEPROM/Flash ROM) on the motherboard. This allows it to persist without power and be the first code to run when the computer boots, before any OS loads.',
+        h: "BIOS needs to survive power off — so it's stored in non-volatile ROM.",
+        yr: 'CSC',
+      },
+      {
+        q: 'In a CPU with 4 cores each running at 3GHz, how many total GHz of processing cycles are available per second?',
+        o: [
+          '3 GHz total',
+          '7 GHz total',
+          '12 GHz total',
+          "The GHz per core doesn't add — each core runs at 3GHz independently",
+        ],
+        a: 3,
+        e: "Clock speed (GHz) describes each core's cycle rate, not a total across all cores. A 4-core CPU at 3GHz has 4 cores, each completing 3 billion cycles per second. They work in parallel on different tasks but the clock speed doesn't 'multiply'. Software must be written to use multiple cores.",
+        h: 'Cores work in parallel, not in addition of clock speed.',
+        yr: 'CSC',
+      },
+      {
+        q: "A computer's PSU (Power Supply Unit) in Nigeria must handle which input voltage?",
+        o: [
+          '110V AC (American standard)',
+          '240V AC (Nigerian standard) or dual-voltage',
+          '12V DC directly from battery',
+          '5V DC from USB',
+        ],
+        a: 1,
+        e: 'Nigeria uses 240V AC (50Hz) for mains electricity. Computer PSUs in Nigeria must accept 240V AC input (or be dual-voltage 110-240V). The PSU then converts this to the DC voltages components need: 12V, 5V, 3.3V.',
+        h: 'Nigeria mains power = 240V AC; PSU converts to DC voltages.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the purpose of thermal paste applied between a CPU and its heatsink?',
+        o: [
+          'To electrically insulate the CPU from the heatsink',
+          'To fill microscopic gaps and improve heat transfer from CPU to heatsink',
+          'To permanently glue the heatsink to the CPU',
+          'To protect the CPU pins from physical damage',
+        ],
+        a: 1,
+        e: 'Thermal paste (also called thermal compound or TIM - Thermal Interface Material) fills the microscopic air gaps between the CPU surface and heatsink base, which would otherwise act as thermal insulators. Better contact = better heat transfer = lower CPU temperatures.',
+        h: 'Thermal paste = fills air gaps = better heat conduction.',
+        yr: 'CSC',
+      },
+      {
+        q: 'L1, L2, and L3 cache memory differs primarily in:',
+        o: [
+          'Volatility — L1 is non-volatile, L3 is volatile',
+          'Size and speed — L1 is smallest/fastest, L3 is largest/slowest of the three',
+          'Location — L1 is on the motherboard, L2 and L3 are inside the CPU',
+          'Purpose — L1 stores program files, L2 stores system files, L3 stores user files',
+        ],
+        a: 1,
+        e: 'Cache levels differ in size and speed: L1 is smallest (32-128KB) and fastest, located inside each CPU core; L2 is larger (256KB-2MB), slightly slower, also per-core; L3 is largest (4-64MB), slowest of the three, but still much faster than RAM, shared among all cores.',
+        h: 'L1 = smallest, fastest. L3 = largest, slowest (but still fast).',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which port would you use to connect a modern external 4K monitor to a laptop for maximum video quality?',
+        o: [
+          'VGA port (blue trapezoid)',
+          '3.5mm audio jack',
+          'HDMI 2.1 or DisplayPort 2.0',
+          'USB-A port',
+        ],
+        a: 2,
+        e: 'For 4K video quality, HDMI 2.1 (supports 4K @ 120Hz) or DisplayPort 2.0 (supports 8K) are the appropriate choices. VGA is analog and cannot handle modern resolutions at acceptable quality. USB-A cannot carry video natively without adapters.',
+        h: '4K video = HDMI 2.0/2.1 or DisplayPort for best quality.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the main difference between SRAM and DRAM?',
+        o: [
+          'SRAM is volatile; DRAM is non-volatile',
+          'SRAM uses capacitors; DRAM uses flip-flops',
+          "SRAM doesn't need refreshing and is faster; DRAM needs periodic refreshing and is slower",
+          'SRAM is used for HDD storage; DRAM is used for CPU cache',
+        ],
+        a: 2,
+        e: "SRAM (Static RAM) uses flip-flop circuits that hold data without needing refreshing — it's faster and more expensive. DRAM (Dynamic RAM) stores data in capacitors that leak charge and must be refreshed thousands of times per second — slower and cheaper. SRAM is used in cache; DRAM in main RAM.",
+        h: 'SRAM = Static = no refresh needed = faster. DRAM = Dynamic = needs refresh = slower.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A 64-bit CPU differs from a 32-bit CPU primarily in:',
+        o: [
+          'The 64-bit CPU runs at exactly twice the clock speed',
+          'The 64-bit CPU can process 64 bits of data in one operation and address more RAM',
+          'The 64-bit CPU has 64 cores',
+          'The 64-bit CPU uses 64 volts of power',
+        ],
+        a: 1,
+        e: 'Word size refers to the amount of data a CPU processes in one operation. A 64-bit CPU processes 64 bits at once (versus 32 bits for 32-bit CPUs) and can address up to 2^64 bytes of RAM theoretically. 32-bit systems are limited to addressing ~4GB of RAM.',
+        h: '64-bit = wider data path + can address more than 4GB RAM.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which motherboard slot is MOST commonly used to install a dedicated graphics card?',
+        o: ['SATA connector', 'M.2 slot', 'PCIe x16 slot', 'USB 3.0 internal header'],
+        a: 2,
+        e: 'PCIe (PCI Express) x16 is the standard slot for dedicated graphics cards. The x16 designation means 16 PCIe lanes, providing maximum bandwidth for the high-throughput demands of GPU-to-CPU data transfer in gaming and professional graphics applications.',
+        h: 'Graphics cards use PCIe x16 for maximum bandwidth.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 3: Computer Hardware - Input and Output Devices
-  // ==========================================================================
   {
-    topic: "Computer Hardware - Input and Output Devices",
-    topicCode: "CSC-003-01",
-    module: "Computer Hardware",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Input and output devices</span> allow users to interact with computers. Input devices send data to the computer (keyboard, mouse, scanner, microphone). Output devices receive data from the computer (monitor, printer, speakers). <strong>Without input/output devices, computers would be isolated and useless</strong>.
-</div>
-
-<p class="learn-p">Input devices convert user actions or physical data into electronic signals the computer can process. Output devices convert computer data into human-readable form (visual, audio, printed).</p>
-
-<h3 class="learn-subheading">Input Devices</h3>
-
-<p class="learn-p"><strong>Keyboard:</strong> Most common input device. Types: QWERTY (standard layout), ergonomic (angled to reduce strain), virtual (touchscreen). Keys: Alphanumeric (letters, numbers), Function (F1-F12), Navigation (arrows, Home, End, Page Up/Down), Numeric keypad, Modifier (Shift, Ctrl, Alt, Windows).</p>
-
-<p class="learn-p"><strong>Mouse:</strong> Pointing device. Types: Mechanical (ball inside — obsolete), Optical (LED light detects movement), Wireless (Bluetooth or RF), Trackball (ball moved with thumb/fingers). Operations: Click, Double-click, Right-click, Drag and drop, Scroll, Hover.</p>
-
-<p class="learn-p"><strong>Touchscreen:</strong> Combines input and output. Types: Resistive (pressure-sensitive — responds to any touch), Capacitive (electrical field — responds to finger, supports multi-touch). Multi-touch gestures: Tap, Swipe, Pinch zoom, Rotate, Two-finger scroll.</p>
-
-<p class="learn-p"><strong>Scanner:</strong> Converts physical documents/images to digital. Types: Flatbed (book/flat documents), Sheet-fed (multiple pages), Handheld (portable), Drum (high-resolution professional). OCR (Optical Character Recognition) converts scanned images of text into editable text.</p>
-
-<p class="learn-p"><strong>Microphone:</strong> Converts sound to digital audio. Uses: Voice input, dictation, voice commands, recording, video conferencing, gaming.</p>
-
-<p class="learn-p"><strong>Webcam:</strong> Captures video for conferencing, streaming, security, photography.</p>
-
-<p class="learn-p"><strong>Biometric devices:</strong> Use physical characteristics for identification/authentication. Fingerprint scanner, Iris scanner, Facial recognition, Voice recognition.</p>
-
-<p class="learn-p"><strong>Barcode reader:</strong> Reads barcodes (UPC, QR codes). Uses: Retail checkout, inventory management, library systems.</p>
-
-<p class="learn-p"><strong>Magnetic stripe reader:</strong> Reads magnetic stripes on credit/debit cards, ID cards, hotel key cards.</p>
-
-<p class="learn-p"><strong>Smart card reader:</strong> Reads chip cards (EMV credit cards, SIM cards).</p>
-
-<p class="learn-p"><strong>Touchpad:</strong> Laptop pointing device. Multi-touch gestures: two-finger scroll, pinch zoom, three-finger swipe.</p>
-
-<p class="learn-p"><strong>Joystick/Gamepad:</strong> Gaming and simulation input (flight simulators, medical training).</p>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🖨️ PRINTER TYPES - Impact vs Non-Impact</text>
-    
-    <g>
-      <rect x="15" y="45" width="225" height="65" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-      <rect x="15" y="45" width="225" height="25" rx="8" fill="#ef4444"/>
-      <text x="127" y="63" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">IMPACT PRINTERS</text>
-      <text x="127" y="85" text-anchor="middle" font-size="8" fill="#991b1b">Dot Matrix Printer</text>
-      <text x="127" y="100" text-anchor="middle" font-size="7" fill="#991b1b">Uses pins striking ink ribbon</text>
-    </g>
-    
-    <g>
-      <rect x="260" y="45" width="225" height="65" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <rect x="260" y="45" width="225" height="25" rx="8" fill="#22c55e"/>
-      <text x="372" y="63" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">NON-IMPACT PRINTERS</text>
-      <text x="372" y="85" text-anchor="middle" font-size="8" fill="#166534">Inkjet, Laser, Thermal, 3D</text>
-      <text x="372" y="100" text-anchor="middle" font-size="7" fill="#166534">No physical contact with paper</text>
-    </g>
-    
-    <text x="250" y="140" text-anchor="middle" font-size="9" fill="#475569">Impact printers are noisy but can make carbon copies</text>
-    <text x="250" y="155" text-anchor="middle" font-size="9" fill="#475569">Non-impact printers are faster, quieter, and produce higher quality</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Output Devices</h3>
-
-<p class="learn-p"><strong>Monitor (Display):</strong> Most common visual output device.</p>
-<p class="learn-p">Types: CRT (Cathode Ray Tube — old, bulky), LCD (Liquid Crystal Display — thin, energy efficient), LED (Light Emitting Diode — backlit LCD), OLED (Organic LED — better contrast, thinner).</p>
-<p class="learn-p">Specifications: Size (measured diagonally in inches), Resolution (pixels: 1920x1080, 3840x2160), Refresh rate (Hz — higher smoother), Response time (ms — lower better for gaming).</p>
-<p class="learn-p">Ports: VGA (older analog), DVI, HDMI (audio+video), DisplayPort.</p>
-
-<p class="learn-p"><strong>Printer:</strong> Produces hard copy (physical paper output).</p>
-<p class="learn-p">Impact printers: Dot Matrix — uses pins striking ink ribbon; noisy but can make carbon copies (multi-part forms). Used for invoices, receipts.</p>
-<p class="learn-p">Non-impact printers: Inkjet — sprays ink droplets; good for color photos, home use. Laser — uses toner and heat; fast, high volume, sharp text; office use. Thermal — uses heat on special paper; receipt printers, label printers. 3D printer — builds three-dimensional objects by layering material.</p>
-<p class="learn-p">Specifications: Speed (pages per minute), Resolution (dots per inch — DPI), Color vs monochrome.</p>
-
-<p class="learn-p"><strong>Speaker/Headphones:</strong> Audio output. Speakers: built-in or external, stereo or surround sound. Headphones: personal listening, noise-cancelling, gaming headsets.</p>
-
-<p class="learn-p"><strong>Projector:</strong> Projects computer display onto large screen. Types: DLP, LCD, LED. Uses: presentations, home theater, classrooms.</p>
-
-<p class="learn-p"><strong>Plotter:</strong> Large format printer for engineering drawings, blueprints, maps, posters. Uses pens to draw vector images.</p>
-
-<h3 class="learn-subheading">Hybrid Devices (Input + Output)</h3>
-
-<p class="learn-p">Some devices serve both input and output functions: Touchscreen (displays output and accepts touch input), Modem (sends and receives data), Network card (transmits and receives network data), Headset (speakers output audio, microphone inputs).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Key Distinction:</strong> Input devices send data TO the computer (keyboard, mouse, scanner). Output devices receive data FROM the computer (monitor, printer, speakers).</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> OCR (Optical Character Recognition) converts scanned images of text into editable text — used in document scanning, digitizing books, reading license plates.</span>
-</div>
-    `,
+    topic: 'Computer Hardware — Input and Output Devices',
+    topicCode: 'CSC-101-03',
+    module: 'Computer Hardware',
+    contentHTML:
+      '\n<div class="learn-intro">\n  <span class="learn-keyword">Input devices</span> allow humans and the external world to communicate data and instructions to the computer, while <span class="learn-keyword">output devices</span> present the results of processing back to the user in a usable form. Together, these peripheral devices form the interface between the human world and the digital processing world inside the system unit. From the keyboard on your laptop to the printer in a JAMB office, understanding I/O devices is essential for every computing student.\n</div>\n\n<h3 class="learn-subheading">1. Input Devices</h3>\n<p class="learn-p">An input device is any hardware component that allows a user to enter data, commands, or instructions into a computer. Input devices convert real-world data (text, images, sound, movement) into digital binary signals that the CPU can process.</p>\n\n<h4 class="learn-subsubheading">Keyboard</h4>\n<p class="learn-p">The keyboard is the most fundamental and widely used input device for text and command entry. The standard <span class="learn-keyword">QWERTY</span> layout (named for the first six letters on the top letter row) was designed in the 1860s for typewriters. Keyboards contain several key groups: <strong>alphanumeric keys</strong> (letters A-Z and digits 0-9), <strong>function keys</strong> (F1-F12 for special commands), <strong>navigation keys</strong> (arrows, Home, End, Page Up/Down, Insert, Delete), <strong>modifier keys</strong> (Shift, Ctrl, Alt, Windows key), and the <strong>numeric keypad</strong> (calculator-style number entry on the right). Modern variations include ergonomic keyboards (curved to reduce RSI), membrane keyboards (quiet, spill-resistant), mechanical keyboards (tactile click, preferred by programmers), and virtual keyboards (touchscreen or projection-based).</p>\n\n<h4 class="learn-subsubheading">Mouse</h4>\n<p class="learn-p">The mouse is the primary pointing device for navigating graphical user interfaces. It translates physical movement on a surface into cursor movement on screen. Types: <strong>mechanical mouse</strong> (rubber ball underneath — obsolete), <strong>optical mouse</strong> (LED light and sensor detect surface movement — most common today), <strong>laser mouse</strong> (laser instead of LED — works on more surfaces), <strong>wireless mouse</strong> (Bluetooth or RF receiver), <strong>trackball</strong> (stationary body, user rotates a ball with thumb). Basic operations: single click (select), double-click (open/execute), right-click (context menu), click-and-drag (move items), scroll wheel (scroll through documents).</p>\n\n<h4 class="learn-subsubheading">Touchscreen</h4>\n<p class="learn-p">Touchscreens detect touch input directly on the display surface, eliminating the need for a separate pointing device. Types: <strong>Resistive touchscreen</strong> (two flexible conductive layers — pressure anywhere detects the touch point; works with any object including stylus, older technology); <strong>Capacitive touchscreen</strong> (uses the electrical conductivity of a human finger; multi-touch capable; used in all modern smartphones including iPhones and Android devices; doesn\'t work with regular gloves). ATMs in Nigerian banks use resistive touchscreens; your Tecno or Infinix phone uses capacitive.</p>\n\n<h4 class="learn-subsubheading">Scanner</h4>\n<p class="learn-p">A scanner converts physical documents and images into digital form. Types: <strong>Flatbed scanner</strong> (document lies flat on glass surface — most common for office use), <strong>sheet-fed scanner</strong> (documents fed through automatically — for bulk scanning), <strong>handheld scanner</strong> (dragged across document by hand — portable), <strong>drum scanner</strong> (professional, highest quality — used in publishing). <span class="learn-keyword">OCR (Optical Character Recognition)</span> software converts scanned text images into editable digital text — used extensively in Nigerian government offices for digitising old paper records.</p>\n\n<h4 class="learn-subsubheading">Other Key Input Devices</h4>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Device</th><th>How It Works</th><th>Nigerian Application</th></tr></thead>\n    <tbody>\n      <tr><td>Microphone</td><td>Converts sound waves to electrical signals; used for voice input, recording, dictation</td><td>Voice notes in WhatsApp, Zoom/Teams meetings, Siri/Google Assistant voice commands</td></tr>\n      <tr><td>Webcam</td><td>Captures video in real-time; built into laptops or external USB</td><td>Zoom lectures at Nigerian universities, NYSC online verification, job interviews</td></tr>\n      <tr><td>Barcode Reader</td><td>Laser/LED reads black and white bar patterns; QR codes are 2D barcodes readable by smartphone camera</td><td>Supermarket tills (SPAR, Shoprite), NAFDAC product verification, inventory management</td></tr>\n      <tr><td>Fingerprint Scanner</td><td>Optical or capacitive sensor reads unique fingerprint ridge patterns</td><td>BVN enrolment, NIN registration, smartphone unlocking (Samsung, Tecno)</td></tr>\n      <tr><td>Magnetic Stripe Reader</td><td>Reads data encoded in magnetic particles on card stripe</td><td>ATM card readers, POS terminals at supermarkets</td></tr>\n      <tr><td>Smart Card Reader</td><td>Reads embedded chip (ISO 7816 standard); more secure than magnetic stripe</td><td>CAC (Corporate Affairs Commission) certificates, SIM card readers, eID cards</td></tr>\n      <tr><td>Joystick/Gamepad</td><td>Multiple axes of movement + buttons; USB or Bluetooth connection</td><td>Gaming (FIFA, Mortal Kombat), flight simulators, accessibility input for disabled users</td></tr>\n      <tr><td>Digital Camera</td><td>CCD/CMOS image sensor captures photons; converts to digital pixel data</td><td>Journalism (Channels TV, TVC), NTA productions, student projects</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h4 class="learn-subsubheading">Biometric Input Devices</h4>\n<p class="learn-p">Biometric devices capture unique biological characteristics for identification and authentication. Types in computing: <strong>fingerprint scanner</strong> (most common — used in Nigerian BVN, INEC registration), <strong>iris scanner</strong> (images the unique pattern in the coloured part of the eye — more accurate than fingerprint), <strong>facial recognition</strong> (analyses facial geometry — used in modern smartphones, security cameras at airports), <strong>voice recognition</strong> (analyses unique voice characteristics — used in some banking apps). Biometric systems offer the advantage of "something you are" authentication rather than "something you know" (password) or "something you have" (ID card).</p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="22" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Input/Output Device Classification</text>\n    <rect x="20" y="35" width="200" height="140" rx="8" fill="#1a0030" stroke="#6C3FC9" stroke-width="2"/>\n    <rect x="260" y="35" width="200" height="140" rx="8" fill="#1a0030" stroke="#28c840" stroke-width="2"/>\n    <text x="120" y="55" text-anchor="middle" fill="#6C3FC9" font-size="11" font-weight="bold">INPUT DEVICES</text>\n    <text x="360" y="55" text-anchor="middle" fill="#28c840" font-size="11" font-weight="bold">OUTPUT DEVICES</text>\n    <text x="120" y="73" text-anchor="middle" fill="#c8c8c8" font-size="9">⌨ Keyboard</text>\n    <text x="120" y="88" text-anchor="middle" fill="#c8c8c8" font-size="9">🖱 Mouse / Touchpad</text>\n    <text x="120" y="103" text-anchor="middle" fill="#c8c8c8" font-size="9">📷 Scanner / Webcam</text>\n    <text x="120" y="118" text-anchor="middle" fill="#c8c8c8" font-size="9">🎤 Microphone</text>\n    <text x="120" y="133" text-anchor="middle" fill="#c8c8c8" font-size="9">👆 Touchscreen*</text>\n    <text x="120" y="148" text-anchor="middle" fill="#c8c8c8" font-size="9">👁 Biometric Devices</text>\n    <text x="120" y="163" text-anchor="middle" fill="#c8c8c8" font-size="9">🔲 Barcode Reader</text>\n    <text x="360" y="73" text-anchor="middle" fill="#c8c8c8" font-size="9">🖥 Monitor / Projector</text>\n    <text x="360" y="88" text-anchor="middle" fill="#c8c8c8" font-size="9">🖨 Printer / Plotter</text>\n    <text x="360" y="103" text-anchor="middle" fill="#c8c8c8" font-size="9">🔊 Speaker / Headphones</text>\n    <text x="360" y="118" text-anchor="middle" fill="#c8c8c8" font-size="9">💡 LED/LCD Display</text>\n    <text x="360" y="133" text-anchor="middle" fill="#c8c8c8" font-size="9">👆 Touchscreen*</text>\n    <text x="360" y="148" text-anchor="middle" fill="#c8c8c8" font-size="9">📟 Braille Display</text>\n    <text x="360" y="163" text-anchor="middle" fill="#c8c8c8" font-size="9">📽 Projector</text>\n    <text x="240" y="190" text-anchor="middle" fill="#D4AF37" font-size="8">* Touchscreen is a HYBRID device (both input and output)</text>\n    <rect x="20" y="35" width="200" height="140" rx="8" fill="none" stroke="#6C3FC9" stroke-width="1">\n      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">2. Output Devices</h3>\n<p class="learn-p">An output device presents processed data from the computer to the user in a usable form — visual, audio, or printed. Output is categorised as <span class="learn-keyword">soft copy</span> (displayed on screen — temporary, electronic) or <span class="learn-keyword">hard copy</span> (printed on paper or physical medium — permanent).</p>\n\n<h4 class="learn-subsubheading">Monitor (Visual Display Unit)</h4>\n<p class="learn-p">The monitor is the primary visual output device. Technology types: <strong>CRT (Cathode Ray Tube)</strong> — old bulky monitors using electron guns; heavy, high power consumption, obsolete. <strong>LCD (Liquid Crystal Display)</strong> — flat, thin, energy-efficient; uses liquid crystals and backlight; most office monitors. <strong>LED (Light Emitting Diode)</strong> — a type of LCD that uses LEDs for backlighting instead of fluorescent; better contrast, thinner, more energy-efficient; most modern monitors. <strong>OLED (Organic LED)</strong> — each pixel produces its own light; perfect blacks, highest contrast; used in premium TVs and some laptops. Key specifications: <strong>size</strong> (diagonal inches), <strong>resolution</strong> (pixels — Full HD: 1920×1080, 4K: 3840×2160), <strong>refresh rate</strong> (Hz — how many times image updates per second; 60Hz standard, 144Hz gaming), <strong>response time</strong> (ms — how fast pixels change colour).</p>\n\n<h4 class="learn-subsubheading">Printer</h4>\n<p class="learn-p">Printers produce hard copy output on paper or other physical media. Two major categories:</p>\n<ul class="learn-list">\n  <li><strong>Impact Printers:</strong> Physically strike ink ribbon against paper. <em>Dot matrix printer</em> — pins hit ribbon to form characters; can print on multi-part forms (invoices); still used in Nigerian banks, FAAN, Nigerian Customs; noisy but durable.</li>\n  <li><strong>Non-impact Printers:</strong> Don\'t physically strike paper. <em>Inkjet printer</em> — tiny nozzles spray ink droplets; excellent photo quality; ink cartridges are expensive; used in homes and small offices. <em>Laser printer</em> — uses electrostatic charge and toner powder; fast, high quality text; economical per page; used in offices. <em>Thermal printer</em> — heat sensitive paper; used in POS receipt printers, ATM receipts across Nigeria. <em>3D printer</em> — builds solid objects layer by layer from digital models; used in engineering, medical, manufacturing.</li>\n</ul>\n\n<h4 class="learn-subsubheading">Speakers and Projectors</h4>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Device</th><th>Technology</th><th>Key Specs</th><th>Application</th></tr></thead>\n    <tbody>\n      <tr><td>Speaker</td><td>Converts digital audio to sound waves via amplifier and cone</td><td>Wattage, frequency response, stereo/surround</td><td>Multimedia, music, video calls, public address systems</td></tr>\n      <tr><td>Headphones</td><td>Same as speakers but worn on ears; Bluetooth wireless or wired 3.5mm</td><td>Noise-cancelling, frequency response, impedance</td><td>Private listening, calls, studio monitoring</td></tr>\n      <tr><td>Projector</td><td>Projects image onto large screen/wall via bright lamp or laser</td><td>Lumens (brightness), resolution, throw ratio</td><td>University lectures, conference presentations, home cinema</td></tr>\n      <tr><td>Plotter</td><td>Uses pens or cutting blades to draw precise lines on large paper/vinyl</td><td>Width, resolution, speed</td><td>Engineering drawings (CAD), architectural blueprints, signage</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. Hybrid Devices</h3>\n<p class="learn-p">Some devices function as BOTH input AND output devices simultaneously or alternately. These are called <span class="learn-keyword">hybrid devices</span>:</p>\n<ul class="learn-list">\n  <li><strong>Touchscreen:</strong> Displays output visually (output) AND detects touch input (input). Every smartphone and tablet screen is a hybrid device.</li>\n  <li><strong>Modem:</strong> Modulates outgoing signals (output) and demodulates incoming signals (input) for network communication.</li>\n  <li><strong>Network Interface Card (NIC):</strong> Sends data packets to the network (output) and receives incoming packets (input).</li>\n  <li><strong>Headset with microphone:</strong> Plays audio (output via earphones) and captures voice (input via microphone).</li>\n  <li><strong>Smart card reader/writer:</strong> Reads from card (input) and writes to card (output) in read-write mode.</li>\n</ul>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Printer Type</th><th>Mechanism</th><th>Quality</th><th>Speed</th><th>Cost/Page</th><th>Nigerian Use</th></tr></thead>\n    <tbody>\n      <tr><td>Dot Matrix</td><td>Pins strike ink ribbon</td><td>Low (draft)</td><td>Slow</td><td>Very low</td><td>Banks, customs, multi-part forms</td></tr>\n      <tr><td>Inkjet</td><td>Ink sprayed through nozzles</td><td>High (photos)</td><td>Moderate</td><td>High (cartridges)</td><td>Homes, small businesses</td></tr>\n      <tr><td>Laser</td><td>Toner + electrostatic charge</td><td>High (text)</td><td>Fast</td><td>Low</td><td>Offices, universities, banks</td></tr>\n      <tr><td>Thermal</td><td>Heat on heat-sensitive paper</td><td>Moderate</td><td>Fast</td><td>Very low</td><td>POS receipts, ATM slips</td></tr>\n      <tr><td>3D Printer</td><td>Layer-by-layer material deposition</td><td>Varies</td><td>Slow</td><td>High</td><td>Engineering labs, medical</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — Soft Copy vs Hard Copy:</strong> <strong>Soft copy</strong> = electronic output displayed on screen (monitor, projector) — temporary, can be modified, no physical material. <strong>Hard copy</strong> = physical printed output (paper from printer, plotter) — permanent physical record. ATM receipts are hard copy; the balance shown on ATM screen before printing is soft copy.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Exam Tip — Hybrid Devices:</strong> Examiners love asking about devices that are both input AND output. Always remember: <strong>Touchscreen</strong> (most common example), <strong>Modem</strong>, <strong>Network Card (NIC)</strong>, and <strong>Headset</strong>. A touchscreen phone DISPLAY is output but the TOUCH SENSOR is input — they overlap on the same physical device.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> Input devices convert real-world data into digital form (keyboard → text, mouse → movement, scanner → images, microphone → sound). Output devices convert digital data back to human-usable form: monitors (visual soft copy), printers (hard copy), speakers (audio). Key distinction: dot matrix printers use impact technology (still used in Nigerian banks for multi-part forms); laser printers are fastest for text; inkjet for photo quality; thermal for receipts. Hybrid devices like touchscreens serve both input and output functions.\n</div>\n  ',
     questions: [
-      { q: "Which of the following is an input device?", o: ["Monitor", "Printer", "Keyboard", "Speaker"], a: 2, e: "Keyboard sends data to computer — input device. Monitor, printer, speaker are output devices.", h: "What sends data TO computer?", yr: "GST" },
-      { q: "Which printer type uses pins striking an ink ribbon?", o: ["Inkjet", "Laser", "Dot Matrix", "Thermal"], a: 2, e: "Dot Matrix is impact printer — pins strike ribbon to print dots. Noisy, can make carbon copies.", h: "What printer uses pins?", yr: "GST" },
-      { q: "OCR (Optical Character Recognition) is used with:", o: ["Keyboard", "Mouse", "Scanner", "Printer"], a: 2, e: "OCR converts scanned images of text into editable text — used with scanners.", h: "What uses OCR?", yr: "GST" },
-      { q: "Which monitor type uses OLED technology?", o: ["CRT", "LCD", "LED", "OLED (organic LEDs, self-emitting, better contrast)"], a: 3, e: "OLED has organic LEDs that self-emit light — no backlight needed, better contrast, thinner.", h: "What is OLED?", yr: "GST" },
-      { q: "A touchscreen is classified as:", o: ["Input only", "Output only", "Both input and output (hybrid)", "Neither"], a: 2, e: "Touchscreen displays output (visual) and accepts touch input — hybrid device.", h: "Is touchscreen input, output, or both?", yr: "GST" },
-      { q: "Which biometric device uses physical characteristics for authentication?", o: ["Keyboard", "Mouse", "Fingerprint scanner", "Monitor"], a: 2, e: "Biometric devices (fingerprint, iris, facial recognition, voice) use physical traits for identification.", h: "What uses fingerprints?", yr: "GST" },
-      { q: "Laser printers use which technology?", o: ["Spraying ink", "Pins striking ribbon", "Toner and heat (electrostatic)", "Heat on special paper"], a: 2, e: "Laser printers use toner (powder) and heat to fuse toner to paper — fast, high quality.", h: "What technology do laser printers use?", yr: "GST" },
-      { q: "Which mouse operation involves pressing and holding button while moving?", o: ["Click", "Double-click", "Drag and drop", "Right-click"], a: 2, e: "Drag and drop: click and hold button, move mouse to new location, release button.", h: "What is drag and drop?", yr: "GST" },
-      { q: "A plotter is used for:", o: ["Printing text documents", "Large format printing (blueprints, maps, engineering drawings)", "Scanning documents", "Playing audio"], a: 1, e: "Plotters are large-format printers for CAD drawings, blueprints, maps, posters.", h: "What is a plotter for?", yr: "GST" },
-      { q: "Which of the following is a non-impact printer?", o: ["Dot Matrix", "Inkjet", "Typewriter", "None of these"], a: 1, e: "Inkjet is non-impact — no physical contact with paper. Dot Matrix is impact printer.", h: "What is non-impact?", yr: "GST" },
-      { q: "Capacitive touchscreen responds to:", o: ["Any object (pen, glove)", "Finger only (electrical field)", "Only stylus", "Only gloved hand"], a: 1, e: "Capacitive touchscreens detect electrical field changes — respond to finger (conductive).", h: "What works on capacitive screen?", yr: "GST" },
-      { q: "Which printer is best for high-volume black-and-white office printing?", o: ["Inkjet", "Laser", "Dot Matrix", "Thermal"], a: 1, e: "Laser printers are fast, cost-effective for high-volume text printing — ideal for offices.", h: "What printer for office?", yr: "GST" },
-      { q: "A barcode reader is typically used for:", o: ["Reading text", "Reading barcodes (UPC, QR) at checkout, inventory", "Playing games", "Typing documents"], a: 1, e: "Barcode readers scan UPC/QR codes for retail checkout, inventory tracking, library systems.", h: "What uses barcode reader?", yr: "GST" },
-      { q: "Monitor refresh rate (measured in Hz) affects:", o: ["Color accuracy", "Smoothness of motion (higher Hz = smoother)", "Resolution", "Screen size"], a: 1, e: "Refresh rate (Hz) determines how many times screen updates per second — higher = smoother motion, better for gaming.", h: "What does refresh rate affect?", yr: "GST" },
-      { q: "A webcam is primarily an:", o: ["Output device", "Input device (captures video)", "Storage device", "Processing device"], a: 1, e: "Webcam captures video and sends to computer — input device.", h: "Is webcam input or output?", yr: "GST" },
-      { q: "Which scanner type is best for scanning books?", o: ["Sheet-fed", "Handheld", "Flatbed", "Drum"], a: 2, e: "Flatbed scanners have glass surface for books or documents that cannot be fed through rollers.", h: "What scanner for books?", yr: "GST" },
-      { q: "A 3D printer produces:", o: ["2D images", "Three-dimensional objects by layering material", "Text documents", "Audio files"], a: 1, e: "3D printers build physical objects layer by layer from digital models — used for prototyping, manufacturing, medical devices.", h: "What does 3D printer make?", yr: "GST" },
-      { q: "Which of the following is NOT an input device?", o: ["Mouse", "Scanner", "Monitor", "Microphone"], a: 2, e: "Monitor is output device — displays information from computer. Others send data to computer.", h: "What is NOT input?", yr: "GST" },
-      { q: "Thermal printers are commonly used for:", o: ["Photo printing", "Receipts and labels (uses heat-sensitive paper)", "Large format printing", "Book printing"], a: 1, e: "Thermal printers use heat on special paper — common for receipts (ATMs, POS), shipping labels.", h: "Where are thermal printers used?", yr: "GST" },
-      { q: "Magnetic stripe readers read information from:", o: ["Barcodes", "Credit/debit cards, ID cards, hotel keys", "QR codes", "RFID tags"], a: 1, e: "Magnetic stripe readers read magnetic stripes on credit cards, ID cards, key cards.", h: "What reads card stripes?", yr: "GST" }
-    ]
+      {
+        q: "A POS (Point of Sale) terminal used at a supermarket in Abuja reads a customer's debit card and prints a receipt. Which combination of I/O devices does this represent?",
+        o: [
+          'Input only: card reader; Output only: receipt printer',
+          'Input: card reader (magnetic stripe); Output: thermal printer (receipt)',
+          'Both input and output: the POS terminal is a hybrid device only',
+          'Input: receipt printer; Output: card reader',
+        ],
+        a: 1,
+        e: 'The magnetic stripe reader (or chip reader) reads card data — this is INPUT. The thermal printer prints the receipt — this is OUTPUT. Together they represent input and output functions in one terminal, though each component has a distinct I/O role.',
+        h: 'Reading = input; printing = output.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Why is a dot matrix printer still used by Nigerian banks and government offices like the Nigeria Customs Service?',
+        o: [
+          'Because it produces the highest quality colour output',
+          'Because it is the fastest printer technology available',
+          'Because it can print on multi-part (carbon copy) forms simultaneously',
+          'Because it is wireless and can connect to any device',
+        ],
+        a: 2,
+        e: 'Dot matrix printers physically strike ink ribbon against paper, which means they can print through multiple carbon copy layers simultaneously, producing multiple copies of a form in one pass. This is essential for invoice books, customs clearance forms, and bank teller receipts that require multiple identical copies.',
+        h: 'Multi-part forms (carbon copies) require impact printing.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which type of touchscreen technology is used in modern smartphones like iPhone and Android devices?',
+        o: [
+          'Resistive touchscreen (requires pressure)',
+          'Infrared touchscreen (uses IR beams)',
+          'Capacitive touchscreen (uses electrical conductivity of skin)',
+          'Acoustic touchscreen (uses sound waves)',
+        ],
+        a: 2,
+        e: "Modern smartphones use capacitive touchscreens, which detect the electrical conductivity of a human finger. They support multi-touch gestures (pinch, zoom, swipe) and are very responsive. They do NOT work with regular gloves because fabric doesn't conduct electricity like skin.",
+        h: 'Capacitive = detects electrical conductivity of skin = multi-touch capable.',
+        yr: 'CSC',
+      },
+      {
+        q: 'OCR technology used with scanners allows computers to:',
+        o: [
+          'Scan images and automatically print them on a printer',
+          'Convert scanned text images into editable digital text',
+          'Connect scanners wirelessly to computers via Bluetooth',
+          'Increase scanning resolution beyond 1200 DPI',
+        ],
+        a: 1,
+        e: 'OCR (Optical Character Recognition) software analyses scanned images of text and converts the visual patterns of letters and numbers into actual editable digital text characters. This is used in Nigerian government offices to digitise old paper documents and in PDF readers to extract text from scanned PDFs.',
+        h: 'OCR converts scanned image of text into actual editable characters.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The INEC (Independent National Electoral Commission) voter registration exercise captures fingerprints and photographs of voters. The fingerprint capture device is classified as:',
+        o: [
+          'An output device — it produces fingerprint data',
+          'A hybrid device — it both reads and writes fingerprint data',
+          'A biometric input device',
+          'A barcode scanner',
+        ],
+        a: 2,
+        e: 'A fingerprint scanner is a biometric input device — it captures unique biological data (fingerprint ridges) and converts it into digital data that the computer can process. It is an input device because it brings data FROM the physical world INTO the computer system.',
+        h: 'Biometric devices capture biological data = input devices.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following output devices produces HARD COPY output?',
+        o: ['LCD monitor', 'Projector', 'Inkjet printer', 'Speakers'],
+        a: 2,
+        e: 'Hard copy output is physical, tangible output — printed on paper or another physical medium. An inkjet printer produces hard copy (printed documents/photos). Monitors, projectors, and speakers all produce soft copy (electronic/temporary) output.',
+        h: 'Hard copy = physical, printed output. Soft copy = screen or audio output.',
+        yr: 'CSC',
+      },
+      {
+        q: "A university lecture hall uses a device to project the lecturer's laptop screen onto a large wall screen. The projector uses 3000 lumens brightness. What does 'lumens' measure?",
+        o: [
+          'The resolution of the projected image in pixels',
+          'The brightness (light output) of the projector',
+          'The size of the projected image in inches',
+          'The refresh rate of the projected image in Hz',
+        ],
+        a: 1,
+        e: 'Lumens measure the total visible light output of a projector. Higher lumens = brighter image, needed in bright environments (like a lecture hall with windows). 3000 lumens is adequate for a semi-dark room; outdoor or very bright rooms may need 5000+ lumens.',
+        h: 'Lumens = brightness of projector light output.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is classified as a HYBRID device (both input and output)?',
+        o: [
+          'Laser printer',
+          'Flatbed scanner',
+          'Network Interface Card (NIC)',
+          'Mechanical keyboard',
+        ],
+        a: 2,
+        e: 'A Network Interface Card (NIC) is a hybrid device — it sends data packets from the computer to the network (output function) AND receives incoming data packets from the network (input function). Similarly, a modem and touchscreen are hybrid devices.',
+        h: 'NIC sends AND receives data = both output and input.',
+        yr: 'CSC',
+      },
+      {
+        q: 'An ATM machine displays your balance on screen (soft copy) and then prints a mini-statement on a slip of paper (hard copy). Which printer technology does ATMs use for their paper slips?',
+        o: [
+          'Laser printer (toner-based)',
+          'Dot matrix printer (impact)',
+          'Thermal printer (heat-sensitive paper)',
+          'Inkjet printer (ink spray)',
+        ],
+        a: 2,
+        e: 'ATMs use thermal printers for their receipts/mini-statements. Thermal printing uses heat to create marks on heat-sensitive paper — no ink, no ribbon, no impact. This makes them fast, quiet, low-maintenance, and ideal for the high-volume receipt printing ATMs require.',
+        h: 'ATM slips = thermal printing = heat on special paper.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The QWERTY keyboard layout was originally designed for:',
+        o: [
+          'Computer keyboards in the 1970s',
+          'Typewriter keyboards in the 1860s to prevent jamming',
+          'Touch-typing efficiency to maximise typing speed',
+          "IBM's first personal computer in 1981",
+        ],
+        a: 1,
+        e: 'The QWERTY layout was designed by Christopher Sholes in the 1860s for mechanical typewriters. The arrangement was intended to separate commonly paired letters to reduce mechanical jamming (not primarily for speed). It became so dominant that it persists in all modern keyboards despite being suboptimal for typing speed.',
+        h: 'QWERTY = 1860s typewriters = reduce mechanical jamming.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which monitor technology offers perfect black levels because each pixel generates its own light and can switch off completely?',
+        o: [
+          'LCD (Liquid Crystal Display)',
+          'CRT (Cathode Ray Tube)',
+          'LED-backlit LCD',
+          'OLED (Organic Light Emitting Diode)',
+        ],
+        a: 3,
+        e: "OLED (Organic LED) technology has pixels that are individually self-illuminating. When a pixel needs to be black, it simply turns off completely, producing perfect black and infinite contrast ratio. LCD/LED displays require a backlight that bleeds through even 'black' areas, preventing true blacks.",
+        h: 'OLED pixels emit their own light = can turn off for perfect black.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A barcode reader at a supermarket uses which technology to read product codes?',
+        o: [
+          'Infrared heat detection',
+          'Laser or LED light reflected off alternating black and white bars',
+          'Magnetic field detection like an MRI',
+          'Electrical conductivity measurement like a touchscreen',
+        ],
+        a: 1,
+        e: "Barcode readers use a laser (or LED) light source aimed at the barcode. The white bars reflect more light than the black bars, and a photodetector measures the pattern of reflections. This pattern is decoded into numbers representing the product's unique barcode.",
+        h: 'Barcode reader = laser/LED reflected off bars = pattern detected.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which mouse operation is used to move a file from one folder to another in Windows File Explorer?',
+        o: ['Single left-click', 'Double-click', 'Right-click', 'Click-and-drag'],
+        a: 3,
+        e: 'Click-and-drag is the operation of holding the left mouse button down while moving the mouse to a new position, then releasing. This moves items (files, folders, icons, windows) from their original position to a new one. It is the standard operation for moving items in GUI environments.',
+        h: 'Moving items = click-and-drag (hold button, move, release).',
+        yr: 'CSC',
+      },
+      {
+        q: 'A laser printer produces text output at 1200 DPI. What does DPI measure?',
+        o: [
+          'Documents Per Inch — how many documents fit on one inch of paper',
+          'Dots Per Inch — the density of ink dots, determining print resolution/quality',
+          "Data Processing Index — a measure of the printer's processing speed",
+          'Digital Print Interface — the connection type to the computer',
+        ],
+        a: 1,
+        e: 'DPI (Dots Per Inch) measures printer resolution — the number of individual ink dots the printer places within each inch of output. Higher DPI = more dots per inch = finer, sharper detail. 600 DPI is standard for text; 1200-4800 DPI for photo printing.',
+        h: 'DPI = Dots Per Inch = print resolution quality.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which input device would be MOST appropriate for an architect to create detailed technical drawings in a CAD application?',
+        o: [
+          'Standard optical mouse',
+          'QWERTY keyboard with numeric keypad',
+          'Graphics tablet with stylus (digitiser tablet)',
+          'Flatbed scanner',
+        ],
+        a: 2,
+        e: 'A graphics tablet (digitiser tablet) with a pressure-sensitive stylus allows architects and designers to draw with the natural motion of drawing on paper, with pressure sensitivity controlling line thickness. It provides far more precision and natural control for detailed technical drawings than a mouse.',
+        h: 'Technical drawings = graphics tablet + stylus = natural drawing precision.',
+        yr: 'CSC',
+      },
+      {
+        q: "A student is in a class where the lecturer's voice is captured and automatically converted into text on a laptop. Which input device and technology are being used?",
+        o: [
+          'Scanner with OCR technology',
+          'Microphone with speech recognition (voice input) software',
+          'Webcam with facial recognition',
+          'Keyboard with predictive text',
+        ],
+        a: 1,
+        e: "A microphone captures the analog sound waves of the lecturer's voice and converts them to digital audio. Speech recognition (voice recognition) software then analyses the audio and converts it to text. This is the technology behind systems like Google Docs voice typing, Siri, and Cortana.",
+        h: 'Voice to text = microphone + speech recognition software.',
+        yr: 'CSC',
+      },
+      {
+        q: "Monitor resolution of '1920×1080' means:",
+        o: [
+          'The monitor is 1920 inches wide and 1080 inches tall',
+          'The monitor displays 1920 horizontal pixels and 1080 vertical pixels (Full HD)',
+          'The monitor refreshes 1920 times horizontally and 1080 times vertically per second',
+          'The monitor has 1920MB of video memory and 1080MHz clock speed',
+        ],
+        a: 1,
+        e: 'Resolution describes the number of pixels (picture elements) the monitor displays. 1920×1080 (Full HD or 1080p) means 1920 pixels across horizontally × 1080 pixels vertically = approximately 2.07 million total pixels. Higher resolution = more pixels = sharper, more detailed image.',
+        h: 'Resolution = pixels wide × pixels tall = image sharpness.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is TRUE about inkjet printers compared to laser printers?',
+        o: [
+          'Inkjet printers are faster than laser printers for text documents',
+          'Inkjet printers have lower cost per page than laser printers',
+          'Inkjet printers produce better quality photographs than laser printers',
+          'Inkjet printers are more suitable for high-volume office printing than laser printers',
+        ],
+        a: 2,
+        e: 'Inkjet printers excel at photo quality output because they can spray very fine droplets of cyan, magenta, yellow, and black ink to reproduce continuous-tone photographic colours with high fidelity. However, inkjet ink cartridges are expensive, making cost-per-page higher than laser. Laser printers are better for high-volume text.',
+        h: 'Inkjet = better photo quality. Laser = faster, cheaper per page for text.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The Nigeria Immigration Service uses iris scanners at international airports. An iris scanner is classified as:',
+        o: [
+          'A hybrid I/O device',
+          'A special-purpose output device',
+          'A biometric input device',
+          'A magnetic reading input device',
+        ],
+        a: 2,
+        e: "An iris scanner captures images of the unique pattern in a person's iris (the coloured ring around the pupil) and converts it to digital data for identity verification. It is a biometric input device — it brings biological identification data into the computer system.",
+        h: 'Iris scanner captures biological data = biometric input device.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A plotter differs from a regular printer primarily because:',
+        o: [
+          'A plotter prints faster than any printer',
+          'A plotter produces large-format, highly precise line drawings using pens or cutting blades',
+          'A plotter uses laser technology for printing',
+          'A plotter can only print in black and white',
+        ],
+        a: 1,
+        e: 'Plotters are specialised output devices designed for large-format, highly precise vector-based output — engineering drawings, architectural blueprints, CAD designs, maps, and large signage. They use pens (pen plotters) or cutting/marking heads to precisely trace lines and shapes on large paper or vinyl.',
+        h: 'Plotter = large format + precise line drawing = engineering/architecture.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ============================================================================
-// INTRODUCTION TO COMPUTING — PART 2 OF 4 (CLEAN - NO INLINE STYLES)
-// Continuing GST_LEARN_GST_COMPUTING array from Part 1
-// TOPICS 4, 5, 6
-// ============================================================================
-
-  // ==========================================================================
-  // TOPIC 4: Computer Software
-  // ==========================================================================
   {
-    topic: "Computer Software",
-    topicCode: "CSC-004-01",
-    module: "Computer Software",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Software</span> refers to the programs and instructions that tell the computer hardware what to do. Without software, computers are useless hardware. Software is intangible — you cannot touch it. <strong>Understanding the different types of software is essential for using computers effectively</strong>.
-</div>
-
-<p class="learn-p">Software is divided into two main categories: system software (runs the computer) and application software (does what you want). Utility software provides additional tools for maintenance and security.</p>
-
-<h3 class="learn-subheading">System Software — Operating Systems</h3>
-
-<p class="learn-p">An operating system (OS) is the most important system software. It manages hardware resources, provides a user interface, and runs application software.</p>
-
-<p class="learn-p"><strong>Functions of an operating system:</strong></p>
-<ul class="learn-list">
-  <li><strong>Process management:</strong> Manages running programs (processes) — starts, stops, allocates CPU time</li>
-  <li><strong>Memory management:</strong> Allocates RAM to programs, tracks used/free memory, handles virtual memory (using hard drive as extra RAM)</li>
-  <li><strong>File management:</strong> Organizes files on storage devices (create, delete, read, write, manage folders/directories)</li>
-  <li><strong>Device management:</strong> Controls input/output devices through drivers</li>
-  <li><strong>Security:</strong> User accounts, passwords, permissions, protection from unauthorized access</li>
-  <li><strong>User interface:</strong> Provides way for users to interact with computer (GUI or CUI)</li>
-</ul>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Type</th><th>Examples</th><th>Characteristics</th>
-    </thead>
-    <tbody>
-      <tr><td>Desktop OS</th>。<th>Windows, macOS, Linux</th>。<th>Personal computers, GUI, multi-user, multi-tasking</th>
-      </tr>
-      <tr><td>Mobile OS</th>。<th>Android, iOS</th>。<th>Touch interface, app stores, power efficient</th>
-      </table>
-      <tr><td>Server OS</th>。<th>Windows Server, Linux Server</th>。<th>Network services, high stability, security</th>
-      </tr>
-      <tr><td>Real-time OS</th>。<th>VxWorks, QNX</th>。<th>Deterministic response times (industrial, automotive, medical)</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">💿 TYPES OF SOFTWARE</text>
-    
-    <g>
-      <rect x="15" y="45" width="220" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <rect x="15" y="45" width="220" height="22" rx="8" fill="#3b82f6"/>
-      <text x="125" y="61" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">SYSTEM SOFTWARE</text>
-      <text x="125" y="80" text-anchor="middle" font-size="8" fill="#1e3a8a">Operating System (Windows, Linux, Android)</text>
-      <text x="125" y="92" text-anchor="middle" font-size="7" fill="#1e3a8a">Device Drivers</text>
-    </g>
-    
-    <g>
-      <rect x="260" y="45" width="225" height="50" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <rect x="260" y="45" width="225" height="22" rx="8" fill="#22c55e"/>
-      <text x="372" y="61" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">APPLICATION SOFTWARE</text>
-      <text x="372" y="80" text-anchor="middle" font-size="8" fill="#166534">Word processors, Spreadsheets, Web browsers</text>
-      <text x="372" y="92" text-anchor="middle" font-size="7" fill="#166534">Games, Databases, Email clients</text>
-    </g>
-    
-    <g>
-      <rect x="15" y="110" width="220" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-      <rect x="15" y="110" width="220" height="22" rx="8" fill="#f59e0b"/>
-      <text x="125" y="126" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">UTILITY SOFTWARE</text>
-      <text x="125" y="145" text-anchor="middle" font-size="8" fill="#92400e">Antivirus, Disk Cleanup, Backup</text>
-      <text x="125" y="157" text-anchor="middle" font-size="7" fill="#92400e">File Compression, Firewall</text>
-    </g>
-    
-    <g>
-      <rect x="260" y="110" width="225" height="50" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-      <rect x="260" y="110" width="225" height="22" rx="8" fill="#ec4899"/>
-      <text x="372" y="126" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">PROGRAMMING SOFTWARE</text>
-      <text x="372" y="145" text-anchor="middle" font-size="8" fill="#831843">Compilers, Interpreters, IDEs</text>
-      <text x="372" y="157" text-anchor="middle" font-size="7" fill="#831843">Debuggers, Code editors</text>
-    </g>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Application Software</h3>
-
-<p class="learn-p">Application software helps users perform specific tasks. Categories include:</p>
-
-<ul class="learn-list">
-  <li><strong>Productivity software:</strong> Word processors (Microsoft Word, Google Docs), Spreadsheets (Excel, Google Sheets), Presentation software (PowerPoint, Google Slides), Database software (Access, MySQL Workbench)</li>
-  <li><strong>Business software:</strong> Accounting (QuickBooks), CRM (Salesforce), ERP, Project management (Trello, Asana)</li>
-  <li><strong>Communication software:</strong> Email clients (Outlook, Gmail), Messaging apps (WhatsApp, Telegram), Video conferencing (Zoom, Teams, Google Meet), Web browsers (Chrome, Firefox, Edge, Safari)</li>
-  <li><strong>Multimedia software:</strong> Media players (VLC), Image editors (Photoshop, GIMP), Video editors (Premiere, DaVinci Resolve), Audio editors (Audacity)</li>
-  <li><strong>Educational software:</strong> Learning management systems (Canvas, Moodle), Tutorials, Simulations, Language learning apps (Duolingo)</li>
-  <li><strong>Gaming software:</strong> Casual games, serious games, esports titles</li>
-</ul>
-
-<h3 class="learn-subheading">Utility Software</h3>
-
-<p class="learn-p">Utility software performs specific tasks to maintain, optimize, and secure the computer:</p>
-
-<ul class="learn-list">
-  <li><strong>Antivirus/Anti-malware:</strong> Protects from viruses, malware, spyware (Norton, McAfee, Kaspersky, Windows Defender)</li>
-  <li><strong>Disk cleanup:</strong> Removes temporary files, cache, browser history, recycle bin</li>
-  <li><strong>Disk defragmenter:</strong> Rearranges fragmented files for faster access (HDD only — not needed for SSDs)</li>
-  <li><strong>Backup software:</strong> Copies important files to external drives or cloud</li>
-  <li><strong>File compression:</strong> Reduces file size (WinZip, 7-Zip) — creates ZIP, RAR archives</li>
-  <li><strong>Firewall:</strong> Monitors network traffic, blocks unauthorized access</li>
-</ul>
-
-<h3 class="learn-subheading">Software Licensing</h3>
-
-<p class="learn-p"><strong>Software license types:</strong></p>
-<ul class="learn-list">
-  <li><strong>Proprietary (closed source):</strong> Source code kept secret; user pays for license; cannot modify (Microsoft Windows, Adobe Photoshop)</li>
-  <li><strong>Open source:</strong> Source code freely available; can modify and redistribute; often free (Linux, Firefox, LibreOffice, GIMP, Android)</li>
-  <li><strong>Freeware:</strong> Free to use, but source code not available (no modification) (Adobe Reader, Skype)</li>
-  <li><strong>Shareware:</strong> Free trial period, then pay for continued use (WinZip trial)</li>
-  <li><strong>Public domain:</strong> No copyright restrictions; free to use, modify, distribute</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Key Distinction:</strong> System software runs the computer; application software does what you want. The OS is system software; Word is application software.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> Open source software (Linux, Firefox, LibreOffice) is free and modifiable — not the same as freeware (free but not modifiable).</span>
-</div>
-    `,
+    topic: 'Computer Software',
+    topicCode: 'CSC-101-04',
+    module: 'Software Fundamentals',
+    contentHTML:
+      '\n<div class="learn-intro">\n  <span class="learn-keyword">Software</span> is the set of instructions, programs, and data that tells a computer hardware what to do. Without software, hardware is just expensive metal and silicon — completely useless. The relationship between hardware and software is like a human body and mind: hardware is the physical body capable of action, but software is the intelligence directing those actions. Every app you open on your phone, every website you browse, and every document you type relies on multiple layers of software working together.\n</div>\n\n<h3 class="learn-subheading">1. Definition and Categories of Software</h3>\n<p class="learn-p">Software is broadly divided into three major categories: <span class="learn-keyword">System Software</span> (manages hardware and provides a platform for other software), <span class="learn-keyword">Application Software</span> (performs specific tasks for users), and <span class="learn-keyword">Utility Software</span> (maintains and optimises the computer system).</p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="22" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Software Classification Hierarchy</text>\n    <rect x="150" y="35" width="180" height="35" rx="8" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <text x="240" y="57" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">SOFTWARE</text>\n    <rect x="20" y="95" width="130" height="35" rx="8" fill="#2d1b4e" stroke="#6C3FC9" stroke-width="1.5"/>\n    <rect x="175" y="95" width="130" height="35" rx="8" fill="#2d1b4e" stroke="#6C3FC9" stroke-width="1.5"/>\n    <rect x="330" y="95" width="130" height="35" rx="8" fill="#2d1b4e" stroke="#6C3FC9" stroke-width="1.5"/>\n    <text x="85" y="108" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">SYSTEM</text>\n    <text x="85" y="121" text-anchor="middle" fill="#9090b0" font-size="8">OS, Drivers, BIOS</text>\n    <text x="240" y="108" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">APPLICATION</text>\n    <text x="240" y="121" text-anchor="middle" fill="#9090b0" font-size="8">Word, Excel, Browser</text>\n    <text x="395" y="108" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">UTILITY</text>\n    <text x="395" y="121" text-anchor="middle" fill="#9090b0" font-size="8">Antivirus, Backup</text>\n    <line x1="240" y1="70" x2="85" y2="95" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="240" y1="70" x2="240" y2="95" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="240" y1="70" x2="395" y2="95" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="20" y="150" width="440" height="30" rx="6" fill="#0a3a1a" stroke="#28c840" stroke-width="1.5"/>\n    <text x="240" y="162" text-anchor="middle" fill="#28c840" font-size="9" font-weight="bold">HARDWARE (Physical components — CPU, RAM, HDD, Monitor)</text>\n    <text x="240" y="173" text-anchor="middle" fill="#9090b0" font-size="8">Software runs on top of hardware</text>\n    <rect x="150" y="35" width="180" height="35" rx="8" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">2. System Software</h3>\n<h4 class="learn-subsubheading">Operating System (OS)</h4>\n<p class="learn-p">The <span class="learn-keyword">Operating System</span> is the most fundamental system software — it manages all hardware resources and provides services for other programs to run. Without an OS, no application can function. The OS acts as an intermediary between users/applications and the computer hardware.</p>\n\n<p class="learn-p">Key OS functions: <strong>Process Management</strong> (creates, schedules, and terminates processes; manages CPU allocation between running programs); <strong>Memory Management</strong> (allocates and deallocates RAM; manages virtual memory when RAM is insufficient); <strong>File Management</strong> (organises files in directories, controls read/write access, manages file system — NTFS, FAT32, ext4); <strong>Device Management</strong> (communicates with hardware through device drivers); <strong>Security</strong> (user authentication, access control, encryption); <strong>User Interface</strong> (provides command line or graphical interface for user interaction).</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Operating System</th><th>Type</th><th>Target</th><th>Nigerian Usage Context</th></tr></thead>\n    <tbody>\n      <tr><td>Windows 11/10</td><td>GUI, proprietary</td><td>Personal computers, laptops</td><td>Most Nigerian cybercafes, offices, students</td></tr>\n      <tr><td>macOS Sonoma</td><td>GUI, proprietary (Apple)</td><td>Apple Mac computers</td><td>Creative professionals, some Nigerian universities</td></tr>\n      <tr><td>Linux (Ubuntu, Fedora, Kali)</td><td>GUI/CLI, open source</td><td>Servers, developers, security</td><td>Nigerian tech startups, server infrastructure, developers</td></tr>\n      <tr><td>Android</td><td>GUI, open source (Google)</td><td>Smartphones, tablets</td><td>Tecno, Infinix, Samsung phones — most common in Nigeria</td></tr>\n      <tr><td>iOS</td><td>GUI, proprietary (Apple)</td><td>iPhone, iPad</td><td>Used by Nigerian professionals and middle/upper class</td></tr>\n      <tr><td>Unix</td><td>CLI/GUI, various</td><td>Servers, workstations</td><td>Nigerian university servers, corporate infrastructure</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h4 class="learn-subsubheading">User Interface Types</h4>\n<ul class="learn-list">\n  <li><strong>CLI (Command Line Interface):</strong> User types text commands to interact with the OS. Examples: Windows Command Prompt (cmd.exe), Linux Terminal, MS-DOS. Advantages: fast, powerful, scriptable, resource-efficient. Disadvantages: steep learning curve, must memorise commands. Used by system administrators and developers.</li>\n  <li><strong>GUI (Graphical User Interface):</strong> User interacts via visual elements — windows, icons, menus, pointers (WIMP). Examples: Windows Desktop, macOS Finder, Android home screen. Advantages: intuitive, user-friendly, visual feedback. Disadvantages: uses more resources, slower for power users. Most Nigerian computer users interact via GUI.</li>\n</ul>\n\n<h4 class="learn-subsubheading">Device Drivers</h4>\n<p class="learn-p">A <span class="learn-keyword">device driver</span> is specialised software that allows the operating system to communicate with a specific hardware device. Without the correct driver, the OS cannot use the device. When you plug a new HP printer into your laptop, Windows searches for the appropriate driver (either locally or from Windows Update) to enable the OS to send print commands to that specific printer model.</p>\n\n<h3 class="learn-subheading">3. Application Software</h3>\n<p class="learn-p">Application software (apps) are programs designed to help users perform specific tasks. They run ON TOP of the operating system and cannot run directly on hardware.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Category</th><th>Examples</th><th>Nigerian Context</th></tr></thead>\n    <tbody>\n      <tr><td>Word Processing</td><td>Microsoft Word, LibreOffice Writer, Google Docs</td><td>NYSC reports, university essays, CVs, business letters</td></tr>\n      <tr><td>Spreadsheet</td><td>Microsoft Excel, Google Sheets, LibreOffice Calc</td><td>Sales tracking, budgeting, payroll in Nigerian SMEs</td></tr>\n      <tr><td>Presentation</td><td>PowerPoint, Google Slides, Keynote</td><td>University seminars, business proposals, NASS presentations</td></tr>\n      <tr><td>Database</td><td>Microsoft Access, FileMaker Pro</td><td>Student record management, inventory tracking</td></tr>\n      <tr><td>Web Browser</td><td>Chrome, Firefox, Safari, Edge, Opera Mini</td><td>Opera Mini popular in Nigeria for data savings; Google Chrome dominant</td></tr>\n      <tr><td>Email Client</td><td>Outlook, Thunderbird, Gmail (web)</td><td>Institutional email at UNILAG, business communications</td></tr>\n      <tr><td>Accounting</td><td>QuickBooks, Sage, Zoho Books</td><td>SME accounting in Lagos; Sage popular in corporate Nigeria</td></tr>\n      <tr><td>Video Editing</td><td>Adobe Premiere, DaVinci Resolve, iMovie</td><td>Nollywood post-production, YouTube content creators</td></tr>\n      <tr><td>Image Editing</td><td>Adobe Photoshop, GIMP, Canva</td><td>Nigerian graphic designers, social media content creation</td></tr>\n      <tr><td>Communication</td><td>WhatsApp, Zoom, Microsoft Teams, Slack</td><td>WhatsApp dominates Nigerian personal and business communication</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Utility Software</h3>\n<p class="learn-p">Utility software (utilities) are programs designed to maintain, optimise, and protect computer systems. They work alongside the OS to keep the system running efficiently.</p>\n\n<ul class="learn-list">\n  <li><strong>Antivirus/Anti-malware:</strong> Detects and removes malicious software. Examples: Avast, Norton, Kaspersky, Windows Defender. Critical in Nigeria due to high cybercrime rates and USB-based virus spreading in cybercafes.</li>\n  <li><strong>Disk Cleanup:</strong> Removes temporary files, cache files, and unnecessary system files to free disk space and improve performance.</li>\n  <li><strong>Disk Defragmenter:</strong> Rearranges fragmented files on HDDs so they are stored contiguously, improving read speed. (Not needed for SSDs — defragmenting SSDs reduces their lifespan.)</li>\n  <li><strong>Backup Software:</strong> Creates copies of data to protect against loss. Examples: Windows Backup, Time Machine (macOS), Acronis. Essential for Nigerian businesses after hardware failures or cybercrime incidents.</li>\n  <li><strong>File Compression:</strong> Reduces file sizes for storage or transfer. Examples: WinRAR, 7-Zip, WinZip. ZIP and RAR formats widely used for sharing files via WhatsApp and email in Nigeria.</li>\n  <li><strong>Firewall:</strong> Monitors and controls incoming/outgoing network traffic based on security rules. Blocks unauthorised access while allowing legitimate communications.</li>\n  <li><strong>System Monitor:</strong> Shows CPU usage, memory usage, running processes, network activity. Examples: Windows Task Manager, Activity Monitor (macOS), htop (Linux).</li>\n</ul>\n\n<h3 class="learn-subheading">5. Programming Software</h3>\n<p class="learn-p">Programming software (development tools) helps developers create other software:</p>\n<ul class="learn-list">\n  <li><strong>Compilers:</strong> Translate entire high-level language source code into machine code before execution. Fast runtime; errors detected before running. Examples: GCC (C/C++), javac (Java).</li>\n  <li><strong>Interpreters:</strong> Translate and execute source code line-by-line at runtime. Slower than compiled; errors detected during execution. Examples: Python interpreter, JavaScript engine.</li>\n  <li><strong>Debuggers:</strong> Help programmers find and fix errors (bugs) in code by stepping through execution, setting breakpoints, and inspecting variables.</li>\n  <li><strong>IDEs (Integrated Development Environments):</strong> All-in-one tools combining editor, compiler/interpreter, debugger, and other tools. Examples: VS Code (free, popular among Nigerian developers), PyCharm, Eclipse, Android Studio.</li>\n</ul>\n\n<h3 class="learn-subheading">6. Software Licensing</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>License Type</th><th>Cost</th><th>Source Code</th><th>Examples</th><th>Notes</th></tr></thead>\n    <tbody>\n      <tr><td>Proprietary</td><td>Paid</td><td>Closed/hidden</td><td>Windows, MS Office, Adobe</td><td>Cannot modify or redistribute; most commercial software</td></tr>\n      <tr><td>Open Source</td><td>Free</td><td>Available/modifiable</td><td>Linux, LibreOffice, Firefox, VLC</td><td>Can modify and redistribute; various open source licenses</td></tr>\n      <tr><td>Freeware</td><td>Free</td><td>Closed</td><td>Skype (basic), VLC, 7-Zip</td><td>Free to use but source code not available for modification</td></tr>\n      <tr><td>Shareware</td><td>Try-free, buy-full</td><td>Closed</td><td>WinRAR (trial), WinZip (trial)</td><td>Limited trial period or features; pay for full version</td></tr>\n      <tr><td>Public Domain</td><td>Free</td><td>May be available</td><td>Some government software, old software</td><td>No copyright; can use, modify, distribute freely</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — Compiler vs Interpreter:</strong> A <strong>compiler</strong> translates the ENTIRE program at once before execution — faster runtime, errors listed before running, output is machine code file. An <strong>interpreter</strong> translates and executes ONE LINE AT A TIME during runtime — slower, errors stop execution at that line, no separate output file. Python uses an interpreter; C/C++ uses a compiler. Java uses a hybrid (compiled to bytecode, then interpreted by JVM).\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Exam Tip — Software vs Hardware:</strong> Software = intangible instructions (you cannot physically touch a Windows installation). Hardware = tangible physical components (you can pick up a hard drive). A program stored on a DVD is software on hardware — the disc is hardware, the program data is software. This distinction is commonly tested.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> Software = instructions that control hardware. Three main types: System software (OS, drivers — manages hardware), Application software (word processors, browsers — serves users), Utility software (antivirus, backup — maintains system). OS functions: process, memory, file, and device management. CLI uses text commands; GUI uses visual elements. Compilers translate whole programs; interpreters translate line by line. Software licensing: proprietary (paid, closed), open source (free, open), freeware (free, closed), shareware (trial), public domain (free for all uses).\n</div>\n  ',
     questions: [
-      { q: "Which of the following is system software?", o: ["Microsoft Word", "Google Chrome", "Windows 11 (Operating System)", "Adobe Photoshop"], a: 2, e: "Windows 11 is an operating system — system software. Word, Chrome, Photoshop are application software.", h: "What is system software?", yr: "GST" },
-      { q: "The operating system manages all EXCEPT:", o: ["Processes", "Memory", "Files", "The user's typing speed"], a: 3, e: "OS manages processes, memory, files, devices, security, user interface — not user typing speed.", h: "What does OS NOT manage?", yr: "GST" },
-      { q: "Which of the following is an open source operating system?", o: ["Windows 11", "macOS", "Linux", "iOS"], a: 2, e: "Linux is open source — source code freely available. Windows, macOS, iOS are proprietary.", h: "What is open source?", yr: "GST" },
-      { q: "Google Chrome is classified as:", o: ["System software", "Application software (web browser)", "Utility software", "Programming software"], a: 1, e: "Web browsers (Chrome, Firefox, Edge) are application software — they help users perform specific tasks.", h: "What type is Chrome?", yr: "GST" },
-      { q: "Which utility software rearranges fragmented files for faster access?", o: ["Antivirus", "Disk Defragmenter", "Backup software", "File compression"], a: 1, e: "Disk defragmenter rearranges fragmented files on HDD for faster access (not needed for SSDs).", h: "What defragments drives?", yr: "GST" },
-      { q: "A license that allows free use but source code is not available is:", o: ["Open source", "Freeware", "Public domain", "Proprietary"], a: 1, e: "Freeware is free to use but source code is not available (cannot modify). Open source provides source code.", h: "What is freeware?", yr: "GST" },
-      { q: "Which of the following is an example of application software?", o: ["Windows 10", "Linux kernel", "Microsoft Excel", "BIOS"], a: 2, e: "Excel is application software (spreadsheet). Windows, Linux, BIOS are system software.", h: "What is application software?", yr: "GST" },
-      { q: "Antivirus software is classified as:", o: ["System software", "Application software", "Utility software", "Programming software"], a: 2, e: "Antivirus is utility software — helps maintain and secure computer system.", h: "What type is antivirus?", yr: "GST" },
-      { q: "The function of device drivers is to:", o: ["Manage files", "Allow OS to communicate with hardware devices", "Compress files", "Defragment disks"], a: 1, e: "Device drivers enable operating system to communicate with and control hardware devices (printer, graphics card, etc.).", h: "What do drivers do?", yr: "GST" },
-      { q: "Which software license allows users to view, modify, and redistribute source code?", o: ["Proprietary", "Freeware", "Open source", "Shareware"], a: 2, e: "Open source licenses give users freedom to view, modify, and redistribute source code.", h: "What allows source code modification?", yr: "GST" },
-      { q: "Microsoft Windows is an example of:", o: ["Application software", "Utility software", "Proprietary operating system", "Open source software"], a: 2, e: "Windows is proprietary (closed source) operating system — system software.", h: "What type is Windows?", yr: "GST" },
-      { q: "Which of the following is utility software?", o: ["Microsoft Word", "Google Chrome", "7-Zip (file compression)", "Windows 11"], a: 2, e: "7-Zip is file compression utility — utility software. Word, Chrome are applications; Windows is OS.", h: "What is 7-Zip?", yr: "GST" },
-      { q: "A compiler translates:", o: ["English to machine code", "High-level programming language to machine code", "Machine code to high-level language", "Binary to decimal"], a: 1, e: "Compiler translates high-level programming language (C, C++, Java) into machine code (binary) for execution.", h: "What does compiler do?", yr: "GST" },
-      { q: "Which of the following is NOT a function of an operating system?", o: ["Process management", "Memory management", "Creating documents", "File management"], a: 2, e: "Creating documents is application software function (word processor). OS manages processes, memory, files, devices.", h: "What does OS NOT do?", yr: "GST" },
-      { q: "Android and iOS are examples of:", o: ["Desktop operating systems", "Mobile operating systems", "Utility software", "Application software"], a: 1, e: "Android and iOS are operating systems designed for mobile devices (phones, tablets).", h: "What are Android and iOS?", yr: "GST" },
-      { q: "Shareware is characterized by:", o: ["Always free", "Free trial period, then pay", "Source code available", "No restrictions"], a: 1, e: "Shareware offers free trial period (usually 30 days), then requires payment for continued use.", h: "What is shareware?", yr: "GST" },
-      { q: "Which software is used to create spreadsheets?", o: ["Microsoft Word", "Microsoft Excel", "PowerPoint", "Outlook"], a: 1, e: "Excel is spreadsheet software — creates tables, formulas, charts, data analysis.", h: "What creates spreadsheets?", yr: "GST" },
-      { q: "The main difference between freeware and open source is:", o: ["Freeware costs money", "Open source provides source code; freeware does not", "Freeware is for businesses only", "Open source costs money"], a: 1, e: "Open source provides source code (can modify); freeware is free to use but source code not available.", h: "How does open source differ from freeware?", yr: "GST" },
-      { q: "Which utility creates copies of important files for recovery?", o: ["Disk defragmenter", "Backup software", "Antivirus", "File compression"], a: 1, e: "Backup software copies important files to external drives or cloud for recovery after data loss.", h: "What creates backups?", yr: "GST" },
-      { q: "A GUI (Graphical User Interface) uses:", o: ["Text commands only", "Icons, windows, menus, pointer", "Voice commands only", "No user interaction"], a: 1, e: "GUI uses visual elements: icons, windows, menus, buttons, pointer — user-friendly, not requiring commands.", h: "What does GUI use?", yr: "GST" }
-    ]
+      {
+        q: 'A student installs Microsoft Word on their laptop. Microsoft Word is classified as:',
+        o: [
+          'System software — because it manages system resources',
+          'Application software — because it helps users perform a specific task (word processing)',
+          'Utility software — because it maintains the computer system',
+          'Programming software — because it was written using programming languages',
+        ],
+        a: 1,
+        e: 'Application software is designed to help users perform specific tasks. Microsoft Word helps users create, edit, format, and print documents — a specific user-oriented task. It runs ON TOP of the operating system, not as a system management tool.',
+        h: 'Application software = serves users with specific tasks like word processing.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is the PRIMARY function of an Operating System?',
+        o: [
+          'Create documents and spreadsheets for business users',
+          'Manage computer hardware resources and provide services for application software',
+          'Protect the computer from viruses and malware',
+          'Compile programs from high-level language to machine code',
+        ],
+        a: 1,
+        e: 'The OS is the master program that manages all hardware resources (CPU, memory, storage, I/O devices) and provides a platform (services) for application software to run. Without the OS, no application can access hardware.',
+        h: 'OS = manages hardware resources + platform for applications.',
+        yr: 'CSC',
+      },
+      {
+        q: 'An antivirus program like Kaspersky or Windows Defender is classified as which type of software?',
+        o: [
+          'System software (operating system component)',
+          'Application software (productivity tool)',
+          'Utility software (system maintenance and protection)',
+          'Programming software (development tool)',
+        ],
+        a: 2,
+        e: 'Utility software maintains, optimises, and protects computer systems. Antivirus software protects the system from malware — a maintenance/protection function. While some argue it can be part of system software, utility software is the most accurate classification.',
+        h: 'Antivirus = system protection/maintenance = utility software.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is a device driver?',
+        o: [
+          'A utility program that defragments the hard drive',
+          'Software that allows the OS to communicate with a specific hardware device',
+          'The physical cable connecting devices to the computer',
+          'The person who installs and maintains hardware devices',
+        ],
+        a: 1,
+        e: "A device driver is software that acts as a translator between the operating system and a specific hardware device. When you connect a new webcam, the OS needs the webcam's driver to 'speak the language' of that specific hardware model.",
+        h: 'Driver = translator between OS and specific hardware.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian developer uses VS Code (Visual Studio Code) to write and debug a Python web application. VS Code is classified as:',
+        o: [
+          "Application software — it's used for productivity",
+          'Utility software — it maintains the system',
+          'Programming software (IDE — Integrated Development Environment)',
+          'System software — it manages the Python interpreter',
+        ],
+        a: 2,
+        e: 'VS Code is an IDE (Integrated Development Environment) — a type of programming software that combines a code editor, debugger, syntax highlighting, and other development tools in one package. It is used to create other software.',
+        h: 'IDE = programming/development software for creating other programs.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the key difference between a CLI (Command Line Interface) and a GUI (Graphical User Interface)?',
+        o: [
+          'CLI is faster for browsing the internet; GUI is better for programming',
+          'CLI uses typed text commands; GUI uses visual elements like icons, windows, and menus',
+          'CLI is used only on Linux; GUI is used only on Windows',
+          'CLI requires a mouse; GUI requires a keyboard only',
+        ],
+        a: 1,
+        e: "CLI (Command Line Interface) requires users to type text commands (e.g., 'dir' or 'ls' to list files). GUI (Graphical User Interface) allows users to interact via visual elements — icons, windows, menus, buttons — typically using a mouse. Most Nigerian computer users interact with GUIs.",
+        h: 'CLI = type commands. GUI = click visual elements (icons, windows).',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Python program is executed line by line, stopping at the first error encountered. This describes which type of language translation?',
+        o: [
+          'Compilation — the entire program is translated at once',
+          'Interpretation — code is translated and executed line by line at runtime',
+          'Assembly — the code is translated from assembly to machine language',
+          'Linkage — separate modules are linked together',
+        ],
+        a: 1,
+        e: 'Interpreters translate and execute source code one line at a time during runtime. If an error is encountered, execution stops at that line. Python, JavaScript (in browsers), and Ruby use interpreters. This contrasts with compilers, which translate the entire program before execution begins.',
+        h: 'Line-by-line execution stopping at errors = interpreter.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which operating system is MOST commonly used on smartphones in Nigeria (especially on brands like Tecno, Infinix, and Samsung)?',
+        o: ['Windows Mobile', 'iOS', 'Android', 'Linux Ubuntu Mobile'],
+        a: 2,
+        e: "Android (developed by Google, based on Linux) is the dominant smartphone OS in Nigeria. Tecno, Infinix, Itel, and most Samsung devices in the Nigerian market run Android. Android's open-source nature allows manufacturers to customise it, keeping device costs lower than iOS devices.",
+        h: 'Most Nigerian smartphones = Android OS.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The difference between Freeware and Open Source software is:',
+        o: [
+          'Freeware costs money; Open Source is always free',
+          'Freeware is free to use but source code is not available; Open Source provides access to source code that can be modified',
+          'There is no difference — they are the same thing',
+          'Open Source requires payment for commercial use; Freeware is always completely free',
+        ],
+        a: 1,
+        e: 'Freeware is free to use (zero cost) but the source code is not provided — you cannot modify or redistribute it (e.g., Skype basic, older Adobe Reader). Open Source software provides the source code, allowing users to study, modify, and redistribute it (e.g., Linux, Firefox, LibreOffice).',
+        h: 'Freeware = free to USE. Open Source = free + source code available to modify.',
+        yr: 'CSC',
+      },
+      {
+        q: 'WinRAR and 7-Zip are examples of which category of utility software?',
+        o: [
+          'Disk defragmentation software',
+          'File compression (archiving) software',
+          'Backup and recovery software',
+          'System monitoring software',
+        ],
+        a: 1,
+        e: 'WinRAR, 7-Zip, and WinZip are file compression (archiving) utilities. They reduce file sizes using compression algorithms, making files easier to store and transfer. The RAR and ZIP formats they create are widely used in Nigeria for sharing files via email and messaging apps.',
+        h: 'WinRAR, 7-Zip = compress files to smaller sizes = compression utilities.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following correctly describes the relationship between system software and application software?',
+        o: [
+          'Application software manages hardware; system software uses hardware for user tasks',
+          'System software provides the platform on which application software runs',
+          'They are independent and can both run directly on hardware without each other',
+          'Application software must be installed before system software can be installed',
+        ],
+        a: 1,
+        e: 'System software (especially the OS) creates the platform/environment in which application software runs. Applications cannot access hardware directly — they make requests to the OS, which then manages the hardware. The OS must be installed first before any applications can run.',
+        h: 'System software = foundation. Application software runs ON TOP of system software.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian bank uses an internally developed software system that is not sold to the public and whose source code is a closely guarded trade secret. This software is classified as:',
+        o: ['Open source', 'Freeware', 'Shareware', 'Proprietary software'],
+        a: 3,
+        e: "Proprietary software (also called commercial or closed-source software) is owned by a company/individual, with the source code kept secret. It typically requires payment and has usage restrictions. A bank's internally developed banking system that is not shared with others is proprietary.",
+        h: 'Closed source, owned privately, not shared = proprietary software.',
+        yr: 'CSC',
+      },
+      {
+        q: "During process management, the OS uses 'scheduling' to:",
+        o: [
+          'Organise files into folders on the hard drive',
+          'Allocate CPU time among multiple running processes fairly',
+          'Schedule automatic virus scans at specific times',
+          'Plan the physical layout of data on the hard disk',
+        ],
+        a: 1,
+        e: 'Process scheduling is an OS function that determines which process gets CPU time and for how long. The CPU can only execute one process at a time (per core), so the OS scheduler rapidly switches between processes, creating the illusion of simultaneous execution (multitasking).',
+        h: 'OS scheduling = allocates CPU time fairly among running processes.',
+        yr: 'CSC',
+      },
+      {
+        q: "When a user's RAM is full, the Operating System uses 'virtual memory'. This means:",
+        o: [
+          'The OS purchases additional RAM from a cloud service',
+          'The OS uses hard drive space as an extension of RAM, though much slower',
+          'The OS compresses existing RAM contents to make room',
+          'The OS terminates the least-used programs automatically',
+        ],
+        a: 1,
+        e: "Virtual memory is a memory management technique where the OS uses a portion of hard drive space (called a page file/swap file) as if it were RAM. When RAM is full, less-used data is 'paged out' to disk. This allows running more programs than physical RAM permits, but at much slower speeds since disk access is far slower than RAM.",
+        h: 'Virtual memory = using hard drive as slow extension of RAM.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which type of software licensing allows a user to try software for free for a limited period, after which payment is required for continued use?',
+        o: ['Freeware', 'Open source', 'Shareware', 'Public domain'],
+        a: 2,
+        e: 'Shareware allows users to try software before purchasing — either for a limited time period or with limited features. After the trial, continued use requires payment. WinRAR (which works after its trial period but shows nag screens) and older WinZip versions are classic examples.',
+        h: 'Try-before-buy with limited trial = shareware.',
+        yr: 'CSC',
+      },
+      {
+        q: "Ubuntu Linux is described as 'open source' software. What does this mean for a Nigerian university IT department?",
+        o: [
+          'They must pay for Ubuntu before using it',
+          'They can download, use, modify, and distribute Ubuntu without paying licensing fees',
+          'They can only view the source code but cannot modify it',
+          'They get Ubuntu for free but must pay for updates',
+        ],
+        a: 1,
+        e: 'Open source software provides the source code publicly and grants users rights to use, study, modify, and distribute the software. Ubuntu Linux is free (no cost) and open source — Nigerian universities can install it on as many computers as needed, customise it for their needs, and distribute it without any licensing fees.',
+        h: 'Open source = free to use, view, modify, and distribute legally.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A compiler differs from an interpreter in that a compiler:',
+        o: [
+          'Translates code line by line at runtime',
+          'Produces a standalone executable file from the entire source code before running',
+          'Only works with Python and JavaScript',
+          'Is slower than an interpreter at program execution',
+        ],
+        a: 1,
+        e: 'A compiler translates the ENTIRE source code into machine code (an executable file like .exe on Windows) BEFORE execution begins. The resulting executable can be run independently without the compiler. Interpreters translate and execute code line by line during runtime, requiring the interpreter to be present during execution.',
+        h: 'Compiler = translates all at once → standalone executable. Interpreter = line by line during runtime.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The NTFS and FAT32 mentioned in OS file management are:',
+        o: [
+          'Types of RAM memory formats',
+          'File system formats that determine how data is organised on storage devices',
+          'Network protocols for file transfer',
+          'Types of file compression algorithms',
+        ],
+        a: 1,
+        e: 'File systems (NTFS, FAT32, exFAT, ext4) define how an operating system organises, names, and stores files on storage devices. NTFS (New Technology File System) is used by Windows for internal drives; FAT32 is used for USB drives compatible with multiple OS; ext4 is used by Linux.',
+        h: 'NTFS, FAT32 = file system formats = how OS organises files on storage.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is TRUE about disk defragmentation?',
+        o: [
+          'It should be performed regularly on both HDDs and SSDs for optimal performance',
+          'It rearranges fragmented files on HDDs to improve read speed, but should NOT be done on SSDs',
+          'It permanently deletes unnecessary files to free disk space',
+          'It compresses files to reduce the space they occupy on disk',
+        ],
+        a: 1,
+        e: "Disk defragmentation rearranges scattered file fragments on traditional HDDs (Hard Disk Drives) so files are stored contiguously, reducing the mechanical read head's travel time. However, SSDs (Solid State Drives) have no moving parts and defragmenting them causes unnecessary write cycles, reducing their lifespan — do NOT defragment SSDs.",
+        h: 'Defrag = good for HDD, harmful for SSD.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A software program from 1985 whose copyright has expired is now freely available for anyone to use, modify, and distribute without restriction. This software is classified as:',
+        o: ['Freeware', 'Open source', 'Shareware', 'Public domain'],
+        a: 3,
+        e: 'Public domain software has no copyright protection — either because the copyright has expired, the creator explicitly released it to the public domain, or it was created by a government entity. Anyone can use, copy, modify, and distribute public domain software without any restrictions or payment.',
+        h: 'No copyright = free for any use = public domain.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 5: Data Representation and Number Systems
-  // ==========================================================================
   {
-    topic: "Data Representation and Number Systems",
-    topicCode: "CSC-005-01",
-    module: "Data Representation",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Data representation</span> is how computers encode information (numbers, text, images, sound) into binary (0s and 1s). Computers use binary because electronic switches have two states: on (1) and off (0). <strong>Understanding number systems is essential for understanding how computers store and process data</strong>.
-</div>
-
-<p class="learn-p">All data in a computer is represented in binary. Different number systems (binary, octal, decimal, hexadecimal) are used for different purposes — binary for machine, hexadecimal for memory addresses and debugging, decimal for human readability.</p>
-
-<h3 class="learn-subheading">Number Systems</h3>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>System</th><th>Base</th><th>Digits</th><th>Uses</th>
-    </thead>
-    <tbody>
-      <tr><td>Binary</th>。<th>2</th>。<th>0, 1</th>。<th>Computer internal representation</th>
-      </tr>
-      <tr><td>Octal</th>。<th>8</th>。<th>0-7</th>。<th>Unix file permissions (chmod), some programming</th>
-      </tr>
-      <tr><td>Decimal</th>。<th>10</th>。<th>0-9</th>。<th>Everyday human use</th>
-      </tr>
-      <tr><td>Hexadecimal</th>。<th>16</th>。<th>0-9, A-F (A=10, B=11, C=12, D=13, E=14, F=15)</th>。<th>Memory addresses, color codes (RGB), debugging</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p class="learn-p"><strong>Binary to Decimal Conversion:</strong> Multiply each digit by its place value (power of 2) and sum.</p>
-<p class="learn-p">Example: Binary 1011₂ = 1×8 + 0×4 + 1×2 + 1×1 = 8 + 0 + 2 + 1 = 11₁₀</p>
-
-<p class="learn-p"><strong>Decimal to Binary Conversion:</strong> Repeatedly divide by 2, read remainders from bottom to top.</p>
-<p class="learn-p">Example: 13₁₀ ÷ 2 = 6 remainder 1; 6 ÷ 2 = 3 remainder 0; 3 ÷ 2 = 1 remainder 1; 1 ÷ 2 = 0 remainder 1 → 1101₂</p>
-
-<p class="learn-p"><strong>Binary to Hexadecimal (shortcut):</strong> Group binary digits into groups of 4 (from right), convert each group to hex digit.</p>
-<p class="learn-p">Example: 11010111₂ → 1101 (D) 0111 (7) → D7₁₆</p>
-
-<p class="learn-p"><strong>Hexadecimal to Binary:</strong> Convert each hex digit to 4-bit binary.</p>
-<p class="learn-p">Example: 2F₁₆ → 2 (0010) F (1111) → 00101111₂</p>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">📊 DATA UNITS - From Bit to Terabyte</text>
-    
-    <g>
-      <rect x="15" y="45" width="70" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="50" y="62" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">bit</text>
-      <text x="50" y="76" text-anchor="middle" font-size="6" fill="#1e3a8a">0 or 1</text>
-    </g>
-    
-    <g>
-      <rect x="95" y="45" width="70" height="40" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="130" y="62" text-anchor="middle" font-size="8" fill="#166534" font-weight="800">nibble</text>
-      <text x="130" y="76" text-anchor="middle" font-size="6" fill="#166534">4 bits</text>
-    </g>
-    
-    <g>
-      <rect x="175" y="45" width="70" height="40" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="210" y="62" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">byte</text>
-      <text x="210" y="76" text-anchor="middle" font-size="6" fill="#92400e">8 bits</text>
-    </g>
-    
-    <g>
-      <rect x="255" y="45" width="80" height="40" rx="5" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-      <text x="295" y="62" text-anchor="middle" font-size="7" fill="#831843" font-weight="800">KB</text>
-      <text x="295" y="76" text-anchor="middle" font-size="6" fill="#831843">1024 bytes</text>
-    </g>
-    
-    <g>
-      <rect x="345" y="45" width="70" height="40" rx="5" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.5"/>
-      <text x="380" y="62" text-anchor="middle" font-size="7" fill="#5b21b6" font-weight="800">MB</text>
-      <text x="380" y="76" text-anchor="middle" font-size="6" fill="#5b21b6">1024 KB</text>
-    </g>
-    
-    <g>
-      <rect x="420" y="45" width="70" height="40" rx="5" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-      <text x="455" y="62" text-anchor="middle" font-size="7" fill="#991b1b" font-weight="800">GB</text>
-      <text x="455" y="76" text-anchor="middle" font-size="6" fill="#991b1b">1024 MB</text>
-    </g>
-    
-    <text x="250" y="120" text-anchor="middle" font-size="9" fill="#475569" font-weight="800">1 Kilobyte (KB) = 1024 bytes (not 1000)</text>
-    <text x="250" y="137" text-anchor="middle" font-size="9" fill="#475569">1 Megabyte (MB) = 1024 KB = 1,048,576 bytes</text>
-    <text x="250" y="154" text-anchor="middle" font-size="9" fill="#475569">1 Gigabyte (GB) = 1024 MB = 1,073,741,824 bytes</text>
-    <text x="250" y="171" text-anchor="middle" font-size="9" fill="#475569">1 Terabyte (TB) = 1024 GB = 1,099,511,627,776 bytes</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Data Units</h3>
-
-<p class="learn-p"><strong>Basic units:</strong></p>
-<ul class="learn-list">
-  <li><strong>Bit:</strong> Smallest unit — 0 or 1</li>
-  <li><strong>Nibble:</strong> 4 bits</li>
-  <li><strong>Byte:</strong> 8 bits — can represent one character (ASCII)</li>
-  <li><strong>Kilobyte (KB):</strong> 1024 bytes (2¹⁰) — not 1000</li>
-  <li><strong>Megabyte (MB):</strong> 1024 KB (2²⁰) — about 1 million bytes</li>
-  <li><strong>Gigabyte (GB):</strong> 1024 MB (2³⁰) — about 1 billion bytes</li>
-  <li><strong>Terabyte (TB):</strong> 1024 GB (2⁴⁰) — about 1 trillion bytes</li>
-  <li><strong>Petabyte (PB):</strong> 1024 TB (2⁵⁰)</li>
-</ul>
-
-<h3 class="learn-subheading">Character Encoding</h3>
-
-<p class="learn-p"><strong>ASCII (American Standard Code for Information Interchange):</strong></p>
-<ul class="learn-list">
-  <li>7-bit encoding (128 characters) — 0-127</li>
-  <li>Includes uppercase (A-Z: 65-90), lowercase (a-z: 97-122), digits (0-9: 48-57), punctuation, control characters</li>
-  <li>Extended ASCII uses 8 bits (256 characters)</li>
-</ul>
-
-<p class="learn-p"><strong>Unicode:</strong></p>
-<ul class="learn-list">
-  <li>Supports all world languages (over 143,000 characters)</li>
-  <li>UTF-8: Variable length (1-4 bytes) — compatible with ASCII, most common for web</li>
-  <li>UTF-16: 2 or 4 bytes — used by Windows, Java</li>
-  <li>UTF-32: 4 bytes fixed — simple but space-inefficient</li>
-</ul>
-
-<h3 class="learn-subheading">Representing Numbers</h3>
-
-<p class="learn-p"><strong>Integer representation:</strong> Sign-magnitude (first bit for sign), One's complement (invert all bits), Two's complement (invert +1) — standard for signed integers in computers.</p>
-
-<p class="learn-p"><strong>Floating point (IEEE 754):</strong> Represents real numbers (decimals) — sign bit, exponent, mantissa. Allows very large and very small numbers.</p>
-
-<h3 class="learn-subheading">Representing Images</h3>
-
-<p class="learn-p"><strong>Bitmap (raster):</strong> Grid of pixels; each pixel has color value (bits per pixel). File formats: BMP (uncompressed), PNG (lossless compression), JPEG (lossy compression — good for photos), GIF (limited colors, supports animation), TIFF (high quality, large).</p>
-
-<p class="learn-p"><strong>Vector:</strong> Stores geometric instructions (lines, curves, shapes). File formats: SVG (web vector), EPS, AI (Adobe Illustrator). Scalable without quality loss — logos, fonts, illustrations.</p>
-
-<h3 class="learn-subheading">Representing Sound and Video</h3>
-
-<p class="learn-p"><strong>Sound:</strong> Sampling — measuring amplitude at regular intervals. Sample rate (Hz: CD quality 44.1kHz), bit depth (16-bit, 24-bit). File formats: WAV (uncompressed), MP3 (lossy compression), AAC, FLAC (lossless compression).</p>
-
-<p class="learn-p"><strong>Video:</strong> Sequence of frames (images) at frame rate (fps: 24, 30, 60). File formats: MP4, AVI, MKV, MOV. Codecs compress video (H.264, HEVC, VP9).</p>
-
-<h3 class="learn-subheading">Data Compression</h3>
-
-<p class="learn-p"><strong>Lossless compression:</strong> Original can be perfectly reconstructed — run-length encoding, Huffman coding, LZW (used in PNG, ZIP).</p>
-<p class="learn-p"><strong>Lossy compression:</strong> Some data lost — higher compression ratios; used for JPEG, MP3, MPEG (trading quality for file size).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Memory Acronym:</strong> KB = Kilobyte (1024 bytes), MB = Megabyte (1024 KB), GB = Gigabyte (1024 MB), TB = Terabyte (1024 GB).</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Convert binary 101101 to decimal. (Sample answer: 101101₂ = 1×32 + 0×16 + 1×8 + 1×4 + 0×2 + 1×1 = 32+8+4+1 = 45₁₀)"</span>
-</div>
-    `,
+    topic: 'Data Representation and Number Systems',
+    topicCode: 'CSC-101-05',
+    module: 'Data and Number Systems',
+    contentHTML:
+      '\n<div class="learn-intro">\n  All data inside a computer — whether a WhatsApp message, a Nollywood film, a bank transaction, or a social media photo — ultimately exists as a sequence of <span class="learn-keyword">binary digits</span> (bits): 0s and 1s. This is because computers are built from electronic switches (transistors) that have exactly two states: ON (1) and OFF (0). Understanding how numbers, text, images, and sound are represented in binary is fundamental to understanding how computers actually work at their most basic level.\n</div>\n\n<h3 class="learn-subheading">1. Number Systems</h3>\n<p class="learn-p">A <span class="learn-keyword">number system</span> is a systematic way of representing quantities using symbols. Each number system has a <span class="learn-keyword">base</span> (or radix) that defines how many unique symbols it uses. Computers use four number systems: Binary (base-2), Octal (base-8), Decimal (base-10), and Hexadecimal (base-16).</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>System</th><th>Base</th><th>Digits Used</th><th>Primary Use</th></tr></thead>\n    <tbody>\n      <tr><td>Binary</td><td>2</td><td>0, 1</td><td>Internal computer processing; machine language</td></tr>\n      <tr><td>Octal</td><td>8</td><td>0, 1, 2, 3, 4, 5, 6, 7</td><td>Unix file permissions (chmod 755), some programming</td></tr>\n      <tr><td>Decimal</td><td>10</td><td>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</td><td>Human everyday use; financial calculations</td></tr>\n      <tr><td>Hexadecimal</td><td>16</td><td>0-9, A, B, C, D, E, F</td><td>Memory addresses, colour codes (RGB), debugging</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h4 class="learn-subsubheading">Binary (Base-2)</h4>\n<p class="learn-p">Binary uses only two digits: 0 and 1. Each position in a binary number represents a power of 2 (rightmost = 2⁰ = 1, then 2¹ = 2, 2² = 4, 2³ = 8, etc.).</p>\n<p class="learn-p"><strong>Binary to Decimal conversion:</strong> Multiply each bit by its positional power of 2, then add.</p>\n<p class="learn-p">Example: 1011₂ = (1×2³) + (0×2²) + (1×2¹) + (1×2⁰) = 8 + 0 + 2 + 1 = <strong>11₁₀</strong></p>\n<p class="learn-p"><strong>Decimal to Binary conversion:</strong> Divide repeatedly by 2, collect remainders from bottom to top.</p>\n<p class="learn-p">Example: 13₁₀ → 13÷2=6 R1, 6÷2=3 R0, 3÷2=1 R1, 1÷2=0 R1 → reading remainders bottom to top: <strong>1101₂</strong></p>\n\n<h4 class="learn-subsubheading">Hexadecimal (Base-16)</h4>\n<p class="learn-p">Hexadecimal (hex) uses 16 symbols: 0-9 and A(10), B(11), C(12), D(13), E(14), F(15). It is widely used because 1 hex digit represents exactly 4 binary bits (a nibble), making it a compact way to represent binary data. Memory addresses like 0xFF00AB23, HTML color codes like #FFD700 (gold), and network MAC addresses use hexadecimal.</p>\n<p class="learn-p"><strong>Hex to Decimal:</strong> Each position is a power of 16. Example: 2F₁₆ = (2×16¹) + (15×16⁰) = 32 + 15 = <strong>47₁₀</strong></p>\n<p class="learn-p"><strong>Binary to Hex (shortcut):</strong> Group binary digits into groups of 4 from right, convert each group to one hex digit.</p>\n<p class="learn-p">Example: 10110111₂ → 1011 0111 → B 7 → <strong>B7₁₆</strong></p>\n\n<h4 class="learn-subsubheading">Octal (Base-8)</h4>\n<p class="learn-p">Octal uses digits 0-7. One octal digit represents 3 binary bits. Used in Unix/Linux file permissions: chmod 755 means owner=7(rwx), group=5(r-x), others=5(r-x) in octal.</p>\n<p class="learn-p"><strong>Binary to Octal:</strong> Group binary into groups of 3 from right, convert each group.</p>\n<p class="learn-p">Example: 110101₂ → 110 101 → 6 5 → <strong>65₈</strong></p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="20" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Number System Place Values</text>\n    <text x="240" y="38" text-anchor="middle" fill="#9090b0" font-size="9">Example: decimal 13 = binary 1101 = hex D = octal 15</text>\n    <rect x="15" y="50" width="440" height="130" rx="8" fill="#1a0030" stroke="#4B0082" stroke-width="1.5"/>\n    <text x="30" y="70" fill="#D4AF37" font-size="10" font-weight="bold">BINARY (Base-2):</text>\n    <text x="30" y="85" fill="#c8c8c8" font-size="9">Position:  2³=8   2²=4   2¹=2   2⁰=1</text>\n    <text x="30" y="100" fill="#28c840" font-size="9">Bits:       1      1      0      1   = 8+4+0+1 = 13₁₀</text>\n    <text x="30" y="122" fill="#D4AF37" font-size="10" font-weight="bold">HEXADECIMAL (Base-16):</text>\n    <text x="30" y="137" fill="#c8c8c8" font-size="9">Position:  16¹=16   16⁰=1</text>\n    <text x="30" y="152" fill="#28c840" font-size="9">Digits:      0        D    = 0+(13×1) = 13₁₀   [D=13 in hex]</text>\n    <text x="270" y="70" fill="#D4AF37" font-size="10" font-weight="bold">HEX DIGIT VALUES:</text>\n    <text x="270" y="85" fill="#c8c8c8" font-size="9">0=0  1=1  2=2  3=3  4=4  5=5</text>\n    <text x="270" y="100" fill="#c8c8c8" font-size="9">6=6  7=7  8=8  9=9  A=10 B=11</text>\n    <text x="270" y="115" fill="#c8c8c8" font-size="9">C=12 D=13 E=14 F=15</text>\n    <text x="270" y="137" fill="#D4AF37" font-size="10" font-weight="bold">SHORTCUTS:</text>\n    <text x="270" y="152" fill="#9090b0" font-size="8">Bin→Hex: group 4 bits each</text>\n    <text x="270" y="165" fill="#9090b0" font-size="8">Bin→Oct: group 3 bits each</text>\n    <rect x="15" y="50" width="440" height="130" rx="8" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">2. Binary Arithmetic</h3>\n<h4 class="learn-subsubheading">Binary Addition Rules</h4>\n<ul class="learn-list">\n  <li>0 + 0 = 0</li>\n  <li>0 + 1 = 1</li>\n  <li>1 + 0 = 1</li>\n  <li>1 + 1 = 10 (0 with carry 1)</li>\n  <li>1 + 1 + 1 = 11 (1 with carry 1)</li>\n</ul>\n<p class="learn-p"><strong>Example:</strong> 1011 + 0110 = ? Adding right to left: 1+0=1, 1+1=10 (write 0 carry 1), 0+1+1(carry)=10 (write 0 carry 1), 1+0+1(carry)=10 → Result: <strong>10001₂</strong> = 17₁₀ (check: 11+6=17 ✓)</p>\n\n<h3 class="learn-subheading">3. Data Units</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Unit</th><th>Symbol</th><th>Size</th><th>Practical Example</th></tr></thead>\n    <tbody>\n      <tr><td>Bit</td><td>b</td><td>1 binary digit (0 or 1)</td><td>Smallest unit; transistor state</td></tr>\n      <tr><td>Nibble</td><td>—</td><td>4 bits</td><td>One hexadecimal digit</td></tr>\n      <tr><td>Byte</td><td>B</td><td>8 bits</td><td>One ASCII character (e.g., letter \'A\')</td></tr>\n      <tr><td>Kilobyte</td><td>KB</td><td>1,024 bytes</td><td>A short text message or email</td></tr>\n      <tr><td>Megabyte</td><td>MB</td><td>1,024 KB = 1,048,576 bytes</td><td>A 3-minute MP3 song (~3-5MB)</td></tr>\n      <tr><td>Gigabyte</td><td>GB</td><td>1,024 MB</td><td>A standard movie (~1-4GB); phone storage</td></tr>\n      <tr><td>Terabyte</td><td>TB</td><td>1,024 GB</td><td>External hard drive; 250,000 photos</td></tr>\n      <tr><td>Petabyte</td><td>PB</td><td>1,024 TB</td><td>Large data centres; Google handles petabytes daily</td></tr>\n      <tr><td>Exabyte</td><td>EB</td><td>1,024 PB</td><td>Total internet traffic in a month</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Character Encoding</h3>\n<h4 class="learn-subsubheading">ASCII</h4>\n<p class="learn-p"><span class="learn-keyword">ASCII (American Standard Code for Information Interchange)</span> was the first widely adopted character encoding standard. Original ASCII uses 7 bits to represent 128 characters (0-127): uppercase A-Z (65-90), lowercase a-z (97-122), digits 0-9 (48-57), punctuation, and control characters. Extended ASCII uses 8 bits for 256 characters, adding accented letters and symbols. ASCII\'s major limitation: it only covers English and basic Latin characters — no Yoruba tone marks, no Igbo diacritics, no Hausa special characters, no Arabic, Chinese, etc.</p>\n\n<h4 class="learn-subsubheading">Unicode</h4>\n<p class="learn-p"><span class="learn-keyword">Unicode</span> was created to solve ASCII\'s limitation by encoding every character from every language in the world. Unicode assigns each character a unique code point (U+XXXX format). <strong>UTF-8</strong> is the most common Unicode encoding: uses 1-4 bytes per character; backward compatible with ASCII (ASCII characters use 1 byte in UTF-8); used in over 97% of websites worldwide. <strong>UTF-16</strong> uses 2-4 bytes; common in Windows internals and Java. <strong>UTF-32</strong> uses exactly 4 bytes for every character; simple but wasteful. Unicode enables Nigerian websites to display Yoruba (e.g., Ẹ, Ọ), Hausa, and Igbo text alongside English properly.</p>\n\n<h3 class="learn-subheading">5. Representing Images, Sound, and Video</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Data Type</th><th>Representation</th><th>Key Terms</th><th>Common Formats</th></tr></thead>\n    <tbody>\n      <tr><td>Bitmap Image</td><td>Grid of pixels; each pixel has a colour value in binary</td><td>Resolution (pixels), colour depth (bits/pixel: 1,8,24,32-bit)</td><td>BMP, PNG, JPEG, GIF, TIFF</td></tr>\n      <tr><td>Vector Image</td><td>Mathematical paths and shapes (not pixels)</td><td>Scalable without quality loss; smaller file for simple graphics</td><td>SVG, EPS, AI</td></tr>\n      <tr><td>Digital Audio</td><td>Samples of sound wave amplitude taken at regular intervals</td><td>Sample rate (Hz), bit depth (bits/sample), channels (mono/stereo)</td><td>WAV, MP3, AAC, FLAC, OGG</td></tr>\n      <tr><td>Digital Video</td><td>Series of still image frames played at speed</td><td>Frame rate (fps), resolution, bitrate, codec</td><td>MP4, AVI, MKV, MOV, WMV</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">6. Data Compression</h3>\n<ul class="learn-list">\n  <li><strong>Lossless compression:</strong> Reduces file size without losing ANY data — original can be perfectly reconstructed. Used for documents, software, text files. Examples: ZIP, RAR, PNG (images), FLAC (audio). Algorithms: Run-Length Encoding (RLE), Huffman coding, LZW.</li>\n  <li><strong>Lossy compression:</strong> Reduces file size by permanently discarding some data (usually imperceptible to human senses). Used for media files where some quality loss is acceptable. Examples: JPEG (images), MP3 (audio), H.264/H.265 (video). Nollywood films distributed digitally use H.264 compression.</li>\n</ul>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — ASCII Values to Memorise:</strong> \'A\' = 65, \'a\' = 97, \'0\' = 48. The difference between uppercase and lowercase letters in ASCII is always 32 (lowercase = uppercase + 32). So \'B\' = 66, \'b\' = 98. These values frequently appear in binary conversion questions.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Exam Tip — Lossless vs Lossy:</strong> JPEG and MP3 are LOSSY (lose data permanently — cannot recover original). PNG and ZIP are LOSSLESS (no data lost). Use lossless for documents/programs (every bit matters), lossy for photos/audio (small quality loss acceptable). A zipped executable file (.zip) must be lossless — if even one bit is wrong, the program won\'t work.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> Binary (base-2, digits 0-1) is the computer\'s native language. Hex (base-16, 0-F) is compact binary representation — 1 hex digit = 4 bits. Octal (base-8, 0-7) — 1 octal digit = 3 bits. Data size hierarchy: bit → nibble(4 bits) → byte(8 bits) → KB → MB → GB → TB → PB. ASCII: 128 characters, 7-bit, English only. Unicode/UTF-8: all world languages, 1-4 bytes, backward compatible with ASCII. Lossless compression (ZIP, PNG): no data loss. Lossy (JPEG, MP3): smaller files with some data permanently removed.\n</div>\n  ',
     questions: [
-      { q: "Computers use binary because:", o: ["Binary is easier for humans", "Electronic switches have two states (on/off or 0/1)", "Binary uses fewer digits", "Binary is older"], a: 1, e: "Transistors/switches have two states — on (1) and off (0) — naturally binary.", h: "Why binary?", yr: "GST" },
-      { q: "Convert binary 1101 to decimal.", o: ["10", "11", "12", "13"], a: 3, e: "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8+4+0+1 = 13₁₀", h: "What is 1101 binary in decimal?", yr: "GST" },
-      { q: "A byte consists of how many bits?", o: ["4", "8", "16", "32"], a: 1, e: "A byte is 8 bits — can represent 256 values (2⁸).", h: "How many bits in a byte?", yr: "GST" },
-      { q: "Hexadecimal digits include:", o: ["0-9 only", "0-9 and A-G", "0-9 and A-F", "A-Z only"], a: 2, e: "Hexadecimal uses 0-9 and A-F (A=10, B=11, C=12, D=13, E=14, F=15).", h: "What digits are in hex?", yr: "GST" },
-      { q: "Convert decimal 25 to binary.", o: ["11001", "10011", "11010", "10101"], a: 0, e: "25 ÷ 2 = 12 r1; 12÷2=6 r0; 6÷2=3 r0; 3÷2=1 r1; 1÷2=0 r1 → 11001₂", h: "What is 25 decimal in binary?", yr: "GST" },
-      { q: "ASCII is a character encoding standard that uses how many bits?", o: ["4 bits", "7 bits (standard ASCII)", "16 bits", "32 bits"], a: 1, e: "Standard ASCII uses 7 bits (128 characters). Extended ASCII uses 8 bits.", h: "How many bits in ASCII?", yr: "GST" },
-      { q: "One Kilobyte (KB) equals:", o: ["1000 bytes", "1024 bytes", "100 bytes", "2048 bytes"], a: 1, e: "1 KB = 1024 bytes (2¹⁰), not 1000 bytes (decimal).", h: "How many bytes in 1 KB?", yr: "GST" },
-      { q: "Which number system is used for memory addresses and debugging?", o: ["Binary", "Octal", "Decimal", "Hexadecimal"], a: 3, e: "Hexadecimal (base 16) is used for memory addresses, color codes (RGB), and debugging.", h: "What system for memory addresses?", yr: "GST" },
-      { q: "Unicode is important because:", o: ["It only supports English", "It supports all world languages (over 143,000 characters)", "It is older than ASCII", "It uses fewer bits"], a: 1, e: "Unicode supports characters from all writing systems worldwide — not just English.", h: "Why is Unicode important?", yr: "GST" },
-      { q: "JPEG image compression is:", o: ["Lossless (perfect reconstruction)", "Lossy (some data lost, smaller file)", "Uncompressed", "Vector-based"], a: 1, e: "JPEG uses lossy compression — sacrifices some detail for smaller file size, good for photos.", h: "Is JPEG lossy or lossless?", yr: "GST" },
-      { q: "Convert hexadecimal 2A to decimal.", o: ["32", "42", "52", "62"], a: 1, e: "2A₁₆ = 2×16 + 10 = 32 + 10 = 42₁₀ (A=10)", h: "What is hex 2A in decimal?", yr: "GST" },
-      { q: "A nibble consists of:", o: ["2 bits", "4 bits", "8 bits", "16 bits"], a: 1, e: "A nibble is half a byte — 4 bits, can represent 16 values.", h: "How many bits in a nibble?", yr: "GST" },
-      { q: "The decimal number 255 in binary is:", o: ["11111111 (eight 1s)", "1111111 (seven 1s)", "10000000", "11110000"], a: 0, e: "255₁₀ = 11111111₂ (all 8 bits 1) — maximum value for one byte.", h: "What is 255 in binary?", yr: "GST" },
-      { q: "UTF-8 is a variable-length encoding that is compatible with:", o: ["EBCDIC", "ASCII (first 128 characters same as ASCII)", "Only Chinese", "Only Japanese"], a: 1, e: "UTF-8 is backward compatible with ASCII — same for first 128 characters.", h: "What is UTF-8 compatible with?", yr: "GST" },
-      { q: "1 Gigabyte (GB) equals:", o: ["1024 KB", "1024 MB", "1024 bytes", "1024 TB"], a: 1, e: "1 GB = 1024 MB = 1,073,741,824 bytes.", h: "How many MB in 1 GB?", yr: "GST" },
-      { q: "Vector images store data as:", o: ["Pixels", "Geometric instructions (lines, curves, shapes)", "Color values only", "Audio samples"], a: 1, e: "Vector images store mathematical instructions — scalable without quality loss (logos, fonts).", h: "How do vectors store images?", yr: "GST" },
-      { q: "The hexadecimal digit F represents which decimal number?", o: ["10", "12", "15", "16"], a: 2, e: "In hex, A=10, B=11, C=12, D=13, E=14, F=15.", h: "What decimal is F?", yr: "GST" },
-      { q: "MP3 audio compression is:", o: ["Lossless", "Lossy (discards some audio data for smaller file size)", "Uncompressed", "Vector-based"], a: 1, e: "MP3 uses lossy compression — removes sounds less audible to human ear, significantly reduces file size.", h: "Is MP3 lossy?", yr: "GST" },
-      { q: "Binary 1111 in decimal is:", o: ["8", "12", "14", "15"], a: 3, e: "1111₂ = 8+4+2+1 = 15₁₀ — the largest 4-bit binary number.", h: "What is 1111 binary?", yr: "GST" },
-      { q: "One Terabyte (TB) equals:", o: ["1024 GB", "1024 MB", "1024 KB", "1024 bytes"], a: 0, e: "1 TB = 1024 GB = 1,099,511,627,776 bytes.", h: "How many GB in 1 TB?", yr: "GST" }
-    ]
+      {
+        q: 'What is the decimal equivalent of the binary number 1101₂?',
+        o: ['11', '13', '14', '15'],
+        a: 1,
+        e: '1101₂ = (1×2³) + (1×2²) + (0×2¹) + (1×2⁰) = 8 + 4 + 0 + 1 = 13₁₀. Work from left to right: the leftmost bit has the highest power of 2.',
+        h: 'Multiply each bit by its power of 2: 8+4+0+1.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Convert the decimal number 25₁₀ to binary.',
+        o: ['11001₂', '11010₂', '10101₂', '11000₂'],
+        a: 0,
+        e: '25 ÷ 2 = 12 R1; 12 ÷ 2 = 6 R0; 6 ÷ 2 = 3 R0; 3 ÷ 2 = 1 R1; 1 ÷ 2 = 0 R1. Reading remainders bottom to top: 11001₂. Verify: 16+8+0+0+1 = 25 ✓',
+        h: 'Divide by 2 repeatedly, collect remainders from bottom to top.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the hexadecimal equivalent of the binary number 10110100₂?',
+        o: ['B3₁₆', 'B4₁₆', 'A4₁₆', 'C4₁₆'],
+        a: 1,
+        e: 'Group into 4-bit groups: 1011 0100. Convert each: 1011 = B(11), 0100 = 4. Result: B4₁₆. Verify: B4₁₆ = (11×16) + 4 = 176+4 = 180₁₀; binary 10110100 = 128+32+16+4 = 180₁₀ ✓',
+        h: 'Group binary into 4-bit chunks from right, convert each to hex.',
+        yr: 'CSC',
+      },
+      {
+        q: "A website color code #FFD700 is in hexadecimal. What does 'FF' in the red channel represent in decimal?",
+        o: ['240', '250', '255', '256'],
+        a: 2,
+        e: 'FF₁₆ = (15×16) + (15×1) = 240 + 15 = 255₁₀. In HTML color codes, each channel (R, G, B) uses 2 hex digits ranging from 00 (0) to FF (255). #FFD700 is gold: Red=255, Green=215, Blue=0.',
+        h: 'F=15; FF₁₆ = 15×16 + 15×1 = 255.',
+        yr: 'CSC',
+      },
+      {
+        q: "How many bytes does the text string 'HELLO' (5 characters) occupy in ASCII encoding?",
+        o: ['5 bits', '5 bytes (40 bits)', '10 bytes', '40 bytes'],
+        a: 1,
+        e: "Each ASCII character occupies exactly 1 byte (8 bits). 'HELLO' has 5 characters: H(72), E(69), L(76), L(76), O(79) — each is 1 byte. Total = 5 bytes = 40 bits.",
+        h: 'ASCII: 1 character = 1 byte. 5 characters = 5 bytes.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A student stores a 3-minute song as a WAV file (uncompressed) and as an MP3 (compressed). The MP3 is much smaller. What type of compression does MP3 use?',
+        o: [
+          'Lossless compression — no audio data is removed',
+          'Lossy compression — some audio data is permanently removed',
+          'Run-Length Encoding — repeated sounds are compressed',
+          'LZW compression — a lossless audio standard',
+        ],
+        a: 1,
+        e: 'MP3 uses lossy compression — it permanently discards audio frequencies that human ears are less sensitive to, reducing file size by ~10x compared to uncompressed WAV. The removed data cannot be recovered. This trade-off (smaller size vs. minor quality loss) makes MP3 practical for music distribution.',
+        h: 'MP3 = lossy = some audio data permanently discarded.',
+        yr: 'CSC',
+      },
+      {
+        q: "The ASCII value of the letter 'A' is 65. What is the ASCII value of the letter 'a' (lowercase)?",
+        o: ['65', '90', '97', '123'],
+        a: 2,
+        e: "In ASCII, there is a difference of exactly 32 between uppercase and lowercase letters. 'A' = 65, so 'a' = 65 + 32 = 97. This pattern holds for all letters: 'B'=66, 'b'=98; 'Z'=90, 'z'=122.",
+        h: 'Lowercase = Uppercase + 32 in ASCII. A=65, so a=65+32=97.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Why was Unicode created as a replacement/extension for ASCII?',
+        o: [
+          'ASCII was too slow for modern computers to process',
+          "ASCII could only represent 128 characters, insufficient for the world's languages",
+          'ASCII used too much memory compared to Unicode',
+          'ASCII was proprietary and required licensing fees',
+        ],
+        a: 1,
+        e: "ASCII's 7-bit design allows only 128 characters (extended ASCII: 256) — sufficient for English but unable to represent languages like Chinese (thousands of characters), Arabic, Hindi, or even properly represent Yoruba and Igbo diacritics. Unicode was created to encode every character from every human language.",
+        h: 'ASCII = 128 chars = English only. Unicode = all world languages.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the binary result of adding 1011₂ + 0101₂?',
+        o: ['1111₂', '10000₂', '10010₂', '1110₂'],
+        a: 1,
+        e: '  1011 (11₁₀)\n+ 0101  (5₁₀)\n------\n  0: 1+1=10 → write 0, carry 1\n  1: 1+0+1(carry)=10 → write 0, carry 1\n  0: 0+1+1(carry)=10 → write 0, carry 1\n  1: 1+0+1(carry)=10 → write 0, carry 1\nResult: 10000₂ = 16₁₀. Check: 11+5=16 ✓',
+        h: "Work right to left applying binary addition rules; don't forget carries.",
+        yr: 'CSC',
+      },
+      {
+        q: 'A digital image stored as a 24-bit colour bitmap uses how many bits per pixel, and how many colours can it represent?',
+        o: [
+          '8 bits per pixel; 256 colours',
+          '16 bits per pixel; 65,536 colours',
+          '24 bits per pixel; 16,777,216 colours (~16 million)',
+          '32 bits per pixel; over 4 billion colours',
+        ],
+        a: 2,
+        e: '24-bit colour (also called True Colour) uses 8 bits for each of three channels: Red (0-255), Green (0-255), and Blue (0-255). Total colours = 256 × 256 × 256 = 16,777,216 colours (~16 million). This is sufficient to represent all colours perceptible to the human eye.',
+        h: '24-bit = 8 bits × 3 channels (RGB) = 256³ = ~16 million colours.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The octal number 17₈ is equivalent to which decimal number?',
+        o: ['17₁₀', '14₁₀', '15₁₀', '23₁₀'],
+        a: 2,
+        e: '17₈ = (1×8¹) + (7×8⁰) = 8 + 7 = 15₁₀. Each position in octal represents a power of 8. Remember that octal digit 7 is the maximum (like 9 in decimal), and in the ones position its value equals its face value.',
+        h: 'Octal: multiply each digit by its power of 8. 17₈ = 1×8 + 7×1 = 15.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which encoding standard supports ALL human languages including Yoruba, Igbo, Hausa, Arabic, and Chinese characters?',
+        o: [
+          'ASCII (American Standard Code)',
+          'EBCDIC (Extended Binary Coded Decimal)',
+          'Unicode (UTF-8, UTF-16)',
+          'Binary Coded Decimal (BCD)',
+        ],
+        a: 2,
+        e: 'Unicode is the universal character encoding standard that assigns unique code points to every character from every human language, including Yoruba diacritics (Ẹ, Ọ, Ṣ), Arabic, Chinese (CJK), Greek, Cyrillic, and thousands more. UTF-8 is the most common implementation, used by over 97% of the web.',
+        h: 'Unicode = universal standard supporting all world languages.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A hard drive with 1 Terabyte (TB) of storage can hold approximately how many Gigabytes?',
+        o: ['100 GB', '512 GB', '1,000 GB (approximately 1,024 GB in binary)', '10,000 GB'],
+        a: 2,
+        e: "In binary/computing: 1 TB = 1,024 GB (using base-2 definition). In decimal (as marketed by hard drive manufacturers): 1 TB = 1,000 GB. The discrepancy between marketed storage and OS-reported storage is due to this difference. Most operating systems report in binary, so a '1TB' drive shows ~931GB in Windows.",
+        h: '1 TB = 1,024 GB (binary standard used by operating systems).',
+        yr: 'CSC',
+      },
+      {
+        q: 'PNG and ZIP use lossless compression while JPEG uses lossy compression. Which statement is TRUE about this distinction?',
+        o: [
+          'JPEG preserves more quality than PNG because it is lossy',
+          'PNG is better for photographs because it is lossless',
+          'A ZIP file must use lossless compression because software programs cannot function with any bit errors',
+          'Lossy compression results in larger file sizes than lossless',
+        ],
+        a: 2,
+        e: 'Executable programs and software archives MUST use lossless compression (ZIP, RAR in their software mode) because even a single bit error in the compressed executable would cause the program to crash or behave unpredictably. Lossless compression means every bit can be perfectly restored. Lossy compression (JPEG, MP3) is only acceptable for media files where minor quality loss is imperceptible.',
+        h: 'Software must be lossless — one wrong bit breaks a program.',
+        yr: 'CSC',
+      },
+      {
+        q: "Which of the following correctly defines a 'bit'?",
+        o: [
+          '8 binary digits grouped together',
+          'A unit equal to 1,024 bytes',
+          'The smallest unit of digital data — a single binary digit (0 or 1)',
+          'A unit used only for measuring network speed',
+        ],
+        a: 2,
+        e: 'A bit (binary digit) is the most fundamental unit of digital information — it can only be 0 or 1. 8 bits = 1 byte. Network speeds are measured in bits per second (Mbps, Gbps), but storage is measured in bytes (MB, GB).',
+        h: 'Bit = smallest unit = 1 binary digit (0 or 1).',
+        yr: 'CSC',
+      },
+      {
+        q: "The hexadecimal digit 'D' represents which decimal value?",
+        o: ['10', '11', '12', '13'],
+        a: 3,
+        e: 'In hexadecimal, letters represent values above 9: A=10, B=11, C=12, D=13, E=14, F=15. The hexadecimal system uses these 16 symbols (0-9, A-F) to represent values 0 to 15 in a single digit position.',
+        h: 'Hex: A=10, B=11, C=12, D=13, E=14, F=15.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A video recorded at 30 frames per second (fps) versus 60fps — what is the primary difference?',
+        o: [
+          '60fps uses half the storage of 30fps',
+          '60fps provides smoother motion because more images display per second',
+          '30fps has higher resolution than 60fps',
+          '60fps videos are automatically compressed using lossless algorithms',
+        ],
+        a: 1,
+        e: 'Frame rate (fps) determines how many individual still images (frames) are displayed per second. Higher frame rate = more frames per second = smoother-appearing motion. 60fps is standard for gaming and sports; 24fps is the standard for cinema; 30fps is common for social media video. Higher fps = larger file size.',
+        h: 'Higher fps = more frames per second = smoother motion = larger file.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A sampling rate of 44,100 Hz in digital audio means:',
+        o: [
+          'The audio file contains 44,100 bytes of data per second',
+          'The audio waveform is measured (sampled) 44,100 times per second',
+          'The audio has 44,100 possible volume levels',
+          'The audio file plays at 44,100 bits per second',
+        ],
+        a: 1,
+        e: "Sampling rate measures how many times per second the analog sound wave's amplitude is measured and converted to a digital number. 44,100 Hz (44.1 kHz) is CD audio quality — the standard for music. Higher sampling rate = more detail captured = better audio quality = larger file size.",
+        h: 'Sampling rate = how many times per second the sound wave is measured.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Convert 1010₂ to hexadecimal.',
+        o: ['0A₁₆', 'A0₁₆', '10₁₆', '9₁₆'],
+        a: 0,
+        e: "Group the 4-bit binary: 1010. Convert: 1010₂ = 8+2 = 10₁₀ = A₁₆. Since a single hex digit can represent 4 bits, and 1010 = 10 decimal = A hex, the answer is A₁₆ or 0A₁₆ (with leading zero to show it's 2 hex digits).",
+        h: '1010₂ = 10₁₀ = A₁₆ (A is the hex symbol for 10).',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which statement about EBCDIC is correct?',
+        o: [
+          'EBCDIC is a 7-bit encoding system used for internet web pages',
+          'EBCDIC is an 8-bit encoding used primarily in IBM mainframe systems',
+          'EBCDIC stands for Extended Binary Coded Decimal Internet Code',
+          'EBCDIC supports all Unicode characters and replaced ASCII',
+        ],
+        a: 1,
+        e: 'EBCDIC (Extended Binary Coded Decimal Interchange Code) is an 8-bit character encoding developed by IBM in the 1960s for use in their mainframe and midrange computer systems. It is different from ASCII in its arrangement of characters, making EBCDIC and ASCII systems incompatible without conversion.',
+        h: 'EBCDIC = 8-bit, IBM mainframe encoding (different from ASCII).',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 6: Computer Networks and Internet
-  // ==========================================================================
   {
-    topic: "Computer Networks and Internet",
-    topicCode: "CSC-006-01",
-    module: "Networking",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Computer networks</span> connect multiple computers to share resources, exchange data, and communicate. The internet is the largest network — a global system of interconnected networks. <strong>Understanding networks is essential in today's connected world</strong>.
-</div>
-
-<p class="learn-p">Networks enable email, web browsing, file sharing, video conferencing, online gaming, cloud computing, and much more. Without networks, computers would be isolated.</p>
-
-<h3 class="learn-subheading">Types of Networks by Size</h3>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Type</th><th>Full Form</th><th>Range</th><th>Example</th>
-    </thead>
-    <tbody>
-      <tr><td>PAN</th>。<th>Personal Area Network</th>。<th>Within person's reach (~10m)</th>。<th>Bluetooth between phone and headset</th>
-      </tr>
-      <tr><td>LAN</th>。<th>Local Area Network</th>。<th>Building/campus (~100m)</th>。<th>Office network, school computer lab</th>
-      <tr>
-      <tr><td>CAN</th>。<th>Campus Area Network</th>。<th>University campus, corporate campus</th>。<th>UNN campus network connecting buildings</th>
-      </tr>
-      <tr><td>MAN</th>。<th>Metropolitan Area Network</th>。<th>City-wide</th>。<th>City government network</th>
-      </tr>
-      <tr><td>WAN</th>。<th>Wide Area Network</th>。<th>Country or global</th>。<th>The Internet (largest WAN)</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🌐 NETWORK TOPOLOGIES</text>
-    
-    <g>
-      <rect x="15" y="45" width="110" height="35" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="70" y="67" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">BUS</text>
-    </g>
-    
-    <g>
-      <rect x="135" y="45" width="110" height="35" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="190" y="67" text-anchor="middle" font-size="8" fill="#166534" font-weight="800">STAR</text>
-    </g>
-    
-    <g>
-      <rect x="255" y="45" width="110" height="35" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="310" y="67" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">RING</text>
-    </g>
-    
-    <g>
-      <rect x="375" y="45" width="110" height="35" rx="5" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-      <text x="430" y="67" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">MESH</text>
-    </g>
-    
-    <text x="250" y="110" text-anchor="middle" font-size="9" fill="#475569" font-weight="800">Common Network Topologies</text>
-    
-    <rect x="50" y="130" width="400" height="55" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="150" text-anchor="middle" font-size="8" fill="#475569">Star topology (central switch) is most common in home/office networks</text>
-    <text x="250" y="165" text-anchor="middle" font-size="8" fill="#475569">Ethernet (wired) and WiFi (wireless) are most common LAN technologies</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Network Topologies</h3>
-
-<ul class="learn-list">
-  <li><strong>Bus topology:</strong> Single cable connects all devices — simple, cheap, but single point of failure; performance degrades with more devices</li>
-  <li><strong>Star topology:</strong> Devices connect to central switch/hub — most common; easy to add devices; if one cable fails, only that device affected; central switch is single point of failure</li>
-  <li><strong>Ring topology:</strong> Devices connected in closed loop — data travels in one direction; failure of one device or cable breaks the ring</li>
-  <li><strong>Mesh topology:</strong> Every device connects to every other — highly redundant, fault-tolerant; expensive, complex wiring (used in backbone networks)</li>
-  <li><strong>Tree/Hybrid topology:</strong> Combination of star and bus — hierarchical; used in larger networks (university campus)</li>
-</ul>
-
-<h3 class="learn-subheading">Network Devices</h3>
-
-<ul class="learn-list">
-  <li><strong>Modem:</strong> Modulates/demodulates signals between ISP and home network — connects to internet</li>
-  <li><strong>Router:</strong> Connects different networks; routes data between them; provides WiFi, NAT, firewall</li>
-  <li><strong>Switch:</strong> Connects devices within same network (LAN) — learns MAC addresses, forwards data only to intended recipient</li>
-  <li><strong>Hub:</strong> Older technology — broadcasts data to all ports (inefficient, collisions)</li>
-  <li><strong>Access Point (AP):</strong> Provides wireless connectivity (WiFi) to devices</li>
-  <li><strong>NIC (Network Interface Card):</strong> Hardware connecting computer to network (Ethernet port, WiFi adapter)</li>
-  <li><strong>Firewall:</strong> Monitors and controls incoming/outgoing network traffic based on security rules</li>
-</ul>
-
-<h3 class="learn-subheading">The OSI Model (7 Layers)</h3>
-
-<p class="learn-p">The OSI (Open Systems Interconnection) model standardizes network communication:</p>
-<ul class="learn-list">
-  <li><strong>Layer 7 - Application:</strong> User applications (HTTP, FTP, SMTP)</li>
-  <li><strong>Layer 6 - Presentation:</strong> Data formatting, encryption, compression</li>
-  <li><strong>Layer 5 - Session:</strong> Establishes, manages, terminates connections</li>
-  <li><strong>Layer 4 - Transport:</strong> Reliable data transfer (TCP, UDP)</li>
-  <li><strong>Layer 3 - Network:</strong> Routing, IP addressing (IP, routers)</li>
-  <li><strong>Layer 2 - Data Link:</strong> Error detection, MAC addressing (Ethernet, switches)</li>
-  <li><strong>Layer 1 - Physical:</strong> Physical medium (cables, signals, hubs)</li>
-</ul>
-
-<h3 class="learn-subheading">IP Addressing</h3>
-
-<p class="learn-p"><strong>IPv4:</strong> 32-bit addresses (4 numbers, 0-255 each) — e.g., 192.168.1.1. About 4.3 billion addresses — exhausted!</p>
-<p class="learn-p"><strong>IPv6:</strong> 128-bit addresses (hexadecimal) — 340 undecillion addresses — solves address shortage.</p>
-<p class="learn-p"><strong>Public vs Private IPs:</strong> Private IPs (192.168.x.x, 10.x.x.x, 172.16-31.x.x) are for internal networks; NAT translates private to public for internet access.</p>
-
-<h3 class="learn-subheading">Nigerian Internet Landscape</h3>
-
-<p class="learn-p">Major ISPs: MTN Nigeria, Glo, Airtel, 9mobile, Spectranet, FibreOne. Undersea cables connecting Nigeria to global internet: SAT-3/WASC, WACS, MainOne, Glo-1, ACE (Africa Coast to Europe).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Memory Aid for OSI Layers:</strong> "Please Do Not Throw Sausage Pizza Away" — Physical, Data Link, Network, Transport, Session, Presentation, Application.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> Router connects different networks (Layer 3). Switch connects devices within same network (Layer 2). Hub is older Layer 1 device.</span>
-</div>
-    `,
+    topic: 'Computer Networks and Internet',
+    topicCode: 'CSC-101-06',
+    module: 'Networking and Internet',
+    contentHTML:
+      '\n<div class="learn-intro">\n  A <span class="learn-keyword">computer network</span> is a collection of two or more computers and devices connected together to share resources (files, printers, internet), communicate, and exchange data. Networks have transformed Nigerian society — from the MTN 5G network connecting millions of Nigerians to mobile internet, to the banking network that allows Zenith Bank customers to withdraw money from an Access Bank ATM. Understanding networks is fundamental to modern computing.\n</div>\n\n<h3 class="learn-subheading">1. Types of Networks by Size</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Type</th><th>Full Name</th><th>Coverage</th><th>Nigerian Example</th></tr></thead>\n    <tbody>\n      <tr><td>PAN</td><td>Personal Area Network</td><td>~10 meters (personal space)</td><td>Bluetooth connecting your phone to car audio; AirPods</td></tr>\n      <tr><td>LAN</td><td>Local Area Network</td><td>Single building/campus</td><td>UNILAG student computer lab; cybercafe network; office floor</td></tr>\n      <tr><td>CAN</td><td>Campus Area Network</td><td>College/university campus</td><td>ABU Zaria campus network connecting all departments</td></tr>\n      <tr><td>MAN</td><td>Metropolitan Area Network</td><td>City/metropolitan area</td><td>Lagos State government fibre optic network connecting ministries</td></tr>\n      <tr><td>WAN</td><td>Wide Area Network</td><td>Countries/continents</td><td>MTN\'s national mobile network; bank interswitch network</td></tr>\n      <tr><td>GAN</td><td>Global Area Network</td><td>Worldwide</td><td>The Internet; satellite networks</td></tr>\n      <tr><td>VPN</td><td>Virtual Private Network</td><td>Any distance (virtual)</td><td>Nigerian remote workers accessing company servers securely</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">2. Network Topologies</h3>\n<p class="learn-p">Network <span class="learn-keyword">topology</span> refers to the physical or logical arrangement of devices in a network — how they are connected to each other.</p>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="18" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">Network Topologies</text>\n    <!-- BUS -->\n    <text x="60" y="35" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">BUS</text>\n    <line x1="15" y1="50" x2="115" y2="50" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="35" cy="50" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="60" cy="50" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="85" cy="50" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="110" cy="50" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="15" y="45" width="4" height="10" fill="#ff5f57"/>\n    <rect x="115" y="45" width="4" height="10" fill="#ff5f57"/>\n    <text x="60" y="75" text-anchor="middle" fill="#9090b0" font-size="7">Single cable + terminators</text>\n    <!-- STAR -->\n    <text x="240" y="35" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">STAR</text>\n    <circle cx="240" cy="60" r="10" fill="#D4AF37"/>\n    <text x="240" y="63" text-anchor="middle" fill="#0f0020" font-size="7" font-weight="bold">HUB</text>\n    <circle cx="210" cy="45" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="270" cy="45" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="210" cy="75" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="270" cy="75" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="240" cy="82" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="217" y1="49" x2="232" y2="57" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="263" y1="49" x2="248" y2="57" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="217" y1="71" x2="232" y2="65" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="263" y1="71" x2="248" y2="65" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="240" y1="75" x2="240" y2="70" stroke="#D4AF37" stroke-width="1.5"/>\n    <text x="240" y="95" text-anchor="middle" fill="#9090b0" font-size="7">Central hub/switch</text>\n    <!-- RING -->\n    <text x="390" y="35" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">RING</text>\n    <circle cx="390" cy="60" r="28" fill="none" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="390" cy="33" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="415" cy="55" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="407" cy="82" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="373" cy="82" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="365" cy="55" r="7" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <text x="390" y="95" text-anchor="middle" fill="#9090b0" font-size="7">Closed loop, token passing</text>\n    <!-- MESH -->\n    <text x="60" y="115" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">MESH</text>\n    <circle cx="35" cy="140" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="85" cy="130" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="85" cy="160" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <circle cx="35" cy="165" r="8" fill="#4B0082" stroke="#D4AF37" stroke-width="1.5"/>\n    <line x1="43" y1="140" x2="77" y2="133" stroke="#D4AF37" stroke-width="1"/>\n    <line x1="43" y1="140" x2="77" y2="157" stroke="#D4AF37" stroke-width="1"/>\n    <line x1="43" y1="165" x2="77" y2="133" stroke="#D4AF37" stroke-width="1"/>\n    <line x1="43" y1="165" x2="77" y2="157" stroke="#D4AF37" stroke-width="1"/>\n    <line x1="43" y1="143" x2="43" y2="162" stroke="#D4AF37" stroke-width="1"/>\n    <line x1="85" y1="138" x2="85" y2="152" stroke="#D4AF37" stroke-width="1"/>\n    <text x="60" y="185" text-anchor="middle" fill="#9090b0" font-size="7">Multiple paths between nodes</text>\n    <!-- Animated hub -->\n    <circle cx="240" cy="60" r="10" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>\n      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>\n    </circle>\n  </svg>\n</div>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Topology</th><th>Structure</th><th>Advantages</th><th>Disadvantages</th></tr></thead>\n    <tbody>\n      <tr><td>Bus</td><td>All devices on one cable; terminators at ends</td><td>Simple, cheap, easy to install</td><td>Whole network fails if cable breaks; collisions; slow with many devices</td></tr>\n      <tr><td>Star</td><td>All devices connect to central hub/switch</td><td>Easy to add/remove devices; one device failing doesn\'t affect others; easy troubleshooting</td><td>Hub/switch failure brings down entire network; more cable needed</td></tr>\n      <tr><td>Ring</td><td>Devices in a closed loop; token passing</td><td>Equal access, no collisions, predictable performance</td><td>One device failure breaks ring; adding devices disrupts network</td></tr>\n      <tr><td>Mesh</td><td>Every device connects to every other device</td><td>Highly reliable; multiple paths; no single point of failure</td><td>Expensive; complex to install; lots of cabling</td></tr>\n      <tr><td>Tree/Hybrid</td><td>Combination of topologies (often star of stars)</td><td>Scalable; flexible</td><td>Complex; backbone failure affects connected segments</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. Network Transmission Media</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Medium</th><th>Type</th><th>Speed</th><th>Max Distance</th><th>Nigerian Use</th></tr></thead>\n    <tbody>\n      <tr><td>UTP Cat6 (Twisted Pair)</td><td>Guided (wired)</td><td>1 Gbps</td><td>100m</td><td>Office LAN, university networks, cybercafes</td></tr>\n      <tr><td>Fibre Optic (Single-mode)</td><td>Guided (wired)</td><td>100+ Gbps</td><td>40-100km</td><td>MTN/Glo backbone; undersea cables (SAT-3, WACS, MainOne)</td></tr>\n      <tr><td>Coaxial Cable</td><td>Guided (wired)</td><td>Up to 1 Gbps</td><td>500m</td><td>DSTV signal; some ISP last-mile connections</td></tr>\n      <tr><td>WiFi (802.11)</td><td>Unguided (wireless)</td><td>54 Mbps - 9.6 Gbps</td><td>50-300m</td><td>Home routers; campus WiFi; hotel hotspots</td></tr>\n      <tr><td>Cellular (4G/5G)</td><td>Unguided (wireless)</td><td>10-1000 Mbps</td><td>National coverage</td><td>MTN, Glo, Airtel, 9mobile mobile internet</td></tr>\n      <tr><td>Bluetooth</td><td>Unguided (wireless)</td><td>1-50 Mbps</td><td>10-100m</td><td>Wireless headphones, file sharing, IoT devices</td></tr>\n      <tr><td>Satellite</td><td>Unguided (wireless)</td><td>12-100 Mbps</td><td>Global</td><td>Remote areas; Starlink in Nigeria; NIGCOMSAT</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Network Devices</h3>\n<ul class="learn-list">\n  <li><strong>Modem:</strong> MOdulator/DEModulator — converts digital computer signals to analog signals for transmission over telephone lines and vice versa. Your ADSL home internet modem in Nigeria converts your computer\'s digital data for the telephone line.</li>\n  <li><strong>Router:</strong> Connects different networks and directs (routes) data packets between them. Your home WiFi router connects your home LAN to the internet (WAN). Works at OSI Layer 3 (Network layer).</li>\n  <li><strong>Switch:</strong> Connects devices within a LAN and intelligently forwards data only to the intended destination device. More efficient than a hub. Works at OSI Layer 2 (Data Link layer).</li>\n  <li><strong>Hub:</strong> Older device that connects LAN devices but broadcasts data to ALL ports, causing collisions. Largely replaced by switches.</li>\n  <li><strong>Access Point (AP):</strong> Provides WiFi wireless connectivity to a wired network. The WiFi access points in UNILAG library connect wireless devices to the campus wired network.</li>\n  <li><strong>Firewall:</strong> Security device (hardware or software) that monitors and filters network traffic based on security rules, blocking unauthorised access.</li>\n  <li><strong>NIC (Network Interface Card):</strong> Hardware inside a computer that enables network connectivity. Has a unique MAC (Media Access Control) address.</li>\n  <li><strong>Repeater:</strong> Amplifies/regenerates network signals to extend transmission distance.</li>\n  <li><strong>Bridge:</strong> Connects two network segments and filters traffic between them.</li>\n</ul>\n\n<h3 class="learn-subheading">5. The OSI Model</h3>\n<p class="learn-p">The <span class="learn-keyword">OSI (Open Systems Interconnection) Model</span> is a conceptual framework that standardises how different network systems communicate. It has 7 layers, each with specific responsibilities. <strong>Mnemonic (top to bottom): "All People Seem To Need Data Processing"</strong> → Application, Presentation, Session, Transport, Network, Data Link, Physical.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Layer</th><th>Name</th><th>Function</th><th>Example Protocols/Devices</th></tr></thead>\n    <tbody>\n      <tr><td>7</td><td>Application</td><td>User interface; network services for applications</td><td>HTTP, HTTPS, FTP, SMTP, DNS, Telnet</td></tr>\n      <tr><td>6</td><td>Presentation</td><td>Data formatting, encryption, compression, translation</td><td>SSL/TLS, JPEG, MPEG, ASCII encoding</td></tr>\n      <tr><td>5</td><td>Session</td><td>Establishes, manages, and terminates sessions between applications</td><td>NetBIOS, RPC, SQL sessions</td></tr>\n      <tr><td>4</td><td>Transport</td><td>End-to-end data delivery, error recovery, flow control, segmentation</td><td>TCP, UDP</td></tr>\n      <tr><td>3</td><td>Network</td><td>Logical addressing, routing packets between networks</td><td>IP, ICMP, ARP, Router</td></tr>\n      <tr><td>2</td><td>Data Link</td><td>Physical addressing (MAC), framing, error detection on local network</td><td>Ethernet, WiFi (802.11), Switch, Bridge, MAC address</td></tr>\n      <tr><td>1</td><td>Physical</td><td>Transmits raw bits over physical medium</td><td>Cables, hubs, repeaters, electrical signals, fibre light</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">6. Key Network Protocols</h3>\n<ul class="learn-list">\n  <li><strong>IP (Internet Protocol):</strong> Assigns logical addresses to devices and routes packets across networks. The foundation of internet communication.</li>\n  <li><strong>TCP (Transmission Control Protocol):</strong> Provides reliable, ordered, error-checked delivery. Used for web browsing, email, file transfer where data integrity is critical.</li>\n  <li><strong>UDP (User Datagram Protocol):</strong> Fast but unreliable (no error checking/retransmission). Used for video streaming, gaming, VoIP where speed matters more than perfection.</li>\n  <li><strong>HTTP/HTTPS:</strong> HyperText Transfer Protocol — the protocol for web pages. HTTPS adds encryption via SSL/TLS. All Nigerian banking websites must use HTTPS.</li>\n  <li><strong>DNS (Domain Name System):</strong> Translates domain names (google.com) to IP addresses (142.250.76.46). The internet\'s phonebook.</li>\n  <li><strong>DHCP:</strong> Automatically assigns IP addresses to devices joining a network.</li>\n  <li><strong>SMTP/POP3/IMAP:</strong> Email protocols — SMTP sends email; POP3 downloads and removes from server; IMAP syncs email across devices.</li>\n</ul>\n\n<h3 class="learn-subheading">7. IP Addressing</h3>\n<p class="learn-p"><span class="learn-keyword">IPv4</span> uses 32-bit addresses in dotted decimal notation (e.g., 192.168.1.1). It allows ~4.3 billion unique addresses — now exhausted. Private IP ranges (not routable on internet): 10.0.0.0-10.255.255.255, 172.16.0.0-172.31.255.255, 192.168.0.0-192.168.255.255. Your home router uses private IPs for your devices. <span class="learn-keyword">IPv6</span> uses 128-bit addresses in hexadecimal (e.g., 2001:0db8:85a3::8a2e:0370:7334) — allows 3.4×10³⁸ addresses. Nigeria\'s ISPs are gradually deploying IPv6.</p>\n\n<h3 class="learn-subheading">8. Internet Security Threats</h3>\n<ul class="learn-list">\n  <li><strong>Malware:</strong> Viruses (attach to programs), Worms (self-replicate), Trojans (disguised as legitimate software), Ransomware (encrypts files for ransom — major threat to Nigerian businesses), Spyware (monitors activity).</li>\n  <li><strong>Phishing:</strong> Fake websites/emails that trick users into revealing credentials. Common in Nigeria — fake bank websites, fake EFCC/NAFDAC notifications.</li>\n  <li><strong>DoS/DDoS:</strong> Denial of Service — flooding a server with requests until it crashes. Used against Nigerian bank and government websites.</li>\n  <li><strong>Man-in-the-Middle:</strong> Attacker intercepts communication between two parties without their knowledge.</li>\n</ul>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>OSI Model Mnemonic:</strong> Bottom to top (Layer 1 to 7): <strong>"Please Do Not Throw Sausage Pizza Away"</strong> → Physical, Data Link, Network, Transport, Session, Presentation, Application. Top to bottom: <strong>"All People Seem To Need Data Processing"</strong>. The exam may ask which layer handles routing (Layer 3 — Network), which handles MAC addresses (Layer 2 — Data Link), or which handles encryption (Layer 6 — Presentation).\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Switch vs Hub vs Router:</strong> These are commonly confused. <strong>Hub</strong> = broadcasts to all ports (Layer 1, dumb). <strong>Switch</strong> = sends only to correct destination (Layer 2, smart). <strong>Router</strong> = connects DIFFERENT networks and routes between them (Layer 3, connects LAN to internet). Your home device is usually a combined router + switch + access point in one box.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> Networks connect devices to share resources. Types by size: PAN < LAN < CAN < MAN < WAN < GAN. Topologies: Bus (single cable), Star (central hub — most common), Ring (closed loop), Mesh (all interconnected). OSI has 7 layers (Physical through Application). TCP is reliable; UDP is fast. IPv4 uses 32-bit addresses (exhausted); IPv6 uses 128-bit. Nigeria\'s internet backbone uses fibre optic undersea cables (SAT-3, MainOne, WACS, Glo-1). DNS translates domain names to IP addresses.\n</div>\n  ',
     questions: [
-      { q: "Which network type covers a city-wide area?", o: ["LAN", "MAN (Metropolitan Area Network)", "WAN", "PAN"], a: 1, e: "MAN covers a city — larger than LAN, smaller than WAN.", h: "What covers a city?", yr: "GST" },
-      { q: "The internet is the largest example of which network type?", o: ["LAN", "MAN", "WAN", "PAN"], a: 2, e: "The internet is a global Wide Area Network (WAN) — the largest network.", h: "What type is the internet?", yr: "GST" },
-      { q: "Which network topology uses a central switch or hub?", o: ["Bus", "Star", "Ring", "Mesh"], a: 1, e: "Star topology has central switch/hub — all devices connect to it. Most common in home/office networks.", h: "What topology has a central device?", yr: "GST" },
-      { q: "A router operates at which OSI layer?", o: ["Layer 1 (Physical)", "Layer 2 (Data Link)", "Layer 3 (Network)", "Layer 7 (Application)"], a: 2, e: "Routers operate at Network Layer (Layer 3) — they route packets based on IP addresses.", h: "What OSI layer do routers work at?", yr: "GST" },
-      { q: "IPv4 addresses are how many bits?", o: ["16 bits", "32 bits", "64 bits", "128 bits"], a: 1, e: "IPv4 uses 32-bit addresses (4 numbers 0-255) — about 4.3 billion addresses.", h: "How many bits in IPv4?", yr: "GST" },
-      { q: "Which protocol is used for web browsing (HTTP/HTTPS)?", o: ["FTP", "SMTP", "HTTP/HTTPS", "DNS"], a: 2, e: "HTTP (Hypertext Transfer Protocol) and HTTPS (secure) are used for web browsing.", h: "What protocol for web?", yr: "GST" },
-      { q: "A switch operates at which OSI layer?", o: ["Layer 1 (Physical)", "Layer 2 (Data Link)", "Layer 3 (Network)", "Layer 4 (Transport)"], a: 1, e: "Switches operate at Data Link Layer (Layer 2) — forward frames based on MAC addresses.", h: "What OSI layer do switches work at?", yr: "GST" },
-      { q: "Which of the following is a private IP address range?", o: ["8.8.8.8", "192.168.1.1", "1.1.1.1", "9.9.9.9"], a: 1, e: "192.168.x.x is private IP range (internal networks). 8.8.8.8 is Google DNS (public).", h: "What is a private IP?", yr: "GST" },
-      { q: "The OSI model has how many layers?", o: ["4", "5", "7", "9"], a: 2, e: "OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.", h: "How many OSI layers?", yr: "GST" },
-      { q: "Which Nigerian undersea cable connects Nigeria to Europe?", o: ["SAT-3/WASC", "MainOne", "Glo-1", "All of the above"], a: 3, e: "Multiple cables: SAT-3/WASC, WACS, MainOne, Glo-1, ACE connect Nigeria to global internet.", h: "Which cables connect Nigeria?", yr: "GST" },
-      { q: "FTP is a protocol used for:", o: ["Web browsing", "Email", "File transfer", "DNS lookup"], a: 2, e: "FTP (File Transfer Protocol) transfers files between computers.", h: "What does FTP do?", yr: "GST" },
-      { q: "MAC addresses operate at which OSI layer?", o: ["Layer 1", "Layer 2 (Data Link)", "Layer 3", "Layer 4"], a: 1, e: "MAC (Media Access Control) addresses operate at Data Link Layer (Layer 2) — unique to each network interface.", h: "What layer uses MAC addresses?", yr: "GST" },
-      { q: "A modem converts:", o: ["Digital to digital", "Analog to digital and digital to analog", "Only digital to analog", "Only analog to digital"], a: 1, e: "Modem modulates (digital→analog) for transmission and demodulates (analog→digital) for reception.", h: "What does modem do?", yr: "GST" },
-      { q: "DNS (Domain Name System) translates:", o: ["IP to MAC address", "Domain names (www.google.com) to IP addresses", "MAC to IP address", "Email addresses to IP"], a: 1, e: "DNS converts human-readable domain names (google.com) to IP addresses (142.250.190.46).", h: "What does DNS translate?", yr: "GST" },
-      { q: "IPv6 uses how many bits?", o: ["32 bits", "64 bits", "128 bits", "256 bits"], a: 2, e: "IPv6 uses 128-bit addresses — supports 340 undecillion addresses, solving IPv4 shortage.", h: "How many bits in IPv6?", yr: "GST" },
-      { q: "TCP (Transmission Control Protocol) provides:", o: ["Connectionless, unreliable transmission", "Connection-oriented, reliable transmission", "No error checking", "Only for web browsing"], a: 1, e: "TCP is connection-oriented, reliable — ensures data arrives complete and in order.", h: "What does TCP provide?", yr: "GST" },
-      { q: "UDP is used when:", o: ["Reliability is critical", "Speed is more important than reliability (streaming, gaming, VoIP)", "Error correction needed", "Connection is required"], a: 1, e: "UDP is faster but unreliable — used for streaming, gaming, VoIP where speed matters more than perfect delivery.", h: "When is UDP used?", yr: "GST" },
-      { q: "Which device connects different networks and directs traffic?", o: ["Switch", "Hub", "Router", "Modem"], a: 2, e: "Router connects different networks (LAN to WAN) and routes packets based on IP addresses.", h: "What connects different networks?", yr: "GST" },
-      { q: "A hub operates at which OSI layer?", o: ["Layer 1 (Physical — just repeats signals)", "Layer 2", "Layer 3", "Layer 4"], a: 0, e: "Hub is a Layer 1 device — simply repeats incoming signals to all ports (broadcasts).", h: "What layer does hub work at?", yr: "GST" },
-      { q: "NAT (Network Address Translation) allows:", o: ["Multiple devices on private network to share one public IP", "Faster internet", "No security", "IPv6 to IPv4 conversion"], a: 0, e: "NAT translates private IP addresses to public IP, allowing multiple devices to share one public IP for internet access.", h: "What does NAT do?", yr: "GST" }
-    ]
+      {
+        q: 'A student connects their laptop to a printer via Bluetooth in their hostel room. This is an example of which type of network?',
+        o: [
+          'LAN (Local Area Network)',
+          'PAN (Personal Area Network)',
+          'WAN (Wide Area Network)',
+          'MAN (Metropolitan Area Network)',
+        ],
+        a: 1,
+        e: 'A PAN (Personal Area Network) covers a very small area — typically within 10 metres around a person. Bluetooth connections between personal devices (phone to laptop, phone to wireless earbuds, laptop to printer in the same room) are classic examples of PANs.',
+        h: 'Bluetooth between personal devices = PAN (Personal Area Network).',
+        yr: 'CSC',
+      },
+      {
+        q: 'In which network topology does failure of the central hub/switch bring down the ENTIRE network?',
+        o: ['Bus topology', 'Ring topology', 'Star topology', 'Mesh topology'],
+        a: 2,
+        e: "In a star topology, ALL devices connect to a central hub or switch. This device is the single point of failure — if it fails, all connected devices lose network connectivity. Despite this weakness, star is the most popular LAN topology because it's easy to manage and a single device failure (not the hub) doesn't affect others.",
+        h: 'Star = central hub/switch = single point of failure if hub fails.',
+        yr: 'CSC',
+      },
+      {
+        q: "A Nigerian bank's ATM card uses a magnetic stripe that stores the account number. When you insert the card and the ATM reads it, which network protocol category handles routing the transaction request to the bank's server?",
+        o: [
+          'Physical layer — the cables carry the signals',
+          'Data Link layer — Ethernet frames the data locally',
+          "Network layer — IP addresses and routing to the bank's server",
+          'Application layer — the ATM banking application processes the request',
+        ],
+        a: 2,
+        e: "While all OSI layers are involved in network communication, routing the transaction request from the ATM to the bank's distant server is the function of the Network layer (Layer 3), which handles IP addressing and routing packets across networks and the internet.",
+        h: 'Routing between different networks = Network Layer (Layer 3) = IP.',
+        yr: 'CSC',
+      },
+      {
+        q: "MTN Nigeria's national mobile network that connects millions of subscribers across 36 states is classified as which type of network?",
+        o: [
+          'LAN (Local Area Network)',
+          'CAN (Campus Area Network)',
+          'WAN (Wide Area Network)',
+          'MAN (Metropolitan Area Network)',
+        ],
+        a: 2,
+        e: "A WAN (Wide Area Network) spans large geographic areas — countries or continents. MTN Nigeria's network infrastructure connecting subscribers and cell towers across all 36 states plus FCT operates on a national scale, making it a WAN. The internet itself is the largest WAN.",
+        h: 'National coverage across states = WAN.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which transmission medium offers the HIGHEST data transmission speeds and is immune to electromagnetic interference?',
+        o: ['Cat6 UTP twisted pair cable', 'Coaxial cable', 'Fibre optic cable', 'WiFi (802.11ac)'],
+        a: 2,
+        e: "Fibre optic cable transmits data as pulses of light through glass or plastic fibres. This provides: highest speeds (hundreds of Gbps), immunity to electromagnetic interference (light is unaffected by electrical noise), low signal loss over long distances, and high security (difficult to tap). Nigeria's internet backbone and undersea cables (MainOne, WACS) use fibre optic.",
+        h: 'Fibre optic = light transmission = fastest + immune to EMI.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the function of DNS (Domain Name System) in internet communication?',
+        o: [
+          'Encrypts data transmitted between a web browser and server',
+          'Translates human-readable domain names (e.g., google.com) into IP addresses',
+          'Assigns IP addresses automatically to devices joining a network',
+          'Manages email routing between mail servers',
+        ],
+        a: 1,
+        e: "DNS acts as the internet's phonebook. When you type 'google.com' in a browser, your computer queries a DNS server to find the actual IP address (e.g., 142.250.76.46) of Google's servers. Without DNS, you would need to memorise IP addresses for every website.",
+        h: 'DNS = domain name → IP address translation = internet phonebook.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian company streams live video of their product launch on Zoom and YouTube simultaneously. The video streaming uses UDP rather than TCP. Why?',
+        o: [
+          'UDP is more secure and encrypts video data automatically',
+          'UDP is faster with less overhead; minor data loss in streaming is acceptable and retransmitting old frames would cause more disruption than just skipping them',
+          'UDP guarantees that every video frame arrives correctly',
+          'UDP is required for all video applications by international standard',
+        ],
+        a: 1,
+        e: 'UDP (User Datagram Protocol) has low overhead — no connection establishment, no acknowledgment, no retransmission. For live video streaming, speed matters more than perfection. If a few packets are lost, the video may briefly glitch, but retransmitting them (TCP approach) would cause visible delays/buffering, which is worse.',
+        h: 'Video streaming prioritises speed over perfection = UDP.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which OSI model layer is responsible for ENCRYPTION of data (e.g., SSL/TLS in HTTPS)?',
+        o: [
+          'Layer 4 — Transport',
+          'Layer 5 — Session',
+          'Layer 6 — Presentation',
+          'Layer 7 — Application',
+        ],
+        a: 2,
+        e: 'The Presentation layer (Layer 6) handles data formatting, translation, compression, and encryption/decryption. SSL/TLS encryption (used in HTTPS) operates at this layer, converting plaintext data to encrypted form before transmission and decrypting received data.',
+        h: 'OSI Layer 6 Presentation = data format, encryption, compression.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A cybercafe owner in Lagos installs a network switch instead of a hub. What is the PRIMARY advantage of using a switch over a hub?',
+        o: [
+          'A switch is cheaper than a hub',
+          'A switch broadcasts data to all connected devices simultaneously',
+          'A switch intelligently forwards data only to the intended destination device, reducing collisions and improving performance',
+          'A switch automatically connects to the internet without needing a router',
+        ],
+        a: 2,
+        e: 'A switch maintains a MAC address table and forwards data frames ONLY to the specific port where the destination device is connected. A hub broadcasts to ALL ports (causing collisions and wasted bandwidth). Switches reduce collisions, increase effective bandwidth, and improve network performance.',
+        h: 'Switch = smart (sends to correct port only). Hub = dumb (broadcasts to all).',
+        yr: 'CSC',
+      },
+      {
+        q: "A user's home router has the IP address 192.168.1.1. The prefix '192.168' indicates this is:",
+        o: [
+          'A public IP address assignable by any ISP',
+          'A private IP address used in local networks, not directly routable on the internet',
+          'An IPv6 address in compact notation',
+          'A reserved address for government use only',
+        ],
+        a: 1,
+        e: 'The 192.168.0.0-192.168.255.255 range is a reserved private IP address range (defined in RFC 1918). These addresses are used in private networks (home LANs, office networks) and are NOT directly routable on the internet. Your router translates between private IPs (home devices) and your public IP (assigned by ISP) using NAT.',
+        h: '192.168.x.x = private IP = home/office LAN, not internet-routable.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which network topology requires the MOST cabling but provides the HIGHEST reliability with multiple paths between devices?',
+        o: ['Bus topology', 'Star topology', 'Ring topology', 'Mesh topology'],
+        a: 3,
+        e: 'Full mesh topology connects EVERY device to EVERY other device directly. For N devices: N(N-1)/2 connections required. This is expensive and complex but provides maximum redundancy — if any link fails, data can still travel via alternative paths. Used in critical network infrastructure like internet exchange points.',
+        h: 'Mesh = every device to every device = most cable but most reliable.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In the OSI model, which layer handles the physical transmission of raw bits over a network medium (cables, radio waves)?',
+        o: [
+          'Layer 2 — Data Link',
+          'Layer 1 — Physical',
+          'Layer 3 — Network',
+          'Layer 4 — Transport',
+        ],
+        a: 1,
+        e: 'The Physical layer (Layer 1) is responsible for transmitting raw binary data (0s and 1s) as electrical voltages, light pulses, or radio waves over the physical medium. It defines cables, connectors, voltage levels, and radio frequencies — the actual hardware layer of networking.',
+        h: 'OSI Layer 1 Physical = actual bits transmitted as electrical/optical/radio signals.',
+        yr: 'CSC',
+      },
+      {
+        q: "A Nigerian company receives a ransom demand after all their servers' files were encrypted by malicious software. This is an example of which type of cybersecurity attack?",
+        o: [
+          'Phishing attack',
+          'DoS (Denial of Service) attack',
+          'Ransomware attack',
+          'Man-in-the-middle attack',
+        ],
+        a: 2,
+        e: "Ransomware is malware that encrypts victim's files and demands payment (ransom) — often in cryptocurrency — for the decryption key. Ransomware attacks have affected several Nigerian organisations including hospitals and businesses. Prevention: regular backups, software updates, email security.",
+        h: 'Files encrypted + ransom demanded = Ransomware.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the purpose of DHCP (Dynamic Host Configuration Protocol)?',
+        o: [
+          'Translates domain names to IP addresses',
+          'Automatically assigns IP addresses and other network settings to devices joining a network',
+          'Encrypts data transmitted between client and server',
+          'Routes email between mail servers',
+        ],
+        a: 1,
+        e: "DHCP automatically assigns IP addresses, subnet masks, default gateway, and DNS server addresses to devices when they join a network. Without DHCP, network administrators would need to manually configure each device's IP settings. Your phone automatically gets an IP from your router's DHCP server when connecting to WiFi.",
+        h: 'DHCP = automatic IP address assignment to network devices.',
+        yr: 'CSC',
+      },
+      {
+        q: "MainOne, WACS, SAT-3, and Glo-1 are Nigeria's undersea cables. What type of transmission medium are these cables?",
+        o: [
+          'Coaxial cables for television broadcasting',
+          'UTP (Unshielded Twisted Pair) ethernet cables',
+          'Fibre optic cables for international internet connectivity',
+          'Satellite communication links',
+        ],
+        a: 2,
+        e: "Nigeria's international internet connectivity relies on undersea fibre optic cables that run along the Atlantic Ocean floor connecting Nigeria to Europe, North America, and other African nations. These cables provide the high-capacity, high-speed bandwidth that Nigerian ISPs distribute to end users.",
+        h: 'International undersea internet cables = submarine fibre optic cables.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The TCP/IP model has how many layers, and which of the following correctly lists them?',
+        o: [
+          '7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application',
+          '4 layers: Network Interface, Internet, Transport, Application',
+          '5 layers: Physical, Network Interface, Internet, Transport, Application',
+          '3 layers: Network, Transport, Application',
+        ],
+        a: 1,
+        e: 'The TCP/IP model (also called the Internet model or DoD model) has 4 layers: (1) Network Interface/Link — combines OSI Physical + Data Link; (2) Internet — corresponds to OSI Network layer (IP); (3) Transport — TCP and UDP; (4) Application — combines OSI Session + Presentation + Application. The OSI model has 7 layers.',
+        h: 'TCP/IP = 4 layers. OSI = 7 layers.',
+        yr: 'CSC',
+      },
+      {
+        q: "A phishing email claiming to be from 'GTBank Security Team' asks a customer to click a link and enter their internet banking password to 'verify their account'. What type of attack is this?",
+        o: [
+          'Ransomware attack — malware is embedded in the email',
+          'DoS attack — the email server is being overwhelmed',
+          'Social engineering/Phishing — tricking users into revealing credentials via deception',
+          'Man-in-the-middle — the attacker is intercepting bank communications',
+        ],
+        a: 2,
+        e: 'Phishing is a social engineering attack where attackers impersonate trusted organisations (like banks) through fake emails, websites, or messages to trick victims into voluntarily providing sensitive information like passwords, PINs, or card numbers. Never click suspicious links in emails claiming to be from your bank.',
+        h: 'Fake identity + trick into revealing credentials = Phishing/Social engineering.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which device connects a home LAN to the internet (WAN) and directs traffic between them?',
+        o: ['Network switch', 'Network hub', 'Router', 'Network bridge'],
+        a: 2,
+        e: "A router connects different networks — specifically, your home LAN (local private network) to your ISP's WAN (internet). It routes data packets between networks based on IP addresses, performs NAT (Network Address Translation) to share one public IP among all home devices, and often includes firewall functionality.",
+        h: 'Router = connects DIFFERENT networks (LAN to internet).',
+        yr: 'CSC',
+      },
+      {
+        q: 'IPv4 addresses are being exhausted globally. IPv6 was introduced to solve this by using:',
+        o: [
+          '32-bit addresses in dotted decimal notation — same as IPv4 but reorganised',
+          '64-bit addresses providing twice the IPv4 address space',
+          '128-bit hexadecimal addresses providing 3.4×10³⁸ possible addresses',
+          '256-bit addresses for quantum computing networks',
+        ],
+        a: 2,
+        e: "IPv6 uses 128-bit addresses written in hexadecimal notation (e.g., 2001:0db8:85a3::8a2e:0370:7334), providing 2^128 ≈ 3.4×10³⁸ possible addresses — enough for every device on earth to have multiple addresses. IPv4's 32-bit addresses provided only ~4.3 billion addresses, which are now exhausted.",
+        h: 'IPv6 = 128-bit = 2^128 addresses = essentially unlimited.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In a bus topology network, a terminator is placed at each end of the cable. What is the purpose of the terminator?',
+        o: [
+          'To boost the signal strength along the cable',
+          'To prevent electrical signal reflection at the cable ends that would cause interference',
+          'To connect the bus cable to a power source',
+          'To encrypt data before it enters the bus network',
+        ],
+        a: 1,
+        e: 'Terminators absorb electrical signals at the ends of a bus cable, preventing them from reflecting back along the cable (which would cause signal interference/collisions). Without terminators, signals would bounce between the cable ends, corrupting data transmission. Terminators are characteristic components of bus topology networks.',
+        h: 'Bus topology terminators = absorb signals to prevent reflection/interference.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ============================================================================
-// INTRODUCTION TO COMPUTING — PART 3 OF 3 (CLEAN - NO INLINE STYLES)
-// Continuing GST_LEARN_GST_COMPUTING array from Part 2
-// TOPICS 7, 8, 9, 10
-// ============================================================================
-
-  // ==========================================================================
-  // TOPIC 7: The World Wide Web and Web Technologies
-  // ==========================================================================
   {
-    topic: "The World Wide Web and Web Technologies",
-    topicCode: "CSC-007-01",
-    module: "Web Technologies",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">The World Wide Web (WWW)</span> is a system of interlinked hypertext documents accessed via the internet. Invented by Tim Berners-Lee at CERN in 1989, the Web transformed the internet from a research tool into a global information space. <strong>Understanding how the Web works is essential in today's digital world</strong>.
-</div>
-
-<p class="learn-p">The Web is often confused with the internet, but they are different: the internet is the network infrastructure; the Web is a service that runs on the internet (like email, FTP, VoIP).</p>
-
-<h3 class="learn-subheading">How the Web Works — Client-Server Model</h3>
-
-<p class="learn-p">When you visit a website, your browser (client) requests pages from a web server, which responds with HTML, CSS, JavaScript, images, and other resources.</p>
-
-<p class="learn-p"><strong>HTTP request-response cycle:</strong> Browser sends HTTP request → Server processes → Server sends HTTP response → Browser renders page.</p>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Component</th><th>Description</th><th>Examples</th>
-    </thead>
-    <tbody>
-      <tr><td>Web Browser (Client)</th>。<th>Requests and displays web pages</th>。<th>Chrome, Firefox, Safari, Edge, Brave</th>
-      </tr>
-      <tr><td>Web Server</th>。<th>Stores and delivers web pages</th>。<th>Apache, Nginx, IIS</th>
-      </tr>
-      <td><td>HTML</th>。<th>Structure of web pages</th>。<th>&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;div&gt;, &lt;p&gt;</th>
-      </tr>
-      <tr><td>CSS</th>。<th>Styling and layout</th>。<th>Colors, fonts, spacing, responsive design</th>
-      </td>
-      <tr><td>JavaScript</th>。<th>Interactivity and dynamic behavior</th>。<th>Form validation, animations, API calls</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="180" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🌐 CLIENT-SERVER MODEL</text>
-    
-    <g>
-      <rect x="15" y="45" width="140" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <text x="85" y="65" text-anchor="middle" font-size="10" fill="#1e3a8a" font-weight="800">CLIENT</text>
-      <text x="85" y="82" text-anchor="middle" font-size="8" fill="#1e3a8a">Web Browser</text>
-      <text x="85" y="95" text-anchor="middle" font-size="7" fill="#1e3a8a">Requests web page</text>
-    </g>
-    
-    <line x1="155" y1="75" x2="200" y2="75" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowWeb1)"/>
-    <line x1="200" y1="90" x2="155" y2="90" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowWeb2)"/>
-    
-    <text x="178" y="70" text-anchor="middle" font-size="7" fill="#3b82f6">HTTP Request</text>
-    <text x="178" y="98" text-anchor="middle" font-size="7" fill="#f59e0b">HTTP Response</text>
-    
-    <g>
-      <rect x="200" y="45" width="200" height="60" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <text x="300" y="65" text-anchor="middle" font-size="10" fill="#166534" font-weight="800">SERVER</text>
-      <text x="300" y="82" text-anchor="middle" font-size="8" fill="#166534">Web Server</text>
-      <text x="300" y="95" text-anchor="middle" font-size="7" fill="#166534">Sends HTML, CSS, JS</text>
-    </g>
-    
-    <defs>
-      <marker id="arrowWeb1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-      <marker id="arrowWeb2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#f59e0b"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="140" text-anchor="middle" font-size="9" fill="#475569">HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the Web</text>
-    <text x="250" y="158" text-anchor="middle" font-size="8" fill="#64748b">HTTPS adds encryption (SSL/TLS) for security</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">URLs and Domain Names</h3>
-
-<p class="learn-p">A URL (Uniform Resource Locator) is the address of a web page:</p>
-<p class="learn-p"><strong>Structure:</strong> protocol://domain/path?query#fragment</p>
-<p class="learn-p">Example: https://www.google.com/search?q=computers#results</p>
-<ul class="learn-list">
-  <li><strong>Protocol:</strong> https:// (HTTP or HTTPS)</li>
-  <li><strong>Domain:</strong> www.google.com</li>
-  <li><strong>Path:</strong> /search</li>
-  <li><strong>Query:</strong> ?q=computers</li>
-  <li><strong>Fragment:</strong> #results</li>
-</ul>
-
-<p class="learn-p">Domain names are organized hierarchically: TLD (top-level domain: .com, .org, .ng, .edu) → Domain (google) → Subdomain (www, mail, drive).</p>
-
-<h3 class="learn-subheading">Web Development Technologies</h3>
-
-<p class="learn-p"><strong>Front-End (Client-Side):</strong> What users see and interact with — HTML (structure), CSS (styling), JavaScript (interactivity). Frameworks: React, Angular, Vue, Bootstrap.</p>
-
-<p class="learn-subheading">Web Hosting</p>
-
-<p class="learn-p">Web hosting services store website files and make them accessible online. Types: Shared (cheapest, other sites share server), VPS (virtual private server), Dedicated (entire server for one site), Cloud (scalable, pay-as-you-go), Managed WordPress.</p>
-
-<p class="learn-subheading">Cloud Computing</p>
-
-<p class="learn-p">Cloud computing delivers computing services (servers, storage, databases, networking, software) over the internet.</p>
-
-<p class="learn-p"><strong>Service models:</strong> IaaS (Infrastructure as a Service — AWS EC2, Google Compute), PaaS (Platform as a Service — Google App Engine, Heroku), SaaS (Software as a Service — Gmail, Google Drive, Office 365).</p>
-
-<p class="learn-p"><strong>Deployment models:</strong> Public cloud (AWS, Azure, Google Cloud), Private cloud (for single organization), Hybrid cloud (combination).</p>
-
-<h3 class="learn-subheading">Nigerian Internet Landscape</h3>
-
-<p class="learn-p">Major ISPs: MTN Nigeria, Glo, Airtel, 9mobile, Spectranet, FibreOne. Undersea cables: SAT-3/WASC, WACS, MainOne, Glo-1, ACE (Africa Coast to Europe) connect Nigeria to global internet.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Key Distinction:</strong> Internet = network infrastructure. World Wide Web = information system (websites, links). Email, FTP, VoIP are other internet services — not part of the Web.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> HTTPS is HTTP with encryption (SSL/TLS) — secure version for sensitive data (passwords, credit cards, personal info). Look for padlock icon in browser.</span>
-</div>
-    `,
+    topic: 'The World Wide Web and Web Technologies',
+    topicCode: 'CSC-101-07',
+    module: 'Web and Internet Technologies',
+    contentHTML:
+      '\n<div class="learn-intro">\n  The <span class="learn-keyword">World Wide Web (WWW)</span> is not the same as the internet — it is one of many services that run on the internet. The web is a system of interlinked hypertext documents and multimedia content accessed via web browsers using the HTTP protocol. Invented by British scientist <span class="learn-keyword">Tim Berners-Lee</span> at CERN in 1989 and launched publicly in 1991, the web has transformed how Nigerians access information, conduct business (Jumia, Konga), bank online (GTBank, Access Bank internet banking), and communicate socially (Twitter Nigeria, LinkedIn).\n</div>\n\n<h3 class="learn-subheading">1. How the Web Works</h3>\n<p class="learn-p">The web operates on a <span class="learn-keyword">client-server model</span>. When you type a URL into your browser (the client), the following happens: (1) The browser extracts the domain name and queries a <strong>DNS server</strong> for its IP address; (2) The browser establishes a connection to the web server at that IP address; (3) The browser sends an <strong>HTTP/HTTPS request</strong> (e.g., GET /index.html); (4) The web server processes the request and sends back an <strong>HTTP response</strong> containing the HTML, CSS, and JavaScript files; (5) The browser\'s <strong>rendering engine</strong> parses these files and displays the web page; (6) JavaScript runs to add interactivity.</p>\n\n<h3 class="learn-subheading">2. URLs and Domain Names</h3>\n<p class="learn-p">A <span class="learn-keyword">URL (Uniform Resource Locator)</span> is the address of a specific resource on the web. Structure: <code>protocol://subdomain.domain.TLD/path?query#fragment</code></p>\n<p class="learn-p">Example: <strong>https://www.unilag.edu.ng/admissions?year=2024#undergraduate</strong></p>\n<ul class="learn-list">\n  <li><strong>https</strong> — Protocol (secure HyperText Transfer Protocol)</li>\n  <li><strong>www</strong> — Subdomain (World Wide Web subdomain)</li>\n  <li><strong>unilag</strong> — Second-level domain name</li>\n  <li><strong>.edu.ng</strong> — TLD (Top Level Domain): .edu = educational, .ng = Nigeria country code</li>\n  <li><strong>/admissions</strong> — Path to a specific page/resource</li>\n  <li><strong>?year=2024</strong> — Query string (passes parameters)</li>\n  <li><strong>#undergraduate</strong> — Fragment identifier (anchors to section on page)</li>\n</ul>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>TLD</th><th>Meaning</th><th>Nigerian Examples</th></tr></thead>\n    <tbody>\n      <tr><td>.ng</td><td>Nigeria country code TLD</td><td>nbc.gov.ng, mtn.ng</td></tr>\n      <tr><td>.com.ng</td><td>Commercial Nigerian domain</td><td>gtbank.com, dangote.com</td></tr>\n      <tr><td>.edu.ng</td><td>Nigerian educational institutions</td><td>unilag.edu.ng, oauife.edu.ng</td></tr>\n      <tr><td>.gov.ng</td><td>Nigerian government agencies</td><td>presidency.gov.ng, inec.gov.ng</td></tr>\n      <tr><td>.org.ng</td><td>Non-profit organisations in Nigeria</td><td>Various Nigerian NGOs</td></tr>\n      <tr><td>.com</td><td>Commercial (global)</td><td>jumia.com, konga.com, flutterwave.com</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. Web Browsers</h3>\n<p class="learn-p">A <span class="learn-keyword">web browser</span> is application software that retrieves, renders, and displays web content. Key browser components: <strong>Rendering engine</strong> (parses HTML/CSS and draws the page — Blink in Chrome, Gecko in Firefox, WebKit in Safari); <strong>JavaScript engine</strong> (executes JavaScript — V8 in Chrome, SpiderMonkey in Firefox); <strong>Networking component</strong> (handles HTTP requests); <strong>Data storage</strong> (cookies, localStorage, cache); <strong>Security features</strong> (sandboxing, phishing protection).</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Browser</th><th>Developer</th><th>Rendering Engine</th><th>Nigerian Market Notes</th></tr></thead>\n    <tbody>\n      <tr><td>Google Chrome</td><td>Google</td><td>Blink</td><td>Most popular globally and in Nigeria; heavy RAM usage</td></tr>\n      <tr><td>Mozilla Firefox</td><td>Mozilla Foundation</td><td>Gecko</td><td>Open source; strong privacy features; popular among developers</td></tr>\n      <tr><td>Safari</td><td>Apple</td><td>WebKit</td><td>Default on iPhone/Mac; popular with Apple device users in Nigeria</td></tr>\n      <tr><td>Microsoft Edge</td><td>Microsoft</td><td>Blink</td><td>Default on Windows 10/11; increasingly popular</td></tr>\n      <tr><td>Opera Mini</td><td>Opera</td><td>Presto (own)</td><td>Very popular in Nigeria due to data compression saving mobile data</td></tr>\n      <tr><td>Brave</td><td>Brave Software</td><td>Blink</td><td>Privacy-focused; blocks ads by default; growing Nigerian user base</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Web Development Technologies</h3>\n<h4 class="learn-subsubheading">Front-End (Client-Side) Technologies</h4>\n<ul class="learn-list">\n  <li><strong>HTML (HyperText Markup Language):</strong> Defines the STRUCTURE and content of web pages using tags (e.g., &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;, &lt;a&gt;). HTML5 is the current version, supporting audio, video, canvas, and semantic elements.</li>\n  <li><strong>CSS (Cascading Style Sheets):</strong> Defines the PRESENTATION/STYLING — colours, fonts, layout, spacing, animations. CSS3 supports flexbox, grid, animations, and responsive design (adapting to screen size).</li>\n  <li><strong>JavaScript (JS):</strong> Adds INTERACTIVITY and dynamic behaviour — responding to user clicks, form validation, updating content without reloading. The only programming language browsers run natively.</li>\n  <li><strong>Frameworks:</strong> React.js (Facebook — component-based UI), Angular (Google), Vue.js (progressive framework), Bootstrap (CSS framework for responsive design). Nigerian tech startups like Paystack and Flutterwave use React for their dashboards.</li>\n</ul>\n\n<h4 class="learn-subsubheading">Back-End (Server-Side) Technologies</h4>\n<ul class="learn-list">\n  <li><strong>PHP:</strong> Widely used server-side scripting language; powers WordPress (used by many Nigerian news websites like Vanguard, Punch).</li>\n  <li><strong>Python (Django, Flask):</strong> Clean, readable; popular for data science web apps; used by Nigerian fintech startups.</li>\n  <li><strong>Node.js:</strong> JavaScript runtime for server-side; popular with Nigerian developers who know JS for both front-end and back-end.</li>\n  <li><strong>Java (Spring Boot), C# (ASP.NET), Ruby (Rails):</strong> Enterprise-grade frameworks used in large Nigerian organisations (banks, telecoms).</li>\n</ul>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="18" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Web Request-Response Cycle</text>\n    <!-- Browser -->\n    <rect x="15" y="35" width="100" height="60" rx="8" fill="#2d1b4e" stroke="#6C3FC9" stroke-width="1.5"/>\n    <text x="65" y="57" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">WEB BROWSER</text>\n    <text x="65" y="70" text-anchor="middle" fill="#9090b0" font-size="7">(Client)</text>\n    <text x="65" y="83" text-anchor="middle" fill="#9090b0" font-size="7">Chrome, Firefox</text>\n    <!-- DNS -->\n    <rect x="190" y="35" width="100" height="45" rx="8" fill="#0a3a1a" stroke="#28c840" stroke-width="1.5"/>\n    <text x="240" y="53" text-anchor="middle" fill="#28c840" font-size="9" font-weight="bold">DNS SERVER</text>\n    <text x="240" y="66" text-anchor="middle" fill="#9090b0" font-size="7">domain → IP</text>\n    <text x="240" y="76" text-anchor="middle" fill="#9090b0" font-size="7">google.com→IP</text>\n    <!-- Web Server -->\n    <rect x="355" y="35" width="110" height="60" rx="8" fill="#2d1b4e" stroke="#D4AF37" stroke-width="1.5"/>\n    <text x="410" y="57" text-anchor="middle" fill="#D4AF37" font-size="9" font-weight="bold">WEB SERVER</text>\n    <text x="410" y="70" text-anchor="middle" fill="#9090b0" font-size="7">(Server)</text>\n    <text x="410" y="83" text-anchor="middle" fill="#9090b0" font-size="7">Apache, Nginx</text>\n    <!-- Arrows -->\n    <path d="M115 55 L188 55" stroke="#28c840" stroke-width="1.5" marker-end="url(#a5)"/>\n    <text x="152" y="48" text-anchor="middle" fill="#28c840" font-size="7">1. DNS query</text>\n    <path d="M188 68 L115 68" stroke="#28c840" stroke-width="1.5" marker-end="url(#a5)"/>\n    <text x="152" y="78" text-anchor="middle" fill="#28c840" font-size="7">2. IP returned</text>\n    <path d="M115 75 L353 75" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#a5)"/>\n    <text x="234" y="130" text-anchor="middle" fill="#D4AF37" font-size="7">3. HTTP/HTTPS Request (GET /index.html)</text>\n    <path d="M353 88 L115 88" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a5)"/>\n    <text x="234" y="100" text-anchor="middle" fill="#D4AF37" font-size="7">4. HTTP Response (HTML, CSS, JS files)</text>\n    <defs><marker id="a5" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4AF37"/></marker></defs>\n    <rect x="80" y="115" width="320" height="55" rx="8" fill="#1a0030" stroke="#4B0082" stroke-width="1.5"/>\n    <text x="240" y="133" text-anchor="middle" fill="#c8b4f0" font-size="9" font-weight="bold">Browser renders: HTML (structure) + CSS (style) + JS (behaviour)</text>\n    <text x="240" y="148" text-anchor="middle" fill="#9090b0" font-size="8">5. Rendering engine parses files → displays webpage</text>\n    <text x="240" y="162" text-anchor="middle" fill="#9090b0" font-size="8">6. JavaScript engine runs scripts → adds interactivity</text>\n    <rect x="15" y="35" width="100" height="60" rx="8" fill="none" stroke="#6C3FC9" stroke-width="1">\n      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">5. Cloud Computing</h3>\n<p class="learn-p"><span class="learn-keyword">Cloud computing</span> delivers computing services (servers, storage, databases, networking, software, analytics) over the internet on a pay-as-you-go basis. Three service models:</p>\n<ul class="learn-list">\n  <li><strong>IaaS (Infrastructure as a Service):</strong> Provides virtualised computing infrastructure — virtual machines, storage, networking. Users manage OS and above. Example: AWS EC2, Google Compute Engine. Nigerian startups rent servers on AWS instead of buying physical servers.</li>\n  <li><strong>PaaS (Platform as a Service):</strong> Provides platform for developers to build, run, and manage applications without managing infrastructure. Example: Heroku, Google App Engine. Developers deploy apps without worrying about servers.</li>\n  <li><strong>SaaS (Software as a Service):</strong> Software delivered over the internet on subscription — no installation needed. Example: Google Workspace (Docs, Sheets), Microsoft 365, Salesforce, Zoom. Nigerian businesses use Google Workspace instead of installing Microsoft Office locally.</li>\n</ul>\n\n<h3 class="learn-subheading">6. Search Engines and SEO</h3>\n<p class="learn-p">Search engines like Google, Bing, and Baidu work through three stages: <strong>Crawling</strong> — automated bots (spiders) browse the web and follow links to discover new pages; <strong>Indexing</strong> — discovered pages are analysed and added to a massive database (index); <strong>Ranking</strong> — when a user searches, algorithms rank indexed pages by relevance, authority, and hundreds of other factors. <span class="learn-keyword">SEO (Search Engine Optimisation)</span> is the practice of optimising websites to rank higher in search results — crucial for Nigerian e-commerce businesses like Jumia and Konga.</p>\n\n<h3 class="learn-subheading">7. E-Commerce</h3>\n<p class="learn-p"><span class="learn-keyword">E-commerce</span> (electronic commerce) is buying and selling goods/services over the internet. Types: <strong>B2C (Business to Consumer)</strong> — Jumia, Konga, Shoprite online; <strong>B2B (Business to Business)</strong> — companies selling to other companies online; <strong>C2C (Consumer to Consumer)</strong> — Jiji.ng marketplace; <strong>C2B (Consumer to Business)</strong> — freelancers selling services on Upwork. Nigerian e-commerce is supported by payment gateways like Flutterwave, Paystack (acquired by Stripe), and Interswitch.</p>\n\n<h3 class="learn-subheading">8. Web Evolution: Web 1.0, 2.0, 3.0</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Version</th><th>Era</th><th>Characteristics</th><th>Example</th></tr></thead>\n    <tbody>\n      <tr><td>Web 1.0</td><td>1991-2004</td><td>Read-only; static pages; no user interaction; information publishing</td><td>Early news websites, company brochure sites</td></tr>\n      <tr><td>Web 2.0</td><td>2004-present</td><td>Read-write; user-generated content; social media; dynamic apps; AJAX</td><td>Facebook, Twitter, YouTube, Wikipedia, Jumia</td></tr>\n      <tr><td>Web 3.0</td><td>Emerging</td><td>Decentralised; blockchain-based; semantic web; AI-powered; user data ownership</td><td>NFT platforms, DeFi, decentralised apps (dApps)</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">9. Nigerian Internet Landscape</h3>\n<p class="learn-p">Nigeria has the largest internet user base in Africa (~122 million users as of 2023). Key ISPs: MTN Nigeria (largest), Airtel, Glo, 9mobile for mobile internet; Spectranet, FibreOne, Tizeti, Swift Networks for fixed broadband. International connectivity relies on undersea fibre cables: SAT-3/WASC (2002), MainOne (2010), WACS (2012), Glo-1 (2011), ACE (2012). The NIGCOMSAT-1R satellite provides satellite internet to remote areas. Nigerian tech ecosystem features startups like <strong>Flutterwave</strong> (fintech, valued over $3 billion), <strong>Paystack</strong> (acquired by Stripe for ~$200M), <strong>Andela</strong> (tech talent), and hubs like CcHub, Wennovation Hub, and Ventures Platform.</p>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — Internet vs WWW:</strong> These are NOT the same. The <strong>Internet</strong> is the global network infrastructure — the physical cables, routers, and protocols connecting millions of computers worldwide. The <strong>WWW (World Wide Web)</strong> is just ONE SERVICE running on the internet — a collection of web pages accessible via HTTP. Email, FTP, online gaming, and VoIP are also internet services but not part of the WWW. Tim Berners-Lee invented the WWW (1989); the internet existed before that (ARPANET, 1969).\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>IaaS vs PaaS vs SaaS:</strong> Think of it as levels of abstraction. <strong>IaaS</strong> = you manage everything from OS up (virtual machines). <strong>PaaS</strong> = you just write code, provider manages infrastructure (Heroku). <strong>SaaS</strong> = you just use the software (Gmail, Zoom — nothing to install). Nigerian businesses moving from buying servers (capital expense) to cloud (operating expense) use IaaS; developers use PaaS; office workers use SaaS.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> The WWW is a service on the internet, invented by Tim Berners-Lee in 1989 at CERN. Web works via client-server model: browser requests, server responds with HTML/CSS/JS. HTML = structure, CSS = style, JavaScript = behaviour. Front-end = what users see (HTML/CSS/JS); Back-end = server-side logic (PHP, Python, Node.js). Cloud: IaaS (virtual machines), PaaS (developer platform), SaaS (software subscription). E-commerce types: B2B, B2C, C2C, C2B. Nigeria\'s internet backbone: MainOne, WACS, SAT-3 undersea fibre cables.\n</div>\n  ',
     questions: [
-      { q: "Who invented the World Wide Web?", o: ["Bill Gates", "Steve Jobs", "Tim Berners-Lee", "Mark Zuckerberg"], a: 2, e: "Tim Berners-Lee invented the WWW at CERN in 1989, creating HTML, HTTP, and the first web browser.", h: "Who invented the Web?", yr: "GST" },
-      { q: "HTML stands for:", o: ["Hyper Text Markup Language", "High Tech Modern Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"], a: 0, e: "HTML (Hypertext Markup Language) is the standard language for creating web pages.", h: "What does HTML stand for?", yr: "GST" },
-      { q: "CSS is used for:", o: ["Structure of web pages", "Styling and layout of web pages", "Server-side programming", "Database management"], a: 1, e: "CSS (Cascading Style Sheets) controls colors, fonts, spacing, layout, and responsive design.", h: "What does CSS do?", yr: "GST" },
-      { q: "JavaScript is primarily used for:", o: ["Styling web pages", "Structure of web pages", "Interactivity and dynamic behavior", "Database storage"], a: 2, e: "JavaScript adds interactivity: form validation, animations, API calls, dynamic content updates.", h: "What does JavaScript do?", yr: "GST" },
-      { q: "HTTP stands for:", o: ["Hyper Text Transfer Protocol", "High Tech Transfer Protocol", "Hyper Text Transmission Protocol", "Home Transfer Protocol"], a: 0, e: "HTTP is the protocol for transferring web pages from server to browser.", h: "What does HTTP stand for?", yr: "GST" },
-      { q: "A domain name (e.g., google.com) is converted to an IP address by:", o: ["HTTP", "DNS (Domain Name System)", "HTML", "CSS"], a: 1, e: "DNS translates human-readable domain names (google.com) to IP addresses (142.250.190.46).", h: "What translates domain to IP?", yr: "GST" },
-      { q: "Cloud computing service model where you rent virtual machines (servers) is:", o: ["SaaS", "PaaS", "IaaS", "DaaS"], a: 2, e: "IaaS (Infrastructure as a Service) provides virtual servers, storage, networking — you control OS and applications.", h: "What is IaaS?", yr: "GST" },
-      { q: "HTTPS adds which security feature to HTTP?", o: ["Firewall", "Antivirus", "Encryption (SSL/TLS)", "Password protection"], a: 2, e: "HTTPS encrypts data between browser and server using SSL/TLS — protects passwords, credit cards from interception.", h: "What does HTTPS add?", yr: "GST" },
-      { q: "A web browser is an example of:", o: ["Server software", "Client software", "Database software", "Operating system"], a: 1, e: "Web browser (Chrome, Firefox) is client software — it requests and displays pages from servers.", h: "Is browser client or server?", yr: "GST" },
-      { q: "Which of the following is a front-end JavaScript framework?", o: ["Node.js", "React", "Django", "Laravel"], a: 1, e: "React is front-end JavaScript library (client-side). Node.js, Django, Laravel are back-end.", h: "What is React?", yr: "GST" },
-      { q: "A URL consists of:", o: ["Protocol, domain, path, query, fragment", "Only domain name", "Only protocol", "Only file name"], a: 0, e: "Full URL: protocol://domain/path?query#fragment — e.g., https://www.google.com/search?q=test#results", h: "What parts make a URL?", yr: "GST" },
-      { q: "Which undersea cable connects Nigeria to Europe?", o: ["SAT-3/WASC", "MainOne", "Glo-1", "All of the above"], a: 3, e: "Multiple cables: SAT-3/WASC, WACS, MainOne, Glo-1, ACE connect Nigeria to global internet.", h: "Which cables connect Nigeria?", yr: "GST" },
-      { q: "A web server stores and delivers:", o: ["Email messages", "Web pages (HTML, CSS, JS, images)", "Database records", "Video files only"], a: 1, e: "Web servers store HTML, CSS, JavaScript, images, videos and deliver them to browsers.", h: "What does web server deliver?", yr: "GST" },
-      { q: "Google Drive is an example of:", o: ["IaaS", "PaaS", "SaaS (Software as a Service)", "DaaS"], a: 2, e: "SaaS provides ready-to-use software over internet — Google Drive, Gmail, Office 365.", h: "What is SaaS?", yr: "GST" },
-      { q: "The difference between internet and WWW is:", o: ["Same thing", "Internet is network infrastructure; WWW is service (websites) on internet", "WWW is older", "Internet is newer"], a: 1, e: "Internet = physical network of computers. WWW = information system (websites) that runs on the internet.", h: "What is the difference?", yr: "GST" },
-      { q: "Which of the following is a web browser?", o: ["Google Chrome", "Google Search", "Google Drive", "Google Docs"], a: 0, e: "Chrome is web browser. Google Search is search engine; Drive and Docs are web applications.", h: "What is a browser?", yr: "GST" },
-      { q: "The client-server model in web involves:", o: ["Browser (client) requests; Server responds", "Server requests; Browser responds", "Peer-to-peer only", "No client-server"], a: 0, e: "Browser sends HTTP request; web server sends HTTP response with HTML/CSS/JS.", h: "How does client-server work?", yr: "GST" },
-      { q: "Which protocol is used for secure web browsing?", o: ["HTTP", "FTP", "HTTPS", "SMTP"], a: 2, e: "HTTPS (HTTP Secure) encrypts communication using SSL/TLS — for secure transactions, logins.", h: "What is secure web protocol?", yr: "GST" },
-      { q: "A subdomain is part of a larger domain. Example:", o: ["google.com", "mail.google.com (mail is subdomain)", ".com", "https://"], a: 1, e: "Subdomain comes before main domain — mail.google.com (mail subdomain), drive.google.com (drive subdomain).", h: "What is a subdomain?", yr: "GST" },
-      { q: "Web hosting types include all EXCEPT:", o: ["Shared hosting", "VPS hosting", "Dedicated hosting", "Localhost only (your own computer — not hosting service)"], a: 3, e: "Web hosting services (shared, VPS, dedicated, cloud) store websites accessible online.", h: "What is NOT a hosting type?", yr: "GST" }
-    ]
+      {
+        q: 'Who invented the World Wide Web (WWW) and in which year?',
+        o: [
+          'Bill Gates at Microsoft in 1985',
+          'Tim Berners-Lee at CERN in 1989',
+          'Vint Cerf at ARPA in 1969',
+          'Mark Zuckerberg at Harvard in 2004',
+        ],
+        a: 1,
+        e: 'Tim Berners-Lee, a British computer scientist working at CERN (the European physics research laboratory) in Switzerland, invented the World Wide Web in 1989. He proposed the concept in a paper and created the first web browser, web server, and web pages. He published the WWW publicly in 1991.',
+        h: 'WWW = Tim Berners-Lee, CERN, 1989.',
+        yr: 'CSC',
+      },
+      {
+        q: "In the URL https://www.unilag.edu.ng/admissions, what does '.ng' represent?",
+        o: [
+          'The country code Top Level Domain for Nigeria',
+          'The network gateway identifier',
+          'The server port number',
+          'The encoding format of the web page',
+        ],
+        a: 0,
+        e: ".ng is Nigeria's country code Top Level Domain (ccTLD), assigned by IANA to Nigeria. All official Nigerian domains can use .ng or variants like .com.ng (commercial), .edu.ng (educational), .gov.ng (government). This is analogous to .uk (United Kingdom), .gh (Ghana), .za (South Africa).",
+        h: '.ng = Nigeria country code TLD.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian startup builds their web application so users can USE it without installing anything — just open a browser and access it. The startup charges a monthly subscription fee. This is which cloud service model?',
+        o: [
+          'IaaS (Infrastructure as a Service)',
+          'PaaS (Platform as a Service)',
+          'SaaS (Software as a Service)',
+          'FaaS (Function as a Service)',
+        ],
+        a: 2,
+        e: "SaaS (Software as a Service) delivers software applications over the internet on a subscription basis without users needing to install or maintain the software locally. Users just access it via a browser. Google Workspace, Microsoft 365, Zoom, and Salesforce are SaaS examples. The startup's web app that subscribers access via browser = SaaS.",
+        h: 'Browser-based, no installation, subscription fee = SaaS.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is the difference between the Internet and the World Wide Web?',
+        o: [
+          'They are the same thing — the internet and WWW are identical',
+          'The internet is the global network infrastructure; the WWW is one service running on the internet using HTTP',
+          'The WWW is older than the internet, having been invented in the 1960s',
+          'The internet is free; the WWW requires payment to access',
+        ],
+        a: 1,
+        e: 'The Internet is the underlying global network infrastructure — billions of devices connected via physical cables, routers, and protocols. The WWW is one SERVICE that runs on the internet — a collection of hyperlinked documents accessed via HTTP/HTTPS. Other internet services include email (SMTP/IMAP), FTP, VoIP (WhatsApp calls), and online gaming.',
+        h: 'Internet = infrastructure. WWW = one service using HTTP on that infrastructure.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In HTML, CSS, and JavaScript web development, which technology defines the STRUCTURE of a web page?',
+        o: [
+          'CSS — which positions and styles elements',
+          'JavaScript — which makes elements interactive',
+          'HTML — which defines the content and structure using markup tags',
+          'PHP — which generates the page on the server',
+        ],
+        a: 2,
+        e: 'HTML (HyperText Markup Language) defines the structure and content of web pages through markup tags like &lt;h1&gt; (heading), &lt;p&gt; (paragraph), &lt;img&gt; (image), &lt;a&gt; (link). CSS handles presentation/styling; JavaScript handles interactivity/behaviour; PHP is server-side (generates HTML dynamically).',
+        h: 'HTML = structure. CSS = style. JavaScript = behaviour.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Jumia Nigeria (B2C) and Jiji.ng (C2C) are both e-commerce platforms. What is the key difference between B2C and C2C?',
+        o: [
+          'B2C is more expensive to use than C2C',
+          'In B2C a business sells to consumers; in C2C consumers sell to other consumers (marketplace)',
+          'B2C only works for physical goods; C2C only works for digital products',
+          'B2C requires registration; C2C is anonymous',
+        ],
+        a: 1,
+        e: 'B2C (Business to Consumer) involves a business entity selling goods/services directly to individual consumers — Jumia sells products from its inventory to customers. C2C (Consumer to Consumer) is a marketplace where individual consumers sell to other consumers — Jiji.ng hosts listings from individuals selling cars, electronics, furniture to other individuals.',
+        h: 'B2C = Business sells to Customer. C2C = Customer sells to Customer (marketplace).',
+        yr: 'CSC',
+      },
+      {
+        q: 'Opera Mini is particularly popular in Nigeria because of which feature?',
+        o: [
+          'It has built-in antivirus protection for mobile devices',
+          'Its data compression technology reduces the amount of mobile data consumed',
+          'It is the fastest browser for streaming Nollywood movies',
+          'It is the only browser that supports Nigerian languages like Yoruba',
+        ],
+        a: 1,
+        e: "Opera Mini uses server-side data compression — web pages are first downloaded and compressed on Opera's servers, then sent in compressed form to the device. This can reduce data usage by up to 90%, which is highly valuable in Nigeria where mobile data costs are relatively high compared to average income.",
+        h: 'Opera Mini = data compression = saves mobile data = popular in Nigeria.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A web developer uses React.js to build the customer-facing interface of a Nigerian banking app. React.js is classified as:',
+        o: [
+          'A back-end server-side framework',
+          'A database management system',
+          'A front-end JavaScript framework for building user interfaces',
+          'An operating system for web servers',
+        ],
+        a: 2,
+        e: 'React.js (developed by Facebook/Meta) is a front-end JavaScript library/framework for building user interfaces, particularly single-page applications (SPAs). It runs in the browser (client-side). Nigerian companies like Paystack, Flutterwave, and Andela use React for their user-facing dashboards and applications.',
+        h: 'React.js = front-end JavaScript framework = runs in the browser.',
+        yr: 'CSC',
+      },
+      {
+        q: "What happens during the 'rendering' step in a web browser?",
+        o: [
+          'The browser sends the HTTP request to the web server',
+          "The browser's rendering engine parses HTML, CSS, and JavaScript to visually display the web page",
+          'The DNS server translates the domain name to an IP address',
+          'The web server processes the request and retrieves database content',
+        ],
+        a: 1,
+        e: 'Browser rendering is the process of parsing HTML (to build the DOM — Document Object Model), CSS (to build the CSSOM — CSS Object Model), combining them into a Render Tree, calculating layout, and painting the visual output to the screen. JavaScript is executed to modify the DOM dynamically. The result is the visual webpage the user sees.',
+        h: 'Rendering = browser parses HTML/CSS/JS and draws the visual webpage.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Flutterwave and Paystack are Nigerian fintech companies that provide payment gateway services. In e-commerce terms, they enable:',
+        o: [
+          'Web hosting and domain registration for Nigerian businesses',
+          'Secure online payment processing between buyers, sellers, and banks',
+          'Search engine optimisation for Nigerian e-commerce sites',
+          'Cloud storage for Nigerian e-commerce product images',
+        ],
+        a: 1,
+        e: 'Payment gateways like Flutterwave and Paystack are the technology infrastructure that securely process online payments — handling card transactions, mobile money transfers, bank transfers — between customers, merchants, and financial institutions. They are essential infrastructure for Nigerian e-commerce.',
+        h: 'Flutterwave, Paystack = payment gateways = online payment processing.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Web 2.0 differs from Web 1.0 primarily in that Web 2.0:',
+        o: [
+          'Uses faster internet connections than Web 1.0',
+          'Is accessible only via mobile phones',
+          'Allows user-generated content and interaction (read-write web) rather than static read-only pages',
+          'Requires blockchain technology for all transactions',
+        ],
+        a: 2,
+        e: 'Web 1.0 (1991-2004) was a read-only web — websites were static HTML pages created by developers and passively read by users. Web 2.0 (2004-present) is a read-write web — users actively create content (Facebook posts, YouTube videos, Wikipedia edits, Twitter tweets). Social media, wikis, and user-generated content platforms define Web 2.0.',
+        h: 'Web 1.0 = read only. Web 2.0 = read + write (user-generated content).',
+        yr: 'CSC',
+      },
+      {
+        q: "A developer uses 'Heroku' to deploy their Python web application without managing any servers, operating systems, or infrastructure. This is which cloud model?",
+        o: [
+          'IaaS — Infrastructure as a Service',
+          'PaaS — Platform as a Service',
+          'SaaS — Software as a Service',
+          'NaaS — Network as a Service',
+        ],
+        a: 1,
+        e: 'PaaS (Platform as a Service) provides a managed platform where developers can deploy and run applications without managing the underlying infrastructure (servers, OS, runtime). Heroku, Google App Engine, and Render.com are PaaS examples — developers just write code and deploy it, while the platform handles everything else.',
+        h: 'Deploy code without managing servers/OS = PaaS.',
+        yr: 'CSC',
+      },
+      {
+        q: "A search engine 'crawls' the web using automated bots. What is the purpose of web crawling?",
+        o: [
+          'To test the security of websites for vulnerabilities',
+          'To discover and follow links to find new web pages for indexing',
+          'To render web pages for users who request them',
+          'To deliver content to users based on their location',
+        ],
+        a: 1,
+        e: "Web crawlers (also called spiders or bots) are automated programs that systematically browse the web by following hyperlinks from page to page, discovering new URLs. The discovered pages are then analysed and stored in the search engine's index (database), which is later searched when users submit queries.",
+        h: 'Crawling = bots follow links to discover pages for the search index.',
+        yr: 'CSC',
+      },
+      {
+        q: 'HTTPS uses which security protocol to encrypt web communications?',
+        o: [
+          'FTP (File Transfer Protocol)',
+          'SMTP (Simple Mail Transfer Protocol)',
+          'SSL/TLS (Secure Sockets Layer/Transport Layer Security)',
+          'DNS (Domain Name System)',
+        ],
+        a: 2,
+        e: "HTTPS (HTTP Secure) uses SSL/TLS (Secure Sockets Layer / Transport Layer Security) to encrypt communication between the browser and web server. This prevents eavesdropping (man-in-the-middle attacks) and ensures the website's identity through digital certificates. All Nigerian banking websites must use HTTPS.",
+        h: 'HTTPS = HTTP + SSL/TLS encryption.',
+        yr: 'CSC',
+      },
+      {
+        q: 'MainOne, WACS, SAT-3, and Glo-1 provide what type of connectivity for Nigeria?',
+        o: [
+          '4G/5G cellular network coverage across Nigeria',
+          'Satellite internet connectivity to rural Nigeria',
+          'International internet connectivity via undersea fibre optic cables',
+          'Government intranet connections between ministries',
+        ],
+        a: 2,
+        e: "These are submarine (undersea) fibre optic cables that run along the Atlantic Ocean floor, connecting Nigeria to international internet exchange points in Europe, Americas, and other African countries. They provide Nigeria's international internet bandwidth. Without these cables, Nigeria would have very limited and expensive international internet access.",
+        h: "MainOne, WACS, SAT-3, Glo-1 = Nigeria's undersea fibre optic internet cables.",
+        yr: 'CSC',
+      },
+      {
+        q: 'A website shows its pages from a database in real-time based on user requests (e.g., your personalised Jumia product recommendations). This is a:',
+        o: [
+          'Static web page — content is fixed in HTML files on the server',
+          'Dynamic web page — content is generated on-the-fly based on user data',
+          'Web 1.0 application — simple read-only content',
+          'Template web page — uses only CSS for personalisation',
+        ],
+        a: 1,
+        e: "Dynamic web pages generate content on-the-fly in response to user requests, often pulling from databases. Jumia's product recommendations are personalised based on your browsing history — this is dynamic content generation. Static pages serve the same fixed HTML to all users; dynamic pages serve different content based on user, time, location, or other factors.",
+        h: 'Personalised/database-driven content = dynamic web page.',
+        yr: 'CSC',
+      },
+      {
+        q: "What does 'AWS' stand for, and what type of service is it?",
+        o: [
+          'African Web Systems — a Nigerian hosting company',
+          'Amazon Web Services — a major cloud computing platform',
+          'Automated Web Software — desktop application software',
+          'Advanced Wireless System — a 5G network technology',
+        ],
+        a: 1,
+        e: "AWS (Amazon Web Services) is Amazon's cloud computing platform — the world's largest cloud provider. It offers IaaS, PaaS, and SaaS services including EC2 (virtual machines), S3 (storage), RDS (databases), Lambda (serverless), and hundreds more. Many Nigerian startups, including Flutterwave and Paystack, host their infrastructure on AWS.",
+        h: 'AWS = Amazon Web Services = largest cloud computing platform.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In web development, which language is responsible for making web pages INTERACTIVE — responding to button clicks, validating forms, and updating content without reloading the page?',
+        o: [
+          'HTML — defines interactive elements using tags',
+          'CSS — provides hover effects and transitions',
+          'JavaScript — the programming language that runs in browsers for interactivity',
+          'PHP — handles user interactions on the server',
+        ],
+        a: 2,
+        e: 'JavaScript is the ONLY programming language that runs natively in web browsers. It enables interactivity: responding to user events (clicks, keyboard input), validating form data before submission, dynamically updating page content using DOM manipulation (without full page reload), making AJAX calls to servers, and running animations.',
+        h: 'JavaScript = interactivity in browsers. HTML = structure. CSS = style.',
+        yr: 'CSC',
+      },
+      {
+        q: 'CcHub (Co-creation Hub) and Wennovation Hub are Nigerian:',
+        o: [
+          'Government cybersecurity agencies',
+          'Technology incubators and innovation hubs supporting Nigerian startups',
+          'Undersea cable operators providing internet to Nigeria',
+          'E-commerce platforms competing with Jumia and Konga',
+        ],
+        a: 1,
+        e: 'CcHub (Co-creation Hub) in Lagos and Wennovation Hub are technology innovation hubs and startup incubators. They provide workspace, mentorship, funding connections, and community for early-stage Nigerian tech startups. CcHub has supported companies like Gidi Mobile and is co-owned by Omidyar Network.',
+        h: 'CcHub, Wennovation = Nigerian tech innovation hubs for startups.',
+        yr: 'CSC',
+      },
+      {
+        q: 'An AWS IaaS customer rents virtual machines (EC2 instances) to run their Nigerian e-commerce platform. Under IaaS, what does the CUSTOMER manage?',
+        o: [
+          'Only their data — the cloud provider manages everything else including OS and applications',
+          'The operating system, applications, and data — while the cloud provider manages physical hardware and virtualisation',
+          'Nothing — IaaS is fully managed with no customer responsibility',
+          'Only the physical servers — the customer buys virtual machines outright',
+        ],
+        a: 1,
+        e: 'Under IaaS, the cloud provider manages: physical hardware, virtualisation layer, networking, and storage infrastructure. The CUSTOMER manages: the operating system (installation, patching), middleware, runtime environments, applications, and data. The customer has maximum flexibility but also maximum responsibility for software management.',
+        h: 'IaaS: Provider = hardware+virtualisation. Customer = OS, apps, data.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 8: Database Management Systems
-  // ==========================================================================
   {
-    topic: "Database Management Systems",
-    topicCode: "CSC-008-01",
-    module: "Databases",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">A database</span> is an organized collection of structured data. A Database Management System (DBMS) is software that creates, manages, and interacts with databases. <strong>Databases power everything from banking systems to social media to airline reservations</strong>.
-</div>
-
-<p class="learn-p">Without databases, applications would struggle to store, retrieve, and manage large amounts of data efficiently. Databases ensure data integrity, security, and concurrent access.</p>
-
-<h3 class="learn-subheading">Database Terminology</h3>
-
-<ul class="learn-list">
-  <li><strong>Data:</strong> Raw facts and figures</li>
-  <li><strong>Field:</strong> Single piece of data (column) — e.g., Name, Age, StudentID</li>
-  <li><strong>Record:</strong> Complete set of fields about one entity (row) — e.g., one student's information</li>
-  <li><strong>Table:</strong> Collection of related records</li>
-  <li><strong>Database:</strong> Collection of related tables</li>
-  <li><strong>DBMS:</strong> Software managing the database (MySQL, PostgreSQL, Oracle)</li>
-  <li><strong>Primary Key:</strong> Unique identifier for each record (StudentID, NationalID)</li>
-  <li><strong>Foreign Key:</strong> Field linking to primary key in another table (establishes relationships)</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="180" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🗄️ DATABASE RELATIONSHIPS</text>
-    
-    <g>
-      <rect x="15" y="45" width="220" height="120" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="125" y="65" text-anchor="middle" font-size="9" fill="#1e3a8a" font-weight="800">STUDENTS Table</text>
-      <text x="125" y="85" text-anchor="middle" font-size="7" fill="#1e3a8a">StudentID (Primary Key)</text>
-      <text x="125" y="100" text-anchor="middle" font-size="7" fill="#1e3a8a">Name</text>
-      <text x="125" y="115" text-anchor="middle" font-size="7" fill="#1e3a8a">Email</text>
-      <text x="125" y="130" text-anchor="middle" font-size="7" fill="#1e3a8a">DepartmentID (Foreign Key)</text>
-    </g>
-    
-    <g>
-      <rect x="265" y="45" width="220" height="120" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="375" y="65" text-anchor="middle" font-size="9" fill="#166534" font-weight="800">DEPARTMENTS Table</text>
-      <text x="375" y="85" text-anchor="middle" font-size="7" fill="#166534">DepartmentID (Primary Key)</text>
-      <text x="375" y="100" text-anchor="middle" font-size="7" fill="#166534">DepartmentName</text>
-      <text x="375" y="115" text-anchor="middle" font-size="7" fill="#166534">Faculty</text>
-      <text x="375" y="130" text-anchor="middle" font-size="7" fill="#166534">HeadOfDepartment</text>
-    </g>
-    
-    <line x1="235" y1="105" x2="265" y2="105" stroke="#f59e0b" stroke-width="2"/>
-    <text x="250" y="100" text-anchor="middle" font-size="8" fill="#f59e0b">↔</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Relational Database Model</h3>
-
-<p class="learn-p">The relational model organizes data into tables (relations) with rows (tuples) and columns (attributes).</p>
-
-<p class="learn-p"><strong>Relationships:</strong></p>
-<ul class="learn-list">
-  <li><strong>One-to-one (1:1):</strong> One record in Table A matches one record in Table B (person → passport)</li>
-  <li><strong>One-to-many (1:M):</strong> One record in Table A matches many records in Table B (department → students)</li>
-  <li><strong>Many-to-many (M:N):</strong> Many records in Table A match many in Table B (students → courses) — requires junction table</li>
-</ul>
-
-<h3 class="learn-subheading">Normalization</h3>
-
-<p class="learn-p">Normalization organizes data to reduce redundancy and avoid anomalies. Normal forms: 1NF (no repeating groups), 2NF (no partial dependency), 3NF (no transitive dependency).</p>
-
-<h3 class="learn-subheading">SQL (Structured Query Language)</h3>
-
-<p class="learn-p">SQL is the standard language for relational databases.</p>
-
-<p class="learn-p"><strong>DDL (Data Definition Language):</strong> CREATE, ALTER, DROP — defines database structure.</p>
-<p class="learn-p"><strong>DML (Data Manipulation Language):</strong> SELECT, INSERT, UPDATE, DELETE — manipulates data.</p>
-
-<p class="learn-p"><strong>Basic SQL examples:</strong></p>
-<ul class="learn-list">
-  <li>CREATE TABLE Students (StudentID INT PRIMARY KEY, Name VARCHAR(50), Age INT);</li>
-  <li>INSERT INTO Students VALUES (101, 'Adekunle', 20);</li>
-  <li>SELECT * FROM Students WHERE Age > 18;</li>
-  <li>UPDATE Students SET Age = 21 WHERE StudentID = 101;</li>
-  <li>DELETE FROM Students WHERE StudentID = 101;</li>
-</ul>
-
-<p class="learn-p"><strong>SQL clauses and joins:</strong> ORDER BY (sort), GROUP BY (group rows), WHERE (filter), JOIN (combine tables — INNER JOIN, LEFT JOIN, RIGHT JOIN).</p>
-
-<p class="learn-p"><strong>Aggregate functions:</strong> COUNT(), SUM(), AVG(), MAX(), MIN().</p>
-
-<h3 class="learn-subheading">NoSQL Databases</h3>
-
-<p class="learn-p">NoSQL databases handle unstructured or semi-structured data, high scalability. Types: Document stores (MongoDB), Key-value stores (Redis), Column-family (Cassandra), Graph (Neo4j).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>SQL Example:</strong> "SELECT Name, Age FROM Students WHERE Age > 18 ORDER BY Name" — selects names and ages of students over 18, sorted by name.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> Primary Key uniquely identifies each record (cannot be NULL). Foreign Key links to Primary Key in another table (establishes relationships).</span>
-</div>
-    `,
+    topic: 'Database Management Systems',
+    topicCode: 'CSC-101-08',
+    module: 'Data Management',
+    contentHTML:
+      '\n<div class="learn-intro">\n  A <span class="learn-keyword">database</span> is an organised collection of related data stored and accessed electronically. A <span class="learn-keyword">Database Management System (DBMS)</span> is the software that manages databases — controlling how data is stored, retrieved, modified, and secured. From the CBN\'s banking database holding every Nigerian\'s BVN record to JAMB\'s candidate database to your university\'s student records system, databases are the backbone of institutional data management in Nigeria and worldwide.\n</div>\n\n<h3 class="learn-subheading">1. Why Databases? File-Based vs Database Systems</h3>\n<p class="learn-p">Before DBMS, organisations stored data in flat files (separate spreadsheets or documents per department). Problems: <strong>Data redundancy</strong> (same data stored in multiple places), <strong>Inconsistency</strong> (updates in one file not reflected in others), <strong>Data isolation</strong> (hard to relate data across files), <strong>Security issues</strong> (no centralised access control), <strong>Concurrency problems</strong> (multiple users editing same file). DBMS solves all these problems.</p>\n\n<h3 class="learn-subheading">2. Database Terminology</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Term</th><th>Definition</th><th>Example (Student Database)</th></tr></thead>\n    <tbody>\n      <tr><td>Data</td><td>Raw facts and figures</td><td>"220401", "Adaeze", "Obi"</td></tr>\n      <tr><td>Field (Attribute/Column)</td><td>A single data item/characteristic</td><td>StudentID, FirstName, LastName, Department</td></tr>\n      <tr><td>Record (Tuple/Row)</td><td>A complete set of related fields for one entity</td><td>One student\'s complete information</td></tr>\n      <tr><td>Table (Relation/File)</td><td>A collection of related records in rows and columns</td><td>The Students table with all student records</td></tr>\n      <tr><td>Database</td><td>Collection of related tables</td><td>University Database containing Students, Courses, Grades tables</td></tr>\n      <tr><td>DBMS</td><td>Software managing the database</td><td>MySQL, Oracle, PostgreSQL, Microsoft SQL Server</td></tr>\n      <tr><td>Schema</td><td>The structure/blueprint of the database (table names, fields, data types)</td><td>The design of all tables and their relationships</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. The Relational Database Model</h3>\n<p class="learn-p">The <span class="learn-keyword">relational database model</span> (proposed by E.F. Codd in 1970) organises data into tables (relations) with rows and columns. Tables are linked through <span class="learn-keyword">keys</span>.</p>\n\n<h4 class="learn-subsubheading">Types of Keys</h4>\n<ul class="learn-list">\n  <li><strong>Primary Key (PK):</strong> Uniquely identifies each record in a table. Cannot be NULL. Cannot have duplicate values. Example: StudentID in the Students table.</li>\n  <li><strong>Foreign Key (FK):</strong> A field in one table that references the Primary Key of another table. Creates relationships between tables. Example: DepartmentID in the Students table references DepartmentID in the Departments table.</li>\n  <li><strong>Candidate Key:</strong> Any field (or combination) that could serve as a primary key — unique and non-null. The chosen one becomes the primary key; others are alternate keys.</li>\n  <li><strong>Composite Key:</strong> A primary key made of TWO or more fields combined. Example: In a CourseEnrollment table, (StudentID + CourseID) together uniquely identify each enrollment record.</li>\n  <li><strong>Superkey:</strong> Any set of attributes that uniquely identifies a record (may include extra attributes beyond the minimum needed).</li>\n</ul>\n\n<h4 class="learn-subsubheading">Relationships Between Tables</h4>\n<ul class="learn-list">\n  <li><strong>One-to-One (1:1):</strong> Each record in Table A relates to exactly one record in Table B. Example: One student has one student ID card.</li>\n  <li><strong>One-to-Many (1:N):</strong> One record in Table A relates to multiple records in Table B. Example: One department has many students; one lecturer teaches many courses.</li>\n  <li><strong>Many-to-Many (M:N):</strong> Multiple records in Table A relate to multiple records in Table B. Example: Students enrol in many courses; each course has many students. Resolved using a junction/bridge table (e.g., Enrollment table).</li>\n</ul>\n\n<h3 class="learn-subheading">4. SQL — Structured Query Language</h3>\n<p class="learn-p"><span class="learn-keyword">SQL</span> is the standard language for interacting with relational databases. SQL is divided into four categories:</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Category</th><th>Full Name</th><th>Commands</th><th>Purpose</th></tr></thead>\n    <tbody>\n      <tr><td>DDL</td><td>Data Definition Language</td><td>CREATE, ALTER, DROP, TRUNCATE, RENAME</td><td>Define/modify database structure (schema)</td></tr>\n      <tr><td>DML</td><td>Data Manipulation Language</td><td>SELECT, INSERT, UPDATE, DELETE</td><td>Manipulate data within tables</td></tr>\n      <tr><td>DCL</td><td>Data Control Language</td><td>GRANT, REVOKE</td><td>Control access permissions</td></tr>\n      <tr><td>TCL</td><td>Transaction Control Language</td><td>COMMIT, ROLLBACK, SAVEPOINT</td><td>Manage database transactions</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h4 class="learn-subsubheading">Key SQL Examples</h4>\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="18" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="bold">SQL Commands — Quick Reference</text>\n    <rect x="10" y="28" width="225" height="160" rx="6" fill="#1a0030" stroke="#4B0082" stroke-width="1.5"/>\n    <rect x="245" y="28" width="225" height="160" rx="6" fill="#1a0030" stroke="#4B0082" stroke-width="1.5"/>\n    <text x="122" y="45" text-anchor="middle" fill="#28c840" font-size="9" font-weight="bold">DDL — Define Structure</text>\n    <text x="20" y="62" fill="#c8c8c8" font-size="8">CREATE TABLE Students (</text>\n    <text x="20" y="74" fill="#c8c8c8" font-size="8">  StudentID INT PRIMARY KEY,</text>\n    <text x="20" y="86" fill="#c8c8c8" font-size="8">  FirstName VARCHAR(50),</text>\n    <text x="20" y="98" fill="#c8c8c8" font-size="8">  Department VARCHAR(30)</text>\n    <text x="20" y="110" fill="#c8c8c8" font-size="8">);</text>\n    <text x="122" y="128" text-anchor="middle" fill="#ff9500" font-size="9" font-weight="bold">ALTER/DROP</text>\n    <text x="20" y="142" fill="#c8c8c8" font-size="8">ALTER TABLE Students</text>\n    <text x="20" y="154" fill="#c8c8c8" font-size="8">  ADD Email VARCHAR(100);</text>\n    <text x="20" y="166" fill="#c8c8c8" font-size="8">DROP TABLE OldTable;</text>\n    <text x="357" y="45" text-anchor="middle" fill="#28c840" font-size="9" font-weight="bold">DML — Manipulate Data</text>\n    <text x="255" y="62" fill="#c8c8c8" font-size="8">INSERT INTO Students</text>\n    <text x="255" y="74" fill="#c8c8c8" font-size="8">VALUES (220401,\'Ada\',\'CS\');</text>\n    <text x="255" y="90" fill="#c8c8c8" font-size="8">SELECT * FROM Students</text>\n    <text x="255" y="102" fill="#c8c8c8" font-size="8">WHERE Department=\'CS\'</text>\n    <text x="255" y="114" fill="#c8c8c8" font-size="8">ORDER BY FirstName;</text>\n    <text x="255" y="130" fill="#c8c8c8" font-size="8">UPDATE Students SET</text>\n    <text x="255" y="142" fill="#c8c8c8" font-size="8">  GPA=4.5 WHERE ID=220401;</text>\n    <text x="255" y="158" fill="#c8c8c8" font-size="8">DELETE FROM Students</text>\n    <text x="255" y="170" fill="#c8c8c8" font-size="8">  WHERE ID=220401;</text>\n    <rect x="10" y="28" width="225" height="160" rx="6" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.5s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">5. Normalisation</h3>\n<p class="learn-p"><span class="learn-keyword">Normalisation</span> is the process of organising a database to reduce redundancy (duplicate data) and avoid anomalies (insert, update, delete problems). It involves applying a series of rules called <span class="learn-keyword">Normal Forms</span>.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Normal Form</th><th>Requirement</th><th>Solves</th></tr></thead>\n    <tbody>\n      <tr><td>1NF (First)</td><td>All attributes are atomic (no repeating groups, no multi-valued attributes); each row is unique</td><td>Eliminates repeating groups</td></tr>\n      <tr><td>2NF (Second)</td><td>In 1NF + every non-key attribute is FULLY dependent on the ENTIRE primary key (no partial dependency)</td><td>Eliminates partial dependencies (applies to composite keys)</td></tr>\n      <tr><td>3NF (Third)</td><td>In 2NF + no transitive dependencies (non-key attributes depend only on the primary key, not on other non-key attributes)</td><td>Eliminates transitive dependencies</td></tr>\n      <tr><td>BCNF</td><td>Stronger version of 3NF — every determinant must be a candidate key</td><td>Eliminates remaining anomalies from 3NF</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">6. NoSQL Databases</h3>\n<p class="learn-p"><span class="learn-keyword">NoSQL</span> (Not only SQL) databases emerged to handle data that doesn\'t fit well in rigid relational tables. Types: <strong>Document stores</strong> (MongoDB — stores JSON-like documents; flexible schema; used by Nigerian startups for flexible product catalogs), <strong>Key-value stores</strong> (Redis — extremely fast; used for caching session data), <strong>Column-family stores</strong> (Apache Cassandra — massive scale, used by Facebook for messages), <strong>Graph databases</strong> (Neo4j — relationships are first-class; used for social networks, fraud detection in Nigerian banking).</p>\n\n<h3 class="learn-subheading">7. Popular DBMS Software</h3>\n<ul class="learn-list">\n  <li><strong>MySQL:</strong> Open source, most popular web database; used with PHP for LAMP stack; powers many Nigerian news websites and e-commerce platforms.</li>\n  <li><strong>PostgreSQL:</strong> Advanced open source RDBMS; excellent for complex queries; popular with Nigerian fintech companies for transaction data.</li>\n  <li><strong>Oracle Database:</strong> Enterprise-grade; used by large Nigerian banks (GTBank, Zenith, Access) for core banking systems.</li>\n  <li><strong>Microsoft SQL Server:</strong> Integrates with Microsoft products; used by Nigerian corporations running Windows Server infrastructure.</li>\n  <li><strong>MongoDB:</strong> Leading NoSQL document database; used by Nigerian tech startups for flexible data models.</li>\n  <li><strong>SQLite:</strong> Embedded, file-based database; used in mobile apps (WhatsApp uses SQLite to store messages locally on your phone).</li>\n</ul>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — DDL vs DML vs DCL vs TCL:</strong> <strong>DDL</strong> = structure (CREATE, ALTER, DROP — the blueprint). <strong>DML</strong> = data (SELECT, INSERT, UPDATE, DELETE — the content). <strong>DCL</strong> = permissions (GRANT, REVOKE — who can do what). <strong>TCL</strong> = transactions (COMMIT, ROLLBACK — confirming or cancelling groups of changes). DDL commands automatically commit; you cannot ROLLBACK a DROP TABLE in most DBMS.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Primary Key vs Foreign Key:</strong> <strong>Primary Key</strong> = UNIQUELY identifies rows in ITS OWN table; cannot be NULL; no duplicates. <strong>Foreign Key</strong> = references the primary key of ANOTHER table; creates relationships; CAN be NULL (if the relationship is optional). Example: Students.DeptID is a FOREIGN KEY referencing Departments.DeptID (which is the PRIMARY KEY in Departments table).\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> A database is an organised data collection; DBMS manages it. Relational databases use tables with rows and columns linked by keys. Primary Key = unique row identifier; Foreign Key = links tables. SQL categories: DDL (structure), DML (data), DCL (permissions), TCL (transactions). SELECT retrieves data; INSERT adds; UPDATE modifies; DELETE removes; CREATE/ALTER/DROP manages structure. Normalisation reduces redundancy: 1NF (atomic), 2NF (no partial dependency), 3NF (no transitive dependency). NoSQL handles flexible/non-relational data (MongoDB, Redis, Cassandra).\n</div>\n  ',
     questions: [
-      { q: "A primary key is:", o: ["Any column in a table", "Unique identifier for each record (no duplicates, not NULL)", "Foreign key reference", "Index only"], a: 1, e: "Primary key uniquely identifies each row — cannot be NULL or duplicate.", h: "What is primary key?", yr: "GST" },
-      { q: "SQL stands for:", o: ["Structured Query Language", "Simple Query Language", "Standard Query Language", "Sequential Query Language"], a: 0, e: "SQL is the standard language for managing relational databases.", h: "What does SQL stand for?", yr: "GST" },
-      { q: "Which SQL statement retrieves data from a database?", o: ["INSERT", "UPDATE", "SELECT", "DELETE"], a: 2, e: "SELECT retrieves data from tables. INSERT adds, UPDATE modifies, DELETE removes.", h: "What retrieves data?", yr: "GST" },
-      { q: "A foreign key is:", o: ["Primary key of same table", "Column that references primary key in another table", "Unique index", "Auto-increment field"], a: 1, e: "Foreign key links tables — value must match primary key value in referenced table.", h: "What is foreign key?", yr: "GST" },
-      { q: "Which relationship means one department has many students?", o: ["One-to-one", "One-to-many", "Many-to-many", "No relationship"], a: 1, e: "One-to-many: one department (one) → many students (many).", h: "What relationship is department to students?", yr: "GST" },
-      { q: "Normalization reduces:", o: ["Data redundancy and anomalies", "Data security", "Data access speed", "Database size"], a: 0, e: "Normalization organizes data to reduce redundancy (duplication) and avoid update/insert/delete anomalies.", h: "What does normalization reduce?", yr: "GST" },
-      { q: "Which SQL clause filters rows based on condition?", o: ["ORDER BY", "GROUP BY", "WHERE", "JOIN"], a: 2, e: "WHERE filters rows — e.g., SELECT * FROM Students WHERE Age > 18.", h: "What clause filters rows?", yr: "GST" },
-      { q: "MongoDB is an example of which type of database?", o: ["Relational (SQL)", "Document store (NoSQL)", "Key-value store", "Graph database"], a: 1, e: "MongoDB is a document store NoSQL database — stores JSON-like documents.", h: "What type is MongoDB?", yr: "GST" },
-      { q: "Which SQL keyword sorts results?", o: ["WHERE", "GROUP BY", "ORDER BY", "HAVING"], a: 2, e: "ORDER BY sorts results — ASC (ascending, default) or DESC (descending).", h: "What sorts results?", yr: "GST" },
-      { q: "A table is also called a:", o: ["Field", "Record", "Relation", "Query"], a: 2, e: "In relational model, table = relation. Row = tuple, column = attribute.", h: "What is another name for table?", yr: "GST" },
-      { q: "Which SQL statement adds new records to a table?", o: ["SELECT", "UPDATE", "INSERT", "CREATE"], a: 2, e: "INSERT INTO adds new rows (records) to a table.", h: "What adds new records?", yr: "GST" },
-      { q: "COUNT() is an example of:", o: ["SQL clause", "Aggregate function", "Data type", "Constraint"], a: 1, e: "Aggregate functions perform calculations on sets of rows: COUNT, SUM, AVG, MAX, MIN.", h: "What type of function is COUNT?", yr: "GST" },
-      { q: "INNER JOIN returns:", o: ["All rows from left table", "All rows from right table", "Rows with matching values in both tables", "All rows from both tables"], a: 2, e: "INNER JOIN returns only rows where there is a match in both joined tables.", h: "What does INNER JOIN return?", yr: "GST" },
-      { q: "Redis is an example of which NoSQL type?", o: ["Document store", "Key-value store", "Column-family", "Graph"], a: 1, e: "Redis is key-value store — stores data as key-value pairs, very fast.", h: "What type is Redis?", yr: "GST" },
-      { q: "Which SQL statement removes a table from database?", o: ["DELETE", "DROP", "REMOVE", "TRUNCATE"], a: 1, e: "DROP TABLE removes table structure and data. DELETE removes rows (keeps table).", h: "What removes entire table?", yr: "GST" },
-      { q: "Many-to-many relationship requires:", o: ["Single table", "Two tables", "Three tables (junction/associative table)", "No tables"], a: 2, e: "Many-to-many uses a junction table containing foreign keys from both related tables.", h: "What does many-to-many need?", yr: "GST" },
-      { q: "DBMS stands for:", o: ["Database Management System", "Data Backup Management System", "Database Memory System", "Digital Base Management System"], a: 0, e: "DBMS is software for creating, managing, and interacting with databases.", h: "What does DBMS stand for?", yr: "GST" },
-      { q: "Which SQL function returns the average of a numeric column?", o: ["SUM()", "COUNT()", "AVG()", "MAX()"], a: 2, e: "AVG() returns average (mean) of values in a column.", h: "What returns average?", yr: "GST" },
-      { q: "A record in a table is also called a:", o: ["Field", "Column", "Row (tuple)", "Key"], a: 2, e: "Record = row = tuple — complete set of fields about one entity.", h: "What is a record also called?", yr: "GST" },
-      { q: "Cassandra is an example of which NoSQL type?", o: ["Document store", "Key-value store", "Column-family store", "Graph database"], a: 2, e: "Cassandra is column-family NoSQL database — designed for high scalability, used by large companies.", h: "What type is Cassandra?", yr: "GST" }
-    ]
+      {
+        q: 'In a university database, which field would be MOST appropriate as the Primary Key for the Students table?',
+        o: [
+          "Student's first name",
+          "Student's phone number",
+          'Matriculation number (unique ID assigned to each student)',
+          "Student's date of birth",
+        ],
+        a: 2,
+        e: 'A primary key must be unique and cannot be null. Matriculation numbers are uniquely assigned to each student by the institution and never repeated. First names and dates of birth are not unique (many students share names/birthdays); phone numbers can change and may not be available for all students.',
+        h: 'Primary Key must be UNIQUE and NOT NULL — matric number qualifies.',
+        yr: 'CSC',
+      },
+      {
+        q: "The SQL command 'DROP TABLE Courses;' belongs to which SQL category?",
+        o: [
+          'DML — Data Manipulation Language',
+          'DCL — Data Control Language',
+          'TCL — Transaction Control Language',
+          'DDL — Data Definition Language',
+        ],
+        a: 3,
+        e: 'DROP is a DDL (Data Definition Language) command that permanently removes a table and all its data from the database. DDL commands (CREATE, ALTER, DROP, TRUNCATE) define or modify the database structure (schema). DML manipulates data (SELECT, INSERT, UPDATE, DELETE).',
+        h: 'DROP removes a table = changes structure = DDL.',
+        yr: 'CSC',
+      },
+      {
+        q: "A bank's database has a Transactions table with a CustomerID field that references the CustomerID in the Customers table. The CustomerID in Transactions is a:",
+        o: [
+          'Primary key of the Transactions table',
+          'Foreign key that creates a relationship between Transactions and Customers',
+          'Composite key combining Customer and Transaction data',
+          'Candidate key for the Customers table',
+        ],
+        a: 1,
+        e: 'A Foreign Key (FK) is a field in one table that references the Primary Key of another table, establishing a relationship between them. Transactions.CustomerID references Customers.CustomerID (the primary key in Customers). This enforces referential integrity — you cannot have a transaction for a non-existent customer.',
+        h: "References another table's primary key = Foreign Key.",
+        yr: 'CSC',
+      },
+      {
+        q: 'Which SQL command is used to retrieve data from a database table?',
+        o: ['INSERT', 'UPDATE', 'SELECT', 'CREATE'],
+        a: 2,
+        e: 'SELECT is the DML command for retrieving data from tables. Syntax: SELECT column1, column2 FROM tableName WHERE condition. Use SELECT * to retrieve all columns. It is the most frequently used SQL command and supports WHERE (filtering), ORDER BY (sorting), GROUP BY (grouping), and JOIN (combining tables).',
+        h: 'Retrieve/query data from database = SELECT.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The statement \'INSERT INTO Students VALUES (220401, "Emeka", "Computer Science");\' is classified as which SQL category?',
+        o: [
+          'DDL — because it inserts a new definition',
+          'DML — because it manipulates data by adding a new record',
+          'DCL — because it grants data access',
+          'TCL — because it needs to be committed',
+        ],
+        a: 1,
+        e: 'INSERT is a DML (Data Manipulation Language) command. DML commands manipulate the data WITHIN existing tables: INSERT (add records), UPDATE (modify records), DELETE (remove records), SELECT (retrieve records). DDL commands modify the table structure itself.',
+        h: 'INSERT adds data to an existing table = DML.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian hospital stores patient records where one patient can have MANY appointments, but each appointment belongs to exactly ONE patient. This is which type of relationship?',
+        o: [
+          'One-to-One (1:1)',
+          'One-to-Many (1:N)',
+          'Many-to-Many (M:N)',
+          'Many-to-One (N:1) — same as One-to-Many viewed differently',
+        ],
+        a: 1,
+        e: "One-to-Many (1:N) is when one record in Table A (Patient) relates to multiple records in Table B (Appointments), but each record in B relates to only one record in A. This is the most common database relationship. Implemented by adding Patient's primary key (PatientID) as a foreign key in the Appointments table.",
+        h: 'One patient → many appointments = One-to-Many.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Normalisation of a database is primarily done to:',
+        o: [
+          'Speed up all database queries by adding indexes',
+          'Reduce data redundancy and prevent data anomalies',
+          'Convert the database from relational to NoSQL format',
+          'Increase the number of tables for better organisation',
+        ],
+        a: 1,
+        e: "Normalisation organises database tables to minimise data redundancy (same data stored in multiple places) and prevent anomalies — insert anomalies (can't insert without unrelated data), update anomalies (changing data in one place without updating all copies), and delete anomalies (deleting data unintentionally removes other needed data).",
+        h: 'Normalisation = reduce redundancy + prevent anomalies.',
+        yr: 'CSC',
+      },
+      {
+        q: 'COMMIT and ROLLBACK in SQL belong to which category?',
+        o: [
+          'DDL — Data Definition Language',
+          'DML — Data Manipulation Language',
+          'DCL — Data Control Language',
+          'TCL — Transaction Control Language',
+        ],
+        a: 3,
+        e: 'TCL (Transaction Control Language) manages database transactions. COMMIT permanently saves all changes made in the current transaction. ROLLBACK undoes all changes made since the last COMMIT (or SAVEPOINT), restoring the database to its previous state. Used when a series of operations must either all succeed or all fail (e.g., a bank transfer).',
+        h: 'COMMIT saves, ROLLBACK undoes = Transaction management = TCL.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A table is in First Normal Form (1NF) if:',
+        o: [
+          'It has a primary key and no foreign keys',
+          'All attributes contain atomic (single) values and there are no repeating groups',
+          'All non-key attributes depend on the primary key',
+          'It has no more than 5 columns',
+        ],
+        a: 1,
+        e: "1NF requires that: (1) All column values are atomic (indivisible — no lists or sets in a single cell); (2) There are no repeating groups (similar columns like Phone1, Phone2, Phone3); (3) Each row is unique (there's a primary key). Example violation: storing 'Math,English,Physics' in a single Courses column.",
+        h: '1NF = atomic values + no repeating groups + unique rows.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian fintech startup uses MongoDB to store flexible JSON documents for user profiles that have varying attributes. MongoDB is classified as:',
+        o: [
+          'A relational DBMS using tables and SQL',
+          'A NoSQL document store database',
+          'A hierarchical database system',
+          'A flat file database system',
+        ],
+        a: 1,
+        e: 'MongoDB is a NoSQL document-oriented database that stores data as BSON (Binary JSON) documents. Unlike relational databases with fixed table schemas, MongoDB allows flexible, varying document structures — ideal for startups that need to store different attributes for different users or products without predefined schemas.',
+        h: 'MongoDB = NoSQL = document store = flexible JSON-like documents.',
+        yr: 'CSC',
+      },
+      {
+        q: "The SQL clause 'ORDER BY GPA DESC' in a SELECT statement causes the results to:",
+        o: [
+          'Delete records in descending order of GPA',
+          'Group records by GPA values',
+          'Sort the retrieved records from highest to lowest GPA',
+          'Filter out records with GPA above the average',
+        ],
+        a: 2,
+        e: "ORDER BY sorts the result set. ASC (ascending) is the default (lowest to highest); DESC (descending) sorts from highest to lowest. 'ORDER BY GPA DESC' returns records sorted from highest GPA to lowest — useful for generating a class rank list in a university database.",
+        h: 'ORDER BY = sort results. DESC = highest to lowest.',
+        yr: 'CSC',
+      },
+      {
+        q: 'GRANT and REVOKE in SQL are used to:',
+        o: [
+          'Add and remove records from database tables',
+          'Create and delete database tables',
+          'Give and take away permissions for users to access database objects',
+          'Commit and rollback database transactions',
+        ],
+        a: 2,
+        e: 'GRANT gives a user permission to perform specific operations (SELECT, INSERT, UPDATE, DELETE, CREATE) on database objects. REVOKE removes previously granted permissions. These DCL (Data Control Language) commands are used by database administrators to control who can access and modify what data.',
+        h: 'GRANT = give permission. REVOKE = remove permission. Both = DCL.',
+        yr: 'CSC',
+      },
+      {
+        q: 'In a university enrollment system, students can enrol in many courses, and each course can have many students. What type of relationship is this, and how is it typically resolved?',
+        o: [
+          'One-to-Many — resolved by adding a foreign key to the Courses table',
+          'Many-to-Many — resolved by creating a junction/bridge table (Enrollment) with foreign keys from both tables',
+          'One-to-One — one table can contain all the data',
+          'Many-to-Many — resolved by duplicating student records for each course',
+        ],
+        a: 1,
+        e: 'Many-to-Many (M:N) relationships cannot be directly implemented in relational databases. They are resolved using a junction (bridge/associative) table that contains foreign keys from BOTH tables plus any additional attributes of the relationship (like enrollment date, grade). Example: Enrollment(StudentID FK, CourseID FK, EnrollDate, Grade).',
+        h: 'M:N = create junction table with FKs from both tables.',
+        yr: 'CSC',
+      },
+      {
+        q: 'WhatsApp stores your messages locally on your phone using which database system?',
+        o: [
+          'Oracle Database — enterprise-grade for reliability',
+          'MongoDB — NoSQL for flexible message formats',
+          'MySQL — most popular web database',
+          'SQLite — lightweight embedded database',
+        ],
+        a: 3,
+        e: "SQLite is a serverless, file-based, embedded database that requires no separate database server process. It stores the entire database in a single file on the device. WhatsApp, Android system databases, and many mobile applications use SQLite because it's lightweight, fast, and requires no configuration.",
+        h: 'Mobile apps, local storage = SQLite (embedded, serverless, file-based).',
+        yr: 'CSC',
+      },
+      {
+        q: 'The SQL command \'UPDATE Students SET Department = "Computer Science" WHERE StudentID = 220401;\' does which of the following?',
+        o: [
+          'Creates a new record for student 220401 in Computer Science',
+          'Deletes student 220401 and adds them to Computer Science',
+          "Modifies the Department field to 'Computer Science' for student 220401 only",
+          "Adds a new column 'Department' to the Students table",
+        ],
+        a: 2,
+        e: "UPDATE modifies existing records. The SET clause specifies which field to change and what value to set. The WHERE clause limits the update to specific records (without WHERE, ALL records would be updated). This command changes only student 220401's department to Computer Science.",
+        h: 'UPDATE + SET + WHERE = modify specific existing records.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What is referential integrity in a relational database?',
+        o: [
+          'Ensuring all numeric data is stored as integers',
+          'Ensuring foreign key values match valid primary key values in the referenced table',
+          'Ensuring all primary keys are single-field (not composite)',
+          'Ensuring all tables have at least 5 records',
+        ],
+        a: 1,
+        e: "Referential integrity ensures that a foreign key value in one table always corresponds to an existing primary key value in the referenced table. Example: You cannot enter a CourseID in the Enrollment table that doesn't exist in the Courses table. This prevents 'orphaned' records with no valid reference.",
+        h: 'Referential integrity = FK must match a valid PK in the referenced table.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which SQL aggregate function would calculate the AVERAGE score of all students in a class?',
+        o: ['COUNT(Score)', 'MAX(Score)', 'SUM(Score)', 'AVG(Score)'],
+        a: 3,
+        e: "AVG() is the SQL aggregate function that calculates the arithmetic mean (average) of numeric values in a column. Example: SELECT AVG(Score) FROM Grades WHERE CourseID = 'CS101'; Other aggregate functions: COUNT (count rows), SUM (total), MAX (highest value), MIN (lowest value).",
+        h: 'AVG() = arithmetic mean/average of a numeric column.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian bank needs to perform a TRANSFER: debit account A and credit account B. This must either BOTH succeed or BOTH fail — no partial operations. Which SQL feature handles this?',
+        o: [
+          'Indexes — for fast retrieval of account records',
+          'Views — for hiding sensitive balance information',
+          'Transactions (COMMIT/ROLLBACK) — ensuring both operations succeed or both are reversed',
+          'Stored procedures — for automating the transfer process',
+        ],
+        a: 2,
+        e: 'A transaction groups multiple SQL operations into an atomic unit — either ALL operations complete successfully (COMMIT) or ALL are undone (ROLLBACK). For a bank transfer: BEGIN TRANSACTION; UPDATE debit account; UPDATE credit account; COMMIT (if both succeed) or ROLLBACK (if either fails). This ensures no money is lost or duplicated.',
+        h: 'All-or-nothing operations = Database Transactions (COMMIT/ROLLBACK).',
+        yr: 'CSC',
+      },
+      {
+        q: "Second Normal Form (2NF) requires eliminating 'partial dependencies'. What is a partial dependency?",
+        o: [
+          'A dependency where a non-key attribute depends on only PART of a composite primary key',
+          'A dependency where a primary key field is NULL',
+          'A dependency between two foreign keys in different tables',
+          "A dependency where one table references another table that doesn't exist",
+        ],
+        a: 0,
+        e: "A partial dependency occurs when a non-key attribute depends on only PART of a composite primary key (not the FULL primary key). 2NF applies only when the table has a composite primary key. Example: If (StudentID, CourseID) is the composite PK, and 'StudentName' depends only on StudentID (not on CourseID), that's a partial dependency — move StudentName to a separate Students table.",
+        h: 'Partial dependency = non-key attribute depends on PART of composite PK.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which DBMS is most commonly used by large Nigerian banks for their core banking systems?',
+        o: [
+          'SQLite — lightweight and perfect for high-volume transactions',
+          'MySQL — open source and free for all uses',
+          'Oracle Database — enterprise-grade with advanced security and performance',
+          'MongoDB — NoSQL for flexible banking data',
+        ],
+        a: 2,
+        e: 'Oracle Database is the industry standard for large enterprise database systems, including banking. Nigerian banks like GTBank, Zenith, First Bank, and Access Bank use Oracle-based core banking systems. Oracle provides enterprise-grade security, reliability, high availability, and the advanced features required for millions of daily transactions.',
+        h: 'Large Nigerian banks = Oracle Database for core banking.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 9: Computer Security and Ethics
-  // ==========================================================================
   {
-    topic: "Computer Security and Ethics",
-    topicCode: "CSC-009-01",
-    module: "Security and Ethics",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Computer security</span> protects computer systems, networks, and data from unauthorized access, theft, damage, or disruption. Cybercrime is growing globally and in Nigeria. <strong>Understanding security threats and ethical computing practices is essential for protecting yourself and others</strong>.
-</div>
-
-<p class="learn-p">The CIA triad (Confidentiality, Integrity, Availability) is the foundation of computer security. Security measures protect against malware, hacking, social engineering, and other threats.</p>
-
-<h3 class="learn-subheading">The CIA Triad</h3>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Principle</th><th>Description</th><th>Example</th>
-    </thead>
-    <tbody>
-      <tr><td>Confidentiality</th>。<th>Ensuring data is accessible only to authorized users</th>。<th>Encryption, passwords, access controls</th>
-      </tr>
-      <tr><td>Integrity</th>。<th>Ensuring data is accurate and unaltered</th>。<th>Checksums, version control, audit logs</th>
-      </tr>
-      <tr><td>Availability</th>。<th>Ensuring systems and data are accessible when needed</th>。<th>Backups, redundancy, disaster recovery</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🛡️ TYPES OF MALWARE</text>
-    
-    <g>
-      <rect x="15" y="45" width="110" height="40" rx="5" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-      <text x="70" y="63" text-anchor="middle" font-size="8" fill="#991b1b" font-weight="800">VIRUS</text>
-      <text x="70" y="78" text-anchor="middle" font-size="6" fill="#991b1b">Attaches to files</text>
-    </g>
-    
-    <g>
-      <rect x="135" y="45" width="110" height="40" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="190" y="63" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">WORM</text>
-      <text x="190" y="78" text-anchor="middle" font-size="6" fill="#92400e">Self-replicates</text>
-    </g>
-    
-    <g>
-      <rect x="255" y="45" width="110" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="310" y="63" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">TROJAN</text>
-      <text x="310" y="78" text-anchor="middle" font-size="6" fill="#1e3a8a">Disguised as legit</text>
-    </g>
-    
-    <g>
-      <rect x="375" y="45" width="110" height="40" rx="5" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-      <text x="430" y="63" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">RANSOMWARE</text>
-      <text x="430" y="78" text-anchor="middle" font-size="6" fill="#831843">Encrypts data for ransom</text>
-    </g>
-    
-    <text x="250" y="120" text-anchor="middle" font-size="9" fill="#475569">Malware (malicious software) is designed to harm computers or steal data</text>
-    
-    <rect x="50" y="140" width="400" height="45" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="158" text-anchor="middle" font-size="8" fill="#475569">Keep software updated, use antivirus, avoid suspicious links/attachments</text>
-    <text x="250" y="173" text-anchor="middle" font-size="8" fill="#475569">Back up important data regularly</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Types of Malware</h3>
-
-<ul class="learn-list">
-  <li><strong>Virus:</strong> Attaches to legitimate files, spreads when executed — requires human action</li>
-  <li><strong>Worm:</strong> Self-replicates across networks without human action — can spread rapidly</li>
-  <li><strong>Trojan Horse:</strong> Disguised as legitimate software — trick users into installing</li>
-  <li><strong>Ransomware:</strong> Encrypts data and demands ransom for decryption — WannaCry, Ryuk</li>
-  <li><strong>Spyware:</strong> Secretly monitors user activity, steals data (passwords, browsing)</li>
-  <li><strong>Adware:</strong> Displays unwanted advertisements</li>
-  <li><strong>Rootkit:</strong> Hides deep in system, evades detection, gives attacker control</li>
-  <li><strong>Keylogger:</strong> Records keystrokes to steal passwords, credit card numbers</li>
-</ul>
-
-<h3 class="learn-subheading">Network Attacks</h3>
-
-<ul class="learn-list">
-  <li><strong>Phishing:</strong> Fake emails/messages pretending to be legitimate to steal credentials</li>
-  <li><strong>DoS/DDoS:</strong> Overwhelms server with traffic, making service unavailable</li>
-  <li><strong>Man-in-the-middle (MITM):</strong> Attacker intercepts communication between two parties</li>
-  <li><strong>Social engineering:</strong> Manipulating people to reveal confidential information</li>
-</ul>
-
-<h3 class="learn-subheading">Password Security</h3>
-
-<ul class="learn-list">
-  <li><strong>Strong password characteristics:</strong> Long (12+ characters), complex (uppercase, lowercase, numbers, symbols), unique (not reused across sites)</li>
-  <li><strong>Two-Factor Authentication (2FA):</strong> Requires second factor (SMS code, authenticator app, biometric) — much more secure than password alone</li>
-  <li><strong>Password managers:</strong> Generate and store strong unique passwords (Bitwarden, LastPass, 1Password)</li>
-</ul>
-
-<h3 class="learn-subheading">Encryption</h3>
-
-<p class="learn-p">Encryption converts data into unreadable format (ciphertext). Decryption converts back.</p>
-<ul class="learn-list">
-  <li><strong>Symmetric encryption:</strong> Same key encrypts and decrypts (AES, DES) — fast, but key distribution problem</li>
-  <li><strong>Asymmetric encryption:</strong> Public key encrypts, private key decrypts (RSA, ECC) — slower but no key sharing</li>
-  <li><strong>Hashing:</strong> One-way function (cannot be reversed) — used for passwords, file integrity</li>
-  <li><strong>SSL/TLS:</strong> Encrypts web traffic (HTTPS)</li>
-  <li><strong>VPN:</strong> Encrypts all traffic between device and VPN server</li>
-</ul>
-
-<h3 class="learn-subheading">Backup and Disaster Recovery</h3>
-
-<p class="learn-p">Backup types: Full (complete copy), Incremental (changes since last backup), Differential (changes since last full backup). 3-2-1 rule: 3 copies, 2 different media, 1 offsite.</p>
-
-<h3 class="learn-subheading">Cybercrime Laws in Nigeria</h3>
-
-<p class="learn-p">The Cybercrimes (Prohibition, Prevention, Etc.) Act 2015 criminalizes: hacking (unauthorized access), identity theft, cyberstalking, online fraud (419), child pornography, hate speech. Penalties include fines and imprisonment up to 15 years for serious offenses.</p>
-
-<h3 class="learn-subheading">Computer Ethics</h3>
-
-<p class="learn-p">Ethical principles for computing professionals: Avoid harming others, respect privacy, be honest and trustworthy, give credit where due (no plagiarism), use resources responsibly.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>2FA Importance:</strong> Even if your password is stolen, attackers cannot log in without the second factor (SMS code, authenticator app, fingerprint).</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Tip:</strong> The Cybercrimes Act 2015 is Nigeria's primary cybercrime law. Penalties include imprisonment for hacking, identity theft, cyberstalking, and online fraud.</span>
-</div>
-    `,
+    topic: 'Computer Security and Ethics',
+    topicCode: 'CSC-101-09',
+    module: 'Security and Ethics',
+    contentHTML:
+      '\n<div class="learn-intro">\n  <span class="learn-keyword">Computer security</span> (cybersecurity) is the protection of computer systems, networks, and data from theft, damage, and unauthorised access. As Nigeria\'s digital economy grows — with millions using mobile banking, e-commerce, and digital government services — cybersecurity has become critically important. Nigeria loses an estimated ₦127 billion annually to cybercrime. <span class="learn-keyword">Computer ethics</span> governs the moral use of technology, addressing intellectual property, privacy, and responsible computing behaviour.\n</div>\n\n<h3 class="learn-subheading">1. The CIA Triad — Core Security Goals</h3>\n<p class="learn-p">The three fundamental goals of information security form the <span class="learn-keyword">CIA Triad</span>:</p>\n<ul class="learn-list">\n  <li><strong>Confidentiality:</strong> Ensuring information is accessible only to those authorised to access it. Your banking PIN must remain confidential. Encryption protects confidentiality.</li>\n  <li><strong>Integrity:</strong> Ensuring data is accurate and hasn\'t been tampered with without authorisation. A salary database must maintain integrity — salaries should only change when properly authorised.</li>\n  <li><strong>Availability:</strong> Ensuring systems and data are accessible when needed by authorised users. A hospital management system must be available 24/7 — downtime could endanger patients.</li>\n</ul>\n\n<h3 class="learn-subheading">2. Types of Malware</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Malware Type</th><th>Definition</th><th>How It Spreads</th><th>Nigerian Impact</th></tr></thead>\n    <tbody>\n      <tr><td>Virus</td><td>Attaches to legitimate programs; replicates when host runs</td><td>Infected files, USB drives, email attachments</td><td>Common in cybercafes via USB drives; infects MS Office files shared via WhatsApp</td></tr>\n      <tr><td>Worm</td><td>Self-replicates and spreads across networks WITHOUT needing a host program</td><td>Network connections, email, shared drives</td><td>Spreads through company networks, consuming bandwidth</td></tr>\n      <tr><td>Trojan Horse</td><td>Disguises itself as legitimate software but contains malicious code</td><td>Fake apps, cracked software downloads</td><td>Fake "Flutterwave" or "GTBank" apps on unofficial sites</td></tr>\n      <tr><td>Ransomware</td><td>Encrypts victim\'s files and demands payment for decryption key</td><td>Email attachments, infected websites, RDP attacks</td><td>Attacked Nigerian hospitals and government agencies; demands in Bitcoin</td></tr>\n      <tr><td>Spyware</td><td>Secretly monitors user activity and sends data to attacker</td><td>Bundled with free software, malicious websites</td><td>Captures banking credentials of Nigerian internet banking users</td></tr>\n      <tr><td>Adware</td><td>Displays unwanted advertisements; may track browsing</td><td>Free software bundles, browser extensions</td><td>Bombards users with ads; slows down devices</td></tr>\n      <tr><td>Rootkit</td><td>Hides malware from OS and security software; gives attacker admin access</td><td>Exploit kits, infected boot media</td><td>Used by sophisticated attackers targeting Nigerian financial institutions</td></tr>\n      <tr><td>Keylogger</td><td>Records every keystroke, capturing passwords, credit card numbers</td><td>Malicious downloads, physical USB keyloggers</td><td>Captures login credentials for Nigerian banking and email accounts</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">3. Encryption</h3>\n<p class="learn-p"><span class="learn-keyword">Encryption</span> converts readable plaintext into unreadable ciphertext using mathematical algorithms and keys. Only authorised parties with the correct key can decrypt it.</p>\n<ul class="learn-list">\n  <li><strong>Symmetric Encryption:</strong> Same key used for both encryption and decryption. Fast; problem is securely sharing the key. Examples: AES (Advanced Encryption Standard — used in WPA2 WiFi), DES (older, now insecure), 3DES.</li>\n  <li><strong>Asymmetric Encryption (Public Key Cryptography):</strong> Uses a KEY PAIR — public key (shared with anyone, used to encrypt) and private key (kept secret, used to decrypt). Solves key distribution problem. Examples: RSA, ECC. Used in SSL/TLS (HTTPS), email encryption, Bitcoin wallets.</li>\n  <li><strong>Hashing:</strong> One-way transformation — converts data to a fixed-length hash value. Cannot be reversed. Used for password storage (store the hash, not the password). Examples: MD5 (insecure now), SHA-1 (deprecated), SHA-256 (secure, used in Bitcoin), bcrypt.</li>\n  <li><strong>SSL/TLS and HTTPS:</strong> Transport Layer Security encrypts web communication. All Nigerian banking websites must use HTTPS — look for the padlock icon in your browser. SSL/TLS uses asymmetric encryption for key exchange, then symmetric encryption for the actual data (hybrid approach).</li>\n</ul>\n\n<h3 class="learn-subheading">4. Password Security</h3>\n<p class="learn-p">Password security remains the first line of defence for most systems. Characteristics of a <span class="learn-keyword">strong password</span>: minimum 12-16 characters; combines uppercase, lowercase, numbers, and special characters; no personal information (birthdays, names); not a dictionary word; unique for each account.</p>\n<ul class="learn-list">\n  <li><strong>Two-Factor Authentication (2FA):</strong> Adds a second verification step beyond password. Types: something you know (password), something you have (phone OTP, hardware token), something you are (biometric). Nigerian banks mandate 2FA for internet banking (OTP sent to phone).</li>\n  <li><strong>Multi-Factor Authentication (MFA):</strong> Uses two or more authentication factors. Banks like GTBank use password + OTP (2FA); some systems add biometric (MFA).</li>\n  <li><strong>Password Managers:</strong> Software that securely stores and generates unique passwords for all accounts. Examples: LastPass, 1Password, Bitwarden.</li>\n</ul>\n\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="18" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">The CIA Triad of Information Security</text>\n    <!-- Triangle -->\n    <polygon points="240,40 100,170 380,170" fill="none" stroke="#4B0082" stroke-width="2"/>\n    <!-- Three corners -->\n    <circle cx="240" cy="40" r="30" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="100" cy="170" r="30" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <circle cx="380" cy="170" r="30" fill="#4B0082" stroke="#D4AF37" stroke-width="2"/>\n    <!-- Labels -->\n    <text x="240" y="35" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">C</text>\n    <text x="240" y="48" text-anchor="middle" fill="#fff" font-size="8">Confidentiality</text>\n    <text x="100" y="166" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">I</text>\n    <text x="100" y="178" text-anchor="middle" fill="#fff" font-size="8">Integrity</text>\n    <text x="380" y="166" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">A</text>\n    <text x="380" y="178" text-anchor="middle" fill="#fff" font-size="8">Availability</text>\n    <!-- Middle text -->\n    <text x="240" y="108" text-anchor="middle" fill="#c8b4f0" font-size="9">CIA TRIAD</text>\n    <text x="240" y="122" text-anchor="middle" fill="#9090b0" font-size="8">Information Security</text>\n    <!-- Side descriptions -->\n    <text x="155" y="108" text-anchor="middle" fill="#9090b0" font-size="7">Encryption</text>\n    <text x="155" y="118" text-anchor="middle" fill="#9090b0" font-size="7">Access Control</text>\n    <text x="325" y="108" text-anchor="middle" fill="#9090b0" font-size="7">Backups</text>\n    <text x="325" y="118" text-anchor="middle" fill="#9090b0" font-size="7">Redundancy</text>\n    <text x="240" y="145" text-anchor="middle" fill="#9090b0" font-size="7">Hashing</text>\n    <text x="240" y="155" text-anchor="middle" fill="#9090b0" font-size="7">Digital Signatures</text>\n    <!-- Animation -->\n    <polygon points="240,40 100,170 380,170" fill="none" stroke="#D4AF37" stroke-width="1">\n      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>\n    </polygon>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">5. Firewalls</h3>\n<p class="learn-p">A <span class="learn-keyword">firewall</span> is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. Types: <strong>Hardware firewall</strong> (dedicated physical device between network and internet — used by Nigerian banks and large organisations), <strong>Software firewall</strong> (runs on individual computer — Windows Defender Firewall, iptables on Linux). Techniques: <strong>Packet filtering</strong> (examines individual packets against rules), <strong>Stateful inspection</strong> (tracks connection state — more sophisticated), <strong>Next-generation firewall (NGFW)</strong> (deep packet inspection, application awareness, IPS).</p>\n\n<h3 class="learn-subheading">6. Backup and Disaster Recovery</h3>\n<p class="learn-p">The <span class="learn-keyword">3-2-1 backup rule</span>: Keep at least 3 copies of data, on 2 different media types, with 1 copy offsite. Types: <strong>Full backup</strong> (copies ALL data — complete but slow and storage-intensive), <strong>Incremental backup</strong> (backs up only data changed since the LAST backup of any type — fastest, smallest), <strong>Differential backup</strong> (backs up data changed since the LAST FULL backup — between full and incremental). Nigerian businesses must have backup strategies — power outages, flooding in Lagos, and ransomware attacks have destroyed unprotected data.</p>\n\n<h3 class="learn-subheading">7. Computer Ethics</h3>\n<p class="learn-p">Computer ethics governs moral behaviour in computing. The Ten Commandments of Computer Ethics (Computer Ethics Institute):</p>\n<ul class="learn-list">\n  <li>Thou shalt not use a computer to harm other people</li>\n  <li>Thou shalt not interfere with other people\'s computer work</li>\n  <li>Thou shalt not snoop around in other people\'s computer files</li>\n  <li>Thou shalt not use a computer to steal</li>\n  <li>Thou shalt not use a computer to bear false witness</li>\n  <li>Thou shalt not copy or use proprietary software for which you have not paid</li>\n  <li>Thou shalt not use other people\'s computer resources without authorisation</li>\n  <li>Thou shalt not appropriate other people\'s intellectual output</li>\n  <li>Thou shalt think about the social consequences of the program you are writing</li>\n  <li>Thou shalt always use a computer in ways that ensure consideration and respect for your fellow humans</li>\n</ul>\n\n<h3 class="learn-subheading">8. Nigerian Cybercrime Law</h3>\n<p class="learn-p">The <span class="learn-keyword">Cybercrimes (Prohibition, Prevention, etc.) Act 2015</span> is Nigeria\'s primary cybercrime legislation. Key provisions: Hacking (Section 6 — up to 7 years imprisonment), Identity theft (Section 22 — up to 7 years), Cyberstalking (Section 24 — up to 3 years), Child pornography (Section 23 — up to 10 years), Online fraud (Section 14 — up to 7 years), Phishing (Section 32). The Nigeria Data Protection Regulation (NDPR) 2019 (now Nigeria Data Protection Act 2023) governs how organisations handle personal data of Nigerians, similar to Europe\'s GDPR.</p>\n\n<h3 class="learn-subheading">9. Digital Divide</h3>\n<p class="learn-p">The <span class="learn-keyword">digital divide</span> is the gap between those with access to information and communication technologies and those without. In Nigeria, this manifests as: Rural-urban divide (Northern Nigeria has lower internet penetration), Economic divide (high cost of smartphones and data), Infrastructure divide (unreliable electricity, poor network coverage in some states), Literacy divide (inability to use computers effectively). Government initiatives: Universal Service Provision Fund (USPF), National Broadband Plan 2020-2025, Digital Nigeria programme.</p>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — Virus vs Worm vs Trojan:</strong> <strong>Virus</strong> = needs a host program to attach to and spread; spreads when infected file is shared/run. <strong>Worm</strong> = self-contained; spreads automatically across networks without needing a host program; can spread without user interaction. <strong>Trojan</strong> = disguised as legitimate software; does NOT self-replicate; requires user to install/run it. All three are malware but differ in how they spread.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Symmetric vs Asymmetric Encryption:</strong> <strong>Symmetric</strong> = SAME key for encrypt AND decrypt (faster, problem: how to securely share the key?). <strong>Asymmetric</strong> = PUBLIC key to encrypt + PRIVATE key to decrypt (slower, solves key sharing). HTTPS uses both: asymmetric to securely exchange a symmetric session key, then symmetric for actual data (best of both worlds).\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> CIA Triad: Confidentiality (encryption, access control), Integrity (hashing, digital signatures), Availability (backups, redundancy). Malware types: virus (needs host), worm (self-spreads via network), trojan (disguised), ransomware (encrypts for ransom), spyware (monitors secretly), keylogger (captures keystrokes). Symmetric encryption uses one key; asymmetric uses key pairs (public/private). Strong passwords + 2FA = essential security. Nigeria\'s Cybercrimes Act 2015 criminalises hacking, identity theft, online fraud. 3-2-1 backup rule: 3 copies, 2 media types, 1 offsite.\n</div>\n  ',
     questions: [
-      { q: "The CIA triad in computer security stands for:", o: ["Confidentiality, Integrity, Availability", "Central Intelligence Agency", "Confidentiality, Internet, Access", "Code, Integrity, Authentication"], a: 0, e: "CIA triad: Confidentiality (authorized access only), Integrity (data accuracy), Availability (accessible when needed).", h: "What does CIA stand for in security?", yr: "GST" },
-      { q: "Which type of malware self-replicates across networks without human action?", o: ["Virus", "Worm", "Trojan", "Ransomware"], a: 1, e: "Worms self-replicate across networks automatically — no need to open files or click links.", h: "What spreads automatically?", yr: "GST" },
-      { q: "Phishing is a type of:", o: ["Malware", "Social engineering attack (fake emails/messages tricking users)", "Virus", "Ransomware"], a: 1, e: "Phishing uses fake emails, texts, or websites pretending to be legitimate to steal credentials.", h: "What is phishing?", yr: "GST" },
-      { q: "Two-Factor Authentication (2FA) adds:", o: ["A second password", "A second factor (SMS code, app, biometric) beyond password", "More complex password", "No security benefit"], a: 1, e: "2FA requires something you know (password) plus something you have (phone) or are (fingerprint).", h: "What does 2FA add?", yr: "GST" },
-      { q: "Ransomware is malware that:", o: ["Steals passwords", "Encrypts data and demands ransom for decryption", "Displays ads", "Self-replicates"], a: 1, e: "Ransomware encrypts files, making them inaccessible until ransom (usually cryptocurrency) is paid.", h: "What does ransomware do?", yr: "GST" },
-      { q: "The Cybercrimes Act 2015 is Nigeria's law against:", o: ["Traffic violations", "Online crimes (hacking, identity theft, cyberstalking, fraud)", "Tax evasion", "Environmental pollution"], a: 1, e: "Cybercrimes Act 2015 criminalizes hacking, identity theft, cyberstalking, online fraud, child pornography, hate speech.", h: "What does Cybercrimes Act cover?", yr: "GST" },
-      { q: "A Trojan horse is malware that:", o: ["Self-replicates", "Attaches to files", "Disguises itself as legitimate software", "Encrypts data"], a: 2, e: "Trojan tricks users into installing by appearing legitimate — but has malicious payload.", h: "What disguises as legitimate?", yr: "GST" },
-      { q: "Symmetric encryption uses:", o: ["One key (same for encrypt and decrypt)", "Two keys (public and private)", "No key", "Three keys"], a: 0, e: "Symmetric encryption uses same key for encryption and decryption — fast but key distribution problem.", h: "How many keys in symmetric?", yr: "GST" },
-      { q: "A keylogger records:", o: ["Mouse movements", "Keystrokes (passwords, credit cards, messages)", "Network traffic", "Screen images"], a: 1, e: "Keylogger captures every keystroke — can steal passwords, credit card numbers, private messages.", h: "What does keylogger record?", yr: "GST" },
-      { q: "Asymmetric encryption uses:", o: ["One key", "Two keys (public and private)", "No key", "Shared secret"], a: 1, e: "Asymmetric uses key pair: public key encrypts (shareable), private key decrypts (secret).", h: "How many keys in asymmetric?", yr: "GST" },
-      { q: "DoS (Denial of Service) attack aims to:", o: ["Steal data", "Make service unavailable (overwhelm with traffic)", "Encrypt files", "Record keystrokes"], a: 1, e: "DoS/DDoS overwhelms server with requests, making website/service unavailable to legitimate users.", h: "What does DoS attack do?", yr: "GST" },
-      { q: "A strong password should be:", o: ["Short and simple", "Long (12+ characters), complex, unique", "Same password for all sites", "Only numbers"], a: 1, e: "Strong password: long, mix of uppercase/lowercase/numbers/symbols, unique per site.", h: "What makes a strong password?", yr: "GST" },
-      { q: "HTTPS uses which encryption protocol?", o: ["SSL/TLS", "AES only", "DES only", "No encryption"], a: 0, e: "HTTPS uses SSL/TLS certificates to encrypt web traffic between browser and server.", h: "What encrypts HTTPS?", yr: "GST" },
-      { q: "Man-in-the-middle (MITM) attack involves:", o: ["Self-replicating malware", "Attacker intercepts communication between two parties", "Encrypting files", "Recording keystrokes"], a: 1, e: "MITM attacker secretly intercepts and may alter communication between two parties.", h: "What is MITM?", yr: "GST" },
-      { q: "Spyware is designed to:", o: ["Display ads", "Secretly monitor user activity and steal data", "Encrypt files", "Self-replicate"], a: 1, e: "Spyware collects user information (browsing, passwords, personal data) without consent.", h: "What does spyware do?", yr: "GST" },
-      { q: "The 3-2-1 backup rule means:", o: ["3 backups, 2 days, 1 location", "3 copies, 2 different media, 1 offsite", "3 years, 2 months, 1 week", "3 devices, 2 locations, 1 person"], a: 1, e: "3-2-1 rule: 3 copies of data, 2 different storage media, 1 copy stored offsite (cloud, remote location).", h: "What is 3-2-1 backup rule?", yr: "GST" },
-      { q: "A firewall monitors and controls:", o: ["CPU usage", "Network traffic based on security rules", "Disk space", "RAM usage"], a: 1, e: "Firewall filters incoming/outgoing network traffic based on rules — blocks unauthorized access.", h: "What does firewall control?", yr: "GST" },
-      { q: "Hashing is used for:", o: ["Encrypting messages", "Password storage and file integrity (one-way, cannot be reversed)", "Key exchange", "Network routing"], a: 1, e: "Hashing is one-way — cannot retrieve original data. Used for passwords (store hash, not password).", h: "What is hashing used for?", yr: "GST" },
-      { q: "Computer ethics includes:", o: ["Hacking for fun", "Respecting privacy, giving credit, avoiding harm", "Sharing passwords", "Ignoring copyright"], a: 1, e: "Ethical computing: respect privacy, don't harm others, give credit, use resources responsibly.", h: "What is computer ethics?", yr: "GST" },
-      { q: "A VPN (Virtual Private Network) provides:", o: ["Faster internet", "Encrypted tunnel for all traffic, hiding IP address", "Antivirus protection", "Password management"], a: 1, e: "VPN encrypts all traffic between device and VPN server — hides IP address, protects on public WiFi.", h: "What does VPN provide?", yr: "GST" }
-    ]
+      {
+        q: "A Nigerian bank's HTTPS website encrypts customer data to prevent eavesdropping. Which security principle of the CIA Triad does this PRIMARILY address?",
+        o: [
+          'Availability — ensuring the website is always accessible',
+          'Integrity — ensuring data is not modified in transit',
+          'Confidentiality — ensuring data is accessible only to authorised parties',
+          "Authentication — ensuring the user's identity is verified",
+        ],
+        a: 2,
+        e: 'Confidentiality ensures that information is accessible only to those authorised to access it. HTTPS encryption prevents third parties from reading the data transmitted between the browser and server — protecting the confidentiality of banking credentials and transaction data.',
+        h: 'Encryption prevents unauthorised reading = Confidentiality.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A piece of malware spread through a corporate network at a Nigerian bank, replicating itself automatically from computer to computer without any user needing to open an attachment or run a file. This is best described as:',
+        o: [
+          'A virus — because it replicates and spreads',
+          'A worm — because it self-replicates and spreads across networks without needing a host program',
+          'A trojan — because it disguises itself as legitimate bank software',
+          'Ransomware — because it disrupts operations',
+        ],
+        a: 1,
+        e: 'A worm is self-contained malware that replicates and spreads across networks AUTOMATICALLY without needing a host program or user interaction. Unlike a virus (needs a host file) or trojan (needs user to run it), worms exploit network vulnerabilities to propagate independently, consuming bandwidth and infecting systems.',
+        h: 'Self-replicates automatically across network without host = Worm.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A student downloads a pirated version of a paid software from the internet. From a computer ethics perspective, this violates which principle?',
+        o: [
+          'The principle of availability — making software unavailable to others',
+          'The principle of not copying proprietary software for which you have not paid',
+          'The principle of maintaining data integrity',
+          'The principle of ensuring system availability',
+        ],
+        a: 1,
+        e: "Downloading pirated (unlicensed) proprietary software violates the computer ethics principle: 'Thou shalt not copy or use proprietary software for which you have not paid.' This is also illegal under copyright law and may expose the user's computer to malware often embedded in cracked software.",
+        h: 'Pirating paid software = unethical + illegal copyright violation.',
+        yr: 'CSC',
+      },
+      {
+        q: "A hospital's patient management system was taken offline for 3 hours by a DDoS attack, preventing doctors from accessing patient records during an emergency. Which CIA principle was VIOLATED?",
+        o: [
+          'Confidentiality — patient data was exposed',
+          'Integrity — patient records were modified',
+          'Availability — the system was not accessible when needed',
+          "Authentication — doctors couldn't log in correctly",
+        ],
+        a: 2,
+        e: "Availability ensures that systems and data are accessible to authorised users when needed. A DDoS (Distributed Denial of Service) attack specifically targets availability by overwhelming a system with traffic until it collapses. The hospital's inability to access records during emergency directly violated availability.",
+        h: 'System inaccessible when needed = Availability violated.',
+        yr: 'CSC',
+      },
+      {
+        q: 'GTBank sends you an OTP (One-Time Password) to your registered phone number every time you log into internet banking. This security measure is an example of:',
+        o: [
+          'Single-factor authentication using something you have',
+          'Two-factor authentication combining something you know (password) and something you have (phone OTP)',
+          'Biometric authentication using something you are',
+          'Multi-factor authentication using three or more factors',
+        ],
+        a: 1,
+        e: 'Two-Factor Authentication (2FA) combines two different authentication factors: (1) Something you KNOW = your password; (2) Something you HAVE = your phone that receives the OTP. This significantly improves security because an attacker needs BOTH your password AND your phone to access your account.',
+        h: 'Password (know) + OTP on phone (have) = Two-Factor Authentication.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which encryption method uses a PUBLIC key to encrypt and a PRIVATE key to decrypt?',
+        o: [
+          'Symmetric encryption (AES, DES)',
+          'Hashing (MD5, SHA-256)',
+          'Asymmetric encryption (RSA, ECC)',
+          'Lossless compression (ZIP, RAR)',
+        ],
+        a: 2,
+        e: 'Asymmetric (public-key) encryption uses a mathematically linked key pair: the public key (shared freely) encrypts data; the private key (kept secret by the owner) decrypts it. Only the private key holder can decrypt messages encrypted with their public key. RSA and ECC are common asymmetric algorithms.',
+        h: 'Public key encrypts, Private key decrypts = Asymmetric encryption.',
+        yr: 'CSC',
+      },
+      {
+        q: "A Nigerian company receives an email that appears to be from 'UBA Bank' asking employees to click a link and update their login credentials. Several employees click the link and enter their passwords on a fake website. This attack is called:",
+        o: [
+          'Ransomware — encrypting company files for ransom',
+          'Phishing — using deceptive emails/websites to steal credentials',
+          'DoS attack — overwhelming the company email server',
+          'Rootkit attack — hiding malware in the email system',
+        ],
+        a: 1,
+        e: 'Phishing is a social engineering attack that uses deceptive emails, messages, or websites impersonating trusted organisations (like banks) to trick users into voluntarily providing sensitive information such as passwords, PINs, or credit card numbers. Nigerian financial phishing is a major cybercrime category.',
+        h: 'Fake email/website impersonating trusted org to steal credentials = Phishing.',
+        yr: 'CSC',
+      },
+      {
+        q: "A Nigerian journalist's computer files were suddenly encrypted and a message appeared demanding ₦5 million in Bitcoin within 48 hours for the decryption key. This is:",
+        o: [
+          'A virus attack that corrupted the files',
+          'Ransomware — malware that encrypts files and demands payment',
+          "Spyware collecting the journalist's files",
+          'A rootkit hiding the files from the OS',
+        ],
+        a: 1,
+        e: "Ransomware is malware that encrypts the victim's files (making them inaccessible) and demands a ransom — usually in cryptocurrency — for the decryption key. The 48-hour deadline creates urgency. Prevention: regular offline backups (cannot be encrypted if not connected), software updates, and email security.",
+        h: 'Files encrypted + ransom demand = Ransomware attack.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The Nigeria Data Protection Regulation (NDPR) / Nigeria Data Protection Act primarily governs:',
+        o: [
+          'How cybercriminals are prosecuted for hacking and fraud',
+          'How organisations collect, process, store, and protect personal data of Nigerians',
+          'How internet service providers must provide bandwidth in Nigeria',
+          'How software developers must encrypt their applications',
+        ],
+        a: 1,
+        e: "The NDPR (2019) and its successor NDPA (2023) are Nigeria's data protection laws, similar to the EU's GDPR. They regulate how organisations handle Nigerians' personal data — requiring consent for collection, limiting data use to stated purposes, mandating data security, and granting individuals rights over their data.",
+        h: "NDPR/NDPA = Nigeria's data protection law = how personal data must be handled.",
+        yr: 'CSC',
+      },
+      {
+        q: 'Hashing (e.g., SHA-256) differs from encryption because:',
+        o: [
+          'Hashing uses the same key for both operations; encryption uses different keys',
+          'Hashing is a one-way process (cannot be reversed); encryption can be reversed with the correct key',
+          'Hashing is faster than encryption for all file sizes',
+          'Hashing encrypts data for transmission; encryption stores data securely',
+        ],
+        a: 1,
+        e: "Hashing is a ONE-WAY function — given the hash value, you cannot mathematically reconstruct the original data. It's used for password storage (store the hash of the password, not the password itself) and data integrity verification. Encryption is reversible — with the correct key, you can decrypt back to the original data.",
+        h: 'Hash = one-way, irreversible. Encryption = two-way, reversible with key.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The 3-2-1 backup rule recommends:',
+        o: [
+          '3 daily backups, 2 weekly backups, 1 monthly backup',
+          '3 copies of data, stored on 2 different media types, with 1 copy stored offsite',
+          '3 full backups, 2 incremental backups, 1 differential backup',
+          'Backup every 3 hours, keep data for 2 weeks, store 1 copy in cloud',
+        ],
+        a: 1,
+        e: 'The 3-2-1 backup rule: 3 total copies (original + 2 backups), stored on 2 different types of media (e.g., external HDD + cloud), with 1 copy stored offsite (in a different physical location). This protects against hardware failure (2 copies), media failure (2 media types), and physical disasters like fire or flood (offsite copy).',
+        h: '3 copies, 2 media types, 1 offsite = 3-2-1 backup rule.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which backup type backs up ONLY data that has changed since the LAST backup of ANY type (full or incremental)?',
+        o: ['Full backup', 'Differential backup', 'Incremental backup', 'Mirror backup'],
+        a: 2,
+        e: 'Incremental backup backs up only data changed since the LAST backup of any kind (the last incremental or the last full). This means each incremental backup is very small and fast. Restore requires the last full backup PLUS all subsequent incrementals in order. Differential backs up all changes since the LAST FULL backup (grows larger over time).',
+        h: 'Changed since LAST backup of any type = Incremental. Changed since last FULL backup = Differential.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A keylogger is installed on computers at a Nigerian cybercafe. What does it do?',
+        o: [
+          'Locks the keyboard after a period of inactivity',
+          'Records every keystroke typed, capturing passwords and sensitive information',
+          'Speeds up keyboard input by predicting next keystrokes',
+          'Scans USB keyboards for viruses before allowing use',
+        ],
+        a: 1,
+        e: "A keylogger (keystroke logger) records every key pressed on the keyboard, capturing usernames, passwords, credit card numbers, messages, and any other typed information. In cybercafes, keyloggers have been used to steal customers' internet banking credentials. Hardware keyloggers plug between keyboard and computer; software keyloggers run invisibly.",
+        h: 'Records every keystroke = keylogger (captures passwords, PINs, etc.).',
+        yr: 'CSC',
+      },
+      {
+        q: "A firewall configured with 'stateful inspection' is more secure than simple packet filtering because:",
+        o: [
+          'Stateful inspection is faster at processing packets than packet filtering',
+          'Stateful inspection tracks the state of network connections and can detect suspicious sequences, not just individual packets',
+          'Stateful inspection automatically updates virus definitions',
+          'Stateful inspection blocks all incoming traffic by default',
+        ],
+        a: 1,
+        e: 'Stateful inspection (also called dynamic packet filtering) maintains a table of active connections and their states. It can detect malicious traffic that appears legitimate in individual packets but reveals itself as part of an attack sequence. Simple packet filtering only examines each packet in isolation against rules.',
+        h: 'Stateful inspection = tracks connection state for smarter filtering than packet-by-packet.',
+        yr: 'CSC',
+      },
+      {
+        q: "Under Nigeria's Cybercrimes (Prohibition, Prevention) Act 2015, which of the following is a criminal offence?",
+        o: [
+          'Using a VPN to access geo-restricted content',
+          'Installing open source software without paying',
+          "Hacking into another person's computer system without authorisation",
+          'Downloading freeware applications from websites',
+        ],
+        a: 2,
+        e: 'Section 6 of the Cybercrimes Act 2015 criminalises unauthorised access to computer systems (hacking), with penalties of up to 7 years imprisonment and/or fines. Other offences include identity theft, cyberstalking, online fraud, and child pornography. Using a VPN and installing free software are legal activities.',
+        h: 'Cybercrimes Act 2015 criminalises hacking, identity theft, online fraud in Nigeria.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A trojan horse differs from a virus primarily because:',
+        o: [
+          'A trojan spreads automatically across networks; a virus requires a host file',
+          'A trojan disguises itself as legitimate software to trick users into installing it, but does not self-replicate',
+          'A trojan only affects Windows computers; a virus affects all operating systems',
+          'A trojan encrypts files for ransom; a virus deletes files',
+        ],
+        a: 1,
+        e: 'A Trojan horse is malware disguised as legitimate software (like a fake mobile banking app, game, or utility). Unlike viruses, trojans do NOT self-replicate or spread automatically. They rely entirely on users voluntarily installing them, believing them to be genuine. Once installed, they perform malicious actions: stealing data, creating backdoors, downloading more malware.',
+        h: "Trojan = disguised as legitimate + doesn't self-replicate. Virus = attaches to files + self-replicates.",
+        yr: 'CSC',
+      },
+      {
+        q: "What is 'Green Computing'?",
+        o: [
+          'Using computers exclusively for environmental research',
+          'Designing, manufacturing, using, and disposing of computers in environmentally responsible ways',
+          'Writing software in the Python programming language (commonly associated with ecology)',
+          'Using only solar-powered computing devices',
+        ],
+        a: 1,
+        e: 'Green computing (sustainable computing) involves designing energy-efficient hardware, reducing e-waste through recycling, using virtualisation and cloud computing to reduce physical servers, optimising cooling systems in data centres, and proper disposal of electronic waste. It reduces the environmental impact of computing which consumes significant electricity globally.',
+        h: 'Green computing = environmentally responsible computing practices (energy, e-waste).',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following BEST describes the digital divide in the Nigerian context?',
+        o: [
+          'The divide between users of different computer brands in Nigeria',
+          'The gap between those with access to ICT and those without, manifested as rural-urban, economic, and literacy divides in Nigeria',
+          'The difference in internet speed between 3G and 5G networks in Nigeria',
+          'The divide between those who prefer Windows and those who prefer Linux',
+        ],
+        a: 1,
+        e: 'The digital divide in Nigeria manifests as: rural vs urban (northern Nigeria has lower internet penetration), economic (high cost of smartphones and data relative to income), infrastructure (electricity supply, network coverage in rural areas), and digital literacy (inability to use technology effectively). These gaps exclude a significant portion of Nigerians from the digital economy.',
+        h: 'Digital divide = gap between ICT haves and have-nots = rural/urban, economic, literacy gaps.',
+        yr: 'CSC',
+      },
+      {
+        q: 'SYMMETRIC encryption uses the same key for encryption and decryption. The major SECURITY CHALLENGE of symmetric encryption is:',
+        o: [
+          'It is too slow for encrypting large files',
+          'Securely distributing the shared secret key to both parties without it being intercepted',
+          'It cannot be used for securing internet communications',
+          'It requires more mathematical computation than asymmetric encryption',
+        ],
+        a: 1,
+        e: 'The key distribution problem is the fundamental challenge of symmetric encryption: how do you securely share the secret key with the intended recipient without it being intercepted? If an attacker intercepts the key during transmission, all communications encrypted with that key are compromised. Asymmetric encryption solves this by using a public key that can be shared openly.',
+        h: 'Symmetric encryption problem = how to securely share the secret key.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following is an example of a PHYSICAL security threat to computer systems?',
+        o: [
+          'A hacker remotely accessing a server via the internet',
+          'Ransomware encrypting files on a network share',
+          'Theft of a laptop containing sensitive customer data',
+          'A phishing email tricking an employee into revealing their password',
+        ],
+        a: 2,
+        e: 'Physical security threats involve tangible, real-world actions against computing equipment. Theft of a laptop is a physical threat — the attacker gains physical possession of the device. Remote hacking, ransomware, and phishing are cyber/logical threats (no physical access required). Physical security measures include: cable locks, security cameras, access-controlled server rooms, and device encryption to protect data if stolen.',
+        h: 'Physical threat = requires physical access to or contact with the equipment.',
+        yr: 'CSC',
+      },
+    ],
   },
-
-  // ==========================================================================
-  // TOPIC 10: Emerging Technologies and Future Trends
-  // ==========================================================================
   {
-    topic: "Emerging Technologies and Future Trends",
-    topicCode: "CSC-010-01",
-    module: "Emerging Technologies",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Emerging technologies</span> are transforming how we live, work, and interact. Artificial intelligence, blockchain, Internet of Things, and quantum computing promise revolutionary changes. <strong>Understanding these technologies prepares you for the future job market and society</strong>.
-</div>
-
-<p class="learn-p">Technologies evolve rapidly. What is cutting-edge today may be obsolete tomorrow. Staying informed about emerging trends is essential for career planning and informed citizenship.</p>
-
-<h3 class="learn-subheading">Artificial Intelligence (AI)</h3>
-
-<p class="learn-p">AI is the simulation of human intelligence in machines. Subfields: Machine Learning (ML), Deep Learning, Natural Language Processing (NLP), Computer Vision, Robotics.</p>
-
-<p class="learn-p"><strong>Machine Learning types:</strong></p>
-<ul class="learn-list">
-  <li><strong>Supervised learning:</strong> Trained on labeled data (spam detection, image classification)</li>
-  <li><strong>Unsupervised learning:</strong> Finds patterns in unlabeled data (customer segmentation, anomaly detection)</li>
-  <li><strong>Reinforcement learning:</strong> Learns through trial and error, rewards (game playing, robotics)</li>
-</ul>
-
-<p class="learn-p"><strong>AI applications:</strong> Recommendation systems (Netflix, Amazon), spam filters, facial recognition, voice assistants (Siri, Alexa, Google Assistant), autonomous vehicles, medical diagnosis.</p>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🤖 ARTIFICIAL INTELLIGENCE - Subfields</text>
-    
-    <g>
-      <circle cx="100" cy="80" r="28" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <text x="100" y="78" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">Machine</text>
-      <text x="100" y="92" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">Learning</text>
-    </g>
-    
-    <g>
-      <circle cx="190" cy="80" r="28" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <text x="190" y="78" text-anchor="middle" font-size="8" fill="#166534" font-weight="800">NLP</text>
-    </g>
-    
-    <g>
-      <circle cx="280" cy="80" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-      <text x="280" y="78" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">Computer</text>
-      <text x="280" y="92" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">Vision</text>
-    </g>
-    
-    <g>
-      <circle cx="370" cy="80" r="28" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-      <text x="370" y="78" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">Robotics</text>
-    </g>
-    
-    <text x="250" y="145" text-anchor="middle" font-size="9" fill="#475569">AI systems learn from data, recognize patterns, make decisions</text>
-    
-    <rect x="50" y="160" width="400" height="30" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="180" text-anchor="middle" font-size="8" fill="#475569">Nigerian AI startups: Data Science Nigeria, Awarri, Touchabl</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Internet of Things (IoT)</h3>
-
-<p class="learn-p">IoT connects everyday devices to the internet — smart home devices (thermostats, lights, locks), wearables (smartwatches, fitness trackers), industrial sensors, smart cities (traffic lights, waste management), healthcare (remote monitoring).</p>
-<p class="learn-p">Challenges: Security (vulnerable devices), privacy (data collection), interoperability (different standards).</p>
-
-<h3 class="learn-subheading">Blockchain and Cryptocurrencies</h3>
-
-<p class="learn-p">Blockchain is a distributed, decentralized ledger that records transactions across many computers. Key features: Immutable (cannot be altered), Transparent (all transactions visible), Decentralized (no central authority).</p>
-<p class="learn-p"><strong>Cryptocurrencies:</strong> Bitcoin (first, most valuable), Ethereum (smart contracts), others (Solana, Cardano, Ripple). Uses: Payments, remittances, investments, DeFi (decentralized finance).</p>
-<p class="learn-p"><strong>Nigerian context:</strong> Nigeria has one of the highest cryptocurrency adoption rates globally (Chainalysis, 2023). CBN restricts banks from crypto transactions, but P2P trading thrives.</p>
-
-<h3 class="learn-subheading">Cloud Computing</h3>
-
-<p class="learn-p">Cloud computing delivers computing services over internet: IaaS (infrastructure), PaaS (platform), SaaS (software). Major providers: AWS, Microsoft Azure, Google Cloud, Alibaba Cloud. Nigerian cloud providers: Layer3, MainOne Cloud.</p>
-
-<h3 class="learn-subheading">Big Data</h3>
-
-<p class="learn-p">Big data is characterized by 5 Vs: Volume (huge amounts), Velocity (rapid generation), Variety (structured, unstructured, semi-structured), Veracity (uncertainty, quality issues), Value (extracting insights). Technologies: Hadoop, Spark, NoSQL databases. Applications: Business intelligence, healthcare analytics, fraud detection, scientific research.</p>
-
-<h3 class="learn-subheading">Virtual Reality (VR) and Augmented Reality (AR)</h3>
-
-<p class="learn-p">VR: Fully immersive digital environment (headset, controllers) — gaming, training, virtual tours. AR: Overlays digital information on real world (smartphone, glasses) — Pokémon GO, IKEA furniture placement, navigation overlays.</p>
-
-<h3 class="learn-subheading">5G Technology</h3>
-
-<p class="learn-p">5G offers: Higher speed (up to 10 Gbps), Lower latency (1 ms), More capacity (1 million devices/km²). Enables: IoT proliferation, autonomous vehicles, telemedicine, cloud gaming, smart factories.</p>
-
-<h3 class="learn-subheading">Quantum Computing</h3>
-
-<p class="learn-p">Quantum computers use qubits (quantum bits) that can be 0, 1, or superposition (both simultaneously). Potential applications: Drug discovery (molecular simulation), Cryptography (breaking current encryption), Optimization (logistics, finance), AI acceleration. Current state: Early stage, not yet practical for most applications.</p>
-
-<h3 class="learn-subheading">Nigerian Tech Ecosystem</h3>
-
-<p class="learn-p"><strong>Successful startups:</strong> Paystack (fintech, acquired by Stripe), Flutterwave (payments, unicorn), Andela (software developer training), Interswitch (payments), Paga (mobile payments), Kuda (digital bank).</p>
-<p class="learn-p"><strong>Tech hubs:</strong> CcHub (Lagos), Wennovation, Leadspace, Ventures Platform. Government initiatives: NITDA, NCAIR (National Centre for AI and Robotics), NIGCOMSAT, Galaxy Backbone.</p>
-<p class="learn-p"><strong>Challenges:</strong> Funding (though improving), infrastructure (electricity, internet), talent gap, regulation uncertainty, brain drain (top talent leaving).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>Nigerian Tech Fact:</strong> Nigeria has the highest cryptocurrency adoption rate in Africa and among the highest globally (Chainalysis Global Crypto Adoption Index).</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "What is blockchain? How does it differ from traditional databases?" (Sample answer: Blockchain is a distributed, decentralized, immutable ledger. Unlike traditional databases (centralized, controlled by single entity, can be altered), blockchain records are permanent, transparent, and not controlled by any single party. Each block is cryptographically linked to previous block, making tampering extremely difficult.)</span>
-</div>
-    `,
+    topic: 'Emerging Technologies and Future Trends',
+    topicCode: 'CSC-101-10',
+    module: 'Emerging Technologies',
+    contentHTML:
+      '\n<div class="learn-intro">\n  Technology is evolving at an unprecedented pace. The technologies that will define the next decade — <span class="learn-keyword">Artificial Intelligence</span>, <span class="learn-keyword">Internet of Things</span>, <span class="learn-keyword">Blockchain</span>, <span class="learn-keyword">5G</span>, <span class="learn-keyword">Quantum Computing</span> — are already transforming Nigerian society and creating new opportunities for those with the right digital skills. Nigeria\'s tech ecosystem, with unicorn companies like Flutterwave and a growing community of developers, is positioning the country as Africa\'s digital hub. This module surveys these transformative technologies and their implications for Nigeria\'s future.\n</div>\n\n<h3 class="learn-subheading">1. Artificial Intelligence (AI)</h3>\n<p class="learn-p"><span class="learn-keyword">Artificial Intelligence</span> is the simulation of human intelligence processes by computer systems — enabling machines to perform tasks that typically require human intelligence: understanding language, recognising images, making decisions, and learning from experience.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>AI Subfield</th><th>Definition</th><th>Nigerian Application</th></tr></thead>\n    <tbody>\n      <tr><td>Machine Learning (ML)</td><td>Systems that learn from data without explicit programming for each task</td><td>Flutterwave\'s fraud detection; credit scoring for unbanked Nigerians</td></tr>\n      <tr><td>Deep Learning</td><td>ML using multi-layered neural networks (inspired by human brain)</td><td>Image recognition for INEC voter verification; Nollywood content recommendations on Netflix</td></tr>\n      <tr><td>Natural Language Processing (NLP)</td><td>AI understanding and generating human language</td><td>WhatsApp chatbots for Nigerian banks; voice commands in Yoruba/Igbo/Hausa</td></tr>\n      <tr><td>Computer Vision</td><td>AI interpreting visual information from images/video</td><td>Lagos traffic monitoring cameras; facial recognition at Murtala Mohammed Airport</td></tr>\n      <tr><td>Expert Systems</td><td>AI systems embodying human expert knowledge in a specific domain</td><td>Medical diagnosis support in Nigerian primary health centres</td></tr>\n      <tr><td>Robotics</td><td>AI-controlled physical machines that interact with the world</td><td>Dangote Refinery automated systems; agricultural drones for crop monitoring</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">2. Machine Learning (ML)</h3>\n<p class="learn-p">Machine Learning algorithms learn patterns from data to make predictions or decisions without being explicitly programmed for each scenario. Three main types:</p>\n<ul class="learn-list">\n  <li><strong>Supervised Learning:</strong> Algorithm learns from labelled training data (input-output pairs). Used for: spam email detection, credit scoring (loan approval), medical image diagnosis, fraud detection. Example: Kuda Bank\'s AI analyses transaction patterns to detect fraud.</li>\n  <li><strong>Unsupervised Learning:</strong> Algorithm finds hidden patterns in unlabelled data. Used for: customer segmentation, anomaly detection, recommendation systems.</li>\n  <li><strong>Reinforcement Learning:</strong> Algorithm learns by trial and error, receiving rewards for correct actions. Used for: game-playing AI (AlphaGo), autonomous vehicles, trading algorithms.</li>\n</ul>\n\n<h3 class="learn-subheading">3. Internet of Things (IoT)</h3>\n<p class="learn-p">The <span class="learn-keyword">Internet of Things</span> refers to the network of physical devices embedded with sensors, software, and connectivity that enables them to collect and exchange data over the internet without human-to-human or human-to-computer interaction.</p>\n\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>IoT Application</th><th>How It Works</th><th>Nigerian Context</th></tr></thead>\n    <tbody>\n      <tr><td>Smart Agriculture</td><td>Soil sensors monitor moisture, nutrients; drones monitor crops; automated irrigation</td><td>Monitoring irrigated farms in Kano and Kaduna; Farmcrowdy precision agriculture</td></tr>\n      <tr><td>Smart Meters</td><td>Electricity/water meters transmit usage data automatically</td><td>Ikeja Electric and Eko Electric smart prepaid meter deployments in Lagos</td></tr>\n      <tr><td>Healthcare IoT</td><td>Wearable sensors monitor vital signs; connected medical devices</td><td>Remote patient monitoring for TB patients in rural Nigeria</td></tr>\n      <tr><td>Smart Cities</td><td>Connected traffic lights, waste management, surveillance cameras</td><td>Lagos smart city initiatives; Abuja traffic management system</td></tr>\n      <tr><td>Industrial IoT</td><td>Manufacturing machines report status, predict maintenance needs</td><td>Dangote cement plant automated monitoring; NNPC pipeline monitoring</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">4. Blockchain Technology</h3>\n<p class="learn-p"><span class="learn-keyword">Blockchain</span> is a distributed, decentralised, immutable ledger that records transactions across multiple computers. Key features: <strong>Distributed</strong> (no single central authority — copies exist on thousands of nodes), <strong>Immutable</strong> (once a block is confirmed and added, data cannot be altered), <strong>Transparent</strong> (all transactions visible to network participants), <strong>Consensus</strong> (transactions validated by network agreement, not a central authority).</p>\n\n<p class="learn-p">A blockchain consists of <span class="learn-keyword">blocks</span> (containing transaction data, timestamp, and hash of previous block) chained together cryptographically. Changing one block would change its hash, breaking the chain and making tampering evident. <span class="learn-keyword">Smart contracts</span> are self-executing programs stored on the blockchain that automatically enforce agreement terms.</p>\n\n<p class="learn-p"><strong>Consensus mechanisms:</strong> <em>Proof of Work (PoW)</em> — miners compete to solve complex mathematical puzzles; winner adds the next block; energy-intensive (used by Bitcoin). <em>Proof of Stake (PoS)</em> — validators are chosen based on the amount of cryptocurrency they "stake" (lock up as collateral); more energy-efficient (used by Ethereum 2.0).</p>\n\n<h3 class="learn-subheading">5. Cryptocurrencies</h3>\n<p class="learn-p"><span class="learn-keyword">Cryptocurrencies</span> are digital/virtual currencies that use cryptography for security and operate on blockchain technology, with no central bank or government controlling them. Nigeria has one of the world\'s highest cryptocurrency adoption rates (particularly Bitcoin and USDT), driven by need for cross-border payments, inflation hedging, and remittances. The CBN launched <strong>eNaira</strong> in 2021 — Nigeria\'s Central Bank Digital Currency (CBDC) — a regulated digital currency different from decentralised cryptocurrencies.</p>\n\n<h3 class="learn-subheading">6. Big Data</h3>\n<p class="learn-p"><span class="learn-keyword">Big Data</span> refers to datasets so large and complex that traditional database tools cannot process them. Characterised by the <span class="learn-keyword">5 Vs</span>: <strong>Volume</strong> (massive amounts — terabytes/petabytes), <strong>Velocity</strong> (generated and processed at high speed — real-time streaming), <strong>Variety</strong> (multiple formats — text, video, social media, sensor data), <strong>Veracity</strong> (quality and accuracy of data), <strong>Value</strong> (extracting useful insights from the data). Technologies: Apache Hadoop (distributed storage), Apache Spark (fast processing), NoSQL databases.</p>\n\n<h3 class="learn-subheading">7. Virtual Reality (VR) and Augmented Reality (AR)</h3>\n<div class="learn-table-wrap">\n  <table class="learn-table">\n    <thead><tr><th>Technology</th><th>Description</th><th>Hardware</th><th>Nigerian Application</th></tr></thead>\n    <tbody>\n      <tr><td>Virtual Reality (VR)</td><td>Fully immersive digital environment replacing the real world; user feels "present" in virtual space</td><td>VR headset (Meta Quest, PlayStation VR), controllers</td><td>Medical training simulations for Lagos University Teaching Hospital; virtual campus tours</td></tr>\n      <tr><td>Augmented Reality (AR)</td><td>Overlays digital information onto the real world through device cameras</td><td>Smartphone camera, AR glasses (HoloLens)</td><td>Snapchat filters popular in Nigeria; furniture placement apps; WAEC past question AR apps</td></tr>\n      <tr><td>Mixed Reality (MR)</td><td>Blends real and virtual where both can interact</td><td>Microsoft HoloLens, Magic Leap</td><td>Engineering design review at Eko Atlantic City construction</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<h3 class="learn-subheading">8. 5G Technology</h3>\n<p class="learn-p"><span class="learn-keyword">5G</span> is the fifth generation of mobile network technology, succeeding 4G LTE. Key features: <strong>Very high speed</strong> (theoretical peak: 20 Gbps vs 4G\'s 1 Gbps), <strong>Ultra-low latency</strong> (1ms vs 4G\'s 30-50ms), <strong>Massive device density</strong> (1 million devices per km² vs 4G\'s 100,000). 5G enables: IoT at massive scale, autonomous vehicles, telemedicine with real-time response, smart factories (Industry 4.0), enhanced mobile broadband. In Nigeria: MTN and Airtel launched 5G in Lagos and Abuja in 2022, with gradual rollout to other cities.</p>\n\n<h3 class="learn-subheading">9. Quantum Computing</h3>\n<p class="learn-p"><span class="learn-keyword">Quantum computers</span> use quantum mechanical phenomena — <strong>superposition</strong> (a qubit can be 0 AND 1 simultaneously, unlike classical bits) and <strong>entanglement</strong> (qubits can be correlated across any distance) — to process information in ways impossible for classical computers. Potential applications: breaking current encryption (threatening cybersecurity), drug discovery (simulating molecular interactions), climate modelling, logistics optimisation. Current state: still in early development; IBM, Google, and others have demonstrated quantum advantage for specific problems. Quantum computers won\'t replace classical computers — they\'ll solve specific problems exponentially faster.</p>\n\n<h3 class="learn-subheading">10. Nigerian Tech Ecosystem</h3>\n<div class="learn-svg-wrap">\n  <svg class="learn-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">\n    <rect width="480" height="200" fill="#0f0020" rx="10"/>\n    <text x="240" y="18" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="bold">Nigeria\'s Tech Ecosystem</text>\n    <rect x="10" y="28" width="140" height="160" rx="8" fill="#1a0030" stroke="#28c840" stroke-width="1.5"/>\n    <rect x="165" y="28" width="140" height="160" rx="8" fill="#1a0030" stroke="#D4AF37" stroke-width="1.5"/>\n    <rect x="320" y="28" width="150" height="160" rx="8" fill="#1a0030" stroke="#6C3FC9" stroke-width="1.5"/>\n    <text x="80" y="45" text-anchor="middle" fill="#28c840" font-size="9" font-weight="bold">UNICORNS &amp; STARTUPS</text>\n    <text x="80" y="60" text-anchor="middle" fill="#c8c8c8" font-size="8">🦄 Flutterwave ($3B+)</text>\n    <text x="80" y="74" text-anchor="middle" fill="#c8c8c8" font-size="8">💳 Paystack (→Stripe)</text>\n    <text x="80" y="88" text-anchor="middle" fill="#c8c8c8" font-size="8">👨‍💻 Andela (talent)</text>\n    <text x="80" y="102" text-anchor="middle" fill="#c8c8c8" font-size="8">🏦 Interswitch</text>\n    <text x="80" y="116" text-anchor="middle" fill="#c8c8c8" font-size="8">📱 Paga, Kuda</text>\n    <text x="80" y="130" text-anchor="middle" fill="#c8c8c8" font-size="8">💰 Cowrywise</text>\n    <text x="80" y="144" text-anchor="middle" fill="#c8c8c8" font-size="8">🏥 Helium Health</text>\n    <text x="80" y="158" text-anchor="middle" fill="#c8c8c8" font-size="8">🛒 Jumia, Konga</text>\n    <text x="235" y="45" text-anchor="middle" fill="#D4AF37" font-size="9" font-weight="bold">INNOVATION HUBS</text>\n    <text x="235" y="60" text-anchor="middle" fill="#c8c8c8" font-size="8">🏢 CcHub (Lagos)</text>\n    <text x="235" y="74" text-anchor="middle" fill="#c8c8c8" font-size="8">🚀 Wennovation Hub</text>\n    <text x="235" y="88" text-anchor="middle" fill="#c8c8c8" font-size="8">💼 Ventures Platform</text>\n    <text x="235" y="102" text-anchor="middle" fill="#c8c8c8" font-size="8">🌍 Google Launchpad</text>\n    <text x="235" y="116" text-anchor="middle" fill="#c8c8c8" font-size="8">📡 Andela Learning</text>\n    <text x="235" y="130" text-anchor="middle" fill="#c8c8c8" font-size="8">🏫 NITDA Hubs</text>\n    <text x="395" y="45" text-anchor="middle" fill="#6C3FC9" font-size="9" font-weight="bold">GOVT INITIATIVES</text>\n    <text x="395" y="60" text-anchor="middle" fill="#c8c8c8" font-size="8">📋 NITDA (IT Agency)</text>\n    <text x="395" y="74" text-anchor="middle" fill="#c8c8c8" font-size="8">🤖 NCAIR (AI Research)</text>\n    <text x="395" y="88" text-anchor="middle" fill="#c8c8c8" font-size="8">🛰 NIGCOMSAT</text>\n    <text x="395" y="102" text-anchor="middle" fill="#c8c8c8" font-size="8">🔗 Galaxy Backbone</text>\n    <text x="395" y="116" text-anchor="middle" fill="#c8c8c8" font-size="8">📱 Digital Nigeria</text>\n    <text x="395" y="130" text-anchor="middle" fill="#c8c8c8" font-size="8">🔒 NDPR/NDPA</text>\n    <text x="395" y="144" text-anchor="middle" fill="#c8c8c8" font-size="8">📶 Natl. Broadband Plan</text>\n    <rect x="10" y="28" width="140" height="160" rx="8" fill="none" stroke="#28c840" stroke-width="1">\n      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>\n    </rect>\n  </svg>\n</div>\n\n<h3 class="learn-subheading">11. Assistive Technologies</h3>\n<p class="learn-p"><span class="learn-keyword">Assistive technologies</span> enable people with disabilities to use computers and digital tools effectively: <strong>Screen readers</strong> (JAWS, NVDA — convert text to speech for visually impaired users), <strong>Braille displays</strong> (tactile output devices showing text in Braille), <strong>Voice recognition</strong> (hands-free computer control), <strong>Eye tracking</strong> (controls cursor with eye movement for mobility impaired users), <strong>Alternative keyboards</strong> (larger keys, single-switch access). Accessibility features are built into modern OS: Windows Ease of Access (Narrator, Magnifier), macOS VoiceOver, Android TalkBack.</p>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">💡</span>\n  <strong>Exam Tip — VR vs AR:</strong> <strong>VR (Virtual Reality)</strong> = FULLY immersive — replaces your entire visual field with a digital environment; requires a headset. <strong>AR (Augmented Reality)</strong> = adds digital elements ONTO the real world you can still see; works via smartphone camera or AR glasses. A common memory aid: VR = Virtual = you\'re completely IN another world. AR = Augmented = reality is AUGMENTED/enhanced with digital overlays. Snapchat and Instagram filters are AR; Meta Quest gaming is VR.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">⚠️</span>\n  <strong>Blockchain vs Cryptocurrency:</strong> These are related but NOT the same. <strong>Blockchain</strong> is the underlying technology — a distributed ledger that records transactions. <strong>Cryptocurrency</strong> is ONE APPLICATION of blockchain. Bitcoin uses blockchain, but blockchain has many other uses: supply chain tracking, land registry (potential use in Nigeria to reduce fraud), medical records, voting systems. Not all blockchain systems involve cryptocurrency.\n</div>\n\n<div class="learn-tip-box">\n  <span class="learn-tip-icon">🎯</span>\n  <strong>Summary:</strong> AI simulates human intelligence; ML learns from data (supervised, unsupervised, reinforcement). IoT connects physical devices to internet for data collection and control. Blockchain = distributed, immutable, transparent ledger; cryptocurrencies are one application. Big Data: 5 Vs (Volume, Velocity, Variety, Veracity, Value). VR = fully immersive digital world; AR = digital overlays on real world. 5G = high speed, low latency, massive connectivity. Quantum computers use superposition and entanglement of qubits. Nigeria\'s tech stars: Flutterwave, Paystack, Andela, Interswitch. NITDA, NCAIR, and NIGCOMSAT are key government tech agencies.\n</div>\n  ',
     questions: [
-      { q: "Machine learning is a subfield of:", o: ["Blockchain", "Artificial Intelligence", "Internet of Things", "Quantum Computing"], a: 1, e: "Machine learning is a subset of AI — systems learn from data without explicit programming.", h: "What is ML a subset of?", yr: "GST" },
-      { q: "Blockchain is best described as:", o: ["Centralized database", "Distributed, decentralized, immutable ledger", "Cryptocurrency only", "Cloud storage"], a: 1, e: "Blockchain is distributed (many copies), decentralized (no central authority), immutable (cannot alter past records).", h: "What is blockchain?", yr: "GST" },
-      { q: "Which Nigerian fintech startup was acquired by Stripe?", o: ["Flutterwave", "Paystack", "Paga", "Kuda"], a: 1, e: "Paystack was acquired by Stripe in 2020 for over $200 million — one of Nigeria's largest startup exits.", h: "Which was acquired by Stripe?", yr: "GST" },
-      { q: "IoT stands for:", o: ["Internet of Things", "Interconnection of Technology", "Internet of Transactions", "Input Output Transfer"], a: 0, e: "Internet of Things connects everyday devices (thermostats, locks, wearables) to the internet.", h: "What does IoT stand for?", yr: "GST" },
-      { q: "Nigeria has the highest cryptocurrency adoption rate in:", o: ["World (top globally)", "Africa", "Asia", "Europe"], a: 1, e: "Nigeria leads Africa and ranks among top globally for cryptocurrency adoption (Chainalysis Index).", h: "Where does Nigeria rank in crypto adoption?", yr: "GST" },
-      { q: "Supervised machine learning requires:", o: ["No labeled data", "Labeled training data (input-output pairs)", "Only unlabeled data", "No data"], a: 1, e: "Supervised learning trains on labeled data — input and correct output (e.g., spam vs not spam).", h: "What does supervised learning need?", yr: "GST" },
-      { q: "5G technology offers all EXCEPT:", o: ["Higher speed", "Lower latency", "Higher capacity", "Slower internet"], a: 3, e: "5G offers higher speed (10 Gbps), lower latency (1 ms), higher capacity — not slower.", h: "What does 5G NOT offer?", yr: "GST" },
-      { q: "VR (Virtual Reality) provides:", o: ["Overlays digital info on real world", "Fully immersive digital environment (headset)", "Only audio", "Only text"], a: 1, e: "VR fully immerses user in digital environment using headset, controllers. AR overlays on real world.", h: "What does VR provide?", yr: "GST" },
-      { q: "Big data is characterized by 5 Vs including:", o: ["Volume, Velocity, Variety, Veracity, Value", "Very, Vast, Virtual, Valid, Valuable", "Version, Video, Voice, Virtual, Value", "None of these"], a: 0, e: "Big data 5 Vs: Volume (amount), Velocity (speed), Variety (types), Veracity (quality), Value (insights).", h: "What are the 5 Vs?", yr: "GST" },
-      { q: "Quantum computers use which unit of information?", o: ["Bit", "Byte", "Qubit", "Nibble"], a: 2, e: "Qubit (quantum bit) can be 0, 1, or superposition (both) — enables quantum computing power.", h: "What is quantum unit?", yr: "GST" },
-      { q: "CBN restrictions on cryptocurrency in Nigeria affect:", o: ["Bank accounts for crypto exchanges (P2P trading still possible)", "All crypto use", "Only Bitcoin", "Only Ethereum"], a: 0, e: "CBN directed banks to close accounts of crypto exchanges, but peer-to-peer (P2P) trading remains common.", h: "What does CBN restrict?", yr: "GST" },
-      { q: "CcHub is a:", o: ["Cryptocurrency exchange", "Tech hub/incubator in Lagos", "University", "Government agency"], a: 1, e: "CcHub (Co-creation Hub) is Lagos-based tech innovation hub supporting startups, entrepreneurs.", h: "What is CcHub?", yr: "GST" },
-      { q: "Reinforcement learning learns through:", o: ["Labeled data", "Unlabeled data", "Trial and error, rewards/punishments", "No learning"], a: 2, e: "Reinforcement learning uses rewards and punishments — agent learns by interacting with environment.", h: "How does reinforcement learning work?", yr: "GST" },
-      { q: "AR (Augmented Reality) is used in:", o: ["Pokémon GO, IKEA furniture placement", "Only gaming", "Only medical", "Only education"], a: 0, e: "AR overlays digital content on real world — popular in games (Pokémon GO), retail (IKEA), navigation.", h: "What is AR used for?", yr: "GST" },
-      { q: "NITDA is Nigeria's agency for:", o: ["National Information Technology Development Agency", "National Internet Technology Development", "Nigerian IT Development Authority", "None"], a: 0, e: "NITDA promotes IT development, digital literacy, and technology regulation in Nigeria.", h: "What is NITDA?", yr: "GST" },
-      { q: "Which Nigerian startup is a digital-only bank?", o: ["Paystack", "Flutterwave", "Kuda", "Andela"], a: 2, e: "Kuda is a digital-only bank (no physical branches) — licensed by CBN.", h: "Which is digital-only bank?", yr: "GST" },
-      { q: "Blockchain immutability means:", o: ["Data can be changed easily", "Data cannot be altered or deleted once recorded", "Data is lost", "Data is encrypted only"], a: 1, e: "Immutability means recorded transactions cannot be changed or deleted — tamper evident.", h: "What does immutability mean?", yr: "GST" },
-      { q: "Andela is a Nigerian startup that:", o: ["Provides banking", "Trains software developers and connects them with global companies", "Sells cryptocurrency", "Makes hardware"], a: 1, e: "Andela trains African software developers and places them with global tech companies.", h: "What does Andela do?", yr: "GST" },
-      { q: "Smart contracts are associated with:", o: ["Bitcoin", "Ethereum (blockchain with programmability)", "Paystack", "Google"], a: 1, e: "Smart contracts are self-executing contracts on blockchain — pioneered by Ethereum.", h: "Which blockchain has smart contracts?", yr: "GST" },
-      { q: "Nigerian tech ecosystem challenges include:", o: ["Too much funding", "Excellent infrastructure", "Funding gap, infrastructure, talent shortage, brain drain", "No challenges"], a: 2, e: "Challenges: limited funding, unreliable electricity/internet, talent gap, brain drain (top talent leaving).", h: "What are Nigerian tech challenges?", yr: "GST" }
-    ]
-  }
+      {
+        q: "Flutterwave's system analyses millions of payment transactions in real-time to automatically detect and flag suspicious (potentially fraudulent) patterns without being explicitly programmed with specific fraud rules. This is an example of:",
+        o: [
+          'Expert system — using pre-programmed fraud rules from human experts',
+          'Machine Learning — the system learns fraud patterns from historical data automatically',
+          'Quantum computing — only quantum computers can process transactions fast enough',
+          'Blockchain — decentralised verification prevents fraud automatically',
+        ],
+        a: 1,
+        e: 'Machine Learning (specifically supervised learning or anomaly detection) enables systems to learn fraud patterns from historical labelled data (legitimate vs fraudulent transactions) and apply those learned patterns to new transactions in real-time. This is more adaptable than rule-based expert systems because it learns new fraud patterns automatically.',
+        h: 'Learns patterns from data automatically to make decisions = Machine Learning.',
+        yr: 'CSC',
+      },
+      {
+        q: "Smart electricity meters being deployed by Ikeja Electric in Lagos automatically transmit usage data to the utility company's servers without manual meter reading. These meters are examples of:",
+        o: [
+          'Artificial Intelligence devices',
+          'Internet of Things (IoT) devices',
+          'Quantum computing endpoints',
+          'Blockchain nodes',
+        ],
+        a: 1,
+        e: 'IoT devices are physical objects embedded with sensors and connectivity that enable them to collect and exchange data over the internet with minimal human interaction. Smart meters with wireless transmission capability — automatically sending usage data to the utility — perfectly exemplify IoT in the utility sector.',
+        h: 'Physical device + sensors + internet connectivity + automated data collection = IoT.',
+        yr: 'CSC',
+      },
+      {
+        q: 'What makes blockchain data effectively TAMPER-PROOF?',
+        o: [
+          'Data is encrypted using military-grade 256-bit AES encryption',
+          'Each block contains a cryptographic hash of the PREVIOUS block, creating an unbreakable chain — changing one block invalidates all subsequent blocks',
+          'Blockchain is stored on a single highly secure server maintained by a trusted authority',
+          'Access to blockchain data requires biometric authentication from multiple administrators',
+        ],
+        a: 1,
+        e: 'Each block in a blockchain contains the cryptographic hash of the previous block. If you attempt to modify any data in a block, its hash changes, which breaks the reference from the next block (whose hash would no longer match), cascading through all subsequent blocks. Since thousands of nodes hold identical copies, any tampering is immediately evident.',
+        h: "Each block contains previous block's hash = chain = changing one breaks all subsequent = tamper-evident.",
+        yr: 'CSC',
+      },
+      {
+        q: "5G technology offers 'ultra-low latency' of approximately 1 millisecond. Why is low latency critical for autonomous vehicles?",
+        o: [
+          'Low latency reduces the fuel consumption of autonomous electric vehicles',
+          "Low latency allows the vehicle's sensors to communicate with infrastructure and make split-second decisions needed to avoid accidents",
+          'Low latency improves the video streaming quality for passengers',
+          'Low latency enables faster battery charging for electric autonomous vehicles',
+        ],
+        a: 1,
+        e: "Autonomous vehicles must process sensor data and communicate with traffic infrastructure in real-time to make split-second decisions (braking, steering, obstacle avoidance). A 50ms 4G latency could mean a car travelling at 100km/h moves 1.4 metres before receiving a signal. 5G's 1ms latency reduces this to 2.7cm — critical for safety.",
+        h: 'Autonomous vehicles need instant response for safety = ultra-low latency of 5G is essential.',
+        yr: 'CSC',
+      },
+      {
+        q: "The Nigerian company that was acquired by Stripe (American fintech giant) for approximately $200 million, making it one of Nigeria's most notable tech exits, is:",
+        o: ['Flutterwave', 'Paystack', 'Interswitch', 'Paga'],
+        a: 1,
+        e: 'Paystack, a Nigerian payment processing startup founded by Shola Akinlade and Ezra Olubi, was acquired by Stripe in October 2020 for a reported ~$200 million. This was a landmark moment for the Nigerian tech ecosystem, demonstrating that Nigerian startups can achieve major international exits.',
+        h: 'Paystack = acquired by Stripe for ~$200M = major Nigerian tech exit.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Supervised machine learning requires:',
+        o: [
+          'Data without any labels — the algorithm discovers patterns independently',
+          'Labelled training data with known inputs and expected outputs — the algorithm learns to map inputs to outputs',
+          'A quantum computer for processing complex neural networks',
+          'Physical robots to demonstrate tasks before the AI learns them',
+        ],
+        a: 1,
+        e: "Supervised learning trains an algorithm on labelled data — input-output pairs where the correct answer is known (e.g., emails labelled 'spam' or 'not spam'; loan applications labelled 'approved' or 'rejected'). The algorithm learns to predict outputs for new unseen inputs. Unsupervised learning uses unlabelled data.",
+        h: 'Supervised ML = labelled data with known correct answers = algorithm learns mapping.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Which of the following CORRECTLY describes the difference between VR and AR?',
+        o: [
+          'VR enhances the real world with digital overlays; AR creates a completely virtual environment',
+          'VR creates a completely immersive virtual environment replacing reality; AR overlays digital content onto the real world',
+          'VR is only used for gaming; AR is only used for business applications',
+          'VR requires no special hardware; AR requires expensive headsets',
+        ],
+        a: 1,
+        e: 'VR (Virtual Reality) completely replaces your visual field with a digital environment — you see no real world, only the virtual one (requires headset). AR (Augmented Reality) ADDS digital elements onto your view of the real world (works via smartphone camera or AR glasses like HoloLens). Snapchat dog filter = AR; Meta Quest gaming = VR.',
+        h: 'VR = completely virtual world. AR = real world + digital overlay.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Quantum computers are fundamentally different from classical computers because quantum bits (qubits) can:',
+        o: [
+          'Process data 1000 times faster than classical bits due to better hardware',
+          'Exist in a state of 0 AND 1 simultaneously (superposition) rather than being strictly 0 OR 1',
+          'Store unlimited amounts of data in each qubit',
+          'Operate without electricity using quantum energy fields',
+        ],
+        a: 1,
+        e: 'Superposition allows qubits to exist in both states (0 and 1) simultaneously — unlike classical bits that must be strictly 0 OR 1. This allows quantum computers to explore multiple solutions simultaneously for certain problem types (cryptography, optimisation, drug discovery), giving them exponential advantage over classical computers for those specific problems.',
+        h: 'Qubits = superposition = 0 AND 1 simultaneously = not strictly 0 OR 1.',
+        yr: 'CSC',
+      },
+      {
+        q: "Big Data is characterised by the '5 Vs'. Which option correctly identifies all five?",
+        o: [
+          'Volume, Velocity, Variety, Veracity, Value',
+          'Volume, Visibility, Variety, Validity, Value',
+          'Volume, Velocity, Versatility, Veracity, Vision',
+          'Vastness, Velocity, Variety, Veracity, Validity',
+        ],
+        a: 0,
+        e: 'The 5 Vs of Big Data: Volume (massive amounts), Velocity (high speed of generation/processing), Variety (multiple formats: text, video, sensor data), Veracity (data quality and accuracy), Value (useful insights extracted). Some models add a 6th V: Variability (inconsistency in data flow). These characteristics define why traditional databases cannot handle Big Data.',
+        h: '5 Vs: Volume, Velocity, Variety, Veracity, Value.',
+        yr: 'CSC',
+      },
+      {
+        q: 'NITDA (National Information Technology Development Agency) and NCAIR are Nigerian government bodies responsible for:',
+        o: [
+          'Providing mobile phone services across Nigeria',
+          'Overseeing IT development policy and AI research in Nigeria respectively',
+          'Operating undersea internet cables for Nigerian internet access',
+          'Regulating cryptocurrency trading and blockchain applications in Nigeria',
+        ],
+        a: 1,
+        e: "NITDA (National Information Technology Development Agency) is the primary government agency responsible for IT policy, regulation, standards, and development in Nigeria. NCAIR (National Centre for Artificial Intelligence and Robotics) focuses on AI research, development, and application in Nigeria. Both are key institutions in Nigeria's digital development agenda.",
+        h: 'NITDA = Nigerian IT agency. NCAIR = Nigerian AI research centre.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The eNaira (launched by the CBN in 2021) is best described as:',
+        o: [
+          'A decentralised cryptocurrency like Bitcoin operating outside CBN control',
+          "Nigeria's Central Bank Digital Currency (CBDC) — a regulated digital form of the Naira",
+          'A blockchain-based payment system for international transactions only',
+          'A mobile banking app operated by a private fintech company',
+        ],
+        a: 1,
+        e: "eNaira is Nigeria's CBDC (Central Bank Digital Currency) — a digital form of the Nigerian Naira issued and regulated by the Central Bank of Nigeria (CBN). Unlike Bitcoin or Ethereum (decentralised cryptocurrencies with no central authority), eNaira is centralised, government-regulated, and maintains 1:1 value parity with physical Naira.",
+        h: 'eNaira = CBN-issued, regulated, centralised digital Naira = CBDC (not decentralised crypto).',
+        yr: 'CSC',
+      },
+      {
+        q: 'A JAWS screen reader used by a visually impaired student at LASU is classified as what type of technology?',
+        o: [
+          'Artificial intelligence application',
+          'Assistive technology (accessibility technology)',
+          'Virtual reality tool',
+          'Biometric input device',
+        ],
+        a: 1,
+        e: 'JAWS (Job Access With Speech) and NVDA are screen readers — assistive technologies designed to make computers accessible to visually impaired users by converting on-screen text to synthesised speech or Braille output. Assistive technologies remove barriers that would otherwise prevent people with disabilities from using standard computing devices.',
+        h: 'JAWS screen reader = assistive technology for visually impaired users.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Proof of Work (PoW) and Proof of Stake (PoS) are:',
+        o: [
+          'Encryption algorithms used to secure blockchain transactions',
+          'Consensus mechanisms that different blockchain networks use to validate and add new blocks',
+          'Network protocols for transmitting blockchain data between nodes',
+          'Authentication methods for accessing cryptocurrency wallets',
+        ],
+        a: 1,
+        e: 'Consensus mechanisms are the rules by which blockchain networks agree on valid transactions and new blocks. Proof of Work (PoW — used by Bitcoin) requires miners to solve computationally expensive puzzles. Proof of Stake (PoS — used by Ethereum 2.0) selects validators based on their staked cryptocurrency, being far more energy-efficient.',
+        h: 'PoW and PoS = blockchain consensus mechanisms = how network agrees on valid transactions.',
+        yr: 'CSC',
+      },
+      {
+        q: 'A Nigerian agricultural company uses drones to capture aerial images of their crops, AI to analyse the images for disease and nutrient deficiency, and IoT soil sensors to monitor moisture levels — all integrated in a real-time management dashboard. This combination is BEST described as:',
+        o: [
+          'Big Data analytics only — the data is processed in batches',
+          'Convergence of AI, IoT, and Big Data for precision agriculture',
+          'Virtual Reality farming — all operations are conducted virtually',
+          'Blockchain agriculture — crop data is stored on a distributed ledger',
+        ],
+        a: 1,
+        e: 'This scenario combines multiple emerging technologies: IoT (soil sensors collecting real-time data), AI/Computer Vision (analysing drone images for crop health), and potentially Big Data analytics (processing large volumes of sensor and image data). This convergence of technologies exemplifies precision agriculture — data-driven farming to maximise yields and minimise waste.',
+        h: 'Multiple technologies working together (AI + IoT + data) = technology convergence.',
+        yr: 'CSC',
+      },
+      {
+        q: "What is a 'smart contract' in the context of blockchain technology?",
+        o: [
+          'A legal contract that has been digitised and stored as a PDF on a blockchain',
+          'A self-executing program stored on the blockchain that automatically enforces agreement terms when conditions are met',
+          'An AI-powered contract review system that detects fraudulent clauses',
+          'A standard contract template provided by blockchain companies for business use',
+        ],
+        a: 1,
+        e: 'Smart contracts are programs stored on blockchain that automatically execute predefined actions when specified conditions are met — without needing intermediaries. Example: A Nigerian real estate smart contract could automatically transfer property ownership (update blockchain record) and release payment when all conditions (survey, inspection, payment confirmation) are verified.',
+        h: 'Smart contract = self-executing code on blockchain = automatic enforcement of conditions.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Galaxy Backbone Limited is a Nigerian government ICT company that provides:',
+        o: [
+          'Satellite launches for Nigerian communications satellites',
+          'Shared IT infrastructure (data centres, internet connectivity, cloud services) for Nigerian government agencies',
+          'Mobile telecommunications services competing with MTN and Airtel',
+          'E-commerce platforms for Nigerian government procurement',
+        ],
+        a: 1,
+        e: 'Galaxy Backbone Limited is a government-owned ICT company supervised by the Federal Ministry of Communications that provides shared IT infrastructure services to Nigerian government agencies — including data centres, internet connectivity, unified communications, and cloud services. It helps government agencies reduce duplication and costs in IT infrastructure.',
+        h: 'Galaxy Backbone = Nigerian government shared IT infrastructure provider.',
+        yr: 'CSC',
+      },
+      {
+        q: 'Reinforcement learning is a type of machine learning where:',
+        o: [
+          'The algorithm learns from labelled input-output training data',
+          'The algorithm discovers hidden patterns in unlabelled datasets',
+          'The algorithm learns by receiving rewards/penalties based on actions taken in an environment',
+          'The algorithm uses multiple human teachers providing simultaneous feedback',
+        ],
+        a: 2,
+        e: 'Reinforcement Learning (RL) is a type of ML where an agent learns to take actions in an environment to maximise cumulative reward. The agent receives positive rewards for correct/good actions and penalties for incorrect ones, gradually learning optimal strategies through trial and error. Used in: game-playing AI (AlphaGo defeated world Go champion), autonomous vehicles, trading algorithms.',
+        h: 'Learns by trial and error, getting rewards for good actions = Reinforcement Learning.',
+        yr: 'CSC',
+      },
+      {
+        q: 'The Internet of Things (IoT) faces which of the following as a MAJOR CHALLENGE?',
+        o: [
+          'IoT devices are too large to deploy at scale — physical size is a limitation',
+          'Security vulnerabilities — many IoT devices have weak security, creating millions of potential attack entry points',
+          'IoT requires quantum computing to process sensor data in real-time',
+          'IoT is only applicable in developed countries — not yet viable in Nigeria',
+        ],
+        a: 1,
+        e: "IoT security is a major challenge: billions of connected devices (sensors, cameras, smart meters) with limited processing power for encryption, often with default/weak passwords, rarely updated firmware, creating an enormous attack surface. Compromised IoT devices have been used in DDoS attacks (Mirai botnet used millions of IoT devices). Nigeria's smart meter rollout must address these security concerns.",
+        h: 'Billions of connected devices with weak security = major IoT security challenge.',
+        yr: 'CSC',
+      },
+      {
+        q: "Which of the following Nigerian tech ecosystem entities is a fintech payment gateway company valued at over $3 billion, co-founded by Olugbenga 'GB' Agboola?",
+        o: ['Paystack', 'Interswitch', 'Flutterwave', 'Andela'],
+        a: 2,
+        e: "Flutterwave was founded in 2016 by Olugbenga 'GB' Agboola and Iyin Aboyeji. It provides payment infrastructure for businesses in Africa, enabling cross-border payments. It achieved unicorn status (valuation over $1 billion) in 2021 and has been valued at over $3 billion, making it one of Africa's highest-valued fintech companies.",
+        h: "Flutterwave = Olugbenga 'GB' Agboola + unicorn ($3B+) = African payment gateway.",
+        yr: 'CSC',
+      },
+      {
+        q: 'Andela, a Nigerian-founded technology company, is primarily known for:',
+        o: [
+          'Developing a popular Nigerian social media platform',
+          'Identifying, training, and connecting African software developers with global technology companies',
+          'Manufacturing affordable smartphones for the Nigerian market',
+          'Providing satellite internet connectivity to rural Nigerian communities',
+        ],
+        a: 1,
+        e: "Andela was co-founded in Lagos in 2014 and specialises in identifying high-potential African software engineers, providing intensive training, and connecting them with global technology companies as remote developers. It has trained thousands of Nigerian and pan-African developers, contributing significantly to Africa's tech talent pipeline and the global developer economy.",
+        h: 'Andela = tech talent company = trains and connects African developers globally.',
+        yr: 'CSC',
+      },
+    ],
+  },
 ];
