@@ -3163,7 +3163,7 @@ body.dark-mode .lekki-card:hover {
 /* Last 2 items each span 3 of 6 columns (row 2 = 2 equal wider columns) */
 .exam-type-compact-card:nth-child(4),
 .exam-type-compact-card:nth-child(5) {
-  grid-column: span 3;
+  grid-column: span 2;
 }
 
 .exam-type-compact-icon { font-size: 28px; }
