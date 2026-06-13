@@ -24,7 +24,7 @@ export default function Splash({ onDone }) {
     <div className="scr splash-container">
       {stars.map(s => <div key={s.id} className="star" style={{ left: `${s.left}%`, top: `${s.top}%`, animationDelay: `${s.delay}s`, animationDuration: `${s.dur}s` }} />)}
       <img src={logo} alt="EliteScholars Logo" className="splash-logo" />
-      <div className="splash-subtitle">JAMB · WAEC · NECO · POST UTME · GST</div>
+      <div className="splash-subtitle">JAMB · WAEC · NECO · GST</div>
       <div className="splash-load-bar"><div className="splash-load-progress" /></div>
       <div className="splash-footer">© {new Date().getFullYear()} EliteScholars. All rights reserved.</div>
     </div>
