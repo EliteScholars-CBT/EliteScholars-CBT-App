@@ -564,7 +564,7 @@ export default function App() {
 
   return (
     <>
-      <DebugConsole />
+      {/* <DebugConsole /> */}
       <div className="phone">
         <div className="phone-content">
           <ErrorBoundary>
