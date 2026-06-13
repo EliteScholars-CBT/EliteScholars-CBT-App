@@ -9,7 +9,7 @@ import BackButton from './BackButton';
 
 const EXAM_OPTIONS = [
   { id: 'jamb',     label: 'JAMB' },
-  { id: 'postutme', label: 'POST UTME' },
+  // { id: 'postutme', label: 'POST UTME' },
   { id: 'waec',     label: 'WAEC' },
   { id: 'neco',     label: 'NECO' },
   { id: 'gst',      label: 'GST' },
