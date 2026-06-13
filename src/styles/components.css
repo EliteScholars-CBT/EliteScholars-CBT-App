@@ -3126,7 +3126,7 @@ body.dark-mode .lekki-card:hover {
 /* Compact grid — auto-fills 3 per odd row, 2 per even row via CSS */
 .exam-type-compact-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 16px 16px 40px;
   flex: 1;
