@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { QB } from '../data/jamb/index';
-import { WAEC_QB } from '../data/waec/index';
-import { NECO_QB } from '../data/neco/index';
-import { GST_QB } from '../data/gst/index';
+import { WAEC_QB, WAEC_LEARN } from '../data/waec/index';
+import { NECO_QB, NECO_LEARN } from '../data/neco/index';
+import { GST_QB, GST_LEARN } from '../data/gst/index';
+import { JAMB_LEARN } from '../data/jamb/index';
+import { POSTUTME_LEARN } from '../data/postutme/index';
 import { SUBJ } from '../data/subjects';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import {
@@ -21,6 +23,54 @@ import {
 } from '../utils/colors';
 import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
+
+// ── Extract all embedded questions from a learn bank for one subject ─────────
+// Each topic can have a `questions` array. We pull them all out and merge
+// them into the CBT pool so topic questions appear in CBT mode too.
+function getTopicQuestions(learnBank, subjectId) {
+  const topics = (learnBank && learnBank[subjectId]) || [];
+  const qs = [];
+  topics.forEach((topic) => {
+    if (Array.isArray(topic.questions)) {
+      topic.questions.forEach((q) => qs.push(q));
+    }
+  });
+  return qs;
+}
+
+// ── Resolve the right QB + learn bank for the given examType ─────────────────
+function buildQuestionPool(examType, subjectId) {
+  // 1. Pick QB bank
+  const bankByType =
+    examType === 'neco'                              ? NECO_QB :
+    examType === 'gst'                               ? GST_QB  :
+    (examType === 'waec' || examType === 'postutme') ? WAEC_QB :
+    QB; // jamb default
+
+  const qbQuestions = bankByType[subjectId]
+    || WAEC_QB[subjectId]
+    || QB[subjectId]
+    || QB.economics
+    || [];
+
+  // 2. Pick the matching learn bank to extract topic-embedded questions
+  const learnBankByType =
+    examType === 'neco'     ? NECO_LEARN     :
+    examType === 'gst'      ? GST_LEARN      :
+    examType === 'postutme' ? POSTUTME_LEARN :
+    examType === 'jamb'     ? JAMB_LEARN     :
+    WAEC_LEARN; // waec default
+
+  const topicQuestions = getTopicQuestions(learnBankByType, subjectId);
+
+  // 3. Merge — deduplicate by question text so no duplicates appear
+  if (topicQuestions.length === 0) return qbQuestions;
+
+  const seen = new Set(qbQuestions.map((q) => q.q));
+  const uniqueTopicQs = topicQuestions.filter((q) => !seen.has(q.q));
+
+  return [...qbQuestions, ...uniqueTopicQs];
+}
 
 export default function Quiz({
   subjectId,
@@ -44,13 +94,8 @@ export default function Quiz({
   examType,        // optional: 'jamb' | 'waec' | 'neco' | 'postutme' | 'gst'
 }) {
   const [shuffled] = useState(() => {
-    // Pick the right question bank based on examType prop
-    const bankByType = examType === 'neco' ? NECO_QB :
-                       examType === 'gst'  ? GST_QB  :
-                       (examType === 'waec' || examType === 'postutme') ? WAEC_QB :
-                       QB; // jamb default
-    const questions = bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
-    return sfl(questions);
+    const pool = buildQuestionPool(examType, subjectId);
+    return sfl(pool);
   });
 
   const [qi, setQi] = useState(0);

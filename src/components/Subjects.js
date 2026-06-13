@@ -18,7 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
-  { id: 'flashcard', label: 'Flash' },
+  // { id: 'flashcard', label: 'Flash' },
   // { id: 'game', label: 'Game' },
 ];
 
@@ -67,7 +67,9 @@ export default function Subjects({
         return { subjects: WAEC_SUBJECTS, qb: WAEC_QB };
 
       case 'neco':
-        return { subjects: WAEC_SUBJECTS, qb: NECO_QB };
+        // Use NECO_SUBJECTS (9 subjects with actual question banks)
+        // not WAEC_SUBJECTS (12) which would show 3 empty subjects in CBT
+        return { subjects: NECO_SUBJECTS, qb: NECO_QB };
 
       case 'jamb':
         return { subjects: WAEC_SUBJECTS, qb: QB };

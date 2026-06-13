@@ -1,2034 +1,3041 @@
 // ============================================================================
 // HISTORY AND PHILOSOPHY OF SCIENCE — COMPLETE LEARNING MODULE (10 TOPICS)
-// Based on CCMAS (Core Curriculum and Minimum Academic Standards)
-// GST 114 / PHIL 102
+// GST 112 / HPS 101
 // ============================================================================
 
 export const GST_LEARN_GST_HISTORY = [
-  // ==========================================================================
-  // TOPIC 1: Introduction to History and Philosophy of Science
-  // ==========================================================================
   {
-    topic: "Introduction to History and Philosophy of Science",
-    topicCode: "HPS-001-01",
-    module: "Foundations",
+    topic: 'Nature and Meaning of Science',
+    topicCode: 'HPS-NMS-01',
+    module: 'Module 1: Understanding Science',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">History and Philosophy of Science (HPS)</span> is an interdisciplinary field that examines the development of scientific knowledge through time (history) and the foundational assumptions, methods, and implications of science (philosophy). <strong>Understanding HPS helps you think critically about what science is, how it works, and why it matters</strong>.
-</div>
-
-<p class="learn-p">Science is one of the most powerful human endeavors. It has given us vaccines, computers, smartphones, airplanes, and an understanding of the universe from subatomic particles to distant galaxies. But what exactly is science? How does it differ from other ways of knowing (religion, philosophy, common sense, pseudoscience)? How does scientific knowledge grow and change? These questions are the domain of the philosophy of science. The history of science shows us that scientific knowledge is not static — it evolves through revolutions, debates, and discoveries, with theories once considered certain eventually discarded or refined.</p>
-
-<h3 class="learn-subheading">What is Science? — Definitions and Characteristics</h3>
-
-<p class="learn-p">The word "science" comes from the Latin "scientia," meaning knowledge. But not all knowledge is scientific. Science is a particular way of knowing characterized by specific methods and attitudes.</p>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Characteristic</th><th>Description</th><th>Example</th>
-    </thead>
-    <tbody>
-      <tr><td>Empirical</th><td>Based on observable, measurable evidence — not pure reasoning or authority</th><td>Testing a drug's effectiveness through clinical trials, not just theorizing</td>
-      </tr>
-      <tr><td>Systematic</th><td>Organized, methodical approach following established procedures</th><td>Following the scientific method: hypothesis, prediction, experiment, analysis</td>
-      </tr>
-      <tr><td>Testable/Falsifiable</th><td>Must make predictions that can be checked against reality</th><td>"All swans are white" is falsifiable — finding one black swan disproves it</td>
-      </tr>
-      <tr><td>Self-Correcting</th><td>Errors are identified and corrected through peer review, replication, criticism</th><td>Retracted papers, revised theories based on new evidence</td>
-      </tr>
-      <tr><td>Provisional</th><td>Scientific knowledge is never "proven" absolutely; always open to revision</th><td>Newton's gravity replaced by Einstein's; may be refined further</td>
-      </tr>
-      <tr><td>Cumulative but Revolutionary</th><td>Builds on prior knowledge but also experiences paradigm shifts (Kuhn)</th><td>Copernican Revolution replaced geocentrism with heliocentrism</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🔬 WHAT IS SCIENCE? — Key Characteristics</text>
-    
-    <g>
-      <circle cx="90" cy="70" r="8" fill="#3b82f6">
-        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="90" y="96" text-anchor="middle" font-size="8" fill="#1e3a8a">Empirical</text>
-    </g>
-    <line x1="90" y1="78" x2="90" y2="200" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <g>
-      <circle cx="160" cy="70" r="8" fill="#22c55e">
-        <animate attributeName="r" values="8;12;8" dur="2s" begin="0.3s" repeatCount="indefinite"/>
-      </circle>
-      <text x="160" y="96" text-anchor="middle" font-size="8" fill="#166534">Systematic</text>
-    </g>
-    <line x1="160" y1="78" x2="160" y2="200" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <g>
-      <circle cx="230" cy="70" r="8" fill="#f59e0b">
-        <animate attributeName="r" values="8;12;8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
-      </circle>
-      <text x="230" y="96" text-anchor="middle" font-size="8" fill="#92400e">Falsifiable</text>
-    </g>
-    <line x1="230" y1="78" x2="230" y2="200" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <g>
-      <circle cx="300" cy="70" r="8" fill="#ec4899">
-        <animate attributeName="r" values="8;12;8" dur="2s" begin="0.9s" repeatCount="indefinite"/>
-      </circle>
-      <text x="300" y="96" text-anchor="middle" font-size="8" fill="#831843">Self-Correcting</text>
-    </g>
-    <line x1="300" y1="78" x2="300" y2="200" stroke="#ec4899" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <g>
-      <circle cx="370" cy="70" r="8" fill="#8b5cf6">
-        <animate attributeName="r" values="8;12;8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="370" y="96" text-anchor="middle" font-size="8" fill="#5b21b6">Provisional</text>
-    </g>
-    <line x1="370" y1="78" x2="370" y2="200" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <g>
-      <circle cx="440" cy="70" r="8" fill="#ef4444">
-        <animate attributeName="r" values="8;12;8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
-      </circle>
-      <text x="440" y="96" text-anchor="middle" font-size="8" fill="#991b1b">Cumulative &amp; Revolutionary</text>
-    </g>
-    <line x1="440" y1="78" x2="440" y2="200" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4"/>
-    
-    <rect x="50" y="210" width="400" height="30" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="230" text-anchor="middle" font-size="9" fill="#475569">🔑 Science is a way of knowing — empirical, testable, and self-correcting</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Goals of Science</h3>
-
-<p class="learn-p">Science pursues multiple interconnected goals:</p>
+<div class="learn-intro">Science is one of humanity's most powerful tools for understanding the world. The word "science" derives from the Latin <span class="learn-keyword">scientia</span> (knowledge). Science is a <span class="learn-keyword">systematic enterprise</span> that builds and organizes knowledge in the form of testable explanations and predictions about the universe, using empirical observation and rational inference, subject to revision in light of new evidence.</div>
+<h3 class="learn-subheading">1.1 Characteristics of Science</h3>
 <ul class="learn-list">
-  <li><strong>Description:</strong> Accurately observing and documenting phenomena (e.g., describing the life cycle of a butterfly, mapping the human genome)</li>
-  <li><strong>Explanation:</strong> Understanding why phenomena occur — identifying causes and mechanisms (e.g., why planets orbit the sun: gravity)</li>
-  <li><strong>Prediction:</strong> Using theories to forecast future events or unobserved phenomena (e.g., predicting eclipses, weather, disease spread)</li>
-  <li><strong>Control/Intervention:</strong> Applying scientific knowledge to manipulate nature for human benefit (e.g., vaccines, antibiotics, engineering, agriculture)</li>
-  <li><strong>Understanding/Explanation (as intrinsic value):</strong> Knowing for its own sake, satisfying human curiosity about the universe</li>
+<li><strong>Empirical:</strong> Based on observation and experience — evidence from the physical world is the ultimate arbiter.</li>
+<li><strong>Objective:</strong> Aims to minimize personal bias; findings should be reproducible by any qualified researcher.</li>
+<li><strong>Systematic:</strong> Follows orderly, organized procedures — not random investigation.</li>
+<li><strong>Falsifiable:</strong> Claims must be testable and potentially disprovable (Karl Popper's criterion).</li>
+<li><strong>Replicable:</strong> Results must be reproducible by independent researchers following the same methods.</li>
+<li><strong>Cumulative:</strong> Each generation builds progressively on prior knowledge.</li>
+<li><strong>Self-correcting:</strong> Peer review, replication, and open publication identify and fix errors over time.</li>
+<li><strong>Predictive:</strong> Good theories not only explain but predict new observations.</li>
+<li><strong>Parsimonious:</strong> Occam's Razor — simpler explanations preferred when both explain evidence equally well.</li>
 </ul>
-
-<h3 class="learn-subheading">Science vs Other Ways of Knowing</h3>
-
-<p class="learn-p">Science is not the only way to acquire knowledge. Philosophy uses logic and reasoning; religion appeals to revelation and faith; common sense draws on everyday experience; pseudoscience mimics science but lacks its rigor. Understanding the differences helps evaluate claims critically.</p>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Way of Knowing</th><th>Method</th><th>Strengths</th><th>Limitations</th>
-    </thead>
-    <tbody>
-      <tr><td>Science</th><td>Empirical observation, experimentation, peer review, falsification</th><td>Reliable, testable, self-correcting, produces technology</th><td>Limited to empirical questions; cannot address values, meaning, aesthetics</td>
-      </tr>
-      <tr><td>Philosophy</th><td>Reason, logic, argument, conceptual analysis</th><td>Clarifies concepts, examines assumptions, addresses questions science cannot</th><td>Often lacks empirical grounding; conclusions debatable</td>
-      </tr>
-      <tr><td>Religion</th><td>Revelation, sacred texts, faith, tradition</th><td>Provides meaning, purpose, community, moral guidance</th><td>Claims not empirically testable; different religions conflict</td>
-      </tr>
-      <tr><td>Pseudoscience</th><td>Looks like science (jargon, formulas) but lacks testing, peer review, falsifiability</th><td>None — produces false beliefs, wastes resources, causes harm</th><td>Does not self-correct; claims persist despite contrary evidence</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 class="learn-subheading">Why Study History and Philosophy of Science?</h3>
-
-<p class="learn-p">Understanding HPS benefits everyone, whether scientist or not:</p>
+<h3 class="learn-subheading">1.2 Branches of Science</h3>
 <ul class="learn-list">
-  <li><strong>Critical thinking:</strong> Evaluate scientific claims — distinguish good science from bad science, pseudoscience, and misinformation</li>
-  <li><strong>Contextual understanding:</strong> Science does not occur in a vacuum; it is shaped by cultural, political, and economic factors</li>
-  <li><strong>Appreciation of scientific process:</strong> Understanding that science is fallible, provisional, and self-correcting — not a collection of absolute truths</li>
-  <li><strong>Ethical awareness:</strong> Science can be used for good or evil; understanding history helps avoid past mistakes (eugenics, unethical experiments)</li>
-  <li><strong>Better science:</strong> Reflection on methods, assumptions, and history leads to more thoughtful, rigorous research</li>
+<li><strong>Natural Sciences:</strong> Physics, Chemistry, Biology, Geology, Astronomy — study the natural world.</li>
+<li><strong>Formal Sciences:</strong> Mathematics, Logic, Statistics — use deductive proof, not observation.</li>
+<li><strong>Social Sciences:</strong> Sociology, Psychology, Economics, Political Science — apply scientific methods to human behavior.</li>
+<li><strong>Applied Sciences:</strong> Medicine, Engineering, Agriculture — use knowledge to solve practical problems.</li>
 </ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>GST Exam Tip:</strong> Questions often ask you to distinguish science from pseudoscience using falsifiability. Remember: A statement is scientific only if it can be proven false (falsifiable). "All swans are white" is falsifiable; "There exists an invisible, undetectable dragon in my garage" is unfalsifiable and thus not scientific.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>Key Thinker:</strong> Karl Popper (1902-1994) proposed falsifiability as the criterion for demarcating science from non-science. He argued that no number of confirming observations can prove a theory true, but a single disconfirming observation can prove it false. Science progresses by conjectures and refutations.</span>
-</div>
-    `,
+<h3 class="learn-subheading">1.3 The Demarcation Problem</h3>
+<p class="learn-p">The <span class="learn-keyword">demarcation problem</span> asks: how do we distinguish science from non-science? <span class="learn-keyword">Karl Popper</span> proposed <span class="learn-keyword">falsifiability</span>: a theory is scientific only if conceivable observations could refute it. The <span class="learn-keyword">Vienna Circle</span> proposed <span class="learn-keyword">verificationism</span>: meaningful statements must be empirically verifiable. Thomas Kuhn argued science is distinguished by paradigm-governed puzzle-solving. Pseudoscience claims scientific status but lacks scientific rigor (astrology, homeopathy, flat earth).</p>
+<h3 class="learn-subheading">1.4 Pure Science, Applied Science, and Technology</h3>
+<p class="learn-p"><span class="learn-keyword">Pure science</span> seeks knowledge for understanding (studying DNA structure, black holes). <span class="learn-keyword">Applied science</span> uses knowledge to solve specific problems (developing vaccines). <span class="learn-keyword">Technology</span> creates tools, systems, and machines extending human capabilities. The relationship is interactive — science enables technology and technology enables new science.</p>
+<h3 class="learn-subheading">1.5 Science and Other Ways of Knowing</h3>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Mode</th><th>Method</th><th>Relationship to Science</th></tr></thead><tbody>
+<tr><td>Religion/Theology</td><td>Revelation, faith, scripture</td><td>Different domains (meaning vs mechanism); conflict only when both claim the same answer</td></tr>
+<tr><td>Philosophy</td><td>Logical argument, conceptual analysis</td><td>Complementary; science grew out of natural philosophy</td></tr>
+<tr><td>Common Sense</td><td>Everyday observation, intuition</td><td>Science builds on but corrects common sense (Earth appears flat but is spherical)</td></tr>
+<tr><td>Pseudoscience</td><td>Claims scientific status but lacks rigor</td><td>Actively misleading — uses science-sounding language without scientific method</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="200" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Key Characteristics of Science</text><circle cx="280" cy="110" r="45" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="r" values="45;49;45" dur="3s" repeatCount="indefinite"/></circle><text x="280" y="106" text-anchor="middle" fill="#FFD700" font-size="11" font-family="Georgia,serif" font-weight="bold">SCIENCE</text><text x="280" y="120" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Systematic</text><ellipse cx="280" cy="50" rx="55" ry="16" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="280" y="54" text-anchor="middle" fill="#80ffaa" font-size="9" font-family="Georgia,serif" font-weight="bold">Empirical</text><ellipse cx="440" cy="85" rx="55" ry="16" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="440" y="89" text-anchor="middle" fill="#90c8ff" font-size="9" font-family="Georgia,serif" font-weight="bold">Falsifiable</text><ellipse cx="430" cy="148" rx="55" ry="16" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="430" y="152" text-anchor="middle" fill="#ffaa80" font-size="9" font-family="Georgia,serif" font-weight="bold">Replicable</text><ellipse cx="280" cy="178" rx="55" ry="16" fill="#0d3b6e" stroke="#FFD700" stroke-width="1.5"/><text x="280" y="182" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Georgia,serif" font-weight="bold">Self-correcting</text><ellipse cx="130" cy="148" rx="55" ry="16" fill="#0d3b6e" stroke="#a066e0" stroke-width="1.5"/><text x="130" y="152" text-anchor="middle" fill="#d4aaff" font-size="9" font-family="Georgia,serif" font-weight="bold">Objective</text><ellipse cx="120" cy="85" rx="55" ry="16" fill="#0d3b6e" stroke="#e0a020" stroke-width="1.5"/><text x="120" y="89" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Georgia,serif" font-weight="bold">Cumulative</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 170" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="170" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Pure Science → Applied Science → Technology</text><rect x="20" y="50" width="150" height="75" rx="8" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="95" y="74" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">PURE SCIENCE</text><text x="95" y="90" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Knowledge for its own sake</text><text x="95" y="112" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">DNA structure, black holes</text><line x1="170" y1="87" x2="193" y2="87" stroke="#FFD700" stroke-width="2"/><polygon points="193,87 182,81 182,93" fill="#FFD700"/><rect x="195" y="50" width="155" height="75" rx="8" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="272" y="74" text-anchor="middle" fill="#90c8ff" font-size="10" font-family="Georgia,serif" font-weight="bold">APPLIED SCIENCE</text><text x="272" y="90" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Knowledge for specific problems</text><text x="272" y="112" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">Vaccine development</text><line x1="350" y1="87" x2="373" y2="87" stroke="#FFD700" stroke-width="2"/><polygon points="373,87 362,81 362,93" fill="#FFD700"/><rect x="375" y="50" width="165" height="75" rx="8" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="457" y="74" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Georgia,serif" font-weight="bold">TECHNOLOGY</text><text x="457" y="90" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Tools, machines, systems</text><text x="457" y="112" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">mRNA vaccines, smartphones</text><text x="280" y="155" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Relationship is interactive — technology also enables new science</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Popper = falsifiability (the demarcation criterion). Vienna Circle = verificationism (empirically verifiable = meaningful). Pseudoscience ≠ non-science — pseudoscience CLAIMS to be scientific but lacks rigor. Technology ≠ science — technology applies knowledge; science seeks it. Pure science ≠ applied science — pure = knowledge for its own sake; applied = solving specific practical problems.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Confusing pseudoscience with non-science. Religion, art, and philosophy are legitimate non-sciences. Pseudoscience (astrology, homeopathy) is more dangerous — it falsely CLAIMS scientific status. Also: Occam's Razor (parsimony) does NOT say "the simplest explanation is always right" — it says when TWO explanations explain the evidence equally well, prefer the simpler one.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Science is systematic, empirical, falsifiable, replicable, objective, cumulative, and self-correcting knowledge about the natural world. The demarcation problem distinguishes science from non-science; Popper's falsifiability is the most influential answer. Pure science seeks knowledge; applied science solves problems; technology creates tools. Science coexists with other knowledge modes (religion, philosophy, art) that address different questions.</div>`,
     questions: [
-      { q: "The word 'science' comes from the Latin 'scientia' meaning:", o: ["Wisdom", "Knowledge", "Truth", "Experiment"], a: 1, e: "Scientia means knowledge. Science is a particular way of acquiring knowledge through empirical, systematic methods.", h: "What does 'scientia' translate to?", yr: "GST" },
-      { q: "Which characteristic of science means that scientific claims must be testable against observable evidence?", o: ["Theoretical", "Speculative", "Empirical", "Intuitive"], a: 2, e: "Empirical means based on observation and experiment — evidence that can be observed, measured, and verified by others.", h: "What word means 'based on observation'?", yr: "GST" },
-      { q: "According to Karl Popper, the criterion for distinguishing science from pseudoscience is:", o: ["Verifiability", "Falsifiability", "Popularity", "Complexity"], a: 1, e: "Popper argued scientific theories must be falsifiable — there must be possible observations that could prove them false. Unfalsifiable claims (e.g., astrology) are not scientific.", h: "What must be possible to prove a theory wrong?", yr: "GST" },
-      { q: "Which of the following is a goal of science?", o: ["Description, explanation, prediction, and control", "Proving absolute truths forever", "Replacing religion", "Avoiding criticism"], a: 0, e: "Science aims to describe, explain, predict, and intervene/control natural phenomena. It never achieves absolute certainty.", h: "What does science try to do?", yr: "GST" },
-      { q: "The statement 'There exist invisible, undetectable fairies in my garden' is:", o: ["Scientific", "Falsifiable", "Unfalsifiable — not scientific", "Empirically verified"], a: 2, e: "This claim is unfalsifiable because no possible observation could prove it false (the fairies are invisible and undetectable). Unfalsifiable claims are not scientific.", h: "Could you prove this wrong?", yr: "GST" },
-      { q: "Science differs from philosophy in that science relies primarily on:", o: ["Pure reason", "Revelation", "Empirical observation and experimentation", "Tradition"], a: 2, e: "Science is empirical — based on observation and experiment. Philosophy primarily uses reason, logic, and conceptual analysis, not empirical data.", h: "What does science use that philosophy does not necessarily need?", yr: "GST" },
-      { q: "Which of the following is NOT a characteristic of science?", o: ["Self-correcting", "Provisional", "Absolute certainty", "Falsifiable"], a: 2, e: "Science never achieves absolute certainty — all knowledge is provisional and subject to revision based on new evidence. Absolute certainty is not a characteristic of science.", h: "Does science claim to be permanently certain?", yr: "GST" },
-      { q: "Why study History and Philosophy of Science? Select all that apply.", o: ["Develop critical thinking skills", "Appreciate that science is fallible and self-correcting", "Recognize that science is purely objective with no cultural context", "Understand ethical dimensions of science"], a: [0,1,3], e: "HPS develops critical thinking, shows science as fallible/self-correcting, and reveals ethical dimensions. Science does occur within cultural context — not purely objective without context.", h: "What are benefits of HPS?", yr: "GST" },
-      { q: "The characteristic that science builds on prior knowledge but also undergoes revolutions is described as:", o: ["Cumulative but revolutionary", "Static", "Random", "Unchanging"], a: 0, e: "Science cumulatively builds knowledge, but also experiences paradigm shifts (Kuhn) where old frameworks are replaced — e.g., Copernican Revolution replaced geocentrism.", h: "How does science change over time?", yr: "GST" },
-      { q: "Which philosopher is most associated with falsifiability?", o: ["Thomas Kuhn", "Karl Popper", "Imre Lakatos", "Paul Feyerabend"], a: 1, e: "Karl Popper proposed falsifiability as the demarcation criterion between science and pseudoscience.", h: "Who wrote 'The Logic of Scientific Discovery'?", yr: "GST" },
-      { q: "A theory that makes risky predictions that could potentially disprove it is considered:", o: ["Weak", "Unscientific", "Strong according to Popper — because it is highly falsifiable", "Unimportant"], a: 2, e: "For Popper, theories that make bold, risky predictions (highly falsifiable) are stronger than theories that are vague or avoid prediction.", h: "What kind of theory impresses Popper?", yr: "GST" },
-      { q: "The goal of prediction in science means:", o: ["Guessing randomly", "Using theories to forecast future events or unobserved phenomena", "Always being correct", "Ignoring data"], a: 1, e: "Prediction means using scientific theories to anticipate what will happen in the future or what will be found in unexamined cases — e.g., predicting eclipses or new particles.", h: "What is scientific prediction?", yr: "GST" },
-      { q: "Which of the following is an example of a pseudoscience?", o: ["Physics", "Chemistry", "Astrology", "Biology"], a: 2, e: "Astrology claims to predict personality and events based on star positions but fails falsifiability tests and does not self-correct. Physics, chemistry, biology are genuine sciences.", h: "Which one is not a real science?", yr: "GST" },
-      { q: "That science is 'self-correcting' means:", o: ["It never makes mistakes", "Errors are identified and corrected through peer review, replication, and criticism", "Only scientists can criticize science", "Mistakes are ignored"], a: 1, e: "Self-correcting means the scientific community identifies errors (fraud, mistakes) through peer review, replication attempts, and critical scrutiny, then corrects the record.", h: "How does science handle its mistakes?", yr: "GST" },
-      { q: "Why can't science answer questions about the meaning of life?", o: ["Science is not interested", "Science is limited to empirical questions; meaning is a philosophical/religious question", "Scientists are not smart enough", "Science already answered it"], a: 1, e: "Science is limited to empirical, testable questions. Questions about purpose, meaning, value, morality are outside science's domain — addressed by philosophy and religion.", h: "What questions can't science answer?", yr: "GST" },
-      { q: "Which of the following is a scientific claim?", o: ["Vaccines cause autism (based on retracted fraudulent study)", "The Earth revolves around the Sun (falsifiable, supported by evidence)", "Astrological signs determine personality", "Homeopathy cures all diseases"], a: 1, e: "Heliocentrism is falsifiable and supported by overwhelming evidence. The others are pseudoscience or fraudulent.", h: "Which has real evidence?", yr: "GST" },
-      { q: "Thomas Kuhn is known for introducing which concept?", o: ["Falsifiability", "Paradigm shifts and normal science", "Verification principle", "Anarchist epistemology"], a: 1, e: "Kuhn's 'The Structure of Scientific Revolutions' (1962) introduced paradigm shifts — periods of revolutionary science alternating with 'normal science' puzzle-solving.", h: "What concept describes scientific revolutions?", yr: "GST" },
-      { q: "The provisional nature of science means:", o: ["Scientific knowledge is tentative and subject to revision with new evidence", "Scientists are always wrong", "Science cannot be trusted", "Theories never change"], a: 0, e: "Provisional means scientific knowledge is never final — always open to revision based on new evidence. Newton's laws were revised by Einstein; Einstein's may be revised.", h: "Is science ever completely finished?", yr: "GST" },
-      { q: "Which of the following distinguishes science from pseudoscience?", o: ["Use of jargon", "Use of mathematics", "Willingness to test claims and abandon them if falsified", "Complexity"], a: 2, e: "Pseudoscience often looks like science (jargon, math) but crucially lacks willingness to test claims and abandon them when falsified. Science self-corrects; pseudoscience clings to claims.", h: "What is the key behavioral difference?", yr: "GST" },
-      { q: "The goal of 'control/intervention' in science refers to:", o: ["Controlling scientists' behavior", "Applying scientific knowledge to manipulate nature for human benefit (vaccines, antibiotics, technology)", "Controlling research funding", "Controlling publication"], a: 1, e: "Control means using scientific understanding to intervene in natural processes — developing vaccines, antibiotics, engineering materials, farming techniques, etc. — for human benefit.", h: "How does science help us change things?", yr: "GST" }
-    ]
+      {
+        q: "The word 'science' derives from the Latin word 'scientia', which means:",
+        o: ['Power', 'Knowledge', 'Discovery', 'Method'],
+        a: 1,
+        e: "Science derives from the Latin 'scientia' meaning knowledge. This etymology reflects science's fundamental purpose: to build reliable, organized knowledge about the natural world through systematic investigation.",
+        h: 'Latin root: scientia = knowledge.',
+        yr: 'GST',
+      },
+      {
+        q: "Karl Popper's criterion for distinguishing science from non-science is:",
+        o: [
+          'Verifiability — scientific claims must be verified by observation',
+          'Falsifiability — scientific claims must be capable of being proven wrong',
+          'Consensus — agreed upon by majority of scientists',
+          'Utility — must have practical applications',
+        ],
+        a: 1,
+        e: "Popper proposed falsifiability as the demarcation criterion: a theory is scientific only if conceivable observations could refute it. Astrology makes vague unfalsifiable predictions; Newton's laws make precise, testable ones.",
+        h: 'Popper = falsifiability. A scientific theory MUST be potentially disprovable.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'demarcation problem' in philosophy of science refers to:",
+        o: [
+          'Dividing science funding between pure and applied research',
+          'The challenge of distinguishing science from non-science and pseudoscience',
+          'Difficulty of drawing boundaries between scientific disciplines',
+          'Deciding when a scientific theory has sufficient evidence',
+        ],
+        a: 1,
+        e: 'The demarcation problem is the philosophical challenge of identifying what distinguishes science from non-scientific disciplines. Addressed by Popper (falsifiability), the Vienna Circle (verificationism), and Kuhn (paradigm-governed activity).',
+        h: 'Demarcation problem = how do we distinguish science from non-science?',
+        yr: 'GST',
+      },
+      {
+        q: 'Which characteristic of science means findings can be independently reproduced by other researchers using the same methods?',
+        o: ['Objectivity', 'Parsimony', 'Replicability', 'Cumulativeness'],
+        a: 2,
+        e: 'Replicability means other researchers, following the same methods, obtain the same results. A finding that cannot be replicated by independent researchers raises serious doubts about its validity.',
+        h: 'Replicability = other researchers can reproduce the same results.',
+        yr: 'GST',
+      },
+      {
+        q: 'Science that seeks knowledge purely for understanding, without concern for immediate practical application, is called:',
+        o: ['Applied science', 'Pure (basic) science', 'Pseudoscience', 'Formal science'],
+        a: 1,
+        e: 'Pure (basic) science seeks knowledge for its own sake regardless of immediate practical value. Examples: understanding the fundamental structure of matter, mapping the human genome, black hole physics. Applied science uses knowledge to solve specific problems.',
+        h: 'Pure science = knowledge for its own sake. Applied science = solving practical problems.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which of the following is an example of PSEUDOSCIENCE?',
+        o: [
+          'Quantum mechanics — studying subatomic particles',
+          'Homeopathy — claiming extreme dilutions cure diseases',
+          'Organic chemistry — studying carbon-based compounds',
+          'Comparative anatomy — comparing body structures',
+        ],
+        a: 1,
+        e: "Homeopathy is pseudoscience: its core claim (water 'remembers' substances even after extreme dilution) is not scientifically supported and in some formulations is unfalsifiable. Quantum mechanics, organic chemistry, and comparative anatomy are established scientific fields.",
+        h: 'Pseudoscience = claims scientific status but lacks scientific rigor.',
+        yr: 'GST',
+      },
+      {
+        q: "The principle of parsimony (Occam's Razor) in science means:",
+        o: [
+          'Scientific theories should explain as many phenomena as possible',
+          'When two explanations account for evidence equally well, the simpler one is preferred',
+          'Science should use minimum researchers for any investigation',
+          'Experiments should use minimum equipment',
+        ],
+        a: 1,
+        e: "Occam's Razor: among competing hypotheses that predict observations equally well, select the one with fewest assumptions. Simpler explanations are preferred unless additional complexity is warranted by the evidence.",
+        h: "Occam's Razor = parsimony = prefer simpler explanation when both explain evidence equally well.",
+        yr: 'GST',
+      },
+      {
+        q: 'Which branch of science studies abstract structures using deductive reasoning and proof, rather than empirical observation?',
+        o: [
+          'Natural sciences (Physics, Chemistry)',
+          'Social sciences (Sociology, Psychology)',
+          'Formal sciences (Mathematics, Logic)',
+          'Applied sciences (Engineering, Medicine)',
+        ],
+        a: 2,
+        e: 'Formal sciences (Mathematics, Logic, Statistics) study abstract structures using deductive proof rather than empirical observation. Mathematical theorems are true by logical necessity, not experimental confirmation.',
+        h: 'Formal sciences = Mathematics, Logic = use proof, not observation.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'self-correcting' nature of science refers to:",
+        o: [
+          'Scientists correcting their personal behavior when making mistakes',
+          'The internal mechanisms (peer review, replication, publication) that identify and fix errors over time',
+          'The automatic correction of scientific instruments during calibration',
+          'Revising funding allocations when research goes wrong',
+        ],
+        a: 1,
+        e: 'Science is self-correcting because it has systematic mechanisms — peer review, replication, open publication — that expose errors and lead to corrections. Wrong theories are revised or abandoned: phlogiston theory replaced by oxygen theory; miasma theory replaced by germ theory.',
+        h: 'Self-correcting = peer review + replication + open publication expose and fix errors over time.',
+        yr: 'GST',
+      },
+      {
+        q: 'Common sense differs from science primarily in that:',
+        o: [
+          'Common sense is always wrong while science is always right',
+          'Science involves systematic testing, controlled observation, and correction of errors that common sense does not undergo',
+          'Common sense applies only to everyday situations while science applies only to laboratories',
+          'Science requires expensive equipment while common sense is free',
+        ],
+        a: 1,
+        e: 'Common sense is based on everyday experience without systematic testing. Science deliberately tests common-sense ideas and often finds them wrong — the Earth appears flat but is spherical; heavy objects appear to fall faster but (ignoring air resistance) fall at the same rate.',
+        h: 'Science systematically tests and corrects common sense through controlled observation.',
+        yr: 'GST',
+      },
+      {
+        q: "The Vienna Circle's verificationism held that a statement is scientifically meaningful only if:",
+        o: [
+          'It is accepted by a majority of scientists',
+          'It can be verified through empirical observation',
+          'It makes predictions that have not yet been tested',
+          'It has been published in a peer-reviewed journal',
+        ],
+        a: 1,
+        e: "The Vienna Circle's Logical Positivism: a statement is cognitively meaningful only if it is empirically verifiable — possible observations could confirm or disconfirm it. Metaphysical claims that cannot be verified are 'meaningless.'",
+        h: 'Vienna Circle verificationism: meaningful = empirically verifiable.',
+        yr: 'GST',
+      },
+      {
+        q: 'The relationship between science and technology is best described as:',
+        o: [
+          'Technology always precedes science — tools are invented before theories explaining them',
+          'Science and technology are identical — there is no meaningful distinction',
+          'Interactive — science enables technology, and technology enables new science',
+          'Competitive — technology advances reduce the need for pure scientific research',
+        ],
+        a: 2,
+        e: 'Science and technology have an interactive, mutually reinforcing relationship. Science provides knowledge enabling new technologies (molecular biology → genetic engineering). Technology provides better instruments enabling new scientific discoveries (better telescopes → new astronomy).',
+        h: 'Science ↔ Technology: interactive and mutually reinforcing, not one-directional.',
+        yr: 'GST',
+      },
+      {
+        q: "Which of the following scientific claims is NOT falsifiable, and therefore problematic by Popper's criterion?",
+        o: [
+          'The boiling point of water at sea level is 100°C',
+          'All living organisms contain DNA',
+          'The universe was created by a supernatural force whose actions defy natural laws',
+          'Increasing CO2 in the atmosphere increases global average temperature',
+        ],
+        a: 2,
+        e: "The claim that 'a supernatural force whose actions defy natural laws' created the universe is unfalsifiable — any observation is compatible with the claim. No possible observation could refute it. The other three claims are all falsifiable.",
+        h: "Unfalsifiable = no possible observation could disprove it. NOT scientific by Popper's criterion.",
+        yr: 'GST',
+      },
+      {
+        q: 'Social sciences differ from natural sciences primarily in that:',
+        o: [
+          'Social sciences do not use any empirical methods',
+          'Social sciences study human society and behavior, introducing challenges of subjectivity, reflexivity, and value-laden research',
+          'Social sciences cannot make any predictions',
+          'Social sciences are not considered legitimate sciences',
+        ],
+        a: 1,
+        e: 'Social sciences apply scientific methods to human behavior. Key differences: human subjects are conscious and may change behavior when observed; complete control of variables is usually impossible; researchers may have biases; ethical constraints limit experiments.',
+        h: 'Social sciences study human behavior — face unique challenges of subjectivity, ethics, and reflexivity.',
+        yr: 'GST',
+      },
+      {
+        q: "The fact that Einstein's general theory successfully predicted light bending around the sun (confirmed 1919) demonstrates which characteristic of good scientific theories?",
+        o: [
+          "Parsimony — uses fewer variables than Newton's theory",
+          'Empiricism — based solely on observation rather than mathematics',
+          'Predictive power — successfully predicts novel observations not used in constructing the theory',
+          'Consensus — agreed upon by all scientists immediately',
+        ],
+        a: 2,
+        e: 'The confirmation of light bending demonstrates predictive power — the ability to successfully predict novel phenomena not previously observed. Einstein derived this prediction mathematically before Eddington confirmed it observationally in 1919.',
+        h: 'Predictive power = theory successfully predicts NEW observations not used in building the theory.',
+        yr: 'GST',
+      },
+      {
+        q: "Which of the following best distinguishes 'applied science' from 'technology'?",
+        o: [
+          'Applied science uses the scientific method; technology does not',
+          'Applied science generates practical knowledge by applying basic science to specific problems; technology creates tools and systems implementing that knowledge',
+          'Applied science is conducted in universities; technology is developed in industry',
+          'There is no meaningful distinction — they are the same thing',
+        ],
+        a: 1,
+        e: 'Applied science applies scientific knowledge and methods to solve specific practical problems — it is still primarily about generating knowledge, but with practical goals. Technology implements knowledge to create tools, machines, and systems.',
+        h: 'Applied science = practical knowledge generation. Technology = creating tools/systems from that knowledge.',
+        yr: 'GST',
+      },
+      {
+        q: 'Objective knowledge in science means:',
+        o: [
+          'Knowledge that is about physical objects rather than abstract concepts',
+          'Knowledge that is free from personal bias and reproducible by any qualified observer',
+          'Knowledge that has no subjective interpretation whatsoever',
+          'Knowledge validated by a scientific authority or committee',
+        ],
+        a: 1,
+        e: 'Objectivity in science means knowledge claims should not depend on who makes them — any qualified observer following the same methods should arrive at the same results. Achieved through systematic methods, controlled experiments, peer review, and replication.',
+        h: 'Objective = free from personal bias + reproducible by any qualified observer.',
+        yr: 'GST',
+      },
+      {
+        q: 'Traditional/indigenous knowledge differs from scientific knowledge primarily in that:',
+        o: [
+          'Traditional knowledge is always wrong while scientific knowledge is correct',
+          'Traditional knowledge is typically passed orally through generations and validated by experience/authority rather than systematic experimental testing',
+          'Traditional knowledge has no practical value',
+          'Traditional knowledge cannot be studied scientifically',
+        ],
+        a: 1,
+        e: 'Traditional and indigenous knowledge is accumulated through generations of experience, passed orally, and validated by community experience and authority rather than controlled experiments or peer review. However, much traditional knowledge has proven valuable — many pharmaceuticals derive from traditional medicine plants.',
+        h: 'Traditional knowledge = oral, experiential, authority-validated. Science = systematic, experimental, peer-reviewed.',
+        yr: 'GST',
+      },
+      {
+        q: 'The cumulative nature of science means:',
+        o: [
+          'Scientific knowledge continuously accumulates and is never discarded',
+          'Each generation of scientists builds on prior knowledge, extending the scientific enterprise progressively over time',
+          'All scientific discoveries of equal importance accumulate in textbooks',
+          'Scientific journals accumulate an ever-growing number of publications',
+        ],
+        a: 1,
+        e: 'Science is cumulative in that each generation builds on the work of previous ones. However, science is also revisionary — some prior knowledge is discarded or significantly revised. The accumulation involves revision and reorganization, not just addition.',
+        h: 'Cumulative = each generation builds on prior knowledge. But also revisionary — old ideas can be replaced.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which of the following is the BEST example of a truly scientific claim?',
+        o: [
+          'The universe has a divine purpose that science cannot fully grasp',
+          'Crystals have healing energy that improves the health of those who wear them',
+          'The gravitational force between two masses is proportional to their masses and inversely proportional to the square of the distance between them',
+          'Art is the highest expression of human creativity and transcends scientific analysis',
+        ],
+        a: 2,
+        e: "Newton's Law of Universal Gravitation is the best example: empirical, falsifiable, replicable, and mathematical — making quantitative, testable predictions. The others are either metaphysical, unfalsifiable/unsupported, or outside the scope of science.",
+        h: 'Best scientific claim: empirical + falsifiable + testable + replicable + makes precise predictions.',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 2: Ancient and Pre-Scientific Thought
-  // ==========================================================================
   {
-    topic: "Ancient and Pre-Scientific Thought",
-    topicCode: "HPS-002-01",
-    module: "History of Science",
+    topic: 'History of Science — Ancient to Medieval',
+    topicCode: 'HPS-HSA-02',
+    module: 'Module 2: Origins of Scientific Thought',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Ancient and pre-scientific thought</span> laid the foundations for modern science. Long before the scientific revolution, Babylonian, Egyptian, Greek, Indian, Chinese, and Islamic civilizations developed sophisticated methods of observing nature, recording data, and creating explanatory systems. <strong>Understanding these early traditions shows that science did not emerge from nowhere — it built on millennia of accumulated knowledge</strong>.
-</div>
-
-<p class="learn-p">Modern science as we know it emerged in Europe during the 16th-17th centuries. But its roots extend far deeper and wider — across cultures and millennia. Ancient peoples observed the heavens, tracked seasons, developed mathematics, created calendars, practiced medicine, and theorized about the nature of reality. While their methods differed from modern science, they established crucial foundations: systematic observation, recording of data, mathematical modeling, and naturalistic explanation.</p>
-
-<h3 class="learn-subheading">Babylonian and Egyptian Science (c. 3000-500 BCE)</h3>
-
-<p class="learn-p">The Babylonians and Egyptians developed practical knowledge for agriculture, navigation, construction, and administration.</p>
-
-<p class="learn-p"><strong>Babylonian contributions:</strong></p>
+<div class="learn-intro">Science's history is global — from Babylonian astronomy and Egyptian mathematics to Greek natural philosophy, Indian mathematics, Chinese technology, and the Islamic Golden Age. The human impulse to explain the world through natural causes — rather than divine intervention — began with the ancient Greeks, though it built on foundations laid by Mesopotamia, Egypt, and other civilizations.</div>
+<h3 class="learn-subheading">2.1 Ancient Mesopotamia and Egypt</h3>
 <ul class="learn-list">
-  <li><strong>Astronomy:</strong> Systematic observation of planetary motions for over 700 years — recorded on clay tablets (cuneiform). Predicted lunar eclipses, calculated planetary periods, tracked Venus, Jupiter, Mars, Mercury, Saturn</li>
-  <li><strong>Mathematics:</strong> Base-60 (sexagesimal) system — still used for time (60 minutes, 60 seconds) and angles (360 degrees). Developed multiplication tables, quadratic equations, Pythagorean triples (before Pythagoras)</li>
-  <li><strong>Medicine:</strong> Diagnostic manuals, surgical procedures, medical recipes; recognized importance of observation and prognosis</li>
+<li><strong>Babylonian astronomy:</strong> Systematic celestial records; base-60 (sexagesimal) number system → 60 seconds/minute, 60 minutes/hour, 360 degrees.</li>
+<li><strong>Babylonian mathematics:</strong> Knew Pythagorean theorem 1,000 years before Pythagoras; solved quadratic equations.</li>
+<li><strong>Egyptian mathematics:</strong> Rhind Papyrus (c.1650 BCE) — arithmetic, geometry, algebra; approximated π ≈ 3.16.</li>
+<li><strong>Egyptian medicine:</strong> Edwin Smith Papyrus (c.1600 BCE) — rational surgical observations, not purely magical.</li>
 </ul>
-
-<p class="learn-p"><strong>Egyptian contributions:</strong></p>
+<h3 class="learn-subheading">2.2 Greek Natural Philosophy — The Pre-Socratics</h3>
+<p class="learn-p">Greek philosophers sought natural causes (arche = fundamental substance) rather than supernatural explanations:</p>
 <ul class="learn-list">
-  <li><strong>Geometry:</strong> Developed for land surveying (Nile floods erased property boundaries annually) and pyramid construction. Rhind Mathematical Papyrus (c. 1650 BCE) contains area calculations, volume formulas</li>
-  <li><strong>Medicine:</strong> Ebers Papyrus (c. 1550 BCE) — 700+ remedies, anatomical observations, recognized heart as central organ, pulse diagnosis. Imhotep (c. 2650 BCE) was deified as god of medicine</li>
-  <li><strong>Calendar:</strong> Solar calendar with 365 days (12 months of 30 days + 5 extra days) — remarkably accurate</li>
-  <li><strong>Astronomy:</strong> Sirius rising used to predict Nile flood; identified planets; aligned pyramids with stars</li>
+<li><strong>Thales (c.624–546 BCE):</strong> "Father of Western science/philosophy" — first to seek natural, not divine, explanations. Proposed water as the fundamental substance.</li>
+<li><strong>Democritus (c.460–370 BCE):</strong> Atomic theory — all matter composed of indivisible <span class="learn-keyword">atoms</span> in void.</li>
+<li><strong>Pythagoras (c.570–495 BCE):</strong> Mathematics underlying nature; proved Pythagorean theorem.</li>
+<li><strong>Empedocles:</strong> Four elements — earth, water, fire, air.</li>
 </ul>
-
-<h3 class="learn-subheading">Greek Science — The Birth of Natural Philosophy (c. 600-200 BCE)</h3>
-
-<p class="learn-p">The ancient Greeks transformed practical knowledge into systematic, rational inquiry — "natural philosophy" (philosophy of nature). They sought explanations based on reason, not myth or divine intervention.</p>
-
-<p class="learn-p"><strong>Key Pre-Socratic philosophers:</strong></p>
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Thinker</th><th>Contribution</th><th>Key Idea</th>
-    </thead>
-    <tbody>
-      <tr><td>Thales (c. 624-546 BCE)</th><td>"First philosopher"</th><td>Water as fundamental substance (arche); predicted eclipse; used geometry practically</td>
-      </tr>
-      <tr><td>Anaximander</th><td>Evolutionary thought</th><td>Humans evolved from fish-like creatures; Earth floats unsupported</td>
-      </tr>
-      <tr><td>Pythagoras (c. 570-495 BCE)</th><td>Mathematics as key to reality</th><td>Numbers are fundamental; Pythagorean theorem; harmony of spheres</td>
-      </tr>
-      <tr><td>Democritus (c. 460-370 BCE)</th><td>Atomism</th><td>Everything composed of indivisible atoms moving in void — remarkably prescient</td>
-      </tr>
-      <tr><td>Aristotle (384-322 BCE)</th><td>Systematizer, biologist</th><td>Four causes, classification of animals, geocentric universe, logic (syllogism)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p class="learn-p"><strong>Hellenistic Science (Alexandria):</strong></p>
+<h3 class="learn-subheading">2.3 Plato and Aristotle</h3>
+<p class="learn-p"><span class="learn-keyword">Plato (428–348 BCE)</span>: Theory of Forms — true knowledge is of eternal perfect forms, accessible through reason. Mathematics as model of knowledge.</p>
+<p class="learn-p"><span class="learn-keyword">Aristotle (384–322 BCE)</span>: Most important scientist before the 17th century. Empirical — knowledge from observation. Contributions: formal logic (Organon), biology (classified 500+ species), physics (geocentric cosmos), four causes. <strong>Four Causes:</strong> Material (what it's made of), Formal (its structure), Efficient (what produced it), Final (its purpose/telos).</p>
+<h3 class="learn-subheading">2.4 Hellenistic Science</h3>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Scientist</th><th>Period</th><th>Key Contribution</th></tr></thead><tbody>
+<tr><td>Euclid</td><td>c.300 BCE</td><td>Elements — axiomatic geometry from proofs. Model of deductive reasoning.</td></tr>
+<tr><td>Archimedes</td><td>c.287–212 BCE</td><td>Buoyancy principle; lever mechanics; approximated π</td></tr>
+<tr><td>Eratosthenes</td><td>c.276–194 BCE</td><td>Calculated Earth's circumference from shadow angles</td></tr>
+<tr><td>Aristarchus</td><td>c.310–230 BCE</td><td>Proposed heliocentric model ~1,800 years before Copernicus</td></tr>
+<tr><td>Ptolemy</td><td>c.100–170 CE</td><td>Almagest — geocentric model with epicycles, used for 1,400 years</td></tr>
+<tr><td>Galen</td><td>c.130–210 CE</td><td>Summarized Greek medicine; animal dissections; dominated medicine 1,400 years</td></tr>
+</tbody></table></div>
+<h3 class="learn-subheading">2.5 Islamic Golden Age (8th–13th centuries CE)</h3>
 <ul class="learn-list">
-  <li><strong>Euclid (c. 300 BCE):</strong> Elements — geometry textbook for 2000 years; axiomatic method (assumptions + logical deduction)</li>
-  <li><strong>Archimedes (c. 287-212 BCE):</strong> Buoyancy (Eureka moment), lever, screw, pulley; calculated pi; developed integral calculus precursors</li>
-  <li><strong>Eratosthenes (c. 276-194 BCE):</strong> Calculated Earth's circumference with remarkable accuracy using shadows at Syene and Alexandria</li>
-  <li><strong>Hipparchus (c. 190-120 BCE):</strong> Founder of trigonometry; star catalog; discovered precession of equinoxes; geocentric model refined</li>
-  <li><strong>Ptolemy (c. 100-170 CE):</strong> Almagest — geocentric astronomy with epicycles, influenced Islamic and European astronomy for 1400 years</li>
-  <li><strong>Galen (129-216 CE):</strong> Medical system based on humors (blood, phlegm, black bile, yellow bile); dominated medicine for 1500 years</li>
+<li><strong>House of Wisdom (Baghdad):</strong> Translated Greek texts into Arabic, preserving them for Europe.</li>
+<li><strong>Al-Khwarizmi (c.780–850 CE):</strong> Developed algebra (al-jabr); transmitted decimal number system to West. Algorithm derives from his name.</li>
+<li><strong>Ibn al-Haytham / Alhazen (965–1040 CE):</strong> Book of Optics — systematic experiments proving light enters the eye from objects. Founder of experimental science.</li>
+<li><strong>Ibn Sina / Avicenna (980–1037 CE):</strong> Canon of Medicine — standard medical textbook in Islamic and European universities for 600 years.</li>
 </ul>
-
-<h3 class="learn-subheading">Islamic Golden Age Science (c. 800-1200 CE)</h3>
-
-<p class="learn-p">While Europe experienced the "Dark Ages," Islamic civilization preserved, translated, and advanced Greek knowledge, making original contributions across disciplines.</p>
-
-<p class="learn-p"><strong>Key figures and contributions:</strong></p>
-<ul class="learn-list">
-  <li><strong>Al-Khwarizmi (c. 780-850 CE):</strong> "Father of Algebra" — from "al-jabr"; gave us the word "algorithm"; developed algebra as distinct discipline; Hindu-Arabic numerals (0-9) transmitted to Europe</li>
-  <li><strong>Ibn al-Haytham (Alhazen, c. 965-1040 CE):</strong> "Father of modern scientific method" — emphasized experiment, observation, mathematical analysis; explained vision correctly (light enters eye, not emission from eye); Book of Optics</li>
-  <li><strong>Avicenna (Ibn Sina, 980-1037 CE):</strong> Canon of Medicine — medical encyclopedia used in Europe for 500+ years; recognized contagious diseases, quarantine; clinical trials</li>
-  <li><strong>Al-Biruni (973-1048 CE):</strong> Calculated Earth's circumference; compared different calendars; wrote on India's culture; hydrology, geography, mineralogy</li>
-  <li><strong>Omar Khayyam (1048-1131 CE):</strong> Mathematician and poet; solved cubic equations; reformed Persian calendar (more accurate than Gregorian)</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="300" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="12" fill="#1e293b" font-weight="700">🏛️ ANCIENT SCIENCE — Transmission of Knowledge</text>
-    
-    <g>
-      <rect x="15" y="45" width="100" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="65" y="63" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">BABYLON</text>
-      <text x="65" y="78" text-anchor="middle" font-size="7" fill="#92400e">Astronomy</text>
-      <text x="65" y="90" text-anchor="middle" font-size="7" fill="#92400e">Base-60 math</text>
-    </g>
-    
-    <g>
-      <rect x="130" y="45" width="100" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="180" y="63" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">EGYPT</text>
-      <text x="180" y="78" text-anchor="middle" font-size="7" fill="#92400e">Geometry</text>
-      <text x="180" y="90" text-anchor="middle" font-size="7" fill="#92400e">Medicine</text>
-    </g>
-    
-    <g>
-      <rect x="245" y="45" width="100" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="295" y="63" text-anchor="middle" font-size="8" fill="#1e3a8a" font-weight="800">GREECE</text>
-      <text x="295" y="78" text-anchor="middle" font-size="7" fill="#1e3a8a">Natural Philosophy</text>
-      <text x="295" y="90" text-anchor="middle" font-size="7" fill="#1e3a8a">Reason + Observation</text>
-    </g>
-    
-    <g>
-      <rect x="360" y="45" width="125" height="50" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="422" y="63" text-anchor="middle" font-size="8" fill="#166534" font-weight="800">ISLAMIC GOLDEN AGE</text>
-      <text x="422" y="78" text-anchor="middle" font-size="7" fill="#166534">Algebra, Alchemy, Optics</text>
-      <text x="422" y="90" text-anchor="middle" font-size="7" fill="#166534">Preserved Greek texts</text>
-    </g>
-    
-    <g>
-      <rect x="190" y="120" width="120" height="50" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-      <text x="250" y="138" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">EUROPEAN</text>
-      <text x="250" y="153" text-anchor="middle" font-size="8" fill="#831843" font-weight="800">SCIENTIFIC REVOLUTION</text>
-    </g>
-    
-    <!-- Arrows showing transmission -->
-    <path d="M65,95 L65,110 L250,110 L250,120" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowT1)"/>
-    <path d="M180,95 L180,110 L250,110" fill="none" stroke="#f59e0b" stroke-width="2"/>
-    <path d="M295,95 L295,120" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowT1)"/>
-    <path d="M422,95 L422,110 L310,110" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowT1)"/>
-    
-    <defs>
-      <marker id="arrowT1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="210" text-anchor="middle" font-size="9" fill="#475569">Greek knowledge preserved by Islamic scholars,</text>
-    <text x="250" y="225" text-anchor="middle" font-size="9" fill="#475569">transmitted to Europe through Spain (Andalusia)</text>
-    <text x="250" y="240" text-anchor="middle" font-size="9" fill="#475569">and translation movements (Toledo, 12th c.)</text>
-    
-    <rect x="60" y="260" width="380" height="30" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="280" text-anchor="middle" font-size="9" fill="#475569">🔑 Science is cumulative — each civilization built on the achievements of previous ones</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Chinese and Indian Science</h3>
-
-<p class="learn-p"><strong>China:</strong></p>
-<ul class="learn-list">
-  <li>Four Great Inventions: papermaking, printing, gunpowder, compass — transformed world</li>
-  <li>Astronomy: supernova records (1054, created Crab Nebula), earliest recorded sunspots</li>
-  <li>Medicine: acupuncture, herbal remedies, pulse diagnosis; Neijing text (c. 200 BCE)</li>
-  <li>Seismograph: Zhang Heng (132 CE) — detected direction of distant earthquakes</li>
-</ul>
-
-<p class="learn-p"><strong>India:</strong></p>
-<ul class="learn-list">
-  <li>Mathematics: concept of zero (0) as a number; decimal place-value system; negative numbers; sine function</li>
-  <li>Astronomy: Aryabhata (476-550 CE) — Earth rotates on axis; heliocentric tendencies; solar and lunar eclipses correctly explained; calculated pi = 3.1416</li>
-  <li>Medicine: Ayurveda — holistic system, surgery (plastic surgery described), materia medica</li>
-  <li>Linguistics: Panini's grammar (c. 500 BCE) — first generative grammar, described rules of Sanskrit</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Point:</strong> The "Scientific Revolution" is sometimes portrayed as a purely European achievement, but this ignores centuries of Greek, Islamic, Chinese, and Indian contributions. Science is a global, cumulative enterprise. The Islamic Golden Age preserved Greek texts when Europe had lost them, and added original insights (algebra, experimental method, optics). Chinese inventions (paper, printing, gunpowder, compass) transformed the world.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Discuss the contributions of Islamic scholars to the development of science during the European 'Dark Ages.'" (Sample answer: Islamic scholars preserved, translated, and expanded Greek knowledge — Al-Khwarizmi developed algebra; Ibn al-Haytham pioneered experimental method and optics; Avicenna's Canon of Medicine was used for 500+ years; Al-Biruni calculated Earth's circumference. These works were transmitted to Europe via Spain, sparking the Renaissance and Scientific Revolution.)</span>
-</div>
-    `,
+<h3 class="learn-subheading">2.6 Medieval Europe and Indian/Chinese Science</h3>
+<p class="learn-p"><strong>India:</strong> Decimal number system and zero (transmitted via Islamic scholars to Europe). Aryabhata calculated π accurately and proposed Earth rotates on its axis.</p>
+<p class="learn-p"><strong>China:</strong> Paper, printing, gunpowder, compass, cast iron — many centuries before Europe.</p>
+<p class="learn-p"><strong>Medieval Europe:</strong> Universities (Bologna, Paris, Oxford) created institutional learning. Roger Bacon advocated experimentation. Thomas Aquinas reconciled Aristotle with Christianity (Thomistic synthesis). William of Ockham developed Occam's Razor.</p>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="190" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Aristotle's Four Causes</text><rect x="15" y="45" width="120" height="100" rx="7" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="75" y="70" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">MATERIAL</text><text x="75" y="88" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">What it's made of?</text><text x="75" y="110" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">e.g. marble</text><text x="75" y="122" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">(for a statue)</text><rect x="150" y="45" width="120" height="100" rx="7" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="210" y="70" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">FORMAL</text><text x="210" y="88" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">What is its</text><text x="210" y="101" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">form/structure?</text><text x="210" y="118" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">e.g. human shape</text><rect x="285" y="45" width="120" height="100" rx="7" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="345" y="70" text-anchor="middle" fill="#90c8ff" font-size="10" font-family="Georgia,serif" font-weight="bold">EFFICIENT</text><text x="345" y="88" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">What produced it?</text><text x="345" y="110" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">e.g. the sculptor</text><rect x="420" y="45" width="125" height="100" rx="7" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="482" y="70" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Georgia,serif" font-weight="bold">FINAL</text><text x="482" y="88" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Its purpose/telos?</text><text x="482" y="110" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">e.g. to honour</text><text x="482" y="122" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">the gods</text><text x="280" y="165" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Final Cause (purpose/telos) is most distinctively Aristotelian. Modern science rejected Final Causes.</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="160" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Timeline: Ancient to Medieval Science</text><line x1="30" y1="90" x2="530" y2="90" stroke="#4a90d9" stroke-width="2"/><circle cx="50" cy="90" r="5" fill="#e05a2b"/><line x1="50" y1="85" x2="50" y2="55" stroke="#e05a2b" stroke-width="1"/><text x="50" y="48" text-anchor="middle" fill="#ffaa80" font-size="7.5" font-family="Georgia,serif">Babylon/Egypt</text><text x="50" y="38" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">3000 BCE</text><circle cx="130" cy="90" r="5" fill="#FFD700"/><line x1="130" y1="85" x2="130" y2="55" stroke="#FFD700" stroke-width="1"/><text x="130" y="48" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">Greek Philosophy</text><text x="130" y="38" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">600 BCE</text><circle cx="220" cy="90" r="6" fill="#2bcc71"/><line x1="220" y1="85" x2="220" y2="55" stroke="#2bcc71" stroke-width="1"/><text x="220" y="48" text-anchor="middle" fill="#80ffaa" font-size="7.5" font-family="Georgia,serif">Aristotle/Euclid/</text><text x="220" y="38" text-anchor="middle" fill="#80ffaa" font-size="7.5" font-family="Georgia,serif">Archimedes</text><circle cx="320" cy="90" r="5" fill="#4a90d9"/><line x1="320" y1="85" x2="320" y2="55" stroke="#4a90d9" stroke-width="1"/><text x="320" y="48" text-anchor="middle" fill="#90c8ff" font-size="7.5" font-family="Georgia,serif">Ptolemy/Galen</text><text x="320" y="38" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">100–200 CE</text><circle cx="400" cy="90" r="6" fill="#a066e0"/><line x1="400" y1="85" x2="400" y2="55" stroke="#a066e0" stroke-width="1"/><text x="400" y="48" text-anchor="middle" fill="#d4aaff" font-size="7.5" font-family="Georgia,serif">Islamic Golden Age</text><text x="400" y="38" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">750–1258 CE</text><circle cx="490" cy="90" r="5" fill="#e0a020"/><line x1="490" y1="85" x2="490" y2="55" stroke="#e0a020" stroke-width="1"/><text x="490" y="48" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">Medieval Europe</text><text x="490" y="38" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">1000–1400 CE</text><text x="280" y="118" text-anchor="middle" fill="#888" font-size="9" font-family="Georgia,serif">Science is a global story — India: zero + decimal system | China: paper, printing, gunpowder, compass</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Thales = first natural explanation = "father of Western science." Democritus = atomic theory. Aristotle = four causes + geocentric cosmos + logic + biology. Euclid = axiomatic geometry. Archimedes = buoyancy principle. Ptolemy = geocentric model with epicycles (1,400 years dominant). Al-Khwarizmi = algebra + algorithm. Ibn al-Haytham = experimental optics. Avicenna = Canon of Medicine. Aristarchus proposed heliocentrism 1,800 years BEFORE Copernicus.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Copernicus did NOT "discover" heliocentrism — Aristarchus proposed it c.230 BCE. Also: zero and the decimal system = INDIA (not Babylon or China). Chinese contributions = paper, printing, gunpowder, compass. The House of Wisdom (Baghdad) translated Greek texts into Arabic — this is how Greek science was preserved for medieval Europe.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Ancient Babylon and Egypt contributed practical mathematics, astronomy, and medicine. Greek philosophy made a revolutionary step: seeking natural rather than supernatural explanations (Thales). Aristotle was the first systematic scientist. Hellenistic period: Euclid, Archimedes, Ptolemy. Islamic Golden Age preserved and extended classical knowledge (Al-Khwarizmi, Alhazen, Avicenna). Medieval European universities created institutional foundations. India contributed zero and the decimal system; China contributed key technologies.</div>`,
     questions: [
-      { q: "Which ancient civilization developed base-60 (sexagesimal) mathematics still used for time (60 minutes) and angles (360 degrees)?", o: ["Egyptian", "Greek", "Babylonian", "Chinese"], a: 2, e: "Babylonians used base-60, which survives in our measurement of time (60 minutes, 60 seconds) and angles (360 degrees).", h: "Which civilization gave us 60 minutes in an hour?", yr: "GST" },
-      { q: "The Rhind Mathematical Papyrus and Ebers Papyrus come from which civilization?", o: ["Babylonian", "Egyptian", "Greek", "Indian"], a: 1, e: "These papyri are Egyptian: Rhind (mathematics, geometry) and Ebers (medical remedies, anatomy).", h: "Which civilization used papyrus?", yr: "GST" },
-      { q: "Which pre-Socratic philosopher proposed that everything is made of indivisible atoms moving in the void?", o: ["Aristotle", "Plato", "Democritus", "Pythagoras"], a: 2, e: "Democritus (c. 460-370 BCE) proposed atomism — remarkably prescient of modern atomic theory.", h: "Who first thought of atoms?", yr: "GST" },
-      { q: "Who wrote 'Elements', the geometry textbook used for over 2000 years?", o: ["Archimedes", "Euclid", "Pythagoras", "Aristotle"], a: 1, e: "Euclid's 'Elements' organized geometry axiomatically — assumptions + logical deductions — used until the 19th century.", h: "Which Greek wrote the geometry textbook?", yr: "GST" },
-      { q: "Which Hellenistic scientist calculated Earth's circumference with remarkable accuracy using shadows?", o: ["Ptolemy", "Eratosthenes", "Hipparchus", "Archimedes"], a: 1, e: "Eratosthenes compared shadow angles at Syene (no shadow) and Alexandria (7.2 degrees) to calculate circumference within 1-2% of modern value.", h: "Who measured Earth's size?", yr: "GST" },
-      { q: "Ptolemy's 'Almagest' presented which astronomical model?", o: ["Heliocentric (Sun-centered)", "Geocentric (Earth-centered) with epicycles", "Galactic", "Acoustic"], a: 1, e: "Ptolemy's geocentric model with epicycles explained planetary motions and dominated astronomy for 1400 years until Copernicus.", h: "Did Ptolemy think Earth or Sun was center?", yr: "GST" },
-      { q: "Who is known as the 'Father of Algebra'?", o: ["Al-Khwarizmi", "Ibn al-Haytham", "Avicenna", "Al-Biruni"], a: 0, e: "Al-Khwarizmi (c. 780-850 CE) wrote 'al-Jabr', giving us the word 'algebra'. Also developed algorithm (his name).", h: "Who gave us algebra?", yr: "GST" },
-      { q: "Ibn al-Haytham (Alhazen) is known for:", o: ["Discovery of blood circulation", "Development of experimental method and optics", "Theory of evolution", "Periodic table"], a: 1, e: "Ibn al-Haytham's 'Book of Optics' emphasized experiment, mathematical analysis, and correctly explained vision (light enters eye).", h: "Who pioneered the experimental method?", yr: "GST" },
-      { q: "Avicenna's 'Canon of Medicine' was used in Europe for:", o: ["50 years", "500+ years", "10 years", "Never used in Europe"], a: 1, e: "Avicenna's Canon was the standard medical encyclopedia in Europe from the 12th to 17th centuries — over 500 years.", h: "How long was Avicenna used?", yr: "GST" },
-      { q: "Which civilization invented papermaking, printing, gunpowder, and the compass?", o: ["Greek", "Islamic", "Chinese", "Indian"], a: 2, e: "China's Four Great Inventions — papermaking, printing, gunpowder, magnetic compass — transformed world civilization.", h: "Which civilization invented these?", yr: "GST" },
-      { q: "The concept of zero (0) as a number was developed in:", o: ["Greece", "Rome", "India", "Egypt"], a: 2, e: "Indian mathematicians developed zero as a number (not just placeholder) and the decimal place-value system, transmitted to Europe via Islamic scholars.", h: "Where did zero come from?", yr: "GST" },
-      { q: "The Islamic Golden Age occurred roughly between:", o: ["500-800 BCE", "800-1200 CE", "1400-1700 CE", "1800-2000 CE"], a: 1, e: "Islamic Golden Age (Abbasid Caliphate, c. 800-1200 CE) saw translation of Greek texts and original advances in algebra, optics, medicine, astronomy.", h: "When was the Islamic Golden Age?", yr: "GST" },
-      { q: "Aristotle's four causes include all EXCEPT:", o: ["Material", "Formal", "Efficient", "Random"], a: 3, e: "Aristotle's four causes: material (what it's made of), formal (its form/essence), efficient (what produced it), final (its purpose/end). Random is not a cause.", h: "How many causes did Aristotle identify?", yr: "GST" },
-      { q: "Which Hellenistic scientist shouted 'Eureka!' upon discovering buoyancy?", o: ["Archimedes", "Euclid", "Ptolemy", "Hipparchus"], a: 0, e: "Archimedes discovered buoyancy while bathing — realizing his body displaced water — allegedly ran naked shouting 'Eureka!' (I have found it).", h: "Who discovered buoyancy?", yr: "GST" },
-      { q: "Thales is considered the 'first philosopher' for proposing:", o: ["Atomism", "Water as fundamental substance (arche)", "Forms", "Logic"], a: 1, e: "Thales proposed that water is the fundamental substance (arche) from which everything derives — moving beyond myth to natural explanation.", h: "What did Thales say everything comes from?", yr: "GST" },
-      { q: "Zhang Heng (132 CE) invented:", o: ["Paper", "Seismograph — detected direction of distant earthquakes", "Gunpowder", "Printing press"], a: 1, e: "Zhang Heng's seismograph detected the direction of distant earthquakes using a pendulum and dragon heads dropping balls into frog mouths.", h: "Who invented the first earthquake detector?", yr: "GST" },
-      { q: "Ayurveda is the traditional medicine system of:", o: ["China", "Greece", "India", "Egypt"], a: 2, e: "Ayurveda (India) is a holistic medical system emphasizing balance of bodily humors, herbal remedies, surgery, and lifestyle.", h: "Which civilization developed Ayurveda?", yr: "GST" },
-      { q: "Pythagoras is famous for all EXCEPT:", o: ["Pythagorean theorem", "Numbers as fundamental to reality", "Harmony of the spheres", "Atomic theory"], a: 3, e: "Pythagoras contributed mathematics and philosophy; atomic theory is Democritus. Pythagorean theorem (a²+b²=c²) predated Pythagoras but his school systematized it.", h: "What did Pythagoras NOT do?", yr: "GST" },
-      { q: "Galen's medical system, which dominated for 1500 years, was based on:", o: ["Four humors (blood, phlegm, black bile, yellow bile)", "Germ theory", "Cell theory", "Vaccination"], a: 0, e: "Galen's system used four humors; imbalance caused disease. Treatments aimed to restore balance (bleeding, purging, diet).", h: "What were the four humors?", yr: "GST" },
-      { q: "The 'House of Wisdom' (Bayt al-Hikma) in Baghdad was:", o: ["A mosque", "A palace", "A library and translation center preserving/advancing knowledge during Islamic Golden Age", "A military academy"], a: 2, e: "The House of Wisdom (8th-13th c.) was a major library, translation center, and research institute — translated Greek, Persian, Indian works into Arabic.", h: "Where was knowledge preserved in Islamic Golden Age?", yr: "GST" }
-    ]
+      {
+        q: "Thales of Miletus is called the 'father of Western science/philosophy' primarily because:",
+        o: [
+          'He was the first scientist to use laboratory experiments',
+          'He was the first thinker to seek natural rather than divine explanations for natural phenomena',
+          "He discovered that water covers most of Earth's surface",
+          'He founded the first European university',
+        ],
+        a: 1,
+        e: "Thales's historic significance is that he sought NATURAL causes for natural phenomena — explaining natural events through rational principles rather than the actions of gods. This shift from mythological to naturalistic explanation is the starting point of scientific thinking.",
+        h: 'Thales = first natural (not divine) explanation of nature.',
+        yr: 'GST',
+      },
+      {
+        q: "Democritus's atomic theory proposed that:",
+        o: [
+          'Atoms are indivisible particles moving in void — fundamental constituents of all matter',
+          'Water is the fundamental substance from which all things are made',
+          'The four elements (earth, water, fire, air) combine to form all substances',
+          'All matter is continuous with no empty space',
+        ],
+        a: 0,
+        e: 'Democritus (c.460–370 BCE) proposed all matter consists of atoms (atomos = uncuttable) moving in void. Different substances result from different atomic arrangements. Remarkably prescient — modern physics confirmed the atomic structure of matter 2,400 years later.',
+        h: 'Democritus = atoms (atomos = indivisible) in void.',
+        yr: 'GST',
+      },
+      {
+        q: "Aristotle's 'Final Cause' in his four-cause framework refers to:",
+        o: [
+          'The last event in a causal sequence',
+          'The purpose or telos (function/goal) for which something exists',
+          'The material from which something is made',
+          'The agent that brought something into existence',
+        ],
+        a: 1,
+        e: "Aristotle's four causes: Material (what it's made of), Formal (its form/structure), Efficient (what produced it), and Final (its purpose/telos). The Final Cause — explanation by purpose — is the most distinctively Aristotelian. Modern science largely abandoned teleological explanation.",
+        h: 'Final Cause = purpose / telos = why something exists or happens.',
+        yr: 'GST',
+      },
+      {
+        q: "Ptolemy's Almagest was significant in the history of astronomy because:",
+        o: [
+          'It first proposed the heliocentric model of the solar system',
+          'It presented a geocentric model with epicycles that successfully predicted planetary positions for 1,400 years',
+          'It proved that the Earth orbits the Sun using mathematical proofs',
+          'It discovered the moons of Jupiter through telescopic observation',
+        ],
+        a: 1,
+        e: "Ptolemy's Almagest (c.150 CE) presented a sophisticated geocentric model with epicycles to explain planetary retrograde motion. Though wrong, it was remarkably accurate for predicting planetary positions and was used as the standard astronomical reference for 1,400 years.",
+        h: 'Ptolemy = Almagest = geocentric + epicycles = dominant astronomy for 1,400 years.',
+        yr: 'GST',
+      },
+      {
+        q: 'The House of Wisdom (Bayt al-Hikma) in Baghdad was significant because:',
+        o: [
+          "It was the world's first formal university teaching science",
+          'It was a center for translating Greek scientific works into Arabic and for original Islamic scholarship',
+          'It was where the heliocentric theory was first developed',
+          'It was the location where algebra was first applied to astronomy',
+        ],
+        a: 1,
+        e: 'The House of Wisdom (founded c.830 CE under Caliph al-Mamun) translated Greek scientific and philosophical texts into Arabic, preserving them for both the Islamic world and eventually medieval Europe. It also hosted original scholarship in mathematics, astronomy, medicine, and philosophy.',
+        h: 'House of Wisdom = Baghdad = translation of Greek works + original Islamic science.',
+        yr: 'GST',
+      },
+      {
+        q: "Al-Khwarizmi's most important contribution to the history of science was:",
+        o: [
+          'Developing the first systematic experimental method',
+          'Developing algebra (al-jabr) and transmitting the decimal number system to the West',
+          'Proposing the heliocentric model before Copernicus',
+          'Developing the germ theory of disease',
+        ],
+        a: 1,
+        e: "Al-Khwarizmi (c.780–850 CE) wrote the foundational text on algebra — 'al-Kitab al-mukhtasar fi hisab al-jabr wal-muqabala' — from which the word 'algebra' derives. He also helped transmit the Indian decimal number system to the West. The word 'algorithm' derives from his name.",
+        h: 'Al-Khwarizmi = algebra (al-jabr) + decimal system transmission. Algorithm = from his name.',
+        yr: 'GST',
+      },
+      {
+        q: 'Ibn al-Haytham (Alhazen) is considered a founder of experimental science primarily because:',
+        o: [
+          'He was the first to propose that the Earth orbits the Sun',
+          'He used systematic experimentation in his study of optics, proving light enters the eye from objects',
+          'He developed the first anatomical atlas of human organs',
+          'He invented the telescope for astronomical observations',
+        ],
+        a: 1,
+        e: "Ibn al-Haytham's Book of Optics (c.1011 CE) used systematic controlled experiments to test hypotheses about light and vision. He proved light enters the eye from objects (not rays from the eye as Greeks believed). His experimental methodology influenced later European scientists.",
+        h: 'Ibn al-Haytham = systematic experiments + correct theory of vision (light → eye, not eye → light).',
+        yr: 'GST',
+      },
+      {
+        q: 'Aristarchus of Samos is significant in the history of astronomy because:',
+        o: [
+          'He developed the most accurate geocentric model before Copernicus',
+          'He proposed the heliocentric model (Earth orbits Sun) about 1,800 years before Copernicus',
+          'He first measured the circumference of the Earth',
+          'He discovered the principle of buoyancy',
+        ],
+        a: 1,
+        e: 'Aristarchus (c.310–230 BCE) proposed the heliocentric model approximately 1,800 years before Copernicus. His proposal was rejected by most Greeks because no stellar parallax was observed (stars are much farther away than Greeks realized).',
+        h: 'Aristarchus = heliocentric model proposed c.230 BCE — 1,800 years before Copernicus.',
+        yr: 'GST',
+      },
+      {
+        q: "Euclid's Elements is historically significant because:",
+        o: [
+          'It proved that the Earth is round by measuring shadows',
+          'It organized all Greek geometry into an axiomatic deductive system — from definitions and postulates to theorems by logical proof — the model of rigorous reasoning',
+          'It was the first text to apply mathematics to astronomy',
+          'It described the atomic structure of matter',
+        ],
+        a: 1,
+        e: "Euclid's Elements (c.300 BCE) began with definitions, postulates, and common notions, then derived hundreds of geometrical theorems through logical proof. This axiomatic-deductive method became the model of rigorous reasoning for 2,000+ years.",
+        h: 'Euclid = Elements = axiomatic geometry = model of deductive rigorous reasoning.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which ancient civilization invented the decimal number system (including zero) that became the foundation of modern mathematics?',
+        o: [
+          'The Babylonians of Mesopotamia',
+          'The ancient Greeks of Athens',
+          'The ancient Indians',
+          'The Egyptians of the Nile Valley',
+        ],
+        a: 2,
+        e: 'The decimal (base-10) number system and zero were developed in ancient India. Indian mathematicians including Brahmagupta formalized zero as a number. This system was adopted and transmitted westward by Islamic scholars (Al-Khwarizmi) and eventually replaced Roman numerals in Europe.',
+        h: 'Decimal system + zero = Indian invention, transmitted via Islamic scholars to Europe.',
+        yr: 'GST',
+      },
+      {
+        q: "Thomas Aquinas's significance for medieval science was:",
+        o: [
+          "He rejected Aristotle's philosophy as incompatible with Christianity",
+          'He reconciled Aristotelian philosophy with Christian theology — making Aristotle officially acceptable but also entrenching his authority',
+          'He performed the first controlled experiments in medieval Europe',
+          "He translated Aristotle's works from Arabic into Latin",
+        ],
+        a: 1,
+        e: "Aquinas (1225–1274) performed the 'Thomistic synthesis' — reconciling Aristotelian natural philosophy with Christian theology. This made Aristotle's works acceptable within the Church and medieval universities, but entrenched Aristotle's authority so deeply that challenging his views became theologically suspect.",
+        h: "Aquinas = Thomistic synthesis = reconciled Aristotle + Christianity = entrenched Aristotle's authority.",
+        yr: 'GST',
+      },
+      {
+        q: "The Babylonians' base-60 (sexagesimal) number system has which lasting legacy in modern measurement?",
+        o: [
+          'The metric system with multiples of 10',
+          'The division of hours into 60 minutes and minutes into 60 seconds, and the circle into 360 degrees',
+          'The use of 10 as base for all scientific calculations',
+          'The measurement of distance in feet and inches',
+        ],
+        a: 1,
+        e: "The Babylonian sexagesimal system's most prominent modern legacy is time division (60 seconds/minute, 60 minutes/hour) and angles (360 degrees in a circle). These conventions have been maintained for 3,000 years.",
+        h: 'Babylonian sexagesimal: 60 seconds/minute, 60 minutes/hour, 360 degrees/circle.',
+        yr: 'GST',
+      },
+      {
+        q: "Archimedes' principle of buoyancy states that:",
+        o: [
+          'Objects with greater density than water will always float',
+          'A body in fluid experiences an upward force equal to the weight of fluid displaced',
+          'The volume of an object determines its weight in fluid',
+          'Objects float when surface area exceeds volume',
+        ],
+        a: 1,
+        e: "Archimedes' Principle: when an object is placed in a fluid, it experiences an upward (buoyant) force equal to the weight of the fluid it displaces. This explains why ships float and why objects sink when denser than the surrounding fluid.",
+        h: "Archimedes' Principle: buoyant force = weight of fluid displaced.",
+        yr: 'GST',
+      },
+      {
+        q: "Plato's theory of Forms influenced science by:",
+        o: [
+          'Emphasizing careful observation of the physical world over abstract reasoning',
+          'Elevating mathematics and geometry as models of true knowledge, influencing later scientists to seek mathematical laws of nature',
+          'Providing the classification system for all living organisms',
+          'Developing the first quantitative astronomical prediction',
+        ],
+        a: 1,
+        e: 'Plato believed true knowledge was of eternal, perfect Forms — mathematics was the closest model. This deeply influenced subsequent scientists to seek mathematical patterns underlying physical phenomena. Kepler, Galileo, and Newton all pursued mathematical laws of nature — traceable partly to the Platonic tradition.',
+        h: "Plato's Forms → mathematical idealism → later scientists sought mathematical laws of nature.",
+        yr: 'GST',
+      },
+      {
+        q: 'Eratosthenes calculated the circumference of the Earth by:',
+        o: [
+          'Sailing around the world and recording distance',
+          'Measuring different angles of shadows at two locations on the same day and using geometry',
+          'Observing the curvature of the Earth from a mountain',
+          'Timing the shadow on a sundial at different latitudes',
+        ],
+        a: 1,
+        e: "Eratosthenes noticed at noon on the summer solstice, a stick cast no shadow in Syene but cast a 7.2° shadow in Alexandria. Knowing the distance between cities, he calculated Earth's circumference (~40,000 km — remarkably close to actual 40,075 km).",
+        h: "Eratosthenes = Earth's circumference using shadow angles at two locations + geometry.",
+        yr: 'GST',
+      },
+      {
+        q: "Roger Bacon's contribution to the history of science in medieval Europe was:",
+        o: [
+          'He completed the first systematic translation of Aristotle into Latin',
+          'He advocated strongly for experimentation and mathematics as the keys to understanding nature',
+          'He reconciled pagan philosophy with Christian theology',
+          'He proposed the heliocentric model before Copernicus',
+        ],
+        a: 1,
+        e: "Roger Bacon (c.1214–1292) argued forcefully that understanding nature requires experimentation and mathematics — not just interpretation of ancient texts. He is sometimes called the 'first scientist' of the Western medieval tradition.",
+        h: 'Roger Bacon = medieval advocate for experimentation + mathematics in understanding nature.',
+        yr: 'GST',
+      },
+      {
+        q: "Chinese civilization's greatest contributions to science and technology included all of the following EXCEPT:",
+        o: [
+          'Paper and printing',
+          'Gunpowder and the compass',
+          'The decimal number system and zero',
+          'Cast iron technology',
+        ],
+        a: 2,
+        e: "China's major contributions include paper, printing, gunpowder, compass, and cast iron — many centuries before Europe. The decimal number system and zero were INDIAN inventions, transmitted through Islamic scholarship. This is a common point of confusion.",
+        h: 'China: paper, printing, gunpowder, compass, cast iron. Zero and decimal system = INDIA, not China.',
+        yr: 'GST',
+      },
+      {
+        q: "The pre-Socratic philosophers' search for the 'arche' involved:",
+        o: [
+          'Seeking the ruler (archon) over the natural world',
+          'Seeking the fundamental substance or principle underlying all natural phenomena',
+          'Developing moral and ethical principles for Greek society',
+          'Creating the first written laws of nature',
+        ],
+        a: 1,
+        e: 'The arche (Greek: beginning, principle, substance) was the fundamental substance the pre-Socratics sought. Thales proposed water; Anaximander proposed the apeiron; Anaximenes proposed air; Heraclitus proposed fire; Democritus proposed atoms.',
+        h: 'Arche = fundamental substance/principle underlying all nature.',
+        yr: 'GST',
+      },
+      {
+        q: 'Ibn Sina (Avicenna) is best known for:',
+        o: [
+          'Developing algebra and transmitting the decimal system to Europe',
+          'Writing the Canon of Medicine, the standard medical textbook in Islamic and European universities for 600 years',
+          'Proposing that the Earth orbits the Sun',
+          'Developing the first systematic classification of animals',
+        ],
+        a: 1,
+        e: "Ibn Sina / Avicenna (980–1037 CE) wrote the 'Canon of Medicine' — an encyclopedic text used as the standard medical textbook in both Islamic and European universities for about 600 years.",
+        h: 'Avicenna = Canon of Medicine = standard medical textbook for 600 years.',
+        yr: 'GST',
+      },
+      {
+        q: "Galen's significance in the history of medicine was:",
+        o: [
+          'He was the first doctor to use surgery to treat disease',
+          'He developed the germ theory of disease',
+          'He summarized Greek medicine and performed animal dissections whose work dominated medicine for 1,400 years',
+          'He discovered the circulation of the blood through the body',
+        ],
+        a: 2,
+        e: 'Galen (c.130–210 CE) summarized Greek medicine and conducted extensive animal dissections. His work — while significantly wrong in areas — dominated medical practice and education for 1,400 years, until Vesalius (anatomy) and Harvey (circulation) corrected his errors in the 16th–17th centuries.',
+        h: 'Galen = summarized Greek medicine + animal dissections = dominated medicine for 1,400 years.',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 3: The Scientific Revolution (16th-17th Centuries)
-  // ==========================================================================
   {
-    topic: "The Scientific Revolution (16th-17th Centuries)",
-    topicCode: "HPS-003-01",
-    module: "History of Science",
+    topic: 'The Scientific Revolution',
+    topicCode: 'HPS-SCR-03',
+    module: 'Module 3: Birth of Modern Science',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">The Scientific Revolution</span> (c. 1543-1687) was a period of profound transformation in how Europeans understood the natural world. The geocentric universe of Aristotle and Ptolemy was replaced by the heliocentric system of Copernicus, Kepler, and Galileo; Aristotle's physics was replaced by Newton's laws; and a new experimental, mathematical approach to knowledge emerged. <strong>This revolution laid the foundations for modern science</strong>.
-</div>
-
-<p class="learn-p">The Scientific Revolution did not happen overnight. It built on Greek, Islamic, and medieval foundations, but introduced radical new ideas: the universe is heliocentric (Sun-centered), not geocentric (Earth-centered); celestial and terrestrial physics obey the same laws; knowledge comes from observation and experiment, not just authority; mathematics is the language of nature.</p>
-
-<h3 class="learn-subheading">Key Figures and Discoveries</h3>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Thinker</th><th>Key Work/Discovery</th><th>Year</th><th>Significance</th>
-    </thead>
-    <tbody>
-      <tr><td>Nicolaus Copernicus</th><td>De Revolutionibus (On the Revolutions of the Heavenly Spheres)</th><td>1543</th><td>Heliocentric theory — Earth orbits Sun, not vice versa. Triggered revolution.</th>
-      </tr>
-      <tr><td>Tycho Brahe</th><td>Decades of naked-eye astronomical observations</th>。</th>。<th>Accurate planetary data (unmatched until telescopes). Provided data for Kepler.</th>
-      </tr>
-      <tr><td>Johannes Kepler</th><td>Three Laws of Planetary Motion</th><td>1609, 1619</th>。<th>Elliptical orbits (not circular); equal areas in equal times; harmonic law (period vs distance). Proved Copernicus was correct.</th>
-      </tr>
-      <tr><td>Galileo Galilei</th><td>Telescopic observations, experiments on motion</th><td>1609-1632</th>。<th>Moons of Jupiter, phases of Venus (proved heliocentrism), mountains on moon; inclined plane experiments; conflict with Church; "father of modern science"</th>
-      </tr>
-      <tr><td>Francis Bacon</th><td>Novum Organum, empirical method</th><td>1620</th>。<th>Empiricism — knowledge from observation and experiment; inductive method; criticized Aristotelian deduction</th>
-      </tr>
-      <tr><td>René Descartes</th>。<th>Discourse on Method, analytic geometry</th>。<th>1637</th>。<th>Rationalism — "Cogito ergo sum"; mind-body dualism; coordinate geometry; mechanical philosophy</th>
-      </tr>
-      <tr><td>Isaac Newton</th>。<th>Philosophiae Naturalis Principia Mathematica</th>。<th>1687</th>。<th>Universal gravitation, three laws of motion, calculus; unified celestial and terrestrial physics — culmination of Scientific Revolution</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="320" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="12" fill="#1e293b" font-weight="700">🌍 THE SCIENTIFIC REVOLUTION — From Geocentric to Heliocentric</text>
-    
-    <!-- Ptolemy (Old) -->
-    <g>
-      <text x="80" y="55" text-anchor="middle" font-size="9" fill="#991b1b" font-weight="800">PTOLEMAIC (Old)</text>
-      <circle cx="80" cy="85" r="30" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
-      <text x="80" y="88" text-anchor="middle" font-size="8" fill="#991b1b">🌍 EARTH</text>
-      <circle cx="80" cy="85" r="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-      <circle cx="80" cy="85" r="16" fill="none" stroke="#f59e0b" stroke-width="0.8"/>
-      <circle cx="80" cy="85" r="24" fill="none" stroke="#f59e0b" stroke-width="0.5"/>
-      <text x="80" y="125" text-anchor="middle" font-size="7" fill="#64748b">Complex epicycles</text>
-    </g>
-    
-    <!-- Arrow -->
-    <line x1="130" y1="85" x2="170" y2="85" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowS1)"/>
-    <text x="150" y="80" text-anchor="middle" font-size="7" fill="#3b82f6">→</text>
-    
-    <!-- Copernicus/Galileo (New) -->
-    <g>
-      <text x="250" y="55" text-anchor="middle" font-size="9" fill="#166534" font-weight="800">COPERNICAN (New)</text>
-      <circle cx="250" cy="85" r="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-      <text x="250" y="88" text-anchor="middle" font-size="8" fill="#92400e">☀️ SUN</text>
-      <circle cx="290" cy="75" r="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-      <circle cx="270" cy="68" r="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-      <circle cx="300" cy="68" r="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-      <circle cx="260" cy="62" r="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-      <text x="250" y="125" text-anchor="middle" font-size="7" fill="#64748b">Elliptical orbits (Kepler)</text>
-    </g>
-    
-    <!-- Timeline -->
-    <rect x="50" y="150" width="400" height="20" rx="10" fill="#e2e8f0"/>
-    <rect x="50" y="150" width="350" height="20" rx="10" fill="#3b82f6">
-      <animate attributeName="width" values="0;350" dur="10s" repeatCount="indefinite"/>
-    </rect>
-    <text x="250" y="165" text-anchor="middle" font-size="8" fill="#ffffff" font-weight="700">1543 → 1687</text>
-    
-    <g>
-      <text x="90" y="195" text-anchor="middle" font-size="8" fill="#1e293b">1543</text>
-      <text x="90" y="208" text-anchor="middle" font-size="7" fill="#64748b">Copernicus</text>
-      <text x="90" y="218" text-anchor="middle" font-size="6" fill="#94a3b8">De Revolutionibus</text>
-    </g>
-    
-    <g>
-      <text x="180" y="195" text-anchor="middle" font-size="8" fill="#1e293b">1609-1619</text>
-      <text x="180" y="208" text-anchor="middle" font-size="7" fill="#64748b">Kepler</text>
-      <text x="180" y="218" text-anchor="middle" font-size="6" fill="#94a3b8">Planetary Laws</text>
-    </g>
-    
-    <g>
-      <text x="270" y="195" text-anchor="middle" font-size="8" fill="#1e293b">1632</text>
-      <text x="270" y="208" text-anchor="middle" font-size="7" fill="#64748b">Galileo</text>
-      <text x="270" y="218" text-anchor="middle" font-size="6" fill="#94a3b8">Dialogue</text>
-    </g>
-    
-    <g>
-      <text x="400" y="195" text-anchor="middle" font-size="8" fill="#1e293b">1687</text>
-      <text x="400" y="208" text-anchor="middle" font-size="7" fill="#64748b">Newton</text>
-      <text x="400" y="218" text-anchor="middle" font-size="6" fill="#94a3b8">Principia</text>
-    </g>
-    
-    <defs>
-      <marker id="arrowS1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="260" text-anchor="middle" font-size="9" fill="#475569" font-weight="700">🔑 KEY TRANSFORMATION</text>
-    <text x="250" y="278" text-anchor="middle" font-size="8" fill="#475569">From Earth-centered (geocentric) to Sun-centered (heliocentric) universe</text>
-    <text x="250" y="295" text-anchor="middle" font-size="8" fill="#475569">From Aristotelian physics to Newtonian mechanics</text>
-    <text x="250" y="312" text-anchor="middle" font-size="8" fill="#475569">From authority-based knowledge to observation + experiment</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Copernican Revolution</h3>
-
-<p class="learn-p">Nicolaus Copernicus (1473-1543) published De Revolutionibus Orbium Coelestium (On the Revolutions of the Celestial Spheres) in the year of his death (1543). He proposed that Earth rotates daily and revolves annually around the Sun — reversing the Ptolemaic/Aristotelian order.</p>
-
-<p class="learn-p"><strong>Why revolutionary:</strong></p>
-<ul class="learn-list">
-  <li>Earth demoted from center of universe to just another planet</li>
-  <li>Heavens not perfect (Copernicus still used circular orbits, but his successors abandoned them)</li>
-  <li>Opened possibility of infinite universe (no fixed sphere of stars)</li>
-</ul>
-
-<p class="learn-p"><strong>Reception:</strong> Copernicus's theory was not immediately accepted. It had problems (still used circular orbits, didn't fit data better than Ptolemy without adjustments). But it planted a seed that grew.</p>
-
-<h3 class="learn-subheading">Tycho Brahe — The Data Collector</h3>
-
-<p class="learn-p">Tycho Brahe (1546-1601) built the most precise naked-eye observatory of his era (Uraniborg). For 20+ years, he recorded planetary positions with unprecedented accuracy (arcminute precision). He rejected heliocentrism (couldn't detect stellar parallax), proposed hybrid geo-heliocentric model (planets orbit Sun, Sun orbits Earth). But his data were crucial for Kepler.</p>
-
-<h3 class="learn-subheading">Johannes Kepler — The Laws of Planetary Motion</h3>
-
-<p class="learn-p">Kepler (1571-1630), Tycho's assistant, inherited the data. After years of struggle, he discovered three laws:</p>
-
+<div class="learn-intro">Between c.1543 and 1687, the <span class="learn-keyword">Scientific Revolution</span> replaced Aristotelian cosmology and Galenic medicine with a new science built on mathematics, experimentation, and mechanical philosophy. Key dates: Copernicus's heliocentric theory (1543) and Newton's Principia (1687).</div>
+<h3 class="learn-subheading">3.1 The Copernican Revolution</h3>
+<p class="learn-p"><span class="learn-keyword">Nicolaus Copernicus (1473–1543)</span> published <em>De Revolutionibus Orbium Coelestium</em> (1543) proposing: Sun at the center; Earth rotates on its axis; Earth and planets orbit the Sun. This was conceptually revolutionary — removing Earth from the cosmic center — though not initially more accurate than Ptolemy.</p>
+<h3 class="learn-subheading">3.2 Kepler's Laws of Planetary Motion</h3>
+<p class="learn-p"><span class="learn-keyword">Johannes Kepler (1571–1630)</span> used Tycho Brahe's precise observations to derive three laws: (1) <strong>First Law:</strong> Planets orbit in ellipses with the Sun at one focus. (2) <strong>Second Law:</strong> A line from planet to Sun sweeps equal areas in equal times (faster near Sun). (3) <strong>Third Law:</strong> T² ∝ r³ (period squared proportional to average distance cubed).</p>
+<h3 class="learn-subheading">3.3 Galileo Galilei</h3>
+<p class="learn-p"><span class="learn-keyword">Galileo (1564–1642)</span>: Telescope discoveries (Jupiter's moons, Venus phases, lunar mountains, sunspots) — all challenged Aristotelian cosmology. Experimental physics: all objects fall with same acceleration (ignoring air resistance). Coined: "Book of Nature is written in the language of mathematics." Tried by Inquisition (1633) for defending heliocentrism.</p>
+<h3 class="learn-subheading">3.4 Francis Bacon</h3>
+<p class="learn-p"><span class="learn-keyword">Francis Bacon (1561–1626)</span>: Novum Organum (1620). Advocated inductive method (observations → general laws). Identified <span class="learn-keyword">Four Idols</span> distorting thought: Tribe (universal human biases), Cave (individual prejudices), Marketplace (language confusion), Theatre (false philosophical systems accepted uncritically).</p>
+<h3 class="learn-subheading">3.5 Descartes and the Mechanical Philosophy</h3>
+<p class="learn-p"><span class="learn-keyword">René Descartes (1596–1650)</span>: Deductive method (cogito ergo sum as foundational certainty). Mechanical philosophy: nature is a machine operating by mechanical laws — no Aristotelian teleology. Analytical geometry (Cartesian coordinates). Mind-body dualism (res cogitans vs res extensa).</p>
+<h3 class="learn-subheading">3.6 Isaac Newton</h3>
+<p class="learn-p"><span class="learn-keyword">Newton (1643–1727)</span>: Principia Mathematica (1687). Three Laws of Motion: (1) Inertia; (2) F=ma; (3) Action-reaction. Law of Universal Gravitation: F=Gm₁m₂/r² — unified terrestrial and celestial mechanics. Optics: white light = all spectrum colors. Calculus (simultaneously with Leibniz).</p>
+<h3 class="learn-subheading">3.7 Medicine Revolution</h3>
+<p class="learn-p"><span class="learn-keyword">Vesalius (1514–1564)</span>: De Humani Corporis Fabrica (1543) — human cadaver dissection corrected Galen's errors. Founded modern anatomy. <span class="learn-keyword">Harvey (1578–1657)</span>: Demonstrated blood circulates continuously, pumped by heart — overturned Galenic physiology. <span class="learn-keyword">Van Leeuwenhoek</span>: Developed microscope; first observed bacteria and protozoa.</p>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Figure</th><th>Dates</th><th>Key Contribution</th></tr></thead><tbody>
+<tr><td>Copernicus</td><td>1473–1543</td><td>Heliocentric model (De Revolutionibus, 1543)</td></tr>
+<tr><td>Tycho Brahe</td><td>1546–1601</td><td>Most precise pre-telescope observations — data for Kepler</td></tr>
+<tr><td>Kepler</td><td>1571–1630</td><td>Three laws of planetary motion (ellipses, equal areas, T²∝r³)</td></tr>
+<tr><td>Galileo</td><td>1564–1642</td><td>Telescope astronomy; experimental physics; mathematical physics</td></tr>
+<tr><td>Bacon</td><td>1561–1626</td><td>Inductive method; Novum Organum; four idols</td></tr>
+<tr><td>Descartes</td><td>1596–1650</td><td>Mechanical philosophy; deductive method; analytical geometry</td></tr>
+<tr><td>Vesalius</td><td>1514–1564</td><td>Human dissection corrected Galen; founded modern anatomy</td></tr>
+<tr><td>Harvey</td><td>1578–1657</td><td>Circulation of blood</td></tr>
+<tr><td>Newton</td><td>1643–1727</td><td>Laws of motion; universal gravitation; optics; calculus</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="200" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Geocentric → Heliocentric (Copernican Revolution)</text><circle cx="128" cy="110" r="11" fill="#4a90d9" stroke="#aaa" stroke-width="1"/><text x="128" y="115" text-anchor="middle" fill="#fff" font-size="7" font-family="Georgia,serif">Earth</text><circle cx="128" cy="110" r="28" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/><circle cx="128" cy="110" r="48" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/><circle cx="156" cy="110" r="5" fill="#e0a020"/><text x="158" y="100" text-anchor="middle" fill="#FFD700" font-size="7" font-family="Georgia,serif">Sun</text><text x="128" y="168" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">GEOCENTRIC (Ptolemy)</text><text x="128" y="182" text-anchor="middle" fill="#888" font-size="8" font-family="Georgia,serif">Earth at center</text><text x="260" y="100" text-anchor="middle" fill="#FFD700" font-size="22" font-family="Georgia,serif">→</text><text x="260" y="115" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif">1543</text><circle cx="430" cy="110" r="11" fill="#e0a020" stroke="#FFD700" stroke-width="1.5"><animate attributeName="r" values="11;14;11" dur="2s" repeatCount="indefinite"/></circle><text x="430" y="115" text-anchor="middle" fill="#fff" font-size="7" font-family="Georgia,serif">Sun</text><circle cx="430" cy="110" r="33" fill="none" stroke="#4a90d9" stroke-width="1.5"/><circle cx="430" cy="110" r="58" fill="none" stroke="#2bcc71" stroke-width="1.5"/><circle cx="463" cy="110" r="5" fill="#4a90d9"/><text x="478" y="100" text-anchor="middle" fill="#90c8ff" font-size="7" font-family="Georgia,serif">Earth</text><text x="430" y="178" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">HELIOCENTRIC (Copernicus)</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 175" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="175" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Bacon's Four Idols — Sources of Error in Thinking</text><rect x="15" y="45" width="120" height="100" rx="7" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="75" y="67" text-anchor="middle" fill="#ffaa80" font-size="9.5" font-family="Georgia,serif" font-weight="bold">TRIBE</text><text x="75" y="84" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Universal human</text><text x="75" y="97" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">biases</text><text x="75" y="118" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Seeing patterns</text><text x="75" y="130" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">that aren't there</text><rect x="148" y="45" width="120" height="100" rx="7" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="208" y="67" text-anchor="middle" fill="#80ffaa" font-size="9.5" font-family="Georgia,serif" font-weight="bold">CAVE</text><text x="208" y="84" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Individual personal</text><text x="208" y="97" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">prejudices</text><text x="208" y="118" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Overvaluing</text><text x="208" y="130" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">one's own field</text><rect x="281" y="45" width="130" height="100" rx="7" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="346" y="67" text-anchor="middle" fill="#90c8ff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">MARKETPLACE</text><text x="346" y="84" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Language/word</text><text x="346" y="97" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">confusion</text><text x="346" y="118" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Ambiguous terms</text><text x="346" y="130" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">leading astray</text><rect x="424" y="45" width="122" height="100" rx="7" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="485" y="67" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">THEATRE</text><text x="485" y="84" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">False philosophical</text><text x="485" y="97" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">systems accepted</text><text x="485" y="112" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">without question</text><text x="485" y="130" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">e.g. Aristotelian</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Copernicus (1543) → Tycho Brahe (observations) → Kepler (3 laws) → Galileo (telescope + experimental physics) → Newton (laws of motion + gravity, 1687). Medicine: Vesalius (1543, anatomy) → Harvey (circulation). Bacon: inductive method, four idols (Tribe, Cave, Marketplace, Theatre). Descartes: mechanical philosophy, deductive method, cogito ergo sum. Key dates: 1543 = both Copernicus AND Vesalius published.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Bacon's inductive (observations → general laws, bottom-up) vs Descartes's deductive (principles → conclusions, top-down). Kepler's laws DESCRIBE planetary motion; Newton's laws EXPLAIN why (through gravity). Note 1543 coincidence: both Copernicus's De Revolutionibus AND Vesalius's De Humani Corporis Fabrica published same year.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Scientific Revolution (1543–1687): replaced geocentric cosmology with heliocentric; replaced Galenic medicine with anatomy and experimental physiology; established mathematical and experimental methods. Newton's Principia (1687) unified terrestrial and celestial mechanics — the capstone of the Scientific Revolution.</div>`,
+    questions: [
+      {
+        q: "Copernicus's 1543 work 'De Revolutionibus Orbium Coelestium' proposed:",
+        o: [
+          'That the Moon is the center of the solar system',
+          'That the Sun, not Earth, is at the center — Earth rotates daily and orbits the Sun annually',
+          'That the universe is infinite with no center',
+          'That God holds planets in their orbits',
+        ],
+        a: 1,
+        e: "Copernicus proposed the heliocentric model: Sun at center; Earth rotating on its axis daily; Earth and other planets orbiting the Sun annually; apparent motion of stars resulting from Earth's orbital motion.",
+        h: 'Copernicus, 1543 = heliocentric: Sun at center, Earth orbits Sun, Earth rotates daily.',
+        yr: 'GST',
+      },
+      {
+        q: "Kepler's First Law of Planetary Motion states that:",
+        o: [
+          'Planets move in circular orbits with the Sun at the center',
+          'Planets move in elliptical orbits with the Sun at one focus',
+          'A planet sweeps equal areas in equal times',
+          "The square of a planet's period equals the cube of its orbital radius",
+        ],
+        a: 1,
+        e: "Kepler's First Law: planetary orbits are ellipses with the Sun at one of the two foci. This was a major departure from both Ptolemy and Copernicus, who retained circular orbits.",
+        h: "Kepler's 1st Law: elliptical orbits, Sun at one focus.",
+        yr: 'GST',
+      },
+      {
+        q: "Galileo's statement that 'the Book of Nature is written in the language of mathematics' represents:",
+        o: [
+          'His belief that only mathematicians can understand science',
+          'His program of using mathematical descriptions for physical phenomena — replacing qualitative Aristotelian descriptions with quantitative laws',
+          'His criticism of religious scripture',
+          'His claim that mathematics is the only true knowledge',
+        ],
+        a: 1,
+        e: "Galileo's statement encapsulates the mathematical-experimental program of the Scientific Revolution: natural phenomena should be described by precise mathematical relationships. This was realized by Kepler and brought to fruition by Newton.",
+        h: "Galileo: 'Book of Nature written in mathematics' = mathematical physics program.",
+        yr: 'GST',
+      },
+      {
+        q: "Francis Bacon's 'Idols of the Theatre' refers to:",
+        o: [
+          'Biases common to all humans',
+          'Individual prejudices arising from personal upbringing',
+          'Confusion arising from imprecise use of language',
+          'False philosophical systems inherited from tradition and accepted uncritically like theater performances',
+        ],
+        a: 3,
+        e: "Bacon's four idols: Tribe (universal human biases), Cave (individual personal biases), Marketplace (language-caused confusions), Theatre (false philosophical systems — like Aristotelianism — accepted without critical scrutiny).",
+        h: 'Idols of the Theatre = false philosophical systems accepted uncritically.',
+        yr: 'GST',
+      },
+      {
+        q: "Newton's Law of Universal Gravitation states that:",
+        o: [
+          'Every object falls toward Earth at the same speed',
+          'Every mass attracts every other mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them',
+          'The force of gravity is constant throughout the universe',
+          'Gravity only operates between planets and stars',
+        ],
+        a: 1,
+        e: "Newton's Law: F = Gm₁m₂/r². Gravitational force is proportional to the product of masses and inversely proportional to distance squared. This unified terrestrial and celestial mechanics.",
+        h: 'Universal gravitation: F = Gm₁m₂/r².',
+        yr: 'GST',
+      },
+      {
+        q: "Andreas Vesalius's 'De Humani Corporis Fabrica' (1543) is significant because:",
+        o: [
+          'It proposed the heliocentric model',
+          "It corrected Galen's anatomy through systematic human cadaver dissection, founding modern anatomy",
+          'It described the circulation of blood',
+          'It was the first medical text to use chemical treatments',
+        ],
+        a: 1,
+        e: "Vesalius's De Humani Corporis Fabrica (1543) corrected over 300 of Galen's errors by systematically dissecting human cadavers. Published in the same year as Copernicus's heliocentric theory, 1543 is a symbolic starting year for the Scientific Revolution.",
+        h: "Vesalius (1543) = human dissection + corrected Galen's anatomy = founded modern anatomy.",
+        yr: 'GST',
+      },
+      {
+        q: "William Harvey's greatest contribution to medicine was:",
+        o: [
+          'Discovering the germ theory of disease',
+          'Demonstrating through experiments that blood circulates continuously through the body, pumped by the heart',
+          'Developing the first effective anaesthetics',
+          'Proving that spontaneous generation is impossible',
+        ],
+        a: 1,
+        e: 'Harvey (1578–1657) demonstrated through quantitative experiments that blood circulates in a closed loop — pumped by the heart through arteries, returning through veins. This overthrew the 1,400-year-old Galenic model.',
+        h: "Harvey = circulation of blood = heart pumps blood in closed loop = overturned Galen's physiology.",
+        yr: 'GST',
+      },
+      {
+        q: "Kepler's Third Law (Harmonic Law) states:",
+        o: [
+          'Planets orbit the Sun in ellipses',
+          'A line from planet to Sun sweeps equal areas in equal times',
+          "The square of a planet's orbital period is proportional to the cube of its average distance from the Sun (T² ∝ r³)",
+          'Planets move faster when farther from the Sun',
+        ],
+        a: 2,
+        e: "Kepler's Third Law: T² ∝ r³. A planet farther from the Sun takes proportionally longer to complete one orbit. Newton later derived this law from universal gravitation.",
+        h: "Kepler's 3rd Law: T² ∝ r³.",
+        yr: 'GST',
+      },
+      {
+        q: "René Descartes' 'mechanical philosophy' proposed that:",
+        o: [
+          'Machines should be used in all scientific experiments',
+          'Nature should be understood as a machine — matter in motion governed by mechanical laws, without purposes or souls (except the human mind)',
+          'The mechanical arts should take priority over pure science',
+          'Scientists should use mechanical (deductive) reasoning rather than empirical observation',
+        ],
+        a: 1,
+        e: "Descartes's mechanical philosophy: the entire physical world — including animal bodies — is essentially a machine operating by mechanical principles. No Aristotelian final causes or vital spirits. This opened nature to mathematical-mechanical analysis.",
+        h: "Descartes' mechanical philosophy: nature = machine operating by mechanical laws.",
+        yr: 'GST',
+      },
+      {
+        q: "Galileo's observations with the telescope that most challenged Aristotelian cosmology included:",
+        o: [
+          'Observing that the Moon orbits the Earth once per month',
+          'Discovering moons orbiting Jupiter (proving not everything orbits Earth) and mountains on the Moon (disproving perfect celestial spheres)',
+          'Measuring exact distances between planets',
+          'Observing that stars are other suns',
+        ],
+        a: 1,
+        e: "Galileo's telescope discoveries: moons orbiting Jupiter (refuting that everything must orbit Earth); phases of Venus (proving Venus orbits the Sun); mountains on the Moon (disproving perfect crystalline spheres); sunspots (disproving the Sun's perfection).",
+        h: "Galileo's key telescope finds: Jupiter's moons, phases of Venus, Moon's mountains, sunspots.",
+        yr: 'GST',
+      },
+      {
+        q: "Tycho Brahe's most important contribution to the Scientific Revolution was:",
+        o: [
+          'Inventing the telescope and making the first systematic telescopic observations',
+          'Making the most precise pre-telescope measurements of planetary positions, providing the data Kepler needed',
+          'Discovering that planets move in elliptical orbits',
+          'Writing the first experimental textbook outlining the scientific method',
+        ],
+        a: 1,
+        e: "Tycho Brahe spent 20 years making the most precise naked-eye observations of planetary positions. When Kepler inherited them after Brahe's death, he used them to derive the three laws of planetary motion.",
+        h: "Tycho Brahe = most precise pre-telescope observations = data foundation for Kepler's laws.",
+        yr: 'GST',
+      },
+      {
+        q: "Newton's First Law of Motion (Law of Inertia) states:",
+        o: [
+          'Objects accelerate in proportion to the force applied',
+          'Every action has an equal and opposite reaction',
+          'An object at rest stays at rest and an object in uniform motion continues in uniform motion unless acted upon by an external net force',
+          'The gravitational force depends on masses and distance',
+        ],
+        a: 2,
+        e: "Newton's First Law (Inertia): an object at rest remains at rest and an object in motion continues at constant speed unless acted upon by a net external force. This overturned Aristotle's idea that motion requires a continuous cause.",
+        h: "Newton's 1st Law: objects continue in rest or uniform motion unless a net force acts.",
+        yr: 'GST',
+      },
+      {
+        q: 'Francis Bacon advocated which approach to scientific knowledge?',
+        o: [
+          'Deductive reasoning from certain first principles',
+          'Inductive reasoning — accumulating particular observations and inferring general laws (empiricist approach)',
+          'Mathematical derivation of natural laws without need for observation',
+          'Theological interpretation of natural phenomena',
+        ],
+        a: 1,
+        e: "Bacon advocated the inductive method: start from careful, unbiased observations → accumulate data → generalize to laws. This 'bottom-up' approach contrasted with Descartes's 'top-down' deductive method.",
+        h: 'Bacon = inductive method: observations → general laws (bottom-up, empiricist).',
+        yr: 'GST',
+      },
+      {
+        q: 'The Gutenberg printing press (c.1450) contributed to the Scientific Revolution by:',
+        o: [
+          'Providing scientists with better tools for diagrams',
+          'Enabling rapid, widespread dissemination of new ideas — replacing slow hand-copied manuscripts',
+          'Creating the first scientific journals for peer review',
+          "Providing the mechanical model inspiring Descartes' mechanical philosophy",
+        ],
+        a: 1,
+        e: "The printing press allowed scientific findings to reach hundreds or thousands of readers rapidly. Copernicus's book, Vesalius's anatomy, and Galileo's dialogues all reached large audiences quickly — accelerating the spread of new ideas.",
+        h: 'Gutenberg press = rapid dissemination of scientific ideas = replaced slow manuscript copying.',
+        yr: 'GST',
+      },
+      {
+        q: "Descartes' 'cogito ergo sum' (I think therefore I am) was significant for science because:",
+        o: [
+          'It proved that scientists must be human',
+          'It established a certain foundational truth from which he attempted to deduce other knowledge — exemplifying the rationalist deductive method',
+          'It showed that thought is the source of all scientific knowledge',
+          'It was the first scientific claim published in a modern language',
+        ],
+        a: 1,
+        e: "Cogito ergo sum was Descartes's Archimedean point — the one indubitable truth. From this certain foundation, he attempted to rebuild all knowledge deductively. This rationalist approach contrasted with Bacon's inductive empiricism.",
+        h: "Cogito ergo sum = Descartes' foundational certainty = basis for rationalist deductive method.",
+        yr: 'GST',
+      },
+      {
+        q: "Van Leeuwenhoek's contribution to science was:",
+        o: [
+          'Developing the telescope for astronomical observation',
+          'Developing the microscope to sufficient resolution to observe bacteria and protozoa, opening microbiology',
+          'Proving that blood circulates through the body',
+          'Discovering the moons of Jupiter',
+        ],
+        a: 1,
+        e: 'Van Leeuwenhoek (1632–1723) developed microscopes of unprecedented quality, allowing him to observe bacteria and protozoa for the first time. His work opened the field of microbiology.',
+        h: 'Van Leeuwenhoek = microscope + first observation of bacteria/protozoa = founded microbiology.',
+        yr: 'GST',
+      },
+      {
+        q: "Newton's 'Principia Mathematica' (1687) unified which two domains of physics?",
+        o: [
+          'Optics (light) and acoustics (sound)',
+          'Terrestrial mechanics (falling bodies) and celestial mechanics (planetary motion)',
+          'Electricity and magnetism',
+          'Chemistry and biology',
+        ],
+        a: 1,
+        e: "Newton's Principia unified terrestrial mechanics (falling bodies) and celestial mechanics (planetary orbits) under a single set of laws — the three laws of motion and universal gravitation. The same force pulling apples also keeps the Moon in orbit.",
+        h: "Newton's Principia = unified terrestrial + celestial mechanics under one framework.",
+        yr: 'GST',
+      },
+      {
+        q: "The significance of Kepler's Second Law (Equal Areas) is that:",
+        o: [
+          'All planets take equal times to complete their orbits',
+          'A planet moves faster when closer to the Sun and slower when farther away',
+          "The area of a planet's orbit is proportional to its mass",
+          'Planets at equal distances orbit at equal speeds',
+        ],
+        a: 1,
+        e: "Kepler's Second Law: a line from planet to Sun sweeps equal areas in equal time intervals. Planets move FASTER when near the Sun (perihelion) and SLOWER when far from the Sun (aphelion).",
+        h: "Kepler's 2nd Law: equal areas in equal times = faster near Sun, slower far from Sun.",
+        yr: 'GST',
+      },
+      {
+        q: "Which statement best describes the relationship between Kepler's laws and Newton's laws?",
+        o: [
+          'They are independent — Kepler discovered planetary laws and Newton discovered terrestrial laws',
+          "Newton's laws EXPLAIN (derive) Kepler's laws — from F=ma and universal gravitation, Kepler's three laws can be mathematically derived",
+          "Kepler's laws corrected Newton's laws after better data became available",
+          'They describe exactly the same phenomena in different notation',
+        ],
+        a: 1,
+        e: "Kepler's laws were empirical — derived from observational data without underlying explanation. Newton's laws are more fundamental — from F=ma and universal gravitation, all three of Kepler's laws can be mathematically derived. Newton explains WHY planets obey Kepler's laws.",
+        h: "Newton's laws derive/explain Kepler's laws. Kepler described HOW; Newton explained WHY.",
+        yr: 'GST',
+      },
+      {
+        q: 'The Galileo Affair (1633) in which Galileo was tried by the Inquisition is historically significant because:',
+        o: [
+          'It proves that religion and science are permanently incompatible',
+          'It represents a famous case of conflict between scientific claims and religious authority, though historians note it had political and personal dimensions beyond simple science-religion conflict',
+          'It resulted in Galileo discovering new laws while under house arrest',
+          'It led directly to abolition of Church authority over scientific matters',
+        ],
+        a: 1,
+        e: "The Galileo Affair (1633) is a landmark case: Galileo was tried by the Roman Inquisition for defending heliocentrism. However, historians note that the case involved personal conflicts, Church politics, and Galileo's manner of arguing, not simply 'science vs. religion.' The case is important but should not be oversimplified.",
+        h: 'Galileo Affair = famous science-religion conflict, but historically complex — not simple opposition.',
+        yr: 'GST',
+      },
+    ],
+  },
+  {
+    topic: 'Philosophy of Science — Major Theories',
+    topicCode: 'HPS-PHI-04',
+    module: 'Module 4: How Science Works',
+    contentHTML: `
+<div class="learn-intro">What makes science different from other ways of knowing? How does scientific knowledge grow? The <span class="learn-keyword">philosophy of science</span> examines the foundations, methods, and logic of science. This topic surveys major philosophical theories: logical positivism, falsificationism, paradigm theory, and epistemological anarchism.</div>
+<h3 class="learn-subheading">4.1 Hume's Problem of Induction</h3>
+<p class="learn-p"><span class="learn-keyword">David Hume (1711–1776)</span> identified the <span class="learn-keyword">problem of induction</span>: no finite number of observations can guarantee a universal conclusion. The chicken fed daily concludes "the farmer will always feed me" — until the day it is killed. Inductive generalizations from past regularities cannot logically guarantee future ones. Popper tried to bypass this by rejecting induction entirely.</p>
+<h3 class="learn-subheading">4.2 Logical Positivism and the Vienna Circle</h3>
+<p class="learn-p">The <span class="learn-keyword">Vienna Circle</span> (Schlick, Carnap, Neurath) developed <span class="learn-keyword">Logical Positivism</span>. The <span class="learn-keyword">Verification Principle</span>: a statement is cognitively meaningful only if (1) analytically true by definition, or (2) empirically verifiable. Metaphysical claims are "meaningless." Criticism: the Verification Principle fails its own test; universal statements can never be fully verified.</p>
+<h3 class="learn-subheading">4.3 Popper and Falsificationism</h3>
+<p class="learn-p"><span class="learn-keyword">Karl Popper (1902–1994)</span>: The Logic of Scientific Discovery (1934). Falsifiability as demarcation criterion: a theory is scientific only if there are conceivable observations that could refute it. Science grows through <span class="learn-keyword">conjectures and refutations</span>: bold falsifiable conjectures → severe tests → if refuted, reject → if corroborated (not proven true), provisionally accept. Rejected induction. <span class="learn-keyword">Duhem-Quine thesis</span>: when a prediction fails, impossible to know if the theory or an auxiliary hypothesis is wrong.</p>
+<h3 class="learn-subheading">4.4 Kuhn and Scientific Revolutions</h3>
+<p class="learn-p"><span class="learn-keyword">Thomas Kuhn (1922–1996)</span>: The Structure of Scientific Revolutions (1962). Key concepts: <span class="learn-keyword">Paradigm</span> = shared framework of assumptions, methods, exemplary problems, and standards within which a scientific community works. <span class="learn-keyword">Normal Science</span> = puzzle-solving within accepted paradigm. <span class="learn-keyword">Anomalies</span> = observations that resist paradigm explanation. <span class="learn-keyword">Crisis</span> = anomalies accumulate, confidence shaken. <span class="learn-keyword">Scientific Revolution</span> = paradigm shift — old paradigm overthrown, new one adopted. <span class="learn-keyword">Incommensurability</span> = different paradigms not fully translatable into each other's terms.</p>
+<h3 class="learn-subheading">4.5 Lakatos and Research Programmes</h3>
+<p class="learn-p"><span class="learn-keyword">Imre Lakatos (1922–1974)</span>: Scientific Research Programmes. <span class="learn-keyword">Hard core</span>: central unalterable assumptions protected from falsification. <span class="learn-keyword">Protective belt</span>: auxiliary hypotheses that can be modified. <span class="learn-keyword">Progressive programmes</span> generate novel successful predictions. <span class="learn-keyword">Degenerative programmes</span> only make ad hoc modifications without new predictions.</p>
+<h3 class="learn-subheading">4.6 Feyerabend and Epistemological Anarchism</h3>
+<p class="learn-p"><span class="learn-keyword">Paul Feyerabend (1924–1994)</span>: Against Method (1975). "Anything goes" — no single scientific method characterizes all of science. Scientists have historically used every conceivable approach, including violations of official methodology. Proliferation of competing theories is beneficial.</p>
+<h3 class="learn-subheading">4.7 Scientific Realism vs Instrumentalism</h3>
+<p class="learn-p"><span class="learn-keyword">Scientific Realism</span>: theories are approximately true descriptions of reality, including unobservables (electrons, quarks). "No-miracles argument": empirical success would be miraculous unless theories are approximately true. <span class="learn-keyword">Instrumentalism</span>: theories are useful predictive tools — we cannot know if they are literally true about unobservables.</p>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Philosopher</th><th>Key Concept</th><th>Main Claim</th></tr></thead><tbody>
+<tr><td>Hume</td><td>Problem of induction</td><td>Finite observations cannot logically guarantee universal conclusions</td></tr>
+<tr><td>Vienna Circle</td><td>Verification Principle</td><td>Scientific statements must be empirically verifiable; metaphysics is meaningless</td></tr>
+<tr><td>Popper</td><td>Falsificationism</td><td>Science grows through bold conjectures + severe refutation attempts</td></tr>
+<tr><td>Kuhn</td><td>Paradigm / Normal Science / Revolution</td><td>Science develops through normal science punctuated by revolutionary paradigm shifts</td></tr>
+<tr><td>Lakatos</td><td>Research Programmes</td><td>Science operates through hard core + protective belt; progressive vs degenerative</td></tr>
+<tr><td>Feyerabend</td><td>Epistemological Anarchism</td><td>"Anything goes" — no single method characterizes science</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="200" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Kuhn's Structure of Scientific Revolutions</text><rect x="15" y="55" width="85" height="55" rx="6" fill="#0d2040" stroke="#888" stroke-width="1.5"/><text x="57" y="76" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif" font-weight="bold">PRE-SCIENCE</text><text x="57" y="91" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Competing</text><text x="57" y="103" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">schools</text><line x1="100" y1="82" x2="118" y2="82" stroke="#FFD700" stroke-width="1.5"/><polygon points="118,82 107,76 107,88" fill="#FFD700"/><rect x="120" y="55" width="85" height="55" rx="6" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="162" y="76" text-anchor="middle" fill="#80ffaa" font-size="8" font-family="Georgia,serif" font-weight="bold">NORMAL</text><text x="162" y="89" text-anchor="middle" fill="#80ffaa" font-size="8" font-family="Georgia,serif" font-weight="bold">SCIENCE</text><text x="162" y="103" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Puzzle-solving</text><line x1="205" y1="82" x2="223" y2="82" stroke="#FFD700" stroke-width="1.5"/><polygon points="223,82 212,76 212,88" fill="#FFD700"/><rect x="225" y="55" width="75" height="55" rx="6" fill="#0d3b6e" stroke="#e0a020" stroke-width="1.5"/><text x="262" y="76" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif" font-weight="bold">ANOMALIES</text><text x="262" y="93" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Unexplained</text><text x="262" y="105" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">observations</text><line x1="300" y1="82" x2="318" y2="82" stroke="#FFD700" stroke-width="1.5"/><polygon points="318,82 307,76 307,88" fill="#FFD700"/><rect x="320" y="55" width="70" height="55" rx="6" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="355" y="76" text-anchor="middle" fill="#ffaa80" font-size="8" font-family="Georgia,serif" font-weight="bold">CRISIS</text><text x="355" y="93" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">Confidence</text><text x="355" y="105" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">falters</text><line x1="390" y1="82" x2="408" y2="82" stroke="#FFD700" stroke-width="1.5"/><polygon points="408,82 397,76 397,88" fill="#FFD700"/><rect x="410" y="45" width="135" height="75" rx="6" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="477" y="68" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">SCIENTIFIC</text><text x="477" y="81" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">REVOLUTION</text><text x="477" y="97" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Paradigm Shift</text><path d="M477 120 Q477 155 162 155 Q162 120 162 110" fill="none" stroke="#2bcc71" stroke-width="1.5" stroke-dasharray="4,3"/><polygon points="162,110 156,122 168,122" fill="#2bcc71"/><text x="280" y="150" text-anchor="middle" fill="#80ffaa" font-size="8.5" font-family="Georgia,serif">New Normal Science begins under the new paradigm</text><text x="280" y="175" text-anchor="middle" fill="#888" font-size="9" font-family="Georgia,serif">Kuhn, The Structure of Scientific Revolutions (1962) — one of most cited academic books of 20th century</text><text x="280" y="190" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Key concept: Incommensurability — paradigms not fully translatable into each other's terms</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="160" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Popper vs Kuhn — Two Views of Scientific Progress</text><rect x="20" y="45" width="240" height="100" rx="8" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="140" y="67" text-anchor="middle" fill="#90c8ff" font-size="11" font-family="Georgia,serif" font-weight="bold">POPPER</text><text x="140" y="85" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Bold conjectures + severe tests</text><text x="140" y="100" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Falsified → reject + improve</text><text x="140" y="115" text-anchor="middle" fill="#4a90d9" font-size="8" font-family="Georgia,serif">Logical; rationalist; gradual</text><rect x="300" y="45" width="240" height="100" rx="8" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="420" y="67" text-anchor="middle" fill="#80ffaa" font-size="11" font-family="Georgia,serif" font-weight="bold">KUHN</text><text x="420" y="85" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Normal science → Crisis → Revolution</text><text x="420" y="100" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Paradigm shifts are discontinuous</text><text x="420" y="115" text-anchor="middle" fill="#2bcc71" font-size="8" font-family="Georgia,serif">Historical; sociological; revolutionary</text><text x="280" y="148" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Lakatos tried to reconcile both with progressive research programmes</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Hume = problem of induction. Vienna Circle/Carnap = Logical Positivism, Verification Principle. Popper = Falsificationism (demarcation criterion + conjectures and refutations). Kuhn = paradigm, normal science, scientific revolution, incommensurability. Lakatos = research programmes, hard core, protective belt, progressive vs degenerative. Feyerabend = "anything goes," epistemological anarchism.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Verification (Vienna Circle: must be empirically verifiable to be MEANINGFUL) vs Falsification (Popper: must be falsifiable to be SCIENTIFIC) — different criteria. Kuhn's "paradigm" is NOT just "a theory" — it's an entire framework including methods, standards, exemplary problems, and worldview. Corroboration (Popper) ≠ confirmation — corroborated = survived severe testing, NOT proven true.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Philosophy of science examines science's foundations. Hume's induction problem questions generalizing from observations. Vienna Circle required empirical verifiability. Popper proposed falsificationism — bold conjectures + severe tests. Kuhn showed science develops through normal science + revolutionary paradigm shifts. Lakatos's research programmes reconcile Popper and Kuhn. Feyerabend's "anything goes" questions methodological monism. Scientific realism vs instrumentalism debates whether theories are true or merely useful.</div>`,
+    questions: [
+      {
+        q: "David Hume's 'problem of induction' concerns:",
+        o: [
+          'The difficulty of performing inductive experiments in laboratory conditions',
+          'The logical impossibility of guaranteeing universal conclusions from any finite number of particular observations',
+          'The problem of finding appropriate samples for surveys',
+          'The challenge of teaching inductive reasoning to students',
+        ],
+        a: 1,
+        e: "Hume observed that inductive inference — from 'all observed X are Y' to 'all X are Y' — is not logically valid. No finite number of observations can guarantee a universal conclusion. This challenges science's reliance on generalizing from observations.",
+        h: "Hume's problem of induction: finite observations cannot logically guarantee universal conclusions.",
+        yr: 'GST',
+      },
+      {
+        q: "The Vienna Circle's 'Verification Principle' holds that:",
+        o: [
+          'Scientific results must be verified by at least three independent researchers',
+          'A statement is cognitively meaningful only if it is either analytically true or empirically verifiable',
+          'Verification of theories requires mathematical proof',
+          'All claims must be reviewed by an ethics committee',
+        ],
+        a: 1,
+        e: "The Verification Principle (Logical Positivism): a statement is cognitively meaningful only if (a) analytically true by definition or (b) empirically verifiable. Metaphysical claims satisfy neither and are 'meaningless.'",
+        h: 'Verification Principle: meaningful = analytically true OR empirically verifiable.',
+        yr: 'GST',
+      },
+      {
+        q: 'Karl Popper proposed falsificationism as a demarcation criterion. According to Popper, science grows by:',
+        o: [
+          'Accumulating confirmed observations until enough evidence proves a theory true',
+          'Making bold, falsifiable conjectures and subjecting them to severe attempts at refutation',
+          'Building consensus among the scientific community',
+          'Applying the inductive method to generate universal laws',
+        ],
+        a: 1,
+        e: "Popper's 'conjectures and refutations': bold falsifiable conjectures → severe falsification attempts → if refuted, discard → if corroborated (not proven), accept provisionally. Science grows by eliminating false theories.",
+        h: 'Popper: science = bold conjectures + severe falsification attempts.',
+        yr: 'GST',
+      },
+      {
+        q: "Thomas Kuhn's concept of a 'paradigm' in science refers to:",
+        o: [
+          'A perfect model experiment defining best practice',
+          'A shared framework of assumptions, methods, exemplary problems, and standards within which a scientific community works',
+          'A mathematical model used to predict experimental results',
+          'A government policy framework for organizing research funding',
+        ],
+        a: 1,
+        e: "Kuhn's paradigm: the shared framework within which a scientific community works — shared theoretical assumptions, accepted methods, standards, and 'exemplary' problem-solutions. Examples: Newtonian mechanics, Ptolemaic astronomy, germ theory of disease.",
+        h: "Kuhn's paradigm = shared framework of theory, methods, standards for a scientific community.",
+        yr: 'GST',
+      },
+      {
+        q: "According to Kuhn, 'normal science' involves:",
+        o: [
+          'Constantly testing and attempting to overthrow the dominant paradigm',
+          'Puzzle-solving within the accepted paradigm — filling gaps, refining measurements, extending theory to new domains',
+          'Competing schools arguing about fundamental foundations',
+          'Making radical new discoveries that challenge basic assumptions',
+        ],
+        a: 1,
+        e: "Normal science (Kuhn): day-to-day scientific work within an accepted paradigm. Scientists are not questioning the paradigm — they are 'puzzle-solving' within it. Most scientific work is normal science.",
+        h: 'Normal science = puzzle-solving within accepted paradigm. NOT questioning it.',
+        yr: 'GST',
+      },
+      {
+        q: "Kuhn's concept of 'incommensurability' between paradigms means:",
+        o: [
+          'New paradigms are always larger than old ones',
+          'Different paradigms cannot be directly compared by a neutral standard — they involve different concepts not fully translatable',
+          'Incommensurable quantities cannot be combined in equations',
+          'Scientific revolutions cannot be quantified',
+        ],
+        a: 1,
+        e: "Incommensurability (Kuhn): different paradigms are not fully translatable into each other's terms. Scientists working in different paradigms 'see the world differently.' This raises concerns about scientific relativism.",
+        h: 'Incommensurability = paradigms not fully translatable; no neutral comparison standard.',
+        yr: 'GST',
+      },
+      {
+        q: "Lakatos's 'hard core' of a scientific research programme refers to:",
+        o: [
+          'The most experimentally confirmed results',
+          'The central assumptions protected from falsification — the unalterable core of the programme',
+          'The first experiments that established the programme',
+          'The most difficult unsolved problems',
+        ],
+        a: 1,
+        e: "Lakatos's hard core contains the central theoretical assumptions that scientists agree to protect from falsification. When faced with refuting evidence, scientists modify the 'protective belt' of auxiliary hypotheses rather than abandon the hard core.",
+        h: 'Hard core = central assumptions protected from falsification. Auxiliary hypotheses (protective belt) modified instead.',
+        yr: 'GST',
+      },
+      {
+        q: "A 'progressive' research programme (Lakatos) is distinguished from a 'degenerative' one by:",
+        o: [
+          'Having more financial resources',
+          'Its ability to successfully predict novel phenomena — while a degenerative programme only makes ad hoc modifications to explain past failures',
+          'The number of researchers working within it',
+          'Its use of more sophisticated mathematical tools',
+        ],
+        a: 1,
+        e: 'A progressive research programme generates novel successful predictions — it tells you something new about the world. A degenerative programme only reacts: modifying assumptions to explain failures without generating new testable predictions.',
+        h: 'Progressive = generates novel successful predictions. Degenerative = only ad hoc modifications.',
+        yr: 'GST',
+      },
+      {
+        q: "Paul Feyerabend's 'epistemological anarchism' and 'anything goes' means:",
+        o: [
+          'Scientists should be free from all government regulation',
+          'There is no single scientific method — historically, scientists have succeeded using diverse and even contradictory methodological approaches',
+          'All scientific theories are equally valid',
+          'Science should have no ethical standards',
+        ],
+        a: 1,
+        e: 'Feyerabend argued the history of science shows scientists using every conceivable methodological approach. No single method defines science. He argued against methodological monism, not for abandoning rationality.',
+        h: "Feyerabend 'anything goes' = no single method defines science; scientists have used diverse methods.",
+        yr: 'GST',
+      },
+      {
+        q: "The Duhem-Quine thesis challenges Popper's falsificationism by arguing:",
+        o: [
+          'Scientific theories can never be verified',
+          'When a prediction fails, it is logically impossible to know whether the theory or one of the auxiliary hypotheses is false',
+          'Observations are theory-laden and cannot objectively falsify theories',
+          'The unit of falsification is too small for practical use',
+        ],
+        a: 1,
+        e: 'The Duhem-Quine thesis: when making a prediction, a scientist uses the theory under test plus numerous auxiliary hypotheses. When the prediction fails, logic alone cannot determine whether the main theory or an auxiliary hypothesis is wrong.',
+        h: "Duhem-Quine: when prediction fails, can't know if theory or auxiliary hypothesis is wrong.",
+        yr: 'GST',
+      },
+      {
+        q: 'Scientific realism, as opposed to instrumentalism, holds that:',
+        o: [
+          "Science's main goal is to produce useful instruments and technologies",
+          'Successful scientific theories are approximately true descriptions of reality, including unobservable entities like electrons and quarks',
+          'Only directly observable phenomena can be scientific knowledge',
+          'Scientists should remain neutral about the reality of theoretical entities',
+        ],
+        a: 1,
+        e: "Scientific realism: well-confirmed theories are approximately true descriptions of reality — including unobservables like electrons, genes, quarks. The 'no-miracles argument': it would be miraculous if theories were empirically successful without being approximately true.",
+        h: 'Scientific realism: theories are approximately true descriptions, including unobservables.',
+        yr: 'GST',
+      },
+      {
+        q: "A 'scientific revolution' in Kuhn's sense occurs when:",
+        o: [
+          'A major new laboratory produces dramatic new results',
+          'The old paradigm is overthrown and replaced after a crisis period of accumulating unresolved anomalies',
+          'A new government funds unprecedented scientific research',
+          'Scientists agree to revise the definition of a fundamental unit',
+        ],
+        a: 1,
+        e: 'A Kuhnian scientific revolution: after anomalies accumulate and create a crisis, the scientific community adopts a new paradigm that better explains the anomalies. Examples: Copernican revolution, chemical revolution, Darwinian revolution, plate tectonics.',
+        h: 'Scientific revolution = paradigm shift = old paradigm overthrown after anomaly crisis.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which philosopher argued that the distinction between science and non-science can be drawn using the criterion of falsifiability?',
+        o: ['David Hume', 'Rudolf Carnap', 'Karl Popper', 'Thomas Kuhn'],
+        a: 2,
+        e: 'Karl Popper proposed falsifiability as the demarcation criterion. A theory is scientific if there are conceivable observations that could refute it; non-scientific if it can accommodate any observation.',
+        h: 'Falsifiability as demarcation criterion = POPPER.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'protective belt' in Lakatos's research programme framework consists of:",
+        o: [
+          'Financial resources protecting the programme from budget cuts',
+          'Auxiliary hypotheses that can be modified or replaced to protect the hard core from falsification',
+          'Senior scientists who protect the paradigm from challengers',
+          'Peer-reviewed publications validating the programme',
+        ],
+        a: 1,
+        e: 'The protective belt consists of auxiliary hypotheses surrounding the hard core — they can be modified when predictions fail, without abandoning the core theoretical commitments. Scientists modify the belt rather than the hard core when faced with anomalies.',
+        h: 'Protective belt = auxiliary hypotheses that can be modified to protect the hard core.',
+        yr: 'GST',
+      },
+      {
+        q: "'Corroboration' in Popper's framework differs from 'confirmation' because:",
+        o: [
+          'Corroboration requires more observations than confirmation',
+          'Corroboration means a theory has survived severe falsification attempts without proving it true; confirmation would claim the theory is verified — which Popper rejected',
+          'Corroboration is used for experimental results only',
+          'They mean exactly the same thing',
+        ],
+        a: 1,
+        e: "Popper rejected 'confirmation' because it implies inductive support. 'Corroboration' means only that a theory has survived severe attempts to falsify it — it has been tested rigorously and not yet refuted. A corroborated theory is retained provisionally, not proven true.",
+        h: 'Corroboration (Popper) = survived severe falsification. NOT proven true.',
+        yr: 'GST',
+      },
+      {
+        q: "Van Fraassen's 'Constructive Empiricism' holds that:",
+        o: [
+          'Science should construct new empirical instruments',
+          'The goal of science is empirical adequacy — accurately accounting for observable phenomena — without claiming theories are true about unobservables',
+          'Scientific theories are constructed by society',
+          'Only empirical sciences constitute genuine knowledge',
+        ],
+        a: 1,
+        e: "Van Fraassen's Constructive Empiricism: the goal of science is empirical adequacy (accurately representing observable phenomena). We need not claim that theories are true about unobservable entities like electrons. A form of anti-realism.",
+        h: "Van Fraassen's Constructive Empiricism: science aims at empirical adequacy, not truth about unobservables.",
+        yr: 'GST',
+      },
+      {
+        q: "Which of the following best illustrates the difference between a 'progressive' and 'degenerative' research programme?",
+        o: [
+          'A progressive programme has more funding',
+          'A progressive programme predicts new phenomena confirmed; a degenerative programme only modifies itself to explain past failures',
+          'A progressive programme is accepted by all scientists',
+          'A progressive programme uses modern methods',
+        ],
+        a: 1,
+        e: 'A progressive programme advances by generating novel successful predictions. A degenerative programme is reactive — only modifying assumptions to explain failures after the fact without generating new testable predictions.',
+        h: 'Progressive = new successful predictions. Degenerative = only ad hoc fixes for past failures.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'no-miracles argument' for scientific realism states:",
+        o: [
+          'Scientific theories not yet confirmed are miraculous speculations',
+          'If our best scientific theories were not approximately true, their empirical success would be miraculous — success is best explained by approximate truth',
+          'Miracles disprove scientific theories',
+          'Science cannot explain miracles',
+        ],
+        a: 1,
+        e: 'The no-miracles argument (Hilary Putnam): scientific theories are enormously empirically successful. If these theories were not approximately true, their success would be an inexplicable miracle. Therefore, the best explanation of scientific success is approximate truth.',
+        h: 'No-miracles argument: scientific success would be miraculous unless theories are approximately true = argument for scientific realism.',
+        yr: 'GST',
+      },
+      {
+        q: "What is the central methodological difference between Bacon's inductive approach and Descartes' deductive approach?",
+        o: [
+          'Bacon used only qualitative methods while Descartes used quantitative',
+          "Bacon's inductive approach builds from particular observations to general laws (bottom-up); Descartes' deductive approach starts from certain first principles and derives consequences (top-down)",
+          'Bacon focused on biological sciences while Descartes focused on physics',
+          'Bacon rejected mathematics while Descartes rejected observation',
+        ],
+        a: 1,
+        e: 'Bacon (empiricist/inductive): start from careful, systematic observations → accumulate data → generalize to laws. Bottom-up. Descartes (rationalist/deductive): start from certain foundational principles → deduce consequences. Top-down. Both approaches contributed to the scientific method.',
+        h: 'Bacon = inductive (observations → laws, bottom-up). Descartes = deductive (principles → conclusions, top-down).',
+        yr: 'GST',
+      },
+      {
+        q: "Hume's famous example of the chicken who expects to be fed (but is eventually killed) illustrates:",
+        o: [
+          'The importance of animal welfare in scientific experiments',
+          'The problem of induction — past regularities do not logically guarantee future ones',
+          'That empirical observation is unreliable',
+          'The ethical problems of using animals in philosophy',
+        ],
+        a: 1,
+        e: "Russell's chicken (drawing on Hume): it has been fed every day and inductively concludes 'the farmer will always feed me.' This inductive generalization seems justified — until the day the farmer kills it. Past regularities don't logically guarantee future ones.",
+        h: "Chicken example = illustration of induction problem: past regularities don't guarantee future ones.",
+        yr: 'GST',
+      },
+    ],
+  },
+  {
+    topic: 'The Scientific Method',
+    topicCode: 'HPS-MET-05',
+    module: 'Module 5: How Scientists Investigate',
+    contentHTML: `
+<div class="learn-intro">The <span class="learn-keyword">scientific method</span> is the set of procedures, reasoning processes, and epistemic norms scientists use to generate reliable knowledge. It is science's most distinctive feature — the systematic approach distinguishing scientific knowledge from folklore, speculation, and opinion.</div>
+<h3 class="learn-subheading">5.1 Steps of the Scientific Method</h3>
 <ol class="learn-list learn-ordered">
-  <li><strong>Elliptical orbits:</strong> Planets move in ellipses, not perfect circles, with Sun at one focus</li>
-  <li><strong>Equal areas in equal times:</strong> Planets sweep equal areas in equal times — they move faster when closer to Sun</li>
-  <li><strong>Harmonic law:</strong> The square of a planet's orbital period is proportional to the cube of its semi-major axis (T² ∝ a³)</li>
+<li><strong>Observation:</strong> Careful observation of natural phenomena — noticing something requiring explanation.</li>
+<li><strong>Question:</strong> Formulating a specific, researchable question.</li>
+<li><strong>Background Research:</strong> Reviewing existing knowledge about the question.</li>
+<li><strong>Hypothesis Formulation:</strong> A tentative, testable explanation. Format: "If [condition], then [predicted result], because [reasoning]."</li>
+<li><strong>Experimental Design:</strong> Identifying variables (independent, dependent, controlled), designing controls, planning data collection.</li>
+<li><strong>Data Collection:</strong> Carrying out experiments or systematic observations.</li>
+<li><strong>Data Analysis:</strong> Processing and interpreting data using appropriate statistical methods.</li>
+<li><strong>Conclusion:</strong> Determining whether data support or refute the hypothesis.</li>
+<li><strong>Communication:</strong> Sharing findings through peer-reviewed journals and conferences.</li>
 </ol>
-
-<p class="learn-p">Kepler's laws provided the first mathematically accurate description of planetary motions, definitively supporting heliocentrism.</p>
-
-<h3 class="learn-subheading">Galileo Galilei — The Telescopic Observer</h3>
-
-<p class="learn-p">Galileo (1564-1642) was the first to use the telescope for astronomy (after learning of Dutch invention). His discoveries:</p>
+<h3 class="learn-subheading">5.2 Hypotheses, Theories, and Laws</h3>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Term</th><th>Scientific Meaning</th><th>Common Misconception</th></tr></thead><tbody>
+<tr><td><strong>Hypothesis</strong></td><td>A tentative, testable explanation for a specific observation. Unconfirmed working prediction.</td><td>"Just a guess" — but science requires testability and specificity</td></tr>
+<tr><td><strong>Scientific Theory</strong></td><td>A well-tested, broad explanation accounting for many observations with predictive power. The STRONGEST form of scientific explanation.</td><td>"Just a theory" — WRONG: a scientific theory is a well-established framework, NOT a guess</td></tr>
+<tr><td><strong>Scientific Law</strong></td><td>A descriptive statement (often mathematical) of a regular pattern WITHOUT necessarily explaining WHY.</td><td>"A proven theory" — WRONG: laws and theories are different in kind, not confidence level</td></tr>
+</tbody></table></div>
+<p class="learn-p"><strong>Critical point:</strong> Theories do NOT become laws with more evidence. A <span class="learn-keyword">theory EXPLAINS</span>; a <span class="learn-keyword">law DESCRIBES</span>. Newton's Law of Gravity describes the force mathematically; Einstein's General Relativity explains WHY through spacetime curvature.</p>
+<h3 class="learn-subheading">5.3 Variables in Experiments</h3>
 <ul class="learn-list">
-  <li><strong>Moons of Jupiter (1610):</strong> Four bodies orbiting Jupiter — proved not everything orbits Earth</li>
-  <li><strong>Phases of Venus:</strong> Full set of phases (like Moon) — impossible in Ptolemaic system, required Venus to orbit Sun</li>
-  <li><strong>Mountains on Moon:</strong> Celestial bodies imperfect (contradicting Aristotelian perfection)</li>
-  <li><strong>Sunspots:</strong> Sun not perfect, rotates</li>
+<li><strong>Independent variable:</strong> What the researcher CHANGES (the cause). e.g., temperature applied to seeds.</li>
+<li><strong>Dependent variable:</strong> What the researcher MEASURES (the effect). e.g., germination rate.</li>
+<li><strong>Controlled variables:</strong> All factors kept CONSTANT to ensure only the independent variable causes change.</li>
+<li><strong>Control group:</strong> Receives NO treatment — baseline for comparison.</li>
+<li><strong>Experimental group:</strong> Receives the experimental treatment.</li>
 </ul>
-
-<p class="learn-p"><strong>Conflict with Church:</strong> Galileo's support for Copernicus brought him before the Inquisition (1633). Forced to recant (allegedly muttering "E pur si muove" — "And yet it moves"). Lived under house arrest.</p>
-
-<h3 class="learn-subheading">Francis Bacon — The Empiricist Method</h3>
-
-<p class="learn-p">Bacon (1561-1626) criticized reliance on Aristotle and deductive logic. He championed <strong>empiricism</strong>: knowledge comes from observation and experiment. Inductive method — collect data, identify patterns, form general laws. His vision of organized, collaborative science influenced founding of Royal Society (1660).</p>
-
-<h3 class="learn-subheading">René Descartes — The Rationalist</h3>
-
-<p class="learn-p">Descartes (1596-1650) sought certain foundations for knowledge. "Cogito ergo sum" ("I think, therefore I am") — indubitable starting point. He proposed <strong>mechanical philosophy</strong>: universe is matter in motion, governed by mathematical laws. Mind-body dualism (thinking substance separate from extended substance). Developed analytic geometry (bridging algebra and geometry).</p>
-
-<h3 class="learn-subheading">Isaac Newton — The Synthesizer</h3>
-
-<p class="learn-p">Newton (1643-1727) is the towering figure of the Scientific Revolution. His Principia Mathematica (1687) unified celestial and terrestrial physics under universal gravitation.</p>
-
-<p class="learn-p"><strong>Newton's Three Laws of Motion:</strong></p>
-<ol class="learn-list learn-ordered">
-  <li><strong>Inertia:</strong> Objects at rest stay at rest; objects in motion stay in motion unless acted by external force</li>
-  <li><strong>F = ma:</strong> Force equals mass times acceleration</li>
-  <li><strong>Action-Reaction:</strong> For every action, there is an equal and opposite reaction</li>
-</ol>
-
-<p class="learn-p"><strong>Universal Gravitation:</strong> Every particle of matter attracts every other particle with force proportional to product of masses and inverse square of distance (F = G·m₁·m₂/r²). Explained falling apples (terrestrial) and orbiting planets (celestial) with same law.</p>
-
-<p class="learn-p"><strong>Other contributions:</strong> Calculus (independently with Leibniz), optics (color spectrum, reflecting telescope), alchemy (although not modern science).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Point:</strong> The Scientific Revolution was not just a set of discoveries — it was a transformation in method and worldview. From reliance on ancient authority (Aristotle, Galen) to reliance on observation, experiment, and mathematics. From a qualitative, teleological universe to a quantitative, mechanical universe. From Earth-centered to Sun-centered. This revolution made modern science possible.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Why is Galileo considered the 'father of modern science'?" (Sample answer: Galileo pioneered the experimental method — testing hypotheses with controlled experiments (inclined plane, pendulum). He used mathematics to describe natural laws. He insisted that science should be based on observation, not authority. His telescopic discoveries provided evidence for Copernicus. His conflict with the Church symbolized the tension between science and religious authority.)</span>
-</div>
-    `,
+<h3 class="learn-subheading">5.4 Types of Reasoning</h3>
+<ul class="learn-list">
+<li><strong>Inductive reasoning:</strong> Specific observations → general conclusions (bottom-up, ampliative, not logically certain).</li>
+<li><strong>Deductive reasoning:</strong> General premises → specific conclusions (top-down, truth-preserving, logically certain if premises true).</li>
+<li><strong>Abductive reasoning:</strong> Choosing the hypothesis that BEST EXPLAINS available evidence (inference to best explanation).</li>
+<li><strong>Hypothetico-deductive method:</strong> Form hypothesis (often inductively) → deduce testable predictions → test → support or refute.</li>
+</ul>
+<h3 class="learn-subheading">5.5 Peer Review and Scientific Communication</h3>
+<p class="learn-p"><span class="learn-keyword">Peer review</span>: scientific work evaluated by independent experts before publication. Science's primary quality control mechanism. Limitations: reviewer biases, can miss errors, publication bias (positive results preferred). The <span class="learn-keyword">replication crisis</span>: many published results — especially in psychology, medicine, social sciences — fail to replicate. Only ~36% of psychology studies replicated in Open Science Collaboration (2015).</p>
+<h3 class="learn-subheading">5.6 Scientific Error and Fraud</h3>
+<ul class="learn-list">
+<li><strong>Random error:</strong> Unpredictable variation — reduced by taking multiple measurements.</li>
+<li><strong>Systematic error (bias):</strong> Consistent directional error — NOT reduced by repetition; must fix the source.</li>
+<li><strong>Confirmation bias:</strong> Tendency to notice evidence confirming existing beliefs; ignore contradicting evidence.</li>
+<li><strong>Scientific fraud (FFP):</strong> Fabrication (inventing data), Falsification (manipulating data), Plagiarism (presenting others' work as one's own).</li>
+</ul>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="190" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">The Scientific Method — Iterative Cycle</text><circle cx="280" cy="110" r="60" fill="none" stroke="#1a3060" stroke-width="1" stroke-dasharray="4,2"/><ellipse cx="280" cy="52" rx="60" ry="17" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="280" y="56" text-anchor="middle" fill="#80ffaa" font-size="9" font-family="Georgia,serif" font-weight="bold">1. OBSERVE + QUESTION</text><ellipse cx="415" cy="87" rx="60" ry="17" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="415" y="91" text-anchor="middle" fill="#90c8ff" font-size="9" font-family="Georgia,serif" font-weight="bold">2. HYPOTHESIZE</text><ellipse cx="420" cy="143" rx="65" ry="17" fill="#0d3b6e" stroke="#a066e0" stroke-width="1.5"/><text x="420" y="147" text-anchor="middle" fill="#d4aaff" font-size="9" font-family="Georgia,serif" font-weight="bold">3. EXPERIMENT</text><ellipse cx="280" cy="178" rx="65" ry="16" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="280" y="182" text-anchor="middle" fill="#ffaa80" font-size="9" font-family="Georgia,serif" font-weight="bold">4. ANALYZE + CONCLUDE</text><ellipse cx="143" cy="143" rx="65" ry="17" fill="#0d3b6e" stroke="#FFD700" stroke-width="1.5"/><text x="143" y="147" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Georgia,serif" font-weight="bold">5. PUBLISH + REVIEW</text><ellipse cx="138" cy="87" rx="60" ry="17" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></ellipse><text x="138" y="91" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Georgia,serif" font-weight="bold">6. REVISE / REPEAT</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 165" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="165" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Hypothesis vs Theory vs Law — Key Distinctions</text><rect x="15" y="45" width="158" height="100" rx="7" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="94" y="68" text-anchor="middle" fill="#ffaa80" font-size="11" font-family="Georgia,serif" font-weight="bold">HYPOTHESIS</text><text x="94" y="86" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Tentative, testable</text><text x="94" y="99" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">explanation. Unconfirmed.</text><text x="94" y="130" text-anchor="middle" fill="#e05a2b" font-size="8" font-family="Georgia,serif">Working prediction to test</text><rect x="193" y="45" width="170" height="100" rx="7" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="278" y="68" text-anchor="middle" fill="#FFD700" font-size="11" font-family="Georgia,serif" font-weight="bold">THEORY</text><text x="278" y="86" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Well-tested, broad</text><text x="278" y="99" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">explanatory framework</text><text x="278" y="126" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif">NOT "just a guess"!</text><rect x="383" y="45" width="162" height="100" rx="7" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="464" y="68" text-anchor="middle" fill="#80ffaa" font-size="11" font-family="Georgia,serif" font-weight="bold">LAW</text><text x="464" y="86" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Descriptive pattern</text><text x="464" y="99" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">(often mathematical)</text><text x="464" y="130" text-anchor="middle" fill="#2bcc71" font-size="8" font-family="Georgia,serif">DESCRIBES, not explains</text><text x="280" y="152" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Theories do NOT become Laws with more evidence — different KINDS of statements. Laws ≠ "proven theories"</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip — Theory vs Law:</strong> A scientific THEORY is a well-tested, broad explanatory framework — NOT a guess. A scientific LAW describes a regular pattern (often mathematically) but does NOT necessarily explain why. Theories do NOT become laws with more evidence. "Evolution is just a theory" is a misconception — evolution is one of the most well-established scientific theories ever proposed.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Inductive (specific observations → general conclusion, bottom-up, ampliative, not certain) vs Deductive (general premises → specific conclusion, top-down, truth-preserving, certain if premises true). Science uses BOTH. The hypothetico-deductive method: inductive hypothesis formation + deductive prediction testing. Scientific fraud = Fabrication + Falsification + Plagiarism (FFP).</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> The scientific method is an iterative cycle: observe → question → hypothesize → experiment → analyze → conclude → communicate. Hypotheses are testable but unconfirmed; theories are well-established explanatory frameworks; laws are descriptive mathematical patterns. Independent variable = what researcher changes; dependent variable = what is measured; controlled variables = kept constant. Peer review provides quality control but is imperfect. The replication crisis highlights its limitations.</div>`,
     questions: [
-      { q: "Which 1543 book initiated the Scientific Revolution by proposing a heliocentric (Sun-centered) universe?", o: ["Newton's Principia", "Copernicus's De Revolutionibus", "Galileo's Dialogue", "Descartes's Discourse on Method"], a: 1, e: "Copernicus's De Revolutionibus (1543) proposed Earth rotates and orbits Sun — triggering the revolution.", h: "Which book came out in 1543?", yr: "GST" },
-      { q: "Tycho Brahe's main contribution to the Scientific Revolution was:", o: ["Inventing the telescope", "Developing laws of planetary motion", "Decades of precise naked-eye astronomical data used by Kepler", "Discovering moons of Jupiter"], a: 2, e: "Tycho's accurate data (pre-telescope) were crucial for Kepler's laws. He rejected heliocentrism but provided evidence for it.", h: "Who collected the data Kepler used?", yr: "GST" },
-      { q: "Kepler's first law of planetary motion states that planets move in:", o: ["Perfect circles", "Ellipses with Sun at one focus", "Epicycles", "Straight lines"], a: 1, e: "Kepler's first law: planetary orbits are ellipses, not circles, with Sun at one focus. This replaced ancient circular assumption.", h: "What shape are planetary orbits?", yr: "GST" },
-      { q: "Galileo's telescopic discovery of Jupiter's moons proved:", o: ["Earth is center of universe", "Not everything orbits Earth — there are other centers of motion", "Sun revolves around Earth", "Planets are made of cheese"], a: 1, e: "Moons orbiting Jupiter showed celestial bodies can orbit something other than Earth, undermining geocentrism.", h: "What orbits Jupiter?", yr: "GST" },
-      { q: "Galileo's Dialogue Concerning the Two Chief World Systems compared:", o: ["Copernican vs Ptolemaic systems", "Newton vs Leibniz", "Bacon vs Descartes", "Aristotle vs Plato"], a: 0, e: "Galileo's Dialogue (1632) compared Copernican (heliocentric) and Ptolemaic (geocentric) systems, leading to his trial.", h: "Which two world systems did Galileo compare?", yr: "GST" },
-      { q: "Francis Bacon is associated with:", o: ["Deductive logic", "Rationalism", "Empiricism and the inductive method", "Analytic geometry"], a: 2, e: "Bacon championed empiricism — knowledge from observation and experiment, not just reason or authority. His inductive method influenced Royal Society.", h: "Who promoted observation and experiment?", yr: "GST" },
-      { q: "René Descartes is famous for all EXCEPT:", o: ["Cogito ergo sum", "Mind-body dualism", "Analytic geometry", "Universal gravitation"], a: 3, e: "Universal gravitation is Newton's work. Descartes contributed rationalism, dualism, and coordinate geometry.", h: "What did Descartes NOT do?", yr: "GST" },
-      { q: "Newton's First Law of Motion is also called:", o: ["Law of universal gravitation", "Law of inertia", "Law of action-reaction", "Law of equal areas"], a: 1, e: "Newton's first law (inertia): objects remain at rest or in uniform motion unless acted by external force.", h: "What law says objects keep moving unless stopped?", yr: "GST" },
-      { q: "Newton's universal law of gravitation states that gravitational force is:", o: ["Proportional to distance squared", "Inversely proportional to distance squared (F ∝ 1/r²)", "Constant regardless of distance", "Only affects large objects"], a: 1, e: "Gravitational force follows inverse-square law: F ∝ 1/r². Double the distance → quarter the force.", h: "How does gravity change with distance?", yr: "GST" },
-      { q: "Which of the following was NOT discovered by Galileo?", o: ["Moons of Jupiter", "Phases of Venus", "Sunspots", "Laws of planetary motion (elliptical orbits)"], a: 3, e: "Kepler discovered elliptical orbits. Galileo discovered Jupiter's moons, Venus's phases, sunspots, mountains on moon.", h: "Which one was Kepler's?", yr: "GST" },
-      { q: "The Principia Mathematica (1687) was written by:", o: ["Galileo", "Descartes", "Newton", "Kepler"], a: 2, e: "Newton's Philosophiae Naturalis Principia Mathematica is one of the most important scientific books ever written.", h: "Who wrote Principia?", yr: "GST" },
-      { q: "Newton's second law of motion is expressed mathematically as:", o: ["E=mc²", "F=ma", "F=G·m₁·m₂/r²", "a²+b²=c²"], a: 1, e: "F=ma — force equals mass times acceleration. This law quantifies the relationship between force, mass, and motion.", h: "What is F=ma?", yr: "GST" },
-      { q: "Galileo's conflict with the Catholic Church (1633) was primarily about:", o: ["His experimental method", "His support for Copernican heliocentrism", "His discovery of sunspots", "His work on pendulums"], a: 1, e: "Galileo was tried for heresy for supporting Copernican heliocentrism, which contradicted Church interpretation of Scripture.", h: "What did Galileo believe that the Church rejected?", yr: "GST" },
-      { q: "Kepler's second law ('equal areas in equal times') implies that planets:", o: ["Move at constant speed", "Move faster when closer to Sun, slower when farther", "Move in perfect circles", "Never change speed"], a: 1, e: "Equal areas in equal times means planets sweep same area in same time — they move faster when nearer Sun, slower when farther.", h: "Do planets move at constant speed?", yr: "GST" },
-      { q: "The Royal Society of London (founded 1660) was influenced by the philosophy of:", o: ["Descartes", "Bacon (collaborative, experimental science)", "Newton", "Kepler"], a: 1, e: "Bacon's vision of organized, collaborative, experimental science influenced the founding of the Royal Society, first scientific academy.", h: "Who influenced the Royal Society?", yr: "GST" },
-      { q: "Descartes's 'Cogito ergo sum' means:", o: ["I think, therefore I am", "I doubt, therefore I exist", "I am, therefore I think", "Science is certain"], a: 0, e: "Cogito ergo sum (I think, therefore I am) was Descartes's indubitable foundation for knowledge after radical doubt.", h: "What does 'Cogito ergo sum' translate to?", yr: "GST" },
-      { q: "Newton and Leibniz are both credited with inventing:", o: ["Telescope", "Calculus (independently)", "Microscope", "Barometer"], a: 1, e: "Newton and Leibniz independently developed calculus (differential and integral), leading to priority dispute.", h: "What math did Newton and Leibniz invent?", yr: "GST" },
-      { q: "The phrase 'E pur si muove' ('And yet it moves') is attributed to:", o: ["Copernicus", "Kepler", "Galileo (allegedly after recanting)", "Newton"], a: 2, e: "According to legend, after forced recantation, Galileo muttered 'And yet it moves' — expressing his continued belief in Earth's motion.", h: "Who said 'And yet it moves'?", yr: "GST" },
-      { q: "Which of the following was a problem with early Copernican theory?", o: ["It still used circular orbits (didn't fit data well)", "It was immediately accepted by everyone", "It used epicycles more than Ptolemy", "It had no mathematical basis"], a: 0, e: "Copernicus still used circular orbits, which didn't fit data accurately. Kepler's ellipses solved this problem.", h: "What shape did Copernicus still use?", yr: "GST" },
-      { q: "Newton's third law of motion states:", o: ["F=ma", "For every action, there is an equal and opposite reaction", "Objects in motion stay in motion", "Force equals gravitational constant times mass product over distance squared"], a: 1, e: "Newton's third law: action-reaction. When object A exerts force on B, B exerts equal and opposite force on A.", h: "What is the action-reaction law?", yr: "GST" }
-    ]
+      {
+        q: 'In an experiment testing the effect of fertilizer on plant growth, the amount of fertilizer added is the:',
+        o: [
+          'Dependent variable',
+          'Controlled variable',
+          'Independent variable',
+          'Confounding variable',
+        ],
+        a: 2,
+        e: 'The independent variable is what the researcher deliberately changes/manipulates — in this case, the amount of fertilizer. The dependent variable is what is measured (plant growth). Controlled variables are factors kept constant.',
+        h: 'Independent variable = what the researcher CHANGES. Dependent = what is MEASURED.',
+        yr: 'GST',
+      },
+      {
+        q: "In science, a 'theory' is best defined as:",
+        o: [
+          'An educated guess about what might happen',
+          'An idea that has not yet been tested',
+          'A well-tested, broad explanatory framework accounting for many observations with predictive power',
+          'The final, proven stage of a hypothesis',
+        ],
+        a: 2,
+        e: "In science, a theory is NOT a guess. A scientific theory (Evolution, Germ Theory, Atomic Theory, General Relativity) accounts for a wide range of observations, has survived extensive testing, and generates testable predictions. The popular misconception 'just a theory' misunderstands scientific terminology.",
+        h: 'Scientific theory = well-tested, broad explanatory framework. NOT a guess!',
+        yr: 'GST',
+      },
+      {
+        q: 'A scientific law differs from a scientific theory in that:',
+        o: [
+          'A law is more certain than a theory',
+          'A law describes a regular pattern (often mathematically) while a theory explains WHY — different kinds of statements, not different confidence levels',
+          'A law applies to all situations while a theory applies only to specific conditions',
+          'A theory becomes a law after sufficient testing',
+        ],
+        a: 1,
+        e: "Laws (Newton's Law of Gravity, Boyle's Law) describe patterns. Theories (General Relativity, Evolution) explain WHY. Laws do not 'graduate' to theories — they are fundamentally different types of scientific statements.",
+        h: 'Law = describes (HOW). Theory = explains (WHY). Different kinds, not different confidence levels.',
+        yr: 'GST',
+      },
+      {
+        q: 'In the hypothetico-deductive method, after forming a hypothesis the scientist:',
+        o: [
+          'Immediately publishes for peer review',
+          'Deduces specific, testable predictions from the hypothesis and then tests those predictions',
+          'Uses inductive reasoning to confirm from past observations',
+          'Reviews literature to find supporting evidence',
+        ],
+        a: 1,
+        e: "The hypothetico-deductive method: (1) Form hypothesis; (2) Deduce testable predictions — 'IF hypothesis is true, THEN I should observe X'; (3) Test by experiment; (4) If prediction confirmed, hypothesis supported; if fails, hypothesis refuted or needs revision.",
+        h: 'Hypothetico-deductive: hypothesis → deduce predictions → test → support or refute.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'control group' in an experiment serves which purpose?",
+        o: [
+          'To control all variables simultaneously',
+          'To provide a baseline for comparison — receiving no treatment so the effect of the experimental treatment can be measured',
+          'To control statistical analysis',
+          'To ensure controlled laboratory environment',
+        ],
+        a: 1,
+        e: 'The control group receives no experimental treatment and serves as a comparison baseline. By comparing experimental vs control groups, researchers determine whether observed changes are due to the treatment or other factors.',
+        h: 'Control group = no treatment = baseline for comparison.',
+        yr: 'GST',
+      },
+      {
+        q: 'Inductive reasoning moves from:',
+        o: [
+          'General principles to specific conclusions',
+          'Specific observations to general conclusions',
+          'Theory to experiment to conclusion',
+          'Hypothesis to deduction to testing',
+        ],
+        a: 1,
+        e: "Inductive reasoning is bottom-up: from specific, particular observations to general conclusions. 'I have observed 10,000 swans; all were white; therefore all swans are white.' Ampliative (conclusion says more than premises) but not logically certain.",
+        h: 'Inductive = specific observations → general conclusion (bottom-up, ampliative).',
+        yr: 'GST',
+      },
+      {
+        q: 'Peer review in science primarily serves to:',
+        o: [
+          'Ensure only prestigious scientists get published',
+          'Provide quality control by having experts evaluate methodology, validity, and significance before publication',
+          'Guarantee that published results are correct and reproducible',
+          'Rank scientific discoveries by importance',
+        ],
+        a: 1,
+        e: "Peer review is science's primary quality control mechanism: before publication, independent experts assess methodology, soundness of conclusions, originality, and significance. It filters out poorly designed studies. However, peer review is not infallible.",
+        h: 'Peer review = quality control by expert evaluation before publication.',
+        yr: 'GST',
+      },
+      {
+        q: 'Confirmation bias in science refers to:',
+        o: [
+          'The tendency to only perform experiments likely to confirm the hypothesis',
+          'The tendency to selectively notice, interpret, and remember information that confirms existing beliefs while ignoring contradictory evidence',
+          'The use of statistics to confirm experimental results',
+          'Confirmation that findings match theoretical predictions',
+        ],
+        a: 1,
+        e: 'Confirmation bias: researchers naturally tend to seek, notice, and remember evidence supporting their hypotheses while discounting contradicting evidence. Controlled by blind/double-blind designs and pre-registration.',
+        h: 'Confirmation bias = selectively noticing evidence confirming existing beliefs.',
+        yr: 'GST',
+      },
+      {
+        q: 'Scientific fraud includes which unethical practices?',
+        o: [
+          'Publishing results other scientists disagree with',
+          'Proposing unpopular hypotheses challenging established theory',
+          "Fabrication (inventing data), Falsification (manipulating data), Plagiarism (presenting others' work as one's own)",
+          'Receiving funding from industry while conducting research',
+        ],
+        a: 2,
+        e: "Scientific fraud (FFP): Fabrication = making up data never collected; Falsification = manipulating existing data to produce desired outcomes; Plagiarism = presenting others' work without attribution.",
+        h: 'Scientific fraud = Fabrication + Falsification + Plagiarism (FFP).',
+        yr: 'GST',
+      },
+      {
+        q: 'A good scientific hypothesis should be:',
+        o: [
+          'Vague enough to accommodate any possible outcome',
+          'Specific, testable (falsifiable), based on prior knowledge, and stated as a prediction',
+          'Impossible to disprove',
+          'Widely believed before testing',
+        ],
+        a: 1,
+        e: "A good hypothesis: specific (clear), testable/falsifiable (possible observations could disprove it), based on prior knowledge, predictive. Format: 'If [condition], then [predicted result], because [reasoning].'",
+        h: 'Good hypothesis: specific + falsifiable + based on prior knowledge + predictive.',
+        yr: 'GST',
+      },
+      {
+        q: 'Systematic error (bias) in experimental measurement differs from random error in that:',
+        o: [
+          'Systematic error is more common',
+          'Systematic error is a consistent, directional error NOT reduced by repetition — the source must be identified and corrected',
+          'Random error is always larger',
+          'Systematic error only affects quantitative data',
+        ],
+        a: 1,
+        e: "Random error: unpredictable variation — averaging measurements reduces its effect. Systematic error: a consistent directional error (e.g., a scale always reading 5g too high). Taking more measurements doesn't fix it; the bias source must be found and corrected.",
+        h: 'Systematic error = consistent directional bias. NOT reduced by repetition. Must fix the source.',
+        yr: 'GST',
+      },
+      {
+        q: 'Abductive reasoning in science involves:',
+        o: [
+          'Working backward from results to initial conditions',
+          'Selecting the hypothesis that provides the BEST explanation of available evidence',
+          'Abandoning a hypothesis after it fails a test',
+          'Using analogies from other fields',
+        ],
+        a: 1,
+        e: "Abductive reasoning (inference to best explanation): given multiple possible explanations for observed evidence, select the one that best explains it. 'The grass is wet; rain would explain wet grass; rain is the best explanation → it probably rained.'",
+        h: 'Abductive reasoning = inference to the BEST explanation.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'replication crisis' in science refers to:",
+        o: [
+          'The difficulty of replicating expensive laboratory equipment',
+          'The growing evidence that many published findings cannot be reproduced by independent researchers following the same methods',
+          'The problem of too many scientists working on the same questions',
+          'The challenge of publishing replicated experiments',
+        ],
+        a: 1,
+        e: 'The replication crisis: systematic attempts to reproduce published findings — especially in psychology, medicine, social sciences — show many results cannot be replicated. The Open Science Collaboration found only ~36% of psychology studies could be replicated.',
+        h: 'Replication crisis = many published findings cannot be reproduced by independent researchers.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'dependent variable' in an experiment is:",
+        o: [
+          'The variable kept constant throughout',
+          'The variable the researcher directly controls',
+          'The variable measured as the outcome — potentially responding to changes in the independent variable',
+          'The variable determining the experimental design',
+        ],
+        a: 2,
+        e: "The dependent variable is the outcome measured in the experiment — it 'depends on' or responds to changes in the independent variable. Study time (independent) vs exam scores (dependent); other factors (sleep, prior knowledge) = controlled variables.",
+        h: 'Dependent variable = MEASURED outcome that responds to the independent variable.',
+        yr: 'GST',
+      },
+      {
+        q: 'Double-blind experimental design is used primarily to:',
+        o: [
+          'Prevent the experiment being seen by unauthorized observers',
+          'Ensure neither participants nor researchers know who is in the experimental or control group — eliminating both observer and participant bias',
+          'Double the number of experimental trials',
+          'Blind the data to analysis until complete',
+        ],
+        a: 1,
+        e: 'In double-blind experiments, neither participants nor data-collecting researchers know who received the actual treatment vs. placebo. Eliminates: (1) participant bias; (2) researcher/observer bias. Gold standard for clinical trials.',
+        h: 'Double-blind = neither participants NOR researchers know who got treatment. Eliminates both biases.',
+        yr: 'GST',
+      },
+      {
+        q: 'Qualitative research methods are most appropriate when:',
+        o: [
+          'The research question requires precise numerical measurements',
+          'Research seeks to understand meanings, experiences, contexts, and processes that cannot easily be reduced to numbers',
+          'Statistical generalization to a large population is the primary goal',
+          'The study involves laboratory measurements',
+        ],
+        a: 1,
+        e: "Qualitative methods (interviews, observations, case studies) are most appropriate for understanding meaning, process, context, or experience. 'What is it like to be a first-generation university student?' is better answered qualitatively than numerically.",
+        h: 'Qualitative = understanding meaning, experience, context. NOT for statistical generalization.',
+        yr: 'GST',
+      },
+      {
+        q: "When a paper reports results are 'statistically significant at p < 0.05', this means:",
+        o: [
+          'The results are of major scientific importance',
+          'There is less than a 5% probability the results could have occurred by random chance if there were no real effect',
+          'The experiment was replicated more than 5 times',
+          '95% of scientists agree with the conclusion',
+        ],
+        a: 1,
+        e: 'Statistical significance (p < 0.05): if there were truly no effect, there would be less than a 5% probability of getting results as extreme as observed purely by random chance. Does NOT mean the effect is large, important, or will replicate.',
+        h: 'p < 0.05 = less than 5% chance due to random chance. NOT the same as practical importance.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which best represents a scientific hypothesis in proper form?',
+        o: [
+          'Plants need sunlight to survive',
+          'I wonder if temperature affects enzyme activity',
+          'If temperature increases above 40°C, then enzyme activity will decrease, because high temperatures disrupt enzyme protein structure (denaturation)',
+          'Temperature is related to enzyme activity',
+        ],
+        a: 2,
+        e: "A proper scientific hypothesis: specific, falsifiable, states a prediction, includes reasoning. 'If [condition], then [specific prediction], because [mechanism].' Option A is a known fact; B is a question; D is too vague. C identifies a specific, falsifiable prediction with a stated mechanism.",
+        h: "Good hypothesis: 'If [condition], then [specific prediction], because [mechanism/reasoning]'.",
+        yr: 'GST',
+      },
+      {
+        q: 'Open-access publishing in science means:',
+        o: [
+          'Making scientific papers freely available online without subscription or paywall charges',
+          'Publishing papers without peer review for faster availability',
+          'Sharing raw data and laboratory notebooks with the public',
+          'Only publishing science accessible to non-specialists',
+        ],
+        a: 0,
+        e: 'Open-access publishing: peer-reviewed scientific papers freely available to any reader online without payment. Models: gold OA (author pays), green OA (authors self-archive), diamond OA (free for both authors and readers). Particularly important for researchers in developing countries.',
+        h: 'Open access = scientific papers freely available online. No paywalls.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Andrew Wakefield case (vaccine-autism fraud) illustrates which type of scientific misconduct?',
+        o: [
+          "Plagiarism — presenting others' research without attribution",
+          'Falsification — manipulating data from his study to create a false association between MMR vaccine and autism',
+          'Fabrication — inventing data that was never collected',
+          'Both data manipulation AND ethical violations involving children without proper consent',
+        ],
+        a: 3,
+        e: "Wakefield's 1998 Lancet paper involved: (1) ethical violations — invasive procedures on children without proper approval; (2) data manipulation/selective reporting — misleadingly presenting data to support the autism-vaccine link. Paper retracted in 2010; Wakefield lost his medical license.",
+        h: 'Wakefield = scientific fraud AND ethical violations = data manipulation + improper procedures on children.',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 4: Philosophy of Science — Induction, Deduction, and Falsification
-  // ==========================================================================
   {
-    topic: "Philosophy of Science — Induction, Deduction, and Falsification",
-    topicCode: "HPS-004-01",
-    module: "Philosophy of Science",
+    topic: 'Science, Society, and Ethics',
+    topicCode: 'HPS-SSE-06',
+    module: 'Module 6: Science in Human Context',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Philosophy of science</span> examines the foundations, methods, and implications of science. It asks: How does science acquire knowledge? What distinguishes science from pseudoscience? How do scientific theories change over time? <strong>Understanding these questions helps you think critically about scientific claims</strong>.
-</div>
-
-<p class="learn-p">While scientists do science, philosophers of science reflect on what scientists are doing. Key questions include: Is there a "scientific method"? What justifies belief in scientific theories? Can science ever prove anything definitively? How should we respond when theories conflict with evidence? These questions have generated lively debates for centuries.</p>
-
-<h3 class="learn-subheading">Deduction vs Induction</h3>
-
-<p class="learn-p">Two fundamental modes of reasoning are central to science: deductive reasoning and inductive reasoning. They work differently and serve different purposes.</p>
-
-<div class="learn-table-wrap">
-  <table class="learn-table">
-    <thead>
-      <tr><th>Characteristic</th><th>Deduction</th><th>Induction</th>
-    </thead>
-    <tbody>
-      <tr><td>Direction</th><td>General → Specific</th><td>Specific → General</th>
-      </tr>
-      <tr><td>Example</th><td>All humans are mortal. Socrates is human. Therefore, Socrates is mortal.</th><td>Swan 1 is white, swan 2 is white, swan 3 is white. Therefore, all swans are white.</th>
-      </tr>
-      <tr><td>Certainty</th>。<th>If premises true, conclusion necessarily true (valid deduction)</th>。<th>Conclusion probable, not certain (even if premises true)</th>
-      </tr>
-      <tr><td>Conclusion</th>。<th>Guaranteed by premises</th>。<th>Extends beyond premises</th>
-      </tr>
-      <tr><td>Use in science</th>。<th>Testing predictions, deriving consequences from theories</th>。<th>Forming generalizations from observations, hypothesis generation</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p class="learn-p"><strong>Deduction in science:</strong> If theory T is true, then it predicts observation O. We test whether O occurs. Example: Newton's theory predicts planets move in ellipses. Telescopic observation confirms elliptical orbits.</p>
-
-<p class="learn-p"><strong>Induction in science:</strong> From repeated observations, we infer general laws. All observed swans are white → All swans are white. But induction cannot guarantee truth — black swans discovered in Australia disproved the generalization. This is the "problem of induction" (David Hume).</p>
-
-<h3 class="learn-subheading">The Problem of Induction (David Hume)</h3>
-
-<p class="learn-p">David Hume (1711-1776) pointed out a fundamental problem: induction cannot be logically justified. No matter how many white swans we observe, we cannot logically prove that all swans are white. The future might not resemble the past. We assume nature is uniform (the laws of nature don't change), but we cannot prove this assumption without circular reasoning.</p>
-
-<p class="learn-p"><strong>Hume's conclusion:</strong> Induction is based on habit or custom, not logic. We expect the sun to rise tomorrow because it has risen every day in the past — but this is psychological, not logical, certainty. This is not a practical problem for science (induction works well enough), but it is a philosophical challenge to claims of scientific certainty.</p>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🔍 DEDUCTION vs INDUCTION — Two Modes of Reasoning</text>
-    
-    <!-- Deduction Side -->
-    <g>
-      <rect x="15" y="45" width="225" height="190" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <rect x="15" y="45" width="225" height="30" rx="10" fill="#3b82f6"/>
-      <text x="127" y="66" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="800">📐 DEDUCTION</text>
-      
-      <text x="127" y="95" text-anchor="middle" font-size="8" fill="#1e3a8a">General → Specific</text>
-      <text x="127" y="115" text-anchor="middle" font-size="8" fill="#1e3a8a">Example:</text>
-      <text x="127" y="132" text-anchor="middle" font-size="7" fill="#1e3a8a">All humans are mortal.</text>
-      <text x="127" y="147" text-anchor="middle" font-size="7" fill="#1e3a8a">Socrates is human.</text>
-      <text x="127" y="162" text-anchor="middle" font-size="7" fill="#1e3a8a">Therefore, Socrates is mortal.</text>
-      <text x="127" y="185" text-anchor="middle" font-size="8" fill="#1e3a8a">Conclusion: CERTAIN</text>
-      <text x="127" y="202" text-anchor="middle" font-size="8" fill="#1e3a8a">(if premises true)</text>
-      <text x="127" y="222" text-anchor="middle" font-size="7" fill="#64748b">Used for testing predictions</text>
-    </g>
-    
-    <!-- Induction Side -->
-    <g>
-      <rect x="260" y="45" width="225" height="190" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <rect x="260" y="45" width="225" height="30" rx="10" fill="#22c55e"/>
-      <text x="372" y="66" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="800">🔎 INDUCTION</text>
-      
-      <text x="372" y="95" text-anchor="middle" font-size="8" fill="#166534">Specific → General</text>
-      <text x="372" y="115" text-anchor="middle" font-size="8" fill="#166534">Example:</text>
-      <text x="372" y="132" text-anchor="middle" font-size="7" fill="#166534">Swan 1 is white.</text>
-      <text x="372" y="147" text-anchor="middle" font-size="7" fill="#166534">Swan 2 is white.</text>
-      <text x="372" y="162" text-anchor="middle" font-size="7" fill="#166534">Therefore, all swans are white.</text>
-      <text x="372" y="185" text-anchor="middle" font-size="8" fill="#166534">Conclusion: PROBABLE</text>
-      <text x="372" y="202" text-anchor="middle" font-size="8" fill="#166534">(not certain)</text>
-      <text x="372" y="222" text-anchor="middle" font-size="7" fill="#64748b">Used for forming generalizations</text>
-    </g>
-    
-    <text x="250" y="245" text-anchor="middle" font-size="9" fill="#64748b">🔑 Deduction gives certainty; Induction gives probability (but is essential for science)</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Karl Popper — Falsification as Demarcation Criterion</h3>
-
-<p class="learn-p">Karl Popper (1902-1994) was frustrated by theories like Marxism and Freudian psychoanalysis, which seemed to explain everything and never risked refutation. He proposed a solution: the criterion for distinguishing science from pseudoscience is <strong>falsifiability</strong>.</p>
-
-<p class="learn-p"><strong>Falsifiability:</strong> A theory is scientific only if it makes predictions that could potentially be proven false. Theories that are consistent with every possible observation (unfalsifiable) are not scientific — they explain nothing because they predict nothing.</p>
-
-<p class="learn-p"><strong>Examples:</strong></p>
+<div class="learn-intro">Science is a human enterprise shaped by culture, funding, politics, and ethics. This topic explores the relationships between <span class="learn-keyword">science and society</span>: how society influences science, unintended consequences of technology, and the ethical dimensions of scientific research.</div>
+<h3 class="learn-subheading">6.1 Social Influences on Science</h3>
 <ul class="learn-list">
-  <li><strong>Falsifiable (scientific):</strong> "All swans are white." Finding one black swan falsifies it. Einstein's theory predicted light bending around sun; tested during 1919 eclipse.</li>
-  <li><strong>Unfalsifiable (not scientific):</strong> "There exists an invisible, undetectable dragon in my garage." No possible observation could prove this false. Astrology (vague predictions that accommodate any outcome).</li>
+<li><strong>Funding shapes priorities:</strong> Military funding drove radar and nuclear physics; pharmaceutical industry funding shapes medical research toward profitable treatments.</li>
+<li><strong>Gender bias:</strong> Rosalind Franklin (DNA crystallography), Cecilia Payne-Gaposchkin (stellar composition), Emmy Noether (mathematical physics) had contributions long underrecognized.</li>
+<li><strong>Political influence:</strong> Lysenko's politically-driven rejection of genetics in Soviet Russia damaged agricultural science for decades (Lysenkoism = paradigmatic political interference in science).</li>
+<li><strong>Colonialism:</strong> Extracted botanical, geological, and cultural knowledge from colonized territories without acknowledgment or benefit to indigenous communities.</li>
 </ul>
-
-<p class="learn-p"><strong>Popper's model of scientific progress:</strong> Science proceeds by <strong>conjectures and refutations</strong>. Scientists propose bold, falsifiable theories (conjectures), then attempt to falsify them through rigorous testing. Theories that survive repeated attempts at falsification are "corroborated" (not proven true). When a theory is falsified, scientists must abandon it and propose a better theory. This process explains why science is progressive — it discards false theories.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Thinker:</strong> Karl Popper, "The Logic of Scientific Discovery" (1934), "Conjectures and Refutations" (1963). He argued that no number of confirming observations can prove a theory true, but a single disconfirming observation can prove it false. Science progresses not by verification but by falsification.</span>
-</div>
-
-<h3 class="learn-subheading">Thomas Kuhn — Paradigms and Scientific Revolutions</h3>
-
-<p class="learn-p">Thomas Kuhn (1922-1996) challenged Popper's rational, cumulative picture of science. His book "The Structure of Scientific Revolutions" (1962) introduced concepts that transformed our understanding of scientific change.</p>
-
-<p class="learn-p"><strong>Paradigm:</strong> A shared framework of assumptions, methods, values, and exemplary problems that guides research in a scientific community at a given time. Examples: Ptolemaic astronomy, Newtonian physics, Einsteinian relativity, Darwinian evolution.</p>
-
-<p class="learn-p"><strong>Normal science:</strong> Puzzle-solving within a paradigm. Scientists work on problems the paradigm defines as important, using methods the paradigm provides. They do not question the paradigm itself. Most scientists spend most of their careers in normal science.</p>
-
-<p class="learn-p"><strong>Anomaly:</strong> A problem that cannot be solved within the paradigm. Accumulating anomalies create crisis.</p>
-
-<p class="learn-p"><strong>Scientific revolution (paradigm shift):</strong> When anomalies become severe, a new paradigm emerges that resolves them. But the new paradigm is incommensurable with the old — different concepts, methods, standards. Example: Copernican Revolution replaced geocentrism with heliocentrism. Not a simple accumulation of knowledge — a transformation in worldview.</p>
-
-<p class="learn-p"><strong>Key implications of Kuhn:</strong></p>
+<h3 class="learn-subheading">6.2 Unintended Consequences of Technology</h3>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Development</th><th>Positive Impact</th><th>Negative/Unintended Consequence</th></tr></thead><tbody>
+<tr><td>Antibiotics</td><td>Saved hundreds of millions from bacterial infection</td><td>Antibiotic resistance — "superbugs"</td></tr>
+<tr><td>Fossil fuels</td><td>Powered Industrial Revolution; raised living standards</td><td>Climate change; air pollution</td></tr>
+<tr><td>DDT pesticide</td><td>Saved millions from malaria</td><td>Bird population collapse through bioaccumulation</td></tr>
+<tr><td>CFCs</td><td>Safe refrigerants</td><td>Depleted ozone layer — ozone hole — increased UV radiation</td></tr>
+<tr><td>Social media</td><td>Global communication; democratized information</td><td>Misinformation; mental health impacts; surveillance</td></tr>
+</tbody></table></div>
+<p class="learn-p">The <span class="learn-keyword">precautionary principle</span>: when an action raises serious threats of harm, precautionary measures should be taken even before full scientific certainty is established.</p>
+<h3 class="learn-subheading">6.3 Research Ethics — Historical Cases</h3>
 <ul class="learn-list">
-  <li>Science is not purely rational or cumulative — paradigm shifts involve gestalt switches (seeing the world differently)</li>
-  <li>Observation is theory-laden — what scientists see depends on their paradigm</li>
-  <li>Progress occurs, but not by simple falsification (scientists don't abandon paradigms when anomalies appear — they try to explain them away)</li>
-  <li>Different paradigms are incommensurable — cannot be directly compared because they use different concepts</li>
+<li><strong>Nazi medical experiments → Nuremberg Code (1947):</strong> Horrific experiments on prisoners without consent. Code established: voluntary informed consent is ESSENTIAL.</li>
+<li><strong>Tuskegee Syphilis Study (1932–1972) → Belmont Report (1979):</strong> 399 Black men with syphilis studied without consent; denied effective penicillin treatment after 1947. Led to Belmont Report: (1) Respect for Persons (autonomy, consent), (2) Beneficence (maximize benefits, minimize harms), (3) Justice (fair distribution of research burdens and benefits).</li>
+<li><strong>Henrietta Lacks (HeLa cells):</strong> Cancer cells taken without her consent in 1951 became the most important cell line in medical research. Family received no compensation.</li>
+<li><strong>3Rs for animal research:</strong> Replace (use alternatives), Reduce (fewer animals), Refine (minimize suffering).</li>
 </ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Thinker:</strong> Thomas Kuhn's "Structure of Scientific Revolutions" (1962) is one of the most cited academic books of the 20th century. It introduced "paradigm shift" into popular vocabulary.</span>
-</div>
-
-<h3 class="learn-subheading">Imre Lakatos — Research Programmes</h3>
-
-<p class="learn-p">Imre Lakatos (1922-1974) tried to reconcile Popper and Kuhn. He proposed that science consists of <strong>research programmes</strong>, not isolated theories.</p>
-
-<p class="learn-p"><strong>Hard core:</strong> Fundamental assumptions that define the programme and are not abandoned (similar to paradigm).</p>
-<p class="learn-p"><strong>Protective belt:</strong> Auxiliary hypotheses that can be modified to protect the hard core from falsification.</p>
-<p class="learn-p"><strong>Positive heuristic:</strong> Guidelines for developing the programme, suggesting new avenues of research.</p>
-
-<p class="learn-p"><strong>Progressive vs degenerative problem shifts:</strong></p>
+<h3 class="learn-subheading">6.4 Science and Religion</h3>
 <ul class="learn-list">
-  <li><strong>Progressive:</strong> Programme predicts novel, surprising facts (successful). Example: Newtonian physics predicting existence of Neptune before observation.</li>
-  <li><strong>Degenerative:</strong> Programme only accommodates facts after they are discovered, with ad hoc modifications. Should eventually be abandoned.</li>
+<li><strong>Conflict model:</strong> Science and religion fundamentally opposed. Historically oversimplified.</li>
+<li><strong>NOMA (Non-Overlapping Magisteria, Gould):</strong> Science = facts about nature. Religion = meaning, values, purpose. Different domains. Most widely held academic view.</li>
+<li><strong>Dialogue model:</strong> Productive conversation between the two.</li>
+<li><strong>Integration model:</strong> Synthesis of scientific and religious insights.</li>
 </ul>
-
-<p class="learn-p">Lakatos argued that falsification takes time — scientists should not abandon a programme just because it encounters anomalies. But a persistently degenerative programme should be replaced.</p>
-
-<h3 class="learn-subheading">Paul Feyerabend — Epistemological Anarchism</h3>
-
-<p class="learn-p">Paul Feyerabend (1924-1994) was the "bad boy" of philosophy of science. His book "Against Method" (1975) argued that there is no single scientific method — anything goes.</p>
-
-<p class="learn-p"><strong>Key claims:</strong></p>
-<ul class="learn-list">
-  <li>No universal methodological rules — history shows successful science violates every proposed rule</li>
-  <li>Proliferation of theories is good — even unscientific theories should be allowed to compete</li>
-  <li>Science is not superior to other ways of knowing — it has no special claim to rationality or truth</li>
-  <li>Science can be dogmatic, oppressive, and should be separated from state (like church)</li>
-</ul>
-
-<p class="learn-p">Feyerabend is controversial but raises important questions: Is science really as rational as it claims? Do we overvalue scientific knowledge relative to other forms of knowledge?</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>GST Exam Tip:</strong> Distinguish between Popper, Kuhn, and Feyerabend: Popper says science progresses by falsification; Kuhn says by paradigm shifts; Feyerabend says there is no method — anything goes. Questions often ask you to apply these views to historical episodes (e.g., Copernican Revolution as paradigm shift).</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Compare Popper's falsificationism with Kuhn's paradigm shifts. Which better describes how science actually works?" (Sample answer: Popper emphasizes rational testing and falsification — scientists should try to disprove theories. Kuhn emphasizes normal science (puzzle-solving within paradigms) and revolutionary paradigm shifts when anomalies accumulate. Popper's model fits some episodes (testing predictions), but Kuhn's fits others (scientists resist abandoning paradigms, explaining away anomalies). Most historians of science favor a nuanced combination — science has both cumulative and revolutionary aspects.)</span>
-</div>
-    `,
+<h3 class="learn-subheading">6.5 Science Communication</h3>
+<p class="learn-p"><span class="learn-keyword">Scientific literacy</span>: ability to understand and critically evaluate scientific claims. The <span class="learn-keyword">deficit model</span> wrongly assumed public resistance to science is due to lack of knowledge — research shows trust, values, and identity matter more than knowledge alone.</p>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="180" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">The Belmont Report — Three Principles of Research Ethics</text><rect x="20" y="48" width="160" height="110" rx="8" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="100" y="72" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">RESPECT FOR PERSONS</text><text x="100" y="95" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Autonomy and</text><text x="100" y="108" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">informed consent</text><text x="100" y="148" text-anchor="middle" fill="#80ffaa" font-size="8" font-family="Georgia,serif">Protect vulnerable groups</text><rect x="200" y="48" width="160" height="110" rx="8" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="280" y="72" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Georgia,serif" font-weight="bold">BENEFICENCE</text><text x="280" y="98" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Maximize benefits;</text><text x="280" y="111" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">minimize harms.</text><text x="280" y="148" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif">Do good AND do no harm</text><rect x="380" y="48" width="160" height="110" rx="8" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="460" y="72" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">JUSTICE</text><text x="460" y="98" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Fair distribution</text><text x="460" y="111" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">of benefits AND burdens</text><text x="460" y="148" text-anchor="middle" fill="#ffaa80" font-size="8" font-family="Georgia,serif">Don't exploit vulnerable</text><text x="280" y="168" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Belmont Report (1979) issued after the Tuskegee Syphilis Study scandal</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="150" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Science-Religion Relationship Models (Barbour's typology)</text><rect x="10" y="42" width="120" height="88" rx="7" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="70" y="64" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">CONFLICT</text><text x="70" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Fundamentally</text><text x="70" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">opposed</text><text x="70" y="118" text-anchor="middle" fill="#e05a2b" font-size="7.5" font-family="Georgia,serif">Oversimplified</text><rect x="143" y="42" width="130" height="88" rx="7" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="208" y="62" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">INDEPENDENCE</text><text x="208" y="75" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">(NOMA, Gould)</text><text x="208" y="93" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Facts vs meaning/values</text><text x="208" y="118" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">Most widely held</text><rect x="286" y="42" width="120" height="88" rx="7" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="346" y="64" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">DIALOGUE</text><text x="346" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Productive</text><text x="346" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">conversation</text><text x="346" y="118" text-anchor="middle" fill="#2bcc71" font-size="7.5" font-family="Georgia,serif">Complementary</text><rect x="419" y="42" width="130" height="88" rx="7" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="484" y="64" text-anchor="middle" fill="#90c8ff" font-size="10" font-family="Georgia,serif" font-weight="bold">INTEGRATION</text><text x="484" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Synthesis of</text><text x="484" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">both insights</text><text x="484" y="118" text-anchor="middle" fill="#4a90d9" font-size="7.5" font-family="Georgia,serif">Process theology</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Three ethics cases: (1) Nazi experiments → Nuremberg Code (1947) = voluntary informed consent ESSENTIAL. (2) Tuskegee (1932–72) → Belmont Report (1979) = Respect for Persons + Beneficence + Justice. (3) Henrietta Lacks = HeLa cells taken without consent. 3Rs for animals: Replace + Reduce + Refine. NOMA (Gould) = most widely held science-religion view. Lysenkoism = Soviet politicization of science.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Science and religion are NOT simply "in conflict." NOMA (Non-Overlapping Magisteria) is the most widely held academic position: science covers facts about nature; religion covers meaning, values, and purpose. Conflict arises only when one encroaches on the other's domain. DDT = saved millions from malaria BUT caused bird population collapse (unintended consequences). CFCs = depleted ozone layer (unintended). These illustrate how technology can have serious unforeseen consequences.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Science is embedded in society — shaped by funding, culture, politics, and gender. Technology brings benefits but also unintended consequences (DDT, CFCs, antibiotic resistance). Research ethics developed from historical abuses — Nuremberg Code (1947) and Belmont Report (1979) are foundational. NOMA (Gould) is the most widely held model of science-religion relationship. Scientific literacy is essential for democratic citizenship.</div>`,
     questions: [
-      { q: "Deductive reasoning moves from:", o: ["General to specific", "Specific to general", "Cause to effect", "Effect to cause"], a: 0, e: "Deduction reasons from general premises to specific conclusions. Example: All humans are mortal (general); Socrates is human; therefore Socrates is mortal (specific).", h: "What direction does deduction go?", yr: "GST" },
-      { q: "Which of the following is an example of inductive reasoning?", o: ["If all humans are mortal and Socrates is human, then Socrates is mortal", "Swan 1 is white, swan 2 is white, swan 3 is white — therefore all swans are white", "If it rains, the ground gets wet. The ground is wet, therefore it rained", "Either it is raining or it is not raining"], a: 1, e: "Induction moves from specific observations to general conclusions. Observing many white swans and concluding all swans are white is induction.", h: "What type of reasoning goes from specific to general?", yr: "GST" },
-      { q: "David Hume's 'problem of induction' points out that:", o: ["Induction is logically certain", "Induction cannot be logically justified — the future may not resemble the past", "Deduction is unreliable", "All knowledge is impossible"], a: 1, e: "Hume argued we cannot logically prove induction works; we assume the future resembles the past, but cannot justify this without circular reasoning.", h: "What is the problem with induction?", yr: "GST" },
-      { q: "According to Karl Popper, the criterion for distinguishing science from pseudoscience is:", o: ["Verifiability", "Falsifiability", "Popularity", "Complexity"], a: 1, e: "Popper proposed falsifiability as the demarcation criterion — scientific theories must be testable and potentially disprovable.", h: "What must a theory do to be scientific according to Popper?", yr: "GST" },
-      { q: "Which of the following statements is falsifiable (therefore scientific according to Popper)?", o: ["There exists an invisible, undetectable dragon in my garage", "All swans are white", "This statement has no meaning", "Something exists"], a: 1, e: "'All swans are white' is falsifiable — finding one black swan disproves it. The invisible dragon claim is unfalsifiable (no observation could disprove it).", h: "Which could be proven wrong?", yr: "GST" },
-      { q: "Thomas Kuhn introduced which concept to describe revolutionary scientific change?", o: ["Falsification", "Paradigm shift", "Research programme", "Anarchist epistemology"], a: 1, e: "Kuhn's 'paradigm shift' describes scientific revolutions where one paradigm replaces another (e.g., Copernican Revolution).", h: "What term describes major scientific revolutions?", yr: "GST" },
-      { q: "In Kuhn's model, 'normal science' refers to:", o: ["Revolutionary periods when paradigms change", "Puzzle-solving within an existing paradigm", "Pseudoscience", "The earliest stage of science"], a: 1, e: "Normal science is the everyday work of scientists solving puzzles within their paradigm — not questioning the paradigm itself.", h: "What do most scientists do most of the time?", yr: "GST" },
-      { q: "According to Kuhn, anomalies are:", o: ["Problems solved within the paradigm", "Problems that cannot be solved within the existing paradigm", "Successful predictions", "Theories that are always true"], a: 1, e: "Anomalies are problems the paradigm cannot solve. Accumulating anomalies create crisis leading to paradigm shift.", h: "What causes a paradigm crisis?", yr: "GST" },
-      { q: "Imre Lakatos proposed that science consists of:", o: ["Paradigms", "Research programmes with hard core and protective belt", "Falsifiable statements", "Anarchic methods"], a: 1, e: "Lakatos's research programmes have a 'hard core' (fundamental assumptions) and 'protective belt' (auxiliary hypotheses that can be modified).", h: "What did Lakatos call scientific frameworks?", yr: "GST" },
-      { q: "Paul Feyerabend's famous slogan is:", o: ["Falsification is key", "Paradigm shifts explain science", "Anything goes", "Science is superior to all other knowledge"], a: 2, e: "Feyerabend's 'Against Method' argued there is no single scientific method — 'anything goes' — and science has no special claim to rationality.", h: "What is Feyerabend's controversial slogan?", yr: "GST" },
-      { q: "A 'progressive' research programme (Lakatos) is one that:", o: ["Only explains past facts", "Predicts novel, surprising facts", "Never changes", "Rejects all criticism"], a: 1, e: "Progressive programmes predict new facts (e.g., Newtonian physics predicting Neptune's existence before observation). Degenerative programmes only accommodate facts after discovery.", h: "What makes a research programme progressive?", yr: "GST" },
-      { q: "Which philosopher argued that no number of confirming observations can prove a theory true, but one disconfirming observation can prove it false?", o: ["Kuhn", "Popper", "Lakatos", "Feyerabend"], a: 1, e: "Popper's falsificationism: confirmation never proves truth; falsification can prove falsehood. Science progresses by conjectures and refutations.", h: "Who said falsification is key?", yr: "GST" },
-      { q: "The concept of 'theory-laden observation' (observations are affected by theoretical assumptions) is associated with:", o: ["Popper", "Kuhn", "Hume", "Feyerabend"], a: 1, e: "Kuhn argued observation is theory-laden — what scientists 'see' depends on their paradigm. Different paradigms see the world differently.", h: "Who said observation isn't neutral?", yr: "GST" },
-      { q: "According to Popper, when a theory is falsified, scientists should:", o: ["Ignore the falsification", "Modify the theory ad hoc", "Abandon it and propose a better theory", "Declare it true anyway"], a: 2, e: "Popper argued that when a theory is falsified, it must be abandoned. Science progresses by eliminating false theories.", h: "What should happen to falsified theories?", yr: "GST" },
-      { q: "The discovery of black swans in Australia is an example of:", o: ["Deduction", "Falsification of 'all swans are white'", "Paradigm shift", "Problem of deduction"], a: 1, e: "The statement 'all swans are white' was falsified by finding a single black swan — example of Popperian falsification.", h: "What does a black swan disprove?", yr: "GST" },
-      { q: "In Kuhn's model, a 'crisis' occurs when:", o: ["Too many anomalies accumulate that the paradigm cannot solve", "The paradigm is confirmed", "Scientists agree on everything", "No anomalies exist"], a: 0, e: "Crisis occurs when anomalies accumulate to the point that the paradigm is questioned, leading to scientific revolution.", h: "What leads to paradigm shift?", yr: "GST" },
-      { q: "Which philosopher is known for 'epistemological anarchism'?", o: ["Popper", "Kuhn", "Lakatos", "Feyerabend"], a: 3, e: "Feyerabend argued 'anything goes' — no single scientific method, science not superior to other ways of knowing. 'Epistemological anarchism' is his term.", h: "Who said 'anything goes'?", yr: "GST" },
-      { q: "The Copernican Revolution (geocentrism → heliocentrism) is an example of:", o: ["Normal science", "Falsification", "Paradigm shift (Kuhn)", "Deduction"], a: 2, e: "The shift from Ptolemaic (Earth-centered) to Copernican (Sun-centered) astronomy is Kuhn's classic example of a paradigm shift.", h: "What type of change was Copernicus?", yr: "GST" },
-      { q: "According to Popper, a theory that explains all possible observations equally well is:", o: ["Very scientific", "Highly confirmed", "Unfalsifiable and therefore not scientific", "The best kind of theory"], a: 2, e: "Popper argued that theories consistent with every possible observation are unfalsifiable and thus not scientific. Science requires risk — predictions that could be wrong.", h: "What's wrong with theories that explain everything?", yr: "GST" },
-      { q: "What does 'incommensurability' mean in Kuhn's philosophy?", o: ["Theories can be directly compared", "Different paradigms cannot be directly compared because they use different concepts and standards", "All theories are equally good", "Science never changes"], a: 1, e: "Incommensurability means paradigms are not directly comparable — they have different concepts, problems, methods, and standards of evaluation.", h: "Can different paradigms be easily compared?", yr: "GST" }
-    ]
+      {
+        q: 'The Nuremberg Code (1947) was established primarily in response to:',
+        o: [
+          'The atomic bombing of Hiroshima and Nagasaki',
+          "Nazi doctors' unethical medical experiments on prisoners during World War II",
+          'The Tuskegee Syphilis Study',
+          'Use of chemical weapons in World War I',
+        ],
+        a: 1,
+        e: "The Nuremberg Code (1947) emerged from the Nuremberg Doctors' Trial prosecuting Nazi physicians who performed horrific experiments on concentration camp prisoners without consent. The Code established voluntary informed consent as the most fundamental requirement for ethical human research.",
+        h: 'Nuremberg Code (1947) = response to Nazi medical experiments = voluntary informed consent essential.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Tuskegee Syphilis Study is ethically problematic because:',
+        o: [
+          'The researchers used incorrect scientific methods',
+          'The study enrolled too few participants',
+          'Black men with syphilis were studied without informed consent and denied effective penicillin treatment even after 1947',
+          'Conducted by unqualified researchers',
+        ],
+        a: 2,
+        e: 'The Tuskegee Study enrolled 399 Black men with syphilis without their knowledge or consent, and actively prevented them from accessing penicillin when it became standard treatment in 1947. The study continued 40 years, becoming a symbol of research exploitation of vulnerable populations.',
+        h: 'Tuskegee = no informed consent + withheld penicillin from Black men with syphilis.',
+        yr: 'GST',
+      },
+      {
+        q: "The Belmont Report's principle of 'Justice' requires:",
+        o: [
+          'Equal treatment of all research participants',
+          'Fair distribution of the benefits AND burdens of research — vulnerable populations should not be exploited',
+          'All research published in open-access journals',
+          'Researchers declaring all conflicts of interest',
+        ],
+        a: 1,
+        e: 'Justice (Belmont Report, 1979): benefits and burdens of research should be fairly distributed. Historically, disadvantaged groups were disproportionately used as research subjects while benefits flowed mainly to privileged groups. Justice requires equitable participant selection.',
+        h: 'Justice (Belmont) = fair distribution of research benefits AND burdens.',
+        yr: 'GST',
+      },
+      {
+        q: 'Henrietta Lacks is significant in research ethics because:',
+        o: [
+          'She was the first person to give truly informed consent',
+          'Cancer cells taken from her without consent became the HeLa cell line — the most important in medical research history — while her family received no compensation',
+          'She sued a pharmaceutical company for unauthorized use of her data',
+          'She developed the first successful human cell culture techniques',
+        ],
+        a: 1,
+        e: "Henrietta Lacks (1951): cancer cells taken without knowledge became the HeLa cell line contributing to vaccine development, cancer research, and many breakthroughs. Her family didn't learn about HeLa until the 1970s and received no compensation.",
+        h: 'Henrietta Lacks = HeLa cells taken without consent = most important cell line in medical research.',
+        yr: 'GST',
+      },
+      {
+        q: 'The 3Rs framework for ethical animal research stands for:',
+        o: [
+          'Research, Replication, and Reporting',
+          'Replace (alternatives), Reduce (fewer animals), Refine (minimize suffering)',
+          'Review, Revise, and Reproduce protocols',
+          'Rights, Respect, and Responsibility',
+        ],
+        a: 1,
+        e: "The 3Rs (Russell and Burch, 1959): Replace — use non-animal alternatives where possible; Reduce — minimize number of animals; Refine — minimize pain, distress, and suffering. Standard in most countries' animal research regulations.",
+        h: '3Rs: Replace + Reduce + Refine.',
+        yr: 'GST',
+      },
+      {
+        q: "Stephen Jay Gould's 'NOMA' model of science-religion relations holds that:",
+        o: [
+          'Science and religion are in fundamental conflict',
+          'They are identical in methods',
+          'Science addresses facts; religion addresses meaning, values, and purpose — different but equally valid domains',
+          'Science will eventually replace religion',
+        ],
+        a: 2,
+        e: "Gould's NOMA (Non-Overlapping Magisteria): science and religion both legitimate but address different questions. Science = empirical facts. Religion = meaning, moral value, purpose. Conflict arises only when either encroaches on the other's domain. Most widely held academic position.",
+        h: 'NOMA (Gould) = science (facts) and religion (meaning/values) = different non-overlapping domains.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'precautionary principle' states:",
+        o: [
+          'Scientists must be cautious in public statements',
+          'When an action raises serious threats of harm, precautionary measures should be taken even before full scientific certainty',
+          'All new technologies must be proven safe beyond doubt',
+          'Scientists must precede conclusions with cautions about limitations',
+        ],
+        a: 1,
+        e: 'The precautionary principle: when there is evidence of potential serious harm (to health or environment), lack of full scientific certainty should not delay protective measures. Applied to climate change, GMOs, nuclear energy. Critics argue it can paralyze innovation.',
+        h: 'Precautionary principle: act to prevent serious harm even before full scientific certainty.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'deficit model' of science communication assumes:",
+        o: [
+          'Scientists have a deficit of communication skills',
+          'Public resistance to science is mainly due to lack of knowledge — filling the knowledge deficit will increase acceptance',
+          'Science journalists have a deficit of training',
+          'Research funding has a deficit',
+        ],
+        a: 1,
+        e: 'The deficit model: public distrust of scientific consensus is primarily caused by insufficient knowledge. More education will fix it. Research shows this model is largely wrong — trust, values, identity, and institutional perception matter more than raw knowledge.',
+        h: 'Deficit model = public rejects science due to lack of knowledge. Research shows this is usually WRONG.',
+        yr: 'GST',
+      },
+      {
+        q: 'Lysenkoism in Soviet Russia represents:',
+        o: [
+          'The positive influence of government funding on agricultural research',
+          "The politicization of science — Lysenko's politically-motivated rejection of genetics set Soviet agriculture back decades",
+          'The beneficial influence of socialist principles on biology',
+          'The positive impact of state funding on rapid scientific progress',
+        ],
+        a: 1,
+        e: "Trofim Lysenko rejected Mendelian genetics as 'bourgeois' and with Stalin's support, Lysenkoism became official Soviet science. Geneticists who disagreed were imprisoned or executed. Soviet agriculture suffered. Paradigmatic case of political interference damaging science.",
+        h: 'Lysenkoism = Soviet politicization of science = rejection of genetics for political reasons.',
+        yr: 'GST',
+      },
+      {
+        q: "The '90/10 gap' in global medical research refers to:",
+        o: [
+          'Only 10% of medical research is publicly funded',
+          "90% of global research resources are spent on diseases affecting the wealthiest 10% of the world's population",
+          'Global health improves when 90% of research focuses on 10 key diseases',
+          '10% of papers account for 90% of scientific impact',
+        ],
+        a: 1,
+        e: "The 90/10 gap: approximately 90% of global health research spending focuses on diseases affecting the wealthiest 10% of the world's population, while diseases killing most people in low-income countries (malaria, TB, neglected tropical diseases) receive only 10%.",
+        h: "90/10 gap = 90% of research on diseases of wealthiest 10% = neglects poor populations' diseases.",
+        yr: 'GST',
+      },
+      {
+        q: "Rosalind Franklin's contribution to DNA structure illustrates which social issue in science?",
+        o: [
+          'The importance of X-ray crystallography as a technique',
+          "How women scientists' contributions have been historically underrecognized — her X-ray images were crucial to Watson and Crick's model but she did not share the Nobel Prize",
+          'The role of competition between research teams',
+          'The importance of publishing findings promptly',
+        ],
+        a: 1,
+        e: "Rosalind Franklin's Photo 51 X-ray images were critical evidence used by Watson and Crick — shared without her knowledge by Wilkins. She did not share the 1962 Nobel Prize (she died in 1958; Nobel Prizes are not awarded posthumously). Her case illustrates gender bias in science.",
+        h: 'Rosalind Franklin = crucial DNA crystallography contribution + not recognized by Nobel = gender bias.',
+        yr: 'GST',
+      },
+      {
+        q: 'Informed consent in research ethics requires that:',
+        o: [
+          'Participants consent to all future uses of their data',
+          "Participants are fully informed about the research's nature, risks, and benefits and voluntarily agree without coercion",
+          'A legal contract is signed before research',
+          'Consent is obtained from a medical authority',
+        ],
+        a: 1,
+        e: 'Informed consent requires: disclosure (all relevant information provided); comprehension (participants understand); voluntariness (free from coercion). Established as the most fundamental requirement by the Nuremberg Code (1947).',
+        h: 'Informed consent = fully informed + understanding + voluntary. No coercion.',
+        yr: 'GST',
+      },
+      {
+        q: 'The unintended consequence of chlorofluorocarbons (CFCs) was:',
+        o: [
+          'They caused widespread respiratory disease',
+          'They contributed to global warming more than CO2',
+          "They depleted the stratospheric ozone layer, creating the 'ozone hole' and increasing UV radiation",
+          'They contaminated groundwater supplies',
+        ],
+        a: 2,
+        e: "CFCs were widely used as refrigerants because they seemed chemically inert. Rowland and Molina discovered CFCs break down in the stratosphere releasing chlorine atoms that catalytically destroy ozone. The resulting ozone hole increased UV radiation reaching Earth's surface. Montreal Protocol (1987) successfully phased out CFC use.",
+        h: 'CFCs = depleted ozone layer = ozone hole = increased UV radiation.',
+        yr: 'GST',
+      },
+      {
+        q: 'A conflict of interest in scientific research occurs when:',
+        o: [
+          'Two researchers have opposing conclusions',
+          "A researcher's financial or personal interests might bias research design, data interpretation, or reporting",
+          'Researchers from different institutions collaborate',
+          'A scientist conducts research outside their primary expertise',
+        ],
+        a: 1,
+        e: 'A conflict of interest: when a researcher has financial or personal interests that could bias their research. Tobacco industry funding → biased smoking health research; pharmaceutical industry funding → favorable drug trial results. Conflicts must be disclosed and managed.',
+        h: 'Conflict of interest = financial/personal interests that could bias research or reporting.',
+        yr: 'GST',
+      },
+      {
+        q: 'The replication crisis particularly affects which scientific disciplines?',
+        o: [
+          'Physics and chemistry — exact sciences with strict controls',
+          'Primarily psychology, medicine, and social sciences — many published findings have failed to replicate',
+          'Astronomy and cosmology',
+          'Mathematics and statistics',
+        ],
+        a: 1,
+        e: 'The replication crisis: systematic attempts to reproduce published findings in psychology, medicine, and social sciences show many results cannot be replicated. The Open Science Collaboration found only ~36% of psychology studies could be replicated. Contributing factors: publication bias, small sample sizes, p-hacking.',
+        h: 'Replication crisis = most severe in psychology, medicine, social sciences.',
+        yr: 'GST',
+      },
+      {
+        q: 'Science journalism faces which primary challenge?',
+        o: [
+          'Scientific papers are written in non-English languages',
+          'Journalists must balance accurate reporting of scientific uncertainty with audience expectations of definitive answers, while news culture favors novelty and conflict over incremental progress',
+          'Scientific findings are classified as government secrets',
+          'Scientists refuse to talk to journalists',
+        ],
+        a: 1,
+        e: "Science journalism challenges: science is incremental and uncertain; news culture demands dramatic definitive stories; journalists often lack scientific training; 'one study shows...' headlines can mislead; pressure for novelty misrepresents how science works.",
+        h: 'Science journalism = uncertainty vs demand for certainty + novelty culture vs incremental science.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which statement best describes the relationship between science and society?',
+        o: [
+          'Science is completely objective and autonomous, unaffected by social factors',
+          'Science is entirely a social construction with no connection to external reality',
+          'Science is both influenced by social forces (funding, culture, politics) and produces findings that constrain what can reasonably be believed',
+          'Science operates best when isolated from social and political influences',
+        ],
+        a: 2,
+        e: 'Modern science studies show science is shaped by social forces while simultaneously producing knowledge constrained by nature. This middle position avoids naive scientism (purely objective) and extreme relativism (merely social construction).',
+        h: 'Science = both socially influenced AND constrained by nature/evidence.',
+        yr: 'GST',
+      },
+      {
+        q: 'The DDT pesticide story illustrates the concept of:',
+        o: [
+          'Scientific fraud — DDT dangers were known but suppressed',
+          'The precautionary principle being successfully applied',
+          'Unintended consequences — DDT saved millions from malaria but caused widespread ecological harm (bird population collapse) that was not foreseen',
+          'A progressive research programme being replaced',
+        ],
+        a: 2,
+        e: "DDT illustrates unintended consequences: effective against malaria-carrying mosquitoes, saving millions. However, it bioaccumulated through food chains causing reproductive failure in birds (thinning eggshells) — population crashes of eagles and falcons. Rachel Carson's 'Silent Spring' (1962) documented these effects.",
+        h: 'DDT = saved millions from malaria BUT caused bird population collapse = unintended consequences.',
+        yr: 'GST',
+      },
+      {
+        q: "'Scientific literacy' is defined as:",
+        o: [
+          'The ability to read and write scientific papers in technical language',
+          'The ability to read, understand, and critically evaluate scientific claims — essential for informed citizenship',
+          'A formal qualification in science',
+          'Memorization of key scientific facts and formulas',
+        ],
+        a: 1,
+        e: 'Scientific literacy: capacity to understand how science works, read and critically evaluate scientific claims, distinguish science from pseudoscience, and participate in public debates about scientific issues. Essential for democratic citizenship.',
+        h: "Scientific literacy = understanding science's methods + critically evaluating claims. Essential for citizenship.",
+        yr: 'GST',
+      },
+      {
+        q: "Wangari Maathai's Green Belt Movement illustrates which intersection between science and society?",
+        o: [
+          'Pure science research leading to environmental theory',
+          "The application of ecological science to practical environmental challenges while connecting science with democracy and women's rights",
+          'An example of government-funded science serving national development',
+          'Industrial pollution causing deforestation in East Africa',
+        ],
+        a: 1,
+        e: "Wangari Maathai (Kenya, 1940–2011) founded the Green Belt Movement in 1977 — using ecological knowledge to combat deforestation, soil erosion, and rural poverty by mobilizing women to plant trees. Her work connected environmental science, women's empowerment, and democracy. Nobel Peace Prize 2004.",
+        h: "Green Belt Movement = ecology science applied + democracy + women's empowerment = Nobel Peace Prize 2004.",
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 5: Major Scientific Discoveries in Physics
-  // ==========================================================================
   {
-    topic: "Major Scientific Discoveries in Physics",
-    topicCode: "HPS-005-01",
-    module: "History of Science",
+    topic: '18th-19th Century Science',
+    topicCode: 'HPS-19C-07',
+    module: 'Module 7: Age of Scientific Revolution',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Physics</span> has undergone dramatic revolutions in the past 500 years. From Newton's laws of motion to Einstein's relativity to quantum mechanics, each breakthrough transformed our understanding of space, time, matter, and energy. <strong>These discoveries not only changed physics but reshaped philosophy and culture</strong>.
-</div>
-
-<p class="learn-p">The history of physics is a story of successive approximations. Newton's physics works for everyday objects moving at everyday speeds. Einstein's relativity works for very fast objects or very strong gravity. Quantum mechanics works for very small objects. Each new theory doesn't completely replace the old — it shows the old theory's domain of applicability.</p>
-
-<h3 class="learn-subheading">Newtonian Mechanics (1687)</h3>
-
-<p class="learn-p">Isaac Newton's <em>Principia Mathematica</em> (1687) established the framework that dominated physics for over 200 years.</p>
-
-<p class="learn-p"><strong>Core principles:</strong></p>
-<ul class="learn-list">
-  <li>Three laws of motion: inertia (F=ma), action-reaction</li>
-  <li>Universal gravitation: F = G·m₁·m₂/r²</li>
-  <li>Absolute space and time: space and time are fixed, independent backgrounds</li>
-  <li>Determinism: given initial conditions, future is completely determined by laws of motion</li>
-</ul>
-
-<p class="learn-p"><strong>Successes:</strong> Explained planetary orbits, tides, projectile motion, pendulum clocks. Predicted existence of Neptune (1846, by Leverrier and Adams).</p>
-
-<p class="learn-p"><strong>Limitations:</strong> Fails at very high speeds (approaching speed of light), very strong gravity (black holes), very small scales (atoms). Superseded by relativity and quantum mechanics.</p>
-
-<h3 class="learn-subheading">Thermodynamics and the Laws of Energy (19th Century)</h3>
-
-<p class="learn-p">Thermodynamics studies heat, work, temperature, and energy. Key developments:</p>
-
-<ul class="learn-list">
-  <li><strong>Zeroth Law:</strong> If two systems are in thermal equilibrium with a third, they are in equilibrium with each other (defines temperature)</li>
-  <li><strong>First Law (Joule, Mayer, Helmholtz):</strong> Energy cannot be created or destroyed — only converted from one form to another (conservation of energy). Heat is a form of energy.</li>
-  <li><strong>Second Law (Carnot, Clausius, Kelvin):</strong> Entropy (disorder) of an isolated system always increases. Heat cannot spontaneously flow from cold to hot.</li>
-  <li><strong>Third Law (Nernst):</strong> As temperature approaches absolute zero, entropy approaches a minimum (can't reach absolute zero).</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Implication:</strong> The second law of thermodynamics (entropy increases) is often called "time's arrow" — it explains why time has a direction. Past low entropy → future high entropy. This is one of the few fundamental laws that distinguishes past from future.</span>
-</div>
-
-<h3 class="learn-subheading">Electromagnetism — Faraday, Maxwell, and the Unification of Forces</h3>
-
-<p class="learn-p">In the 19th century, electricity and magnetism were unified into a single theory of electromagnetism.</p>
-
-<p class="learn-p"><strong>Michael Faraday (1791-1867):</strong> Experimental genius. Discovered electromagnetic induction (moving magnet induces current) — basis for electric generators and transformers. Introduced concept of "fields" (invisible lines of force).</p>
-
-<p class="learn-p"><strong>James Clerk Maxwell (1831-1879):</strong> Unified electricity, magnetism, and light into a single set of equations (Maxwell's equations). Predicted electromagnetic waves traveling at speed of light — therefore light itself is an electromagnetic wave. His equations predicted the existence of radio waves (later discovered by Hertz).</p>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">⚡ PROGRESS IN PHYSICS — From Newton to Einstein to Quantum</text>
-    
-    <rect x="15" y="45" width="140" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="85" y="63" text-anchor="middle" font-size="9" fill="#1e3a8a" font-weight="800">NEWTON</text>
-    <text x="85" y="78" text-anchor="middle" font-size="7" fill="#1e3a8a">1687</text>
-    <text x="85" y="93" text-anchor="middle" font-size="7" fill="#1e3a8a">Laws of motion + Gravity</text>
-    <text x="85" y="100" text-anchor="middle" font-size="6" fill="#94a3b8">Absolute space/time</text>
-    
-    <line x1="155" y1="75" x2="175" y2="75" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowP1)"/>
-    
-    <rect x="180" y="45" width="140" height="60" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-    <text x="250" y="63" text-anchor="middle" font-size="9" fill="#166534" font-weight="800">MAXWELL</text>
-    <text x="250" y="78" text-anchor="middle" font-size="7" fill="#166534">1865</text>
-    <text x="250" y="93" text-anchor="middle" font-size="7" fill="#166534">Electromagnetism</text>
-    <text x="250" y="100" text-anchor="middle" font-size="6" fill="#94a3b8">Light as EM wave</text>
-    
-    <line x1="320" y1="75" x2="340" y2="75" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowP1)"/>
-    
-    <rect x="345" y="45" width="140" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="415" y="63" text-anchor="middle" font-size="9" fill="#92400e" font-weight="800">EINSTEIN</text>
-    <text x="415" y="78" text-anchor="middle" font-size="7" fill="#92400e">1905, 1915</text>
-    <text x="415" y="93" text-anchor="middle" font-size="7" fill="#92400e">Relativity</text>
-    <text x="415" y="100" text-anchor="middle" font-size="6" fill="#94a3b8">Spacetime, E=mc²</text>
-    
-    <rect x="180" y="125" width="140" height="60" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
-    <text x="250" y="143" text-anchor="middle" font-size="9" fill="#831843" font-weight="800">QUANTUM</text>
-    <text x="250" y="158" text-anchor="middle" font-size="7" fill="#831843">Planck, Bohr, Heisenberg</text>
-    <text x="250" y="173" text-anchor="middle" font-size="7" fill="#831843">Wave-particle duality</text>
-    <text x="250" y="180" text-anchor="middle" font-size="6" fill="#94a3b8">Probability, uncertainty</text>
-    
-    <line x1="250" y1="105" x2="250" y2="125" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowP1)"/>
-    
-    <defs>
-      <marker id="arrowP1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="195" text-anchor="middle" font-size="9" fill="#64748b">🔑 Each revolution expanded our understanding of the physical world</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Special Relativity — Einstein (1905)</h3>
-
-<p class="learn-p">Albert Einstein's 1905 paper "On the Electrodynamics of Moving Bodies" revolutionized our understanding of space, time, and motion.</p>
-
-<p class="learn-p"><strong>Two postulates:</strong></p>
-<ol class="learn-list learn-ordered">
-  <li><strong>Principle of relativity:</strong> The laws of physics are the same in all inertial (non-accelerating) reference frames. No absolute rest frame.</li>
-  <li><strong>Constancy of speed of light:</strong> The speed of light in vacuum (c = 299,792,458 m/s) is constant in all reference frames, regardless of source or observer motion.</li>
-</ol>
-
-<p class="learn-p"><strong>Counterintuitive consequences:</strong></p>
-<ul class="learn-list">
-  <li><strong>Time dilation:</strong> Moving clocks run slow. A clock on a fast spaceship ticks slower relative to stationary observer.</li>
-  <li><strong>Length contraction:</strong> Moving objects shorten in direction of motion.</li>
-  <li><strong>Relativity of simultaneity:</strong> Two events simultaneous in one frame may not be simultaneous in another.</li>
-  <li><strong>E=mc² (mass-energy equivalence):</strong> Mass and energy are interchangeable. Small amount of mass = enormous energy (explains nuclear energy).</li>
-</ul>
-
-<p class="learn-p"><strong>Famous example (twin paradox):</strong> Twin travels near speed of light and returns younger than stay-at-home twin — time dilation is real, not illusion.</p>
-
-<h3 class="learn-subheading">General Relativity — Einstein (1915)</h3>
-
-<p class="learn-p">General relativity extends special relativity to include acceleration and gravity. Revolutionary idea: gravity is not a force but curvature of spacetime caused by mass and energy.</p>
-
-<p class="learn-p"><strong>Key predictions confirmed:</strong></p>
-<ul class="learn-list">
-  <li><strong>Bending of light by gravity:</strong> Eddington's 1919 eclipse expedition measured light bending around sun — made Einstein famous worldwide.</li>
-  <li><strong>Perihelion precession of Mercury:</strong> Newtonian gravity couldn't fully explain Mercury's orbit; general relativity matched observations perfectly.</li>
-  <li><strong>Gravitational time dilation:</strong> Clocks run slower in stronger gravity (must correct for GPS satellites).</li>
-  <li><strong>Gravitational waves:</strong> Ripples in spacetime predicted by Einstein, directly detected by LIGO (2015) — Nobel Prize 2017.</li>
-  <li><strong>Black holes:</strong> Predicted by general relativity — regions where gravity so strong nothing (not even light) escapes. First image captured 2019.</li>
-</ul>
-
-<h3 class="learn-subheading">Quantum Mechanics — The Physics of the Very Small</h3>
-
-<p class="learn-p">Quantum mechanics emerged in early 20th century to explain phenomena that classical physics could not: behavior of atoms, molecules, light, and subatomic particles. It is famously counterintuitive.</p>
-
-<p class="learn-p"><strong>Key figures and discoveries:</strong></p>
-<ul class="learn-list">
-  <li><strong>Max Planck (1900):</strong> Energy is quantized — comes in discrete packets (quanta). Proposed to explain blackbody radiation. Birth of quantum theory.</li>
-  <li><strong>Niels Bohr (1913):</strong> Model of atom — electrons occupy discrete energy levels, jump between levels emitting or absorbing photons.</li>
-  <li><strong>Louis de Broglie (1924):</strong> Wave-particle duality — particles (like electrons) also behave as waves.</li>
-  <li><strong>Werner Heisenberg (1927):</strong> Uncertainty principle — cannot simultaneously know a particle's exact position and momentum. The more precisely you know one, the less precisely you know the other.</li>
-  <li><strong>Erwin Schrödinger (1926):</strong> Wave equation describes quantum systems (Schrödinger equation). His famous "cat" thought experiment illustrates quantum weirdness.</li>
-  <li><strong>Max Born:</strong> Probability interpretation — quantum mechanics describes probabilities, not certainties.</li>
-</ul>
-
-<p class="learn-p"><strong>Counterintuitive quantum phenomena:</strong></p>
-<ul class="learn-list">
-  <li><strong>Wave-particle duality:</strong> Electrons and photons behave as both waves and particles depending on how measured.</li>
-  <li><strong>Superposition:</strong> Particles can exist in multiple states simultaneously until measured (Schrödinger's cat both dead and alive).</li>
-  <li><strong>Quantum entanglement:</strong> Particles can be correlated such that measuring one instantly affects the other, even across universe — "spooky action at a distance" (Einstein).</li>
-  <li><strong>Observer effect:</strong> Measuring a quantum system inevitably changes it — can't observe without disturbing.</li>
-</ul>
-
-<p class="learn-p"><strong>Technological applications:</strong> Lasers, transistors, microchips, LEDs, MRI, GPS (corrected for relativity too), quantum computing (emerging).</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Thinker:</strong> Albert Einstein (1879-1955) — Nobel Prize 1921 for photoelectric effect (quantum). Ironically, he never accepted quantum mechanics' probabilistic nature: "God does not play dice with the universe." Yet his work on relativity transformed physics and he contributed to quantum theory's foundations.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Explain the difference between special relativity and general relativity." (Sample answer: Special relativity (1905) deals with motion at constant velocity in absence of gravity — consequences: time dilation, length contraction, E=mc². General relativity (1915) incorporates acceleration and gravity — gravity is curvature of spacetime. Predictions: light bending, black holes, gravitational waves, Mercury's orbit.)</span>
-</div>
-    `,
+<div class="learn-intro">The 18th and 19th centuries witnessed the <span class="learn-keyword">Chemical Revolution</span>, <span class="learn-keyword">evolution theory</span>, <span class="learn-keyword">germ theory</span>, and <span class="learn-keyword">electromagnetism</span>. Building on Newton's foundations, this period created the disciplinary structure of modern science.</div>
+<h3 class="learn-subheading">7.1 Chemical Revolution</h3>
+<p class="learn-p"><span class="learn-keyword">Lavoisier (1743–1794)</span> — "father of modern chemistry": Overthrew phlogiston theory; established oxygen's role in combustion; formulated <span class="learn-keyword">Law of Conservation of Mass</span> (mass of reactants = mass of products); defined chemical elements; developed systematic nomenclature. <span class="learn-keyword">John Dalton (1766–1844)</span>: Modern atomic theory — all matter composed of atoms; each element has unique atoms; atoms combine in fixed whole-number ratios.</p>
+<h3 class="learn-subheading">7.2 Geology and Deep Time</h3>
+<p class="learn-p"><span class="learn-keyword">James Hutton (1726–1797)</span> — "father of geology": Proposed <span class="learn-keyword">uniformitarianism</span> — "the present is the key to the past." Current geological processes (erosion, sedimentation) operated throughout Earth's history at the same rates → Earth must be vastly older than 6,000 years. <span class="learn-keyword">Charles Lyell</span>: Systematized uniformitarianism in Principles of Geology (1830). Profoundly influenced Darwin. <span class="learn-keyword">Cuvier</span>: Founded paleontology; established extinction of fossil species (catastrophism).</p>
+<h3 class="learn-subheading">7.3 Darwin and Evolution by Natural Selection</h3>
+<p class="learn-p"><span class="learn-keyword">Darwin (1809–1882)</span>: On the Origin of Species (1859). Four steps: (1) Variation — individuals differ in heritable traits; (2) Overproduction — more offspring than can survive; (3) Natural selection — better-suited individuals more likely to survive and reproduce; (4) Evolution — advantageous traits accumulate → new species. <span class="learn-keyword">Alfred Russel Wallace</span> independently developed natural selection — his 1858 letter prompted Darwin to publish. Darwin lacked mechanism of inheritance (supplied by Mendel). Modern Evolutionary Synthesis (1930s–40s) unified Darwin + Mendel.</p>
+<h3 class="learn-subheading">7.4 Germ Theory of Disease</h3>
+<p class="learn-p">Before germ theory: <span class="learn-keyword">miasma theory</span> — disease caused by "bad air" from rotting matter. <span class="learn-keyword">Louis Pasteur (1822–1895)</span>: Swan-neck flask experiment (1861) disproved spontaneous generation. Germ theory. Pasteurization. Vaccines for cholera, anthrax, rabies. <span class="learn-keyword">Robert Koch (1843–1910)</span>: Identified TB bacteria (1882) and cholera (1883). <span class="learn-keyword">Koch's Postulates</span>: (1) microorganism found in all disease cases; (2) isolated in pure culture; (3) causes disease when introduced to healthy host; (4) re-isolated from diseased host. <span class="learn-keyword">Joseph Lister</span>: Antiseptic surgery using carbolic acid — dramatically reduced post-surgical deaths.</p>
+<h3 class="learn-subheading">7.5 Electromagnetism</h3>
+<p class="learn-p"><span class="learn-keyword">Michael Faraday (1791–1867)</span>: Electromagnetic induction — changing magnetic field induces electric current. Foundation of electric generators. <span class="learn-keyword">James Clerk Maxwell (1831–1879)</span>: Four equations unifying electricity, magnetism, and light as electromagnetic waves. Predicted radio waves (confirmed by Hertz, 1887). 19th century's greatest theoretical physics achievement. <span class="learn-keyword">Gregor Mendel (1822–1884)</span>: Pea plant experiments → Laws of Inheritance: Law of Segregation (two copies per trait; separate into gametes); Law of Independent Assortment; dominant/recessive traits. Published 1866 — IGNORED until 1900 when rediscovered.</p>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Scientist</th><th>Contribution</th><th>Key Significance</th></tr></thead><tbody>
+<tr><td>Lavoisier (1743–1794)</td><td>Oxygen combustion theory; Law of Conservation of Mass</td><td>"Father of modern chemistry"</td></tr>
+<tr><td>Hutton (1726–1797)</td><td>Uniformitarianism; Earth's deep time</td><td>"Father of geology"</td></tr>
+<tr><td>Darwin (1809–1882)</td><td>Evolution by natural selection (Origin of Species, 1859)</td><td>Most important theory in biology</td></tr>
+<tr><td>Mendel (1822–1884)</td><td>Laws of inheritance (published 1866; ignored until 1900)</td><td>"Father of genetics"</td></tr>
+<tr><td>Pasteur (1822–1895)</td><td>Germ theory; disproved spontaneous generation; vaccines</td><td>Transformed medicine; founded immunology</td></tr>
+<tr><td>Koch (1843–1910)</td><td>Identified TB + cholera bacteria; Koch's Postulates</td><td>Founded bacteriology</td></tr>
+<tr><td>Faraday (1791–1867)</td><td>Electromagnetic induction</td><td>Basis for electric power generation</td></tr>
+<tr><td>Maxwell (1831–1879)</td><td>Unified E+M+light; predicted radio waves</td><td>19th century's greatest theoretical physics</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="160" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Darwin's Theory — Key Components</text><rect x="15" y="48" width="110" height="75" rx="6" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="70" y="70" text-anchor="middle" fill="#ffaa80" font-size="9.5" font-family="Georgia,serif" font-weight="bold">VARIATION</text><text x="70" y="86" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Individuals differ</text><text x="70" y="98" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">in heritable traits</text><line x1="125" y1="85" x2="145" y2="85" stroke="#FFD700" stroke-width="1.5"/><polygon points="145,85 134,79 134,91" fill="#FFD700"/><rect x="146" y="48" width="110" height="75" rx="6" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="201" y="70" text-anchor="middle" fill="#80ffaa" font-size="9.5" font-family="Georgia,serif" font-weight="bold">STRUGGLE</text><text x="201" y="86" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Overproduction;</text><text x="201" y="98" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">limited resources</text><line x1="256" y1="85" x2="276" y2="85" stroke="#FFD700" stroke-width="1.5"/><polygon points="276,85 265,79 265,91" fill="#FFD700"/><rect x="277" y="38" width="125" height="95" rx="6" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="339" y="60" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">NATURAL SELECTION</text><text x="339" y="78" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Fitter individuals</text><text x="339" y="90" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">survive + reproduce</text><line x1="402" y1="85" x2="422" y2="85" stroke="#FFD700" stroke-width="1.5"/><polygon points="422,85 411,79 411,91" fill="#FFD700"/><rect x="423" y="48" width="122" height="75" rx="6" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="484" y="70" text-anchor="middle" fill="#90c8ff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">EVOLUTION</text><text x="484" y="86" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Gradual change;</text><text x="484" y="98" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">new species form</text><text x="280" y="142" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Darwin + Wallace jointly announced 1858. Origin of Species published November 24, 1859.</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="160" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Koch's Postulates</text><rect x="20" y="45" width="115" height="90" rx="6" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="77" y="65" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">POSTULATE 1</text><text x="77" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Microorganism</text><text x="77" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">found in ALL cases</text><text x="77" y="115" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">of the disease</text><rect x="150" y="45" width="115" height="90" rx="6" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="207" y="65" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">POSTULATE 2</text><text x="207" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Isolated from host;</text><text x="207" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">grown in pure</text><text x="207" y="115" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">culture</text><rect x="280" y="45" width="115" height="90" rx="6" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="337" y="65" text-anchor="middle" fill="#90c8ff" font-size="10" font-family="Georgia,serif" font-weight="bold">POSTULATE 3</text><text x="337" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Causes disease in</text><text x="337" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">healthy host when</text><text x="337" y="115" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">introduced</text><rect x="410" y="45" width="130" height="90" rx="6" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="475" y="65" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Georgia,serif" font-weight="bold">POSTULATE 4</text><text x="475" y="82" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Re-isolated from</text><text x="475" y="94" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">diseased host;</text><text x="475" y="115" text-anchor="middle" fill="#888" font-size="7.5" font-family="Georgia,serif">matches original</text><text x="280" y="148" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Koch used these to identify TB (1882) and cholera (1883) bacteria</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Lavoisier = father of chemistry (oxygen combustion + conservation of mass). Darwin + Wallace = evolution by natural selection (Origin of Species, 1859). Mendel = laws of inheritance (published 1866, IGNORED until 1900). Pasteur = germ theory + spontaneous generation disproved + vaccines. Koch = Koch's Postulates + identified TB and cholera. Faraday = electromagnetic induction (generators). Maxwell = unified E+M+light equations (predicted radio waves). Hutton/Lyell = uniformitarianism (deep time).</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Mendel's work was published in 1866 but IGNORED until 1900 — not because it was wrong but because it was published in an obscure journal and used an unusual statistical approach. Darwin and Mendel never communicated. Miasma theory (bad air causes disease) was REPLACED by germ theory — not by Darwin or Mendel but by Pasteur and Koch. Spontaneous generation disproved by Pasteur's swan-neck flask experiment (1861).</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> 18th–19th centuries: Lavoisier = modern chemistry; Hutton/Lyell = geological deep time; Darwin/Wallace = evolution by natural selection; Mendel = laws of inheritance; Pasteur/Koch = germ theory and transformed medicine; Faraday/Maxwell = electromagnetism. These discoveries created the disciplinary structure of modern science and laid the foundation for 20th-century molecular biology, genetics, and modern physics.</div>`,
     questions: [
-      { q: "Newton's law of universal gravitation states that gravitational force is:", o: ["F = ma", "F = G·m₁·m₂/r²", "E = mc²", "F = q·E"], a: 1, e: "Newton's gravitational law: force equals gravitational constant times product of masses divided by distance squared.", h: "Which formula describes gravity?", yr: "GST" },
-      { q: "Which law of thermodynamics states that energy cannot be created or destroyed?", o: ["Zeroth Law", "First Law", "Second Law", "Third Law"], a: 1, e: "First Law of Thermodynamics: conservation of energy. Energy can be converted from one form to another but total remains constant.", h: "Which law is about conservation of energy?", yr: "GST" },
-      { q: "The Second Law of Thermodynamics states that:", o: ["Energy is conserved", "Entropy (disorder) of an isolated system always increases", "Absolute zero is unattainable", "Heat flows from cold to hot"], a: 1, e: "Second Law: entropy increases over time — explains why time has direction (time's arrow).", h: "Which law says disorder increases?", yr: "GST" },
-      { q: "James Clerk Maxwell is known for:", o: ["Discovering radioactivity", "Unifying electricity, magnetism, and light into electromagnetism", "Discovering the electron", "Developing quantum mechanics"], a: 1, e: "Maxwell's equations unified electricity, magnetism, and light — showing light is an electromagnetic wave.", h: "Who unified electricity and magnetism?", yr: "GST" },
-      { q: "The two postulates of special relativity are:", o: ["Absolute space and absolute time", "Principle of relativity (laws same in all inertial frames) and constancy of speed of light", "Gravity is a force and space is flat", "Entropy always increases and energy is conserved"], a: 1, e: "Special relativity's postulates: (1) laws same in all inertial frames; (2) speed of light constant in all frames.", h: "What are Einstein's two postulates?", yr: "GST" },
-      { q: "Time dilation in special relativity means:", o: ["Time always moves faster", "Moving clocks run slow relative to stationary observers", "Time doesn't exist", "Everyone experiences time the same"], a: 1, e: "Time dilation: moving clocks tick slower. Twin paradox — traveling twin ages less than stay-at-home twin.", h: "How does motion affect time?", yr: "GST" },
-      { q: "Einstein's famous equation E=mc² expresses:", o: ["Kinetic energy", "Mass-energy equivalence — mass can be converted to energy", "Potential energy", "Thermal energy"], a: 1, e: "E=mc² shows mass and energy are interchangeable. Small amount of mass = enormous energy (explains nuclear reactions).", h: "What is E=mc²?", yr: "GST" },
-      { q: "General relativity explains gravity as:", o: ["A force acting at a distance", "Curvature of spacetime caused by mass and energy", "Exchange of graviton particles", "Electromagnetic effect"], a: 1, e: "Einstein's general relativity: gravity is not a force but curvature of spacetime. Mass tells spacetime how to curve; curved spacetime tells mass how to move.", h: "What is gravity according to Einstein?", yr: "GST" },
-      { q: "Which 1919 experiment made Einstein world-famous?", o: ["Discovery of radioactivity", "Eddington's eclipse expedition confirming light bending by sun's gravity", "Discovery of the electron", "Splitting the atom"], a: 1, e: "Eddington's 1919 eclipse measured starlight bending around sun, confirming general relativity — Einstein became international celebrity.", h: "What proved Einstein's theory?", yr: "GST" },
-      { q: "Quantum mechanics is primarily concerned with:", o: ["Very large objects (galaxies)", "Very fast objects (near light speed)", "Very small objects (atoms, particles)", "Everyday objects"], a: 2, e: "Quantum mechanics describes behavior of atoms, molecules, and subatomic particles — very small scale.", h: "What scale does quantum mechanics describe?", yr: "GST" },
-      { q: "Heisenberg's uncertainty principle states:", o: ["Position and momentum cannot both be precisely known simultaneously", "Energy is conserved", "Entropy always increases", "Light behaves as a wave"], a: 0, e: "Uncertainty principle: Δx·Δp ≥ ħ/2 — cannot simultaneously know exact position and momentum. More precise one → less precise other.", h: "What cannot be simultaneously known?", yr: "GST" },
-      { q: "Wave-particle duality means:", o: ["Only light behaves as a wave", "Only electrons behave as particles", "Particles (like electrons) also behave as waves", "Waves are only mathematical"], a: 2, e: "Wave-particle duality: entities like electrons and photons exhibit both wave-like and particle-like properties depending on measurement.", h: "What has both wave and particle properties?", yr: "GST" },
-      { q: "Gravitational waves were first directly detected in:", o: ["1919", "1969", "2015 (LIGO)", "2020"], a: 2, e: "LIGO detected gravitational waves from merging black holes in 2015, confirming Einstein's 1915 prediction. Nobel Prize 2017.", h: "When were gravitational waves detected?", yr: "GST" },
-      { q: "Which quantum phenomenon did Einstein call 'spooky action at a distance'?", o: ["Wave-particle duality", "Uncertainty principle", "Quantum entanglement", "Superposition"], a: 2, e: "Entanglement: measuring one particle instantly affects another regardless of distance. Einstein found it troubling ('spooky').", h: "What did Einstein find 'spooky'?", yr: "GST" },
-      { q: "Max Planck is credited with:", o: ["Theory of relativity", "Quantum theory — proposing energy is quantized (quanta)", "Wave equation", "Uncertainty principle"], a: 1, e: "Planck (1900) proposed energy is quantized to explain blackbody radiation — often considered birth of quantum theory.", h: "Who started quantum theory?", yr: "GST" },
-      { q: "Schrödinger's cat thought experiment illustrates:", o: ["General relativity", "Quantum superposition — cat both dead and alive until observed", "Thermodynamics", "Electromagnetism"], a: 1, e: "Schrödinger's cat is both dead and alive (superposition) until opened/observed — highlighting quantum weirdness.", h: "What is the cat?", yr: "GST" },
-      { q: "Niels Bohr's model of the atom proposed:", o: ["Electrons orbit nucleus in fixed energy levels", "Electrons are waves", "Nucleus contains protons and neutrons", "Atoms are indivisible"], a: 0, e: "Bohr model (1913): electrons occupy discrete energy levels; jumping levels emits/absorbs photons. Explained hydrogen spectrum.", h: "How do electrons behave in Bohr's atom?", yr: "GST" },
-      { q: "Einstein received his Nobel Prize for:", o: ["Special relativity", "General relativity", "Photoelectric effect (quantum)", "E=mc²"], a: 2, e: "Einstein's 1921 Nobel Prize was for explaining photoelectric effect (light as particles/photons) — not relativity.", h: "What did Einstein win Nobel for?", yr: "GST" },
-      { q: "A black hole is:", o: ["A hole in space", "A region where gravity is so strong nothing (not even light) escapes", "A dark star", "A galaxy center"], a: 1, e: "Black hole: spacetime region with gravity so intense that escape velocity exceeds light speed. First image captured 2019.", h: "What is a black hole?", yr: "GST" },
-      { q: "GPS satellites must correct for both special and general relativity because:", o: ["They are not accurate", "Relativity is wrong", "Satellite motion (special) and weaker gravity (general) affect time — without corrections, GPS would be off by kilometers per day", "GPS doesn't use relativity"], a: 2, e: "GPS corrects for time dilation (special) and gravitational time dilation (general). Without corrections, GPS errors would accumulate rapidly.", h: "Why does GPS need relativity?", yr: "GST" }
-    ]
-  },
-  // ============================================================================
-// HISTORY AND PHILOSOPHY OF SCIENCE — PART 3 OF 4
-// Continuing GST_LEARN_GST_HISTORY array from Part 2
-// TOPICS 6, 7, 8
-// ============================================================================
-
-  // ==========================================================================
-  // TOPIC 6: Major Scientific Discoveries — Chemistry and Biology
-  // ==========================================================================
-  {
-    topic: "Major Scientific Discoveries — Chemistry and Biology",
-    topicCode: "HPS-006-01",
-    module: "History of Science",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Chemistry and biology</span> have undergone transformative revolutions that changed our understanding of matter and life. From the periodic table to DNA, from cells to evolution, these discoveries have reshaped medicine, agriculture, and our conception of humanity's place in nature. <strong>Understanding these breakthroughs illuminates the power and scope of scientific inquiry</strong>.
-</div>
-
-<p class="learn-p">While physics often gets attention for its revolutionary theories, chemistry and biology have produced equally profound insights. The discovery that all matter is composed of elements organized in the periodic table, that living things are made of cells, that species evolve through natural selection, and that heredity is coded in DNA — these are among humanity's greatest intellectual achievements.</p>
-
-<h3 class="learn-subheading">The Chemical Revolution — Lavoisier and the Periodic Table</h3>
-
-<p class="learn-p">Modern chemistry emerged in the late 18th century, primarily through the work of Antoine Lavoisier (1743-1794), often called the "father of modern chemistry."</p>
-
-<p class="learn-p"><strong>Lavoisier's key contributions:</strong></p>
-<ul class="learn-list">
-  <li><strong>Law of conservation of mass:</strong> In chemical reactions, matter is neither created nor destroyed. Total mass remains constant. This transformed chemistry from qualitative to quantitative.</li>
-  <li><strong>Disproved phlogiston theory:</strong> The prevailing theory claimed combustible materials contained "phlogiston" released during burning. Lavoisier showed combustion requires oxygen (which he named) and that metals gain mass (not lose) when calcined.</li>
-  <li><strong>Identified oxygen and hydrogen:</strong> Showed water is compound of hydrogen and oxygen, not an element.</li>
-  <li><strong>Systematic nomenclature:</strong> Created systematic naming system for chemical compounds, replacing alchemical jargon.</li>
-</ul>
-
-<p class="learn-p"><strong>John Dalton (1766-1844) — Atomic Theory:</strong></p>
-<ul class="learn-list">
-  <li>Proposed that all matter consists of indivisible atoms</li>
-  <li>Atoms of given element identical; different elements have different atoms</li>
-  <li>Chemical compounds form when atoms combine in simple whole-number ratios</li>
-  <li>Atomic theory explained laws of definite and multiple proportions</li>
-</ul>
-
-<p class="learn-p"><strong>Dmitri Mendeleev (1834-1907) — Periodic Table:</strong></p>
-<ul class="learn-list">
-  <li>Arranged elements by atomic weight and chemical properties</li>
-  <li>Noticed periodic patterns — properties repeat at regular intervals</li>
-  <li><strong>Predicted undiscovered elements</strong> (gallium, germanium, scandium) — left gaps and predicted their properties. When discovered later, matched predictions perfectly — dramatic confirmation of periodic law.</li>
-  <li>Modern periodic table organizes by atomic number (protons), not weight, but Mendeleev's insight remains foundational.</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="280" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">⚗️ CHEMISTRY'S KEY DISCOVERIES</text>
-    
-    <g>
-      <rect x="15" y="45" width="145" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="87" y="63" text-anchor="middle" font-size="9" fill="#1e3a8a" font-weight="800">LAVOISIER</text>
-      <text x="87" y="78" text-anchor="middle" font-size="7" fill="#1e3a8a">Law of conservation of mass</text>
-      <text x="87" y="93" text-anchor="middle" font-size="7" fill="#1e3a8a">Identified oxygen, hydrogen</text>
-      <circle cx="15" cy="55" r="4" fill="#3b82f6">
-        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    
-    <line x1="160" y1="75" x2="180" y2="75" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowC1)"/>
-    
-    <g>
-      <rect x="183" y="45" width="145" height="60" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <text x="255" y="63" text-anchor="middle" font-size="9" fill="#166534" font-weight="800">DALTON</text>
-      <text x="255" y="78" text-anchor="middle" font-size="7" fill="#166534">Atomic theory</text>
-      <text x="255" y="93" text-anchor="middle" font-size="7" fill="#166534">Atoms combine in whole ratios</text>
-    </g>
-    
-    <line x1="328" y1="75" x2="348" y2="75" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowC1)"/>
-    
-    <g>
-      <rect x="351" y="45" width="135" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="418" y="63" text-anchor="middle" font-size="9" fill="#92400e" font-weight="800">MENDELEEV</text>
-      <text x="418" y="78" text-anchor="middle" font-size="7" fill="#92400e">Periodic Table</text>
-      <text x="418" y="93" text-anchor="middle" font-size="7" fill="#92400e">Predicted new elements</text>
-    </g>
-    
-    <!-- Periodic table fragment -->
-    <rect x="50" y="130" width="400" height="130" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
-    <text x="250" y="150" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="800">🔬 PERIODIC TABLE (First version — Mendeleev, 1869)</text>
-    
-    <!-- Sample elements -->
-    <rect x="70" y="165" width="50" height="25" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-    <text x="95" y="182" text-anchor="middle" font-size="8" fill="#1e3a8a">H (1)</text>
-    
-    <rect x="130" y="165" width="50" height="25" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-    <text x="155" y="182" text-anchor="middle" font-size="8" fill="#1e3a8a">He (2)</text>
-    
-    <rect x="190" y="165" width="50" height="25" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
-    <text x="215" y="182" text-anchor="middle" font-size="8" fill="#166534">Li (3)</text>
-    
-    <rect x="250" y="165" width="50" height="25" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
-    <text x="275" y="182" text-anchor="middle" font-size="8" fill="#166534">Be (4)</text>
-    
-    <rect x="310" y="165" width="50" height="25" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-    <text x="335" y="182" text-anchor="middle" font-size="8" fill="#92400e">B (5)</text>
-    
-    <rect x="370" y="165" width="50" height="25" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-    <text x="395" y="182" text-anchor="middle" font-size="8" fill="#92400e">C (6)</text>
-    
-    <text x="250" y="215" text-anchor="middle" font-size="7" fill="#64748b">Rows (periods) and columns (groups) reveal repeating chemical properties</text>
-    <text x="250" y="232" text-anchor="middle" font-size="7" fill="#64748b">Mendeleev left gaps for undiscovered elements — predictions later confirmed</text>
-    
-    <defs>
-      <marker id="arrowC1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Cell Theory — The Building Blocks of Life (1838-1855)</h3>
-
-<p class="learn-p">Before the 19th century, the fundamental unit of life was unknown. The invention and improvement of microscopes made cell theory possible.</p>
-
-<p class="learn-p"><strong>Robert Hooke (1665):</strong> Using early microscope, observed cork cells — named "cells" because they resembled monastery cells. Observed only dead plant cell walls.</p>
-
-<p class="learn-p"><strong>Antonie van Leeuwenhoek (1632-1723):</strong> Master lens grinder, built microscopes over 200x magnification. First to observe living cells — bacteria ("animalcules"), protozoa, red blood cells, sperm. Called "father of microbiology."</p>
-
-<p class="learn-p"><strong>Matthias Schleiden (1838):</strong> German botanist — proposed all plants are composed of cells.</p>
-
-<p class="learn-p"><strong>Theodor Schwann (1839):</strong> German zoologist — extended to animals: all animals are composed of cells. Together proposed: all living things are made of cells, and cell is basic unit of life.</p>
-
-<p class="learn-p"><strong>Rudolf Virchow (1855):</strong> Added third principle: <strong>Omnis cellula e cellula</strong> ("every cell arises from a pre-existing cell") — cells divide to produce new cells. Disproved spontaneous generation at cellular level.</p>
-
-<p class="learn-p"><strong>Cell Theory's three principles:</strong></p>
-<ol class="learn-list learn-ordered">
-  <li>All living organisms are composed of one or more cells</li>
-  <li>The cell is the basic structural and functional unit of life</li>
-  <li>All cells arise from pre-existing cells</li>
-</ol>
-
-<h3 class="learn-subheading">Darwin and Evolution by Natural Selection (1859)</h3>
-
-<p class="learn-p">Charles Darwin's (1809-1882) *On the Origin of Species* (1859) revolutionized biology and challenged humanity's understanding of its place in nature.</p>
-
-<p class="learn-p"><strong>Darwin's observations (Voyage of the Beagle, 1831-1836):</strong></p>
-<ul class="learn-list">
-  <li>Galápagos finches — different beak shapes adapted to different food sources on different islands</li>
-  <li>Fossils of extinct giant sloths and armadillos — species change over time</li>
-  <li>Geological uplift — Earth is very old</li>
-</ul>
-
-<p class="learn-p"><strong>Key insights (also independently by Alfred Russel Wallace, 1858):</strong></p>
-<ul class="learn-list">
-  <li><strong>Variation:</strong> Individuals within a species vary in traits</li>
-  <li><strong>Inheritance:</strong> Traits are passed from parents to offspring</li>
-  <li><strong>Struggle for existence:</strong> More offspring produced than can survive (Malthus's influence)</li>
-  <li><strong>Natural selection:</strong> Individuals with advantageous traits more likely to survive and reproduce. Over generations, favorable traits become more common.</li>
-  <li><strong>Descent with modification:</strong> Species share common ancestors; evolution produces branching tree of life</li>
-</ul>
-
-<p class="learn-p"><strong>Evidence supporting evolution (then and now):</strong></p>
-<ul class="learn-list">
-  <li><strong>Fossil record:</strong> Transitional forms (e.g., Tiktaalik — fish to tetrapod)</li>
-  <li><strong>Homologous structures:</strong> Same underlying structure, different functions (human arm, bird wing, whale flipper) — evidence of common ancestry</li>
-  <li><strong>Analogous structures:</strong> Different structures, similar functions (bird wing, insect wing) — convergent evolution</li>
-  <li><strong>Vestigial structures:</strong> Functionless remnants of evolution (human appendix, whale pelvis)</li>
-  <li><strong>Embryology:</strong> Similar embryonic development across species</li>
-  <li><strong>Molecular biology (DNA):</strong> Genetic similarities reflect evolutionary relationships</li>
-  <li><strong>Observed evolution:</strong> Antibiotic resistance in bacteria, pesticide resistance in insects — natural selection in action</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Point:</strong> Darwin did not know the mechanism of heredity — genes and DNA were discovered later. Mendelian genetics (rediscovered 1900) provided the missing piece, leading to "modern synthesis" (1930s-40s) integrating Darwin and Mendel.</span>
-</div>
-
-<h3 class="learn-subheading">Genetics — From Mendel to DNA</h3>
-
-<p class="learn-p"><strong>Gregor Mendel (1822-1884) — Father of Genetics:</strong></p>
-<ul class="learn-list">
-  <li>Augustinian monk who experimented with pea plants (1856-1863)</li>
-  <li>Discovered that traits are inherited in discrete units (genes) — not blended</li>
-  <li><strong>Laws of inheritance:</strong>
-    <ul>
-      <li>Law of segregation: Each parent contributes one allele (variant) for each trait; alleles separate during gamete formation</li>
-      <li>Law of independent assortment: Genes for different traits assort independently (with exceptions)</li>
-    </ul>
-  </li>
-  <li>Work largely ignored until rediscovered in 1900 (by Correns, de Vries, von Tschermak)</li>
-</ul>
-
-<p class="learn-p"><strong>DNA — The Molecule of Heredity:</strong></p>
-<ul class="learn-list">
-  <li><strong>Friedrich Miescher (1869):</strong> First isolated "nuclein" (DNA) from white blood cells — didn't know its function</li>
-  <li><strong>Oswald Avery (1944):</strong> Showed DNA (not protein) carries genetic information — through experiments with bacteria</li>
-  <li><strong>Erwin Chargaff (1947):</strong> Chargaff's rules: amount of A = T, amount of G = C — key clue for structure</li>
-  <li><strong>Rosalind Franklin (1952):</strong> X-ray diffraction image (Photo 51) revealed DNA is helix with regular repeating structure</li>
-  <li><strong>James Watson and Francis Crick (1953):</strong> Proposed double helix model — two strands wound around each other, base pairs (A-T, C-G) hold strands together. Model explained how DNA replicates and stores information.</li>
-</ul>
-
-<p class="learn-p"><strong>The Human Genome Project (1990-2003):</strong> Mapped entire human DNA sequence (3 billion base pairs). Revolutionized medicine — enabled personalized medicine, genetic testing, understanding of genetic diseases.</p>
-
-<h3 class="learn-subheading">Germ Theory of Disease — Pasteur and Koch</h3>
-
-<p class="learn-p">Before germ theory, disease was attributed to "miasma" (bad air), imbalances of humors, or divine punishment. Germ theory transformed medicine.</p>
-
-<p class="learn-p"><strong>Louis Pasteur (1822-1895):</strong></p>
-<ul class="learn-list">
-  <li>Disproved spontaneous generation — showed microbes come from other microbes (swan-neck flask experiments)</li>
-  <li>Developed pasteurization — heating kills microbes in milk, wine, beer</li>
-  <li>Developed vaccines for rabies, anthrax</li>
-  <li>Germ theory of fermentation — microorganisms cause fermentation</li>
-</ul>
-
-<p class="learn-p"><strong>Robert Koch (1843-1910):</strong></p>
-<ul class="learn-list">
-  <li>Identified specific microbes causing specific diseases: anthrax (Bacillus anthracis), tuberculosis (Mycobacterium tuberculosis), cholera (Vibrio cholerae)</li>
-  <li><strong>Koch's postulates:</strong> Four criteria to establish microbe causes disease:
-    <ol>
-      <li>Microbe must be present in every case of disease</li>
-      <li>Microbe must be isolated from diseased host and grown in pure culture</li>
-      <li>Pure culture must cause same disease when inoculated into healthy host</li>
-      <li>Microbe must be re-isolated from experimentally infected host</li>
-    </ol>
-  </li>
-</ul>
-
-<p class="learn-p"><strong>Impact:</strong> Germ theory led to sanitation (sewers, clean water), antiseptics (Joseph Lister), vaccines, antibiotics (penicillin — Fleming, Florey, Chain, 1940s). Human lifespan doubled in developed countries largely due to germ theory applications.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>GST Exam Tip:</strong> Questions often ask about the relationship between Darwin and Mendel. Darwin didn't know about genes (Mendel's work was unknown to him). The "modern synthesis" (1930s-40s) integrated natural selection with Mendelian genetics, resolving Darwin's major problem — how traits are inherited without blending away variation.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>Key Figure:</strong> Rosalind Franklin (1920-1958) — her X-ray diffraction image (Photo 51) was crucial evidence for DNA's double helix structure. She died of ovarian cancer at 37, before the Nobel Prize was awarded to Watson, Crick, and Wilkins (1962). Nobels are not awarded posthumously; Franklin's contribution is now widely recognized.</span>
-</div>
-    `,
-    questions: [
-      { q: "Antoine Lavoisier is known as the 'father of modern chemistry' primarily for:", o: ["Discovering the periodic table", "Law of conservation of mass and disproving phlogiston theory", "Atomic theory", "Discovering radioactivity"], a: 1, e: "Lavoisier established conservation of mass, identified oxygen and hydrogen, and disproved phlogiston theory — transforming chemistry from qualitative to quantitative.", h: "Who discovered oxygen and conservation of mass?", yr: "GST" },
-      { q: "John Dalton's atomic theory proposed that:", o: ["Atoms are divisible", "All matter consists of indivisible atoms; atoms of same element identical; compounds formed from whole-number ratios", "Atoms contain electrons", "Atoms are mostly empty space"], a: 1, e: "Dalton's atomic theory: elements composed of identical atoms, different elements have different atoms, atoms combine in whole-number ratios.", h: "What did Dalton say about atoms?", yr: "GST" },
-      { q: "Dmitri Mendeleev's periodic table was revolutionary because:", o: ["It listed all elements alphabetically", "It arranged elements by atomic weight and predicted undiscovered elements", "It was the first list of elements", "It used atomic numbers"], a: 1, e: "Mendeleev left gaps for undiscovered elements and predicted their properties — later confirmed, dramatically confirming his periodic law.", h: "What did Mendeleev predict?", yr: "GST" },
-      { q: "Which scientist first observed living cells ('animalcules') under a microscope?", o: ["Robert Hooke", "Antonie van Leeuwenhoek", "Matthias Schleiden", "Rudolf Virchow"], a: 1, e: "Leeuwenhoek, master lens grinder, first observed bacteria, protozoa, red blood cells, and sperm — 'father of microbiology'.", h: "Who discovered bacteria?", yr: "GST" },
-      { q: "Rudolf Virchow's contribution to cell theory was:", o: ["All plants are made of cells", "All animals are made of cells", "Omnis cellula e cellula — every cell arises from a pre-existing cell", "First observation of cells"], a: 2, e: "Virchow added that cells come only from existing cells (cell division), disproving spontaneous generation at cellular level.", h: "Where do new cells come from?", yr: "GST" },
-      { q: "Darwin's theory of evolution by natural selection is based on all EXCEPT:", o: ["Variation within species", "Inheritance of traits", "Struggle for existence (more offspring than survive)", "Acquired characteristics passed to offspring (Lamarckism)"], a: 3, e: "Darwin rejected Lamarck's inheritance of acquired characteristics. Natural selection requires heritable variation, not acquired traits.", h: "What did Darwin NOT believe?", yr: "GST" },
-      { q: "Which evidence for evolution refers to structures with different functions but same underlying structure (human arm, bird wing, whale flipper)?", o: ["Analogous structures", "Homologous structures", "Vestigial structures", "Fossil record"], a: 1, e: "Homologous structures share common ancestry despite different functions. Analogous structures share function but different origins (convergent evolution).", h: "What indicates common ancestry?", yr: "GST" },
-      { q: "Gregor Mendel's laws of inheritance include all EXCEPT:", o: ["Law of segregation (alleles separate during gamete formation)", "Law of independent assortment (genes for different traits assort independently)", "Law of dominance (some alleles mask others)", "Law of acquired characteristics"], a: 3, e: "Law of acquired characteristics is Lamarck, not Mendel. Mendel discovered segregation, independent assortment, and dominance.", h: "What did Mendel NOT discover?", yr: "GST" },
-      { q: "Which scientist showed that DNA (not protein) carries genetic information (1944 experiment with bacteria)?", o: ["Watson and Crick", "Chargaff", "Avery", "Franklin"], a: 2, e: "Oswald Avery's experiments with bacteria demonstrated DNA is the transforming principle — genetic material.", h: "Who proved DNA carries genes?", yr: "GST" },
-      { q: "Watson and Crick's 1953 model of DNA was based on evidence from:", o: ["Only their own experiments", "Chargaff's rules, Franklin's X-ray diffraction, and model building", "Only Darwin's theory", "Mendel's pea plants"], a: 1, e: "Watson and Crick used Chargaff's base-pairing rules, Franklin's Photo 51 (helix evidence), and model building to propose double helix.", h: "What evidence did Watson and Crick use?", yr: "GST" },
-      { q: "The Human Genome Project completed mapping of human DNA in:", o: ["1975", "1990", "2003", "2015"], a: 2, e: "Project started 1990, completed 2003 — mapped 3 billion base pairs of human DNA.", h: "When was human genome sequenced?", yr: "GST" },
-      { q: "Louis Pasteur's swan-neck flask experiment disproved:", o: ["Germ theory", "Spontaneous generation — that life arises from non-life", "Vaccination", "Fermentation"], a: 1, e: "Swan-neck flasks allowed air but not microbes; broth remained sterile, disproving spontaneous generation.", h: "What did Pasteur's swan-neck flask disprove?", yr: "GST" },
-      { q: "Koch's postulates are criteria for:", o: ["Classifying plants", "Establishing that a specific microbe causes a specific disease", "Naming chemical compounds", "Classifying animals"], a: 1, e: "Koch's four postulates provide rigorous evidence that a particular microorganism causes a particular disease.", h: "What are Koch's postulates for?", yr: "GST" },
-      { q: "Which of the following is an example of homologous structures?", o: ["Bird wing and insect wing", "Human arm and whale flipper", "Butterfly wing and bird wing", "Fish fin and dolphin flipper (different underlying structure)"], a: 1, e: "Homologous: same underlying bone structure, different function (human arm, whale flipper, bird wing, bat wing).", h: "Which share common ancestry?", yr: "GST" },
-      { q: "The 'modern synthesis' of evolutionary biology integrated:", o: ["Darwin and Lamarck", "Darwin and Mendel (natural selection with genetics)", "Lamarck and Mendel", "Darwin and Wallace"], a: 1, e: "Modern synthesis (1930s-40s) combined Darwinian natural selection with Mendelian genetics, explaining mechanism of heredity.", h: "What was combined in modern synthesis?", yr: "GST" },
-      { q: "Rosalind Franklin's contribution to DNA discovery was:", o: ["Proposing double helix model", "X-ray diffraction image (Photo 51) showing DNA's helical structure", "Discovering base-pairing rules", "Isolating DNA"], a: 1, e: "Franklin's Photo 51 provided crucial evidence that DNA is a helix with regular repeating structure — used by Watson and Crick.", h: "What did Franklin contribute?", yr: "GST" },
-      { q: "Antibiotic resistance in bacteria is an example of:", o: ["Lamarckian evolution", "Natural selection in action — bacteria with resistance genes survive and reproduce", "Creationism", "Spontaneous generation"], a: 1, e: "Overuse of antibiotics selects for resistant bacteria — natural selection observed directly.", h: "What shows evolution happening now?", yr: "GST" },
-      { q: "Which scientist developed the first vaccines (rabies, anthrax) and pasteurization?", o: ["Koch", "Pasteur", "Lister", "Jenner"], a: 1, e: "Pasteur developed vaccines for rabies and anthrax; also pasteurization to kill microbes in milk, beer, wine.", h: "Who developed pasteurization?", yr: "GST" },
-      { q: "Chargaff's rules state that in DNA:", o: ["A = T and G = C", "A = G and T = C", "A = C and G = T", "All bases are equal"], a: 0, e: "Chargaff's rules: amount of adenine equals thymine (A=T) and guanine equals cytosine (G=C) — key to base-pairing.", h: "What matches with what in DNA?", yr: "GST" },
-      { q: "The theory that all cells come from pre-existing cells is called:", o: ["Spontaneous generation", "Omnis cellula e cellula (Virchow)", "Biogenesis", "Cell fusion"], a: 1, e: "Virchow's 'omnis cellula e cellula' (every cell from a cell) — third principle of cell theory.", h: "Where do new cells come from?", yr: "GST" }
-    ]
+      {
+        q: "Antoine-Laurent Lavoisier is called the 'father of modern chemistry' primarily because:",
+        o: [
+          'He invented the laboratory and most of its equipment',
+          "He overthrew phlogiston theory, established oxygen's role in combustion, formulated the Law of Conservation of Mass, and systematized chemical nomenclature",
+          'He discovered all 33 elements in his table',
+          'He developed the atomic theory underlying modern chemistry',
+        ],
+        a: 1,
+        e: "Lavoisier transformed chemistry: disproved phlogiston through careful experiments showing oxygen's role in combustion; established Law of Conservation of Mass; showed water is H₂O, not an element; defined chemical elements operationally; developed systematic chemical nomenclature.",
+        h: 'Lavoisier = father of chemistry = oxygen combustion + conservation of mass + elements defined.',
+        yr: 'GST',
+      },
+      {
+        q: "Darwin's theory of natural selection is based on which logical sequence?",
+        o: [
+          'Organisms improve toward perfection through use and disuse',
+          'Variation + Inheritance + Overproduction + Differential Survival → Evolution of populations over time',
+          'God created species with slight variations for different environments',
+          'Organisms directly change to suit their environment and pass changes to offspring',
+        ],
+        a: 1,
+        e: "Darwin's argument: individuals vary in heritable traits; more offspring produced than can survive; individuals with better-suited traits survive and reproduce (natural selection); traits accumulate over generations (evolution). Each premise is independently observable.",
+        h: "Darwin's sequence: Variation + Inheritance + Overproduction → Natural Selection → Evolution.",
+        yr: 'GST',
+      },
+      {
+        q: 'Gregor Mendel discovered the laws of inheritance using experiments on:',
+        o: [
+          'Fruit flies in laboratory conditions',
+          'Galapagos finches on Pacific islands',
+          'Pea plants (Pisum sativum) in the monastery garden at Brünn',
+          'Laboratory mice bred over multiple generations',
+        ],
+        a: 2,
+        e: 'Mendel conducted his landmark experiments on pea plants in the Augustinian monastery garden at Brünn (1856–1863). Chosen for distinct traits, easy cross-fertilization, and many offspring for statistical analysis.',
+        h: 'Mendel = pea plants (Pisum sativum) = monastery garden at Brünn.',
+        yr: 'GST',
+      },
+      {
+        q: "Koch's Postulates are criteria for:",
+        o: [
+          'Testing the safety of new vaccines',
+          'Establishing that a specific microorganism is the causative agent of a specific disease',
+          'Determining antibiotic effectiveness',
+          'Classifying bacteria into species',
+        ],
+        a: 1,
+        e: "Koch's Postulates: (1) microorganism found in all disease cases; (2) isolated and grown in pure culture; (3) cultured microbe causes disease when introduced to healthy host; (4) microbe re-isolated from experimentally diseased host. Established bacteriology on a rigorous foundation.",
+        h: "Koch's Postulates = criteria to prove a specific microorganism CAUSES a specific disease.",
+        yr: 'GST',
+      },
+      {
+        q: "James Hutton's principle of uniformitarianism implied:",
+        o: [
+          'All geological processes today are identical to the past in every detail',
+          "Geological processes operating today operated throughout Earth's history at similar rates, implying Earth must be vastly older than previously believed",
+          'Geological formations are uniform in composition',
+          'The laws of chemistry and physics do not change over time',
+        ],
+        a: 1,
+        e: "Hutton's uniformitarianism: the same geological processes (erosion, sedimentation) operating today operated throughout history. Given how slow these processes are, Earth must be enormously old — contradicting the ~6,000 years implied by biblical chronology.",
+        h: 'Uniformitarianism = present processes explain past geology = Earth must be VERY old (deep time).',
+        yr: 'GST',
+      },
+      {
+        q: "Louis Pasteur's swan-neck flask experiment (1861) definitively disproved:",
+        o: [
+          'The germ theory of disease',
+          'The theory that bacteria cause fermentation',
+          'Spontaneous generation — the idea that living organisms can arise from non-living matter',
+          'The miasma theory of disease',
+        ],
+        a: 2,
+        e: "Pasteur's swan-neck flask: broth in S-curved flasks stayed sterile; when necks were broken, broth quickly became turbid. Proved microorganisms come from the air, not spontaneously from the broth. All life from pre-existing life (biogenesis).",
+        h: "Pasteur's swan-neck flask = disproved spontaneous generation = all life from pre-existing life (biogenesis).",
+        yr: 'GST',
+      },
+      {
+        q: "Michael Faraday's discovery of electromagnetic induction demonstrated that:",
+        o: [
+          'Electricity and magnetism are different aspects of the same force',
+          'A changing magnetic field induces an electric current — the principle behind electric generators',
+          'Light is an electromagnetic wave',
+          'Magnets attract non-magnetic moving materials',
+        ],
+        a: 1,
+        e: 'Faraday (1831): a changing magnetic field induces an electric current. This is electromagnetic induction — the principle underlying all electric generators and transformers. It enabled the electrical phase of the Industrial Revolution.',
+        h: 'Faraday = electromagnetic induction = changing magnetic field induces current = basis for generators.',
+        yr: 'GST',
+      },
+      {
+        q: "James Clerk Maxwell's most important contribution to physics was:",
+        o: [
+          'Discovering electromagnetic induction',
+          'Deriving four equations unifying electricity, magnetism, and light as electromagnetic waves — and predicting the existence of radio waves',
+          'Formulating the laws of thermodynamics',
+          'Developing the special theory of relativity',
+        ],
+        a: 1,
+        e: "Maxwell's equations (1864) unified electricity, magnetism, and optics — light is an electromagnetic wave. He predicted other electromagnetic waves. Hertz confirmed radio waves in 1887. Maxwell's work was the 19th century's greatest theoretical physics achievement and directly influenced Einstein.",
+        h: "Maxwell = four equations unifying E+M+light = predicted radio waves. 19th century's greatest physics.",
+        yr: 'GST',
+      },
+      {
+        q: 'The miasma theory of disease claimed:',
+        o: [
+          'Diseases were caused by tiny invisible organisms in the air',
+          "Diseases were caused by 'bad air' (miasma) from rotting organic matter",
+          'Diseases were punishments from supernatural forces',
+          'Diseases spread through physical contact',
+        ],
+        a: 1,
+        e: 'The miasma theory (dominant before mid-19th century) held that diseases like cholera, malaria, and plague were caused by toxic air from decaying organic matter. Though wrong about mechanism, it led to useful sanitation reforms. Pasteur and Koch replaced it with germ theory.',
+        h: "Miasma theory = disease caused by 'bad air' from rotting matter. Replaced by germ theory.",
+        yr: 'GST',
+      },
+      {
+        q: "Mendel's Law of Segregation states:",
+        o: [
+          'Different traits are inherited independently',
+          'Dominant traits always mask recessive traits',
+          'Each organism carries two copies of each heritable unit; these separate when forming sex cells — each gamete carries one copy',
+          'Traits are inherited in 3:1 ratios in the second generation',
+        ],
+        a: 2,
+        e: "Law of Segregation: each organism possesses two 'factors' (alleles) for each hereditary trait. During reproduction, these separate — each sex cell (gamete) receives only one copy. When egg and sperm combine, offspring receives one factor from each parent.",
+        h: 'Law of Segregation = two copies per trait → separate into gametes → each gamete gets one copy.',
+        yr: 'GST',
+      },
+      {
+        q: "Alfred Russel Wallace's significance in evolutionary theory is that:",
+        o: [
+          "He conducted first laboratory experiments confirming Darwin's theory",
+          'He independently developed natural selection and his 1858 letter to Darwin prompted Darwin to publish Origin of Species',
+          'He provided the genetic mechanism Darwin lacked',
+          "He was Darwin's fieldwork collaborator",
+        ],
+        a: 1,
+        e: 'Wallace independently developed natural selection while in the Malay Archipelago in 1858. His letter to Darwin prompted Darwin — developing the same idea for 20 years without publishing — to act quickly. Darwin and Wallace jointly presented the theory to the Linnean Society in 1858.',
+        h: 'Wallace = independently developed natural selection = his 1858 letter → Darwin published Origin (1859).',
+        yr: 'GST',
+      },
+      {
+        q: "John Dalton's atomic theory proposed:",
+        o: [
+          'Atoms are composed of smaller particles (protons, neutrons, electrons)',
+          'All matter is composed of atoms; each element has its own unique atom; atoms combine in fixed whole-number ratios',
+          'Atoms can be created or destroyed in chemical reactions',
+          'Atoms are indivisible particles orbiting a central void',
+        ],
+        a: 1,
+        e: "Dalton's atomic theory: (1) all matter composed of indivisible atoms; (2) all atoms of an element identical; (3) atoms of different elements differ; (4) atoms cannot be created/destroyed; (5) atoms combine in simple whole-number ratios in compounds.",
+        h: 'Dalton = atomic theory: all matter = atoms; each element has unique atoms; combine in fixed ratios.',
+        yr: 'GST',
+      },
+      {
+        q: 'The First Law of Thermodynamics states:',
+        o: [
+          'Entropy of an isolated system always increases',
+          'Energy cannot be created or destroyed — only transformed from one form to another',
+          'Heat flows spontaneously from hot to cold',
+          'The efficiency of a heat engine is limited by temperature difference',
+        ],
+        a: 1,
+        e: 'First Law (Energy Conservation): the total energy of an isolated system is constant. Energy can be transformed (heat → mechanical, chemical → electrical) but cannot be created or destroyed.',
+        h: 'First Law of Thermodynamics = conservation of energy.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'Modern Evolutionary Synthesis' (1930s–1940s) unified:",
+        o: [
+          "Darwin's natural selection with Pasteur's germ theory",
+          "Darwin's natural selection with Mendel's genetics — creating the foundation of modern evolutionary biology",
+          "Mendel's genetics with Koch's germ theory",
+          "Lamarck's theory with Darwinism",
+        ],
+        a: 1,
+        e: "The Modern Evolutionary Synthesis (neo-Darwinism) merged: Darwin's natural selection + Mendelian genetics + population genetics. Key architects: Fisher, Haldane, Wright, Dobzhansky, Mayr.",
+        h: "Modern Evolutionary Synthesis = Darwin's natural selection + Mendel's genetics = neo-Darwinism.",
+        yr: 'GST',
+      },
+      {
+        q: 'Joseph Lister applied germ theory to surgery by:',
+        o: [
+          'Developing the first antibiotics',
+          'Introducing antiseptic techniques (carbolic acid) that dramatically reduced post-surgical deaths',
+          'Sterilizing instruments in an autoclave',
+          'Requiring surgeons to operate in germ-free environments',
+        ],
+        a: 1,
+        e: "Joseph Lister (1827–1912) applied Pasteur's germ theory: using carbolic acid (phenol) to sterilize instruments and wounds. Before antisepsis, post-surgical death rates were as high as 50%. Lister's ward mortality dropped dramatically. He is the 'father of antiseptic surgery.'",
+        h: 'Lister = applied germ theory to surgery = antiseptic surgery (carbolic acid) = reduced surgical deaths.',
+        yr: 'GST',
+      },
+      {
+        q: "Lavoisier's Law of Conservation of Mass states:",
+        o: [
+          'Mass of a substance is conserved when it changes state',
+          'Total mass of reactants in a chemical reaction equals total mass of products — matter neither created nor destroyed',
+          'Chemical elements maintain mass when combined',
+          'Mass in the universe has been constant since the Big Bang',
+        ],
+        a: 1,
+        e: "Lavoisier's Law of Conservation of Mass: in any chemical reaction, the total mass of reactants equals the total mass of products. Matter is neither created nor destroyed. Established by conducting reactions in sealed vessels and carefully weighing materials.",
+        h: 'Conservation of Mass (Lavoisier) = total mass reactants = total mass products.',
+        yr: 'GST',
+      },
+      {
+        q: "Georges Cuvier's contribution to 19th-century science was:",
+        o: [
+          'That all geological features can be explained by currently observable processes',
+          'Founding paleontology through comparative anatomy of fossils, and demonstrating that many fossil species had become extinct',
+          'That species evolve gradually through environmental pressure',
+          'That bacteria cause infectious diseases',
+        ],
+        a: 1,
+        e: 'Cuvier (1769–1832) founded paleontology. Through comparative anatomy of fossil and living organisms, he showed fossils represent organisms that no longer exist (extinction); different geological strata contain different fossil assemblages; catastrophic events periodically wiped out species (catastrophism).',
+        h: 'Cuvier = paleontology + established extinction of species + comparative anatomy of fossils.',
+        yr: 'GST',
+      },
+      {
+        q: "Mendel's work was ignored for 34 years (1866–1900) primarily because:",
+        o: [
+          'It was published in a German journal unavailable outside central Europe',
+          "Mendel's statistical approach was unusual for biology and his paper was published in an obscure regional journal with limited circulation",
+          "Darwin's contemporaries dismissed genetics as irrelevant",
+          'Church authorities suppressed the publication',
+        ],
+        a: 1,
+        e: 'Mendel published in the Proceedings of the Natural History Society of Brünn (1866) — a journal with very limited circulation. His mathematical, statistical approach was unusual for biology. Rediscovered simultaneously by De Vries, Correns, and von Tschermak in 1900.',
+        h: 'Mendel ignored 1866–1900 = obscure journal + statistical approach unusual for biology.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Second Law of Thermodynamics states:',
+        o: [
+          'Energy cannot be created or destroyed',
+          'In an isolated system, entropy (disorder) tends to increase — heat flows spontaneously from hot to cold',
+          'The entropy of a perfect crystal at absolute zero is zero',
+          'The efficiency of any heat engine must exceed 50%',
+        ],
+        a: 1,
+        e: "Second Law: entropy (disorder) always increases in isolated systems. Heat flows hot → cold spontaneously (not the reverse). Processes are irreversible — gives the universe a 'direction of time' (time's arrow). Explains why perpetual motion machines are impossible.",
+        h: "Second Law = entropy increases in isolated systems. Heat flows hot → cold. Time's arrow.",
+        yr: 'GST',
+      },
+      {
+        q: "Pasteur's work on spontaneous generation was historically significant because:",
+        o: [
+          'It proved bacteria cannot survive boiling temperatures',
+          'It definitively refuted the ancient idea that life can arise from non-living matter — establishing biogenesis (all life from pre-existing life)',
+          'It showed fermentation is purely chemical',
+          'It proved viruses, not bacteria, cause most diseases',
+        ],
+        a: 1,
+        e: "Pasteur's swan-neck flask experiments definitively ended the spontaneous generation debate. By showing microorganisms enter from the air (not arising from broth), he established biogenesis — all life from pre-existing life. Fundamental to biology and medicine.",
+        h: 'Pasteur = spontaneous generation DISPROVED = biogenesis (all life from pre-existing life).',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 7: Philosophy of Science — Realism, Anti-Realism, and Values in Science
-  // ==========================================================================
   {
-    topic: "Philosophy of Science — Realism, Anti-Realism, and Values in Science",
-    topicCode: "HPS-007-01",
-    module: "Philosophy of Science",
+    topic: '20th Century Science',
+    topicCode: 'HPS-20C-08',
+    module: 'Module 8: Modern Scientific Revolutions',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Scientific realism and anti-realism</span> debate whether scientific theories describe a mind-independent reality. Do electrons, quarks, and black holes really exist, or are they merely useful fictions? This question has profound implications for what science tells us about the world. <strong>Understanding these positions helps you evaluate scientific claims critically</strong>.
-</div>
-
-<p class="learn-p">While scientists typically assume their theories refer to real entities, philosophers ask: Is this assumption justified? How can we know that unobservable entities (atoms, electrons, genes, black holes) actually exist? The debate between realists and anti-realists addresses these questions.</p>
-
-<h3 class="learn-subheading">Scientific Realism</h3>
-
-<p class="learn-p"><strong>Scientific realism</strong> holds that:</p>
-<ul class="learn-list">
-  <li>Theoretical terms (like "electron," "gene," "black hole") refer to real entities</li>
-  <li>Scientific theories are approximately true descriptions of the world</li>
-  <li>Science aims for truth and often achieves it (at least approximately)</li>
-  <li>Unobservable entities posited by mature scientific theories actually exist</li>
-</ul>
-
-<p class="learn-p"><strong>Arguments for realism:</strong></p>
-<ul class="learn-list">
-  <li><strong>No miracles argument (Putnam):</strong> The success of science would be a miracle if theories weren't approximately true. How else to explain that theories make accurate predictions (e.g., Einstein's relativity predicting light bending)?</li>
-  <li><strong>Common cause (inference to best explanation):</strong> We infer electrons exist because they best explain observed phenomena (cloud chamber tracks, chemical reactions, electricity).</li>
-  <li><strong>Continuity of reference:</strong> Even when theories change, terms often refer to same real entities. "Atom" in Dalton meant indivisible; now we know atoms divisible — but still refers to same entity.</li>
-</ul>
-
-<h3 class="learn-subheading">Anti-Realism — Empiricism and Instrumentalism</h3>
-
-<p class="learn-p"><strong>Anti-realists</strong> argue that we should not believe in unobservable entities — or that belief is unnecessary.</p>
-
-<p class="learn-p"><strong>Bas van Fraassen — Constructive Empiricism:</strong></p>
-<ul class="learn-list">
-  <li>Science aims for empirical adequacy, not truth about unobservables</li>
-  <li>A theory is acceptable if it correctly predicts observable phenomena — regardless of whether its unobservable entities "really exist"</li>
-  <li>We should believe theories only about what is observable</li>
-</ul>
-
-<p class="learn-p"><strong>Instrumentalism:</strong></p>
-<ul class="learn-list">
-  <li>Theories are tools (instruments) for predicting phenomena, not descriptions of reality</li>
-  <li>Debate about whether electrons "really exist" is pointless — they are useful fictions</li>
-  <li>Associated with logical positivists and pragmatists (Dewey, Rorty)</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🔭 SCIENTIFIC REALISM vs ANTI-REALISM</text>
-    
-    <!-- Realism Side -->
-    <g>
-      <rect x="15" y="45" width="225" height="190" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-      <rect x="15" y="45" width="225" height="30" rx="10" fill="#3b82f6"/>
-      <text x="127" y="66" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="800">🔬 SCIENTIFIC REALISM</text>
-      
-      <text x="127" y="95" text-anchor="middle" font-size="8" fill="#1e3a8a">Theories are (approximately) true</text>
-      <text x="127" y="115" text-anchor="middle" font-size="8" fill="#1e3a8a">Unobservable entities (atoms,</text>
-      <text x="127" y="132" text-anchor="middle" font-size="8" fill="#1e3a8a">electrons, black holes) really exist</text>
-      <text x="127" y="155" text-anchor="middle" font-size="8" fill="#1e3a8a">No miracles argument: success</text>
-      <text x="127" y="172" text-anchor="middle" font-size="8" fill="#1e3a8a">of science would be miracle</text>
-      <text x="127" y="192" text-anchor="middle" font-size="8" fill="#1e3a8a">if theories not (approx.) true</text>
-      
-      <circle cx="127" cy="218" r="6" fill="#3b82f6" opacity="0.5">
-        <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    
-    <!-- Anti-Realism Side -->
-    <g>
-      <rect x="260" y="45" width="225" height="190" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <rect x="260" y="45" width="225" height="30" rx="10" fill="#22c55e"/>
-      <text x="372" y="66" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="800">🔎 ANTI-REALISM</text>
-      
-      <text x="372" y="95" text-anchor="middle" font-size="8" fill="#166534">Theories aim for empirical</text>
-      <text x="372" y="112" text-anchor="middle" font-size="8" fill="#166534">adequacy — NOT truth about</text>
-      <text x="372" y="129" text-anchor="middle" font-size="8" fill="#166534">unobservables (van Fraassen)</text>
-      <text x="372" y="155" text-anchor="middle" font-size="8" fill="#166534">Theories as instruments for</text>
-      <text x="372" y="172" text-anchor="middle" font-size="8" fill="#166534">prediction — not descriptions</text>
-      <text x="372" y="192" text-anchor="middle" font-size="8" fill="#166534">of reality (instrumentalism)</text>
-      
-      <circle cx="372" cy="218" r="6" fill="#22c55e" opacity="0.5">
-        <animate attributeName="r" values="6;10;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Pessimistic Induction</h3>
-
-<p class="learn-p">Anti-realists pose a powerful challenge: the history of science is littered with theories once believed true but later abandoned. These theories posited unobservable entities that turned out not to exist.</p>
-
-<p class="learn-p"><strong>Examples of abandoned theories:</strong></p>
-<ul class="learn-list">
-  <li><strong>Phlogiston theory:</strong> Combustible materials contained "phlogiston" released during burning. No such thing.</li>
-  <li><strong>Caloric theory:</strong> Heat was a fluid ("caloric") that flowed between objects. No such fluid.</li>
-  <li><strong>Luminiferous ether:</strong> Light waves needed a medium (ether) to travel through. No ether.</li>
-  <li><strong>Ptolemaic astronomy:</strong> Planets moved on epicycles around Earth. False.</li>
-</ul>
-
-<p class="learn-p"><strong>Pessimistic induction argument:</strong> Most past theories were false. Therefore, current theories are likely also false (or at least not true about unobservables). Why should we believe electrons are any different from phlogiston?</p>
-
-<p class="learn-p"><strong>Realist responses:</strong></p>
-<ul class="learn-list">
-  <li><strong>Continuity of reference:</strong> Past theories weren't entirely wrong — they were partially true (Newton's physics still works for most purposes).</li>
-  <li><strong>Mature theories:</strong> Distinguish between immature theories (quickly abandoned) and mature theories (successful over long periods). Mature theories (quantum mechanics, relativity) have impressive predictive success.</li>
-  <li><strong>No miracle argument revisited:</strong> The success of mature theories is best explained by their approximate truth.</li>
-</ul>
-
-<h3 class="learn-subheading">Underdetermination of Theory by Evidence</h3>
-
-<p class="learn-p">The underdetermination thesis states that for any body of evidence, there are multiple (even infinitely many) logically possible theories consistent with that evidence. Evidence alone cannot uniquely determine which theory is correct.</p>
-
-<p class="learn-p"><strong>Example:</strong> Observing the sun rise every day is consistent with:</p>
-<ul class="learn-list">
-  <li>Newtonian gravity (Earth rotates, sun stationary)</li>
-  <li>Geocentrism (sun revolves around Earth — with complex epicycles)</li>
-  <li>Simulation hypothesis (sunrise is simulated)</li>
-  <li>Last Thursdayism (universe created last Thursday with appearance of age)</li>
-</ul>
-
-<p class="learn-p">Scientists appeal to non-empirical criteria to choose between theories: simplicity, explanatory power, coherence with other theories, fruitfulness (predicting novel facts). But these are philosophical, not purely empirical, criteria.</p>
-
-<p class="learn-p"><strong>Implication:</strong> If underdetermination is correct, then empirical evidence alone never forces belief in a particular theory. Realists must appeal to additional criteria; anti-realists argue that since empirical evidence can't decide, we should withhold belief about unobservables.</p>
-
-<h3 class="learn-subheading">Values in Science — Objectivity and Bias</h3>
-
-<p class="learn-p">Can science be value-free? Should it be? The relationship between science and values is debated.</p>
-
-<p class="learn-p"><strong>Traditional view (value-free ideal):</strong> Science should be objective, unbiased by social, political, or personal values. Values only enter in choosing research topics and applying science — not in evaluating evidence or accepting theories.</p>
-
-<p class="learn-p"><strong>Challenges to value-free ideal:</strong></p>
-<ul class="learn-list">
-  <li><strong>Underdetermination:</strong> When evidence underdetermines theory choice, scientists must use non-empirical criteria (simplicity, etc.) — which may embed values</li>
-  <li><strong>Inductive risk (Rudner):</strong> Scientists must decide when evidence is sufficient to accept a hypothesis. This involves weighing consequences of being wrong. Value judgments about acceptable risk are unavoidable.</li>
-  <li><strong>Feminist philosophy of science (Harding, Longino):</strong> Science has historically been biased by male, Western, colonial perspectives. Question: Are there distinctively feminist perspectives that improve science?</li>
-  <li><strong>Socially relevant science (climate change, public health, genetic engineering):</strong> Cannot be separated from social values. Questions about what to study, how to frame problems, what counts as evidence.</li>
-</ul>
-
-<p class="learn-p"><strong>Where values legitimately belong (according to most philosophers):</strong></p>
-<ul class="learn-list">
-  <li>Choice of research problems (what to study)</li>
-  <li>Methodology (how to study — ethical constraints on research with human or animal subjects)</li>
-  <li>Application of science (what to do with findings)</li>
-  <li>Risk assessment (how much evidence is enough before acting, e.g., drug approval, climate policy)</li>
-</ul>
-
-<p class="learn-p"><strong>Where values should NOT influence science (according to most):</strong></p>
-<ul class="learn-list">
-  <li>Evaluation of evidence (should not ignore evidence because it conflicts with political or religious beliefs)</li>
-  <li>Acceptance of theories (should not accept or reject theories based on desired conclusions)</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Concept:</strong> Inductive risk (Carl Hempel, Richard Rudner) — when scientists accept or reject a hypothesis, they risk being wrong. The acceptable level of risk depends on the consequences of error. For example, accepting a new drug as safe has different consequences than accepting a theory about distant galaxies. Value judgments about acceptable risk are unavoidable in science.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Explain the pessimistic induction. How might a scientific realist respond?" (Sample answer: The pessimistic induction notes that past theories (phlogiston, caloric, ether) were false; therefore, current theories will likely also be false. Realists respond: past theories weren't entirely false — they were approximately true in their domains (Newton's physics still works). Also, distinguish mature theories (long successful) from immature ones. The success of mature theories would be a miracle if they weren't approximately true.)</span>
-</div>
-    `,
+<div class="learn-intro">The 20th century produced the most rapid scientific advances in history: Einstein's relativity replaced Newton's framework; quantum mechanics revealed a probabilistic subatomic world; Watson, Crick, and Franklin discovered DNA's double helix; the Big Bang established modern cosmology; plate tectonics unified geology; and the Human Genome Project opened genomic medicine.</div>
+<h3 class="learn-subheading">8.1 Special Theory of Relativity (Einstein, 1905)</h3>
+<p class="learn-p">Two postulates: (1) Laws of physics same for all observers in uniform motion; (2) Speed of light constant for all observers. Consequences: Time dilation (moving clocks run slower), length contraction, mass-energy equivalence — <span class="learn-keyword">E=mc²</span> (tiny mass = enormous energy). E=mc² is the basis for nuclear energy. Nothing can travel faster than light.</p>
+<h3 class="learn-subheading">8.2 General Theory of Relativity (Einstein, 1915)</h3>
+<p class="learn-p">Gravity is not a force but the <span class="learn-keyword">curvature of spacetime</span> caused by mass/energy. Predictions confirmed: light bends around massive objects (Eddington, 1919); gravitational time dilation; black holes; gravitational waves (LIGO, 2015). GPS must correct for relativistic effects — without correction, errors ~10 km/day.</p>
+<h3 class="learn-subheading">8.3 Quantum Mechanics (1900–1930s)</h3>
+<p class="learn-p"><span class="learn-keyword">Max Planck (1900)</span>: energy emitted in discrete quanta (E=hf). <span class="learn-keyword">Einstein</span>: photoelectric effect — light comes in photons. <span class="learn-keyword">Bohr</span>: atomic model with discrete electron energy levels — explained atomic spectra. <span class="learn-keyword">Heisenberg's Uncertainty Principle</span>: ΔxΔp ≥ ℏ/2 — fundamental limit on simultaneous knowledge of position and momentum (NOT a measurement limitation). <span class="learn-keyword">Wave-particle duality</span>: quantum entities exhibit both wave behaviors (interference) and particle behaviors (discrete impacts). Applications: transistors, lasers, MRI, solar cells — entire digital revolution built on quantum mechanics.</p>
+<h3 class="learn-subheading">8.4 DNA Double Helix (1953)</h3>
+<p class="learn-p"><span class="learn-keyword">Rosalind Franklin</span>: X-ray crystallography → Photo 51 — revealed DNA's helical structure, dimensions, phosphate backbone position. <span class="learn-keyword">Watson and Crick</span>: built physical models using Franklin's Photo 51 (shared without her knowledge by Wilkins) + Chargaff's rules (A-T, G-C pairing) → proposed double helix model April 1953. Nobel Prize 1962: Watson, Crick, Wilkins. Franklin died 1958 — Nobel Prizes not posthumous. <span class="learn-keyword">Central dogma</span>: DNA → RNA → Protein.</p>
+<h3 class="learn-subheading">8.5 Big Bang Theory</h3>
+<p class="learn-p"><span class="learn-keyword">Georges Lemaître (1927)</span>: first proposed expanding universe from Einstein's equations — implied a beginning ("primeval atom"). <span class="learn-keyword">Edwin Hubble (1929)</span>: Hubble's Law — distant galaxies recede at speeds proportional to distance — observational evidence for expanding universe. <span class="learn-keyword">Penzias and Wilson (1965)</span>: discovered Cosmic Microwave Background (CMB) at 2.7 K — afterglow of Big Bang — decisive evidence. Universe age: ~13.8 billion years. Composition: ~5% ordinary matter, ~27% dark matter, ~68% dark energy.</p>
+<h3 class="learn-subheading">8.6 Plate Tectonics</h3>
+<p class="learn-p"><span class="learn-keyword">Alfred Wegener (1912)</span>: continental drift — matching coastlines, identical fossil species on separated continents, matching rock formations. Rejected because no mechanism known. <span class="learn-keyword">Harry Hess (1962)</span>: sea-floor spreading — new crust forms at mid-ocean ridges, sinks at trenches. Vine and Matthews (1963): symmetric magnetic reversal patterns confirmed it. Plate tectonics accepted 1960s–70s: explains earthquakes, volcanoes, mountain building.</p>
+<h3 class="learn-subheading">8.7 Genomics</h3>
+<p class="learn-p"><span class="learn-keyword">Human Genome Project (1990–2003)</span>: sequenced all ~3 billion base pairs of human DNA. Led by Collins (public) and Venter (private). <span class="learn-keyword">CRISPR-Cas9 (2012)</span>: Doudna and Charpentier (Nobel Chemistry 2020) — precise gene editing transforming medicine and agriculture.</p>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Development</th><th>Year</th><th>Key Figure(s)</th><th>Core Idea</th></tr></thead><tbody>
+<tr><td>Special Relativity</td><td>1905</td><td>Einstein</td><td>Speed of light constant; E=mc²; time dilation</td></tr>
+<tr><td>General Relativity</td><td>1915</td><td>Einstein</td><td>Gravity = spacetime curvature; black holes; gravitational waves (LIGO 2015)</td></tr>
+<tr><td>Quantum Mechanics</td><td>1900–1930</td><td>Planck, Bohr, Heisenberg, Schrödinger</td><td>Quanta; wave-particle duality; uncertainty principle</td></tr>
+<tr><td>DNA Double Helix</td><td>1953</td><td>Watson, Crick, Franklin, Wilkins</td><td>A-T, G-C base pairing; two antiparallel strands; implied replication mechanism</td></tr>
+<tr><td>Big Bang Theory</td><td>1927–1965</td><td>Lemaître, Hubble, Penzias, Wilson</td><td>Universe began 13.8 Bya from hot dense state; CMB as evidence</td></tr>
+<tr><td>Plate Tectonics</td><td>1912–1960s</td><td>Wegener, Hess, Vine, Matthews</td><td>Earth's lithosphere in moving plates; explains earthquakes, volcanoes</td></tr>
+<tr><td>Human Genome Project</td><td>2003</td><td>Collins, Venter</td><td>Sequenced all ~3 billion base pairs of human DNA</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="180" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Special Relativity — Consequences of E = mc²</text><circle cx="280" cy="100" r="50" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/></circle><text x="280" y="95" text-anchor="middle" fill="#FFD700" font-size="15" font-family="Georgia,serif" font-weight="bold">E = mc²</text><text x="280" y="110" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Einstein, 1905</text><rect x="15" y="48" width="105" height="40" rx="5" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="67" y="65" text-anchor="middle" fill="#ffaa80" font-size="8.5" font-family="Georgia,serif" font-weight="bold">Time Dilation</text><text x="67" y="80" text-anchor="middle" fill="#aaa" font-size="7.5" font-family="Georgia,serif">Moving clocks run slower</text><rect x="15" y="105" width="105" height="40" rx="5" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="67" y="122" text-anchor="middle" fill="#80ffaa" font-size="8.5" font-family="Georgia,serif" font-weight="bold">Length Contraction</text><text x="67" y="137" text-anchor="middle" fill="#aaa" font-size="7.5" font-family="Georgia,serif">Moving objects shorter</text><rect x="440" y="48" width="105" height="40" rx="5" fill="#0d3b6e" stroke="#a066e0" stroke-width="1.5"/><text x="492" y="65" text-anchor="middle" fill="#d4aaff" font-size="8.5" font-family="Georgia,serif" font-weight="bold">Nuclear Energy</text><text x="492" y="80" text-anchor="middle" fill="#aaa" font-size="7.5" font-family="Georgia,serif">Tiny mass = huge energy</text><rect x="440" y="105" width="105" height="40" rx="5" fill="#0d3b6e" stroke="#FFD700" stroke-width="1.5"/><text x="492" y="122" text-anchor="middle" fill="#FFD700" font-size="8.5" font-family="Georgia,serif" font-weight="bold">GPS Correction</text><text x="492" y="137" text-anchor="middle" fill="#aaa" font-size="7.5" font-family="Georgia,serif">Relativistic clock adjustment</text><text x="280" y="165" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">General Relativity (1915): gravity = spacetime curvature. Gravitational waves confirmed by LIGO (2015).</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 145" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="145" fill="#0a1628" rx="12"/><text x="280" y="22" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Big Bang — Timeline of the Universe</text><line x1="30" y1="80" x2="530" y2="80" stroke="#4a90d9" stroke-width="2"/><circle cx="30" cy="80" r="7" fill="#FFD700"><animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite"/></circle><text x="30" y="70" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif" font-weight="bold">Big Bang</text><text x="30" y="60" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">13.8 Bya</text><circle cx="120" cy="80" r="5" fill="#e05a2b"/><text x="120" y="70" text-anchor="middle" fill="#ffaa80" font-size="7.5" font-family="Georgia,serif">First atoms</text><text x="120" y="60" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">380,000 yr</text><circle cx="230" cy="80" r="5" fill="#2bcc71"/><text x="230" y="70" text-anchor="middle" fill="#80ffaa" font-size="7.5" font-family="Georgia,serif">First stars</text><circle cx="340" cy="80" r="5" fill="#4a90d9"/><text x="340" y="70" text-anchor="middle" fill="#90c8ff" font-size="7.5" font-family="Georgia,serif">Solar system</text><text x="340" y="60" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">4.6 Bya</text><circle cx="440" cy="80" r="5" fill="#a066e0"/><text x="440" y="70" text-anchor="middle" fill="#d4aaff" font-size="7.5" font-family="Georgia,serif">Life on Earth</text><text x="440" y="60" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">~3.8 Bya</text><circle cx="520" cy="80" r="5" fill="#fff"/><text x="520" y="70" text-anchor="middle" fill="#fff" font-size="7.5" font-family="Georgia,serif">Now</text><text x="280" y="108" text-anchor="middle" fill="#888" font-size="9" font-family="Georgia,serif">Lemaître (1927) → Hubble (1929, Hubble's Law) → Penzias &amp; Wilson (1965, CMB = decisive evidence)</text><text x="280" y="123" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Universe: ~5% ordinary matter + ~27% dark matter + ~68% dark energy</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Einstein: Special Relativity (1905) = E=mc², time dilation, speed of light constant; General Relativity (1915) = gravity as spacetime curvature, confirmed by LIGO (2015). QM: Planck (quanta, 1900), Bohr (atomic model), Heisenberg (uncertainty principle). DNA: Watson + Crick + Franklin + Wilkins (1953). Big Bang: Lemaître (1927, expanding universe) → Hubble (1929, observational evidence) → Penzias and Wilson (1965, CMB = decisive evidence). Plate tectonics: Wegener (1912) → Hess (sea-floor spreading, 1962) → accepted 1960s.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Hubble did NOT "discover" the Big Bang — Lemaître proposed expanding universe; Hubble provided observational evidence; Penzias and Wilson found decisive CMB evidence. Franklin's Photo 51 was critical but she did not receive the Nobel Prize (died 1958; Nobel Prizes not posthumous). CRISPR-Cas9 = Doudna + Charpentier (2020 Nobel in CHEMISTRY, not Medicine). Wave-particle duality: quantum entities are NEITHER purely waves NOR purely particles — they are something more fundamental that shows both properties.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> 20th century science: Einstein's relativity replaced Newton's framework for extreme conditions; quantum mechanics revealed probabilistic, wave-particle dual subatomic nature; DNA double helix launched molecular biology; Big Bang established modern cosmology; plate tectonics unified geology; Human Genome Project (2003) opened genomic medicine; CRISPR-Cas9 (2012) enables precise gene editing. These advances are foundations of 21st-century science.</div>`,
     questions: [
-      { q: "The 'no miracles argument' for scientific realism states that:", o: ["Science is full of miracles", "The success of science would be a miracle if theories weren't approximately true", "Miracles explain scientific discoveries", "Science cannot explain anything"], a: 1, e: "Putnam's no miracles argument: the predictive success of science (e.g., Einstein's relativity) would be inexplicable if theories weren't at least approximately true.", h: "Why is science so successful?", yr: "GST" },
-      { q: "Constructive empiricism (van Fraassen) holds that:", o: ["Science aims for truth about unobservables", "Science aims for empirical adequacy (correct predictions about observables), not truth about unobservables", "Unobservables do not exist", "Only observables exist"], a: 1, e: "Van Fraassen: we should only believe what is observable. Theories need only be empirically adequate — correctly predict observable phenomena.", h: "What is the goal of science according to van Fraassen?", yr: "GST" },
-      { q: "Instrumentalism views scientific theories as:", o: ["True descriptions of reality", "Tools or instruments for predicting phenomena, not descriptions of reality", "Falsifiable statements", "Paradigms"], a: 1, e: "Instrumentalism: theories are useful fictions — instruments for prediction. Debating whether electrons 'really exist' is pointless.", h: "What are theories according to instrumentalism?", yr: "GST" },
-      { q: "The pessimistic induction argues that:", o: ["Current theories will never be proven false", "Past theories were mostly false, so current theories likely are too", "Science always progresses", "All scientific theories are true"], a: 1, e: "Pessimistic induction: past theories (phlogiston, caloric, ether) were false; therefore, current theories (quantum mechanics, relativity) are likely also false (or at least wrong about unobservables).", h: "What does past science tell us about current theories?", yr: "GST" },
-      { q: "Which of the following is an example of a theory once believed true but later abandoned (used in pessimistic induction)?", o: ["Quantum mechanics", "Phlogiston theory of combustion", "General relativity", "Darwinian evolution"], a: 1, e: "Phlogiston theory (combustible materials contain 'phlogiston') was abandoned; quantum mechanics, relativity, and evolution are current mature theories.", h: "Which is a discarded theory?", yr: "GST" },
-      { q: "The underdetermination thesis states that:", o: ["Evidence always determines a unique theory", "For any evidence, multiple theories are consistent with it", "Theories are determined by experiments", "Evidence is irrelevant"], a: 1, e: "Underdetermination: evidence alone cannot uniquely determine which theory is correct — multiple theories can fit the same data.", h: "Does evidence force one theory?", yr: "GST" },
-      { q: "When evidence underdetermines theory choice, scientists appeal to criteria such as:", o: ["Popularity", "Simplicity, explanatory power, coherence with other theories", "Political alignment", "Personal preference"], a: 1, e: "Non-empirical criteria include simplicity (Occam's razor), explanatory power, coherence with other theories, and fruitfulness (predicting novel facts).", h: "What helps choose between theories when evidence doesn't?", yr: "GST" },
-      { q: "The concept of 'inductive risk' (Rudner) refers to:", o: ["Risk that induction will fail", "Risk of being wrong when accepting or rejecting a hypothesis — acceptable level depends on consequences of error", "Risk of experiments", "Risk of falsification"], a: 1, e: "Inductive risk: scientists must decide when evidence is sufficient. The acceptable risk of being wrong depends on consequences (e.g., drug approval vs. cosmology).", h: "What risk do scientists take when accepting a hypothesis?", yr: "GST" },
-      { q: "According to most philosophers, where do values legitimately enter science?", o: ["Evaluating evidence", "Accepting theories based on desired conclusions", "Choice of research problems, methodology (ethics), application, and risk assessment", "Nowhere — science should be completely value-free"], a: 2, e: "Values legitimately influence choice of problems, ethical methodology, application of findings, and risk assessment — not evaluation of evidence or acceptance of theories.", h: "Where should values NOT influence science?", yr: "GST" },
-      { q: "Feminist philosophy of science (Harding, Longino) argues that:", o: ["Science is completely objective", "Science has historically been biased by male, Western, colonial perspectives; feminist perspectives can improve science", "Women cannot do science", "Science should ignore gender"], a: 1, e: "Feminist philosophers argue that science has been biased by male and Western perspectives, and that including diverse perspectives improves objectivity.", h: "What bias has affected science historically?", yr: "GST" },
-      { q: "The luminiferous ether was a hypothesized medium for:", o: ["Sound waves", "Light waves (to travel through space)", "Radio waves", "Gravity"], a: 1, e: "19th-century physicists believed light waves needed a medium ('ether') to travel through space. Michelson-Morley experiment (1887) found no evidence for ether.", h: "What medium was supposed to carry light?", yr: "GST" },
-      { q: "A realist response to the pessimistic induction includes:", o: ["Abandoning science", "Past theories weren't entirely false — they were approximately true in their domains; distinguish mature from immature theories", "Accepting all past theories were completely false", "Ignoring history"], a: 1, e: "Realists argue past theories had partial truth (Newton still works for most purposes). Mature theories (long successful) are more likely to be approximately true.", h: "How can realists defend against pessimistic induction?", yr: "GST" },
-      { q: "Caloric theory held that:", o: ["Heat is a fluid ('caloric') that flows between objects", "Heat is molecular motion", "Heat is radiation", "Heat is energy"], a: 0, e: "Caloric theory (18th-19th c.) treated heat as a fluid. Abandoned after work by Rumford, Joule showing heat is motion, energy.", h: "What was heat according to caloric theory?", yr: "GST" },
-      { q: "According to the value-free ideal, values should:", o: ["Influence acceptance of theories", "Influence evaluation of evidence", "Only influence choice of research problems and application — not evidence evaluation or theory acceptance", "Be completely excluded from science"], a: 2, e: "Value-free ideal: values can guide what to study and how to apply science, but not evaluation of evidence or acceptance of theories.", h: "Where can values legitimately go?", yr: "GST" },
-      { q: "The term 'inductive risk' was developed by which philosopher?", o: ["Kuhn", "Popper", "Rudner and Hempel", "Feyerabend"], a: 2, e: "Carl Hempel and Richard Rudner developed inductive risk: scientists' decisions about accepting hypotheses involve risk, and acceptable risk depends on consequences.", h: "Who discussed risk in accepting hypotheses?", yr: "GST" },
-      { q: "Which of the following is a non-empirical criterion for theory choice?", o: ["Number of confirming observations", "Simplicity (Occam's razor)", "Popular vote", "Age of theory"], a: 1, e: "Simplicity (Occam's razor — don't multiply entities unnecessarily) is a non-empirical criterion used when evidence underdetermines theory choice.", h: "What is Occam's razor?", yr: "GST" },
-      { q: "The pessimistic induction is a challenge to:", o: ["Scientific anti-realism", "Scientific realism", "Instrumentalism", "Constructive empiricism"], a: 1, e: "Pessimistic induction challenges realism by arguing that past theories (thought true) were false, so current theories likely are too.", h: "Which position does the pessimistic induction attack?", yr: "GST" },
-      { q: "Which of the following best describes van Fraassen's constructive empiricism?", o: ["All unobservable entities exist", "Science should aim for truth about everything", "Science aims for empirical adequacy; belief should be limited to observables", "Only observables exist"], a: 2, e: "Constructive empiricism: theories need only be empirically adequate (correctly predict observables). We need not believe in unobservable entities.", h: "What should we believe according to van Fraassen?", yr: "GST" },
-      { q: "The underdetermination thesis implies that:", o: ["Science is irrational", "Empirical evidence alone never forces belief in a particular theory", "All theories are equally good", "Experiments are useless"], a: 1, e: "Underdetermination: multiple theories fit same evidence. Therefore, evidence alone cannot force belief in one theory.", h: "Does evidence determine theory uniquely?", yr: "GST" },
-      { q: "Which of the following is NOT a legitimate role for values in science according to most philosophers?", o: ["Choosing which research problems to study", "Deciding how much evidence is enough to approve a new drug (risk assessment)", "Ignoring evidence that conflicts with religious beliefs", "Setting ethical constraints on experiments"], a: 2, e: "Ignoring contradictory evidence is never legitimate. Values should not influence evaluation of evidence or acceptance of theories.", h: "What is NOT acceptable in science?", yr: "GST" }
-    ]
+      {
+        q: "Einstein's Special Theory of Relativity (1905) proposed which two fundamental postulates?",
+        o: [
+          "Speed of light depends on observer's motion; mass and energy are equivalent",
+          'Laws of physics same for all observers in uniform motion; speed of light in vacuum constant for all observers',
+          'Gravity is spacetime curvature; nothing travels faster than light',
+          'Time is absolute; space contracts for moving objects',
+        ],
+        a: 1,
+        e: "Special Relativity's two postulates: (1) principle of relativity — laws of physics identical for all inertial observers; (2) constancy of speed of light — light travels at c for all observers, regardless of motion. From these, Einstein derived time dilation, length contraction, and E=mc².",
+        h: 'Special Relativity: (1) physics laws same for all inertial observers; (2) speed of light constant for all.',
+        yr: 'GST',
+      },
+      {
+        q: "Einstein's General Theory of Relativity (1915) described gravity as:",
+        o: [
+          'A force transmitted instantaneously between masses',
+          'The curvature of spacetime caused by mass and energy — objects follow curved paths through curved spacetime',
+          'An electromagnetic force from charge of massive objects',
+          'A quantum field particle exchanged between masses',
+        ],
+        a: 1,
+        e: 'General Relativity: massive objects warp (curve) spacetime. Objects follow the straightest possible paths (geodesics) through curved spacetime — what we observe as gravitational attraction. Predictions confirmed: light bending (1919), gravitational waves (LIGO 2015), black holes.',
+        h: 'General Relativity = gravity = curvature of spacetime by mass/energy.',
+        yr: 'GST',
+      },
+      {
+        q: 'E = mc² means:',
+        o: [
+          'Energy equals mass times speed of light',
+          'A tiny amount of mass is equivalent to an enormous amount of energy — mass and energy are interconvertible',
+          'Mass of an object increases as speed approaches light',
+          'Electrons move at mass times speed of light',
+        ],
+        a: 1,
+        e: 'E=mc²: energy (E) = mass (m) × c squared. Since c is very large (~3×10⁸ m/s), c² is enormous. A tiny mass corresponds to a huge amount of energy — the basis for nuclear fission and fusion reactions.',
+        h: 'E=mc²: tiny mass = enormous energy. Basis for nuclear power and weapons.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Cosmic Microwave Background (CMB) radiation, discovered by Penzias and Wilson in 1965, is significant because:',
+        o: [
+          'It was first evidence that stars produce electromagnetic radiation across the spectrum',
+          'It is the afterglow of the Big Bang — residual heat from the early universe cooled to 2.7 K, providing decisive evidence for the Big Bang theory',
+          'It demonstrated that the universe is expanding',
+          'It showed that dark matter emits microwave radiation',
+        ],
+        a: 1,
+        e: 'The CMB is thermal radiation at ~2.7 K — the cooled remnant of intense radiation shortly after the Big Bang. Predicted in the 1940s; accidentally discovered by Penzias and Wilson in 1965. Decisive evidence for the Big Bang. Nobel Prize 1978.',
+        h: 'CMB = afterglow of Big Bang = residual heat at 2.7 K = decisive Big Bang evidence (1965).',
+        yr: 'GST',
+      },
+      {
+        q: "Heisenberg's Uncertainty Principle states:",
+        o: [
+          'Quantum measurements are always uncertain due to instrument limitations',
+          "The more precisely a particle's position is determined, the less precisely its momentum can be determined — a fundamental property of nature, NOT a measurement limitation",
+          'Particles below a certain size cannot be observed',
+          'Quantum states are inherently random and cannot be predicted',
+        ],
+        a: 1,
+        e: "Heisenberg's Uncertainty Principle (1927): ΔxΔp ≥ ℏ/2. Position and momentum uncertainties cannot simultaneously both be small. This is NOT about measurement disturbance — it is a fundamental feature of quantum systems.",
+        h: "Heisenberg's Uncertainty Principle: Δx·Δp ≥ ℏ/2. Fundamental nature, not measurement limitation.",
+        yr: 'GST',
+      },
+      {
+        q: 'The Watson-Crick double helix model of DNA (1953) revealed that:',
+        o: [
+          'DNA is single-stranded with bases pointing outward',
+          'DNA consists of two antiparallel strands held by complementary base pairing (A-T, G-C), coiled into a helix — immediately suggesting the replication mechanism',
+          'DNA bases are randomly arranged with no pairing rules',
+          'The genetic code is written in triplets of RNA',
+        ],
+        a: 1,
+        e: "Watson and Crick's 1953 double helix: two antiparallel strands; sugar-phosphate backbone outside; A pairs with T, G pairs with C (Chargaff's rules). Complementary base pairing immediately suggested how DNA replicates: each strand serves as template for new complementary strand.",
+        h: 'Double helix: two antiparallel strands + A-T, G-C base pairing + implies replication mechanism.',
+        yr: 'GST',
+      },
+      {
+        q: "Alfred Wegener's continental drift hypothesis was rejected because:",
+        o: [
+          'His evidence was considered too weak',
+          'His calculations were mathematically incorrect',
+          'He proposed sea-floor spreading but geologists refused to believe it',
+          'Though he had compelling geological evidence, he could not explain the mechanism by which continents could move through oceanic crust',
+        ],
+        a: 3,
+        e: 'Wegener (1912) had compelling evidence: matching coastlines, identical fossil species on separated continents, matching rock formations. However, he could not explain HOW solid continents could move through solid oceanic crust. The mechanism (sea-floor spreading) was understood only in the early 1960s.',
+        h: 'Wegener rejected = had evidence but NO MECHANISM. Fixed by sea-floor spreading (Hess, 1962).',
+        yr: 'GST',
+      },
+      {
+        q: 'Wave-particle duality in quantum mechanics refers to:',
+        o: [
+          'Waves and particles are different names for the same phenomenon',
+          'Subatomic entities (electrons, photons) exhibit both wave-like behaviors (interference) and particle-like behaviors (discrete impacts) depending on how they are observed',
+          'All particles move in wave-like trajectories',
+          'Uncertainty in measuring whether a quantum object is a wave or particle',
+        ],
+        a: 1,
+        e: 'Wave-particle duality: quantum entities cannot be categorized as purely waves or purely particles. When not being observed, they exhibit wave properties (interference). When detected, they arrive as discrete particles. This dual nature is a fundamental feature of quantum mechanics.',
+        h: 'Wave-particle duality: quantum entities show BOTH wave behavior AND particle behavior.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Human Genome Project (completed 2003) achieved:',
+        o: [
+          'Creation of the first synthetic human chromosome',
+          'Sequencing of all ~3 billion base pairs of human DNA — the complete genetic blueprint',
+          'Identification of all genes causing genetic diseases',
+          'Development of first gene therapy treatments',
+        ],
+        a: 1,
+        e: 'The Human Genome Project (1990–2003): international collaboration sequencing all ~3 billion base pairs of human DNA, identifying ~20,000–25,000 protein-coding genes. Led publicly by Francis Collins (NIH) and privately by Craig Venter (Celera Genomics). Opened the era of genomic medicine.',
+        h: 'Human Genome Project (2003) = sequenced all ~3 billion base pairs of human DNA.',
+        yr: 'GST',
+      },
+      {
+        q: "Georges Lemaître's contribution to cosmology was:",
+        o: [
+          'Discovering the CMB radiation that confirmed the Big Bang',
+          'Observationally demonstrating that all galaxies are receding',
+          "First proposing (from Einstein's equations) that the universe is expanding, implying a beginning — the 'primeval atom'",
+          'Calculating the age of the universe as 13.8 billion years',
+        ],
+        a: 2,
+        e: "Lemaître (1927) was the first to derive from Einstein's general relativity equations that the universe must be expanding. He proposed the 'hypothesis of the primeval atom' — tracing expansion backward implies the universe had a beginning. Hubble provided the observational evidence.",
+        h: "Lemaître (1927) = first proposed expanding universe from Einstein's equations = origin of Big Bang concept.",
+        yr: 'GST',
+      },
+      {
+        q: 'The discovery of sea-floor spreading by Harry Hess (1962) was important because:',
+        o: [
+          "It proved Earth's core is liquid",
+          "It provided the mechanism for Wegener's continental drift — new ocean floor forms at mid-ocean ridges and sinks at trenches, driving plate motion",
+          'It showed oceanic crust is older than continental crust',
+          "It proved Earth's magnetic field has reversed",
+        ],
+        a: 1,
+        e: "Sea-floor spreading (Hess, 1962): new oceanic crust forms continuously at mid-ocean ridges, spreads outward, and sinks (subducts) at trenches. This provided the missing mechanism for Wegener's continental drift. Confirmed by Vine and Matthews (1963) through symmetric magnetic reversal stripes.",
+        h: 'Sea-floor spreading (Hess, 1962) = new crust at ridges, sinks at trenches = mechanism for continental drift.',
+        yr: 'GST',
+      },
+      {
+        q: "Max Planck's quantum hypothesis (1900) proposed:",
+        o: [
+          'Light consists of particles (photons)',
+          "Energy is emitted and absorbed in discrete packets (quanta) rather than continuously — E = hf, where h is Planck's constant",
+          'Electrons exist only in discrete energy levels',
+          'Matter and energy are equivalent',
+        ],
+        a: 1,
+        e: "Planck (1900) proposed electromagnetic radiation is emitted and absorbed in discrete energy packets (quanta), each with energy E = hf. This founding insight of quantum mechanics resolved the 'ultraviolet catastrophe.'",
+        h: 'Planck (1900): energy emitted in discrete quanta. E = hf. Founded quantum mechanics.',
+        yr: 'GST',
+      },
+      {
+        q: 'CRISPR-Cas9 gene editing technology (2012) is significant because:',
+        o: [
+          'It allowed scientists to read the entire human genome',
+          'It provided a precise, easy-to-use tool for editing specific genes — transforming medicine, agriculture, and raising profound ethical questions',
+          'It proved most diseases have a simple genetic cause',
+          'It enabled creation of the first GMOs',
+        ],
+        a: 1,
+        e: 'CRISPR-Cas9 (Doudna and Charpentier, 2012; Nobel Prize in Chemistry 2020): uses a guide RNA to direct the Cas9 enzyme to a specific DNA sequence for precise cutting — allowing genes to be deleted, corrected, or replaced. Applications: genetic diseases, disease-resistant crops. Raises profound ethical questions.',
+        h: 'CRISPR-Cas9 = precise gene editing (Doudna + Charpentier, 2020 Nobel Chemistry) = transformative.',
+        yr: 'GST',
+      },
+      {
+        q: "GPS systems rely on corrections based on Einstein's relativity because:",
+        o: [
+          'GPS satellites travel at high speed, causing clocks to run slow (special relativity); being in weaker gravity causes clocks to run fast (general relativity) — without corrections, GPS would accumulate ~10 km/day errors',
+          'GPS signals travel at the speed of light, requiring relativistic treatment',
+          'Curvature of Earth requires relativistic corrections to distances',
+          'Radio signals lose frequency due to relativistic Doppler effect',
+        ],
+        a: 0,
+        e: 'GPS satellites: (1) moving at ~14,000 km/h → special relativistic time dilation (clocks run slow); (2) at higher altitude/weaker gravity → general relativistic gravitational time dilation (clocks run fast). Net: +38 microseconds/day. Without correction, GPS errors accumulate ~10 km/day.',
+        h: 'GPS corrections: SR makes satellite clocks slow (speed), GR makes them fast (weaker gravity). Net: +38 μs/day.',
+        yr: 'GST',
+      },
+      {
+        q: 'The central dogma of molecular biology states:',
+        o: [
+          'DNA replicates to form new DNA without change',
+          'Information flows DNA → RNA → Protein — genetic sequence information flows unidirectionally from the genetic code',
+          'Proteins can directly modify DNA to adapt to new environments',
+          'RNA is the primary genetic material',
+        ],
+        a: 1,
+        e: 'The central dogma (Francis Crick, 1958): DNA is transcribed into messenger RNA (mRNA), then translated into protein. Information normally flows DNA → RNA → Protein and not in reverse (except retroviruses using reverse transcriptase).',
+        h: 'Central dogma: DNA → RNA → Protein. Information flows unidirectionally (normally).',
+        yr: 'GST',
+      },
+      {
+        q: "Edwin Hubble's 1929 observation established:",
+        o: [
+          'That the universe will eventually collapse',
+          "Hubble's Law — the universe is expanding; tracing expansion backward implies a Big Bang beginning",
+          'That the Milky Way is not the only galaxy',
+          'That dark matter causes galaxies to move faster than predicted',
+        ],
+        a: 1,
+        e: "Hubble's Law (1929): v = H₀d. All galaxies (beyond the Local Group) recede, with more distant galaxies receding faster. First clear observational evidence that the universe is expanding — consistent with Lemaître's prediction and implying a Big Bang origin.",
+        h: "Hubble's Law (1929): recession speed ∝ distance = expanding universe = evidence for Big Bang.",
+        yr: 'GST',
+      },
+      {
+        q: 'Plate tectonics explains all of the following geological phenomena EXCEPT:',
+        o: [
+          'Distribution of earthquakes and volcanoes along plate boundaries',
+          'Formation of mountain ranges where continental plates collide',
+          'Presence of identical rock formations on now-separated continents',
+          "Composition of Earth's inner core as solid iron",
+        ],
+        a: 3,
+        e: "Plate tectonics explains: earthquake and volcano distribution (plate boundaries); mountain building (convergent boundaries); matching rock formations on separated continents. Earth's inner core composition (solid iron, determined by seismic wave analysis) is explained by Earth's internal heat and pressure, not plate tectonics.",
+        h: 'Plate tectonics does NOT explain inner core composition. Explains earthquakes, volcanoes, mountains, matching rocks.',
+        yr: 'GST',
+      },
+      {
+        q: 'The discovery of gravitational waves by LIGO in 2015 confirmed:',
+        o: [
+          "Einstein's Special Theory correctly predicts mass-energy equivalence",
+          "Einstein's General Theory correctly predicts gravitational waves — ripples in spacetime produced by accelerating massive objects",
+          'Quantum mechanics and general relativity can be unified',
+          'Black holes cannot form from stellar collapse',
+        ],
+        a: 1,
+        e: "LIGO detected gravitational waves in September 2015 — ripples in spacetime produced by two merging black holes 1.3 billion light-years away. This confirmed a prediction of Einstein's General Theory of Relativity (1915) after a century of searching. 2017 Nobel Prize in Physics.",
+        h: 'LIGO (2015) = detected gravitational waves = confirmed General Relativity prediction made in 1915.',
+        yr: 'GST',
+      },
+      {
+        q: "Rosalind Franklin's Photo 51 was crucial to discovering DNA structure because:",
+        o: [
+          'It was the first photograph showing a DNA molecule directly under a microscope',
+          "It was a high-quality X-ray diffraction image revealing DNA's helical structure, dimensions, and phosphate backbone position — key data Watson and Crick used without her knowledge",
+          'She shared it voluntarily with Watson and Crick',
+          'It disproved the triple helix model',
+        ],
+        a: 1,
+        e: "Photo 51 (Franklin and Gosling, 1952) was an X-ray crystallography image showing the characteristic X pattern of a helix with key structural parameters. This critical data was shown to Watson (without Franklin's knowledge) by Wilkins. Watson recognized it confirmed the double helix structure.",
+        h: "Photo 51 = Franklin's X-ray image = showed DNA is helical + key dimensions = used without her knowledge.",
+        yr: 'GST',
+      },
+      {
+        q: "Niels Bohr's contribution to quantum mechanics included:",
+        o: [
+          'Discovering the electron as a subatomic particle',
+          'Developing the planetary atom model with electrons in discrete energy levels — explaining atomic spectra',
+          'Formulating the uncertainty principle',
+          'Developing the wave equation for quantum states',
+        ],
+        a: 1,
+        e: 'Bohr (1913) proposed the planetary atom model: electrons orbit the nucleus only in certain allowed energy levels; electrons emit or absorb specific light frequencies when jumping between levels. This explained the discrete spectral lines of hydrogen.',
+        h: 'Bohr = planetary atom model with discrete electron energy levels = explained atomic spectra.',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 8: Science and Society — Ethics, Technology, and Public Policy
-  // ==========================================================================
   {
-    topic: "Science and Society — Ethics, Technology, and Public Policy",
-    topicCode: "HPS-008-01",
-    module: "Science and Society",
+    topic: 'Scientific Institutions and Communication',
+    topicCode: 'HPS-SCI-09',
+    module: 'Module 9: How Science is Organized',
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Science and society</span> are deeply intertwined. Science shapes society through technology, medicine, and our understanding of the world. Society shapes science through funding priorities, ethical regulations, and public values. <strong>Understanding this relationship is essential for responsible citizenship in a scientifically-driven world</strong>.
-</div>
-
-<p class="learn-p">Science is not conducted in a vacuum. It is funded by governments, corporations, and foundations with specific interests. It is regulated by laws and ethical guidelines. Its applications raise profound ethical questions. Citizens must be able to evaluate scientific claims, understand risks, and participate in democratic decisions about science policy.</p>
-
-<h3 class="learn-subheading">The Social Context of Science — Funding, Priorities, and Bias</h3>
-
-<p class="learn-p">What science gets done is influenced by social and economic factors.</p>
-
-<p class="learn-p"><strong>Funding sources:</strong></p>
+<div class="learn-intro">Science is not the work of solitary geniuses — it is a collective, institutionally organized enterprise. Scientific knowledge is generated, validated, and communicated through a network of <span class="learn-keyword">institutions</span>: universities, professional societies, peer-reviewed journals, funding agencies, and policy bodies.</div>
+<h3 class="learn-subheading">9.1 Key Scientific Institutions</h3>
 <ul class="learn-list">
-  <li>Government funding (taxpayer money) — NIH, NSF, NASA, European Research Council. Priorities set by political process.</li>
-  <li>Corporate/industry funding — pharmaceutical companies, tech companies, energy companies. May bias results toward funder interests (e.g., tobacco industry funding research that downplayed smoking risks).</li>
-  <li>Non-profit/charitable funding — Gates Foundation, Howard Hughes Medical Institute. Reflect priorities of donors.</li>
+<li><strong>Royal Society of London (founded 1660):</strong> First major scientific society. Philosophical Transactions (1665) = world's oldest still-published scientific journal.</li>
+<li><strong>French Académie des Sciences (1666):</strong> State-sponsored scientific society; advises government on scientific matters.</li>
+<li><strong>Humboldt model (University of Berlin, 1810):</strong> Professors BOTH teach AND conduct original research. Became the global standard for research universities.</li>
+<li><strong>CERN (1954):</strong> Particle physics. Discovered Higgs boson (2012). Birthplace of the World Wide Web (Tim Berners-Lee, 1989).</li>
+<li><strong>NIH (USA, 1887):</strong> World's largest funder of biomedical research (~$45 billion annual).</li>
+<li><strong>UNESCO:</strong> Promotes international scientific cooperation and science education globally.</li>
+<li><strong>TETFund (Nigeria, 1993/2011):</strong> Primary government funder of academic research in Nigerian universities through education tax levy.</li>
+<li><strong>NASENI (Nigeria, 1992):</strong> National Agency for Science and Engineering Infrastructure — develops indigenous technological capacity.</li>
 </ul>
-
-<p class="learn-p"><strong>Publication bias:</strong> Positive results (statistically significant) are more likely to be published than negative or null results. This distorts the scientific record — known as the "file drawer problem."</p>
-
-<p class="learn-p"><strong>Replication crisis:</strong> Many published findings (especially in psychology, biomedicine) cannot be replicated. Causes include publication bias, small sample sizes, questionable research practices (p-hacking), and lack of pre-registration. Replication crisis has led to reforms: pre-registration, open data, larger sample sizes.</p>
-
-<h3 class="learn-subheading">Science and Technology — Benefits and Risks</h3>
-
-<p class="learn-p">Technology derived from science has transformed human life — but also created new risks.</p>
-
-<p class="learn-p"><strong>Benefits:</strong></p>
+<h3 class="learn-subheading">9.2 Scientific Journals and Publication</h3>
 <ul class="learn-list">
-  <li>Medicine: Vaccines, antibiotics, anesthesia, imaging (X-ray, MRI, CT), gene therapy, organ transplantation — lifespan doubled in developed countries</li>
-  <li>Agriculture: Green Revolution (high-yield crops, fertilizers) — reduced famine, but environmental costs</li>
-  <li>Communication: Internet, smartphones, satellites — global connectivity</li>
-  <li>Energy: Nuclear power, renewables, fossil fuels (with environmental costs)</li>
-  <li>Transportation: Cars, planes, trains — mobility but pollution</li>
+<li><strong>Philosophical Transactions (1665):</strong> World's oldest scientific journal — established priority registration and scientific communication conventions.</li>
+<li><strong>Major journals:</strong> Nature (1869), Science (1880), The Lancet (medicine), NEJM (medicine), Physical Review Letters (physics), Cell (biology).</li>
+<li><strong>Impact Factor:</strong> Average citations per article per year — proxy for journal prestige. Criticized for distorting research incentives (quantity over quality; publication bias favoring positive results).</li>
+<li><strong>Open access:</strong> Papers freely available online (gold OA, green OA, diamond OA). Particularly important for developing countries like Nigeria.</li>
+<li><strong>Predatory journals:</strong> Charge fees with minimal/no peer review. Exploit "publish or perish" pressure.</li>
 </ul>
-
-<p class="learn-p"><strong>Risks and ethical concerns:</strong></p>
+<h3 class="learn-subheading">9.3 The Nobel Prize</h3>
+<p class="learn-p">Established by <span class="learn-keyword">Alfred Nobel (1833–1896)</span> — Swedish chemist, inventor of dynamite. Disturbed by being called "merchant of death" in a premature obituary. First awarded 1901. <strong>Science categories:</strong> Physics, Chemistry, Physiology or Medicine. Non-science: Literature, Peace. Economics added 1968 by Swedish National Bank — NOT in Nobel's original will. <strong>No Nobel</strong> in Mathematics (Fields Medal is the mathematics equivalent), Computer Science, Ecology, or most Social Sciences. Maximum three recipients per prize. NOT awarded posthumously — hence Franklin (died 1958) and Mendel (died 1884) could not receive recognition.</p>
+<h3 class="learn-subheading">9.4 Science Funding Sources</h3>
 <ul class="learn-list">
-  <li><strong>Nuclear weapons:</strong> Science enabled weapons capable of destroying civilization. Nuclear deterrence vs proliferation risk.</li>
-  <li><strong>Climate change:</strong> Fossil fuel combustion (enabled by science) causing global warming. Mitigation requires technological and social change.</li>
-  <li><strong>Artificial intelligence:</strong> Potential for autonomous weapons, surveillance, job displacement, alignment problem (ensuring AI acts ethically).</li>
-  <li><strong>Genetic engineering (CRISPR):</strong> Potential to cure genetic diseases — also germline editing (changes inherited by future generations), designer babies, inequitable access.</li>
-  <li><strong>Environmental degradation:</strong> Industrial chemicals, plastics, pesticides, habitat destruction — unintended consequences of technology.</li>
+<li><strong>Government:</strong> NIH, NSF (USA); Research Councils (UK); TETFund (Nigeria). Primarily basic science; competitive grant review.</li>
+<li><strong>Industry:</strong> Pharmaceutical, biotech, tech companies. Applied/development focus; often proprietary.</li>
+<li><strong>Private foundations:</strong> Gates Foundation (global health), Wellcome Trust (biomedical). Gap-filling; often mandate open access.</li>
+<li><strong>International:</strong> CERN, ISS, Human Genome Project. "Big science" requiring international collaboration; also science diplomacy.</li>
+<li><strong>Conflicts of interest:</strong> Tobacco industry funding → biased smoking research. Pharmaceutical industry → favorable drug trials. Must be disclosed.</li>
 </ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">⚖️ SCIENCE AND SOCIETY — Dual-Use Dilemma</text>
-    <text x="250" y="38" text-anchor="middle" font-size="8" fill="#64748b">Science can be used for benefit OR harm — often same knowledge enables both</text>
-    
-    <!-- Left: Benefits -->
-    <g>
-      <rect x="15" y="55" width="225" height="180" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <rect x="15" y="55" width="225" height="30" rx="10" fill="#22c55e"/>
-      <text x="127" y="76" text-anchor="middle" font-size="10" fill="#ffffff" font-weight="800">✅ BENEFITS</text>
-      
-      <text x="127" y="105" text-anchor="middle" font-size="8" fill="#166534">Medicine: vaccines, antibiotics</text>
-      <text x="127" y="122" text-anchor="middle" font-size="8" fill="#166534">Green Revolution: food production</text>
-      <text x="127" y="139" text-anchor="middle" font-size="8" fill="#166534">Internet, smartphones, satellites</text>
-      <text x="127" y="156" text-anchor="middle" font-size="8" fill="#166534">Clean energy (solar, wind)</text>
-      <text x="127" y="173" text-anchor="middle" font-size="8" fill="#166534">Clean water, sanitation</text>
-      <text x="127" y="190" text-anchor="middle" font-size="8" fill="#166534">Transportation, aviation</text>
-      <text x="127" y="207" text-anchor="middle" font-size="8" fill="#166534">Doubled human lifespan</text>
-    </g>
-    
-    <!-- Right: Risks -->
-    <g>
-      <rect x="260" y="55" width="225" height="180" rx="10" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
-      <rect x="260" y="55" width="225" height="30" rx="10" fill="#ef4444"/>
-      <text x="372" y="76" text-anchor="middle" font-size="10" fill="#ffffff" font-weight="800">⚠️ RISKS / ETHICAL CONCERNS</text>
-      
-      <text x="372" y="105" text-anchor="middle" font-size="8" fill="#991b1b">Nuclear weapons (existential risk)</text>
-      <text x="372" y="122" text-anchor="middle" font-size="8" fill="#991b1b">Climate change from fossil fuels</text>
-      <text x="372" y="139" text-anchor="middle" font-size="8" fill="#991b1b">AI: autonomous weapons, bias, job loss</text>
-      <text x="372" y="156" text-anchor="middle" font-size="8" fill="#991b1b">Genetic engineering: designer babies</text>
-      <text x="372" y="173" text-anchor="middle" font-size="8" fill="#991b1b">Environmental pollution, plastics</text>
-      <text x="372" y="190" text-anchor="middle" font-size="8" fill="#991b1b">Antibiotic resistance</text>
-      <text x="372" y="207" text-anchor="middle" font-size="8" fill="#991b1b">Inequitable access to technology</text>
-    </g>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Ethics of Human Subjects Research</h3>
-
-<p class="learn-p">Horrific experiments in the 20th century led to ethical regulations protecting human research subjects.</p>
-
-<p class="learn-p"><strong>Nazi experiments (1930s-40s):</strong> Concentration camp prisoners subjected to deadly experiments without consent. Led to <strong>Nuremberg Code (1947)</strong> — established requirement for informed consent, benefit must outweigh risk, right to withdraw.</p>
-
-<p class="learn-p"><strong>Tuskegee Syphilis Study (1932-1972, US):</strong> Poor Black men with syphilis were studied but not told they had syphilis; denied treatment even after penicillin became standard. Led to <strong>Belmont Report (1978)</strong> and <strong>Common Rule</strong> — principles: respect for persons (informed consent), beneficence (maximize benefits, minimize harms), justice (fair distribution of research burdens and benefits).</p>
-
-<p class="learn-p"><strong>Informed consent requirements today:</strong></p>
+<h3 class="learn-subheading">9.5 Nigerian Scientific Institutions</h3>
 <ul class="learn-list">
-  <li>Information: Participants must understand purpose, procedures, risks, benefits, alternatives</li>
-  <li>Voluntariness: No coercion or undue influence</li>
-  <li>Capacity: Participants must be able to make informed decision</li>
-  <li>Ongoing: Consent can be withdrawn at any time</li>
+<li><strong>FMSTI:</strong> Federal Ministry of Science, Technology and Innovation — primary government body for science policy.</li>
+<li><strong>NAFDAC:</strong> Regulates food, drugs, medical devices — applied science regulatory body.</li>
+<li><strong>Nigerian Academy of Science (NAS):</strong> Honorary society advising government on science policy.</li>
+<li><strong>University of Ibadan (1948):</strong> Oldest Nigerian university — one of the country's premier research institutions.</li>
+<li><strong>Brain drain ("japa"):</strong> Emigration of trained Nigerian scientists to US, UK, Canada depletes Nigeria's scientific human capital.</li>
 </ul>
-
-<p class="learn-p"><strong>Institutional Review Boards (IRBs):</strong> Committees that review research proposals involving human subjects to ensure ethical standards are met.</p>
-
-<h3 class="learn-subheading">Scientific Misconduct — Fraud, Plagiarism, and Questionable Practices</h3>
-
-<p class="learn-p">Science relies on trust — but misconduct erodes that trust.</p>
-
-<p class="learn-p"><strong>Types of misconduct:</strong></p>
-<ul class="learn-list">
-  <li><strong>Fabrication:</strong> Making up data (e.g., Andrew Wakefield's fraudulent 1998 paper linking MMR vaccine to autism — led to vaccination decline, disease outbreaks).</li>
-  <li><strong>Falsification:</strong> Manipulating or changing data to get desired results.</li>
-  <li><strong>Plagiarism:</strong> Using others' work without attribution.</li>
-</ul>
-
-<p class="learn-p"><strong>Questionable research practices (QRPs):</strong></p>
-<ul class="learn-list">
-  <li><strong>P-hacking:</strong> Collecting data until p < 0.05, then stopping. Running multiple analyses and reporting only significant ones. Excluding outliers without justification.</li>
-  <li><strong>HARKing:</strong> Hypothesizing After Results are Known — presenting post hoc hypotheses as if they were predicted in advance.</li>
-  <li><strong>Publication bias:</strong> Only submitting/accepting positive results — leads to overestimation of effects.</li>
-</ul>
-
-<p class="learn-p"><strong>Consequences of misconduct:</strong> Wasted resources (other scientists pursuing dead ends), erosion of public trust in science, harmful policy decisions based on false data.</p>
-
-<h3 class="learn-subheading">Science Denial and Misinformation</h3>
-
-<p class="learn-p">Despite overwhelming scientific evidence, some reject well-established findings — climate change, evolution, vaccine safety, HIV as cause of AIDS.</p>
-
-<p class="learn-p"><strong>Common strategies of science denial:</strong></p>
-<ul class="learn-list">
-  <li><strong>Conspiracy theories:</strong> Scientists are part of conspiracy to deceive public</li>
-  <li><strong>Fake experts:</strong> Citing individuals with credentials but no relevant expertise</li>
-  <li><strong>Cherry-picking:</strong> Selecting only evidence that supports position, ignoring contrary evidence</li>
-  <li><strong>Impossible expectations:</strong> Demanding 100% certainty or perfect evidence that science cannot provide</li>
-  <li><strong>Logical fallacies:</strong> Moving goalposts, false balance (presenting fringe view as equally credible), ad hominem attacks</li>
-</ul>
-
-<p class="learn-p"><strong>Why do people deny science?</strong></p>
-<ul class="learn-list">
-  <li>Ideology/political identity (climate change denial correlates with political conservatism in US)</li>
-  <li>Economic interests (fossil fuel industry funding denial campaigns)</li>
-  <li>Religious beliefs (young Earth creationism, intelligent design)</li>
-  <li>Mistrust of institutions</li>
-  <li>Lack of science literacy</li>
-</ul>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Concept:</strong> The "replication crisis" refers to the finding that many published results in psychology, biomedicine, and other fields cannot be reproduced. Causes: publication bias, low statistical power, p-hacking, lack of pre-registration. Responses: pre-registration of studies, open data, registered reports (review before results known), larger sample sizes.</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "What is the 'replication crisis' and what are its proposed solutions?" (Sample answer: Many published findings cannot be replicated, undermining confidence. Causes: publication bias (positive results overrepresented), p-hacking (analyzing data multiple ways until significant), small samples. Solutions: pre-registration (specifying analysis plan before data collection), registered reports (journals accept based on methods before results), open data (others can reanalyze), larger sample sizes, replication attempts valued as highly as original discoveries.)</span>
-</div>
-    `,
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>Institution</th><th>Founded</th><th>Primary Role</th></tr></thead><tbody>
+<tr><td>Royal Society of London</td><td>1660</td><td>First major scientific society; Philosophical Transactions (1665) = oldest journal</td></tr>
+<tr><td>Académie des Sciences (France)</td><td>1666</td><td>State-sponsored scientific society; government advisory</td></tr>
+<tr><td>CERN</td><td>1954</td><td>Particle physics; Higgs boson (2012); birthplace of WWW (1989)</td></tr>
+<tr><td>NIH (USA)</td><td>1887</td><td>World's largest biomedical research funder (~$45B annual)</td></tr>
+<tr><td>UNESCO</td><td>1945</td><td>International scientific cooperation; science education</td></tr>
+<tr><td>TETFund (Nigeria)</td><td>1993/2011</td><td>Primary funder of academic research in Nigerian universities</td></tr>
+<tr><td>NASENI (Nigeria)</td><td>1992</td><td>Develops indigenous science and engineering infrastructure</td></tr>
+</tbody></table></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 165" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="165" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">The Scientific Publication Ecosystem</text><rect x="15" y="52" width="88" height="52" rx="6" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="59" y="74" text-anchor="middle" fill="#80ffaa" font-size="9" font-family="Georgia,serif" font-weight="bold">RESEARCH</text><text x="59" y="89" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Universities/labs</text><line x1="103" y1="78" x2="121" y2="78" stroke="#FFD700" stroke-width="1.5"/><polygon points="121,78 110,72 110,84" fill="#FFD700"/><rect x="122" y="52" width="88" height="52" rx="6" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="166" y="74" text-anchor="middle" fill="#90c8ff" font-size="9" font-family="Georgia,serif" font-weight="bold">SUBMISSION</text><text x="166" y="89" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">To journal editor</text><line x1="210" y1="78" x2="228" y2="78" stroke="#FFD700" stroke-width="1.5"/><polygon points="228,78 217,72 217,84" fill="#FFD700"/><rect x="229" y="42" width="100" height="72" rx="6" fill="#1a2e5a" stroke="#FFD700" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect><text x="279" y="70" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Georgia,serif" font-weight="bold">PEER REVIEW</text><text x="279" y="85" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Expert evaluation</text><text x="279" y="100" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif">Quality control</text><line x1="329" y1="78" x2="347" y2="78" stroke="#FFD700" stroke-width="1.5"/><polygon points="347,78 336,72 336,84" fill="#FFD700"/><rect x="348" y="52" width="90" height="52" rx="6" fill="#0d3b6e" stroke="#a066e0" stroke-width="1.5"/><text x="393" y="74" text-anchor="middle" fill="#d4aaff" font-size="9" font-family="Georgia,serif" font-weight="bold">PUBLICATION</text><text x="393" y="89" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Journal article</text><line x1="438" y1="78" x2="456" y2="78" stroke="#FFD700" stroke-width="1.5"/><polygon points="456,78 445,72 445,84" fill="#FFD700"/><rect x="457" y="52" width="88" height="52" rx="6" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="501" y="74" text-anchor="middle" fill="#ffaa80" font-size="9" font-family="Georgia,serif" font-weight="bold">CITATION</text><text x="501" y="89" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Others build on it</text><text x="280" y="133" text-anchor="middle" fill="#888" font-size="9" font-family="Georgia,serif">PREPRINT PATHWAY (arXiv, bioRxiv, medRxiv): Posted before peer review → rapid but less quality control</text><text x="280" y="150" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">World's oldest scientific journal: Philosophical Transactions of the Royal Society (1665)</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 155" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="155" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Sources of Science Funding</text><rect x="15" y="45" width="120" height="95" rx="7" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="75" y="67" text-anchor="middle" fill="#80ffaa" font-size="10" font-family="Georgia,serif" font-weight="bold">GOVERNMENT</text><text x="75" y="83" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">NIH, NSF (USA)</text><text x="75" y="96" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">TETFund (Nigeria)</text><text x="75" y="128" text-anchor="middle" fill="#80ffaa" font-size="8" font-family="Georgia,serif">→ Basic science</text><rect x="148" y="45" width="110" height="95" rx="7" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="203" y="67" text-anchor="middle" fill="#90c8ff" font-size="10" font-family="Georgia,serif" font-weight="bold">INDUSTRY</text><text x="203" y="83" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Pharma, biotech</text><text x="203" y="96" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">tech companies</text><text x="203" y="128" text-anchor="middle" fill="#90c8ff" font-size="8" font-family="Georgia,serif">→ Often proprietary</text><rect x="271" y="45" width="120" height="95" rx="7" fill="#0d3b6e" stroke="#FFD700" stroke-width="1.5"/><text x="331" y="67" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Georgia,serif" font-weight="bold">FOUNDATIONS</text><text x="331" y="83" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Gates Foundation</text><text x="331" y="96" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Wellcome Trust</text><text x="331" y="128" text-anchor="middle" fill="#FFD700" font-size="8" font-family="Georgia,serif">→ Gap-filling</text><rect x="404" y="45" width="141" height="95" rx="7" fill="#1a2e5a" stroke="#e05a2b" stroke-width="1.5"/><text x="474" y="67" text-anchor="middle" fill="#ffaa80" font-size="10" font-family="Georgia,serif" font-weight="bold">INTERNATIONAL</text><text x="474" y="83" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">CERN, ISS</text><text x="474" y="96" text-anchor="middle" fill="#aaa" font-size="8.5" font-family="Georgia,serif">Human Genome</text><text x="474" y="128" text-anchor="middle" fill="#ffaa80" font-size="8" font-family="Georgia,serif">→ Science diplomacy</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Royal Society (1660) = first major scientific society. Philosophical Transactions (1665) = oldest scientific journal. Nobel Prize: first awarded 1901; Alfred Nobel invented dynamite; science categories = Physics + Chemistry + Physiology/Medicine. NO Nobel in Mathematics (Fields Medal instead). CERN (1954) = particle physics + Higgs boson (2012) + birthplace of WWW (1989). TETFund = Nigeria's primary academic research funder. University of Ibadan (1948) = oldest Nigerian university. NASENI = indigenous science and engineering infrastructure.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Nobel Prize categories are: Physics, Chemistry, Physiology or Medicine, Literature, Peace, Economics (added 1968 — NOT in Nobel's will). NO Nobel in Mathematics, Computer Science, Ecology. Nobel cannot be awarded posthumously — Franklin (1958), Mendel (1884) cannot be recognized. Humboldt model = professors do BOTH teaching AND original research (revolutionized higher education in 19th century). Predatory journals = charge fees but provide minimal/no peer review.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Modern science is institutionally organized: Royal Society (1660), research universities (Humboldt model, 1810), government agencies (NIH, TETFund), international organizations (CERN, UNESCO). Philosophical Transactions (1665) established the scientific journal. Nobel Prize (1901): Physics, Chemistry, Medicine — no Nobel in Mathematics. TETFund and NASENI are Nigeria's key science institutions. Brain drain ("japa") challenges Nigerian science development. Science diplomacy uses international collaboration to build relationships across political divides.</div>`,
     questions: [
-      { q: "The 'replication crisis' refers to:", o: ["Too many replications", "Inability to replicate many published scientific findings, especially in psychology and biomedicine", "Lack of scientific publications", "Too much data"], a: 1, e: "Replication crisis: many published results cannot be reproduced, raising concerns about reliability of scientific literature.", h: "What can't be reproduced?", yr: "GST" },
-      { q: "Which of the following is a cause of the replication crisis?", o: ["Publication bias (positive results overrepresented)", "Large sample sizes", "Pre-registration of studies", "Open data"], a: 0, e: "Publication bias means negative/null results often unpublished, distorting evidence base. Small samples, p-hacking, and lack of pre-registration also contribute.", h: "What distorts the published record?", yr: "GST" },
-      { q: "The Nuremberg Code (1947) was established in response to:", o: ["Tuskegee Syphilis Study", "Nazi medical experiments on concentration camp prisoners without consent", "Milgram obedience experiments", "Stanford prison experiment"], a: 1, e: "Nuremberg Code (1947) followed trials of Nazi doctors who conducted deadly experiments. Established informed consent requirement.", h: "What prompted the Nuremberg Code?", yr: "GST" },
-      { q: "The Tuskegee Syphilis Study (1932-1972) violated ethical principles because:", o: ["Participants were told they had syphilis", "Participants were treated with penicillin", "Poor Black men with syphilis were studied without informed consent and denied treatment even after penicillin became standard", "It was conducted outside US"], a: 2, e: "Tuskegee: men not told they had syphilis, denied treatment after penicillin available, misled about purpose of study.", h: "What was wrong with Tuskegee?", yr: "GST" },
-      { q: "The Belmont Report (1978) established three core principles for human subjects research:", o: ["Speed, efficiency, cost-effectiveness", "Respect for persons (informed consent), beneficence (maximize benefits/minimize harms), justice (fair distribution)", "Confidentiality, anonymity, security", "Replication, falsification, prediction"], a: 1, e: "Belmont principles: respect for persons (autonomy, informed consent), beneficence (do good, avoid harm), justice (fair selection of subjects).", h: "What are the three Belmont principles?", yr: "GST" },
-      { q: "P-hacking refers to:", o: ["Using powerful computers for analysis", "Collecting data until p < 0.05, running multiple analyses, excluding outliers to achieve statistical significance", "Pre-registering analysis plans", "Replicating studies"], a: 1, e: "P-hacking: manipulating analysis to get significant p-values (often < 0.05), inflating false positives.", h: "What is a questionable practice to get significant results?", yr: "GST" },
-      { q: "Which of the following is a solution proposed to address the replication crisis?", o: ["Smaller sample sizes", "Pre-registration of studies (specifying analysis plan before data collection)", "Discouraging replication attempts", "Secrecy about methods"], a: 1, e: "Pre-registration forces researchers to specify hypotheses and analysis plans before seeing data, reducing p-hacking and HARKing.", h: "What helps prevent p-hacking?", yr: "GST" },
-      { q: "Andrew Wakefield's 1998 paper linking MMR vaccine to autism was problematic because:", o: ["It was based on fraudulent data", "It was replicated many times", "It was clearly correct", "It had no impact"], a: 0, e: "Wakefield's paper was fraudulent, led to vaccination decline and disease outbreaks. Retracted by The Lancet. No evidence for link.", h: "What was wrong with Wakefield's study?", yr: "GST" },
-      { q: "The 'file drawer problem' refers to:", o: ["Too many published papers", "Studies with null/negative results not submitted or accepted for publication — leading to publication bias", "Missing data", "Poor filing systems"], a: 1, e: "File drawer problem: null results sit in researchers' file drawers, not published. Distorts meta-analyses and evidence base.", h: "Where do null results often go?", yr: "GST" },
-      { q: "Which of the following is a common strategy used by science deniers?", o: ["Accepting scientific consensus", "Cherry-picking evidence that supports position while ignoring contrary evidence", "Pre-registering studies", "Replicating findings"], a: 1, e: "Cherry-picking: selecting only favorable evidence, ignoring overwhelming contrary evidence (e.g., citing one discredited study against vaccines while ignoring hundreds supporting safety).", h: "What strategy ignores contrary evidence?", yr: "GST" },
-      { q: "Institutional Review Boards (IRBs) are responsible for:", o: ["Funding research", "Reviewing research proposals involving human subjects to ensure ethical standards are met", "Conducting experiments", "Publishing results"], a: 1, e: "IRBs review research protocols to protect human subjects — ensuring informed consent, risk/benefit analysis, fair subject selection.", h: "Who approves human subjects research?", yr: "GST" },
-      { q: "The 'dual-use dilemma' refers to:", o: ["Using two research methods", "Research that can be used for both beneficial and harmful purposes (e.g., knowledge enabling both vaccines and bioweapons)", "Two possible outcomes", "Using two funding sources"], a: 1, e: "Dual-use dilemma: same scientific knowledge that enables beneficial applications (vaccines) could also enable harmful applications (bioweapons).", h: "What dilemma has both good and bad uses?", yr: "GST" },
-      { q: "HARKing (Hypothesizing After Results are Known) is problematic because:", o: ["It is always fraudulent", "It presents post hoc explanations as if they were predicted in advance, inflating apparent confirmation", "It uses large samples", "It pre-registers hypotheses"], a: 1, e: "HARKing: after seeing results, researchers present post hoc hypotheses as if they were predicted, making results seem more impressive.", h: "What is pretending hypotheses were predicted?", yr: "GST" },
-      { q: "Which factor contributes to science denial?", o: ["High science literacy", "Trust in scientific institutions", "Ideology/political identity conflicting with evidence (e.g., climate change denial)", "Acceptance of scientific consensus"], a: 2, e: "When scientific findings conflict with political or religious identities, denial can occur — even among educated people.", h: "What can cause rejection of evidence?", yr: "GST" },
-      { q: "The 'precautionary principle' in science policy suggests:", o: ["Always proceed with new technology regardless of risk", "When an action has potential for serious harm, lack of full scientific certainty should not be used as reason to postpone preventive measures", "Ignore potential risks", "Only act when risks are zero"], a: 1, e: "Precautionary principle: potential for serious harm justifies precautionary action even without complete evidence (e.g., climate change).", h: "What principle says act cautiously with uncertain risks?", yr: "GST" },
-      { q: "One proposed solution to publication bias is:", o: ["Registered reports — journals accept study based on methods and pre-registration before results are known", "Discouraging replication", "Secrecy", "Smaller sample sizes"], a: 0, e: "Registered reports: journals commit to publishing regardless of results (positive or null) if methods are sound, reducing publication bias.", h: "What journal format accepts before results?", yr: "GST" },
-      { q: "The Tuskegee Syphilis Study violated which Belmont principle?", o: ["Only respect for persons", "Only beneficence", "Only justice", "All three: respect (no informed consent), beneficence (harm without benefit), justice (exploited vulnerable population)"], a: 3, e: "Tuskegee violated all three: no informed consent (respect), harmful without benefit (beneficence), exploited poor Black men (justice).", h: "How many Belmont principles did Tuskegee violate?", yr: "GST" },
-      { q: "Which industry has been documented to fund research designed to create doubt about scientific consensus (e.g., tobacco causing cancer, fossil fuels causing climate change)?", o: ["Pharmaceutical industry", "Tobacco and fossil fuel industries", "Tech industry", "Agriculture industry"], a: 1, e: "Tobacco industry funded research questioning smoking-cancer link. Fossil fuel industry funded climate change denial.", h: "Which industries created doubt about science?", yr: "GST" },
-      { q: "Open data practices aim to address:", o: ["Data security", "Replication crisis and transparency — others can reanalyze data to verify findings", "Data privacy", "Data storage"], a: 1, e: "Open data allows others to reanalyze, check for errors, and attempt replication — increasing transparency and reliability.", h: "What helps others verify results?", yr: "GST" },
-      { q: "The 'precautionary principle' is most often applied to which issues?", o: ["Mathematics", "Cosmology", "Climate change, GMOs, chemical regulation (where potential harms are severe and irreversible)", "Pure physics"], a: 2, e: "Precautionary principle applied to environmental and health issues where potential harms are severe (climate change, chemical exposure, GMOs).", h: "Where is precautionary principle used?", yr: "GST" }
-    ]
-  },
-// ============================================================================
-// HISTORY AND PHILOSOPHY OF SCIENCE — PART 4 OF 4
-// Continuing GST_LEARN_GST_HISTORY array from Part 3
-// TOPICS 9, 10
-// ============================================================================
-
-  // ==========================================================================
-  // TOPIC 9: Contemporary Issues in Science — Climate Change, AI, and Bioethics
-  // ==========================================================================
-  {
-    topic: "Contemporary Issues in Science — Climate Change, AI, and Bioethics",
-    topicCode: "HPS-009-01",
-    module: "Science and Society",
-    contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">Contemporary science</span> raises urgent ethical, social, and policy questions. Climate change threatens global civilization. Artificial intelligence promises transformation but also risks. Biotechnology enables unprecedented control over life — from gene editing to synthetic biology. <strong>Understanding these issues is essential for informed citizenship and responsible decision-making</strong>.
-</div>
-
-<p class="learn-p">Never before have scientific capabilities been so powerful — and never before have their potential consequences been so significant. Climate change, AI, and biotechnology each pose unique challenges that cut across disciplinary boundaries. Solutions require not just scientific expertise but ethical judgment, political will, and public engagement.</p>
-
-<h3 class="learn-subheading">Climate Change — The Science and the Challenge</h3>
-
-<p class="learn-p"><strong>The scientific consensus:</strong></p>
-<ul class="learn-list">
-  <li>Earth's average temperature has risen ~1.1°C since pre-industrial times (1850-1900 baseline)</li>
-  <li>Human activities (burning fossil fuels, deforestation, agriculture) release greenhouse gases (CO₂, methane, nitrous oxide)</li>
-  <li>Greenhouse gases trap heat, causing global warming</li>
-  <li>Over 99% of climate scientists agree: humans are causing climate change (NASA, IPCC, national academies of science worldwide)</li>
-  <li>IPCC (Intergovernmental Panel on Climate Change) — thousands of scientists assessing climate science, impacts, mitigation</li>
-</ul>
-
-<p class="learn-p"><strong>Observed impacts:</strong></p>
-<ul class="learn-list">
-  <li>Rising sea levels (melting glaciers, ice sheets, thermal expansion)</li>
-  <li>More frequent and intense extreme weather — heatwaves, droughts, floods, hurricanes, wildfires</li>
-  <li>Ecosystem disruption — coral bleaching, species extinction, shifting ranges</li>
-  <li>Agricultural impacts — crop yield declines, food insecurity</li>
-  <li>Human health — heat-related illness, infectious disease spread, malnutrition, displacement</li>
-</ul>
-
-<p class="learn-p"><strong>Mitigation (reducing emissions) and adaptation (adjusting to impacts):</strong></p>
-<ul class="learn-list">
-  <li><strong>Mitigation:</strong> Transition to renewable energy (solar, wind, hydro, nuclear), energy efficiency, electric vehicles, reforestation, carbon capture</li>
-  <li><strong>Adaptation:</strong> Sea walls, drought-resistant crops, early warning systems, relocating communities</li>
-  <li><strong>International agreements:</strong> Kyoto Protocol (1997), Paris Agreement (2015) — aims to limit warming to 1.5-2°C above pre-industrial</li>
-  <li><strong>Challenges:</strong> Political will, economic costs (though cheaper than inaction), equity (developing countries need fossil fuels for development, but bear least responsibility for past emissions)</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="280" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🌡️ CLIMATE CHANGE — Causes, Impacts, Solutions</text>
-    
-    <!-- Causes -->
-    <g>
-      <rect x="15" y="45" width="145" height="100" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-      <rect x="15" y="45" width="145" height="25" rx="8" fill="#ef4444"/>
-      <text x="87" y="63" text-anchor="middle" font-size="8" fill="#ffffff" font-weight="800">🔥 CAUSES</text>
-      <text x="87" y="85" text-anchor="middle" font-size="7" fill="#991b1b">Fossil fuel burning</text>
-      <text x="87" y="100" text-anchor="middle" font-size="7" fill="#991b1b">Deforestation</text>
-      <text x="87" y="115" text-anchor="middle" font-size="7" fill="#991b1b">Agriculture</text>
-      <text x="87" y="130" text-anchor="middle" font-size="7" fill="#991b1b">CO₂, methane, N₂O</text>
-    </g>
-    
-    <line x1="160" y1="95" x2="175" y2="95" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowCC1)"/>
-    
-    <!-- Impacts -->
-    <g>
-      <rect x="178" y="45" width="145" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <rect x="178" y="45" width="145" height="25" rx="8" fill="#f59e0b"/>
-      <text x="250" y="63" text-anchor="middle" font-size="8" fill="#92400e" font-weight="800">⚠️ IMPACTS</text>
-      <text x="250" y="85" text-anchor="middle" font-size="7" fill="#92400e">Sea level rise</text>
-      <text x="250" y="100" text-anchor="middle" font-size="7" fill="#92400e">Extreme weather</text>
-      <text x="250" y="115" text-anchor="middle" font-size="7" fill="#92400e">Ecosystem collapse</text>
-      <text x="250" y="130" text-anchor="middle" font-size="7" fill="#92400e">Food/water insecurity</text>
-    </g>
-    
-    <line x1="323" y1="95" x2="338" y2="95" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowCC1)"/>
-    
-    <!-- Solutions -->
-    <g>
-      <rect x="341" y="45" width="145" height="100" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-      <rect x="341" y="45" width="145" height="25" rx="8" fill="#22c55e"/>
-      <text x="413" y="63" text-anchor="middle" font-size="8" fill="#ffffff" font-weight="800">✅ SOLUTIONS</text>
-      <text x="413" y="85" text-anchor="middle" font-size="7" fill="#166534">Renewable energy</text>
-      <text x="413" y="100" text-anchor="middle" font-size="7" fill="#166534">Energy efficiency</text>
-      <text x="413" y="115" text-anchor="middle" font-size="7" fill="#166534">Reforestation</text>
-      <text x="413" y="130" text-anchor="middle" font-size="7" fill="#166534">International cooperation</text>
-    </g>
-    
-    <!-- Animated temperature line -->
-    <rect x="15" y="165" width="470" height="100" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
-    <text x="250" y="185" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="800">📈 GLOBAL TEMPERATURE RISE (1850 - Present)</text>
-    
-    <polyline points="50,250 120,245 180,240 240,235 300,225 360,215 420,205" fill="none" stroke="#ef4444" stroke-width="3">
-      <animate attributeName="points" values="50,250 120,245 180,240 240,235 300,225 360,215 420,205;50,250 120,245 180,240 240,235 300,225 360,215 420,200;50,250 120,245 180,240 240,235 300,225 360,215 420,205" dur="4s" repeatCount="indefinite"/>
-    </polyline>
-    <circle cx="420" cy="205" r="4" fill="#ef4444">
-      <animate attributeName="cy" values="205;200;205" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="4;6;4" dur="1s" repeatCount="indefinite"/>
-    </circle>
-    <text x="420" y="200" text-anchor="middle" font-size="7" fill="#991b1b">↑ ~1.1°C</text>
-    
-    <defs>
-      <marker id="arrowCC1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
-      </marker>
-    </defs>
-    
-    <text x="250" y="275" text-anchor="middle" font-size="8" fill="#64748b">🔑 IPCC consensus >99%: human activities are causing climate change. Urgent action needed.</text>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">Artificial Intelligence — Promise and Peril</h3>
-
-<p class="learn-p">AI has advanced rapidly in recent years, with large language models (ChatGPT, Claude), image generators (Midjourney, DALL-E), self-driving cars, facial recognition, medical diagnosis, and more.</p>
-
-<p class="learn-p"><strong>Potential benefits:</strong></p>
-<ul class="learn-list">
-  <li><strong>Healthcare:</strong> Earlier disease detection (cancer from scans), drug discovery acceleration, personalized treatment, robotic surgery</li>
-  <li><strong>Education:</strong> Personalized tutoring, accessibility tools for disabilities, language translation</li>
-  <li><strong>Science:</strong> Protein folding (AlphaFold), materials discovery, climate modeling, astronomical data analysis</li>
-  <li><strong>Productivity:</strong> Automating routine tasks, aiding creative work, improving efficiency</li>
-  <li><strong>Accessibility:</strong> Voice recognition for hands-free operation, image description for visually impaired, real-time captioning</li>
-</ul>
-
-<p class="learn-p"><strong>Risks and ethical concerns:</strong></p>
-<ul class="learn-list">
-  <li><strong>Bias and discrimination:</strong> AI trained on biased data perpetuates racism, sexism, other biases. Facial recognition less accurate for darker-skinned faces. Hiring algorithms discriminate against women.</li>
-  <li><strong>Privacy:</strong> Mass surveillance, facial recognition in public spaces, data collection without consent</li>
-  <li><strong>Autonomous weapons:</strong> Lethal autonomous weapons systems (killer robots) — who is responsible for their actions?</li>
-  <li><strong>Job displacement:</strong> Automation could eliminate many jobs (drivers, customer service, data entry, translation, even white-collar work)</li>
-  <li><strong>Misinformation and deepfakes:</strong> AI-generated fake videos, images, text — indistinguishable from real — undermining trust</li>
-  <li><strong>Concentration of power:</strong> AI development dominated by few large tech companies (Google, Microsoft, OpenAI, Meta, Amazon)</li>
-  <li><strong>Existential risk (long-term):</strong> If AI becomes superintelligent (exceeding human intelligence across all domains), ensuring alignment with human values is unsolved problem. Could AI act in ways harmful to humanity?</li>
-  <li><strong>Loss of human skills:</strong> Over-reliance on AI could atrophy critical thinking, writing, problem-solving, navigation, memory</li>
-  <li><strong>Environmental impact:</strong> Training large AI models consumes enormous energy — carbon footprint concerns</li>
-</ul>
-
-<p class="learn-p"><strong>AI governance and ethics frameworks:</strong></p>
-<ul class="learn-list">
-  <li>Transparency — AI decisions should be explainable</li>
-  <li>Accountability — humans responsible for AI harms</li>
-  <li>Fairness — algorithms should not discriminate</li>
-  <li>Privacy — data collection with consent</li>
-  <li>Safety — testing before deployment</li>
-  <li>Human control — humans should make life-and-death decisions, not AI</li>
-  <li>International cooperation — treaties banning autonomous weapons</li>
-</ul>
-
-<h3 class="learn-subheading">Bioethics — Gene Editing, Cloning, and Designer Babies</h3>
-
-<p class="learn-p">Biotechnology gives humans unprecedented ability to modify living organisms — including ourselves. CRISPR-Cas9 (2012) made gene editing precise, inexpensive, and accessible.</p>
-
-<p class="learn-p"><strong>CRISPR-Cas9 — How it works:</strong> Bacterial defense system adapted to cut DNA at specific locations. Enables adding, removing, or modifying genes. Used in research, agriculture (disease-resistant crops), medicine (potential cures for genetic diseases).</p>
-
-<p class="learn-p"><strong>Somatic vs germline editing:</strong></p>
-<ul class="learn-list">
-  <li><strong>Somatic editing:</strong> Changes affect only the treated individual, not passed to offspring. Widely accepted for treating disease (e.g., editing immune cells to fight cancer).</li>
-  <li><strong>Germline editing:</strong> Changes affect sperm, eggs, or embryos — passed to future generations. Controversial — raises ethical questions about consent (future generations cannot consent), unintended consequences, eugenics (designing "better" humans).</li>
-</ul>
-
-<p class="learn-p"><strong>He Jiankui case (2018):</strong> Chinese scientist created first gene-edited babies (twin girls, Lulu and Nana) — edited CCR5 gene (hoped to confer HIV resistance). Widely condemned — unethical (informed consent inadequate, unknown risks, violated international consensus). Sentenced to prison.</p>
-
-<p class="learn-p"><strong>Ethical issues in gene editing:</strong></p>
-<ul class="learn-list">
-  <li><strong>Safety:</strong> Off-target edits could cause cancer or other problems. Long-term effects unknown.</li>
-  <li><strong>Informed consent:</strong> Cannot obtain consent from embryos or future generations. Parents' consent insufficient for permanent genetic changes affecting child's entire life.</li>
-  <li><strong>Equity:</strong> If gene editing for enhancement becomes available only to wealthy, could create genetic divide (genetic haves and have-nots).</li>
-  <li><strong>Eugenics:</strong> Slippery slope from preventing disease to enhancing traits (intelligence, height, appearance, athleticism) to designer babies. Historical eugenics movements (Nazi Germany, forced sterilizations) raise caution.</li>
-  <li><strong>Unintended consequences:</strong> Ecosystem impacts if edited organisms released. Unknown long-term effects on human gene pool.</li>
-</ul>
-
-<p class="learn-p"><strong>International governance:</strong> Most countries prohibit germline editing for reproduction. Some allow research. No binding international treaty. WHO has guidelines but not enforceable. He Jiankui case showed need for stronger regulation.</p>
-
-<h3 class="learn-subheading">Other Emerging Biotechnologies</h3>
-
-<p class="learn-p"><strong>Synthetic biology:</strong> Designing and building new biological parts, devices, systems — or redesigning existing organisms. Potential: biofuels, biosensors, new medicines, biodegradable materials. Risk: bioweapons, accidental release, unpredictable ecological effects.</p>
-
-<p class="learn-p"><strong>Human cloning:</strong> Reproductive cloning (creating cloned human) — widely banned. Therapeutic cloning (creating embryos for stem cells, not implantation) — less controversial but still debated.</p>
-
-<p class="learn-p"><strong>Mitochondrial replacement therapy ("three-parent baby"):</strong> Replace faulty mitochondrial DNA to prevent inherited diseases. Child has DNA from three people (nuclear DNA from parents, mitochondrial DNA from donor). Legal in UK. Ethical: Should we modify germline? Child cannot consent.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">📖</span>
-  <span><strong>Key Concept:</strong> The distinction between therapy (treating or preventing disease) and enhancement (improving traits beyond normal functioning) is central to bioethics. Therapy is generally accepted; enhancement is controversial. But line is blurry — e.g., treating short stature with growth hormone?</span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "What is the difference between somatic and germline gene editing? Why is germline editing more controversial?" (Sample answer: Somatic editing affects only treated individual, not passed to offspring — widely accepted for treating disease. Germline editing affects sperm, eggs, or embryos — changes passed to future generations. More controversial because: future generations cannot consent, unknown long-term effects, slippery slope to eugenics and designer babies, inequitable access could create genetic divide.)</span>
-</div>
-    `,
-    questions: [
-      { q: "What percentage of climate scientists agree that human activities are causing global warming?", o: ["About 50%", "About 75%", "Over 99%", "Less than 10%"], a: 2, e: "Over 99% of climate scientists agree humans are causing climate change (NASA, IPCC). There is overwhelming scientific consensus.", h: "What is the consensus level?", yr: "GST" },
-      { q: "The IPCC is the:", o: ["International Panel on Climate Prediction", "Intergovernmental Panel on Climate Change — assesses climate science, impacts, mitigation", "International Petroleum and Coal Producers", "Institute for Pollution Control"], a: 1, e: "IPCC — thousands of scientists worldwide summarizing climate research for policymakers. Nobel Peace Prize 2007.", h: "What is IPCC?", yr: "GST" },
-      { q: "The Paris Agreement (2015) aims to:", o: ["Eliminate all fossil fuels immediately", "Limit global warming to well below 2°C (preferably 1.5°C) above pre-industrial levels", "Ignore climate change", "Increase emissions"], a: 1, e: "Paris Agreement: nearly all countries committed to reducing emissions to limit warming to 1.5-2°C. Each country sets own targets (NDCs).", h: "What temperature limit?", yr: "GST" },
-      { q: "Which of the following is a risk of artificial intelligence?", o: ["Improved healthcare", "Bias and discrimination from biased training data", "Faster scientific discovery", "Personalized education"], a: 1, e: "Bias is a risk — AI trained on biased data perpetuates discrimination (racism, sexism). The others are benefits.", h: "Which is a downside?", yr: "GST" },
-      { q: "The 'alignment problem' in AI refers to:", o: ["Aligning AI hardware", "Ensuring AI systems act in accordance with human values and intentions, even as they become superintelligent", "Aligning AI with corporate goals", "Aligning AI with military objectives"], a: 1, e: "Alignment problem: how to ensure superintelligent AI pursues goals beneficial to humanity, not harmful ones. Unsolved problem.", h: "What is the challenge of controlling superintelligent AI?", yr: "GST" },
-      { q: "Autonomous weapons systems (killer robots) raise concerns about:", o: ["Cost", "Speed", "Accountability — who is responsible when AI kills civilians?", "Energy consumption"], a: 2, e: "Accountability: if autonomous weapon kills without human control, who is responsible? Commander? Manufacturer? AI itself? Difficult.", h: "What is problematic about AI making kill decisions?", yr: "GST" },
-      { q: "CRISPR-Cas9 is:", o: ["A new antibiotic", "A gene-editing tool that can precisely cut and modify DNA", "A vaccine technology", "A type of microscope"], a: 1, e: "CRISPR-Cas9 (2012) revolutionized gene editing — precise, inexpensive, accessible. Adapted from bacterial immune system.", h: "What is CRISPR?", yr: "GST" },
-      { q: "Somatic gene editing:", o: ["Affects only the treated individual, not passed to offspring", "Affects sperm, eggs, or embryos — changes passed to future generations", "Is banned worldwide", "Is the same as germline editing"], a: 0, e: "Somatic edits affect only treated patient. Widely accepted for treating diseases (e.g., editing immune cells to fight cancer).", h: "Which type is not inherited?", yr: "GST" },
-      { q: "Germline gene editing is more controversial than somatic editing because:", o: ["It is cheaper", "It is easier", "Changes are passed to future generations who cannot consent, and unknown long-term effects", "It is more effective"], a: 2, e: "Germline edits affect future generations (children, grandchildren, etc.) who cannot consent. Long-term effects unknown. Risk of unintended consequences.", h: "Why is inheritable genetic change problematic?", yr: "GST" },
-      { q: "The He Jiankui case (2018) involved:", o: ["First human cloning", "First gene-edited babies (using CRISPR) — widely condemned as unethical", "First AI diagnosis of cancer", "First vaccine"], a: 1, e: "He Jiankui created first gene-edited babies (CCR5 gene for HIV resistance). Universal condemnation — unethical, inadequate consent, unknown risks.", h: "What did He Jiankui do?", yr: "GST" },
-      { q: "Which of the following is an example of AI bias?", o: ["AI playing chess well", "Facial recognition less accurate for darker-skinned faces", "AI translating languages", "AI recommending movies"], a: 1, e: "Facial recognition bias: trained on mostly light-skinned faces, performs worse on darker-skinned faces — leading to false identifications, wrongful arrests.", h: "What shows AI discrimination?", yr: "GST" },
-      { q: "Deepfakes are problematic because they:", o: ["Are always obvious fakes", "Enable creation of realistic fake videos/images/text that are hard to distinguish from real — undermining trust and enabling misinformation", "Are only used for entertainment", "Cannot be detected"], a: 1, e: "Deepfakes undermine trust — if any video/audio can be faked, evidence becomes unreliable. Used for misinformation, fraud, harassment.", h: "What problem do AI-generated fakes cause?", yr: "GST" },
-      { q: "Mitochondrial replacement therapy ('three-parent baby') involves:", o: ["Cloning humans", "Replacing faulty mitochondrial DNA to prevent inherited diseases — child has DNA from three people", "Gene editing embryos", "Artificial wombs"], a: 1, e: "MRT replaces faulty mitochondrial DNA with donor's healthy mitochondrial DNA. Child has nuclear DNA from parents, mitochondrial DNA from donor.", h: "How many genetic parents?", yr: "GST" },
-      { q: "Which of the following is a proposed solution to climate change?", o: ["Increasing fossil fuel use", "Deforestation", "Transition to renewable energy (solar, wind, nuclear)", "Ignoring the problem"], a: 2, e: "Renewable energy (solar, wind, hydro, nuclear) reduces CO₂ emissions. Fossil fuels and deforestation worsen climate change.", h: "What reduces emissions?", yr: "GST" },
-      { q: "The distinction between therapy and enhancement in bioethics is:", o: ["Clear and uncontroversial", "Therapy treats/prevents disease; enhancement improves traits beyond normal functioning — line can be blurry (e.g., treating short stature)", "Same thing", "Never discussed"], a: 1, e: "Therapy (treating disease) generally accepted; enhancement (improving normal traits) controversial. But line blurry — is improving height therapy or enhancement?", h: "What is the difference between fixing problems and adding abilities?", yr: "GST" },
-      { q: "Which of the following is a concern about AI job displacement?", o: ["Too many jobs", "Automation could eliminate many jobs faster than new jobs created, causing unemployment and inequality", "AI will never replace human workers", "Only blue-collar jobs at risk"], a: 1, e: "AI could automate many jobs — drivers, customer service, data entry, translation, even white-collar work — potentially displacing many workers.", h: "What is the economic concern with AI?", yr: "GST" },
-      { q: "The precautionary principle applied to gene editing suggests:", o: ["Proceed with germline editing immediately", "In absence of full certainty about safety, caution is warranted — especially for inheritable changes", "Ignore potential risks", "Only benefits matter"], a: 1, e: "Precautionary principle: potential for serious harm (even without complete evidence) justifies caution. Many argue germline editing should not proceed until safety proven.", h: "What principle says be cautious with uncertain risks?", yr: "GST" },
-      { q: "Which international agreement aims to limit global warming?", o: ["Kyoto Protocol and Paris Agreement", "Geneva Convention", "Nuclear Non-Proliferation Treaty", "Universal Declaration of Human Rights"], a: 0, e: "Kyoto Protocol (1997) and Paris Agreement (2015) are UN climate treaties aiming to reduce emissions and limit warming.", h: "What are the climate agreements?", yr: "GST" },
-      { q: "Synthetic biology raises concerns about:", o: ["Only economic issues", "Bioweapons, accidental release, unpredictable ecological effects from designed organisms", "Only energy use", "Only cost"], a: 1, e: "Synthetic biology (designing new biological systems) could be misused for bioweapons, accidentally release organisms with harmful effects, disrupt ecosystems.", h: "What are the risks of designing new life forms?", yr: "GST" },
-      { q: "Which ethical principle is violated by AI systems that make decisions without explanation?", o: ["Transparency — decisions should be explainable, especially when affecting people's lives (loans, hiring, criminal justice)", "Speed", "Efficiency", "Profit"], a: 0, e: "Explainability/transparency: when AI denies loan, parole, job, people deserve explanation. 'Black box' AI (cannot explain decisions) raises accountability concerns.", h: "What principle requires AI to explain its decisions?", yr: "GST" }
-    ]
+      {
+        q: 'The Royal Society of London (founded 1660) is significant because:',
+        o: [
+          'It was the first institution to formally test scientific claims',
+          "It was the first major scientific society; through Philosophical Transactions (1665), it published the world's oldest still-running scientific journal",
+          'It established peer review as the standard for scientific publication',
+          'It administered the Nobel Prize until 1901',
+        ],
+        a: 1,
+        e: "The Royal Society (1660) was the first major scientific society. Henry Oldenburg founded Philosophical Transactions in 1665 — the world's oldest continuously published scientific journal. It set the model of organized scientific community that has spread globally.",
+        h: 'Royal Society (1660) = first major scientific society. Philosophical Transactions (1665) = oldest journal.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Nobel Prize in science is awarded in which specific categories?',
+        o: [
+          'Mathematics, Physics, Chemistry, Biology, Medicine',
+          'Physics, Chemistry, Physiology or Medicine (plus Peace, Literature, and Economic Sciences)',
+          'Physics, Chemistry, Biology, Earth Sciences, Mathematics',
+          'Physics, Chemistry, Engineering, Medicine, Computer Science',
+        ],
+        a: 1,
+        e: "Nobel's will established prizes in: Physics, Chemistry, Physiology or Medicine, Literature, and Peace. Economic Sciences added 1968 by the Swedish National Bank (NOT part of Nobel's original will). NO Nobel in Mathematics, Biology, Computer Science.",
+        h: 'Nobel science categories: Physics + Chemistry + Physiology/Medicine. No Nobel in Mathematics.',
+        yr: 'GST',
+      },
+      {
+        q: 'Alfred Nobel established the Nobel Prize primarily because:',
+        o: [
+          'He wanted to fund science as a business investment',
+          "He was disturbed by being called the 'merchant of death' (for inventing dynamite) and wanted his legacy to be the advancement of humanity's benefit",
+          'He believed science was underfunded',
+          'The Swedish government commissioned him',
+        ],
+        a: 1,
+        e: "Alfred Nobel (1833–1896) invented dynamite and made a fortune from explosives. A premature obituary called him the 'merchant of death.' This troubled him, and in his will he directed his estate to fund annual prizes for those who 'conferred the greatest benefit on mankind.'",
+        h: "Nobel Prize = Nobel disturbed by 'merchant of death' label. Prizes = positive legacy.",
+        yr: 'GST',
+      },
+      {
+        q: 'Peer-reviewed journals are preferred over non-peer-reviewed sources because:',
+        o: [
+          'They are always accurate and free from error',
+          'Expert reviewers evaluate methodology, soundness, and originality before publication — providing a quality filter',
+          'They are funded by government and therefore more reliable',
+          'Only peer-reviewed papers count as legal evidence',
+        ],
+        a: 1,
+        e: 'Peer review provides quality control: independent experts evaluate methods, conclusions, and originality before publication. This filters out poorly designed studies and invalid claims. Though imperfect, peer-reviewed literature is more reliable than non-peer-reviewed sources.',
+        h: 'Peer-reviewed = expert quality evaluation before publication = more reliable.',
+        yr: 'GST',
+      },
+      {
+        q: 'CERN is significant because:',
+        o: [
+          'It is headquarters for global climate science research',
+          "It is the world's largest particle physics laboratory — home to the Large Hadron Collider, where the Higgs boson was discovered (2012) and the World Wide Web was invented (1989)",
+          'It coordinates the Nobel Prize selection process',
+          'It manages international science funding for developing countries',
+        ],
+        a: 1,
+        e: "CERN (founded 1954, Geneva): world's largest particle physics laboratory. Operates the Large Hadron Collider. Confirmed the Higgs boson in 2012 (Nobel Prize in Physics 2013). Tim Berners-Lee invented the World Wide Web there in 1989. Major example of international scientific collaboration.",
+        h: 'CERN = particle physics + LHC + Higgs boson (2012) + birthplace of WWW (1989).',
+        yr: 'GST',
+      },
+      {
+        q: "The 'impact factor' of a scientific journal measures:",
+        o: [
+          'Total number of papers published per year',
+          'How frequently articles in the journal are cited — used as a proxy for journal prestige',
+          'Geographic impact of journal research on developing countries',
+          "Financial impact on the publisher's revenue",
+        ],
+        a: 1,
+        e: 'The Journal Impact Factor (JIF): average number of citations received per article over the previous two years. High-impact journals (Nature, Science — IF > 40) are considered more prestigious. Criticized for distorting incentives and favoring review articles over primary research.',
+        h: 'Impact Factor = average citations per article per year = journal prestige proxy.',
+        yr: 'GST',
+      },
+      {
+        q: 'Open access publishing in science refers to:',
+        o: [
+          'Making scientific papers freely available online without subscription barriers',
+          'Publishing without peer review for faster availability',
+          'Allowing all scientists to submit without review',
+          'Publishing only science accessible to non-specialists',
+        ],
+        a: 0,
+        e: 'Open access: scientific papers freely available to any reader online without payment. Models: gold OA (authors pay charges), green OA (authors self-archive), diamond OA (free for both). Particularly important for researchers in developing countries like Nigeria.',
+        h: 'Open access = scientific papers freely available online. No paywalls.',
+        yr: 'GST',
+      },
+      {
+        q: 'TETFund in Nigeria serves which primary function in science?',
+        o: [
+          'It trains Nigerian scientists abroad at foreign universities',
+          'It is the Tertiary Education Trust Fund — the primary government mechanism funding academic research in Nigerian universities through a levy on company profits',
+          'It regulates scientific research publications',
+          'It manages Nobel Prize nominations from sub-Saharan Africa',
+        ],
+        a: 1,
+        e: 'TETFund (Tertiary Education Trust Fund) funds tertiary education and research in Nigerian universities, polytechnics, and colleges of education. Companies pay an education tax (2.5% of assessable profit), and TETFund distributes these funds for infrastructure, equipment, training, and research.',
+        h: "TETFund = Nigeria's primary academic research funder from education tax on companies.",
+        yr: 'GST',
+      },
+      {
+        q: "The 'Humboldt model' of the research university transformed higher education by:",
+        o: [
+          'Separating teaching and research into distinct institutions',
+          'Combining teaching and original research in the same institution — professors both teach and conduct research — becoming the global standard',
+          'Making universities primarily for industrial research',
+          'Requiring all professors to hold doctoral degrees',
+        ],
+        a: 1,
+        e: 'The Humboldt model (University of Berlin, 1810) was revolutionary: universities should be places of both teaching AND original research. Before this, most universities were primarily teaching institutions. This model became the global standard for research universities.',
+        h: 'Humboldt model = professors BOTH teach AND do original research. Founded at Berlin, 1810.',
+        yr: 'GST',
+      },
+      {
+        q: 'Predatory journals involve:',
+        o: [
+          'Journals that steal articles from legitimate publications',
+          "Journals that charge publication fees with minimal or no actual peer review — exploiting researchers' publish-or-perish pressure",
+          'Journals critical of established scientific consensus',
+          'Journals with excessive subscription fees',
+        ],
+        a: 1,
+        e: "Predatory journals exploit the 'author pays' model: they solicit manuscripts, charge fees, but provide little or no actual peer review. Researchers desperate to publish may inadvertently submit to them. Identified through resources like Beall's List.",
+        h: 'Predatory journals = charge fees + minimal/no peer review = exploit publication pressure.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Nobel Prize cannot be awarded posthumously. This has been controversial because:',
+        o: [
+          'It prevents historical scientists from receiving recognition',
+          'Scientists like Rosalind Franklin (DNA structure) and Gregor Mendel (genetics) made crucial discoveries but died before prizes were awarded — their contributions were acknowledged but they could not receive the prize',
+          'It forces committees to award prizes while scientists are young',
+          'Posthumous awards would be unfair to scientists still living',
+        ],
+        a: 1,
+        e: "Franklin died in 1958; Watson, Crick, and Wilkins received the Medicine Nobel in 1962. Mendel's work was rediscovered in 1900, long after his 1884 death. The prohibition means scientists who die before the award for their work cannot be recognized.",
+        h: "No posthumous Nobel = Franklin (DNA), Mendel (genetics) among those who couldn't receive recognition.",
+        yr: 'GST',
+      },
+      {
+        q: 'Science diplomacy refers to:',
+        o: [
+          'Diplomatic protocols scientists follow at international conferences',
+          'The use of scientific collaborations as vehicles for international diplomacy — building relationships between countries through science',
+          'Negotiations about international science project funding',
+          'Rules governing publication by researchers from multiple countries',
+        ],
+        a: 1,
+        e: 'Science diplomacy uses science, technology, and innovation to facilitate diplomatic objectives. CERN brings together scientists from countries with political tensions; the ISS involves US, Russian, European, Japanese cooperation; the Human Genome Project linked researchers globally.',
+        h: 'Science diplomacy = international scientific collaborations building diplomatic relationships.',
+        yr: 'GST',
+      },
+      {
+        q: 'University of Ibadan is significant in the history of Nigerian science because:',
+        o: [
+          'It is the largest university in Nigeria by enrollment',
+          "It is the oldest Nigerian university, founded in 1948, and one of the country's pre-eminent research institutions",
+          'It is the only Nigerian university with a Nobel Prize recipient',
+          'It was the first university in Africa to establish a scientific research faculty',
+        ],
+        a: 1,
+        e: "The University of Ibadan, founded in 1948 (initially as a college of the University of London), is Nigeria's oldest university. It became an independent university in 1962. Located in Ibadan, Oyo State, it is one of Nigeria's premier research universities.",
+        h: 'University of Ibadan = oldest Nigerian university (founded 1948).',
+        yr: 'GST',
+      },
+      {
+        q: "The 'publish or perish' culture in academia refers to:",
+        o: [
+          'The rapid pace of discovery requiring constant publication',
+          'The pressure on academics to continually publish research papers to secure employment, tenure, and promotion — leading to quantity-over-quality concerns',
+          'Scientists must publish before patenting findings',
+          'The urgent need to publish pandemic research quickly',
+        ],
+        a: 1,
+        e: 'Publish or perish: academics are evaluated primarily on publication quantity and prestige. Without strong publication records, academics struggle to get hired, obtain tenure, receive grants. This pressure can lead to questionable research practices, publication bias, and prioritizing publishable over important topics.',
+        h: 'Publish or perish = academic pressure to publish constantly. Leads to quality concerns.',
+        yr: 'GST',
+      },
+      {
+        q: 'The World Wide Web (WWW) was invented at CERN in 1989 by Tim Berners-Lee to:',
+        o: [
+          'Enable global entertainment and social media',
+          'Allow physicists and researchers to share documents and data across different computers in different countries',
+          'Create encrypted communication for government and military use',
+          'Develop the first search engine for scientific publications',
+        ],
+        a: 1,
+        e: 'Tim Berners-Lee invented the Web at CERN in 1989 to solve a specific problem: CERN employed thousands of researchers from many countries using different computers; there was no easy way to share documents. His hypertext-based document linking became the World Wide Web.',
+        h: 'WWW invented by Berners-Lee at CERN (1989) = originally to help physicists share documents.',
+        yr: 'GST',
+      },
+      {
+        q: 'Evidence-based policy aims to:',
+        o: [
+          'Replace political decision-making with purely technical scientific decisions',
+          'Ensure government policies are informed by the best available scientific evidence, while recognizing values and political judgment are also involved',
+          'Fund only applied science with direct policy applications',
+          'Require all politicians to have scientific qualifications',
+        ],
+        a: 1,
+        e: 'Evidence-based policy (EBP): policies informed by best available scientific evidence rather than ideology or anecdote. Applied in health policy, environmental regulation, agricultural policy. Science informs but does not alone determine policy — values, economics, and political judgment are always also involved.',
+        h: "Evidence-based policy = policies informed by best scientific evidence. Science informs but doesn't alone determine.",
+        yr: 'GST',
+      },
+      {
+        q: 'The Fields Medal is significant because:',
+        o: [
+          'It is the mathematics equivalent of the Nobel Prize — awarded every four years to mathematicians under 40',
+          'It is the award for best particle physics discovery from CERN',
+          'It is the prize for interdisciplinary research',
+          'It is the Nobel Prize for formal sciences',
+        ],
+        a: 0,
+        e: 'The Fields Medal (established 1936, awarded every four years) is the most prestigious prize in mathematics. Awarded to mathematicians under 40. There is no Nobel Prize in mathematics.',
+        h: 'Fields Medal = mathematics equivalent of Nobel Prize. Awarded every 4 years to mathematicians under 40.',
+        yr: 'GST',
+      },
+      {
+        q: 'Brain drain in the context of Nigerian science refers to:',
+        o: [
+          'Neurological effects of intense scientific study',
+          "The emigration of highly trained Nigerian scientists and academics to wealthier countries — depleting Nigeria's scientific human capital",
+          'The inability of Nigerian universities to attract internationally trained scientists',
+          'Government budget cuts reducing brain research funding',
+        ],
+        a: 1,
+        e: "Brain drain (the 'japa' phenomenon) refers to the emigration of skilled, educated Nigerians — scientists, doctors, engineers, academics — to the US, UK, Canada. The loss of trained scientific talent significantly hampers Nigeria's scientific development, innovation capacity, and healthcare system.",
+        h: "Brain drain = emigration of trained Nigerian scientists = 'japa' = depletes Nigeria's scientific capacity.",
+        yr: 'GST',
+      },
+      {
+        q: 'Conflicts of interest in science funding are ethically significant because:',
+        o: [
+          'They are illegal under international scientific conduct codes',
+          'They can bias research design, data interpretation, and reporting toward outcomes favored by the funding source — compromising scientific objectivity',
+          'They prevent scientists from publishing in peer-reviewed journals',
+          'They reduce total science funding',
+        ],
+        a: 1,
+        e: 'Conflicts of interest: when researchers have financial or personal interests aligned with particular outcomes, these can bias (consciously or not) their research. Tobacco industry funding → biased smoking research. Pharmaceutical industry funding → favorable drug trials. Most journals require disclosure of funding sources.',
+        h: 'Conflicts of interest = financial/personal interests can bias research. Must be disclosed.',
+        yr: 'GST',
+      },
+      {
+        q: 'Philosophical Transactions of the Royal Society (1665) established which key conventions for modern science?',
+        o: [
+          'It was the first journal to adopt double-blind peer review',
+          'Founded in 1665, it established the scientific journal as the primary formal vehicle for communicating findings, prioritizing discoveries, and creating the scientific literature',
+          'It was the journal where Darwin published his theory',
+          'It is now the highest-impact journal in the world',
+        ],
+        a: 1,
+        e: 'Philosophical Transactions (1665, founded by Henry Oldenburg) established conventions of scientific communication: registering priority of discovery (who discovered it first), communicating findings to the scientific community, and creating a permanent record. These conventions define modern scientific publishing.',
+        h: 'Philosophical Transactions (1665) = established scientific journal as primary communication vehicle.',
+        yr: 'GST',
+      },
+    ],
   },
 
-  // ==========================================================================
-  // TOPIC 10: The Future of Science and Nigerian Science Development
-  // ==========================================================================
   {
-    topic: "The Future of Science and Nigerian Science Development",
-    topicCode: "HPS-010-01",
-    module: "Science and Society",
+    topic: 'African Science and Technology',
+    topicCode: 'HPS-AFR-10',
+    module: "Module 10: Africa's Scientific Heritage and Future",
     contentHTML: `
-<div class="learn-intro">
-  <span class="learn-keyword">The future of science</span> will be shaped by emerging technologies, global challenges, and where research is conducted. For Nigeria, developing scientific capacity is essential for economic diversification, health, agriculture, and sustainable development. <strong>Understanding how science works globally and locally prepares you to participate in building a scientifically literate, innovative Nigeria</strong>.
-</div>
-
-<p class="learn-p">Science is no longer the exclusive domain of Europe and North America. China, India, South Korea, and other nations have rapidly built world-class research capacity. Africa, including Nigeria, has immense potential but faces significant challenges in funding, infrastructure, and policy. This final topic examines trends in global science and Nigeria's scientific development.</p>
-
-<h3 class="learn-subheading">Emerging Trends in Global Science</h3>
-
-<p class="learn-p"><strong>Open science:</strong> Movement toward making research outputs (publications, data, code, methods) freely accessible to all. Benefits: accelerates discovery, enables replication, increases transparency, allows global participation. Challenges: funding for open access, quality control, data management.</p>
-
-<p class="learn-p"><strong>Interdisciplinary research:</strong> Major challenges (climate change, pandemic response, food security, AI ethics) require collaboration across disciplines. Bioengineering, computational social science, environmental economics — breaking down traditional boundaries.</p>
-
-<p class="learn-p"><strong>Citizen science:</strong> Public participation in scientific research — eBird (bird observations), Galaxy Zoo (galaxy classification), Foldit (protein folding), COVID symptom trackers. Expands data collection, engages public, improves science literacy.</p>
-
-<p class="learn-p"><strong>Data-intensive science (fourth paradigm):</strong> Big data, machine learning, AI are transforming research — from hypothesis-driven to data-driven discovery. Genomics (sequencing billions of base pairs), astronomy (terabytes of telescope data), climate modeling.</p>
-
-<p class="learn-p"><strong>Responsible research and innovation (RRI):</strong> Framework for aligning research and innovation with societal values, needs, and ethical principles. Emphasizes anticipation (considering future consequences), reflexivity (examining assumptions), inclusion (public engagement), responsiveness (adapting based on feedback).</p>
-
-<h3 class="learn-subheading">Challenges Facing Global Science</h3>
-
-<p class="learn-p"><strong>Funding instability:</strong> Government research budgets unpredictable; short-term funding cycles discourage long-term projects. Increased reliance on private funding may skew priorities toward profit, not public good.</p>
-
-<p class="learn-p"><strong>Publish or perish culture:</strong> Pressure to publish frequently incentivizes questionable practices (p-hacking, HARKing, salami slicing — dividing one study into multiple papers). Evaluation metrics (impact factors, citation counts) imperfect.</p>
-
-<p class="learn-p"><strong>Bias in publishing and funding:</strong> Women and minorities underrepresented in top journals, funding awards, and leadership positions. Western institutions overrepresented; research from developing countries less likely to be published in high-impact journals.</p>
-
-<p class="learn-p"><strong>Public trust in science:</strong> Declining trust in some countries (vaccine hesitancy, climate change denial, conspiracy theories). Scientists must communicate effectively, engage with public, counter misinformation.</p>
-
-<h3 class="learn-subheading">Nigeria's Science Landscape — Current Status</h3>
-
-<p class="learn-p"><strong>Research output:</strong> Nigeria produces significant research in Africa (second after South Africa) — but small globally. Leading fields: public health, tropical medicine, agriculture, materials science, computer science. Collaboration with international partners common.</p>
-
-<p class="learn-p"><strong>Challenges facing Nigerian science:</strong></p>
+<div class="learn-intro">Africa's scientific story is far richer and longer than the truncated narrative often presented. From ancient Egyptian mathematics to Nok iron-smelting, from Timbuktu's medieval universities to contemporary Nigerian researchers, <span class="learn-keyword">African science and technology</span> represents a global heritage that must be recovered, understood, and built upon.</div>
+<h3 class="learn-subheading">10.1 Ancient African Science and Technology</h3>
 <ul class="learn-list">
-  <li><strong>Funding:</strong> R&D spending very low (% of GDP). TETFund supports universities, but research grants limited compared to developed countries.</li>
-  <li><strong>Infrastructure:</strong> Labs lack equipment; unreliable electricity; internet connectivity issues; access to journals limited (though improving with open access).</li>
-  <li><strong>Brain drain:</strong> Many top Nigerian scientists work abroad (UK, US, Canada) — better funding, facilities, career opportunities. Remittances helpful, but loss of talent harms local capacity.</li>
-  <li><strong>Policy-practice gap:</strong> Many science policies exist but implementation weak. Coordination among agencies limited.</li>
-  <li><strong>Commercialization:</strong> Research results rarely translated into products, patents, startups. Weak links between universities and industry.</li>
-  <li><strong>Career paths:</strong> Limited academic positions; research careers precarious. Many PhD graduates leave research.</li>
+<li><strong>Ancient Egypt:</strong> Rhind Papyrus (c.1650 BCE) — sophisticated mathematics. Edwin Smith Papyrus (c.1600 BCE) — rational clinical medicine. Astronomy and calendar systems. Architecture and engineering.</li>
+<li><strong>Nok culture, central Nigeria (c.900 BCE–200 CE):</strong> Among the earliest iron-smelting societies in Africa — iron technology developing independently in sub-Saharan Africa ~500–1000 BCE. Also produced sophisticated terracotta sculpture — oldest large-scale sub-Saharan terracotta art.</li>
+<li><strong>Timbuktu / Sankore University (13th–16th centuries CE):</strong> Major intellectual center under Mali and Songhai empires. Hundreds of thousands of manuscripts covering mathematics, astronomy, medicine, law, history. Scholarly traditions comparable to contemporaneous Islamic and European learning.</li>
+<li><strong>Ethiopia:</strong> Ethiopian calendar, astronomical observations, independent intellectual tradition. Aksumite Empire (1st–7th centuries CE) — sophisticated coinage, architecture, extensive trade connections.</li>
+<li><strong>Great Zimbabwe (c.1100–1450 CE):</strong> Massive stone enclosures built without mortar using precisely fitted granite blocks — remarkable structural and engineering knowledge.</li>
 </ul>
-
-<h3 class="learn-subheading">Opportunities and Initiatives</h3>
-
-<p class="learn-p"><strong>Government initiatives:</strong></p>
+<h3 class="learn-subheading">10.2 Indigenous Knowledge Systems (IKS)</h3>
+<p class="learn-p"><span class="learn-keyword">Indigenous Knowledge Systems</span> are bodies of knowledge held by local and traditional communities, accumulated through generations of observation and cultural transmission. WHO estimates 80% of Africa's population uses traditional medicine as primary healthcare.</p>
+<div class="learn-table-wrap"><table class="learn-table"><thead><tr><th>IKS Domain</th><th>Examples</th><th>Scientific Status</th></tr></thead><tbody>
+<tr><td>Medicinal plants</td><td>Moringa (Zogale in Hausa), Aloe vera, Neem (Dogonyaro), Artemisia</td><td>Many scientifically validated; WHO: 80% of Africans use traditional medicine as primary healthcare</td></tr>
+<tr><td>Agriculture</td><td>Intercropping, zai planting pits (Sahel), traditional irrigation</td><td>Scientifically shown to improve yields and soil health</td></tr>
+<tr><td>Environmental management</td><td>Sacred forests, seasonal hunting bans, rotational land use</td><td>Recognized as early conservation — validated by ecology</td></tr>
+<tr><td>Water management</td><td>Terracing, underground cisterns, seasonal flood farming</td><td>Proven effective for water conservation in semi-arid regions</td></tr>
+</tbody></table></div>
+<h3 class="learn-subheading">10.3 Colonialism and African Science</h3>
+<p class="learn-p">Colonialism had largely negative effects: systematic extraction of botanical, geological, and ethnographic knowledge without acknowledgment; suppression of indigenous knowledge through mission education (labeling traditional medicine 'superstition'); disruption of intellectual institutions (Timbuktu's scholarly tradition devastated by Moroccan invasion 1591); replacement of African farming with inappropriate cash crop monocultures; epistemological legacy equating "science" with "European knowledge." This legacy continues to affect how African students and governments value different knowledge systems.</p>
+<h3 class="learn-subheading">10.4 Contemporary African Scientists</h3>
 <ul class="learn-list">
-  <li><strong>TETFund (Tertiary Education Trust Fund):</strong> Provides funding for infrastructure, research, staff development in public universities. Significant impact but challenges remain.</li>
-  <li><strong>NITDA (National Information Technology Development Agency):</strong> Promotes IT development, digital literacy, tech hubs.</li>
-  <li><strong>NUC (National Universities Commission):</strong> Curriculum development, accreditation, quality assurance.</li>
-  <li><strong>NASENI (National Agency for Science and Engineering Infrastructure):</strong> Promotes indigenous technology development.</li>
-  <li><strong>SHESTCO (Science and Technology Education Post-Basic):</strong> Promotes science education.</li>
+<li><strong>Wangari Maathai (Kenya, 1940–2011):</strong> Nobel Peace Prize 2004. Founded Green Belt Movement — planted 50+ million trees across Africa. First African woman to win a Nobel Prize. Connected environmental science with democracy and women's empowerment.</li>
+<li><strong>Philip Emeagwali (Nigeria):</strong> Won 1989 Gordon Bell Prize for massively parallel computing using a connection machine. Pioneer of parallel computing.</li>
+<li><strong>Segenet Kelemu (Ethiopia):</strong> Director General of icipe (International Centre of Insect Physiology and Ecology) — research on sustainable agriculture and insect science.</li>
 </ul>
-
-<p class="learn-p"><strong>International collaborations:</strong></p>
+<h3 class="learn-subheading">10.5 Science and Technology for Nigerian Development</h3>
 <ul class="learn-list">
-  <li>World Bank-funded projects (ACE — African Centres of Excellence)</li>
-  <li>UK aid, EU research programmes, Wellcome Trust, Bill & Melinda Gates Foundation</li>
-  <li>South-South collaboration (China, India, Brazil)</li>
+<li><strong>Agriculture:</strong> Crop improvement (drought-resistant varieties), soil science, precision agriculture, agro-processing — essential for food security for 200M+ population.</li>
+<li><strong>Energy:</strong> 40M+ Nigerians lack electricity. Solar, wind, grid modernization, energy efficiency are critical scientific and engineering challenges.</li>
+<li><strong>Health:</strong> Malaria, TB, HIV/AIDS, Lassa fever (infectious diseases) + rising NCDs (diabetes, hypertension). Medical research and drug discovery are priorities.</li>
+<li><strong>ICT:</strong> Nigeria's growing tech sector (Paystack, Flutterwave, Andela) demonstrates potential. AI, data science, computer science = high-potential development areas.</li>
 </ul>
-
-<p class="learn-p"><strong>Tech hubs and innovation:</strong></p>
-<ul class="learn-list">
-  <li>Lagos: CcHub (Co-creation Hub), Wennovation, Leadspace — supporting startups, tech entrepreneurs</li>
-  <li>Abuja, Port Harcourt, other cities: growing ecosystems</li>
-  <li>Success stories: Paystack (fintech, acquired by Stripe), Flutterwave, Andela (software development training), Paga, Kuda</li>
-</ul>
-
-<p class="learn-p"><strong>Grassroots and community science:</strong></p>
-<ul class="learn-list">
-  <li>Nigerian Young Academy (NYA) — early-career scientists</li>
-  <li>Science communication groups (SciComm Nigeria)</li>
-  <li>Social media science communities (Twitter, WhatsApp groups)</li>
-  <li>Student research groups, science clubs in universities</li>
-</ul>
-
-<h3 class="learn-subheading">Building a Scientific Culture in Nigeria</h3>
-
-<p class="learn-p"><strong>What students can do:</strong></p>
-<ul class="learn-list">
-  <li>Develop critical thinking skills — evaluate evidence, recognize bias, question claims</li>
-  <li>Engage with science beyond coursework — read, attend seminars, join research groups</li>
-  <li>Consider research careers — PhD, academia, industry, policy, science communication</li>
-  <li>Advocate for science funding, evidence-based policy, science education</li>
-  <li>Communicate science to public — write, present, use social media, counter misinformation</li>
-</ul>
-
-<p class="learn-p"><strong>What Nigeria needs:</strong></p>
-<ul class="learn-list">
-  <li>Increased, sustained R&D funding (public and private)</li>
-  <li>Improved infrastructure (reliable electricity, internet, lab equipment)</li>
-  <li>Better incentives for research careers (competitive salaries, clear promotion paths)</li>
-  <li>Stronger university-industry linkages (commercialization, internships, joint research)</li>
-  <li>Science education reform (critical thinking, hands-on learning, teacher training)</li>
-  <li>Public engagement with science (museums, festivals, media coverage, citizen science)</li>
-  <li>Policies to reduce brain drain (better conditions, diaspora engagement, return programs)</li>
-</ul>
-
-<div class="learn-svg-wrap">
-  <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" class="learn-svg">
-    <rect width="500" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="250" y="22" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="700">🇳🇬 NIGERIAN SCIENCE — Challenges and Opportunities</text>
-    
-    <!-- Challenges -->
-    <g>
-      <rect x="15" y="45" width="225" height="180" rx="10" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
-      <rect x="15" y="45" width="225" height="30" rx="10" fill="#ef4444"/>
-      <text x="127" y="66" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">⚠️ CHALLENGES</text>
-      
-      <text x="127" y="95" text-anchor="middle" font-size="8" fill="#991b1b">Low R&D funding</text>
-      <text x="127" y="115" text-anchor="middle" font-size="8" fill="#991b1b">Poor infrastructure</text>
-      <text x="127" y="135" text-anchor="middle" font-size="8" fill="#991b1b">Brain drain</text>
-      <text x="127" y="155" text-anchor="middle" font-size="8" fill="#991b1b">Policy-practice gap</text>
-      <text x="127" y="175" text-anchor="middle" font-size="8" fill="#991b1b">Weak commercialization</text>
-      <text x="127" y="195" text-anchor="middle" font-size="8" fill="#991b1b">Limited career paths</text>
-      
-      <circle cx="127" cy="212" r="5" fill="#ef4444" opacity="0.5">
-        <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    
-    <!-- Opportunities -->
-    <g>
-      <rect x="260" y="45" width="225" height="180" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-      <rect x="260" y="45" width="225" height="30" rx="10" fill="#22c55e"/>
-      <text x="372" y="66" text-anchor="middle" font-size="9" fill="#ffffff" font-weight="800">✅ OPPORTUNITIES</text>
-      
-      <text x="372" y="95" text-anchor="middle" font-size="8" fill="#166534">TETFund research funding</text>
-      <text x="372" y="115" text-anchor="middle" font-size="8" fill="#166534">International collaborations</text>
-      <text x="372" y="135" text-anchor="middle" font-size="8" fill="#166534">Tech hubs (CcHub, Wennovation)</text>
-      <text x="372" y="155" text-anchor="middle" font-size="8" fill="#166534">Successful startups (Paystack)</text>
-      <text x="372" y="175" text-anchor="middle" font-size="8" fill="#166534">Young scientists (NYA)</text>
-      <text x="372" y="195" text-anchor="middle" font-size="8" fill="#166534">Science communication groups</text>
-      
-      <path d="M290,212 Q310,204 330,212 Q350,220 370,212 Q390,204 410,212 Q430,220 450,212" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.6">
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1s" repeatCount="indefinite"/>
-      </path>
-    </g>
-  </svg>
-</div>
-
-<h3 class="learn-subheading">The Role of Universities in Nigerian Science</h3>
-
-<p class="learn-p">Nigerian universities face challenges but remain central to research and training.</p>
-
-<p class="learn-p"><strong>Centres of Excellence (World Bank):</strong> ACE programme established centres in Nigerian universities focusing on specific areas — agriculture (ABU Zaria), renewable energy (UNN), public health (UI, UNIJOS), materials science, etc. Improved infrastructure, research output, international collaboration.</p>
-
-<p class="learn-p"><strong>Research groups and networks:</strong> Despite challenges, many Nigerian researchers maintain active programs — often with international partners. Malaria research (NIMR), vaccine development, crop improvement, AI, materials science.</p>
-
-<p class="learn-p"><strong>Graduate training:</strong> PhD programs expanding (PTDF scholarship scheme for science, technology, engineering). Nigerian Academy of Science (NAS) promotes excellence.</p>
-
-<h3 class="learn-subheading">Conclusion — Science for Sustainable Development</h3>
-
-<p class="learn-p">The UN Sustainable Development Goals (SDGs) — ending poverty, zero hunger, good health and wellbeing, quality education, clean water, clean energy, climate action, peace, justice, partnership — all require science. For Nigeria to achieve these goals, strengthening scientific capacity is not optional — it is essential.</p>
-
-<p class="learn-p">Science is not just for scientists. Understanding how science works, how to evaluate evidence, how to recognize bias and misinformation, and how science interacts with society — these are skills for every citizen. History and Philosophy of Science equips you with these tools.</p>
-
-<p class="learn-p"><strong>Final reflection:</strong> The history of science shows that knowledge grows through hard work, creativity, collaboration, and sometimes revolution. The philosophy of science shows that certainty is elusive but progress is real. The future of science — in Nigeria and globally — depends on people like you: curious, critical, committed, and responsible.</p>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">💡</span>
-  <span><strong>What you can do:</strong> Science is not just a career — it's a way of thinking. Whether you become a scientist, teacher, doctor, engineer, lawyer, businessperson, civil servant, or artist, you can:
-  <ul class="learn-list" style="margin-top:5px">
-    <li>Think critically — question claims, seek evidence</li>
-    <li>Communicate clearly — explain scientific concepts to public</li>
-    <li>Advocate for evidence-based policy</li>
-    <li>Support science education — volunteer, mentor, donate</li>
-    <li>Engage with research — even as citizen scientist</li>
-    <li>Counter misinformation — share accurate information</li>
-  </ul>
-  </span>
-</div>
-
-<div class="learn-tip-box">
-  <span class="learn-tip-icon">🎓</span>
-  <span><strong>GST Exam Practice:</strong> "Identify three challenges facing science in Nigeria and propose one solution for each." (Sample answer: Challenges — (1) Low funding: Solution — increase R&D budget, create competitive grants. (2) Brain drain: Solution — improve local research conditions, engagement with diaspora through visiting positions, collaborative grants. (3) Poor infrastructure: Solution — invest in reliable electricity, internet; share regional facilities; use open access resources.)</span>
-</div>
-    `,
+<h3 class="learn-subheading">10.6 Science Education in Nigeria</h3>
+<p class="learn-p">The <span class="learn-keyword">NUC (National Universities Commission)</span> mandates GST courses — including History and Philosophy of Science — for all Nigerian university students regardless of discipline. The rationale: in a modern society shaped by science, all graduates need scientific literacy to make informed decisions as citizens. Key challenge: brain drain — significant emigration ("japa") of science graduates and academics depletes Nigeria's human capital for scientific development.</p>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 185" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="185" fill="#0a1628" rx="12"/><text x="280" y="26" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">African Scientific Heritage — Timeline</text><line x1="30" y1="100" x2="530" y2="100" stroke="#4a90d9" stroke-width="2"/><circle cx="50" cy="100" r="5" fill="#e05a2b"/><line x1="50" y1="95" x2="50" y2="60" stroke="#e05a2b" stroke-width="1"/><text x="50" y="53" text-anchor="middle" fill="#ffaa80" font-size="7.5" font-family="Georgia,serif">Ancient Egypt</text><text x="50" y="43" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">3000 BCE</text><circle cx="130" cy="100" r="5" fill="#FFD700"/><line x1="130" y1="95" x2="130" y2="60" stroke="#FFD700" stroke-width="1"/><text x="130" y="53" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">Nok Culture</text><text x="130" y="43" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">Nigeria 900 BCE</text><circle cx="230" cy="100" r="5" fill="#2bcc71"/><line x1="230" y1="95" x2="230" y2="60" stroke="#2bcc71" stroke-width="1"/><text x="230" y="53" text-anchor="middle" fill="#80ffaa" font-size="7.5" font-family="Georgia,serif">Aksum Empire</text><text x="230" y="43" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">Ethiopia 1–700 CE</text><circle cx="330" cy="100" r="6" fill="#a066e0"/><line x1="330" y1="95" x2="330" y2="60" stroke="#a066e0" stroke-width="1"/><text x="330" y="53" text-anchor="middle" fill="#d4aaff" font-size="7.5" font-family="Georgia,serif">Timbuktu/Sankore</text><text x="330" y="43" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">1300–1600 CE</text><circle cx="420" cy="100" r="5" fill="#4a90d9"/><line x1="420" y1="95" x2="420" y2="60" stroke="#4a90d9" stroke-width="1"/><text x="420" y="53" text-anchor="middle" fill="#90c8ff" font-size="7.5" font-family="Georgia,serif">Colonial period</text><text x="420" y="43" text-anchor="middle" fill="#aaa" font-size="7" font-family="Georgia,serif">1880s–1960s</text><circle cx="510" cy="100" r="6" fill="#FFD700"><animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/></circle><line x1="510" y1="95" x2="510" y2="60" stroke="#FFD700" stroke-width="1"/><text x="510" y="53" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">Contemporary</text><text x="510" y="43" text-anchor="middle" fill="#FFD700" font-size="7.5" font-family="Georgia,serif">African science</text><text x="280" y="133" text-anchor="middle" fill="#aaa" font-size="9" font-family="Georgia,serif">Africa has a 5,000+ year scientific heritage. Colonialism disrupted but did not destroy it.</text><text x="280" y="148" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Wangari Maathai (Kenya, Nobel Peace 2004) | Philip Emeagwali (Nigeria, Gordon Bell 1989)</text></svg></div>
+<div class="learn-svg-wrap"><svg class="learn-svg" viewBox="0 0 560 158" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="158" fill="#0a1628" rx="12"/><text x="280" y="24" text-anchor="middle" fill="#FFD700" font-size="13" font-weight="bold" font-family="Georgia,serif">Science and Technology for Nigerian Development</text><rect x="15" y="45" width="98" height="85" rx="6" fill="#0d3b6e" stroke="#2bcc71" stroke-width="1.5"/><text x="64" y="65" text-anchor="middle" fill="#80ffaa" font-size="9.5" font-family="Georgia,serif" font-weight="bold">AGRI-</text><text x="64" y="78" text-anchor="middle" fill="#80ffaa" font-size="9.5" font-family="Georgia,serif" font-weight="bold">CULTURE</text><text x="64" y="95" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Crop improvement</text><text x="64" y="108" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Soil science</text><rect x="124" y="45" width="93" height="85" rx="6" fill="#0d3b6e" stroke="#FFD700" stroke-width="1.5"/><text x="170" y="65" text-anchor="middle" fill="#FFD700" font-size="9.5" font-family="Georgia,serif" font-weight="bold">ENERGY</text><text x="170" y="83" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Solar, wind</text><text x="170" y="96" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">40M+ without</text><text x="170" y="109" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">electricity</text><rect x="228" y="45" width="93" height="85" rx="6" fill="#0d3b6e" stroke="#e05a2b" stroke-width="1.5"/><text x="274" y="65" text-anchor="middle" fill="#ffaa80" font-size="9.5" font-family="Georgia,serif" font-weight="bold">HEALTH</text><text x="274" y="83" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Malaria, TB</text><text x="274" y="96" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">HIV, Lassa</text><text x="274" y="109" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Drug discovery</text><rect x="332" y="45" width="98" height="85" rx="6" fill="#0d3b6e" stroke="#4a90d9" stroke-width="1.5"/><text x="381" y="65" text-anchor="middle" fill="#90c8ff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">ENVIRON-</text><text x="381" y="78" text-anchor="middle" fill="#90c8ff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">MENT</text><text x="381" y="95" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Niger Delta</text><text x="381" y="108" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Climate adaptation</text><rect x="441" y="45" width="104" height="85" rx="6" fill="#1a2e5a" stroke="#a066e0" stroke-width="1.5"/><text x="493" y="65" text-anchor="middle" fill="#d4aaff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">ICT &amp;</text><text x="493" y="78" text-anchor="middle" fill="#d4aaff" font-size="9.5" font-family="Georgia,serif" font-weight="bold">DIGITAL</text><text x="493" y="95" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">Fintech</text><text x="493" y="108" text-anchor="middle" fill="#aaa" font-size="8" font-family="Georgia,serif">AI/Data Science</text><text x="280" y="146" text-anchor="middle" fill="#5a6a7a" font-size="9" font-family="Georgia,serif">Key institutions: FMSTI, NASENI, NAFDAC, NAS, TETFund, Nigerian universities</text></svg></div>
+<div class="learn-tip-box"><span class="learn-tip-icon">💡</span><strong>GST Exam Tip:</strong> Nok culture (Nigeria, c.900 BCE) = early independent iron smelting + oldest large-scale sub-Saharan terracotta sculpture. Timbuktu/Sankore = major center of Islamic scholarship (13th–16th centuries) with hundreds of thousands of manuscripts. Wangari Maathai = first African woman Nobel Prize (Peace, 2004) = Green Belt Movement (Kenya). Philip Emeagwali = Nigerian computer scientist = 1989 Gordon Bell Prize. Moringa (Zogale in Hausa) = scientifically validated African medicinal plant. WHO: 80% of Africans use traditional medicine as primary healthcare.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">⚠️</span><span class="learn-tip-warn"><strong>Common Mistake:</strong></span> Africa had NO scientific tradition before colonialism = WRONG. Africa has 5,000+ years of scientific heritage. IKS is NOT superstition — much has been scientifically validated. WHO calls for integration of traditional medicine with modern healthcare. The zero and decimal system = INDIAN invention (not African, not Chinese). Chinese contributions = paper, printing, gunpowder, compass. Artemisinin (key antimalarial) = from Chinese traditional medicine (Tu Youyou, Nobel Medicine 2015) — demonstrates IKS → modern medicine pathway.</div>
+<div class="learn-tip-box"><span class="learn-tip-icon">📌</span><strong>Summary:</strong> Africa's scientific heritage spans 5,000+ years — from Egyptian mathematics and medicine through independent iron-smelting to the Timbuktu scholarly tradition. Indigenous Knowledge Systems hold vast accumulated wisdom in medicine, agriculture, water management, and environmental management that modern science increasingly validates. Colonialism disrupted but did not destroy Africa's traditions. Contemporary African scientists (Maathai, Emeagwali, Kelemu) contribute globally. Nigeria's development challenges — agriculture, energy, health, environment, ICT — require scientific and technological solutions. The NUC mandates GST 112 for all Nigerian university students to build scientific literacy across disciplines.</div>`,
     questions: [
-      { q: "Open science aims to:", o: ["Keep research secret", "Make research outputs (publications, data, code) freely accessible to all", "Charge high subscription fees", "Publish only in print"], a: 1, e: "Open science: free access to publications, data, code, methods — accelerates discovery, enables replication, increases transparency.", h: "What does open science make accessible?", yr: "GST" },
-      { q: "Citizen science refers to:", o: ["Only scientists can participate", "Public participation in scientific research (e.g., eBird, Galaxy Zoo)", "Government funding of science", "Private sector research"], a: 1, e: "Citizen science involves non-scientists in research — collecting data, classifying images, solving problems — expands capacity and engages public.", h: "What involves the public in research?", yr: "GST" },
-      { q: "Nigeria's research output compared to other African countries is:", o: ["Lowest in Africa", "Second highest after South Africa", "Highest in Africa", "Non-existent"], a: 1, e: "Nigeria is second in Africa for research output (after South Africa). Globally, still small but significant growth.", h: "How does Nigeria rank in Africa?", yr: "GST" },
-      { q: "Which Nigerian government agency provides funding for university research and infrastructure?", o: ["EFCC", "TETFund (Tertiary Education Trust Fund)", "INEC", "NIMC"], a: 1, e: "TETFund supports public universities with research grants, infrastructure, staff development — crucial for Nigerian science.", h: "What is TETFund?", yr: "GST" },
-      { q: "The term 'brain drain' refers to:", o: ["New research methods", "Top scientists leaving Nigeria for better opportunities abroad — loss of talent", "Brain surgery", "Sleep deprivation"], a: 1, e: "Brain drain: emigration of skilled professionals (scientists, doctors, engineers) to countries with better opportunities. Reduces local capacity.", h: "What is loss of skilled workers called?", yr: "GST" },
-      { q: "Which of the following is a successful Nigerian tech startup?", o: ["Google", "Paystack (fintech, acquired by Stripe)", "Microsoft", "Amazon"], a: 1, e: "Paystack (Nigerian fintech) acquired by Stripe for $200M+. Also Flutterwave, Andela, Paga, Kuda.", h: "Which Nigerian startup succeeded?", yr: "GST" },
-      { q: "The fourth paradigm of science refers to:", o: ["Hypothesis-driven science", "Experimental science", "Theoretical science", "Data-intensive science — big data, AI, machine learning driving discovery"], a: 3, e: "Fourth paradigm: data-intensive science. AI and machine learning find patterns in large datasets — complementing theory, experiment, simulation.", h: "What is data-driven science called?", yr: "GST" },
-      { q: "Responsible Research and Innovation (RRI) emphasizes:", o: ["Only speed", "Anticipation, reflexivity, inclusion, responsiveness — aligning research with societal values", "Only profit", "Secrecy"], a: 1, e: "RRI framework: anticipate future consequences, examine assumptions, engage public, adapt based on feedback. Science for public good.", h: "What framework aligns research with society?", yr: "GST" },
-      { q: "A challenge facing global science is:", o: ["Too much funding", "Publication bias and 'publish or perish' culture incentivizing questionable practices", "Too many women in science", "Too much replication"], a: 1, e: "Pressure to publish frequently incentivizes p-hacking, HARKing, salami slicing — questionable practices that undermine reliability.", h: "What problem does publication pressure cause?", yr: "GST" },
-      { q: "The African Centres of Excellence (ACE) programme is funded by:", o: ["Nigerian government only", "World Bank — establishing research centres in Nigerian universities", "European Union", "Chinese government"], a: 1, e: "World Bank's ACE programme supports research centres in African universities (including Nigeria) in priority fields.", h: "Who funds ACE?", yr: "GST" },
-      { q: "Which of the following is a Nigerian science hub supporting tech startups?", o: ["Silicon Valley", "CcHub (Co-creation Hub) in Lagos", "Cambridge Innovation Center", "Station F"], a: 1, e: "CcHub (founded 2010) is Lagos tech hub supporting startups through incubation, funding, mentorship. Other hubs: Wennovation, Leadspace.", h: "What is CcHub?", yr: "GST" },
-      { q: "Interdisciplinary research is important because:", o: ["Only one discipline matters", "Major challenges (climate change, pandemics) require collaboration across disciplines", "Disciplines should never mix", "It is easier"], a: 1, e: "Complex problems (climate change, pandemics, food security) need multiple perspectives — natural sciences, social sciences, humanities, engineering.", h: "Why combine disciplines?", yr: "GST" },
-      { q: "Nigeria's R&D spending as percentage of GDP is:", o: ["Very high (comparable to US)", "Very low (significantly below global average)", "Average", "Not measured"], a: 1, e: "Nigeria's R&D spending is very low (% of GDP) — far below developed countries and below international target of 1% GDP.", h: "Is R&D funding high or low?", yr: "GST" },
-      { q: "The Nigerian Young Academy (NYA) is:", o: ["A primary school", "A network of early-career scientists promoting science and policy engagement", "A government ministry", "A private company"], a: 1, e: "NYA supports young scientists' careers, promotes science-policy engagement, organizes training and networking.", h: "What is NYA?", yr: "GST" },
-      { q: "Which of the following would help reduce brain drain from Nigeria?", o: ["Ignore diaspora", "Improve local research conditions, competitive salaries, career paths; engage diaspora through visiting positions and collaborations", "Ban scientists from leaving", "Only increase publications"], a: 1, e: "Brain drain solutions: better local conditions (funding, facilities, salaries), career paths, diaspora engagement (visiting positions, collaborative grants).", h: "How to keep scientists in Nigeria?", yr: "GST" },
-      { q: "The 'publish or perish' culture refers to:", o: ["Scientists who do not publish die", "Pressure to publish frequently for career advancement — may incentivize questionable practices", "Only publishing books", "Not publishing at all"], a: 1, e: "Publish or perish: academic careers depend on publication count and journal prestige — pressure that can incentivize shortcuts, questionable practices.", h: "What does 'publish or perish' mean?", yr: "GST" },
-      { q: "Sustainable Development Goals (SDGs) relate to science because:", o: ["SDGs ignore science", "SDGs are purely political", "Achieving SDGs (health, food, energy, climate) requires scientific knowledge and innovation", "Science cannot help development"], a: 2, e: "SDGs — ending poverty, zero hunger, good health, clean energy, climate action — all require scientific research, technology, and evidence-based policy.", h: "What helps achieve SDGs?", yr: "GST" },
-      { q: "Which Nigerian agency promotes indigenous technology development?", o: ["NITDA", "NASENI (National Agency for Science and Engineering Infrastructure)", "EFCC", "NUC"], a: 1, e: "NASENI promotes indigenous technology development, engineering infrastructure, and local production of scientific equipment.", h: "What is NASENI?", yr: "GST" },
-      { q: "One way to strengthen university-industry linkages in Nigeria is:", o: ["Keep universities isolated from industry", "Internships, joint research projects, commercialization offices to translate research into products, patents, startups", "Ignore industry needs", "Only focus on basic research"], a: 1, e: "University-industry linkages include internships, collaborative research, commercialization (patents, licensing, startups). Benefits students, researchers, economy.", h: "How can universities work with industry?", yr: "GST" },
-      { q: "Why is science communication important in Nigeria?", o: ["Scientists should never talk to public", "Counter misinformation, build public trust, engage citizens, influence policy", "Only publish in journals", "Keep science secret"], a: 1, e: "Science communication engages public, counters misinformation (vaccine hesitancy, climate denial), builds trust, informs policy, inspires next generation.", h: "Why communicate science to public?", yr: "GST" }
-    ]
-  }
+      {
+        q: 'The Nok culture in central Nigeria (c.900 BCE–200 CE) is significant in African scientific history for:',
+        o: [
+          'Developing the first writing system in sub-Saharan Africa',
+          'Being among the earliest iron-smelting societies in Africa and producing sophisticated terracotta sculpture',
+          'Building the first university in sub-Saharan Africa',
+          'Developing astronomical records comparable to Babylonian observations',
+        ],
+        a: 1,
+        e: 'The Nok culture was one of the earliest iron-smelting societies in Africa, with iron use dating to ~900–500 BCE — evidence of independently developed iron technology. Also known for the oldest large-scale sub-Saharan terracotta sculpture.',
+        h: 'Nok culture (Nigeria, ~900 BCE) = early independent iron smelting + sophisticated terracotta sculpture.',
+        yr: 'GST',
+      },
+      {
+        q: "Timbuktu's historical significance for African intellectual history is that:",
+        o: [
+          'It was the largest city in Africa before European colonization',
+          'It was home to Sankore University and hundreds of thousands of manuscripts covering mathematics, astronomy, medicine — a major intellectual center from the 13th–16th centuries',
+          'It was the first sub-Saharan city to adopt Islamic scholarship',
+          'It was the political capital of the Ancient Ghana Empire',
+        ],
+        a: 1,
+        e: 'Timbuktu (present-day Mali) was a major intellectual center under the Mali and Songhai empires. Sankore University housed scholars from across the Islamic world. Manuscripts cover mathematics, astronomy, medicine, jurisprudence, history, and literature — comparable to contemporaneous European and Islamic learning.',
+        h: 'Timbuktu = Sankore University + hundreds of thousands of manuscripts = major intellectual center.',
+        yr: 'GST',
+      },
+      {
+        q: "Wangari Maathai's contribution to African science and development included:",
+        o: [
+          'Developing antimalarial drugs from Kenyan medicinal plants',
+          "Founding the Green Belt Movement — planting 50+ million trees — and winning the 2004 Nobel Peace Prize for connecting environmental science with democracy and women's empowerment",
+          'Becoming the first African woman to win the Nobel Prize in Chemistry',
+          "Developing Africa's first environmental monitoring satellite",
+        ],
+        a: 1,
+        e: 'Wangari Maathai (1940–2011, Kenya) founded the Green Belt Movement in 1977 — mobilizing women to plant trees, addressing deforestation, soil erosion, and rural poverty. Planted over 51 million trees across Africa. Nobel Peace Prize 2004 — first African woman to receive a Nobel Prize.',
+        h: 'Wangari Maathai = Kenya = Green Belt Movement + Nobel Peace Prize 2004 = first African woman Nobel laureate.',
+        yr: 'GST',
+      },
+      {
+        q: 'Indigenous Knowledge Systems (IKS) in Africa are significant for modern science because:',
+        o: [
+          'They preserve supernatural practices that complement scientific methods',
+          'They contain vast accumulated knowledge about medicinal plants, agricultural practices, and environmental management that modern science increasingly validates',
+          'They represent knowledge systems proven inferior to Western science',
+          'They should be preserved in museums but not integrated into modern science',
+        ],
+        a: 1,
+        e: 'African IKS hold millennia of accumulated empirical knowledge: plants with validated medicinal properties, agricultural systems (intercropping, water harvesting), environmental management (sacred forests, rotational land use). WHO recognizes traditional medicine as primary healthcare for 80% of Africans.',
+        h: 'IKS = accumulated traditional knowledge in medicine, agriculture, environment = scientifically valuable resource.',
+        yr: 'GST',
+      },
+      {
+        q: 'The effect of colonialism on African science was primarily:',
+        o: [
+          'Positive — colonial education introduced modern science, overcoming African superstition',
+          'Largely negative — it extracted African knowledge without credit, suppressed indigenous knowledge, and disrupted African intellectual institutions',
+          'Neutral — Africa had no scientific tradition before colonialism',
+          'Mixed but ultimately beneficial',
+        ],
+        a: 1,
+        e: "Colonialism's effects: extraction of African knowledge for European benefit without acknowledgment; suppression of indigenous knowledge through mission education; disruption of intellectual traditions (Timbuktu's decline); replacement of African farming with inappropriate cash crops; epistemological legacy equating 'science' with European knowledge.",
+        h: 'Colonialism = extracted African knowledge + suppressed IKS + disrupted intellectual institutions = largely negative.',
+        yr: 'GST',
+      },
+      {
+        q: 'Moringa oleifera (known in Northern Nigeria as Zogale) represents African IKS in which field?',
+        o: [
+          'Traditional water engineering',
+          'Medicinal and nutritional plant knowledge — Moringa has been scientifically validated as highly nutritious with medicinal properties',
+          'Traditional astronomical observation',
+          'Indigenous building and architectural techniques',
+        ],
+        a: 1,
+        e: 'Moringa oleifera (Zogale in Hausa) is a traditional African medicinal and nutritional plant whose properties have been extensively validated by modern science. Nutritionally rich: more vitamin C than oranges, more calcium than milk, more potassium than bananas. Anti-inflammatory, antimicrobial, antioxidant properties. Seeds purify water.',
+        h: 'Moringa (Zogale) = African traditional plant = nutritional and medicinal properties scientifically validated.',
+        yr: 'GST',
+      },
+      {
+        q: "Philip Emeagwali's contribution to computing was:",
+        o: [
+          'Inventing the Internet communication protocol (TCP/IP)',
+          'Winning the 1989 Gordon Bell Prize for achieving record-high computing speed through massively parallel computing',
+          'Developing the first commercially viable computer virus protection',
+          'Creating the first programming language designed for African languages',
+        ],
+        a: 1,
+        e: 'Philip Emeagwali, a Nigerian computer scientist, won the 1989 Gordon Bell Prize for using a Connection Machine to perform petroleum reservoir simulations at record-high computing speeds — demonstrating the potential of massively parallel computing.',
+        h: 'Philip Emeagwali = Nigerian computer scientist = 1989 Gordon Bell Prize = massively parallel computing.',
+        yr: 'GST',
+      },
+      {
+        q: 'The Rhind Mathematical Papyrus and Edwin Smith Papyrus are evidence of:',
+        o: [
+          'Ancient Greek mathematical and medical knowledge transmitted to Egypt',
+          'Ancient Egyptian mathematical and medical knowledge — among the earliest written scientific documents in human history',
+          "The Islamic Golden Age's influence on North African scholarship",
+          'Roman scientific advances in Egypt',
+        ],
+        a: 1,
+        e: "The Rhind Mathematical Papyrus (c.1650 BCE) contains arithmetic, geometry, and algebra problems. The Edwin Smith Papyrus (c.1600 BCE) describes surgical cases with clinical reasoning. Both demonstrate Africa's scientific tradition extends back over 3,500 years.",
+        h: 'Rhind Papyrus = ancient Egyptian mathematics. Edwin Smith Papyrus = ancient Egyptian medicine.',
+        yr: 'GST',
+      },
+      {
+        q: "The concept of 'brain drain' (or 'japa') affects Nigerian science development by:",
+        o: [
+          'Stimulating domestic science by exposing Nigerians to international standards',
+          "Depleting Nigeria's scientific human capital through emigration of trained scientists, doctors, and academics to wealthier countries",
+          'Creating scientific excellence because only the best Nigerians compete internationally',
+          'Reducing science funding needs',
+        ],
+        a: 1,
+        e: "Brain drain ('japa' phenomenon): emigration of highly trained Nigerian scientists, doctors, engineers, and academics to the US, UK, Canada depletes Nigeria of human capital needed for scientific development, healthcare, education, and innovation.",
+        h: "Brain drain/japa = trained Nigerian scientists emigrate = depletes Nigeria's scientific human capital.",
+        yr: 'GST',
+      },
+      {
+        q: 'Traditional African iron-smelting technology is significant because:',
+        o: [
+          'It was directly transmitted from Mesopotamia to sub-Saharan Africa',
+          'Archaeological evidence suggests it developed independently in sub-Saharan Africa around 500–1000 BCE — showing Africa was a center of technological innovation independent of external diffusion',
+          'It was developed in North Africa by ancient Egyptians and spread southward',
+          'It was taught to African communities by Arab traders',
+        ],
+        a: 1,
+        e: 'Archaeological evidence from multiple sub-Saharan African sites indicates iron smelting technology developed there around 500–1000 BCE — possibly independently of other world regions. This challenges the diffusionist view that technological knowledge always flowed INTO Africa from other civilizations.',
+        h: 'African iron smelting = possibly independent development (~500 BCE) = Africa as center of technological innovation.',
+        yr: 'GST',
+      },
+      {
+        q: "Nigeria's Federal Ministry of Science, Technology and Innovation (FMSTI) is primarily responsible for:",
+        o: [
+          'Regulating food and drug safety in Nigeria',
+          'Science and technology policy in Nigeria — setting priorities, coordinating research institutions, and overseeing science and technology development',
+          'Funding all Nigerian university research directly',
+          "Managing Nigeria's oil and gas resources",
+        ],
+        a: 1,
+        e: "FMSTI is Nigeria's primary government body responsible for science and technology policy: setting national S&T priorities, coordinating research institutions (NASENI), overseeing implementation of the National Science Technology and Innovation Policy, and representing Nigeria in international scientific bodies.",
+        h: "FMSTI = Nigeria's primary government body for science and technology POLICY.",
+        yr: 'GST',
+      },
+      {
+        q: 'Great Zimbabwe (c.1100–1450 CE) represents which type of African technological achievement?',
+        o: [
+          'Advanced astronomical knowledge — stone enclosures designed to track celestial events',
+          'Remarkable architectural and engineering achievement — massive stone enclosures built WITHOUT mortar using precisely fitted granite blocks',
+          'Advanced hydraulic engineering — underground water channels supplied the city',
+          'Sophisticated metallurgy at industrial scale',
+        ],
+        a: 1,
+        e: 'Great Zimbabwe consists of massive stone enclosures built c.1100–1450 CE without mortar, using carefully fitted granite blocks. The Great Enclosure stands up to 11 meters high — requiring advanced understanding of structural mechanics, load distribution, and stone-dressing techniques.',
+        h: 'Great Zimbabwe = massive stone structures WITHOUT mortar = sophisticated structural/engineering knowledge.',
+        yr: 'GST',
+      },
+      {
+        q: "The WHO estimates approximately what percentage of Africa's population uses traditional medicine as primary healthcare?",
+        o: ['10–20%', '40–50%', '80%', 'Nearly 100%'],
+        a: 2,
+        e: "WHO estimates approximately 80% of Africa's population relies on traditional medicine as primary healthcare. This reflects both cultural embeddedness of traditional healing and lack of accessible modern healthcare in many communities. WHO's Traditional Medicine Strategy calls for integrating traditional medicine with modern healthcare using evidence-based approaches.",
+        h: 'WHO estimate: 80% of Africans use traditional medicine as primary healthcare.',
+        yr: 'GST',
+      },
+      {
+        q: "The 'epistemological legacy of colonialism' in African science education refers to:",
+        o: [
+          'Colonial powers translating scientific textbooks into African languages',
+          "A persistent association between 'science' and European knowledge, and between 'indigenous knowledge' and 'superstition' — created by colonial education systems",
+          'Colonial introduction of mathematics enabling modern science education',
+          'Scientific discoveries made by colonial-era naturalists in Africa',
+        ],
+        a: 1,
+        e: "Colonial education systems taught that European-derived knowledge was 'science,' 'rational,' and 'modern,' while African traditional knowledge was 'superstition' and 'primitive.' This epistemological legacy continues to affect how African students and educators value indigenous vs Western knowledge.",
+        h: "Epistemological colonial legacy = equating 'science' with Western knowledge, 'traditional knowledge' with superstition.",
+        yr: 'GST',
+      },
+      {
+        q: 'Artemisinin, a crucial antimalarial drug, is significant for the relationship between IKS and modern medicine because:',
+        o: [
+          'It was discovered independently by African and Chinese traditional medicine systems working in parallel',
+          'It was derived from Chinese traditional medicine (Artemisia annua) — demonstrating how traditional knowledge can yield life-saving pharmaceuticals (Tu Youyou, 2015 Nobel Prize in Medicine)',
+          'It was developed entirely through Western pharmaceutical research',
+          'It was developed from an African medicinal plant',
+        ],
+        a: 1,
+        e: 'Artemisinin was derived from Artemisia annua — used in Chinese traditional medicine for fever for over 2,000 years. Chinese researcher Tu Youyou (2015 Nobel Prize in Medicine) isolated artemisinin, which became the basis for the most effective modern antimalarial treatments. This demonstrates the IKS → modern medicine pathway.',
+        h: 'Artemisinin = from Chinese traditional medicine plant = demonstrates IKS → modern medicine. Tu Youyou Nobel 2015.',
+        yr: 'GST',
+      },
+      {
+        q: 'Which Nigerian university is the oldest, and when was it founded?',
+        o: [
+          'University of Lagos, founded in 1962',
+          'Obafemi Awolowo University, founded in 1961',
+          'University of Ibadan, founded in 1948',
+          'Ahmadu Bello University, founded in 1962',
+        ],
+        a: 2,
+        e: "The University of Ibadan, founded in 1948 (initially as a college of the University of London), is Nigeria's oldest university. It became an independent university in 1962, located in Ibadan, Oyo State, and is one of Nigeria's premier research universities.",
+        h: 'University of Ibadan = oldest Nigerian university = founded 1948.',
+        yr: 'GST',
+      },
+      {
+        q: 'NASENI (National Agency for Science and Engineering Infrastructure) serves which primary function?',
+        o: [
+          'It funds academic research in Nigerian universities through education tax',
+          'It regulates food and drug safety and product quality standards',
+          'It develops indigenous technological capacity and infrastructure for science and engineering in Nigeria',
+          "It manages Nigeria's nuclear energy research program",
+        ],
+        a: 2,
+        e: "NASENI (established 1992) is a federal agency focused on developing Nigeria's indigenous capacity in science and engineering: establishing R&D institutes, developing prototypes of industrial equipment, building scientific infrastructure, and promoting indigenous technology development to reduce dependence on imported technology.",
+        h: "NASENI = develops Nigeria's indigenous science and engineering CAPACITY and INFRASTRUCTURE.",
+        yr: 'GST',
+      },
+      {
+        q: 'Why is GST 112 (History and Philosophy of Science) required for all Nigerian university students regardless of discipline?',
+        o: [
+          'Because all students need to conduct scientific experiments in their careers',
+          "Because the NUC requires scientific literacy across all graduates — understanding science's history, methods, and limitations enables informed citizenship and interdisciplinary thinking",
+          'Because Nigeria has a shortage of science graduates and needs to convert arts students',
+          'Because it is required by ECOWAS for all West African universities',
+        ],
+        a: 1,
+        e: 'The NUC mandates GST courses for all Nigerian university students because in a modern society shaped by science and technology, all graduates need scientific literacy: understanding how science works, its history and limitations, relationship with society and values, and how to evaluate scientific claims. This enables informed participation in science-related public decisions.',
+        h: 'GST 112 required for all = NUC mandate = scientific literacy needed by ALL graduates.',
+        yr: 'GST',
+      },
+      {
+        q: "Segenet Kelemu's contribution to African science includes:",
+        o: [
+          'Developing a malaria vaccine tested across sub-Saharan Africa',
+          'Leading the International Centre of Insect Physiology and Ecology (icipe) and contributing to sustainable agriculture through insect science research',
+          'Pioneering African satellite technology for remote sensing',
+          'Founding the African Academy of Sciences',
+        ],
+        a: 1,
+        e: "Segenet Kelemu (Ethiopian scientist) served as Director General of icipe (International Centre of Insect Physiology and Ecology) in Nairobi — one of Africa's premier research institutions focused on insects in relation to human health, animal health, plant health, and the environment. Contributed to sustainable agriculture research.",
+        h: 'Segenet Kelemu = Ethiopian scientist = Director General of icipe = insect science + sustainable agriculture.',
+        yr: 'GST',
+      },
+      {
+        q: 'The independence of Nigerian science development requires addressing which major challenge?',
+        o: [
+          'The shortage of Western-trained scientists willing to teach in Nigeria',
+          'Brain drain (emigration of trained scientists), inadequate research funding, poor infrastructure, and the need to value and integrate indigenous knowledge systems',
+          'The absence of a strong cultural tradition of scientific inquiry',
+          'The lack of natural resources needed for scientific development',
+        ],
+        a: 1,
+        e: "Nigerian scientific development challenges: brain drain ('japa'); inadequate research funding (TETFund remains far below international standards); poor laboratory and research infrastructure; epistemological legacy undervaluing indigenous knowledge; limited translation of research into development applications. All require policy commitment and increased investment.",
+        h: 'Nigerian science challenges: brain drain + underfunding + poor infrastructure + undervalued IKS.',
+        yr: 'GST',
+      },
+    ],
+  },
 ];
