@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { WAEC_SUBJECTS } from '../data/waec/index';
 import { WAEC_LEARN } from '../data/waec/learn/index';
-import { NECO_LEARN } from '../data/neco/index';
 import { GST_LEARN } from '../data/gst/index';
 import { GST_SUBJECTS } from '../data/gst/index';
 import { NECO_SUBJECTS } from '../data/neco/index';
@@ -52,8 +51,11 @@ function ContentBlock({ block, refreshTrigger, examType, email }) {
       showPublisher={PUBLISHER_AD_ENABLED} examType={examType} email={email} />;
 
   let html = block.content;
+  // Replace "WAEC" branding with the correct exam name for each student
   if (examType === 'jamb' || examType === 'postutme') {
     html = html.replace(/\bWAEC\b/gi, 'JAMB');
+  } else if (examType === 'neco') {
+    html = html.replace(/\bWAEC\b/gi, 'NECO');
   }
   return <div className="learn-content-html" dangerouslySetInnerHTML={{ __html: html }} />;
 }
@@ -108,8 +110,16 @@ function TopicCard({ topic, index, isActive, isDone, isLocked, color, onClick })
   );
 }
 
+// ── Resolve which learn bank to use per exam type ────────────────────────────
+// WAEC, JAMB, NECO, POST UTME all share the WAEC rich learn bank.
+// GST has its own separate learn bank.
+function getLearnData(examType) {
+  if (examType === 'gst') return GST_LEARN;
+  return WAEC_LEARN;
+}
+
 export default function Learn({ subjectId, onBack, onTopicComplete, examType = 'waec', email }) {
-  const learnData = examType === 'gst' ? GST_LEARN : WAEC_LEARN;
+  const learnData = getLearnData(examType);
   const topics = learnData[subjectId] || [];
 
   const allSubjects = [
@@ -230,31 +240,51 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
     setActiveIdx(null); setHeaderCollapsed(false); setQuizMode(false);
   };
 
+  // ── Quiz: prefer topic-embedded questions, fall back to question bank ─────
   const startQuiz = useCallback(() => {
-  // Get current topic's questions
-  const currentTopic = topics[activeIdx];
-  const topicQuestions = currentTopic?.questions || [];
-  
-  if (topicQuestions.length > 0) {
-    // Use topic-specific questions
-    const shuffled = [...topicQuestions].sort(() => Math.random() - 0.5)
-      .slice(0, Math.min(5, topicQuestions.length));
-    setQuizQs(shuffled);
-    setQuizIdx(0); 
-    setQuizSel(-1);
-    setAnswered(false); 
-    setResults([]); 
-    setQuizDone(false);
-    setQuizMode(true);
-    setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
-  } else {
-    // Fallback to question bank if no topic-specific questions
-    const bankPromise = examType === 'neco' ? import('../data/neco/index').then(m => m.NECO_QB)
-      : examType === 'gst'   ? import('../data/gst/index').then(m => m.GST_QB)
-      : (examType === 'jamb' || examType === 'postutme') ? import('../data/jamb/index').then(m => m.QB)
-      : import('../data/waec/index').then(m => m.WAEC_QB);
+    const currentTopic = topics[activeIdx];
+    const topicQuestions = currentTopic?.questions || [];
 
-    bankPromise.then((bank) => {
+    if (topicQuestions.length > 0) {
+      // Use topic-specific embedded questions first
+      const shuffled = [...topicQuestions].sort(() => Math.random() - 0.5)
+        .slice(0, Math.min(5, topicQuestions.length));
+      setQuizQs(shuffled);
+      setQuizIdx(0);
+      setQuizSel(-1);
+      setAnswered(false);
+      setResults([]);
+      setQuizDone(false);
+      setQuizMode(true);
+      setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
+      return;
+    }
+
+    // Fallback: pull from the most relevant question bank
+    const getBankPromise = () => {
+      if (examType === 'gst') {
+        return import('../data/gst/index').then(m => m.GST_QB);
+      }
+      if (examType === 'neco') {
+        return Promise.all([
+          import('../data/neco/index').then(m => m.NECO_QB),
+          import('../data/waec/index').then(m => m.WAEC_QB),
+        ]).then(([necoQB, waecQB]) => {
+          return (necoQB[subjectId] || []).length > 0 ? necoQB : waecQB;
+        });
+      }
+      if (examType === 'jamb' || examType === 'postutme') {
+        return Promise.all([
+          import('../data/jamb/index').then(m => m.QB),
+          import('../data/waec/index').then(m => m.WAEC_QB),
+        ]).then(([jambQB, waecQB]) => {
+          return (jambQB[subjectId] || []).length > 0 ? jambQB : waecQB;
+        });
+      }
+      return import('../data/waec/index').then(m => m.WAEC_QB);
+    };
+
+    getBankPromise().then((bank) => {
       const pool = (bank[subjectId] || []);
       const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, Math.min(5, pool.length));
       if (!shuffled.length) {
@@ -267,10 +297,9 @@ export default function Learn({ subjectId, onBack, onTopicComplete, examType = '
       setQuizMode(true);
       setTimeout(() => scrollRef.current?.scrollTo(0, 0), 50);
     });
-  }
-}, [subjectId, examType, activeIdx, topics]);
+  }, [subjectId, examType, activeIdx, topics]);
 
-const submitAnswer = () => {
+  const submitAnswer = () => {
     if (quizSel < 0 || quizAnswered) return;
     const q = quizQs[quizIdx];
     const correct = quizSel === q.a;

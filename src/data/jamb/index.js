@@ -29,6 +29,10 @@ import { JAMB_LEARN_GOVERNMENT } from './learn/government';
 import { JAMB_LEARN_LITERATURE } from './learn/literature';
 import { JAMB_LEARN_ACCOUNTING } from './learn/accounting';
 
+// New subjects — learn content shared directly from WAEC_LEARN
+// (CBT question pool falls back to WAEC_QB automatically in Quiz.js)
+import { WAEC_LEARN } from '../waec/learn/index';
+
 // QB object — backward compatible with Quiz.js
 export const QB = {
   accounting: QB_ACCOUNTING,
@@ -54,6 +58,21 @@ export const JAMB_LEARN = {
   government: JAMB_LEARN_GOVERNMENT,
   literature: JAMB_LEARN_LITERATURE,
   accounting: JAMB_LEARN_ACCOUNTING,
+
+  // ── New subjects (linked from WAEC) ─────────────────────────────────────
+  further_maths: WAEC_LEARN.further_maths,
+  crs: WAEC_LEARN.crs,
+  commerce: WAEC_LEARN.commerce,
+  visual_arts: WAEC_LEARN.visual_arts,
+  food_nutrition: WAEC_LEARN.food_nutrition,
+  marketing: WAEC_LEARN.marketing,
+  geography: WAEC_LEARN.geography,
+  civic: WAEC_LEARN.civic,
+
+  // ── Future subjects (ready for content upload) ───────────────────────────
+  digital_tech: WAEC_LEARN.digital_tech,
+  agric_science: WAEC_LEARN.agric_science,
+  citizenship: WAEC_LEARN.citizenship,
 };
 
 // Re-export individual QB arrays
