@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { QB } from '../data/jamb';
-import { POST_UTME } from '../data/postutme';
-import { WAEC_SUBJECTS, WAEC_QB } from '../data/waec/index';
-import { NECO_SUBJECTS, NECO_QB } from '../data/neco/index';
-import { GST_SUBJECTS, GST_QB } from '../data/gst/index';
+import { QB, JAMB_LEARN } from '../data/jamb';
+import { POST_UTME, POSTUTME_LEARN } from '../data/postutme';
+import { WAEC_SUBJECTS, WAEC_QB, WAEC_LEARN } from '../data/waec/index';
+import { NECO_SUBJECTS, NECO_QB, NECO_LEARN } from '../data/neco/index';
+import { GST_SUBJECTS, GST_QB, GST_LEARN } from '../data/gst/index';
 import { getFlashcardsForSubject } from '../data/flashcards';
 import { SUBJ } from '../data/subjects';
 import { LGRAY, GRAY } from '../utils/colors';
@@ -18,7 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
-  // { id: 'flashcard', label: 'Flash' },
+  { id: 'flashcard', label: 'Flash' },
   // { id: 'game', label: 'Game' },
 ];
 
@@ -31,6 +31,26 @@ const MODE_DESC = {
 
 // Exam types that use the grid layout (WAEC, NECO, GST)
 const GRID_EXAMS = ['waec', 'neco', 'gst'];
+
+// ── Count total available questions for a subject ───────────────────────────
+// = question bank count + questions embedded inside Learn topics (deduped by
+// question text, same logic Quiz.js uses when merging). This is for DISPLAY
+// only — it doesn't extract/build the actual question arrays.
+function countTotalQuestions(qbArr = [], learnTopics = []) {
+  const qbSet = new Set(qbArr.map((q) => q.q));
+  let total = qbArr.length;
+
+  learnTopics.forEach((topic) => {
+    (topic.questions || []).forEach((q) => {
+      if (!qbSet.has(q.q)) {
+        qbSet.add(q.q); // also avoid double-counting duplicates across topics
+        total++;
+      }
+    });
+  });
+
+  return total;
+}
 
 export default function Subjects({
   name,
@@ -60,43 +80,62 @@ export default function Subjects({
     localStorage.setItem('learningMode', mode);
   }, [mode]);
 
-  // ── Subject metadata & QB for current exam type ───────────────────────────
+  // ── Subject metadata, QB, and learn bank for current exam type ────────────
   const getSubjectsAndQB = () => {
     switch (examType) {
       case 'waec':
-        return { subjects: WAEC_SUBJECTS, qb: WAEC_QB };
+        return { subjects: WAEC_SUBJECTS, qb: WAEC_QB, learn: WAEC_LEARN };
 
       case 'neco':
-        // Use NECO_SUBJECTS (9 subjects with actual question banks)
-        // not WAEC_SUBJECTS (12) which would show 3 empty subjects in CBT
-        return { subjects: NECO_SUBJECTS, qb: NECO_QB };
+        // Use NECO_SUBJECTS (subjects NECO actually supports)
+        // not WAEC_SUBJECTS which would show subjects with no NECO QB
+        return { subjects: NECO_SUBJECTS, qb: NECO_QB, learn: NECO_LEARN };
 
       case 'jamb':
-        return { subjects: WAEC_SUBJECTS, qb: QB };
+        return { subjects: WAEC_SUBJECTS, qb: QB, learn: JAMB_LEARN };
 
       case 'postutme':
-        return { subjects: WAEC_SUBJECTS, qb: POST_UTME };
+        return { subjects: WAEC_SUBJECTS, qb: POST_UTME, learn: POSTUTME_LEARN };
 
       case 'gst':
-        return { subjects: GST_SUBJECTS, qb: GST_QB };
+        return { subjects: GST_SUBJECTS, qb: GST_QB, learn: GST_LEARN };
 
       default:
-        return { subjects: null, qb: null };
+        return { subjects: null, qb: null, learn: null };
     }
   };
 
-  const { subjects: gridSubjects, qb: gridQB } = getSubjectsAndQB();
+  const { subjects: gridSubjects, qb: gridQB, learn: gridLearn } = getSubjectsAndQB();
 
   const isGridExam = GRID_EXAMS.includes(examType);
 
   // ── Helpers for JAMB / POST UTME ─────────────────────────────────────────
+  // Falls back to WAEC_QB for subjects JAMB doesn't have its own questions for
+  // (e.g. newly added subjects shared from WAEC). This is what makes those
+  // subjects appear for JAMB students once WAEC content is uploaded.
+  const getQuestionPool = (subjectId) => {
+    const jambPool = QB[subjectId] || [];
+    if (jambPool.length > 0) return jambPool;
+    return WAEC_QB[subjectId] || [];
+  };
+
+  // Total displayable count for a JAMB/POST UTME subject:
+  // QB (with WAEC fallback) + topic-embedded questions from JAMB_LEARN
+  const getJambTotalCount = (subjectId) => {
+    const qbArr = getQuestionPool(subjectId);
+    const learnTopics = JAMB_LEARN[subjectId] || [];
+    return countTotalQuestions(qbArr, learnTopics);
+  };
+
   const hasQuestions = (subjectId) => {
     if (examType === 'postutme' && university) {
       const uniData = POST_UTME[university?.toUpperCase()];
-      return !!uniData?.[subjectId]?.length;
+      const uniCount = uniData?.[subjectId]?.length || 0;
+      const learnTopics = POSTUTME_LEARN[subjectId] || [];
+      return countTotalQuestions(Array(uniCount).fill({ q: '' }), learnTopics) > 0;
     }
 
-    return (QB[subjectId] || []).length > 0;
+    return getJambTotalCount(subjectId) > 0;
   };
 
   const getJambCount = (subjectId) => {
@@ -105,10 +144,12 @@ export default function Subjects({
     }
 
     if (examType === 'postutme' && university) {
-      return POST_UTME[university?.toUpperCase()]?.[subjectId]?.length || 0;
+      const uniCount = POST_UTME[university?.toUpperCase()]?.[subjectId]?.length || 0;
+      const learnTopics = POSTUTME_LEARN[subjectId] || [];
+      return countTotalQuestions(Array(uniCount).fill({ q: '' }), learnTopics);
     }
 
-    return (QB[subjectId] || []).length;
+    return getJambTotalCount(subjectId);
   };
 
   // ── Header label ──────────────────────────────────────────────────────────
@@ -269,7 +310,10 @@ export default function Subjects({
           /* ── WAEC / NECO / GST ── */
           <div className="subjects-grid">
             {(gridSubjects || []).map((subj) => {
-              const qCount = (gridQB?.[subj.id] || []).length;
+              const qCount = countTotalQuestions(
+                gridQB?.[subj.id] || [],
+                gridLearn?.[subj.id] || []
+              );
 
               return (
                 <div
