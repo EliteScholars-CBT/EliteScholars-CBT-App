@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { SUBJ } from '../data/subjects';
-import { SHOW_POPOVER_AD, SHARE_GATE_EVERY, WA_CHANNEL, VIBES, getStudentGCLinks } from '../utils/constants';
+import { getSubjectMeta } from '../data/subjectMeta';
+import {
+  SHOW_POPOVER_AD,
+  SHARE_GATE_EVERY,
+  WA_CHANNEL,
+  VIBES,
+  getStudentGCLinks,
+} from '../utils/constants';
 import { DPURP, PURPLE, BG, WHITE, GRAY, GOLD, GREEN } from '../utils/colors';
 import { SFX } from '../utils/sounds';
 import ScoreCard from './ScoreCard';
@@ -31,7 +37,7 @@ export default function Result({
 
   const gcLinks = getStudentGCLinks(studentType, selectedExams);
 
-  const meta = SUBJ[subjectId] || SUBJ.economics;
+  const meta = getSubjectMeta(subjectId);
   const pct = totalQ ? Math.round((correct / totalQ) * 100) : 0;
   const wrong = totalQ - correct;
   const vibe = VIBES[Math.floor(Math.random() * Math.min(10, VIBES.length))];
@@ -162,12 +168,18 @@ export default function Result({
           <div className="join-card">
             <div className="join-title">Join Your Study Group 💬</div>
             <div className="join-subtitle">Practise with serious exam candidates daily.</div>
-            {gcLinks.map(gc => (
-              <button key={gc.key} className="join-button" onClick={() => window.open(gc.url, '_blank')}>
+            {gcLinks.map((gc) => (
+              <button
+                key={gc.key}
+                className="join-button"
+                onClick={() => window.open(gc.url, '_blank')}
+              >
                 {gc.emoji} Join {gc.label} WhatsApp Group
               </button>
             ))}
-            <button className="join-play-again" onClick={onHome}>🔄 Play Again</button>
+            <button className="join-play-again" onClick={onHome}>
+              🔄 Play Again
+            </button>
           </div>
         )}
         {!SHOW_POPOVER_AD && showChannel && (

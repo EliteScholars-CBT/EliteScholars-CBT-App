@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { QB } from '../data/jamb/index';
+import { QB, JAMB_LEARN } from '../data/jamb/index';
 import { WAEC_QB, WAEC_LEARN } from '../data/waec/index';
 import { NECO_QB, NECO_LEARN } from '../data/neco/index';
 import { GST_QB, GST_LEARN } from '../data/gst/index';
-import { JAMB_LEARN } from '../data/jamb/index';
 import { POSTUTME_LEARN } from '../data/postutme/index';
-import { SUBJ } from '../data/subjects';
+import { getSubjectMeta } from '../data/subjectMeta';
 import { ROUND_SIZE, getTimerSecs, SHOW_ADS } from '../utils/constants';
 import {
   DPURP,
@@ -42,24 +41,28 @@ function getTopicQuestions(learnBank, subjectId) {
 function buildQuestionPool(examType, subjectId) {
   // 1. Pick QB bank
   const bankByType =
-    examType === 'neco'                              ? NECO_QB :
-    examType === 'gst'                               ? GST_QB  :
-    (examType === 'waec' || examType === 'postutme') ? WAEC_QB :
-    QB; // jamb default
+    examType === 'neco'
+      ? NECO_QB
+      : examType === 'gst'
+        ? GST_QB
+        : examType === 'waec' || examType === 'postutme'
+          ? WAEC_QB
+          : QB; // jamb default
 
-  const qbQuestions = bankByType[subjectId]
-    || WAEC_QB[subjectId]
-    || QB[subjectId]
-    || QB.economics
-    || [];
+  const qbQuestions =
+    bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics || [];
 
   // 2. Pick the matching learn bank to extract topic-embedded questions
   const learnBankByType =
-    examType === 'neco'     ? NECO_LEARN     :
-    examType === 'gst'      ? GST_LEARN      :
-    examType === 'postutme' ? POSTUTME_LEARN :
-    examType === 'jamb'     ? JAMB_LEARN     :
-    WAEC_LEARN; // waec default
+    examType === 'neco'
+      ? NECO_LEARN
+      : examType === 'gst'
+        ? GST_LEARN
+        : examType === 'postutme'
+          ? POSTUTME_LEARN
+          : examType === 'jamb'
+            ? JAMB_LEARN
+            : WAEC_LEARN; // waec default
 
   const topicQuestions = getTopicQuestions(learnBankByType, subjectId);
 
@@ -71,6 +74,10 @@ function buildQuestionPool(examType, subjectId) {
 
   return [...qbQuestions, ...uniqueTopicQs];
 }
+
+// How long (ms) to wait after time runs out before auto-advancing,
+// so the student sees the "Time's up!" message and correct answer.
+const AUTO_ADVANCE_DELAY_MS = 1800;
 
 export default function Quiz({
   subjectId,
@@ -89,9 +96,9 @@ export default function Quiz({
   email,
   onFiftyUsed,
   onHintUsed,
-  onLogQuestion,   // optional: (entry) => void — logs each answered question for review
+  onLogQuestion, // optional: (entry) => void — logs each answered question for review
   isChallengeMode, // optional: true when playing a challenge round
-  examType,        // optional: 'jamb' | 'waec' | 'neco' | 'postutme' | 'gst'
+  examType, // optional: 'jamb' | 'waec' | 'neco' | 'postutme' | 'gst'
 }) {
   const [shuffled] = useState(() => {
     const pool = buildQuestionPool(examType, subjectId);
@@ -110,9 +117,11 @@ export default function Quiz({
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [speaking, setSpeaking] = useState(false);
   const [ansAnim, setAnsAnim] = useState('');
+  const [timedOut, setTimedOut] = useState(false);
   const timerRef = useRef(null);
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
+  const autoAdvanceRef = useRef(null);
   const roundSecs = getTimerSecs(subjectId, ROUND_SIZE);
 
   const q = shuffled[qi];
@@ -120,7 +129,7 @@ export default function Quiz({
   const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
   const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / ROUND_SIZE);
-  const meta = SUBJ[subjectId] || SUBJ.economics;
+  const meta = getSubjectMeta(subjectId);
 
   // Reset visual states when moving to next question
   useEffect(() => {
@@ -129,6 +138,13 @@ export default function Quiz({
     setAnsAnim('');
     setHid([]);
     setSHint(false);
+    setTimedOut(false);
+
+    // Cancel any pending auto-advance from the previous question
+    if (autoAdvanceRef.current) {
+      clearTimeout(autoAdvanceRef.current);
+      autoAdvanceRef.current = null;
+    }
   }, [qi]);
 
   // Reset lifelines only when a new ROUND starts
@@ -167,19 +183,35 @@ export default function Quiz({
       }
       if (remaining <= 0) {
         clearInterval(timerRef.current);
-        // Time up — mark question as done without a selection
+        stopSpeech();
+        setSpeaking(false);
+
+        // Time up — mark question as done without a selection,
+        // then auto-advance to the next question (or finish the quiz
+        // if this is the last question/round) after a short delay.
         setDone((d) => {
           if (!d) {
             setTotalQ((x) => x + 1);
+            setTimedOut(true);
+
+            if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+            autoAdvanceRef.current = setTimeout(() => {
+              handleNextRef.current();
+            }, AUTO_ADVANCE_DELAY_MS);
+
             return true;
           }
           return d;
         });
-        stopSpeech();
-        setSpeaking(false);
       }
     }, 500);
-    return () => clearInterval(timerRef.current);
+    return () => {
+      clearInterval(timerRef.current);
+      if (autoAdvanceRef.current) {
+        clearTimeout(autoAdvanceRef.current);
+        autoAdvanceRef.current = null;
+      }
+    };
   }, [roundNum, roundSecs]);
 
   const stopTimer = () => clearInterval(timerRef.current);
@@ -260,6 +292,19 @@ export default function Quiz({
     setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
 
+    // If the question timed out with no answer selected, log it as
+    // incorrect/unanswered so the Result review reflects it.
+    if (timedOut && onLogQuestion && q) {
+      onLogQuestion({
+        q: q.q,
+        options: q.o,
+        selected: -1,
+        answer: q.a,
+        correct: false,
+        explanation: q.e || '',
+      });
+    }
+
     if (isLast) {
       SFX.roundComplete();
       // Pass final time remaining to App.js for speed bonus calculation
@@ -272,6 +317,12 @@ export default function Quiz({
 
     setQi((nextQi) => nextQi + 1);
   };
+
+  // Keep a ref to the latest handleNext so the timer's setTimeout
+  // (scheduled inside an effect) always calls the current version —
+  // avoiding stale closures over qi/isLast/timeLeft etc.
+  const handleNextRef = useRef(handleNext);
+  handleNextRef.current = handleNext;
 
   const doFifty = () => {
     if (usedF || done) return;
@@ -539,6 +590,23 @@ export default function Quiz({
             </div>
           ))}
         </div>
+
+        {timedOut && (
+          <div
+            style={{
+              background: 'rgba(255,107,107,.12)',
+              border: '1px solid rgba(255,107,107,.35)',
+              borderRadius: 11,
+              padding: '10px 13px',
+              fontSize: 13,
+              fontWeight: 600,
+              color: '#FF6B6B',
+              textAlign: 'center',
+            }}
+          >
+            ⏰ Time's up! {isLast ? 'Finishing up…' : 'Moving to the next question…'}
+          </div>
+        )}
 
         {done && (
           <div className="quick-take">
