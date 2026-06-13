@@ -1,61 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import {
-  createChallenge,
-  getChallengeMessages,
-  checkUserExists,
-} from '../utils/challengeApi';
+import { createChallenge, getChallengeMessages, checkUserExists } from '../utils/challengeApi';
 import Quiz from './Quiz';
 import BackButton from './BackButton';
 
 const EXAM_OPTIONS = [
-  { id: 'jamb',     label: 'JAMB' },
+  { id: 'jamb', label: 'JAMB' },
   // { id: 'postutme', label: 'POST UTME' },
-  { id: 'waec',     label: 'WAEC' },
-  { id: 'neco',     label: 'NECO' },
-  { id: 'gst',      label: 'GST' },
+  { id: 'waec', label: 'WAEC' },
+  { id: 'neco', label: 'NECO' },
+  { id: 'gst', label: 'GST' },
 ];
 
 const SUBJECT_OPTIONS = [
   { id: 'mathematics', label: 'Mathematics' },
-  { id: 'english',     label: 'English' },
-  { id: 'physics',     label: 'Physics' },
-  { id: 'chemistry',   label: 'Chemistry' },
-  { id: 'biology',     label: 'Biology' },
-  { id: 'economics',   label: 'Economics' },
-  { id: 'accounting',  label: 'Accounting' },
-  { id: 'government',  label: 'Government' },
-  { id: 'literature',  label: 'Literature' },
+  { id: 'english', label: 'English' },
+  { id: 'physics', label: 'Physics' },
+  { id: 'chemistry', label: 'Chemistry' },
+  { id: 'biology', label: 'Biology' },
+  { id: 'economics', label: 'Economics' },
+  { id: 'accounting', label: 'Accounting' },
+  { id: 'government', label: 'Government' },
+  { id: 'literature', label: 'Literature' },
 ];
 
 const NUM_QUESTIONS = 5;
-const TIME_LIMIT    = 60;
+const TIME_LIMIT = 60;
 
 export default function CreateChallenge({ userEmail, userName, onClose, onCreated }) {
-  const [step, setStep]                   = useState('setup');
+  const [step, setStep] = useState('setup');
   const [opponentEmail, setOpponentEmail] = useState('');
-  const [opponentName, setOpponentName]   = useState('');
-  const [examType, setExamType]           = useState('jamb');
-  const [university, setUniversity]       = useState('');
-  const [subject, setSubject]             = useState('mathematics');
-  const [messageTemplate, setMsgTpl]      = useState('');
-  const [customMessage, setCustomMsg]     = useState('');
-  const [messages, setMessages]           = useState([]);
-  const [emailError, setEmailError]       = useState('');
-  const [sendError, setSendError]         = useState('');
+  const [opponentName, setOpponentName] = useState('');
+  const [examType, setExamType] = useState('jamb');
+  const [university, setUniversity] = useState('');
+  const [subject, setSubject] = useState('mathematics');
+  const [messageTemplate, setMsgTpl] = useState('');
+  const [customMessage, setCustomMsg] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [emailError, setEmailError] = useState('');
+  const [sendError, setSendError] = useState('');
 
   // User existence check
-  const [checkingUser, setCheckingUser]   = useState(false);
-  const [userChecked, setUserChecked]     = useState(false);
+  const [checkingUser, setCheckingUser] = useState(false);
+  const [userChecked, setUserChecked] = useState(false);
 
   // Final scores
-  const [finalCorrect, setFinalCorrect]   = useState(0);
-  const [finalTotal, setFinalTotal]       = useState(0);
-  const [finalScore, setFinalScore]       = useState(0);
+  const [finalCorrect, setFinalCorrect] = useState(0);
+  const [finalTotal, setFinalTotal] = useState(0);
+  const [finalScore, setFinalScore] = useState(0);
 
   // Live quiz state
-  const [score, setScore]     = useState(0);
+  const [score, setScore] = useState(0);
   const [correct, setCorrect] = useState(0);
-  const [totalQ, setTotalQ]   = useState(0);
+  const [totalQ, setTotalQ] = useState(0);
 
   useEffect(() => {
     getChallengeMessages().then((msgs) => {
@@ -104,13 +100,20 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
   const handleStartPlay = () => {
     const err = validateEmail(opponentEmail);
-    if (err) { setEmailError(err); return; }
+    if (err) {
+      setEmailError(err);
+      return;
+    }
     if (!userChecked) {
       setEmailError('Please wait — verifying opponent account...');
       return;
     }
-    setScore(0); setCorrect(0); setTotalQ(0);
-    setFinalCorrect(0); setFinalTotal(0); setFinalScore(0);
+    setScore(0);
+    setCorrect(0);
+    setTotalQ(0);
+    setFinalCorrect(0);
+    setFinalTotal(0);
+    setFinalScore(0);
     setStep('play');
   };
 
@@ -128,16 +131,26 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
     try {
       const result = await createChallenge(
-        userEmail, userName,
-        opponentEmail, opponentName || opponentEmail.split('@')[0],
-        examType, university, subject,
-        NUM_QUESTIONS, TIME_LIMIT,
-        messageTemplate, customMessage,
-        fs, fc, ft
+        userEmail,
+        userName,
+        opponentEmail,
+        opponentName || opponentEmail.split('@')[0],
+        examType,
+        university,
+        subject,
+        NUM_QUESTIONS,
+        TIME_LIMIT,
+        messageTemplate,
+        customMessage,
+        fs,
+        fc,
+        ft
       );
       if (result.success) {
         setStep('sent');
-        setTimeout(() => { onCreated(); }, 2200);
+        setTimeout(() => {
+          onCreated();
+        }, 2200);
       } else {
         setSendError(result.error || 'Failed to send. Check the opponent email and try again.');
         setStep('error');
@@ -155,11 +168,12 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
         <div className="create-challenge-modal">
           <div className="modal-header">
             <div className="modal-title">⚔️ Create Challenge</div>
-            <button className="modal-close" onClick={onClose}>✕</button>
+            <button className="modal-close" onClick={onClose}>
+              ✕
+            </button>
           </div>
 
           <div className="modal-body">
-
             <div className="form-group">
               <label>Opponent Email</label>
               <input
@@ -170,12 +184,8 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
                 onBlur={handleEmailBlur}
                 className={emailError ? 'input-error' : userChecked ? 'input-success' : ''}
               />
-              {checkingUser && (
-                <div className="checking-text">🔍 Checking account...</div>
-              )}
-              {!checkingUser && emailError && (
-                <div className="error-text">{emailError}</div>
-              )}
+              {checkingUser && <div className="checking-text">🔍 Checking account...</div>}
+              {!checkingUser && emailError && <div className="error-text">{emailError}</div>}
               {!checkingUser && userChecked && !emailError && (
                 <div className="success-text">✅ Found: {opponentName}</div>
               )}
@@ -187,7 +197,8 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
                 {EXAM_OPTIONS.map((opt) => (
                   <label key={opt.id}>
                     <input
-                      type="radio" value={opt.id}
+                      type="radio"
+                      value={opt.id}
                       checked={examType === opt.id}
                       onChange={(e) => setExamType(e.target.value)}
                     />
@@ -201,7 +212,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
               <div className="form-group">
                 <label>University (e.g. unilag)</label>
                 <input
-                  type="text" placeholder="e.g. unilag" value={university}
+                  type="text"
+                  placeholder="e.g. unilag"
+                  value={university}
                   onChange={(e) => setUniversity(e.target.value)}
                 />
               </div>
@@ -211,7 +224,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
               <label>Subject</label>
               <select value={subject} onChange={(e) => setSubject(e.target.value)}>
                 {SUBJECT_OPTIONS.map((s) => (
-                  <option key={s.id} value={s.id}>{s.label}</option>
+                  <option key={s.id} value={s.id}>
+                    {s.label}
+                  </option>
                 ))}
               </select>
             </div>
@@ -219,11 +234,15 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             <div className="challenge-info-box">
               <div className="info-row">
                 <span>📚 Questions:</span>
-                <span><strong>{NUM_QUESTIONS}</strong></span>
+                <span>
+                  <strong>{NUM_QUESTIONS}</strong>
+                </span>
               </div>
               <div className="info-row">
                 <span>⏱️ Time/question:</span>
-                <span><strong>{TIME_LIMIT}s</strong></span>
+                <span>
+                  <strong>{TIME_LIMIT}s</strong>
+                </span>
               </div>
             </div>
 
@@ -232,7 +251,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
               <select value={messageTemplate} onChange={(e) => setMsgTpl(e.target.value)}>
                 <option value="custom">Custom message…</option>
                 {messages.map((m) => (
-                  <option key={m.message_id} value={m.message_id}>{m.message_text}</option>
+                  <option key={m.message_id} value={m.message_id}>
+                    {m.message_text}
+                  </option>
                 ))}
               </select>
             </div>
@@ -240,7 +261,8 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             {messageTemplate === 'custom' && (
               <div className="form-group">
                 <input
-                  type="text" placeholder="Your message (max 100 chars)"
+                  type="text"
+                  placeholder="Your message (max 100 chars)"
                   value={customMessage}
                   onChange={(e) => setCustomMsg(e.target.value)}
                   maxLength="100"
@@ -250,7 +272,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           </div>
 
           <div className="modal-footer">
-            <button className="cancel-btn" onClick={onClose}>Cancel</button>
+            <button className="cancel-btn" onClick={onClose}>
+              Cancel
+            </button>
             <button
               className="send-btn"
               onClick={handleStartPlay}
@@ -275,15 +299,22 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           subjectId={subject}
           onAllDone={handleQuizDone}
           setQuizTimeRemaining={() => {}}
-          score={score}     setScore={setScore}
-          correct={correct} setCorrect={setCorrect}
-          totalQ={totalQ}   setTotalQ={setTotalQ}
+          score={score}
+          setScore={setScore}
+          correct={correct}
+          setCorrect={setCorrect}
+          totalQ={totalQ}
+          setTotalQ={setTotalQ}
           onHome={() => setStep('setup')}
-          triggerAdRefresh={() => {}} adRefresh={0}
-          email={userEmail} name={userName}
-          onFiftyUsed={() => {}} onHintUsed={() => {}}
+          triggerAdRefresh={() => {}}
+          adRefresh={0}
+          email={userEmail}
+          name={userName}
+          onFiftyUsed={() => {}}
+          onHintUsed={() => {}}
           onLogQuestion={() => {}}
-          isChallengeMode examType={examType}
+          isChallengeMode
+          examType={examType}
         />
       </div>
     );
@@ -297,7 +328,11 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           <div className="loading-spinner" style={{ margin: '0 auto 16px' }} />
           <div style={{ fontWeight: 700, fontSize: 15, color: '#1a0030' }}>Sending challenge…</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 6 }}>
-            Your score: <strong>{correct}/{totalQ}</strong> — {opponentEmail} will need to beat it!
+            Your score:{' '}
+            <strong>
+              {correct}/{totalQ}
+            </strong>{' '}
+            — {opponentEmail} will need to beat it!
           </div>
         </div>
       </div>
@@ -314,8 +349,11 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             Challenge Sent!
           </div>
           <div style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6 }}>
-            Your score <strong>{finalCorrect}/{finalTotal}</strong> has been sent to{' '}
-            <strong>{opponentName}</strong>. They have 24 hours to accept and play.
+            Your score{' '}
+            <strong>
+              {finalCorrect}/{finalTotal}
+            </strong>{' '}
+            has been sent to <strong>{opponentName}</strong>. They have 24 hours to accept and play.
           </div>
         </div>
       </div>
@@ -334,8 +372,12 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           {sendError}
         </div>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-          <button className="cancel-btn" onClick={onClose}>Discard</button>
-          <button className="send-btn" onClick={handleQuizDone}>Retry →</button>
+          <button className="cancel-btn" onClick={onClose}>
+            Discard
+          </button>
+          <button className="send-btn" onClick={handleQuizDone}>
+            Retry →
+          </button>
         </div>
       </div>
     </div>
