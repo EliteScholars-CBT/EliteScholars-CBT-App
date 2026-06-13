@@ -4,8 +4,15 @@
 // ============================================================================
 
 import { sendOk, sendMethodNotAllowed, setCors } from './_helpers/response.js';
-import { SHOP_ITEMS }   from './constants/shop.js';
-import { PREMIUM_MONTHLY_PRICE, PREMIUM_ANNUAL_PRICE, PRO_MONTHLY_PRICE, PAYMENT_URL_MONTHLY, PAYMENT_URL_ANNUAL, PAYMENT_URL_PRO } from './constants/premium.js';
+import { SHOP_ITEMS } from './_helpers/constants/shop.js';
+import {
+  PREMIUM_MONTHLY_PRICE,
+  PREMIUM_ANNUAL_PRICE,
+  PRO_MONTHLY_PRICE,
+  PAYMENT_URL_MONTHLY,
+  PAYMENT_URL_ANNUAL,
+  PAYMENT_URL_PRO,
+} from './_helpers/constants/premium.js';
 
 export default async function handler(req, res) {
   setCors(res);

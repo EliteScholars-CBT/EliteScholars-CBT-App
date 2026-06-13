@@ -4,7 +4,13 @@
 // ============================================================================
 
 import { sendOk, sendMethodNotAllowed, setCors } from './_helpers/response.js';
-import { AFFILIATE_ADS, SHOW_ADS, PUBLISHER_AD_ENABLED, CUSTOM_AD_ENABLED, CUSTOM_AD } from './constants/ads.js';
+import {
+  AFFILIATE_ADS,
+  SHOW_ADS,
+  PUBLISHER_AD_ENABLED,
+  CUSTOM_AD_ENABLED,
+  CUSTOM_AD,
+} from './_helpers/constants/ads.js';
 
 export default async function handler(req, res) {
   setCors(res);
