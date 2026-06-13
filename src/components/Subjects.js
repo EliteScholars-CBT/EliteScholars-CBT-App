@@ -18,7 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
-  // { id: 'flashcard', label: 'Flash' },
+  { id: 'flashcard', label: 'Flash' },
   // { id: 'game', label: 'Game' },
 ];
 
@@ -127,6 +127,14 @@ export default function Subjects({
     return countTotalQuestions(qbArr, learnTopics);
   };
 
+  // Whether a subject has any Learn topics at all (used for Learn mode visibility)
+  const hasLearnContent = (subjectId) => {
+    if (examType === 'postutme') {
+      return (POSTUTME_LEARN[subjectId] || []).length > 0;
+    }
+    return (JAMB_LEARN[subjectId] || []).length > 0;
+  };
+
   const hasQuestions = (subjectId) => {
     if (examType === 'postutme' && university) {
       const uniData = POST_UTME[university?.toUpperCase()];
@@ -194,11 +202,15 @@ export default function Subjects({
 
   // ── JAMB / POST UTME card grid builder ───────────────────────────────────
   const buildJambGrid = () => {
+    // In Learn mode, show subjects that have study notes (regardless of
+    // question count). In CBT/Flashcard mode, show subjects that have
+    // practice questions/cards.
     const subs = Object.entries(SUBJ)
       .filter(([id]) => id !== 'novel')
-      .filter(([id]) => hasQuestions(id));
+      .filter(([id]) => (mode === 'learn' ? hasLearnContent(id) : hasQuestions(id)));
 
-    const hasNovel = hasQuestions('novel');
+    // The Lekki Headmaster novel has no study notes — never show it in Learn mode
+    const hasNovel = mode === 'learn' ? false : hasQuestions('novel');
 
     if (!subs.length && !hasNovel) return [];
 
@@ -363,12 +375,16 @@ export default function Subjects({
                 <div className="subjects-empty-state">
                   <div className="subjects-empty-icon">📭</div>
 
-                  <div className="subjects-empty-title">No Questions Available Yet</div>
+                  <div className="subjects-empty-title">
+                    {mode === 'learn'
+                      ? 'No Study Notes Available Yet'
+                      : 'No Questions Available Yet'}
+                  </div>
 
                   <div className="subjects-empty-sub">
                     {examType === 'postutme' && university
-                      ? `We're adding questions for ${university.toUpperCase()}. Check back soon!`
-                      : 'More questions are being added. Please check back later!'}
+                      ? `We're adding ${mode === 'learn' ? 'study notes' : 'questions'} for ${university.toUpperCase()}. Check back soon!`
+                      : `More ${mode === 'learn' ? 'study notes' : 'questions'} are being added. Please check back later!`}
                   </div>
 
                   <button className="subjects-empty-btn" onClick={onProfile}>
@@ -425,7 +441,10 @@ export default function Subjects({
 
                   const count = getJambCount(id);
 
-                  if (count === 0) return null;
+                  // In CBT/Flashcard mode, hide subjects with zero questions/cards.
+                  // In Learn mode, the card is shown as long as it has study notes,
+                  // regardless of question count.
+                  if (mode !== 'learn' && count === 0) return null;
 
                   return (
                     <div
@@ -444,7 +463,9 @@ export default function Subjects({
                       <div className="subject-name">{meta.label}</div>
 
                       <div className="subject-question-count">
-                        {count} {mode === 'flashcard' ? 'cards' : 'questions'}
+                        {mode === 'learn'
+                          ? 'Study notes'
+                          : `${count} ${mode === 'flashcard' ? 'cards' : 'questions'}`}
                       </div>
 
                       <div
