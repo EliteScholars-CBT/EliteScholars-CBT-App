@@ -18,7 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
-  { id: 'flashcard', label: 'Flash' },
+  // { id: 'flashcard', label: 'Flash' },
   // { id: 'game', label: 'Game' },
 ];
 

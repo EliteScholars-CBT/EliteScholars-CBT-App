@@ -18,7 +18,7 @@ import { QB_MATHEMATICS } from './questions/mathematics';
 import { QB_NOVEL } from './questions/novel';
 import { QB_PHYSICS } from './questions/physics';
 
-// Learn content
+// Learn content (JAMB's own files for its original 9 subjects)
 import { JAMB_LEARN_ENGLISH } from './learn/english';
 import { JAMB_LEARN_MATHEMATICS } from './learn/mathematics';
 import { JAMB_LEARN_PHYSICS } from './learn/physics';
@@ -29,8 +29,9 @@ import { JAMB_LEARN_GOVERNMENT } from './learn/government';
 import { JAMB_LEARN_LITERATURE } from './learn/literature';
 import { JAMB_LEARN_ACCOUNTING } from './learn/accounting';
 
-// New subjects — learn content shared directly from WAEC_LEARN
-// (CBT question pool falls back to WAEC_QB automatically in Quiz.js)
+// Subjects shared directly from WAEC_LEARN — these ARE part of the JAMB UTME
+// syllabus but don't have their own jamb/learn/ files. CBT question pool
+// falls back to WAEC_QB automatically in Quiz.js for these too.
 import { WAEC_LEARN } from '../waec/learn/index';
 
 // QB object — backward compatible with Quiz.js
@@ -49,6 +50,7 @@ export const QB = {
 
 // Learn object keyed by subject ID
 export const JAMB_LEARN = {
+  // ── JAMB's own learn content ─────────────────────────────────────────────
   english: JAMB_LEARN_ENGLISH,
   mathematics: JAMB_LEARN_MATHEMATICS,
   physics: JAMB_LEARN_PHYSICS,
@@ -59,20 +61,17 @@ export const JAMB_LEARN = {
   literature: JAMB_LEARN_LITERATURE,
   accounting: JAMB_LEARN_ACCOUNTING,
 
-  // ── New subjects (linked from WAEC) ─────────────────────────────────────
+  // ── JAMB syllabus subjects shared directly from WAEC_LEARN ───────────────
   further_maths: WAEC_LEARN.further_maths,
   crs: WAEC_LEARN.crs,
   commerce: WAEC_LEARN.commerce,
-  visual_arts: WAEC_LEARN.visual_arts,
-  food_nutrition: WAEC_LEARN.food_nutrition,
-  marketing: WAEC_LEARN.marketing,
   geography: WAEC_LEARN.geography,
-  civic: WAEC_LEARN.civic,
-
-  // ── Future subjects (ready for content upload) ───────────────────────────
-  digital_tech: WAEC_LEARN.digital_tech,
   agric_science: WAEC_LEARN.agric_science,
-  citizenship: WAEC_LEARN.citizenship,
+
+  // NOTE: civic, visual_arts, food_nutrition, marketing, digital_tech,
+  // citizenship are intentionally NOT included — they are not part of the
+  // JAMB UTME syllabus. If you decide JAMB should support any of these,
+  // just add a line here, e.g.: civic: WAEC_LEARN.civic,
 };
 
 // Re-export individual QB arrays

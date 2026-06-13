@@ -41,7 +41,7 @@ export function getStudentGCLinks(studentType, selectedExams = []) {
 // ── Exam types ────────────────────────────────────────────────────────────────
 export const EXAM_TYPES = [
   { id: 'jamb',     label: 'JAMB',      icon: '📝', color: '#6C3FC9', desc: 'UTME' },
-  { id: 'postutme', label: 'POST UTME', icon: '🎓', color: '#0369A1', desc: 'University' },
+  // { id: 'postutme', label: 'POST UTME', icon: '🎓', color: '#0369A1', desc: 'University' },
   { id: 'waec',     label: 'WAEC',      icon: '🏫', color: '#065F46', desc: 'Senior School' },
   { id: 'neco',     label: 'NECO',      icon: '📋', color: '#9A3412', desc: 'Senior School' },
   { id: 'gst',      label: 'GST',       icon: '🎓', color: '#7C3AED', desc: 'University' },
