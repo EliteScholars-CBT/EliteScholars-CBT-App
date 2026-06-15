@@ -13,7 +13,7 @@ export const GC_LINKS = {
   jamb:    { label: 'JAMB',      emoji: '📚', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
   waec:    { label: 'WAEC',      emoji: '📝', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
   neco:    { label: 'NECO',      emoji: '📋', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
-  postutme:{ label: 'POST UTME', emoji: '🎓', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
+  // postutme:{ label: 'POST UTME', emoji: '🎓', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
   gst:     { label: 'GST',       emoji: '🏛️', url: 'https://chat.whatsapp.com/DSeaqKuKRhw1bIFVpAJreB?mode=gi_t' },
 };
 

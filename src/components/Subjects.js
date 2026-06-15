@@ -18,7 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 const MODES = [
   { id: 'learn', label: 'Learn' },
   { id: 'cbt', label: 'CBT' },
-  // { id: 'flashcard', label: 'Flash' },
+  // { id: 'flashcard', label: 'Flash' }
   // { id: 'game', label: 'Game' },
 ];
 
@@ -318,55 +318,94 @@ export default function Subjects({
               Switch to CBT
             </button>
           </div>
-        ) : isGridExam ? (
-          /* ── WAEC / NECO / GST ── */
-          <div className="subjects-grid">
-            {(gridSubjects || []).map((subj) => {
-              const qCount = countTotalQuestions(
-                gridQB?.[subj.id] || [],
-                gridLearn?.[subj.id] || []
-              );
+        ) : isGridExam || mode === 'learn' ? (
+          /* ── WAEC / NECO / GST grid card style ──────────────────────────────
+             Also used for JAMB / POST UTME in Learn mode, so study-topic cards
+             look identical across all exam types (icon, label, "Study notes"
+             meta line, and "STUDY" badge). ─────────────────────────────────── */
+          (() => {
+            // For grid exams, use their dedicated subject list + QB/learn banks.
+            // For JAMB/POST UTME in Learn mode, build an equivalent list from
+            // SUBJ + JAMB_LEARN/POSTUTME_LEARN so the same card markup applies.
+            let cardSubjects = gridSubjects;
+            let cardQB = gridQB;
+            let cardLearn = gridLearn;
 
+            if (!isGridExam) {
+              const learnBank = examType === 'postutme' ? POSTUTME_LEARN : JAMB_LEARN;
+              cardSubjects = Object.entries(SUBJ)
+                .filter(([id]) => id !== 'novel')
+                .filter(([id]) => (learnBank[id] || []).length > 0)
+                .map(([id, meta]) => ({ id, ...meta }));
+              cardQB = {};
+              cardLearn = learnBank;
+            }
+
+            if (!cardSubjects || !cardSubjects.length) {
               return (
-                <div
-                  key={subj.id}
-                  className="subjects-grid-card"
-                  style={{
-                    '--subject-color': subj.color,
-                    '--subject-bg': subj.bg,
-                  }}
-                  onClick={() => handleSubjectClick(subj.id)}
-                >
-                  <div className="subjects-grid-icon" style={{ background: subj.bg }}>
-                    {subj.icon}
+                <div className="subjects-empty-state">
+                  <div className="subjects-empty-icon">📚</div>
+                  <div className="subjects-empty-title">No Study Notes Available Yet</div>
+                  <div className="subjects-empty-sub">
+                    More study notes are being added. Please check back later!
                   </div>
-
-                  <div className="subjects-grid-label">{subj.label}</div>
-
-                  <div className="subjects-grid-meta">
-                    {mode === 'learn'
-                      ? 'Study notes'
-                      : qCount > 0
-                        ? `${qCount} questions`
-                        : 'Coming soon'}
-                  </div>
-
-                  <div
-                    className="subjects-grid-badge"
-                    style={{
-                      background: subj.bg,
-                      color: subj.color,
-                    }}
-                  >
-                    {mode === 'learn' ? 'STUDY' : 'READY'}
-                  </div>
+                  <button className="subjects-empty-btn" onClick={onProfile}>
+                    Go to Profile
+                  </button>
                 </div>
               );
-            })}
-          </div>
+            }
+
+            return (
+              <div className="subjects-grid">
+                {cardSubjects.map((subj) => {
+                  const qCount = countTotalQuestions(
+                    cardQB?.[subj.id] || [],
+                    cardLearn?.[subj.id] || []
+                  );
+
+                  return (
+                    <div
+                      key={subj.id}
+                      className="subjects-grid-card"
+                      style={{
+                        '--subject-color': subj.color,
+                        '--subject-bg': subj.bg,
+                      }}
+                      onClick={() => handleSubjectClick(subj.id)}
+                    >
+                      <div className="subjects-grid-icon" style={{ background: subj.bg }}>
+                        {subj.icon}
+                      </div>
+
+                      <div className="subjects-grid-label">{subj.label}</div>
+
+                      <div className="subjects-grid-meta">
+                        {mode === 'learn'
+                          ? 'Study notes'
+                          : qCount > 0
+                            ? `${qCount} questions`
+                            : 'Coming soon'}
+                      </div>
+
+                      <div
+                        className="subjects-grid-badge"
+                        style={{
+                          background: subj.bg,
+                          color: subj.color,
+                        }}
+                      >
+                        {mode === 'learn' ? 'STUDY' : 'READY'}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()
         ) : (
           (() => {
-            /* ── JAMB / POST UTME ── */
+            /* ── JAMB / POST UTME — CBT / Flashcard mode (unchanged style) ── */
 
             const allCards = buildJambGrid();
 
@@ -375,16 +414,12 @@ export default function Subjects({
                 <div className="subjects-empty-state">
                   <div className="subjects-empty-icon">📭</div>
 
-                  <div className="subjects-empty-title">
-                    {mode === 'learn'
-                      ? 'No Study Notes Available Yet'
-                      : 'No Questions Available Yet'}
-                  </div>
+                  <div className="subjects-empty-title">No Questions Available Yet</div>
 
                   <div className="subjects-empty-sub">
                     {examType === 'postutme' && university
-                      ? `We're adding ${mode === 'learn' ? 'study notes' : 'questions'} for ${university.toUpperCase()}. Check back soon!`
-                      : `More ${mode === 'learn' ? 'study notes' : 'questions'} are being added. Please check back later!`}
+                      ? `We're adding questions for ${university.toUpperCase()}. Check back soon!`
+                      : 'More questions are being added. Please check back later!'}
                   </div>
 
                   <button className="subjects-empty-btn" onClick={onProfile}>
@@ -441,10 +476,7 @@ export default function Subjects({
 
                   const count = getJambCount(id);
 
-                  // In CBT/Flashcard mode, hide subjects with zero questions/cards.
-                  // In Learn mode, the card is shown as long as it has study notes,
-                  // regardless of question count.
-                  if (mode !== 'learn' && count === 0) return null;
+                  if (count === 0) return null;
 
                   return (
                     <div
@@ -463,9 +495,7 @@ export default function Subjects({
                       <div className="subject-name">{meta.label}</div>
 
                       <div className="subject-question-count">
-                        {mode === 'learn'
-                          ? 'Study notes'
-                          : `${count} ${mode === 'flashcard' ? 'cards' : 'questions'}`}
+                        {count} {mode === 'flashcard' ? 'cards' : 'questions'}
                       </div>
 
                       <div
@@ -475,7 +505,7 @@ export default function Subjects({
                           color: GRAY,
                         }}
                       >
-                        {mode === 'learn' ? 'STUDY' : mode === 'flashcard' ? 'REVIEW' : 'READY'}
+                        {mode === 'flashcard' ? 'REVIEW' : 'READY'}
                       </div>
                     </div>
                   );

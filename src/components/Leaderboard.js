@@ -17,9 +17,12 @@ export default function Leaderboard({ userEmail, userName }) {
   ];
 
   const examTypes = [
-    { id: 'all',      label: 'All'       },
-    { id: 'jamb',     label: 'JAMB'      },
-    { id: 'postutme', label: 'POST UTME' },
+    { id: 'all', label: 'All' },
+    { id: 'jamb', label: 'JAMB' },
+    { id: 'waec', label: 'WAEC' },
+    { id: 'neco', label: 'NECO' },
+    { id: 'gst', label: 'GST' },
+    // { id: 'postutme', label: 'POST UTME' },
   ];
 
   useEffect(() => { loadLeaderboard(); }, [activeTimeframe, activeExam]);
@@ -133,6 +136,9 @@ export default function Leaderboard({ userEmail, userName }) {
                 <div className="leaderboard-avatar">{user.name?.charAt(0)?.toUpperCase() || '?'}</div>
                 <div className="leaderboard-info">
                   <div className="leaderboard-name">{user.name}</div>
+                  {user.username && (
+                    <div className="leaderboard-username">@{user.username}</div>
+                  )}
                   <div className="leaderboard-stats">
                     <span>Lv.{user.level || 1}</span>
                     {activeTimeframe !== 'alltime' && (

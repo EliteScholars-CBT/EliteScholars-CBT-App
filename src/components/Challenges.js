@@ -5,41 +5,49 @@ import {
   acceptChallenge,
   declineChallenge,
   submitChallengeScore,
-  getChallengeMessages
+  getChallengeMessages,
 } from '../utils/challengeApi';
 import CreateChallenge from './CreateChallenge';
 import Quiz from './Quiz';
+import Toast from './Toast';
 
 export default function Challenges({ userEmail, userName }) {
-  const [activeTab, setActiveTab]        = useState('pending');
-  const [pendingChallenges, setPending]  = useState([]);
-  const [history, setHistory]            = useState([]);
-  const [messages, setMessages]          = useState([]);
+  const [activeTab, setActiveTab] = useState('pending');
+  const [pendingChallenges, setPending] = useState([]);
+  const [history, setHistory] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [showCreateModal, setShowCreate] = useState(false);
-  const [loading, setLoading]            = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // Playing state
-  const [playingChallenge, setPlaying]   = useState(null);
-  const [score, setScore]                = useState(0);
-  const [correct, setCorrect]            = useState(0);
-  const [totalQ, setTotalQ]              = useState(0);
+  const [playingChallenge, setPlaying] = useState(null);
+  const [score, setScore] = useState(0);
+  const [correct, setCorrect] = useState(0);
+  const [totalQ, setTotalQ] = useState(0);
 
-  const loadChallenges = useCallback(async (silent = false) => {
-    if (!userEmail) return;
-    if (!silent) setLoading(true);
-    try {
-      if (activeTab === 'pending') {
-        const pending = await getPendingChallenges(userEmail);
-        setPending(Array.isArray(pending) ? pending : []);
-      } else {
-        const hist = await getChallengeHistory(userEmail);
-        setHistory(Array.isArray(hist) ? hist : []);
+  // XP result toast — shown after a challenge round completes
+  const [toast, setToast] = useState({ show: false, message: '', type: 'info' });
+  const showToast = (message, type = 'info') => setToast({ show: true, message, type });
+
+  const loadChallenges = useCallback(
+    async (silent = false) => {
+      if (!userEmail) return;
+      if (!silent) setLoading(true);
+      try {
+        if (activeTab === 'pending') {
+          const pending = await getPendingChallenges(userEmail);
+          setPending(Array.isArray(pending) ? pending : []);
+        } else {
+          const hist = await getChallengeHistory(userEmail);
+          setHistory(Array.isArray(hist) ? hist : []);
+        }
+      } catch (err) {
+        console.error('Failed to load challenges:', err);
       }
-    } catch (err) {
-      console.error('Failed to load challenges:', err);
-    }
-    setLoading(false);
-  }, [userEmail, activeTab]);
+      setLoading(false);
+    },
+    [userEmail, activeTab]
+  );
 
   useEffect(() => {
     getChallengeMessages().then(setMessages);
@@ -59,7 +67,9 @@ export default function Challenges({ userEmail, userName }) {
   // ── Accept ────────────────────────────────────────────────────────────────
   const handleAccept = async (challenge) => {
     await acceptChallenge(challenge.challenge_id, userEmail);
-    setScore(0); setCorrect(0); setTotalQ(0);
+    setScore(0);
+    setCorrect(0);
+    setTotalQ(0);
     setPlaying(challenge);
   };
 
@@ -71,241 +81,215 @@ export default function Challenges({ userEmail, userName }) {
   // ── Quiz done ─────────────────────────────────────────────────────────────
   const handleQuizDone = async () => {
     if (!playingChallenge) return;
-    await submitChallengeScore(
+    const result = await submitChallengeScore(
       playingChallenge.challenge_id,
       userEmail,
       correct,
       totalQ
     );
+
     setPlaying(null);
     loadChallenges(false);
+
+    // Show XP feedback based on the result returned from the backend
+    if (result?.success && result.xpAwarded > 0) {
+      const isChallenger =
+        playingChallenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
+
+      const winnerEmail = result.winner?.toString().toLowerCase().trim();
+      const isDraw = result.winner === 'draw';
+      const iWon = !isDraw && winnerEmail === userEmail?.toLowerCase().trim();
+
+      if (result.completed && iWon) {
+        showToast(`🏆 You won! +${result.xpAwarded} XP`, 'success');
+      } else if (result.completed && isDraw) {
+        showToast(`🤝 It's a draw! +${result.xpAwarded} XP`, 'info');
+      } else if (result.completed) {
+        showToast(`+${result.xpAwarded} XP for completing the challenge`, 'info');
+      } else {
+        // Other player hasn't finished yet — only this player's XP isn't known yet
+        showToast(`Score submitted! Waiting for your opponent…`, 'info');
+      }
+    } else if (result?.success && !result.completed) {
+      showToast(`Score submitted! Waiting for your opponent…`, 'info');
+    }
   };
 
   // ── Helpers ───────────────────────────────────────────────────────────────
   const getMessageText = (challenge) => {
     if (challenge.custom_message) return challenge.custom_message;
-    const found = messages.find(m => m.message_id === challenge.message_template);
+    const found = messages.find((m) => m.message_id === challenge.message_template);
     return found?.message_text || '';
   };
 
   const getStatusBadge = (status) => {
-    if (status === 'pending')   return <span className="badge-pending">⏳ Pending</span>;
-    if (status === 'accepted')  return <span className="badge-accepted">✅ Accepted</span>;
+    if (status === 'pending') return <span className="badge-pending">⏳ Pending</span>;
+    if (status === 'accepted') return <span className="badge-accepted">✅ Accepted</span>;
     if (status === 'completed') return <span className="badge-completed">🏆 Completed</span>;
-    if (status === 'declined')  return <span className="badge-declined">🚫 Declined</span>;
-    if (status === 'expired')   return <span className="badge-expired">⏰ Expired</span>;
+    if (status === 'declined') return <span className="badge-declined">🚫 Declined</span>;
+    if (status === 'expired') return <span className="badge-expired">⏰ Expired</span>;
     return null;
   };
 
   // ── History card — competition scoreboard style ────────────────────────────
   const renderHistoryCard = (challenge) => {
-  const isChallenger =
-    challenge.challenger_email?.toLowerCase() ===
-    userEmail?.toLowerCase();
+    const isChallenger = challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
 
-  const myName = userName || 'You';
+    const myName = userName || 'You';
 
-  const oppName = isChallenger
-    ? (challenge.opponent_name || 'Opponent')
-    : (challenge.challenger_name || 'Opponent');
+    const oppName = isChallenger
+      ? challenge.opponent_name || 'Opponent'
+      : challenge.challenger_name || 'Opponent';
 
-  const myScore = isChallenger
-    ? (challenge.challenger_score ?? '?')
-    : (challenge.opponent_score ?? '?');
+    const myScore = isChallenger
+      ? (challenge.challenger_score ?? '?')
+      : (challenge.opponent_score ?? '?');
 
-  const oppScore = isChallenger
-    ? (challenge.opponent_score ?? '?')
-    : (challenge.challenger_score ?? '?');
+    const oppScore = isChallenger
+      ? (challenge.opponent_score ?? '?')
+      : (challenge.challenger_score ?? '?');
 
-  const status = (challenge.status || '').toLowerCase();
+    const status = (challenge.status || '').toLowerCase();
 
-  const winner = challenge.winner_email;
+    const winner = challenge.winner_email;
 
-  const isDraw = winner === 'draw';
+    const isDraw = winner === 'draw';
 
-  const iWon =
-    !isDraw &&
-    winner === userEmail;
+    const iWon = !isDraw && winner === userEmail;
 
-  const iLost =
-    !isDraw &&
-    winner &&
-    winner !== userEmail;
+    const iLost = !isDraw && winner && winner !== userEmail;
 
-  const isPending = status === 'pending';
-  const isDeclined = status === 'declined';
-  const isExpired = status === 'expired';
+    const isPending = status === 'pending';
+    const isDeclined = status === 'declined';
+    const isExpired = status === 'expired';
 
-  let resultIcon = '—';
-  let resultText = status;
-  let resultClass = 'neutral';
+    let resultIcon = '—';
+    let resultText = status;
+    let resultClass = 'neutral';
 
-  if (isPending) {
-    resultIcon = '⏳';
-    resultText = 'Awaiting Opponent';
-    resultClass = 'pending';
-  } else if (isExpired) {
-    resultIcon = '⏰';
-    resultText = 'Expired';
-    resultClass = 'expired';
-  } else if (isDeclined) {
-    resultIcon = '🚫';
-    resultText = 'Declined';
-    resultClass = 'declined';
-  } else if (isDraw) {
-    resultIcon = '🤝';
-    resultText = 'Draw';
-    resultClass = 'draw';
-  } else if (iWon) {
-    resultIcon = '🏆';
-    resultText = 'Victory';
-    resultClass = 'won';
-  } else if (iLost) {
-    resultIcon = '❌';
-    resultText = 'Defeat';
-    resultClass = 'lost';
-  }
+    if (isPending) {
+      resultIcon = '⏳';
+      resultText = 'Awaiting Opponent';
+      resultClass = 'pending';
+    } else if (isExpired) {
+      resultIcon = '⏰';
+      resultText = 'Expired';
+      resultClass = 'expired';
+    } else if (isDeclined) {
+      resultIcon = '🚫';
+      resultText = 'Declined';
+      resultClass = 'declined';
+    } else if (isDraw) {
+      resultIcon = '🤝';
+      resultText = 'Draw';
+      resultClass = 'draw';
+    } else if (iWon) {
+      resultIcon = '🏆';
+      resultText = 'Victory';
+      resultClass = 'won';
+    } else if (iLost) {
+      resultIcon = '❌';
+      resultText = 'Defeat';
+      resultClass = 'lost';
+    }
 
-  const rawDate =
-    challenge.completed_at ||
-    challenge.expires_at ||
-    challenge.created_at;
+    const rawDate = challenge.completed_at || challenge.expires_at || challenge.created_at;
 
-  const dateObj = rawDate
-    ? new Date(rawDate)
-    : null;
+    const dateObj = rawDate ? new Date(rawDate) : null;
 
-  const formattedDate = dateObj
-    ? dateObj.toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-      })
-    : '--';
+    const formattedDate = dateObj
+      ? dateObj.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })
+      : '--';
 
-  const formattedTime = dateObj
-    ? dateObj.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-    : '--';
+    const formattedTime = dateObj
+      ? dateObj.toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        })
+      : '--';
 
-  const oppScoreDisplay =
-    (isPending || isDeclined || isExpired)
-      ? '?'
-      : oppScore;
+    const oppScoreDisplay = isPending || isDeclined || isExpired ? '?' : oppScore;
 
-  return (
-    <div
-      key={challenge.challenge_id}
-      className={`challenge-history-card ${resultClass}`}
-    >
+    return (
+      <div key={challenge.challenge_id} className={`challenge-history-card ${resultClass}`}>
+        {/* HEADER */}
+        <div className="challenge-history-top">
+          <div className="challenge-history-user">
+            <div className="challenge-history-opponent">{oppName}</div>
 
-      {/* HEADER */}
-      <div className="challenge-history-top">
-
-        <div className="challenge-history-user">
-          <div className="challenge-history-opponent">
-            {oppName}
+            <div className="challenge-history-meta">
+              <span>{challenge.subject}</span>
+              <span>•</span>
+              <span>{challenge.exam_type || 'JAMB'}</span>
+            </div>
           </div>
 
-          <div className="challenge-history-meta">
-            <span>{challenge.subject}</span>
-            <span>•</span>
-            <span>{challenge.exam_type || 'JAMB'}</span>
+          <div className={`history-status-badge ${resultClass}`}>
+            <span>{resultIcon}</span>
+            <span>{resultText}</span>
           </div>
         </div>
 
-        <div className={`history-status-badge ${resultClass}`}>
-          <span>{resultIcon}</span>
-          <span>{resultText}</span>
-        </div>
-
-      </div>
-
-      {/* SCOREBOARD */}
-      <div className="challenge-scoreboard">
-
-        <div className="challenge-player-side">
-
-          <div className={`
+        {/* SCOREBOARD */}
+        <div className="challenge-scoreboard">
+          <div className="challenge-player-side">
+            <div
+              className={`
             challenge-score
             ${iWon ? 'winner-score' : ''}
             ${isDraw ? 'draw-score' : ''}
-          `}>
-            {myScore}
-          </div>
-
-          <div className="challenge-player-name">
-            {myName}
-          </div>
-
-          {iWon && (
-            <div className="winner-tag">
-              WINNER
+          `}
+            >
+              {myScore}
             </div>
-          )}
 
-        </div>
+            <div className="challenge-player-name">{myName}</div>
 
-        <div className="challenge-vs">
-          VS
-        </div>
+            {iWon && <div className="winner-tag">WINNER</div>}
+          </div>
 
-        <div className="challenge-player-side">
+          <div className="challenge-vs">VS</div>
 
-          <div className={`
+          <div className="challenge-player-side">
+            <div
+              className={`
             challenge-score
             ${iLost ? 'loser-score' : ''}
             ${isDraw ? 'draw-score' : ''}
-          `}>
-            {oppScoreDisplay}
-          </div>
-
-          <div className="challenge-player-name">
-            {oppName}
-          </div>
-
-          {iLost && !isDraw && (
-            <div className="winner-tag loser">
-              WINNER
+          `}
+            >
+              {oppScoreDisplay}
             </div>
-          )}
 
-        </div>
+            <div className="challenge-player-name">{oppName}</div>
 
-      </div>
-
-      {/* FOOTER */}
-      <div className="challenge-history-footer">
-
-        <div className="challenge-history-date-wrap">
-          <div className="challenge-history-date">
-            {formattedDate}
-          </div>
-
-          <div className="challenge-history-time">
-            {formattedTime}
+            {iLost && !isDraw && <div className="winner-tag loser">WINNER</div>}
           </div>
         </div>
 
-        <div className="challenge-history-extra">
-          <span>
-            {challenge.num_questions || 5} Questions
-          </span>
+        {/* FOOTER */}
+        <div className="challenge-history-footer">
+          <div className="challenge-history-date-wrap">
+            <div className="challenge-history-date">{formattedDate}</div>
 
-          <span>•</span>
+            <div className="challenge-history-time">{formattedTime}</div>
+          </div>
 
-          <span>
-            {challenge.time_limit || 60}s each
-          </span>
+          <div className="challenge-history-extra">
+            <span>{challenge.num_questions || 5} Questions</span>
+
+            <span>•</span>
+
+            <span>{challenge.time_limit || 60}s each</span>
+          </div>
         </div>
-
       </div>
-
-    </div>
-  );
-};
+    );
+  };
 
   // ── Playing screen ────────────────────────────────────────────────────────
   if (playingChallenge) {
@@ -313,20 +297,27 @@ export default function Challenges({ userEmail, userName }) {
       <div className="challenge-play-overlay">
         <div className="challenge-play-banner">
           <div style={{ color: '#fff', fontWeight: 700, fontSize: 13, padding: '12px 16px' }}>
-            ⚔️ Challenge vs {playingChallenge.challenger_name} — Beat {playingChallenge.challenger_score || '?'} pts!
+            ⚔️ Challenge vs {playingChallenge.challenger_name} — Beat{' '}
+            {playingChallenge.challenger_score || '?'} pts!
           </div>
         </div>
         <Quiz
           subjectId={playingChallenge.subject}
           onAllDone={handleQuizDone}
           setQuizTimeRemaining={() => {}}
-          score={score}     setScore={setScore}
-          correct={correct} setCorrect={setCorrect}
-          totalQ={totalQ}   setTotalQ={setTotalQ}
+          score={score}
+          setScore={setScore}
+          correct={correct}
+          setCorrect={setCorrect}
+          totalQ={totalQ}
+          setTotalQ={setTotalQ}
           onHome={() => setPlaying(null)}
-          triggerAdRefresh={() => {}} adRefresh={0}
-          email={userEmail} name={userName}
-          onFiftyUsed={() => {}} onHintUsed={() => {}}
+          triggerAdRefresh={() => {}}
+          adRefresh={0}
+          email={userEmail}
+          name={userName}
+          onFiftyUsed={() => {}}
+          onHintUsed={() => {}}
           onLogQuestion={() => {}}
           isChallengeMode
           examType={playingChallenge.exam_type}
@@ -365,7 +356,6 @@ export default function Challenges({ userEmail, userName }) {
         <div className="challenges-loading">Loading challenges...</div>
       ) : (
         <div className="challenges-list">
-
           {/* ── PENDING TAB ── */}
           {activeTab === 'pending' && pendingChallenges.length === 0 && (
             <div className="empty-state">
@@ -379,8 +369,10 @@ export default function Challenges({ userEmail, userName }) {
 
           {activeTab === 'pending' &&
             pendingChallenges.map((challenge) => {
-              const isOpponent   = challenge.opponent_email?.toLowerCase()   === userEmail?.toLowerCase();
-              const isChallenger = challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
+              const isOpponent =
+                challenge.opponent_email?.toLowerCase() === userEmail?.toLowerCase();
+              const isChallenger =
+                challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
 
               return (
                 <div key={challenge.challenge_id} className="challenge-card">
@@ -410,9 +402,7 @@ export default function Challenges({ userEmail, userName }) {
                   </div>
 
                   {getMessageText(challenge) ? (
-                    <div className="challenge-message">
-                      "{getMessageText(challenge)}"
-                    </div>
+                    <div className="challenge-message">"{getMessageText(challenge)}"</div>
                   ) : null}
 
                   {/* Opponent — pending: Accept / Decline */}
@@ -424,10 +414,7 @@ export default function Challenges({ userEmail, userName }) {
                       >
                         Decline
                       </button>
-                      <button
-                        className="accept-btn"
-                        onClick={() => handleAccept(challenge)}
-                      >
+                      <button className="accept-btn" onClick={() => handleAccept(challenge)}>
                         Accept & Play →
                       </button>
                     </div>
@@ -436,10 +423,15 @@ export default function Challenges({ userEmail, userName }) {
                   {/* Opponent — accepted but not yet played */}
                   {isOpponent && challenge.status === 'accepted' && (
                     <div className="challenge-actions">
-                      <button className="accept-btn" onClick={() => {
-                        setScore(0); setCorrect(0); setTotalQ(0);
-                        setPlaying(challenge);
-                      }}>
+                      <button
+                        className="accept-btn"
+                        onClick={() => {
+                          setScore(0);
+                          setCorrect(0);
+                          setTotalQ(0);
+                          setPlaying(challenge);
+                        }}
+                      >
                         ▶ Play Now
                       </button>
                     </div>
@@ -447,12 +439,14 @@ export default function Challenges({ userEmail, userName }) {
 
                   {/* Challenger — waiting */}
                   {isChallenger && (
-                    <div style={{
-                      fontSize:   11,
-                      color:      'var(--text-secondary)',
-                      marginTop:  8,
-                      fontStyle:  'italic',
-                    }}>
+                    <div
+                      style={{
+                        fontSize: 11,
+                        color: 'var(--text-secondary)',
+                        marginTop: 8,
+                        fontStyle: 'italic',
+                      }}
+                    >
                       Waiting for {challenge.opponent_name} to play...
                     </div>
                   )}
@@ -468,9 +462,7 @@ export default function Challenges({ userEmail, userName }) {
             </div>
           )}
 
-          {activeTab === 'history' &&
-            [...history].map(renderHistoryCard)}
-
+          {activeTab === 'history' && [...history].map(renderHistoryCard)}
         </div>
       )}
 
@@ -483,6 +475,14 @@ export default function Challenges({ userEmail, userName }) {
             setShowCreate(false);
             loadChallenges(false);
           }}
+        />
+      )}
+
+      {toast.show && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast({ ...toast, show: false })}
         />
       )}
     </div>

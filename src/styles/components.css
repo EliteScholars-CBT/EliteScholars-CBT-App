@@ -2223,6 +2223,13 @@ body.dark-mode .mode-select-card {
   margin-bottom: 4px;
 }
 
+.leaderboard-username {
+  font-size: 11px;
+  color: var(--text-secondary, #999);
+  font-weight: 500;
+  margin-top: -2px;
+}
+
 .leaderboard-stats {
   display: flex;
   gap: 12px;
@@ -3407,6 +3414,9 @@ body.dark-mode .lekki-card:hover {
   line-height: 1.65;
   margin: 0;
 }
+
+
+
 
 /* ============================================================================
    CHALLENGE — Play-before-send flow

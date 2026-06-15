@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { createChallenge, getChallengeMessages, checkUserExists } from '../utils/challengeApi';
+import {
+  createChallenge,
+  getChallengeMessages,
+  checkUserExists,
+  checkUserByUsername,
+} from '../utils/challengeApi';
 import Quiz from './Quiz';
 import BackButton from './BackButton';
 
@@ -21,14 +26,16 @@ const SUBJECT_OPTIONS = [
   { id: 'accounting', label: 'Accounting' },
   { id: 'government', label: 'Government' },
   { id: 'literature', label: 'Literature' },
-  
 ];
 
 const NUM_QUESTIONS = 5;
 const TIME_LIMIT = 60;
 
-export default function CreateChallenge({ userEmail, userName, onClose, onCreated }) {
+export default function CreateChallenge({ userEmail, userName, userUsername, onClose, onCreated }) {
   const [step, setStep] = useState('setup');
+  // Whatever the user typed — could be an email or a username
+  const [opponentInput, setOpponentInput] = useState('');
+  // Resolved values after lookup
   const [opponentEmail, setOpponentEmail] = useState('');
   const [opponentName, setOpponentName] = useState('');
   const [examType, setExamType] = useState('jamb');
@@ -37,7 +44,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
   const [messageTemplate, setMsgTpl] = useState('');
   const [customMessage, setCustomMsg] = useState('');
   const [messages, setMessages] = useState([]);
-  const [emailError, setEmailError] = useState('');
+  const [inputError, setInputError] = useState('');
   const [sendError, setSendError] = useState('');
 
   // User existence check
@@ -61,52 +68,85 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
     });
   }, []);
 
-  const validateEmail = (val) => {
-    if (!val) return 'Email is required';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return 'Enter a valid email address';
-    if (val.toLowerCase() === userEmail?.toLowerCase()) return 'You cannot challenge yourself';
+  const isEmailFormat = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+
+  const validateInput = (val) => {
+    if (!val) return 'Enter an email address or username';
+
+    if (val.includes('@')) {
+      if (!isEmailFormat(val)) return 'Enter a valid email address';
+      if (val.toLowerCase() === userEmail?.toLowerCase()) return 'You cannot challenge yourself';
+    } else {
+      if (val.length < 3) return 'Username is too short';
+      if (userUsername && val.toLowerCase() === userUsername.toLowerCase()) {
+        return 'You cannot challenge yourself';
+      }
+    }
     return '';
   };
 
-  const handleEmailChange = (e) => {
+  const handleInputChange = (e) => {
     const v = e.target.value;
-    setOpponentEmail(v);
+    setOpponentInput(v);
     setUserChecked(false);
+    setOpponentEmail('');
     setOpponentName('');
-    const err = validateEmail(v);
-    setEmailError(err);
+    const error = validateInput(v);
+    setInputError(error);
   };
 
-  // Check user exists when email field loses focus
-  const handleEmailBlur = async () => {
-    const err = validateEmail(opponentEmail);
-    if (err) return;
+  // Look up opponent — by email or by username, depending on what was typed
+  const handleInputBlur = async () => {
+    const error = validateInput(opponentInput);
+    if (error) {
+      setInputError(error);
+      return;
+    }
+
     setCheckingUser(true);
-    setEmailError('');
-    const result = await checkUserExists(opponentEmail);
-    setCheckingUser(false);
-    if (!result.exists) {
-      setEmailError('No account found with this email.');
-      setUserChecked(false);
-    } else {
-      setUserChecked(true);
-      // Use their real name if available
+    setInputError('');
+
+    if (opponentInput.includes('@')) {
+      // Lookup by email
+      const result = await checkUserExists(opponentInput);
+      setCheckingUser(false);
+      if (!result.exists) {
+        setInputError('No account found with this email.');
+        setUserChecked(false);
+        return;
+      }
       const name = result.firstName
         ? `${result.firstName} ${result.lastName}`.trim()
-        : opponentEmail.split('@')[0];
+        : opponentInput.split('@')[0];
+      setOpponentEmail(opponentInput.toLowerCase().trim());
       setOpponentName(name);
-      setEmailError('');
+      setUserChecked(true);
+    } else {
+      // Lookup by username
+      const result = await checkUserByUsername(opponentInput);
+      setCheckingUser(false);
+      if (!result.exists) {
+        setInputError('No account found with this username.');
+        setUserChecked(false);
+        return;
+      }
+      const name = result.firstName
+        ? `${result.firstName} ${result.lastName}`.trim()
+        : `@${result.username}`;
+      setOpponentEmail(result.email.toLowerCase().trim());
+      setOpponentName(name);
+      setUserChecked(true);
     }
   };
 
   const handleStartPlay = () => {
-    const err = validateEmail(opponentEmail);
-    if (err) {
-      setEmailError(err);
+    const error = validateInput(opponentInput);
+    if (error) {
+      setInputError(error);
       return;
     }
-    if (!userChecked) {
-      setEmailError('Please wait — verifying opponent account...');
+    if (!userChecked || !opponentEmail) {
+      setInputError('Please wait — verifying opponent account...');
       return;
     }
     setScore(0);
@@ -153,7 +193,9 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
           onCreated();
         }, 2200);
       } else {
-        setSendError(result.error || 'Failed to send. Check the opponent email and try again.');
+        setSendError(
+          result.error || 'Failed to send. Check the opponent email/username and try again.'
+        );
         setStep('error');
       }
     } catch {
@@ -176,18 +218,18 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
 
           <div className="modal-body">
             <div className="form-group">
-              <label>Opponent Email</label>
+              <label>Opponent Email or Username</label>
               <input
-                type="email"
-                placeholder="opponent@email.com"
-                value={opponentEmail}
-                onChange={handleEmailChange}
-                onBlur={handleEmailBlur}
-                className={emailError ? 'input-error' : userChecked ? 'input-success' : ''}
+                type="text"
+                placeholder="opponent@email.com or username"
+                value={opponentInput}
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+                className={inputError ? 'input-error' : userChecked ? 'input-success' : ''}
               />
               {checkingUser && <div className="checking-text">🔍 Checking account...</div>}
-              {!checkingUser && emailError && <div className="error-text">{emailError}</div>}
-              {!checkingUser && userChecked && !emailError && (
+              {!checkingUser && inputError && <div className="error-text">{inputError}</div>}
+              {!checkingUser && userChecked && !inputError && (
                 <div className="success-text">✅ Found: {opponentName}</div>
               )}
             </div>
@@ -279,7 +321,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             <button
               className="send-btn"
               onClick={handleStartPlay}
-              disabled={!!emailError || !opponentEmail || checkingUser || !userChecked}
+              disabled={!!inputError || !opponentInput || checkingUser || !userChecked}
             >
               {checkingUser ? 'Checking...' : '▶ Play'}
             </button>
@@ -333,7 +375,7 @@ export default function CreateChallenge({ userEmail, userName, onClose, onCreate
             <strong>
               {correct}/{totalQ}
             </strong>{' '}
-            — {opponentEmail} will need to beat it!
+            — {opponentName} will need to beat it!
           </div>
         </div>
       </div>

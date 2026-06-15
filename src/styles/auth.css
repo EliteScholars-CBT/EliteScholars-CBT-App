@@ -471,6 +471,17 @@ body.dark-mode .auth-type-label { color: #F3F4F6; }
   font-weight: 800;
 }
 
+.auth-hint-neutral,
+.auth-hint-success,
+.auth-hint-error {
+  font-size: 12px;
+  margin: -6px 0 10px 4px;
+  font-weight: 500;
+}
+.auth-hint-neutral { color: var(--text-secondary, #999); }
+.auth-hint-success { color: #22c55e; }
+.auth-hint-error   { color: #ef4444; }
+
 body.dark-mode .auth-exam-chip {
   background: #280050;
   border-color: #3d2a5e;

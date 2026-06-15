@@ -2,7 +2,7 @@
 // AuthScreen.js
 // ============================================================================
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../assets/elite-scholars-logo.png';
 
 import {
@@ -10,53 +10,58 @@ import {
   loginProfile,
   requestPasswordReset,
   confirmPasswordReset,
+  checkUsernameAvailable,
 } from '../utils/profileApi';
 
 import { logSessionToSheet } from '../utils/auth';
 import { saveUser } from '../utils/storage';
 
 const EXAM_TYPES = [
-  { id: 'jamb',     label: 'JAMB UTME', icon: '📝' },
-  { id: 'waec',     label: 'WAEC',      icon: '📋' },
-  { id: 'neco',     label: 'NECO',      icon: '📄' },
+  { id: 'jamb', label: 'JAMB UTME', icon: '📝' },
+  { id: 'waec', label: 'WAEC', icon: '📋' },
+  { id: 'neco', label: 'NECO', icon: '📄' },
   { id: 'postutme', label: 'POST UTME', icon: '🎓' },
-  { id: 'gst',      label: 'GST (Uni)', icon: '🏛️' },
+  { id: 'gst', label: 'GST (Uni)', icon: '🏛️' },
 ];
 
 const STUDENT_TYPES = [
   {
-    id:    'senior_school',
+    id: 'senior_school',
     label: 'Senior School Student',
-    desc:  'SS1 – SS3 • WAEC • NECO • GCE',
-    icon:  '🏫'
+    desc: 'SS1 – SS3 • WAEC • NECO • GCE',
+    icon: '🏫',
   },
   {
-    id:    'aspirant',
+    id: 'aspirant',
     label: 'Aspirant',
-    desc:  'Preparing for JAMB & Post-UTME',
-    icon:  '🎯'
+    desc: 'Preparing for JAMB & Post-UTME',
+    icon: '🎯',
   },
   {
-    id:    'university',
+    id: 'university',
     label: 'University Student',
-    desc:  '100L – 500L • GST / GNS Courses',
-    icon:  '🎓'
+    desc: '100L – 500L • GST / GNS Courses',
+    icon: '🎓',
   },
 ];
 
+const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9_]{2,19}$/;
+
 function validate(fields) {
-  if (fields.firstName !== undefined && !fields.firstName.trim())
-    return 'Enter your first name.';
-  if (fields.lastName !== undefined && !fields.lastName.trim())
-    return 'Enter your last name.';
+  if (fields.firstName !== undefined && !fields.firstName.trim()) return 'Enter your first name.';
+  if (fields.lastName !== undefined && !fields.lastName.trim()) return 'Enter your last name.';
   if (!fields.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))
     return 'Enter a valid email address.';
   if (fields.password !== undefined && fields.password.length < 8)
     return 'Password must be at least 8 characters.';
   if (fields.confirm !== undefined && fields.password !== fields.confirm)
     return 'Passwords do not match.';
-  if (fields.studentType !== undefined && !fields.studentType)
-    return 'Select your student type.';
+  if (fields.username !== undefined) {
+    if (!fields.username.trim()) return 'Choose a username.';
+    if (!USERNAME_REGEX.test(fields.username.trim()))
+      return 'Username must be 3-20 characters, start with a letter, and contain only letters, numbers, or underscores.';
+  }
+  if (fields.studentType !== undefined && !fields.studentType) return 'Select your student type.';
   if (fields.selectedExams !== undefined && fields.selectedExams.length === 0)
     return 'Select at least one exam.';
   return null;
@@ -78,50 +83,116 @@ function getNetworkError(e) {
 }
 
 export default function AuthScreen({ onDone }) {
-
   // ─────────────────────────────────────────
   // Views
   // ─────────────────────────────────────────
-  const [view, setView]           = useState('login');
-  const [step, setStep]           = useState(1);
+  const [view, setView] = useState('login');
+  const [step, setStep] = useState(1);
   const [resetStep, setResetStep] = useState(1);
 
   // ─────────────────────────────────────────
   // Signup/Login fields
   // ─────────────────────────────────────────
-  const [firstName, setFirstName]         = useState('');
-  const [lastName, setLastName]           = useState('');
-  const [email, setEmail]                 = useState('');
-  const [password, setPassword]           = useState('');
-  const [confirm, setConfirm]             = useState('');
-  const [showPw, setShowPw]               = useState(false);
-  const [studentType, setStudentType]     = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+  const [showPw, setShowPw] = useState(false);
+  const [studentType, setStudentType] = useState('');
   const [selectedExams, setSelectedExams] = useState([]);
+  const [username, setUsername] = useState('');
+
+  // Username live-availability check
+  const [usernameStatus, setUsernameStatus] = useState('idle'); // idle | checking | available | taken | invalid
+  const usernameCheckTimer = useRef(null);
 
   // ─────────────────────────────────────────
   // Reset Password
   // ─────────────────────────────────────────
   const [resetEmail, setResetEmail] = useState('');
-  const [resetCode, setResetCode]   = useState('');
-  const [newPw, setNewPw]           = useState('');
+  const [resetCode, setResetCode] = useState('');
+  const [newPw, setNewPw] = useState('');
 
   // ─────────────────────────────────────────
   // UI
   // ─────────────────────────────────────────
-  const [error, setError]     = useState('');
+  const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
 
   // ─────────────────────────────────────────
   // Helpers
   // ─────────────────────────────────────────
-  const err      = (msg) => { setError(msg); setLoading(false); };
-  const clear    = ()    => { setError(''); setSuccess(''); };
-  const switchView = (v) => { clear(); setView(v); setStep(1); setResetStep(1); };
+  const err = (msg) => {
+    setError(msg);
+    setLoading(false);
+  };
+  const clear = () => {
+    setError('');
+    setSuccess('');
+  };
+  const switchView = (v) => {
+    clear();
+    setView(v);
+    setStep(1);
+    setResetStep(1);
+  };
   const toggleExam = (id) =>
-    setSelectedExams(prev =>
-      prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id]
-    );
+    setSelectedExams((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]));
+
+  // ─────────────────────────────────────────
+  // Username live availability check (debounced)
+  // ─────────────────────────────────────────
+  const handleUsernameChange = (value) => {
+    // Strip spaces — usernames can't contain them
+    const cleaned = value.replace(/\s/g, '');
+    setUsername(cleaned);
+
+    if (usernameCheckTimer.current) clearTimeout(usernameCheckTimer.current);
+
+    if (!cleaned) {
+      setUsernameStatus('idle');
+      return;
+    }
+
+    if (!USERNAME_REGEX.test(cleaned)) {
+      setUsernameStatus('invalid');
+      return;
+    }
+
+    setUsernameStatus('checking');
+    usernameCheckTimer.current = setTimeout(async () => {
+      try {
+        const result = await checkUsernameAvailable(cleaned);
+        if (result?.error) {
+          setUsernameStatus('invalid');
+        } else {
+          setUsernameStatus(result?.available ? 'available' : 'taken');
+        }
+      } catch {
+        setUsernameStatus('idle');
+      }
+    }, 500);
+  };
+
+  const usernameHint = () => {
+    switch (usernameStatus) {
+      case 'checking':
+        return { text: 'Checking availability…', cls: 'auth-hint-neutral' };
+      case 'available':
+        return { text: '✓ Username available', cls: 'auth-hint-success' };
+      case 'taken':
+        return { text: '✕ Username already taken', cls: 'auth-hint-error' };
+      case 'invalid':
+        return {
+          text: '3-20 chars, start with a letter, letters/numbers/underscore only',
+          cls: 'auth-hint-error',
+        };
+      default:
+        return null;
+    }
+  };
 
   // ─────────────────────────────────────────
   // LOGIN
@@ -130,7 +201,8 @@ export default function AuthScreen({ onDone }) {
     clear();
     const validationError = validate({ email, password });
     if (validationError) return err(validationError);
-    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
+    if (!navigator.onLine)
+      return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await loginProfile({ email: email.trim(), password });
@@ -140,26 +212,28 @@ export default function AuthScreen({ onDone }) {
       }
       const u = result.profile;
       saveUser({
-        name:          `${u.firstName} ${u.lastName}`,
-        firstName:     u.firstName,
-        lastName:      u.lastName,
-        email:         u.email,
-        studentType:   u.studentType,
+        name: `${u.firstName} ${u.lastName}`,
+        firstName: u.firstName,
+        lastName: u.lastName,
+        email: u.email,
+        studentType: u.studentType,
         selectedExams: u.selectedExams || [],
-        passwordHash:  u.passwordHash,
+        passwordHash: u.passwordHash,
+        username: u.username || '',
       });
       logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
       onDone({
-        name:               `${u.firstName} ${u.lastName}`,
-        firstName:          u.firstName,
-        lastName:           u.lastName,
-        email:              u.email,
-        studentType:        u.studentType,
-        selectedExams:      u.selectedExams || [],
-        serverStats:        u.stats,
+        name: `${u.firstName} ${u.lastName}`,
+        firstName: u.firstName,
+        lastName: u.lastName,
+        email: u.email,
+        studentType: u.studentType,
+        selectedExams: u.selectedExams || [],
+        serverStats: u.stats,
         serverAchievements: u.achievements,
-        serverSubjectPerf:  u.subjectPerformance,
-        passwordHash:       u.passwordHash,
+        serverSubjectPerf: u.subjectPerformance,
+        passwordHash: u.passwordHash,
+        username: u.username || '',
       });
     } catch (e) {
       console.error('LOGIN ERROR:', e);
@@ -172,8 +246,11 @@ export default function AuthScreen({ onDone }) {
   // ─────────────────────────────────────────
   const handleSignupStep1 = () => {
     clear();
-    const validationError = validate({ firstName, lastName, email, password, confirm });
+    const validationError = validate({ firstName, lastName, email, password, confirm, username });
     if (validationError) return err(validationError);
+    if (usernameStatus === 'taken') return err('Username is already taken. Please choose another.');
+    if (usernameStatus === 'checking') return err('Please wait — checking username availability…');
+    if (usernameStatus === 'invalid') return err('Please choose a valid username.');
     setStep(2);
   };
 
@@ -184,13 +261,18 @@ export default function AuthScreen({ onDone }) {
     clear();
     const validationError = validate({ email, studentType, selectedExams });
     if (validationError) return err(validationError);
-    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
+    if (!navigator.onLine)
+      return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await registerProfile({
-        firstName, lastName,
+        firstName,
+        lastName,
         email: email.trim(),
-        password, studentType, selectedExams,
+        password,
+        studentType,
+        selectedExams,
+        username: username.trim(),
       });
       console.log('REGISTER RESULT:', result);
       if (!result.success) {
@@ -198,24 +280,26 @@ export default function AuthScreen({ onDone }) {
       }
       const u = result.profile;
       saveUser({
-        name:          `${u.firstName} ${u.lastName}`,
-        firstName:     u.firstName,
-        lastName:      u.lastName,
-        email:         u.email,
-        studentType:   u.studentType,
+        name: `${u.firstName} ${u.lastName}`,
+        firstName: u.firstName,
+        lastName: u.lastName,
+        email: u.email,
+        studentType: u.studentType,
         selectedExams: u.selectedExams || [],
-        passwordHash:  u.passwordHash,
+        passwordHash: u.passwordHash,
+        username: u.username || '',
       });
       logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
       onDone({
-        name:          `${u.firstName} ${u.lastName}`,
-        firstName:     u.firstName,
-        lastName:      u.lastName,
-        email:         u.email,
-        studentType:   u.studentType,
+        name: `${u.firstName} ${u.lastName}`,
+        firstName: u.firstName,
+        lastName: u.lastName,
+        email: u.email,
+        studentType: u.studentType,
         selectedExams: u.selectedExams || [],
-        isNew:         true,
-        passwordHash:  u.passwordHash,
+        isNew: true,
+        passwordHash: u.passwordHash,
+        username: u.username || '',
       });
     } catch (e) {
       console.error('REGISTER ERROR:', e);
@@ -229,7 +313,8 @@ export default function AuthScreen({ onDone }) {
   const handleForgotRequest = async () => {
     clear();
     if (!resetEmail.trim()) return err('Enter your email address.');
-    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
+    if (!navigator.onLine)
+      return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await requestPasswordReset(resetEmail.trim());
@@ -252,13 +337,14 @@ export default function AuthScreen({ onDone }) {
   const handleResetConfirm = async () => {
     clear();
     if (!resetCode.trim()) return err('Enter the reset code.');
-    if (newPw.length < 8)  return err('New password must be at least 8 characters.');
-    if (!navigator.onLine) return err('No internet connection. Please check your network and try again.');
+    if (newPw.length < 8) return err('New password must be at least 8 characters.');
+    if (!navigator.onLine)
+      return err('No internet connection. Please check your network and try again.');
     setLoading(true);
     try {
       const result = await confirmPasswordReset({
-        email:       resetEmail.trim(),
-        code:        resetCode.trim(),
+        email: resetEmail.trim(),
+        code: resetCode.trim(),
         newPassword: newPw,
       });
       console.log('RESET RESULT:', result);
@@ -268,7 +354,9 @@ export default function AuthScreen({ onDone }) {
       }
       setSuccess('Password reset! You can now log in.');
       setResetStep(3);
-      setTimeout(() => { switchView('login'); }, 2000);
+      setTimeout(() => {
+        switchView('login');
+      }, 2000);
     } catch (e) {
       console.error('RESET ERROR:', e);
       err(getNetworkError(e));
@@ -287,12 +375,15 @@ export default function AuthScreen({ onDone }) {
 
           {resetStep === 1 && (
             <>
-              <p className="auth-sub">
-                Enter your registered email to receive a reset code.
-              </p>
-              <input className="auth-input" placeholder="Email address" type="email"
-                value={resetEmail} onChange={e => setResetEmail(e.target.value)} />
-              {error   && <div className="auth-error">{error}</div>}
+              <p className="auth-sub">Enter your registered email to receive a reset code.</p>
+              <input
+                className="auth-input"
+                placeholder="Email address"
+                type="email"
+                value={resetEmail}
+                onChange={(e) => setResetEmail(e.target.value)}
+              />
+              {error && <div className="auth-error">{error}</div>}
               {success && <div className="auth-success">{success}</div>}
               <button className="auth-btn" onClick={handleForgotRequest} disabled={loading}>
                 {loading ? 'Sending…' : 'Send Reset Code'}
@@ -302,15 +393,21 @@ export default function AuthScreen({ onDone }) {
 
           {resetStep === 2 && (
             <>
-              <p className="auth-sub">
-                Enter the code from your email and your new password.
-              </p>
-              <input className="auth-input" placeholder="Reset code"
-                value={resetCode} onChange={e => setResetCode(e.target.value)} />
-              <input className="auth-input" placeholder="New password (min 8 chars)"
+              <p className="auth-sub">Enter the code from your email and your new password.</p>
+              <input
+                className="auth-input"
+                placeholder="Reset code"
+                value={resetCode}
+                onChange={(e) => setResetCode(e.target.value)}
+              />
+              <input
+                className="auth-input"
+                placeholder="New password (min 8 chars)"
                 type="password"
-                value={newPw} onChange={e => setNewPw(e.target.value)} />
-              {error   && <div className="auth-error">{error}</div>}
+                value={newPw}
+                onChange={(e) => setNewPw(e.target.value)}
+              />
+              {error && <div className="auth-error">{error}</div>}
               {success && <div className="auth-success">{success}</div>}
               <button className="auth-btn" onClick={handleResetConfirm} disabled={loading}>
                 {loading ? 'Resetting…' : 'Reset Password'}
@@ -336,6 +433,8 @@ export default function AuthScreen({ onDone }) {
   // SIGNUP SCREEN
   // ─────────────────────────────────────────
   if (view === 'signup') {
+    const hint = usernameHint();
+
     return (
       <div className="auth-screen">
         <div className="auth-card">
@@ -351,25 +450,59 @@ export default function AuthScreen({ onDone }) {
               <h2 className="auth-title">Create Account</h2>
               <p className="auth-sub">Join millions of Nigerian students preparing smarter.</p>
               <div className="auth-row">
-                <input className="auth-input" placeholder="First name"
-                  value={firstName} onChange={e => setFirstName(e.target.value)} maxLength={30} />
-                <input className="auth-input" placeholder="Last name"
-                  value={lastName} onChange={e => setLastName(e.target.value)} maxLength={30} />
+                <input
+                  className="auth-input"
+                  placeholder="First name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  maxLength={30}
+                />
+                <input
+                  className="auth-input"
+                  placeholder="Last name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  maxLength={30}
+                />
               </div>
-              <input className="auth-input" placeholder="Email address" type="email"
-                value={email} onChange={e => setEmail(e.target.value)} />
+              <input
+                className="auth-input"
+                placeholder="Email address"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="auth-input"
+                placeholder="Username (e.g. johndoe23)"
+                value={username}
+                onChange={(e) => handleUsernameChange(e.target.value)}
+                maxLength={20}
+              />
+              {hint && <div className={hint.cls}>{hint.text}</div>}
               <div className="auth-pw-wrap">
-                <input className="auth-input" placeholder="Password (min 8 characters)"
+                <input
+                  className="auth-input"
+                  placeholder="Password (min 8 characters)"
                   type={showPw ? 'text' : 'password'}
-                  value={password} onChange={e => setPassword(e.target.value)} />
-                <button className="auth-pw-toggle" onClick={() => setShowPw(p => !p)}>
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button className="auth-pw-toggle" onClick={() => setShowPw((p) => !p)}>
                   {showPw ? '🙈' : '👁️'}
                 </button>
               </div>
-              <input className="auth-input" placeholder="Confirm password" type="password"
-                value={confirm} onChange={e => setConfirm(e.target.value)} />
+              <input
+                className="auth-input"
+                placeholder="Confirm password"
+                type="password"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+              />
               {error && <div className="auth-error">{error}</div>}
-              <button className="auth-btn" onClick={handleSignupStep1}>Continue →</button>
+              <button className="auth-btn" onClick={handleSignupStep1}>
+                Continue →
+              </button>
               <div className="auth-switch">
                 Already have an account?{' '}
                 <button className="auth-link-btn" onClick={() => switchView('login')}>
@@ -385,8 +518,9 @@ export default function AuthScreen({ onDone }) {
               <p className="auth-sub">This helps us show the right content for you.</p>
               <div className="auth-section-label">I am a:</div>
               <div className="auth-type-grid">
-                {STUDENT_TYPES.map(t => (
-                  <button key={t.id}
+                {STUDENT_TYPES.map((t) => (
+                  <button
+                    key={t.id}
                     className={`auth-type-card ${studentType === t.id ? 'selected' : ''}`}
                     onClick={() => setStudentType(t.id)}
                   >
@@ -397,19 +531,17 @@ export default function AuthScreen({ onDone }) {
                 ))}
               </div>
               <div className="auth-section-label" style={{ marginTop: 18 }}>
-                I am preparing for:{' '}
-                <span className="auth-required">(select all that apply)</span>
+                I am preparing for: <span className="auth-required">(select all that apply)</span>
               </div>
               <div className="auth-exam-grid">
-                {EXAM_TYPES.map(ex => (
-                  <button key={ex.id}
+                {EXAM_TYPES.map((ex) => (
+                  <button
+                    key={ex.id}
                     className={`auth-exam-chip ${selectedExams.includes(ex.id) ? 'selected' : ''}`}
                     onClick={() => toggleExam(ex.id)}
                   >
                     <span>{ex.icon}</span> {ex.label}
-                    {selectedExams.includes(ex.id) && (
-                      <span className="auth-exam-check">✓</span>
-                    )}
+                    {selectedExams.includes(ex.id) && <span className="auth-exam-check">✓</span>}
                   </button>
                 ))}
               </div>
@@ -418,8 +550,12 @@ export default function AuthScreen({ onDone }) {
                 <button className="auth-btn auth-btn-outline" onClick={() => setStep(1)}>
                   ← Back
                 </button>
-                <button className="auth-btn" onClick={handleSignupStep2}
-                  disabled={loading} style={{ flex: 1 }}>
+                <button
+                  className="auth-btn"
+                  onClick={handleSignupStep2}
+                  disabled={loading}
+                  style={{ flex: 1 }}
+                >
                   {loading ? 'Creating account…' : 'Get Started'}
                 </button>
               </div>
@@ -439,14 +575,23 @@ export default function AuthScreen({ onDone }) {
         <img src={logo} alt="EliteScholars" className="auth-logo" />
         <h2 className="auth-title">Welcome Back</h2>
         <p className="auth-sub">Log in to continue your streak and progress.</p>
-        <input className="auth-input" placeholder="Email address" type="email"
-          value={email} onChange={e => setEmail(e.target.value)} />
+        <input
+          className="auth-input"
+          placeholder="Email address"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <div className="auth-pw-wrap">
-          <input className="auth-input" placeholder="Password"
+          <input
+            className="auth-input"
+            placeholder="Password"
             type={showPw ? 'text' : 'password'}
-            value={password} onChange={e => setPassword(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && handleLogin()} />
-          <button className="auth-pw-toggle" onClick={() => setShowPw(p => !p)}>
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+          />
+          <button className="auth-pw-toggle" onClick={() => setShowPw((p) => !p)}>
             {showPw ? '🙈' : '👁️'}
           </button>
         </div>

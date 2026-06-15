@@ -127,6 +127,13 @@ export async function confirmPasswordReset(payload) {
   return apiPost('/api/auth/reset', payload);
 }
 
+// Check whether a username is available — calls the Apps Script directly
+// (SHEETS_URL), since this is a lightweight read-only check used for live
+// validation during signup and doesn't need a dedicated Vercel route.
+export async function checkUsernameAvailable(username) {
+  return apiGet(SHEETS_URL, { action: 'checkUsername', username });
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // PAYMENT
 // ─────────────────────────────────────────────────────────────────────────────

@@ -9,6 +9,8 @@ import { hashPassword } from '../_helpers/hash.js';
 import { sheetsGet, sheetsPost } from '../_helpers/sheets.js';
 import { logSecurityEvent } from '../_helpers/security.js';
 
+const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9_]{2,19}$/;
+
 export default async function handler(req, res) {
   setCors(res);
 
@@ -57,13 +59,14 @@ export default async function handler(req, res) {
     email,
     password,
     studentType,
-    selectedExams
+    selectedExams,
+    username
   } = req.body || {};
 
   // =========================
   // VALIDATION
   // =========================
-  if (!firstName || !lastName || !email || !password || !studentType || !selectedExams) {
+  if (!firstName || !lastName || !email || !password || !studentType || !selectedExams || !username) {
     return sendErr(res, 'All fields are required.');
   }
 
@@ -73,6 +76,14 @@ export default async function handler(req, res) {
 
   if (password.length < 8) {
     return sendErr(res, 'Password must be at least 8 characters.');
+  }
+
+  const usernameTrimmed = username.trim();
+  if (!USERNAME_REGEX.test(usernameTrimmed)) {
+    return sendErr(
+      res,
+      'Username must be 3-20 characters, start with a letter, and contain only letters, numbers, or underscores.'
+    );
   }
 
   const emailLower = email.toLowerCase().trim();
@@ -92,6 +103,22 @@ export default async function handler(req, res) {
   }
 
   // =========================
+  // CHECK USERNAME AVAILABILITY
+  // =========================
+  const usernameCheck = await sheetsGet({
+    action: 'checkUsername',
+    username: usernameTrimmed
+  });
+
+  if (usernameCheck.error) {
+    return sendErr(res, usernameCheck.error);
+  }
+
+  if (!usernameCheck.available) {
+    return sendErr(res, 'Username is already taken. Please choose another.');
+  }
+
+  // =========================
   // REGISTER USER
   // =========================
   const result = await sheetsGet({
@@ -101,7 +128,8 @@ export default async function handler(req, res) {
     lastName,
     passwordHash,
     studentType,
-    selectedExams: JSON.stringify(selectedExams)
+    selectedExams: JSON.stringify(selectedExams),
+    username: usernameTrimmed
   });
 
   if (!result.success) {
@@ -111,7 +139,8 @@ export default async function handler(req, res) {
   await sheetsPost({
     event: 'register',
     name: `${firstName} ${lastName}`,
-    email: emailLower
+    email: emailLower,
+    username: usernameTrimmed
   });
 
   // =========================
@@ -125,6 +154,7 @@ export default async function handler(req, res) {
       studentType,
       selectedExams,
       passwordHash,
+      username: usernameTrimmed,
       stats: {},
       achievements: [],
       subjectPerformance: {}
