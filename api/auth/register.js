@@ -1,10 +1,12 @@
-// ============================================================================
-// api/auth/register.js — POST /api/auth/register
-// Rate limited: 5 attempts per hour per IP
-// ============================================================================
-
+// api/auth/register.js - updated to handle the response format
 import { checkRateLimit } from '../_helpers/rateLimit.js';
-import { sendOk, sendErr, sendRateLimited, sendMethodNotAllowed, setCors } from '../_helpers/response.js';
+import {
+  sendOk,
+  sendErr,
+  sendRateLimited,
+  sendMethodNotAllowed,
+  setCors,
+} from '../_helpers/response.js';
 import { hashPassword } from '../_helpers/hash.js';
 import { sheetsGet, sheetsPost } from '../_helpers/sheets.js';
 import { logSecurityEvent } from '../_helpers/security.js';
@@ -22,51 +24,31 @@ export default async function handler(req, res) {
     return sendMethodNotAllowed(res);
   }
 
-  // =========================
-  // DEBUG FLAG
-  // =========================
   const DEBUG = true;
 
-  // =========================
-  // IP HANDLING (FIXED)
-  // =========================
   const ip =
-    req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
-    req.socket?.remoteAddress ||
-    'unknown';
-
+    req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket?.remoteAddress || 'unknown';
   const key = `register:${ip}`;
 
-  // =========================
-  // RATE LIMIT
-  // =========================
   const { allowed, retryAfter } = await checkRateLimit(key, 5, 3600);
 
   if (!allowed) {
-    await logSecurityEvent({
-      type: 'register_rate_limited',
-      email: '',
-      ip,
-      detail: 'IP blocked'
-    });
-
+    await logSecurityEvent({ type: 'register_rate_limited', email: '', ip, detail: 'IP blocked' });
     return sendRateLimited(res, retryAfter);
   }
 
-  const {
-    firstName,
-    lastName,
-    email,
-    password,
-    studentType,
-    selectedExams,
-    username
-  } = req.body || {};
+  const { firstName, lastName, email, password, studentType, selectedExams, username } =
+    req.body || {};
 
-  // =========================
-  // VALIDATION
-  // =========================
-  if (!firstName || !lastName || !email || !password || !studentType || !selectedExams || !username) {
+  if (
+    !firstName ||
+    !lastName ||
+    !email ||
+    !password ||
+    !studentType ||
+    !selectedExams ||
+    !username
+  ) {
     return sendErr(res, 'All fields are required.');
   }
 
@@ -89,38 +71,34 @@ export default async function handler(req, res) {
   const emailLower = email.toLowerCase().trim();
   const passwordHash = hashPassword(password);
 
-  // =========================
   // CHECK IF USER EXISTS
-  // =========================
   const existing = await sheetsGet({
     action: 'loginProfile',
     email: emailLower,
-    passwordHash: '__check_exists__'
+    passwordHash: '__check_exists__',
   });
 
-  if (existing.exists) {
+  // Fix: Check if user exists based on the response format
+  if (existing.success && existing.exists === true) {
     return sendErr(res, 'An account with this email already exists.');
   }
 
-  // =========================
   // CHECK USERNAME AVAILABILITY
-  // =========================
   const usernameCheck = await sheetsGet({
     action: 'checkUsername',
-    username: usernameTrimmed
+    username: usernameTrimmed,
   });
 
   if (usernameCheck.error) {
     return sendErr(res, usernameCheck.error);
   }
 
-  if (!usernameCheck.available) {
+  // Fix: Check the available property
+  if (usernameCheck.available === false) {
     return sendErr(res, 'Username is already taken. Please choose another.');
   }
 
-  // =========================
   // REGISTER USER
-  // =========================
   const result = await sheetsGet({
     action: 'registerProfile',
     email: emailLower,
@@ -129,10 +107,11 @@ export default async function handler(req, res) {
     passwordHash,
     studentType,
     selectedExams: JSON.stringify(selectedExams),
-    username: usernameTrimmed
+    username: usernameTrimmed,
   });
 
   if (!result.success) {
+    console.error('Registration failed:', result.error);
     return sendErr(res, result.error || 'Registration failed.');
   }
 
@@ -140,12 +119,9 @@ export default async function handler(req, res) {
     event: 'register',
     name: `${firstName} ${lastName}`,
     email: emailLower,
-    username: usernameTrimmed
+    username: usernameTrimmed,
   });
 
-  // =========================
-  // RESPONSE
-  // =========================
   return sendOk(res, {
     profile: {
       email: emailLower,
@@ -157,15 +133,14 @@ export default async function handler(req, res) {
       username: usernameTrimmed,
       stats: {},
       achievements: [],
-      subjectPerformance: {}
+      subjectPerformance: {},
     },
-
     ...(DEBUG && {
       debug: {
         inputPassword: password,
         generatedHash: passwordHash,
-        ip
-      }
-    })
+        ip,
+      },
+    }),
   });
 }
