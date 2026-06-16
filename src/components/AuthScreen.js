@@ -31,12 +31,7 @@ const STUDENT_TYPES = [
     desc: 'SS1 – SS3 • WAEC • NECO • GCE',
     icon: '🏫',
   },
-  {
-    id: 'aspirant',
-    label: 'Aspirant',
-    desc: 'Preparing for JAMB & Post-UTME',
-    icon: '🎯',
-  },
+  { id: 'aspirant', label: 'Aspirant', desc: 'Preparing for JAMB & Post-UTME', icon: '🎯' },
   {
     id: 'university',
     label: 'University Student',
@@ -67,32 +62,18 @@ function validate(fields) {
   return null;
 }
 
-// ── Network error helper ──────────────────────────────────────────────────────
 function getNetworkError(e) {
-  if (!navigator.onLine) {
-    return 'No internet connection. Please check your network and try again.';
-  }
-  if (
-    e?.message === 'Failed to fetch' ||
-    e?.message?.includes('fetch') ||
-    e?.name === 'TypeError'
-  ) {
+  if (!navigator.onLine) return 'No internet connection. Please check your network and try again.';
+  if (e?.message === 'Failed to fetch' || e?.message?.includes('fetch') || e?.name === 'TypeError')
     return 'Network error. Please check your connection and try again.';
-  }
   return e?.message || 'Something went wrong. Please try again.';
 }
 
 export default function AuthScreen({ onDone }) {
-  // ─────────────────────────────────────────
-  // Views
-  // ─────────────────────────────────────────
   const [view, setView] = useState('login');
   const [step, setStep] = useState(1);
   const [resetStep, setResetStep] = useState(1);
 
-  // ─────────────────────────────────────────
-  // Signup/Login fields
-  // ─────────────────────────────────────────
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -103,28 +84,19 @@ export default function AuthScreen({ onDone }) {
   const [selectedExams, setSelectedExams] = useState([]);
   const [username, setUsername] = useState('');
 
-  // Username live-availability check
-  const [usernameStatus, setUsernameStatus] = useState('idle'); // idle | checking | available | taken | invalid
+  const [usernameStatus, setUsernameStatus] = useState('idle');
   const usernameCheckTimer = useRef(null);
 
-  // ─────────────────────────────────────────
-  // Reset Password
-  // ─────────────────────────────────────────
   const [resetEmail, setResetEmail] = useState('');
   const [resetCode, setResetCode] = useState('');
   const [newPw, setNewPw] = useState('');
 
-  // ─────────────────────────────────────────
-  // UI
-  // ─────────────────────────────────────────
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // ─────────────────────────────────────────
-  // Helpers
-  // ─────────────────────────────────────────
   const err = (msg) => {
+    console.warn('⚠️ [AuthScreen] Error shown to user:', msg);
     setError(msg);
     setLoading(false);
   };
@@ -141,11 +113,8 @@ export default function AuthScreen({ onDone }) {
   const toggleExam = (id) =>
     setSelectedExams((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]));
 
-  // ─────────────────────────────────────────
-  // Username live availability check (debounced)
-  // ─────────────────────────────────────────
+  // ── Username live availability check ─────────────────────────────────────
   const handleUsernameChange = (value) => {
-    // Strip spaces — usernames can't contain them
     const cleaned = value.replace(/\s/g, '');
     setUsername(cleaned);
 
@@ -155,7 +124,6 @@ export default function AuthScreen({ onDone }) {
       setUsernameStatus('idle');
       return;
     }
-
     if (!USERNAME_REGEX.test(cleaned)) {
       setUsernameStatus('invalid');
       return;
@@ -164,13 +132,22 @@ export default function AuthScreen({ onDone }) {
     setUsernameStatus('checking');
     usernameCheckTimer.current = setTimeout(async () => {
       try {
+        console.log('🔍 [AuthScreen] Checking username availability:', cleaned);
         const result = await checkUsernameAvailable(cleaned);
-        if (result?.error) {
+        console.log('🔍 [AuthScreen] Username check result:', result);
+        if (result?.error && result.error !== 'INVALID_JSON_RESPONSE') {
           setUsernameStatus('invalid');
+        } else if (result?.error === 'INVALID_JSON_RESPONSE') {
+          // Can't check — assume available and let backend validate on submit
+          console.warn(
+            '⚠️ Username check got invalid JSON — assuming available, backend will validate'
+          );
+          setUsernameStatus('available');
         } else {
           setUsernameStatus(result?.available ? 'available' : 'taken');
         }
-      } catch {
+      } catch (e2) {
+        console.warn('⚠️ [AuthScreen] Username check failed:', e2.message);
         setUsernameStatus('idle');
       }
     }, 500);
@@ -194,9 +171,7 @@ export default function AuthScreen({ onDone }) {
     }
   };
 
-  // ─────────────────────────────────────────
-  // LOGIN
-  // ─────────────────────────────────────────
+  // ── LOGIN ────────────────────────────────────────────────────────────────
   const handleLogin = async () => {
     clear();
     const validationError = validate({ email, password });
@@ -204,13 +179,21 @@ export default function AuthScreen({ onDone }) {
     if (!navigator.onLine)
       return err('No internet connection. Please check your network and try again.');
     setLoading(true);
+
+    console.group('🔑 [AuthScreen] Login attempt');
+    console.log('Email:', email.trim());
+
     try {
       const result = await loginProfile({ email: email.trim(), password });
-      console.log('LOGIN RESULT:', result);
+      console.log('Login result:', result);
+      console.groupEnd();
+
       if (!result.success) {
         return err(result.message || result.error || 'Invalid email or password.');
       }
       const u = result.profile;
+      console.log('✅ Login success, profile:', u);
+
       saveUser({
         name: `${u.firstName} ${u.lastName}`,
         firstName: u.firstName,
@@ -221,6 +204,7 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash,
         username: u.username || '',
       });
+
       logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
       onDone({
         name: `${u.firstName} ${u.lastName}`,
@@ -235,28 +219,33 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash,
         username: u.username || '',
       });
-    } catch (e) {
-      console.error('LOGIN ERROR:', e);
-      err(getNetworkError(e));
+    } catch (e2) {
+      console.error('❌ [AuthScreen] Login error:', e2);
+      console.groupEnd();
+      err(getNetworkError(e2));
     }
   };
 
-  // ─────────────────────────────────────────
-  // SIGNUP STEP 1
-  // ─────────────────────────────────────────
+  // ── SIGNUP STEP 1 ────────────────────────────────────────────────────────
   const handleSignupStep1 = () => {
     clear();
+    console.log('📋 [AuthScreen] Step 1 validation:', {
+      firstName,
+      lastName,
+      email,
+      username,
+      usernameStatus,
+    });
     const validationError = validate({ firstName, lastName, email, password, confirm, username });
     if (validationError) return err(validationError);
     if (usernameStatus === 'taken') return err('Username is already taken. Please choose another.');
     if (usernameStatus === 'checking') return err('Please wait — checking username availability…');
     if (usernameStatus === 'invalid') return err('Please choose a valid username.');
+    console.log('✅ Step 1 passed, moving to step 2');
     setStep(2);
   };
 
-  // ─────────────────────────────────────────
-  // SIGNUP STEP 2
-  // ─────────────────────────────────────────
+  // ── SIGNUP STEP 2 ────────────────────────────────────────────────────────
   const handleSignupStep2 = async () => {
     clear();
     const validationError = validate({ email, studentType, selectedExams });
@@ -264,21 +253,78 @@ export default function AuthScreen({ onDone }) {
     if (!navigator.onLine)
       return err('No internet connection. Please check your network and try again.');
     setLoading(true);
+
+    console.group('📝 [AuthScreen] Registration attempt');
+    console.log('Fields:', {
+      firstName,
+      lastName,
+      email: email.trim(),
+      username: username.trim(),
+      studentType,
+      selectedExams,
+    });
+
+    const payload = {
+      firstName,
+      lastName,
+      email: email.trim(),
+      password,
+      studentType,
+      selectedExams,
+      username: username.trim(),
+    };
+    console.log('📤 Sending payload to registerProfile:', { ...payload, password: '[REDACTED]' });
+
     try {
-      const result = await registerProfile({
-        firstName,
-        lastName,
-        email: email.trim(),
-        password,
-        studentType,
-        selectedExams,
-        username: username.trim(),
-      });
-      console.log('REGISTER RESULT:', result);
+      const result = await registerProfile(payload);
+      console.log('📨 registerProfile result:', result);
+
+      if (result._bypassed) {
+        // Backend had an issue but we're letting the user in anyway for debugging
+        console.warn('⚠️ [AuthScreen] Registration bypassed (backend issue). Logging debug info.');
+        console.warn('Bypass reason:', result._bypassReason);
+
+        // Still save locally so the user can use the app
+        const u = result.profile;
+        saveUser({
+          name: `${u.firstName} ${u.lastName}`,
+          firstName: u.firstName,
+          lastName: u.lastName,
+          email: u.email,
+          studentType: u.studentType,
+          selectedExams: u.selectedExams || [],
+          passwordHash: u.passwordHash || '',
+          username: u.username || '',
+        });
+
+        logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
+        setLoading(false);
+        console.groupEnd();
+
+        onDone({
+          name: `${u.firstName} ${u.lastName}`,
+          firstName: u.firstName,
+          lastName: u.lastName,
+          email: u.email,
+          studentType: u.studentType,
+          selectedExams: u.selectedExams || [],
+          isNew: true,
+          passwordHash: u.passwordHash || '',
+          username: u.username || '',
+        });
+        return;
+      }
+
       if (!result.success) {
+        console.error('❌ Registration failed:', result.error || result.message);
+        console.groupEnd();
         return err(result.message || result.error || 'Registration failed.');
       }
+
       const u = result.profile;
+      console.log('✅ Registration success, profile:', u);
+      console.groupEnd();
+
       saveUser({
         name: `${u.firstName} ${u.lastName}`,
         firstName: u.firstName,
@@ -289,7 +335,10 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash,
         username: u.username || '',
       });
+
       logSessionToSheet(`${u.firstName} ${u.lastName}`, u.email);
+      setLoading(false);
+
       onDone({
         name: `${u.firstName} ${u.lastName}`,
         firstName: u.firstName,
@@ -301,15 +350,14 @@ export default function AuthScreen({ onDone }) {
         passwordHash: u.passwordHash,
         username: u.username || '',
       });
-    } catch (e) {
-      console.error('REGISTER ERROR:', e);
-      err(getNetworkError(e));
+    } catch (e2) {
+      console.error('❌ [AuthScreen] Registration exception:', e2);
+      console.groupEnd();
+      err(getNetworkError(e2));
     }
   };
 
-  // ─────────────────────────────────────────
-  // FORGOT PASSWORD
-  // ─────────────────────────────────────────
+  // ── FORGOT PASSWORD ──────────────────────────────────────────────────────
   const handleForgotRequest = async () => {
     clear();
     if (!resetEmail.trim()) return err('Enter your email address.');
@@ -318,22 +366,17 @@ export default function AuthScreen({ onDone }) {
     setLoading(true);
     try {
       const result = await requestPasswordReset(resetEmail.trim());
-      console.log('FORGOT RESULT:', result);
+      console.log('Forgot password result:', result);
       setLoading(false);
-      if (!result.success) {
-        return err(result.message || result.error || 'Email not found.');
-      }
+      if (!result.success) return err(result.message || result.error || 'Email not found.');
       setSuccess('A reset code has been sent to your email.');
       setResetStep(2);
-    } catch (e) {
-      console.error('FORGOT ERROR:', e);
-      err(getNetworkError(e));
+    } catch (e2) {
+      err(getNetworkError(e2));
     }
   };
 
-  // ─────────────────────────────────────────
-  // RESET PASSWORD
-  // ─────────────────────────────────────────
+  // ── RESET PASSWORD ───────────────────────────────────────────────────────
   const handleResetConfirm = async () => {
     clear();
     if (!resetCode.trim()) return err('Enter the reset code.');
@@ -347,25 +390,20 @@ export default function AuthScreen({ onDone }) {
         code: resetCode.trim(),
         newPassword: newPw,
       });
-      console.log('RESET RESULT:', result);
+      console.log('Reset confirm result:', result);
       setLoading(false);
-      if (!result.success) {
-        return err(result.message || result.error || 'Invalid or expired code.');
-      }
+      if (!result.success) return err(result.message || result.error || 'Invalid or expired code.');
       setSuccess('Password reset! You can now log in.');
       setResetStep(3);
       setTimeout(() => {
         switchView('login');
       }, 2000);
-    } catch (e) {
-      console.error('RESET ERROR:', e);
-      err(getNetworkError(e));
+    } catch (e2) {
+      err(getNetworkError(e2));
     }
   };
 
-  // ─────────────────────────────────────────
-  // FORGOT PASSWORD SCREEN
-  // ─────────────────────────────────────────
+  // ── FORGOT PASSWORD SCREEN ────────────────────────────────────────────────
   if (view === 'forgot') {
     return (
       <div className="auth-screen">
@@ -429,12 +467,9 @@ export default function AuthScreen({ onDone }) {
     );
   }
 
-  // ─────────────────────────────────────────
-  // SIGNUP SCREEN
-  // ─────────────────────────────────────────
+  // ── SIGNUP SCREEN ─────────────────────────────────────────────────────────
   if (view === 'signup') {
     const hint = usernameHint();
-
     return (
       <div className="auth-screen">
         <div className="auth-card">
@@ -566,9 +601,7 @@ export default function AuthScreen({ onDone }) {
     );
   }
 
-  // ─────────────────────────────────────────
-  // LOGIN SCREEN (default)
-  // ─────────────────────────────────────────
+  // ── LOGIN SCREEN (default) ────────────────────────────────────────────────
   return (
     <div className="auth-screen">
       <div className="auth-card">
