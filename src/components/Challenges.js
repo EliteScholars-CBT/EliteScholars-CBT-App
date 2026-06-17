@@ -11,7 +11,7 @@ import CreateChallenge from './CreateChallenge';
 import Quiz from './Quiz';
 import Toast from './Toast';
 
-export default function Challenges({ userEmail, userName }) {
+export default function Challenges({ userEmail, userName, userUsername }) {
   const [activeTab, setActiveTab] = useState('pending');
   const [pendingChallenges, setPending] = useState([]);
   const [history, setHistory] = useState([]);
@@ -25,7 +25,6 @@ export default function Challenges({ userEmail, userName }) {
   const [correct, setCorrect] = useState(0);
   const [totalQ, setTotalQ] = useState(0);
 
-  // XP result toast — shown after a challenge round completes
   const [toast, setToast] = useState({ show: false, message: '', type: 'info' });
   const showToast = (message, type = 'info') => setToast({ show: true, message, type });
 
@@ -34,33 +33,35 @@ export default function Challenges({ userEmail, userName }) {
       if (!userEmail) return;
       if (!silent) setLoading(true);
       try {
-        if (activeTab === 'pending') {
-          const pending = await getPendingChallenges(userEmail);
-          setPending(Array.isArray(pending) ? pending : []);
-        } else {
-          const hist = await getChallengeHistory(userEmail);
-          setHistory(Array.isArray(hist) ? hist : []);
-        }
+        // Always fetch both so counts and states stay in sync
+        const [pending, hist] = await Promise.all([
+          getPendingChallenges(userEmail),
+          getChallengeHistory(userEmail),
+        ]);
+        setPending(Array.isArray(pending) ? pending : []);
+        setHistory(Array.isArray(hist) ? hist : []);
       } catch (err) {
         console.error('Failed to load challenges:', err);
       }
       setLoading(false);
     },
-    [userEmail, activeTab]
+    [userEmail]
   );
 
   useEffect(() => {
-    getChallengeMessages().then(setMessages);
+    getChallengeMessages().then((msgs) => {
+      setMessages(msgs);
+    });
   }, []);
 
   useEffect(() => {
     if (userEmail) loadChallenges(false);
   }, [loadChallenges]);
 
-  // Poll every 20 seconds
+  // Poll every 15 seconds — challenger needs to see when opponent finishes
   useEffect(() => {
     if (!userEmail) return;
-    const interval = setInterval(() => loadChallenges(true), 20000);
+    const interval = setInterval(() => loadChallenges(true), 15000);
     return () => clearInterval(interval);
   }, [loadChallenges]);
 
@@ -81,6 +82,7 @@ export default function Challenges({ userEmail, userName }) {
   // ── Quiz done ─────────────────────────────────────────────────────────────
   const handleQuizDone = async () => {
     if (!playingChallenge) return;
+
     const result = await submitChallengeScore(
       playingChallenge.challenge_id,
       userEmail,
@@ -89,13 +91,16 @@ export default function Challenges({ userEmail, userName }) {
     );
 
     setPlaying(null);
-    loadChallenges(false);
 
-    // Show XP feedback based on the result returned from the backend
+    // Reload both tabs — completed challenge moves from pending → history
+    await loadChallenges(false);
+
+    // Switch to history tab so the user sees the result immediately
+    if (result?.completed) {
+      setActiveTab('history');
+    }
+
     if (result?.success && result.xpAwarded > 0) {
-      const isChallenger =
-        playingChallenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
-
       const winnerEmail = result.winner?.toString().toLowerCase().trim();
       const isDraw = result.winner === 'draw';
       const iWon = !isDraw && winnerEmail === userEmail?.toLowerCase().trim();
@@ -107,7 +112,6 @@ export default function Challenges({ userEmail, userName }) {
       } else if (result.completed) {
         showToast(`+${result.xpAwarded} XP for completing the challenge`, 'info');
       } else {
-        // Other player hasn't finished yet — only this player's XP isn't known yet
         showToast(`Score submitted! Waiting for your opponent…`, 'info');
       }
     } else if (result?.success && !result.completed) {
@@ -131,42 +135,36 @@ export default function Challenges({ userEmail, userName }) {
     return null;
   };
 
-  // ── History card — competition scoreboard style ────────────────────────────
+  // ── History card ──────────────────────────────────────────────────────────
   const renderHistoryCard = (challenge) => {
     const isChallenger = challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
-
     const myName = userName || 'You';
-
     const oppName = isChallenger
       ? challenge.opponent_name || 'Opponent'
       : challenge.challenger_name || 'Opponent';
-
     const myScore = isChallenger
       ? (challenge.challenger_score ?? '?')
       : (challenge.opponent_score ?? '?');
-
     const oppScore = isChallenger
       ? (challenge.opponent_score ?? '?')
       : (challenge.challenger_score ?? '?');
-
     const status = (challenge.status || '').toLowerCase();
-
     const winner = challenge.winner_email;
-
     const isDraw = winner === 'draw';
-
-    const iWon = !isDraw && winner === userEmail;
-
-    const iLost = !isDraw && winner && winner !== userEmail;
-
+    const iWon =
+      !isDraw && winner?.toString().toLowerCase().trim() === userEmail?.toLowerCase().trim();
+    const iLost =
+      !isDraw &&
+      winner &&
+      winner?.toString().toLowerCase().trim() !== userEmail?.toLowerCase().trim();
     const isPending = status === 'pending';
     const isDeclined = status === 'declined';
     const isExpired = status === 'expired';
+    const isCompleted = status === 'completed';
 
-    let resultIcon = '—';
-    let resultText = status;
-    let resultClass = 'neutral';
-
+    let resultIcon = '—',
+      resultText = status,
+      resultClass = 'neutral';
     if (isPending) {
       resultIcon = '⏳';
       resultText = 'Awaiting Opponent';
@@ -194,96 +192,62 @@ export default function Challenges({ userEmail, userName }) {
     }
 
     const rawDate = challenge.completed_at || challenge.expires_at || challenge.created_at;
-
     const dateObj = rawDate ? new Date(rawDate) : null;
-
     const formattedDate = dateObj
-      ? dateObj.toLocaleDateString('en-GB', {
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric',
-        })
+      ? dateObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
       : '--';
-
     const formattedTime = dateObj
-      ? dateObj.toLocaleTimeString([], {
-          hour: '2-digit',
-          minute: '2-digit',
-        })
+      ? dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       : '--';
-
     const oppScoreDisplay = isPending || isDeclined || isExpired ? '?' : oppScore;
 
     return (
       <div key={challenge.challenge_id} className={`challenge-history-card ${resultClass}`}>
-        {/* HEADER */}
         <div className="challenge-history-top">
           <div className="challenge-history-user">
             <div className="challenge-history-opponent">{oppName}</div>
-
             <div className="challenge-history-meta">
               <span>{challenge.subject}</span>
               <span>•</span>
               <span>{challenge.exam_type || 'JAMB'}</span>
             </div>
           </div>
-
           <div className={`history-status-badge ${resultClass}`}>
             <span>{resultIcon}</span>
             <span>{resultText}</span>
           </div>
         </div>
 
-        {/* SCOREBOARD */}
         <div className="challenge-scoreboard">
           <div className="challenge-player-side">
             <div
-              className={`
-            challenge-score
-            ${iWon ? 'winner-score' : ''}
-            ${isDraw ? 'draw-score' : ''}
-          `}
+              className={`challenge-score ${iWon ? 'winner-score' : ''} ${isDraw ? 'draw-score' : ''}`}
             >
               {myScore}
             </div>
-
             <div className="challenge-player-name">{myName}</div>
-
             {iWon && <div className="winner-tag">WINNER</div>}
           </div>
-
           <div className="challenge-vs">VS</div>
-
           <div className="challenge-player-side">
             <div
-              className={`
-            challenge-score
-            ${iLost ? 'loser-score' : ''}
-            ${isDraw ? 'draw-score' : ''}
-          `}
+              className={`challenge-score ${iLost ? 'loser-score' : ''} ${isDraw ? 'draw-score' : ''}`}
             >
               {oppScoreDisplay}
             </div>
-
             <div className="challenge-player-name">{oppName}</div>
-
             {iLost && !isDraw && <div className="winner-tag loser">WINNER</div>}
           </div>
         </div>
 
-        {/* FOOTER */}
         <div className="challenge-history-footer">
           <div className="challenge-history-date-wrap">
             <div className="challenge-history-date">{formattedDate}</div>
-
             <div className="challenge-history-time">{formattedTime}</div>
           </div>
-
           <div className="challenge-history-extra">
             <span>{challenge.num_questions || 5} Questions</span>
-
             <span>•</span>
-
             <span>{challenge.time_limit || 60}s each</span>
           </div>
         </div>
@@ -298,7 +262,7 @@ export default function Challenges({ userEmail, userName }) {
         <div className="challenge-play-banner">
           <div style={{ color: '#fff', fontWeight: 700, fontSize: 13, padding: '12px 16px' }}>
             ⚔️ Challenge vs {playingChallenge.challenger_name} — Beat{' '}
-            {playingChallenge.challenger_score || '?'} pts!
+            {playingChallenge.challenger_score ?? '?'} pts!
           </div>
         </div>
         <Quiz
@@ -327,6 +291,18 @@ export default function Challenges({ userEmail, userName }) {
   }
 
   // ── Main screen ───────────────────────────────────────────────────────────
+  // Separate pending into "needs my action" vs "waiting on opponent"
+  const needsMyAction = pendingChallenges.filter((c) => {
+    const isOpponent = c.opponent_email?.toLowerCase() === userEmail?.toLowerCase();
+    return isOpponent && (c.status === 'pending' || c.status === 'accepted');
+  });
+  const waitingOnOpponent = pendingChallenges.filter((c) => {
+    const isChallenger = c.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
+    return isChallenger;
+  });
+
+  const totalPending = needsMyAction.length;
+
   return (
     <div className="challenges-page">
       <div className="challenges-header">
@@ -342,7 +318,7 @@ export default function Challenges({ userEmail, userName }) {
           className={`tab-btn ${activeTab === 'pending' ? 'active' : ''}`}
           onClick={() => setActiveTab('pending')}
         >
-          Pending ({pendingChallenges.length})
+          Pending {totalPending > 0 ? `(${totalPending})` : ''}
         </button>
         <button
           className={`tab-btn ${activeTab === 'history' ? 'active' : ''}`}
@@ -357,112 +333,150 @@ export default function Challenges({ userEmail, userName }) {
       ) : (
         <div className="challenges-list">
           {/* ── PENDING TAB ── */}
-          {activeTab === 'pending' && pendingChallenges.length === 0 && (
-            <div className="empty-state">
-              <div className="empty-icon">🎯</div>
-              <div>No pending challenges</div>
-              <button className="empty-action" onClick={() => setShowCreate(true)}>
-                Create one
-              </button>
-            </div>
-          )}
-
-          {activeTab === 'pending' &&
-            pendingChallenges.map((challenge) => {
-              const isOpponent =
-                challenge.opponent_email?.toLowerCase() === userEmail?.toLowerCase();
-              const isChallenger =
-                challenge.challenger_email?.toLowerCase() === userEmail?.toLowerCase();
-
-              return (
-                <div key={challenge.challenge_id} className="challenge-card">
-                  <div className="challenge-header">
-                    <div className="challenger-info">
-                      <span className="challenger-name">
-                        {isOpponent
-                          ? `From: ${challenge.challenger_name}`
-                          : `To: ${challenge.opponent_name}`}
-                      </span>
-                      <span className="challenge-subject">{challenge.subject}</span>
-                    </div>
-                    {getStatusBadge(challenge.status)}
+          {activeTab === 'pending' && (
+            <>
+              {/* Challenges needing MY action */}
+              {needsMyAction.length > 0 && (
+                <>
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: 'var(--text-secondary)',
+                      padding: '8px 4px 4px',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: 1,
+                    }}
+                  >
+                    Needs your action
                   </div>
+                  {needsMyAction.map((challenge) => (
+                    <div key={challenge.challenge_id} className="challenge-card">
+                      <div className="challenge-header">
+                        <div className="challenger-info">
+                          <span className="challenger-name">From: {challenge.challenger_name}</span>
+                          <span className="challenge-subject">{challenge.subject}</span>
+                        </div>
+                        {getStatusBadge(challenge.status)}
+                      </div>
 
-                  <div className="challenge-details">
-                    <span>📚 {challenge.num_questions || 10} questions</span>
-                    <span>⏱️ {challenge.time_limit || 60}s per question</span>
-                    {isChallenger && (
-                      <span>
-                        🎯 Your score:{' '}
-                        {challenge.challenger_score != null && challenge.challenger_score !== ''
-                          ? challenge.challenger_score
-                          : '?'}
-                      </span>
-                    )}
-                  </div>
+                      <div className="challenge-details">
+                        <span>📚 {challenge.num_questions || 5} questions</span>
+                        <span>⏱️ {challenge.time_limit || 60}s per question</span>
+                      </div>
 
-                  {getMessageText(challenge) ? (
-                    <div className="challenge-message">"{getMessageText(challenge)}"</div>
-                  ) : null}
+                      {getMessageText(challenge) && (
+                        <div className="challenge-message">"{getMessageText(challenge)}"</div>
+                      )}
 
-                  {/* Opponent — pending: Accept / Decline */}
-                  {isOpponent && challenge.status === 'pending' && (
-                    <div className="challenge-actions">
-                      <button
-                        className="decline-btn"
-                        onClick={() => handleDecline(challenge.challenge_id)}
-                      >
-                        Decline
-                      </button>
-                      <button className="accept-btn" onClick={() => handleAccept(challenge)}>
-                        Accept & Play →
-                      </button>
+                      {challenge.status === 'pending' && (
+                        <div className="challenge-actions">
+                          <button
+                            className="decline-btn"
+                            onClick={() => handleDecline(challenge.challenge_id)}
+                          >
+                            Decline
+                          </button>
+                          <button className="accept-btn" onClick={() => handleAccept(challenge)}>
+                            Accept & Play →
+                          </button>
+                        </div>
+                      )}
+
+                      {challenge.status === 'accepted' && (
+                        <div className="challenge-actions">
+                          <button
+                            className="accept-btn"
+                            onClick={() => {
+                              setScore(0);
+                              setCorrect(0);
+                              setTotalQ(0);
+                              setPlaying(challenge);
+                            }}
+                          >
+                            ▶ Play Now
+                          </button>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  ))}
+                </>
+              )}
 
-                  {/* Opponent — accepted but not yet played */}
-                  {isOpponent && challenge.status === 'accepted' && (
-                    <div className="challenge-actions">
-                      <button
-                        className="accept-btn"
-                        onClick={() => {
-                          setScore(0);
-                          setCorrect(0);
-                          setTotalQ(0);
-                          setPlaying(challenge);
+              {/* Challenges I'm waiting on opponent for */}
+              {waitingOnOpponent.length > 0 && (
+                <>
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: 'var(--text-secondary)',
+                      padding: '12px 4px 4px',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: 1,
+                    }}
+                  >
+                    Waiting on opponent
+                  </div>
+                  {waitingOnOpponent.map((challenge) => (
+                    <div
+                      key={challenge.challenge_id}
+                      className="challenge-card"
+                      style={{ opacity: 0.8 }}
+                    >
+                      <div className="challenge-header">
+                        <div className="challenger-info">
+                          <span className="challenger-name">To: {challenge.opponent_name}</span>
+                          <span className="challenge-subject">{challenge.subject}</span>
+                        </div>
+                        {getStatusBadge(challenge.status)}
+                      </div>
+                      <div className="challenge-details">
+                        <span>📚 {challenge.num_questions || 5} questions</span>
+                        <span>⏱️ {challenge.time_limit || 60}s per question</span>
+                        <span>
+                          🎯 Your score:{' '}
+                          {challenge.challenger_score != null && challenge.challenger_score !== ''
+                            ? challenge.challenger_score
+                            : '?'}
+                        </span>
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 11,
+                          color: 'var(--text-secondary)',
+                          marginTop: 8,
+                          fontStyle: 'italic',
                         }}
                       >
-                        ▶ Play Now
-                      </button>
+                        ⏳ Waiting for {challenge.opponent_name} to{' '}
+                        {challenge.status === 'pending' ? 'accept' : 'play'}...
+                      </div>
                     </div>
-                  )}
+                  ))}
+                </>
+              )}
 
-                  {/* Challenger — waiting */}
-                  {isChallenger && (
-                    <div
-                      style={{
-                        fontSize: 11,
-                        color: 'var(--text-secondary)',
-                        marginTop: 8,
-                        fontStyle: 'italic',
-                      }}
-                    >
-                      Waiting for {challenge.opponent_name} to play...
-                    </div>
-                  )}
+              {needsMyAction.length === 0 && waitingOnOpponent.length === 0 && (
+                <div className="empty-state">
+                  <div className="empty-icon">🎯</div>
+                  <div>No pending challenges</div>
+                  <button className="empty-action" onClick={() => setShowCreate(true)}>
+                    Create one
+                  </button>
                 </div>
-              );
-            })}
+              )}
+            </>
+          )}
 
-          {/* ── HISTORY TAB — latest first ── */}
+          {/* ── HISTORY TAB ── */}
           {activeTab === 'history' && history.length === 0 && (
             <div className="empty-state">
               <div className="empty-icon">📭</div>
               <div>No challenge history yet</div>
             </div>
           )}
-
-          {activeTab === 'history' && [...history].map(renderHistoryCard)}
+          {activeTab === 'history' && history.map(renderHistoryCard)}
         </div>
       )}
 
@@ -470,6 +484,7 @@ export default function Challenges({ userEmail, userName }) {
         <CreateChallenge
           userEmail={userEmail}
           userName={userName}
+          userUsername={userUsername}
           onClose={() => setShowCreate(false)}
           onCreated={() => {
             setShowCreate(false);

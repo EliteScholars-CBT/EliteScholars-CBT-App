@@ -10,10 +10,10 @@ export default function Leaderboard({ userEmail, userName }) {
   const [loading, setLoading] = useState(true);
 
   const timeframes = [
-    { id: 'daily',   label: 'Daily'   },
-    { id: 'weekly',  label: 'Weekly'  },
+    { id: 'daily', label: 'Daily' },
+    { id: 'weekly', label: 'Weekly' },
     { id: 'monthly', label: 'Monthly' },
-    { id: 'alltime', label: 'All-Time'},
+    { id: 'alltime', label: 'All-Time' },
   ];
 
   const examTypes = [
@@ -25,7 +25,9 @@ export default function Leaderboard({ userEmail, userName }) {
     // { id: 'postutme', label: 'POST UTME' },
   ];
 
-  useEffect(() => { loadLeaderboard(); }, [activeTimeframe, activeExam]);
+  useEffect(() => {
+    loadLeaderboard();
+  }, [activeTimeframe, activeExam]);
 
   const loadLeaderboard = async () => {
     setLoading(true);
@@ -48,20 +50,24 @@ export default function Leaderboard({ userEmail, userName }) {
     if (isNaN(num) || num < 1) return '—';
     if (num >= 11 && num <= 13) return `${num}th`;
     switch (num % 10) {
-      case 1: return `${num}st`;
-      case 2: return `${num}nd`;
-      case 3: return `${num}rd`;
-      default: return `${num}th`;
+      case 1:
+        return `${num}st`;
+      case 2:
+        return `${num}nd`;
+      case 3:
+        return `${num}rd`;
+      default:
+        return `${num}th`;
     }
   };
 
   const getRankDisplay = (user, index) => {
     if (user.rank_display) return user.rank_display;
-    return getOrdinal(user.rank || (index + 1));
+    return getOrdinal(user.rank || index + 1);
   };
 
   const getMedal = (user, index) => {
-    const rankNum = user.rank || (index + 1);
+    const rankNum = user.rank || index + 1;
     if (rankNum === 1) return '👑';
     if (rankNum === 2) return '🥈';
     if (rankNum === 3) return '🥉';
@@ -77,7 +83,7 @@ export default function Leaderboard({ userEmail, userName }) {
 
       <div className="leaderboard-filters">
         <div className="filter-group">
-          {timeframes.map(tf => (
+          {timeframes.map((tf) => (
             <button
               key={tf.id}
               className={`filter-btn ${activeTimeframe === tf.id ? 'active' : ''}`}
@@ -88,7 +94,7 @@ export default function Leaderboard({ userEmail, userName }) {
           ))}
         </div>
         <div className="filter-group">
-          {examTypes.map(et => (
+          {examTypes.map((et) => (
             <button
               key={et.id}
               className={`filter-btn ${activeExam === et.id ? 'active' : ''}`}
@@ -106,20 +112,23 @@ export default function Leaderboard({ userEmail, userName }) {
         <div className="leaderboard-empty">
           <div style={{ fontSize: 40, marginBottom: 12 }}>📭</div>
           <div style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
-            {activeTimeframe === 'daily'   ? 'No one has played today yet. Be the first!' :
-             activeTimeframe === 'weekly'  ? 'No activity this week yet.' :
-             activeTimeframe === 'monthly' ? 'No activity this month yet.' :
-             'No data yet. Complete a quiz to appear here!'}
+            {activeTimeframe === 'daily'
+              ? 'No one has played today yet. Be the first!'
+              : activeTimeframe === 'weekly'
+                ? 'No activity this week yet.'
+                : activeTimeframe === 'monthly'
+                  ? 'No activity this month yet.'
+                  : 'No data yet. Complete a quiz to appear here!'}
           </div>
         </div>
       ) : (
         <>
-        {userRank && (
+          {userRank && (
             <div className="leaderboard-user-rank">
               <div className="user-rank-label">Your Rank</div>
               <div className="user-rank-value">
                 {typeof userRank === 'object'
-                  ? (userRank.rank_display || getOrdinal(userRank.rank))
+                  ? userRank.rank_display || getOrdinal(userRank.rank)
                   : getOrdinal(userRank)}
               </div>
               <XPBar email={userEmail} name={userName} compact={true} />
@@ -133,17 +142,14 @@ export default function Leaderboard({ userEmail, userName }) {
                 className={`leaderboard-item ${user.email === userEmail ? 'is-current-user' : ''}`}
               >
                 <div className="leaderboard-rank">{getMedal(user, index)}</div>
-                <div className="leaderboard-avatar">{user.name?.charAt(0)?.toUpperCase() || '?'}</div>
+                <div className="leaderboard-avatar">
+                  {user.name?.charAt(0)?.toUpperCase() || '?'}
+                </div>
                 <div className="leaderboard-info">
                   <div className="leaderboard-name">{user.name}</div>
-                  {user.username && (
-                    <div className="leaderboard-username">@{user.username}</div>
-                  )}
+                  {user.username && <div className="leaderboard-username">@{user.username}</div>}
                   <div className="leaderboard-stats">
                     <span>Lv.{user.level || 1}</span>
-                    {activeTimeframe !== 'alltime' && (
-                      <span>{user.quizzes || 0} quiz{user.quizzes !== 1 ? 'zes' : ''}</span>
-                    )}
                   </div>
                 </div>
                 {/* CHANGED: replaced % score with XP badge on all timeframes */}

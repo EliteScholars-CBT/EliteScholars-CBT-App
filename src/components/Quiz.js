@@ -24,8 +24,6 @@ import { SFX, speak, stopSpeech } from '../utils/sounds';
 import { sfl } from '../utils/helpers';
 
 // ── Extract all embedded questions from a learn bank for one subject ─────────
-// Each topic can have a `questions` array. We pull them all out and merge
-// them into the CBT pool so topic questions appear in CBT mode too.
 function getTopicQuestions(learnBank, subjectId) {
   const topics = (learnBank && learnBank[subjectId]) || [];
   const qs = [];
@@ -39,7 +37,6 @@ function getTopicQuestions(learnBank, subjectId) {
 
 // ── Resolve the right QB + learn bank for the given examType ─────────────────
 function buildQuestionPool(examType, subjectId) {
-  // 1. Pick QB bank
   const bankByType =
     examType === 'neco'
       ? NECO_QB
@@ -47,12 +44,11 @@ function buildQuestionPool(examType, subjectId) {
         ? GST_QB
         : examType === 'waec' || examType === 'postutme'
           ? WAEC_QB
-          : QB; // jamb default
+          : QB;
 
   const qbQuestions =
     bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics || [];
 
-  // 2. Pick the matching learn bank to extract topic-embedded questions
   const learnBankByType =
     examType === 'neco'
       ? NECO_LEARN
@@ -62,11 +58,10 @@ function buildQuestionPool(examType, subjectId) {
           ? POSTUTME_LEARN
           : examType === 'jamb'
             ? JAMB_LEARN
-            : WAEC_LEARN; // waec default
+            : WAEC_LEARN;
 
   const topicQuestions = getTopicQuestions(learnBankByType, subjectId);
 
-  // 3. Merge — deduplicate by question text so no duplicates appear
   if (topicQuestions.length === 0) return qbQuestions;
 
   const seen = new Set(qbQuestions.map((q) => q.q));
@@ -75,8 +70,6 @@ function buildQuestionPool(examType, subjectId) {
   return [...qbQuestions, ...uniqueTopicQs];
 }
 
-// How long (ms) to wait after time runs out before auto-advancing,
-// so the student sees the "Time's up!" message and correct answer.
 const AUTO_ADVANCE_DELAY_MS = 1800;
 
 export default function Quiz({
@@ -96,20 +89,24 @@ export default function Quiz({
   email,
   onFiftyUsed,
   onHintUsed,
-  onLogQuestion, // optional: (entry) => void — logs each answered question for review
-  isChallengeMode, // optional: true when playing a challenge round
-  examType, // optional: 'jamb' | 'waec' | 'neco' | 'postutme' | 'gst'
+  onLogQuestion,
+  isChallengeMode,
+  roundSize, // optional: override round size (e.g. 5 for challenges)
+  examType,
 }) {
   const [shuffled] = useState(() => {
     const pool = buildQuestionPool(examType, subjectId);
     return sfl(pool);
   });
 
+  // Use provided roundSize (e.g. challenge = 5) or fall back to global ROUND_SIZE
+  const effectiveRoundSize = roundSize || ROUND_SIZE;
+
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState(false);
-  const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, ROUND_SIZE));
+  const [timeLeft, setTL] = useState(() => getTimerSecs(subjectId, effectiveRoundSize));
   const [usedF, setUF] = useState(false);
   const [usedH, setUH] = useState(false);
   const [hidden, setHid] = useState([]);
@@ -122,13 +119,13 @@ export default function Quiz({
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
   const autoAdvanceRef = useRef(null);
-  const roundSecs = getTimerSecs(subjectId, ROUND_SIZE);
+  const roundSecs = getTimerSecs(subjectId, effectiveRoundSize);
 
   const q = shuffled[qi];
   const isLastQ = qi >= shuffled.length - 1;
-  const isRoundEnd = (qi + 1) % ROUND_SIZE === 0;
+  const isRoundEnd = (qi + 1) % effectiveRoundSize === 0;
   const isLast = isLastQ || isRoundEnd;
-  const roundNum = Math.floor(qi / ROUND_SIZE);
+  const roundNum = Math.floor(qi / effectiveRoundSize);
   const meta = getSubjectMeta(subjectId);
 
   // Reset visual states when moving to next question
@@ -139,8 +136,6 @@ export default function Quiz({
     setHid([]);
     setSHint(false);
     setTimedOut(false);
-
-    // Cancel any pending auto-advance from the previous question
     if (autoAdvanceRef.current) {
       clearTimeout(autoAdvanceRef.current);
       autoAdvanceRef.current = null;
@@ -185,20 +180,14 @@ export default function Quiz({
         clearInterval(timerRef.current);
         stopSpeech();
         setSpeaking(false);
-
-        // Time up — mark question as done without a selection,
-        // then auto-advance to the next question (or finish the quiz
-        // if this is the last question/round) after a short delay.
         setDone((d) => {
           if (!d) {
             setTotalQ((x) => x + 1);
             setTimedOut(true);
-
             if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
             autoAdvanceRef.current = setTimeout(() => {
               handleNextRef.current();
             }, AUTO_ADVANCE_DELAY_MS);
-
             return true;
           }
           return d;
@@ -247,8 +236,6 @@ export default function Quiz({
     setSel(i);
   };
 
-  // FIX (Issue 1): handleSubmit does NOT call addXP.
-  // XP is computed once in App.js handleAllDone when the quiz ends.
   const handleSubmit = () => {
     if (SHOW_ADS) triggerAdRefresh();
     if (sel === -1 || done) return;
@@ -274,7 +261,6 @@ export default function Quiz({
       if (bodyRef.current) bodyRef.current.scrollTop = 999;
     }, 200);
 
-    // Log this question for Result review modal
     if (onLogQuestion) {
       onLogQuestion({
         q: q.q,
@@ -292,8 +278,6 @@ export default function Quiz({
     setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
 
-    // If the question timed out with no answer selected, log it as
-    // incorrect/unanswered so the Result review reflects it.
     if (timedOut && onLogQuestion && q) {
       onLogQuestion({
         q: q.q,
@@ -307,20 +291,14 @@ export default function Quiz({
 
     if (isLast) {
       SFX.roundComplete();
-      // Pass final time remaining to App.js for speed bonus calculation
-      if (setQuizTimeRemaining) {
-        setQuizTimeRemaining(timeLeft);
-      }
-      onAllDone(Math.ceil(shuffled.length / ROUND_SIZE));
+      if (setQuizTimeRemaining) setQuizTimeRemaining(timeLeft);
+      onAllDone(Math.ceil(shuffled.length / effectiveRoundSize));
       return;
     }
 
     setQi((nextQi) => nextQi + 1);
   };
 
-  // Keep a ref to the latest handleNext so the timer's setTimeout
-  // (scheduled inside an effect) always calls the current version —
-  // avoiding stale closures over qi/isLast/timeLeft etc.
   const handleNextRef = useRef(handleNext);
   handleNextRef.current = handleNext;
 
@@ -399,8 +377,8 @@ export default function Quiz({
 
   const getLetterStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let bg = LGRAY;
-    let color = GRAY;
+    let bg = LGRAY,
+      color = GRAY;
     if (!done && sel === i) {
       bg = meta.color;
       color = WHITE;
@@ -493,7 +471,7 @@ export default function Quiz({
               ⏱ {timeLeft}s
             </div>
             <div className="quiz-score-badge">
-              {correct}/{ROUND_SIZE}
+              {correct}/{effectiveRoundSize}
             </div>
           </div>
         </div>
@@ -507,16 +485,16 @@ export default function Quiz({
           }}
         >
           <span>
-            Q{(qi % ROUND_SIZE) + 1}/{ROUND_SIZE} · {meta.label}
+            Q{(qi % effectiveRoundSize) + 1}/{effectiveRoundSize} · {meta.label}
           </span>
           <span>
-            Round {roundNum + 1} · {(qi % ROUND_SIZE) + 1}/{ROUND_SIZE}
+            Round {roundNum + 1} · {(qi % effectiveRoundSize) + 1}/{effectiveRoundSize}
           </span>
         </div>
         <div className="quiz-progress-bar">
           <div
             className="quiz-progress-fill"
-            style={{ width: `${(((qi % ROUND_SIZE) + 1) / ROUND_SIZE) * 100}%` }}
+            style={{ width: `${(((qi % effectiveRoundSize) + 1) / effectiveRoundSize) * 100}%` }}
           />
         </div>
       </div>
