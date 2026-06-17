@@ -38,27 +38,23 @@ function getTopicQuestions(learnBank, subjectId) {
 // ── Resolve the right QB + learn bank for the given examType ─────────────────
 function buildQuestionPool(examType, subjectId) {
   const bankByType =
-    examType === 'neco'
-      ? NECO_QB
-      : examType === 'gst'
-        ? GST_QB
-        : examType === 'waec' || examType === 'postutme'
-          ? WAEC_QB
-          : QB;
+    examType === 'neco'                              ? NECO_QB :
+    examType === 'gst'                               ? GST_QB  :
+    (examType === 'waec' || examType === 'postutme') ? WAEC_QB :
+    QB;
 
-  const qbQuestions =
-    bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics || [];
+  const qbQuestions = bankByType[subjectId]
+    || WAEC_QB[subjectId]
+    || QB[subjectId]
+    || QB.economics
+    || [];
 
   const learnBankByType =
-    examType === 'neco'
-      ? NECO_LEARN
-      : examType === 'gst'
-        ? GST_LEARN
-        : examType === 'postutme'
-          ? POSTUTME_LEARN
-          : examType === 'jamb'
-            ? JAMB_LEARN
-            : WAEC_LEARN;
+    examType === 'neco'     ? NECO_LEARN     :
+    examType === 'gst'      ? GST_LEARN      :
+    examType === 'postutme' ? POSTUTME_LEARN :
+    examType === 'jamb'     ? JAMB_LEARN     :
+    WAEC_LEARN;
 
   const topicQuestions = getTopicQuestions(learnBankByType, subjectId);
 
@@ -91,7 +87,7 @@ export default function Quiz({
   onHintUsed,
   onLogQuestion,
   isChallengeMode,
-  roundSize, // optional: override round size (e.g. 5 for challenges)
+  roundSize,       // optional: override round size (e.g. 5 for challenges)
   examType,
 }) {
   const [shuffled] = useState(() => {
@@ -348,94 +344,43 @@ export default function Quiz({
       color = meta.color;
     }
     if (done) {
-      if (i === q.a) {
-        border = `2px solid ${GREEN}`;
-        bg = LGREEN;
-        color = GREEN;
-      } else if (i === sel && i !== q.a) {
-        border = `2px solid ${RED}`;
-        bg = LRED;
-        color = RED;
-      }
+      if (i === q.a) { border = `2px solid ${GREEN}`; bg = LGREEN; color = GREEN; }
+      else if (i === sel && i !== q.a) { border = `2px solid ${RED}`; bg = LRED; color = RED; }
     }
     return {
-      border,
-      background: bg,
-      color,
-      padding: '11px 13px',
-      borderRadius: 11,
-      display: 'flex',
-      alignItems: 'center',
-      gap: 9,
-      fontSize: 13,
-      fontWeight: 500,
+      border, background: bg, color,
+      padding: '11px 13px', borderRadius: 11,
+      display: 'flex', alignItems: 'center', gap: 9,
+      fontSize: 13, fontWeight: 500,
       cursor: done ? 'default' : 'pointer',
-      transition: 'all .18s',
-      marginBottom: 7,
+      transition: 'all .18s', marginBottom: 7,
     };
   };
 
   const getLetterStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let bg = LGRAY,
-      color = GRAY;
-    if (!done && sel === i) {
-      bg = meta.color;
-      color = WHITE;
-    }
-    if (done && i === q.a) {
-      bg = GREEN;
-      color = WHITE;
-    }
-    if (done && i === sel && i !== q.a) {
-      bg = RED;
-      color = WHITE;
-    }
+    let bg = LGRAY, color = GRAY;
+    if (!done && sel === i) { bg = meta.color; color = WHITE; }
+    if (done && i === q.a) { bg = GREEN; color = WHITE; }
+    if (done && i === sel && i !== q.a) { bg = RED; color = WHITE; }
     return {
-      width: 28,
-      height: 28,
-      borderRadius: '50%',
-      background: bg,
-      color,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: 11,
-      fontWeight: 700,
-      flexShrink: 0,
+      width: 28, height: 28, borderRadius: '50%',
+      background: bg, color,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontSize: 11, fontWeight: 700, flexShrink: 0,
       transition: 'all .18s',
     };
   };
 
   if (!q) {
     return (
-      <div
-        className="scr"
-        style={{
-          background: BG,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          gap: 20,
-        }}
-      >
+      <div className="scr" style={{ background: BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 20 }}>
         <div style={{ fontSize: 48 }}>❌</div>
         <div style={{ fontSize: 18, fontWeight: 600, color: PURPLE }}>Error Loading Questions</div>
         <div style={{ fontSize: 14, color: GRAY, textAlign: 'center', maxWidth: 300 }}>
           No questions found for {subjectId}. Please check QB.js file.
         </div>
-        <button
-          onClick={onHome}
-          style={{
-            padding: '10px 20px',
-            background: PURPLE,
-            color: WHITE,
-            border: 'none',
-            borderRadius: 8,
-            cursor: 'pointer',
-          }}
-        >
+        <button onClick={onHome} style={{ padding: '10px 20px', background: PURPLE, color: WHITE, border: 'none', borderRadius: 8, cursor: 'pointer' }}>
           Go Back
         </button>
       </div>
@@ -444,26 +389,10 @@ export default function Quiz({
 
   return (
     <div className="scr" style={{ background: BG }}>
-      <div
-        className="quiz-header"
-        style={{ background: `linear-gradient(135deg,${DPURP},${meta.color || PURPLE})` }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: 7,
-          }}
-        >
-          <button
-            className="quiz-home-btn"
-            onClick={() => {
-              stopSpeech();
-              stopTimer();
-              onHome();
-            }}
-          >
+      <div className="quiz-header"
+        style={{ background: `linear-gradient(135deg,${DPURP},${meta.color || PURPLE})` }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 7 }}>
+          <button className="quiz-home-btn" onClick={() => { stopSpeech(); stopTimer(); onHome(); }}>
             ⌂ Home
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -475,15 +404,7 @@ export default function Quiz({
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            fontSize: 10,
-            color: 'rgba(255,255,255,.55)',
-            marginBottom: 5,
-          }}
-        >
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: 'rgba(255,255,255,.55)', marginBottom: 5 }}>
           <span>
             Q{(qi % effectiveRoundSize) + 1}/{effectiveRoundSize} · {meta.label}
           </span>
@@ -499,36 +420,19 @@ export default function Quiz({
         </div>
       </div>
 
-      <div
-        ref={bodyRef}
-        className="scroll quiz-scroll-area"
-        style={{
-          flex: 1,
-          padding: '10px 13px 6px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 9,
-        }}
-      >
+      <div ref={bodyRef} className="scroll quiz-scroll-area"
+        style={{ flex: 1, padding: '10px 13px 6px', display: 'flex', flexDirection: 'column', gap: 9 }}>
         <div style={{ display: 'flex', gap: 7, flexShrink: 0 }}>
-          <button
-            onClick={doFifty}
-            disabled={usedF || done}
-            className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}
-          >
+          <button onClick={doFifty} disabled={usedF || done}
+            className={`lifeline-button ${usedF ? 'lifeline-fifty-used' : 'lifeline-fifty'}`}>
             ⚖️ 50/50
           </button>
-          <button
-            onClick={doHint}
-            disabled={usedH || done}
-            className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}
-          >
+          <button onClick={doHint} disabled={usedH || done}
+            className={`lifeline-button ${usedH ? 'lifeline-hint-used' : 'lifeline-hint'}`}>
             💡 Hint
           </button>
-          <button
-            onClick={toggleVoice}
-            className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}
-          >
+          <button onClick={toggleVoice}
+            className={`lifeline-button ${voiceEnabled ? 'lifeline-voice' : 'lifeline-voice-off'}`}>
             {speaking ? '🔊 Stop' : voiceEnabled ? '🔊 On' : '🔊 Off'}
           </button>
         </div>
@@ -545,24 +449,12 @@ export default function Quiz({
           className={`su ${ansAnim === 'correct' ? 'correct-pop' : ansAnim === 'wrong' ? 'wrong-shake' : ''} question-card ${done ? (sel === q.a ? 'question-card-correct' : 'question-card-wrong') : ''}`}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 8 }}>
-            <div className="question-number" style={{ color: meta.color }}>
-              Q{qi + 1}
-            </div>
-            <div
-              className="question-year"
-              style={{ background: `${meta.color}18`, color: meta.color }}
-            >
-              {q.yr}
-            </div>
+            <div className="question-number" style={{ color: meta.color }}>Q{qi + 1}</div>
+            <div className="question-year" style={{ background: `${meta.color}18`, color: meta.color }}>{q.yr}</div>
           </div>
           <div className="question-text">{q.q}</div>
           {q.o.map((opt, i) => (
-            <div
-              key={i}
-              className={getOptionClass(i)}
-              style={getOptionStyle(i)}
-              onClick={() => handleSelect(i)}
-            >
+            <div key={i} className={getOptionClass(i)} style={getOptionStyle(i)} onClick={() => handleSelect(i)}>
               <div style={getLetterStyle(i)}>{['A', 'B', 'C', 'D'][i]}</div>
               <span>{opt}</span>
             </div>
@@ -570,18 +462,11 @@ export default function Quiz({
         </div>
 
         {timedOut && (
-          <div
-            style={{
-              background: 'rgba(255,107,107,.12)',
-              border: '1px solid rgba(255,107,107,.35)',
-              borderRadius: 11,
-              padding: '10px 13px',
-              fontSize: 13,
-              fontWeight: 600,
-              color: '#FF6B6B',
-              textAlign: 'center',
-            }}
-          >
+          <div style={{
+            background: 'rgba(255,107,107,.12)', border: '1px solid rgba(255,107,107,.35)',
+            borderRadius: 11, padding: '10px 13px', fontSize: 13, fontWeight: 600,
+            color: '#FF6B6B', textAlign: 'center',
+          }}>
             ⏰ Time's up! {isLast ? 'Finishing up…' : 'Moving to the next question…'}
           </div>
         )}
@@ -590,24 +475,18 @@ export default function Quiz({
           <div className="quick-take">
             <div className="quick-take-title">QUICK TAKE</div>
             <div className="quick-take-text">{q.e.split('. ')[0]}.</div>
-            <div className="quick-take-link" onClick={() => setModal(true)}>
-              Read full explanation →
-            </div>
+            <div className="quick-take-link" onClick={() => setModal(true)}>Read full explanation →</div>
           </div>
         )}
       </div>
 
       <div className="quiz-action-bar">
         {!done && sel !== -1 && (
-          <button className="quiz-clear-btn" onClick={() => setSel(-1)}>
-            ✕
-          </button>
+          <button className="quiz-clear-btn" onClick={() => setSel(-1)}>✕</button>
         )}
         {!done && (
-          <button
-            onClick={handleSubmit}
-            className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}
-          >
+          <button onClick={handleSubmit}
+            className={`quiz-submit-btn ${sel !== -1 ? 'quiz-submit-active' : 'quiz-submit-inactive'}`}>
             Submit Answer
           </button>
         )}
@@ -619,39 +498,22 @@ export default function Quiz({
       </div>
 
       {modal && (
-        <div
-          className="modal-overlay"
-          onClick={(e) => e.target === e.currentTarget && setModal(false)}
-        >
+        <div className="modal-overlay" onClick={(e) => e.target === e.currentTarget && setModal(false)}>
           <div className="modal-content">
             <div className="modal-handle" />
             <div className="modal-title">💡 Full Explanation</div>
             <div className="modal-question">{q.q}</div>
             <div className="modal-section-title">WHY THIS ANSWER?</div>
             <div className="modal-explanation">
-              {(q.full || q.e)
-                .split('\n')
-                .filter((l) => l.trim())
-                .map((para, i) => (
-                  <p key={i} style={{ marginBottom: 12 }}>
-                    {para}
-                  </p>
-                ))}
+              {(q.full || q.e).split('\n').filter((l) => l.trim()).map((para, i) => (
+                <p key={i} style={{ marginBottom: 12 }}>{para}</p>
+              ))}
             </div>
-            <div
-              className="modal-answer-box"
-              style={{ background: `${meta.color}12`, border: `1px solid ${meta.color}30` }}
-            >
-              <div className="modal-answer-title" style={{ color: meta.color }}>
-                CORRECT ANSWER
-              </div>
-              <div className="modal-answer-text">
-                {['A', 'B', 'C', 'D'][q.a]}. {q.o[q.a]}
-              </div>
+            <div className="modal-answer-box" style={{ background: `${meta.color}12`, border: `1px solid ${meta.color}30` }}>
+              <div className="modal-answer-title" style={{ color: meta.color }}>CORRECT ANSWER</div>
+              <div className="modal-answer-text">{['A', 'B', 'C', 'D'][q.a]}. {q.o[q.a]}</div>
             </div>
-            <button className="modal-close-btn" onClick={() => setModal(false)}>
-              Got it ✓
-            </button>
+            <button className="modal-close-btn" onClick={() => setModal(false)}>Got it ✓</button>
           </div>
         </div>
       )}
