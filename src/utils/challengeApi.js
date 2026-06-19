@@ -5,14 +5,14 @@ export const checkUserExists = async (email) => {
   try {
     const params = new URLSearchParams({
       action: 'getProfile',
-      email: email.toLowerCase().trim(),
+      email:  email.toLowerCase().trim(),
     });
     const response = await fetch(`${SHEETS_URL}?${params}`);
-    const data = await response.json();
+    const data     = await response.json();
     return {
-      exists: data?.success === true,
+      exists:    data?.success === true,
       firstName: data?.profile?.firstName || '',
-      lastName: data?.profile?.lastName || '',
+      lastName:  data?.profile?.lastName  || '',
     };
   } catch (error) {
     console.error('Failed to check user:', error);
@@ -20,21 +20,21 @@ export const checkUserExists = async (email) => {
   }
 };
 
-// ── Check if a user exists by username — returns their email too ────────────
+// ── Check if a user exists by username ───────────────────────────────────────
 export const checkUserByUsername = async (username) => {
   try {
     const params = new URLSearchParams({
-      action: 'getUserByUsername',
+      action:   'getUserByUsername',
       username: username.trim(),
     });
     const response = await fetch(`${SHEETS_URL}?${params}`);
-    const data = await response.json();
+    const data     = await response.json();
     return {
-      exists: data?.success === true,
-      email: data?.email || '',
+      exists:    data?.success === true,
+      email:     data?.email     || '',
       firstName: data?.firstName || '',
-      lastName: data?.lastName || '',
-      username: data?.username || '',
+      lastName:  data?.lastName  || '',
+      username:  data?.username  || '',
     };
   } catch (error) {
     console.error('Failed to check username:', error);
@@ -42,7 +42,7 @@ export const checkUserByUsername = async (username) => {
   }
 };
 
-// Create a new challenge
+// ── Create a new challenge ────────────────────────────────────────────────────
 export const createChallenge = async (
   challengerEmail,
   challengerName,
@@ -65,21 +65,21 @@ export const createChallenge = async (
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'createChallenge',
-        challenger_email: challengerEmail,
-        challenger_name: challengerName,
-        opponent_email: opponentEmail,
-        opponent_name: opponentName || opponentEmail.split('@')[0],
-        exam_type: examType,
-        university: university || '',
-        subject: subject,
-        num_questions: numQuestions,
-        time_limit: timeLimit,
-        message_template: messageTemplate,
-        custom_message: customMessage || '',
-        challenger_score: challengerScore,
+        action:             'createChallenge',
+        challenger_email:   challengerEmail,
+        challenger_name:    challengerName,
+        opponent_email:     opponentEmail,
+        opponent_name:      opponentName || opponentEmail.split('@')[0],
+        exam_type:          examType,
+        university:         university || '',
+        subject:            subject,
+        num_questions:      numQuestions,
+        time_limit:         timeLimit,
+        message_template:   messageTemplate,
+        custom_message:     customMessage || '',
+        challenger_score:   challengerScore,
         challenger_correct: challengerCorrect,
-        challenger_total: challengerTotal,
+        challenger_total:   challengerTotal,
       }),
     });
     return { success: true };
@@ -89,15 +89,15 @@ export const createChallenge = async (
   }
 };
 
-// Get pending challenges for a user
+// ── Get pending challenges for a user ────────────────────────────────────────
 export const getPendingChallenges = async (email) => {
   try {
     const params = new URLSearchParams({
       action: 'getPendingChallenges',
-      email: email,
+      email:  email,
     });
     const response = await fetch(`${SHEETS_URL}?${params}`);
-    const data = await response.json();
+    const data     = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Failed to get pending challenges:', error);
@@ -105,15 +105,15 @@ export const getPendingChallenges = async (email) => {
   }
 };
 
-// Get user's challenge history
+// ── Get challenge history ─────────────────────────────────────────────────────
 export const getChallengeHistory = async (email) => {
   try {
     const params = new URLSearchParams({
       action: 'getChallengeHistory',
-      email: email,
+      email:  email,
     });
     const response = await fetch(`${SHEETS_URL}?${params}`);
-    const data = await response.json();
+    const data     = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Failed to get challenge history:', error);
@@ -121,16 +121,16 @@ export const getChallengeHistory = async (email) => {
   }
 };
 
-// Accept a challenge
+// ── Accept a challenge ────────────────────────────────────────────────────────
 export const acceptChallenge = async (challengeId, opponentEmail) => {
   try {
     await fetch(SHEETS_URL, {
       method: 'POST',
-      mode: 'no-cors',
+      mode:   'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'acceptChallenge',
-        challenge_id: challengeId,
+        action:         'acceptChallenge',
+        challenge_id:   challengeId,
         opponent_email: opponentEmail,
       }),
     });
@@ -141,16 +141,16 @@ export const acceptChallenge = async (challengeId, opponentEmail) => {
   }
 };
 
-// Decline a challenge
+// ── Decline a challenge ───────────────────────────────────────────────────────
 export const declineChallenge = async (challengeId, opponentEmail) => {
   try {
     await fetch(SHEETS_URL, {
       method: 'POST',
-      mode: 'no-cors',
+      mode:   'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'declineChallenge',
-        challenge_id: challengeId,
+        action:         'declineChallenge',
+        challenge_id:   challengeId,
         opponent_email: opponentEmail,
       }),
     });
@@ -161,30 +161,45 @@ export const declineChallenge = async (challengeId, opponentEmail) => {
   }
 };
 
-// Submit challenge score
-// NOTE: switched from 'no-cors' to a normal request so we can read back
-// { success, winner, xpAwarded, completed } and show the user their XP result.
-// Apps Script web apps respond with proper CORS headers by default, so this
-// works without any backend changes beyond the submitChallengeScore update.
+// ── Submit challenge score ────────────────────────────────────────────────────
+// IMPORTANT: no 'no-cors' here — we need to read back { winner, xpAwarded,
+// completed } from the Apps Script response so we can:
+//   1. Show the correct XP toast to the user
+//   2. Know whether to move the challenge from pending → history
+//   3. Mark the challenge as done in the UI immediately
+// Apps Script web apps include CORS headers when deployed as "anyone" access,
+// so this works without any backend changes.
 export const submitChallengeScore = async (challengeId, email, score, timeSpent) => {
   try {
     const response = await fetch(SHEETS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'submitChallengeScore',
+        action:       'submitChallengeScore',
         challenge_id: challengeId,
-        email: email,
-        score: score,
-        time_spent: timeSpent,
+        email:        email,
+        score:        score,
+        time_spent:   timeSpent,
       }),
     });
-    const data = await response.json();
+
+    let data;
+    try {
+      data = await response.json();
+    } catch {
+      // If JSON parse fails (shouldn't happen with Apps Script),
+      // treat as submitted but unknown completion state.
+      console.warn('submitChallengeScore: could not parse response JSON');
+      return { success: true, winner: null, xpAwarded: 0, completed: false };
+    }
+
+    console.log('submitChallengeScore response:', data);
+
     return {
-      success: data?.success === true,
-      winner: data?.winner || null,
-      xpAwarded: data?.xpAwarded || 0,
-      completed: data?.completed || false,
+      success:    data?.success === true,
+      winner:     data?.winner  || null,
+      xpAwarded:  data?.xpAwarded  || 0,
+      completed:  data?.completed  || false,
     };
   } catch (error) {
     console.error('Failed to submit challenge score:', error);
@@ -192,12 +207,12 @@ export const submitChallengeScore = async (challengeId, email, score, timeSpent)
   }
 };
 
-// Get challenge message templates
+// ── Get challenge message templates ──────────────────────────────────────────
 export const getChallengeMessages = async () => {
   try {
-    const params = new URLSearchParams({ action: 'getChallengeMessages' });
+    const params   = new URLSearchParams({ action: 'getChallengeMessages' });
     const response = await fetch(`${SHEETS_URL}?${params}`);
-    const data = await response.json();
+    const data     = await response.json();
     return Array.isArray(data) ? data : defaultMessages();
   } catch (error) {
     console.error('Failed to get challenge messages:', error);
@@ -207,37 +222,13 @@ export const getChallengeMessages = async () => {
 
 function defaultMessages() {
   return [
-    { message_id: 'msg_001', category: 'friendly', message_text: 'Think you can beat me? 😊' },
-    {
-      message_id: 'msg_002',
-      category: 'competitive',
-      message_text: "I'm coming for your spot on the leaderboard! 👑",
-    },
-    {
-      message_id: 'msg_003',
-      category: 'funny',
-      message_text: "Prepare to lose... or maybe win? Let's play! 🎮",
-    },
-    {
-      message_id: 'msg_004',
-      category: 'motivational',
-      message_text: "Let's help each other improve! Best score wins! 💪",
-    },
-    {
-      message_id: 'msg_005',
-      category: 'trash_talk',
-      message_text: "You're going down! Hope you've been studying 😤",
-    },
-    { message_id: 'msg_006', category: 'rematch', message_text: 'Round 2? I want revenge! 🔥' },
-    {
-      message_id: 'msg_007',
-      category: 'daily',
-      message_text: 'Daily challenge time! Beat my score! 📅',
-    },
-    {
-      message_id: 'msg_008',
-      category: 'weekend',
-      message_text: 'Weekend quiz battle! Winner buys lunch? 🍕',
-    },
+    { message_id: 'msg_001', category: 'friendly',     message_text: 'Think you can beat me? 😊' },
+    { message_id: 'msg_002', category: 'competitive',  message_text: "I'm coming for your spot on the leaderboard! 👑" },
+    { message_id: 'msg_003', category: 'funny',        message_text: "Prepare to lose... or maybe win? Let's play! 🎮" },
+    { message_id: 'msg_004', category: 'motivational', message_text: "Let's help each other improve! Best score wins! 💪" },
+    { message_id: 'msg_005', category: 'trash_talk',   message_text: "You're going down! Hope you've been studying 😤" },
+    { message_id: 'msg_006', category: 'rematch',      message_text: 'Round 2? I want revenge! 🔥' },
+    { message_id: 'msg_007', category: 'daily',        message_text: 'Daily challenge time! Beat my score! 📅' },
+    { message_id: 'msg_008', category: 'weekend',      message_text: 'Weekend quiz battle! Winner buys lunch? 🍕' },
   ];
 }
