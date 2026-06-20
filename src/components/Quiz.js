@@ -41,9 +41,12 @@ export default function Quiz({
   onHintUsed,
   onLogQuestion,
   isChallengeMode,
-  roundSize, // optional: override round size (e.g. 5 for challenge mode)
+  roundSize, // optional: pass 5 for challenge mode, undefined for normal CBT
   examType,
 }) {
+  // effectiveRoundSize: how many questions per round
+  const effectiveRoundSize = roundSize || ROUND_SIZE;
+
   const [shuffled] = useState(() => {
     const bankByType =
       examType === 'neco'
@@ -54,11 +57,10 @@ export default function Quiz({
             ? WAEC_QB
             : QB;
     const questions = bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
-    return sfl(questions);
+    // Shuffle then slice to exactly effectiveRoundSize questions.
+    // This fixes the Q count mismatch — the pool literally has only N questions.
+    return sfl(questions).slice(0, effectiveRoundSize);
   });
-
-  // Use provided roundSize (challenge = 5) or global ROUND_SIZE
-  const effectiveRoundSize = roundSize || ROUND_SIZE;
 
   const [qi, setQi] = useState(0);
   const [sel, setSel] = useState(-1);
@@ -74,41 +76,41 @@ export default function Quiz({
   const [ansAnim, setAnsAnim] = useState('');
   const [timedOut, setTimedOut] = useState(false);
 
+  // Refs for values the timer closure needs — updated every render
+  // so the setInterval callback always has the latest version
   const timerRef = useRef(null);
   const autoEndRef = useRef(null);
   const bodyRef = useRef(null);
   const utterRef = useRef(null);
-
-  // Stable refs — the timer setInterval closure captures these at creation
-  // time and would go stale without refs. We update them every render so the
-  // callback always calls the latest version of onAllDone etc.
   const onAllDoneRef = useRef(onAllDone);
-  const setQuizTimeRemainingRef = useRef(setQuizTimeRemaining);
+  const setQTRRef = useRef(setQuizTimeRemaining);
   const setTotalQRef = useRef(setTotalQ);
-  const onLogQuestionRef = useRef(onLogQuestion);
-  const shuffledRef = useRef(shuffled);
-  const effectiveRoundSizeRef = useRef(effectiveRoundSize);
+  const onLogQRef = useRef(onLogQuestion);
   const qRef = useRef(null);
+  const shuffledRef = useRef(shuffled);
+  const effSizeRef = useRef(effectiveRoundSize);
 
+  // Update refs synchronously on every render (no useEffect needed)
   onAllDoneRef.current = onAllDone;
-  setQuizTimeRemainingRef.current = setQuizTimeRemaining;
+  setQTRRef.current = setQuizTimeRemaining;
   setTotalQRef.current = setTotalQ;
-  onLogQuestionRef.current = onLogQuestion;
+  onLogQRef.current = onLogQuestion;
   shuffledRef.current = shuffled;
-  effectiveRoundSizeRef.current = effectiveRoundSize;
+  effSizeRef.current = effectiveRoundSize;
 
   const roundSecs = getTimerSecs(subjectId, effectiveRoundSize);
-
   const q = shuffled[qi];
   qRef.current = q;
 
   const isLastQ = qi >= shuffled.length - 1;
+  // With sliced pool, isLastQ is the only termination condition.
+  // isRoundEnd kept for backwards compat with CBT mode where pool > roundSize
   const isRoundEnd = (qi + 1) % effectiveRoundSize === 0;
   const isLast = isLastQ || isRoundEnd;
   const roundNum = Math.floor(qi / effectiveRoundSize);
   const meta = SUBJ[subjectId] || SUBJ.economics;
 
-  // Reset visual states when moving to next question
+  // Reset per-question state
   useEffect(() => {
     setSel(-1);
     setDone(false);
@@ -122,7 +124,7 @@ export default function Quiz({
     }
   }, [qi]);
 
-  // Reset lifelines only when a new ROUND starts
+  // Reset lifelines per round
   useEffect(() => {
     setUF(false);
     setUH(false);
@@ -142,18 +144,14 @@ export default function Quiz({
     }
   }, [qi, voiceEnabled, q]);
 
-  // ── Timer ──────────────────────────────────────────────────────────────────
-  // When time runs out we:
-  //   1. Mark question done (shows correct answer)
-  //   2. Count the unanswered question
-  //   3. After 1.5s, call onAllDone directly — no user click needed
+  // ── Timer — runs per round, auto-ends quiz when time hits 0 ────────────────
   useEffect(() => {
     setTL(roundSecs);
     if (timerRef.current) clearInterval(timerRef.current);
 
     const start = Date.now();
     let lastWarnSec = -1;
-    let expired = false;
+    let alreadyFired = false; // prevent double-fire inside same interval
 
     timerRef.current = setInterval(() => {
       const elapsed = Math.floor((Date.now() - start) / 1000);
@@ -165,38 +163,36 @@ export default function Quiz({
         SFX.timerWarn();
       }
 
-      if (remaining <= 0 && !expired) {
-        expired = true;
+      if (remaining <= 0 && !alreadyFired) {
+        alreadyFired = true;
         clearInterval(timerRef.current);
         stopSpeech();
         setSpeaking(false);
+
+        // Mark current question as timed-out
         setTimedOut(true);
         setDone(true);
-
-        // Count this unanswered question toward the total
         setTotalQRef.current((x) => x + 1);
 
-        // Log it as unanswered/incorrect for the review screen
-        const currentQ = qRef.current;
-        if (currentQ && onLogQuestionRef.current) {
-          onLogQuestionRef.current({
-            q: currentQ.q,
-            options: currentQ.o,
+        // Log it as unanswered
+        const cq = qRef.current;
+        if (cq && onLogQRef.current) {
+          onLogQRef.current({
+            q: cq.q,
+            options: cq.o,
             selected: -1,
-            answer: currentQ.a,
+            answer: cq.a,
             correct: false,
-            explanation: currentQ.e || '',
+            explanation: cq.e || '',
           });
         }
 
         SFX.roundComplete();
 
-        // After 1.5s go straight to results — no button click required
+        // Force switch to results after 1.5s — no button click needed
         autoEndRef.current = setTimeout(() => {
-          if (setQuizTimeRemainingRef.current) setQuizTimeRemainingRef.current(0);
-          onAllDoneRef.current(
-            Math.ceil(shuffledRef.current.length / effectiveRoundSizeRef.current)
-          );
+          if (setQTRRef.current) setQTRRef.current(0);
+          onAllDoneRef.current(Math.ceil(shuffledRef.current.length / effSizeRef.current));
         }, 1500);
       }
     }, 500);
@@ -246,20 +242,17 @@ export default function Quiz({
   const handleSubmit = () => {
     if (SHOW_ADS) triggerAdRefresh();
     if (sel === -1 || done) return;
-
-    // User answered manually — cancel the auto-end timer
+    // User answered — cancel the auto-end timer
     if (autoEndRef.current) {
       clearTimeout(autoEndRef.current);
       autoEndRef.current = null;
     }
-
     stopSpeech();
     setSpeaking(false);
     SFX.submit();
     setDone(true);
     setTotalQ((t) => t + 1);
     const isCorrect = sel === q.a;
-
     if (isCorrect) {
       setScore((s) => s + 1);
       setCorrect((c) => c + 1);
@@ -269,12 +262,10 @@ export default function Quiz({
       setTimeout(() => SFX.wrong(), 80);
       setAnsAnim('wrong');
     }
-
     setTimeout(() => setAnsAnim(''), 500);
     setTimeout(() => {
       if (bodyRef.current) bodyRef.current.scrollTop = 999;
     }, 200);
-
     if (onLogQuestion) {
       onLogQuestion({
         q: q.q,
@@ -291,15 +282,13 @@ export default function Quiz({
     stopSpeech();
     setSpeaking(false);
     if (SHOW_ADS) triggerAdRefresh();
-
     if (isLast) {
       SFX.roundComplete();
       if (setQuizTimeRemaining) setQuizTimeRemaining(timeLeft);
       onAllDone(Math.ceil(shuffled.length / effectiveRoundSize));
       return;
     }
-
-    setQi((nextQi) => nextQi + 1);
+    setQi((nqi) => nqi + 1);
   };
 
   const doFifty = () => {
@@ -307,9 +296,7 @@ export default function Quiz({
     if (onFiftyUsed) onFiftyUsed(true);
     setUF(true);
     SFX.select();
-    const wrongOptions = [0, 1, 2, 3].filter((i) => i !== q.a);
-    const shuffledWrong = sfl(wrongOptions);
-    const toHide = shuffledWrong.slice(0, 2);
+    const toHide = sfl([0, 1, 2, 3].filter((i) => i !== q.a)).slice(0, 2);
     setHid(toHide);
     if (toHide.includes(sel)) setSel(-1);
   };
@@ -327,36 +314,35 @@ export default function Quiz({
 
   const getOptionClass = (i) => {
     if (hidden.includes(i)) return 'hidden';
-    let className = 'quiz-option';
-    if (!done && sel === i) className += ' selected';
+    let cls = 'quiz-option';
+    if (!done && sel === i) cls += ' selected';
     if (done) {
-      if (i === q.a) className += ' correct';
-      else if (i === sel && i !== q.a) className += ' wrong';
-      className += ' disabled';
+      if (i === q.a) cls += ' correct';
+      else if (i === sel && i !== q.a) cls += ' wrong';
+      cls += ' disabled';
     }
-    return className;
+    return cls;
   };
 
   const getOptionStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let border = `2px solid ${LGRAY}`;
-    let bg = WHITE;
-    let color = '#1a0030';
+    let border = `2px solid ${LGRAY}`,
+      bg = WHITE,
+      color = '#1a0030';
     if (!done && sel === i) {
       border = `2px solid ${meta.color}`;
       bg = meta.bg;
       color = meta.color;
     }
-    if (done) {
-      if (i === q.a) {
-        border = `2px solid ${GREEN}`;
-        bg = LGREEN;
-        color = GREEN;
-      } else if (i === sel && i !== q.a) {
-        border = `2px solid ${RED}`;
-        bg = LRED;
-        color = RED;
-      }
+    if (done && i === q.a) {
+      border = `2px solid ${GREEN}`;
+      bg = LGREEN;
+      color = GREEN;
+    }
+    if (done && i === sel && i !== q.a) {
+      border = `2px solid ${RED}`;
+      bg = LRED;
+      color = RED;
     }
     return {
       border,
@@ -377,8 +363,8 @@ export default function Quiz({
 
   const getLetterStyle = (i) => {
     if (hidden.includes(i)) return { display: 'none' };
-    let bg = LGRAY;
-    let color = GRAY;
+    let bg = LGRAY,
+      color = GRAY;
     if (!done && sel === i) {
       bg = meta.color;
       color = WHITE;
@@ -423,7 +409,7 @@ export default function Quiz({
         <div style={{ fontSize: 48 }}>❌</div>
         <div style={{ fontSize: 18, fontWeight: 600, color: PURPLE }}>Error Loading Questions</div>
         <div style={{ fontSize: 14, color: GRAY, textAlign: 'center', maxWidth: 300 }}>
-          No questions found for {subjectId}. Please check QB.js file.
+          No questions found for {subjectId}.
         </div>
         <button
           onClick={onHome}
@@ -444,6 +430,7 @@ export default function Quiz({
 
   return (
     <div className="scr" style={{ background: BG }}>
+      {/* Header */}
       <div
         className="quiz-header"
         style={{ background: `linear-gradient(135deg,${DPURP},${meta.color || PURPLE})` }}
@@ -485,7 +472,7 @@ export default function Quiz({
           }}
         >
           <span>
-            Q{(qi % effectiveRoundSize) + 1}/{effectiveRoundSize} · {meta.label}
+            Q{qi + 1}/{shuffled.length} · {meta.label}
           </span>
           <span>
             Round {roundNum + 1} · {(qi % effectiveRoundSize) + 1}/{effectiveRoundSize}
@@ -494,11 +481,12 @@ export default function Quiz({
         <div className="quiz-progress-bar">
           <div
             className="quiz-progress-fill"
-            style={{ width: `${(((qi % effectiveRoundSize) + 1) / effectiveRoundSize) * 100}%` }}
+            style={{ width: `${((qi + 1) / shuffled.length) * 100}%` }}
           />
         </div>
       </div>
 
+      {/* Body */}
       <div
         ref={bodyRef}
         className="scroll quiz-scroll-area"
@@ -569,7 +557,6 @@ export default function Quiz({
           ))}
         </div>
 
-        {/* Time's up banner */}
         {timedOut && (
           <div
             style={{
@@ -606,6 +593,7 @@ export default function Quiz({
         )}
       </div>
 
+      {/* Action bar */}
       <div className="quiz-action-bar">
         {!done && sel !== -1 && (
           <button className="quiz-clear-btn" onClick={() => setSel(-1)}>
@@ -634,7 +622,7 @@ export default function Quiz({
               color: 'rgba(255,255,255,.5)',
             }}
           >
-            ⏳ Going to results in a moment…
+            ⏳ Going to results…
           </div>
         )}
       </div>
