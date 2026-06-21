@@ -161,12 +161,11 @@ export const submitChallengeScore = async (challengeId, email, score, timeSpent)
     try {
       data = await response.json();
     } catch {
-      console.warn('submitChallengeScore: could not parse JSON response');
+      console.warn('submitChallengeScore: could not parse JSON');
       return { success: true, winner: null, xpAwarded: 0, completed: false };
     }
 
     console.log('submitChallengeScore response:', data);
-
     return {
       success: data?.success === true,
       winner: data?.winner || null,
