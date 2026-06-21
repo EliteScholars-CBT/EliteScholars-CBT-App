@@ -187,6 +187,7 @@ export default function Challenges({ userEmail, userName, userUsername }) {
       (challenge.expires_at
         ? new Date(new Date(challenge.expires_at).getTime() - 24 * 60 * 60 * 1000).toISOString()
         : null);
+    const dateObj = rawDate ? new Date(rawDate) : null;
     const formattedDate = dateObj
       ? dateObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
       : '--';
