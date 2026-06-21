@@ -54,8 +54,8 @@ export default function Subjects({
 }) {
   const { theme, toggleTheme } = useTheme();
 
-  const [mode, setMode] = useState(() => localStorage.getItem('learningMode') || 'cbt');
-  useEffect(() => { localStorage.setItem('learningMode', mode); }, [mode]);
+  const [mode, setMode] = useState(() => localStorage.getItem('learn') || 'cbt');
+  useEffect(() => { localStorage.setItem('learn', mode); }, [mode]);
 
   // ── Subject metadata, QB, and learn bank ─────────────────────────────────
   const getSubjectsAndQB = () => {

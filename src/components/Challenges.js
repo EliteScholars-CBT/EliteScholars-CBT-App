@@ -90,33 +90,22 @@ export default function Challenges({ userEmail, userName, userUsername }) {
       totalQ
     );
 
-    console.log('Challenge submit result:', result);
-
+    console.log('Challenge result:', result);
     setPlaying(null);
 
-    // Always switch to history and reload — don't depend on result.completed
-    // In the worst case (no-cors fallback, parse failure) we still move the user
-    // to history where they can see the state after the reload finishes.
+    // Always go to history — don't depend on result.completed being readable
     setActiveTab('history');
     await loadChallenges(false);
 
-    // Show XP toast
     if (result?.xpAwarded > 0) {
       const winnerEmail = result.winner?.toString().toLowerCase().trim();
       const isDraw = result.winner === 'draw';
       const iWon = !isDraw && winnerEmail === userEmail?.toLowerCase().trim();
-
-      if (result.completed && iWon) {
-        showToast(`🏆 You won! +${result.xpAwarded} XP`, 'success');
-      } else if (result.completed && isDraw) {
-        showToast(`🤝 It's a draw! +${result.xpAwarded} XP`, 'info');
-      } else if (result.completed) {
-        showToast(`+${result.xpAwarded} XP for completing the challenge`, 'info');
-      } else {
-        showToast('Score submitted! Waiting for your opponent…', 'info');
-      }
+      if (iWon) showToast(`🏆 You won! +${result.xpAwarded} XP`, 'success');
+      else if (isDraw) showToast(`🤝 Draw! +${result.xpAwarded} XP`, 'info');
+      else showToast(`+${result.xpAwarded} XP for playing`, 'info');
     } else if (result?.success) {
-      showToast('Score submitted! Waiting for your opponent…', 'info');
+      showToast('Score submitted! Waiting for opponent…', 'info');
     }
   };
 
@@ -192,8 +181,12 @@ export default function Challenges({ userEmail, userName, userUsername }) {
       resultClass = 'lost';
     }
 
-    const rawDate = challenge.completed_at || challenge.created_at || challenge.expires_at;
-    const dateObj = rawDate ? new Date(rawDate) : null;
+    // Replace the rawDate line inside renderHistoryCard:
+    const rawDate =
+      challenge.completed_at ||
+      (challenge.expires_at
+        ? new Date(new Date(challenge.expires_at).getTime() - 24 * 60 * 60 * 1000).toISOString()
+        : null);
     const formattedDate = dateObj
       ? dateObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
       : '--';
@@ -257,7 +250,7 @@ export default function Challenges({ userEmail, userName, userUsername }) {
         </div>
       </div>
     );
-  };
+  };;
 
   // ── Playing screen ────────────────────────────────────────────────────────
   if (playingChallenge) {
