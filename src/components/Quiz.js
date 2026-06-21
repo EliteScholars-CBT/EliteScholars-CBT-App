@@ -56,7 +56,7 @@ export default function Quiz({
           : examType === 'waec' || examType === 'postutme'
             ? WAEC_QB
             : QB;
-    const questions = bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || QB.economics;
+    const questions = bankByType[subjectId] || WAEC_QB[subjectId] || QB[subjectId] || null;
     // Shuffle then slice to exactly effectiveRoundSize questions.
     // This fixes the Q count mismatch — the pool literally has only N questions.
     return sfl(questions).slice(0, effectiveRoundSize);
