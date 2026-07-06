@@ -144,29 +144,36 @@ export default function CreateChallenge({ userEmail, userName, userUsername, onC
   };
 
   const handleQuizDone = async () => {
-    const fc = correct, ft = totalQ, fs = score;
-    setFinalCorrect(fc); setFinalTotal(ft); setFinalScore(fs);
-    setStep('sending'); setSendError('');
-    try {
-      const result = await createChallenge(
-        userEmail, userName,
-        opponentEmail, opponentName || opponentEmail.split('@')[0],
-        examType, university, subject,
-        NUM_QUESTIONS, TIME_LIMIT,
-        messageTemplate, customMessage, fs, fc, ft,
-      );
-      if (result.success) {
-        setStep('sent');
-        setTimeout(() => { onCreated(); }, 2200);
-      } else {
-        setSendError(result.error || 'Failed to send. Check the opponent and try again.');
-        setStep('error');
-      }
-    } catch {
-      setSendError('Network error. Please try again.');
+  const fc = correct;
+  const ft = totalQ;
+  const fs = score;  // this can be 0
+
+  setFinalCorrect(fc); setFinalTotal(ft); setFinalScore(fs);
+  setStep('sending'); setSendError('');
+
+  try {
+    const result = await createChallenge(
+      userEmail, userName,
+      opponentEmail, opponentName || opponentEmail.split('@')[0],
+      examType, university, subject,
+      NUM_QUESTIONS, TIME_LIMIT,
+      messageTemplate, customMessage,
+      fc,   // ← send correct count as the "score" (number of correct answers)
+      fc,
+      ft,
+    );
+    if (result.success) {
+      setStep('sent');
+      setTimeout(() => { onCreated(); }, 2200);
+    } else {
+      setSendError(result.error || 'Failed to send.');
       setStep('error');
     }
-  };
+  } catch {
+    setSendError('Network error. Please try again.');
+    setStep('error');
+  }
+};
 
   // ── STEP: SETUP ────────────────────────────────────────────────────────────
   if (step === 'setup') {
