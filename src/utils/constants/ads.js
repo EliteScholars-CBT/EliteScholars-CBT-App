@@ -2,7 +2,7 @@
 // constants/ads.js — All ad-related settings
 // ============================================================================
 
-export const SHOW_ADS = true;
+export const SHOW_ADS = false;
 
 export const SHOW_POPOVER_AD   = false;
 export const POPOVER_AD_URL    = 'https://fixesconsessionconsession.com/63/ce/c2/63cec2ed9aad27f090a8f39c2b6d7469';
